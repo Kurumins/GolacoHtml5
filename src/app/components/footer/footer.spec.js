@@ -2,7 +2,7 @@ describe('footer component', function () {
   beforeEach(module('app', function ($provide) {
     $provide.factory('fountainFooter', function () {
       return {
-        templateUrl: 'app/footer.html'
+        templateUrl: 'app/components/footer/footer.html'
       };
     });
   }));

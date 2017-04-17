@@ -2,7 +2,7 @@ describe('header component', function () {
   beforeEach(module('app', function ($provide) {
     $provide.factory('fountainHeader', function () {
       return {
-        templateUrl: 'app/header.html'
+        templateUrl: 'app/components/header/header.html'
       };
     });
   }));

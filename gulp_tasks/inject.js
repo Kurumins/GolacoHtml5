@@ -15,6 +15,10 @@ function inject() {
   ])
   .pipe(angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
+  const injectStyles = gulp.src([
+    conf.path.tmp('**/*.css')
+  ], {read: false});
+
   const injectOptions = {
     ignorePath: [conf.paths.src, conf.paths.tmp],
     addRootSlash: false
@@ -22,6 +26,7 @@ function inject() {
 
   return gulp.src(conf.path.src('index.html'))
     .pipe(gulpInject(injectScripts, injectOptions))
+    .pipe(gulpInject(injectStyles, injectOptions))
     .pipe(wiredep(Object.assign({}, conf.wiredep)))
     .pipe(gulp.dest(conf.paths.tmp))
     .pipe(browserSync.stream());

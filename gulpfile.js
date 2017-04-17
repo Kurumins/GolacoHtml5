@@ -14,7 +14,7 @@ gulp.task('inject', gulp.series(gulp.parallel('styles', 'scripts'), 'inject'));
 gulp.task('build', gulp.series('partials', gulp.parallel('inject', 'other'), 'build'));
 gulp.task('test', gulp.series('scripts', 'karma:single-run'));
 gulp.task('test:auto', gulp.series('watch', 'karma:auto-run'));
-gulp.task('serve', gulp.series('inject', 'watch', 'browsersync'));
+gulp.task('serve', gulp.series('clean', 'inject', 'watch', 'browsersync'));
 gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
@@ -28,13 +28,13 @@ function watch(done) {
   gulp.watch([
     conf.path.src('index.html'),
     'bower.json'
-  ], gulp.parallel('inject'));
+  ],{cwd:'./'}, gulp.parallel('inject'));
 
-  gulp.watch(conf.path.src('app/**/*.html'), gulp.series('partials', reloadBrowserSync));
+  gulp.watch(conf.path.src('app/**/*.html'), {cwd:'./'}, gulp.series('partials', reloadBrowserSync));
   gulp.watch([
     conf.path.src('**/*.scss'),
-    conf.path.src('**/*.css')
-  ], gulp.series('styles'));
-  gulp.watch(conf.path.src('**/*.js'), gulp.series('inject'));
+    // conf.path.src('**/*.css')
+  ], {cwd:'./'}, gulp.series('styles'));
+  gulp.watch(conf.path.src('**/*.js'),{cwd:'./'}, gulp.series('inject'));
   done();
 }

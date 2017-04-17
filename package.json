@@ -70,5 +70,8 @@
     "extends": [
       "xo-space"
     ]
+  },
+  "dependencies": {
+    "gulp-rename": "^1.2.2"
   }
 }
