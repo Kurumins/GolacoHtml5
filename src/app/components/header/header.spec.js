@@ -1,3 +1,4 @@
+'use strict';
 describe('header component', function () {
   beforeEach(module('app', function ($provide) {
     $provide.factory('fountainHeader', function () {
