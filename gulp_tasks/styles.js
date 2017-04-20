@@ -5,6 +5,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 
 const conf = require('../conf/gulp.conf');
 
@@ -14,6 +15,7 @@ function styles() {
   return gulp.src(conf.path.src('**/!(_)*.scss'))
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'expanded'})).on('error', conf.errorHandler('Sass'))
+    .pipe(concat('app.css'))
     .pipe(postcss([autoprefixer()])).on('error', conf.errorHandler('Autoprefixer'))
     .pipe(sourcemaps.write())
     .pipe(rename({dirname: 'styles/'}))
