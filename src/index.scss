@@ -1,0 +1,7 @@
+// centraliza verticalmente os icones
+.icon {
+  vertical-align: middle;
+  &:before {
+    vertical-align: text-top;
+  }
+}
