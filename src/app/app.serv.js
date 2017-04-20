@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app')
-.service('MainService', function ($http) {
+.service('AppService', function ($http) {
 
-  this.milhas = function () {
+  this.auth = function () {
     return $http.post('/golaco/Container/Auth', {
       'socket_id': '215916.7788328',
       'channel_name': 'private-1602447546449533',
@@ -33,7 +33,7 @@ angular.module('app')
     });
   };
 
-  this.milhas2 = function () {
+  this.teamPreview = function () {
     return $http.post('/golaco/Team/Preview', {
       locale: 'pt_BR',
       signature: 'BwyM92VpeYaRbSb7597EFXZAO2U=',

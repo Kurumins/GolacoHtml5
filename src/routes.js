@@ -13,14 +13,28 @@ function routesConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('app', {
       url: '',
-      component: 'app'
+      abstract: true,
+      resolve: {
+        user: function (AppService) {
+          return AppService.auth()
+            .then(function (/*result*/) {
+              // console.log(result.data.auth);
+              return AppService.userVerify();
+            });
+        }
+      },
+      // component: 'app'
+      templateUrl: 'app.html',
+      controller: 'AppController as appCtrl'
     })
-    .state('app.main', {
-      url: '/',
-      component: 'main'
+    .state('app.itens', {
+      url: '/itens',
+      // component: 'itens'
+      templateUrl: 'itens.html',
+      controller: 'ItensController'
     })
     .state('app.teste', {
-      url: '/teste',
+      url: '/',
       component: 'teste'
     });
 
