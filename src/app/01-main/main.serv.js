@@ -4,8 +4,8 @@ angular.module('app')
 
   this.milhas = function () {
     return $http.post('/golaco/Container/Auth', {
-      socket_id: '215916.7788328',
-      channel_name: 'private-1602447546449533',
+      'socket_id': '215916.7788328',
+      'channel_name': 'private-1602447546449533',
     });
   };
 
@@ -23,11 +23,12 @@ angular.module('app')
       'refCode': '',
     }, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-      transformRequest: function(obj) {
+      transformRequest: function (obj) {
         var str = [];
-        for(var p in obj)
-          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        return str.join("&");
+        for (var p in obj) {
+          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+        }
+        return str.join('&');
       },
     });
   };
@@ -41,11 +42,12 @@ angular.module('app')
       v: '1492473859454',
     }, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-      transformRequest: function(obj) {
+      transformRequest: function (obj) {
         var str = [];
-        for(var p in obj)
-          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        return str.join("&");
+        for (var p in obj) {
+          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+        }
+        return str.join('&');
       },
     });
   };
