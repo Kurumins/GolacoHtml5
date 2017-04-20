@@ -35,7 +35,11 @@ function watch(done) {
     conf.path.src('**/*.scss'),
     conf.path.src('**/*.css')
   ], {cwd:'./'}, gulp.series('styles'));
-  gulp.watch(conf.path.src('**/*.js'), {cwd:'./'}, gulp.series('scripts', reloadBrowserSync));
+
+  gulp.watch(conf.path.src('**/*.js'), {cwd:'./', events: ['add', 'change', 'unlink', 'unlinkDir']}) // , gulp.series('scripts', reloadBrowserSync))
+    .on('change', gulp.series('scripts', reloadBrowserSync))
+    .on('add', gulp.series('inject', 'scripts', reloadBrowserSync))
+    .on('unlink', gulp.series('inject', 'scripts', reloadBrowserSync))
 
   done();
 }
