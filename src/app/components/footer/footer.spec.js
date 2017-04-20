@@ -3,7 +3,7 @@ describe('footer component', function () {
   beforeEach(module('app', function ($provide) {
     $provide.factory('fountainFooter', function () {
       return {
-        templateUrl: 'app/components/footer/footer.html'
+        templateUrl: 'footer.html'
       };
     });
   }));

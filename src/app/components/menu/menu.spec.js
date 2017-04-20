@@ -3,7 +3,7 @@ describe('menu component', function () {
   beforeEach(module('app', function ($provide) {
     $provide.factory('fountainMenu', function () {
       return {
-        templateUrl: 'app/components/menu/menu.html'
+        templateUrl: 'menu.html'
       };
     });
   }));
