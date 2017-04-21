@@ -1,0 +1,44 @@
+{
+  "data": {
+    "Success": true,
+    "TeamPlayerItems": [
+      {
+        "Id": 21095,
+        "Name": "Label_ChuteiraDaMorte",
+        "Picture": "https://www.golacogame.com.br/Content/item/120s.png",
+        "Duration": 13,
+        "RemainDuration": 13,
+        "Effects": [
+          {
+            "IdTeamPlayerSkill": 2,
+            "Effect": 8
+          },
+          {
+            "IdTeamPlayerSkill": 4,
+            "Effect": 10
+          }
+        ],
+        "Category": 15,
+        "MoneySellPrice": 0,
+        "CreditSellPrice": 3
+      },
+      {
+        "Id": 55144,
+        "Name": "Label_CamisaLike",
+        "Picture": "https://www.golacogame.com.br/Content/item/121s.png",
+        "Duration": 10,
+        "RemainDuration": 10,
+        "Effects": [
+          {
+            "IdTeamPlayerSkill": 3,
+            "Effect": 6
+          }
+        ],
+        "Category": 13,
+        "MoneySellPrice": 0,
+        "CreditSellPrice": 0
+      }
+    ],
+    "TrainingCenterItems": []
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "data": {
+    "Success": true,
+    "IdCountry": 4,
+    "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/002278811.png",
+    "UniformSerializedObject": "CgsBBXUxCjMBC3NoaXJ0DXNob3J0cwtzb2NrcwpTAQtpbmRleA90ZXh0dXJlC2NvbG9yF2RldGFp\nbENvbG9yE2hhc0RldGFpbAQECiMBCAwEAAQABAAEgObmzAQACg0EBASDmf+ZCg0EBQTmMwdnazIK\nBQoJBAYKDQQABAAEgrP/AAQABAAKDQQDBIHMszMKDQQBBIP+gAAFdTIKBQoJBAkKDQQABAAEgcxm\nBOd/BAEKDQQFBIHMszMKDQQCBIP+5gAHZ2sxCgUKCQQCCg0EBAQABIDnmcwEAAQACg0EAgSBzLNm\nCg0EAQSBzZn/AQ==",
+    "Warnings": [
+      {
+        "Id": 532559561,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532524908,
+        "Message": "LabelRankIncrease;p5"
+      },
+      {
+        "Id": 532524101,
+        "Message": "LabelCompetitionTournamentLightEliminated;d1492630184704.08"
+      },
+      {
+        "Id": 532523834,
+        "Message": "LabelTournamentLightPosition;p2"
+      },
+      {
+        "Id": 532523835,
+        "Message": "LabelTournamentLightPhaseFinished"
+      },
+      {
+        "Id": 532493082,
+        "Message": "LabelRankDecrease;p6"
+      },
+      {
+        "Id": 532490094,
+        "Message": "LabelRankTournamentLightDecrease;p2"
+      },
+      {
+        "Id": 532475436,
+        "Message": "LabelPlayerBirthday;tAdriano Cléber;t21"
+      },
+      {
+        "Id": 532456399,
+        "Message": "LabelRankIncrease;p3"
+      },
+      {
+        "Id": 532455448,
+        "Message": "LabelCompetitionTournamentLightNextPhase;d1492457341554.01"
+      },
+      {
+        "Id": 532455126,
+        "Message": "LabelRankTournamentLightDecrease;p2"
+      },
+      {
+        "Id": 532455127,
+        "Message": "LabelTournamentLightPhaseFinished"
+      },
+      {
+        "Id": 532454083,
+        "Message": "LabelCompetitionTournamentEliminated;d1492450140967.87"
+      },
+      {
+        "Id": 532453853,
+        "Message": "LabelTournamentPosition;p3"
+      },
+      {
+        "Id": 532453854,
+        "Message": "LabelTournamentPhaseFinished"
+      },
+      {
+        "Id": 532452049,
+        "Message": "LabelCupPhaseFinished"
+      },
+      {
+        "Id": 532437927,
+        "Message": "LabelPlayerBirthday;tAbel Abelardo;t27"
+      },
+      {
+        "Id": 532452654,
+        "Message": "LabelFinance1"
+      },
+      {
+        "Id": 532452655,
+        "Message": "LabelFinance2;$600000.0000"
+      },
+      {
+        "Id": 532452656,
+        "Message": "LabelFinance3;$24070.82630"
+      },
+      {
+        "Id": 532452657,
+        "Message": "LabelFinance4"
+      },
+      {
+        "Id": 532420636,
+        "Message": "LabelRankDecrease;p5"
+      },
+      {
+        "Id": 532417571,
+        "Message": "LabelRankTournamentLightIncrease;p1"
+      },
+      {
+        "Id": 532416706,
+        "Message": "LabelTournamentPosition;p3"
+      },
+      {
+        "Id": 532415959,
+        "Message": "LabelCupPhaseFinished"
+      },
+      {
+        "Id": 532403252,
+        "Message": "LabelPlayerBirthday;tAbel Levi;t21"
+      },
+      {
+        "Id": 532384872,
+        "Message": "LabelRankIncrease;p4"
+      },
+      {
+        "Id": 532383997,
+        "Message": "LabelRankTournamentLightDecrease;p2"
+      }
+    ],
+    "HasUnreadMessages": 0,
+    "History": "",
+    "Serie": "D",
+    "SponsorName": "FIR Capital",
+    "FoundationDate": 1491922409000,
+    "ChangeTeamNameCreditPrice": 30,
+    "ChangeTeamNameCreditDiscountPrice": 0.00,
+    "ChangeTeamCountryCreditPrice": 15,
+    "ChangeTeamCountryCreditDiscountPrice": 0.00
+  }
+}

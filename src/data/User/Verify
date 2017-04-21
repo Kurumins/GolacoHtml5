@@ -1,0 +1,76 @@
+{
+  "data": {
+    "Success": true,
+    "HasUser": true,
+    "TeamPlayers": [
+      {
+        "Id": 36092807
+      },
+      {
+        "Id": 36092808
+      },
+      {
+        "Id": 36092809
+      },
+      {
+        "Id": 36092810
+      },
+      {
+        "Id": 36092811
+      },
+      {
+        "Id": 36092812
+      },
+      {
+        "Id": 36092813
+      },
+      {
+        "Id": 36092814
+      },
+      {
+        "Id": 36092815
+      },
+      {
+        "Id": 36092816
+      },
+      {
+        "Id": 36092817
+      },
+      {
+        "Id": 36092818
+      },
+      {
+        "Id": 36092819
+      },
+      {
+        "Id": 36092820
+      },
+      {
+        "Id": 36092821
+      },
+      {
+        "Id": 36092822
+      }
+    ],
+    "TeamName": "Tonussi Esporte Clube",
+    "Acronym": "TEC",
+    "Serie": "D",
+    "FinancialBalance": 472583.1098,
+    "Supporters": 3642,
+    "CreditBalance": 7,
+    "Badge90x90": "https://o2games-golaco.s3.amazonaws.com/badges/90x90/002278811.png",
+    "TeamId": 2278811,
+    "TutorialStatus": false,
+    "FriendlyMatchesToday": 0,
+    "CreationDate": 1491922409000,
+    "BannedFromAuction": 0,
+    "TimeToNewDraft": 1492982751407,
+    "TimeToShowDraft": 0,
+    "Promotion": false,
+    "IdApplication": 1,
+    "FirstPurchase": true,
+    "MaxProPlayers": 16,
+    "IdCountry": "0",
+    "IdTeamTrainCenter": 2443830
+  }
+}
