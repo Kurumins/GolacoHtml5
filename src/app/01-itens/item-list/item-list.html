@@ -1,3 +1,9 @@
-<ul ng-repeat="item in $ctrl.storeList.TeamPlayerItems">
-  <li><item value="item"></item></li>
-</ul>
+<slick infinite=true slides-to-show=3 slides-to-scroll=3 rows="{{$ctrl.rows}}" arrows="{{!!$ctrl.arrow}}" settings="$ctrl.slickConfig">
+  <item value="item" ng-repeat="item in $ctrl.itens"></item>
+</slick>
+
+<div class="slide-control" ng-if="!$ctrl.arrow">
+  <button ng-click="$ctrl.slickConfig.method.slickPrev()">«</button>
+  {{$ctrl.currentSlide}} / {{($ctrl.itens.length+2)/($ctrl.rows*3) | number:0}}
+  <button ng-click="$ctrl.slickConfig.method.slickNext()">»</button>
+</div>
