@@ -2,5 +2,8 @@
 angular
   .module('app')
   .component('item', {
-    templateUrl: 'item.html'
+    templateUrl: 'item.html',
+    bindings: {
+      item: '=value'
+    }
   });
