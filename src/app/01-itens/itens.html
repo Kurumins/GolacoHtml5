@@ -1,1 +1,16 @@
-<item-list></item-list>
+<div class="itens-header">
+  <div style="float: right">
+    <a ui-sref="app.itens.itens({inventario: null})" ui-sref-active="active" >Loja</a>
+    <a ui-sref="app.itens.itens({inventario: 'inventario'})" ui-sref-active="active" >Inventário</a>
+  </div>
+  <h3>ITENS</h3>
+</div>
+
+<div class="itens-menu">
+  <div>
+    <a ui-sref="app.itens.destaques" ui-sref-active="active" >Destaques</a>
+    <a ui-sref="app.itens.itens({category: 13})" ui-sref-active="active" >Camisas</a>
+    <a ui-sref="app.itens.itens({category: 14})" ui-sref-active="active" >Bermudas</a>
+  </div>
+</div>
+<div ui-view></div>

@@ -5,3 +5,11 @@
     vertical-align: text-top;
   }
 }
+
+a {
+  text-decoration: none;
+
+  &.active {
+    text-decoration: underline;
+  }
+}

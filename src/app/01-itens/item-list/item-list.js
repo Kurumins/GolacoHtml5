@@ -3,7 +3,12 @@ angular
   .module('app')
   .component('itemList', {
     templateUrl: 'item-list.html',
-    controller: function (ItensService, $timeout) {
+    bindings: {
+      itens: '=data',
+      rows: '=',
+      arrow: '='
+    },
+    controller: function ($timeout) {
 
       var vm = this;
 
@@ -30,18 +35,6 @@ angular
       //     vm.loaded = true;
       //   })
       // }
-
-      ItensService.inventory()
-        .then(function (result) {
-          vm.inventory = result.data.data;
-        });
-
-      ItensService.storeList()
-        .then(function (result) {
-          vm.storeList = result.data.data;
-          // vm.loaded = true;
-        });
-
 
     }
   });
