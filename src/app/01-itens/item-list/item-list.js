@@ -8,18 +8,18 @@ angular
       rows: '=',
       arrow: '='
     },
-    controller: function ($timeout) {
+    controller: function () {
 
       var vm = this;
 
       vm.slickConfig = {
         method: {},
         event: {
-          afterChange: function (event, slick, currentSlide, nextSlide) {
+          afterChange: function (event, slick, currentSlide/*, nextSlide*/) {
             vm.currentSlide = currentSlide / 3 + 1;
           },
-          init: function (event, slick) {
-          }
+          // init: function (event, slick) {
+          // }
         }
       };
 

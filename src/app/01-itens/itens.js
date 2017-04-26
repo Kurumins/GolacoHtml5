@@ -29,10 +29,7 @@ angular.module('app')
 
       .state('app.itens.destaques', {
         url: '',
-        // component: 'itens'
         templateUrl: 'itens-highlights.html',
-        // controller: 'ItensController'
-        // template: 'destaques'
       })
 
       .state('app.itens.itens', {
@@ -40,7 +37,6 @@ angular.module('app')
         params: {
           category: {
             value: '13',
-            // default: 13,
             squash: false
           },
           inventario: {
@@ -50,14 +46,25 @@ angular.module('app')
         },
         resolve: {
           itens: function ($stateParams, inventory, storeList) {
-            return storeList.data.data.TeamPlayerItems;
+            var itens;
+
+            if ( $stateParams.inventario ) {
+              itens = inventory.data.data.TeamPlayerItems;
+            } else {
+              itens = storeList.data.data.TeamPlayerItems;
+            }
+
+            return itens.filter(function (item) {
+              return item.Category === parseInt($stateParams.category);
+            })
+
           }
         },
         templateUrl: 'itens-itens.html',
-        controller: function ($scope, itens) {
-          $scope.teste = itens;
-        }
-        // template: 'destaques'
+        controller: function (itens) {
+          this.itens = itens;
+        },
+        controllerAs: '$ctrl'
       });
 
-})
+  });
