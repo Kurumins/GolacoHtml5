@@ -1,10 +1,15 @@
 'use strict';
 angular.module('app')
   .service('ItensService', function ($http) {
-    this.inventory = function () {
+
+    var vm = this;
+
+    vm.inventory = function () {
       return $http.get('/data/Team/Inventory');
     };
-    this.storeList = function () {
+
+    vm.storeList = function () {
       return $http.get('/data/Store/List');
     };
+
   });

@@ -1,6 +1,5 @@
 'use strict';
-angular
-  .module('app')
+angular.module('app')
   .component('item', {
     templateUrl: 'item.html',
     bindings: {

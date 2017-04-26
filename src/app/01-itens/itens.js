@@ -1,82 +1,86 @@
 'use strict';
 angular.module('app')
-  .controller('ItensController', function (ItensService, inventory, storeList) {
+  .config(routesConfig);
 
-    var vm = this;
+function itensController (ItensService, inventory, storeList) {
 
-    vm.inventory = inventory.data.data;
-    vm.storeList = storeList.data.data;
+  var vm = this;
 
-  })
-  .config(function routesConfig ($stateProvider) {
+  vm.inventory = inventory.data.data;
+  vm.storeList = storeList.data.data;
 
-    $stateProvider
+}
 
-      .state('app.itens', {
-        url: '/itens',
-        abstract: '.destaques',
-        resolve: {
-          inventory: function (ItensService) {
-            return ItensService.inventory();
-          },
-          storeList: function (ItensService) {
-            return ItensService.storeList();
+function routesConfig ($stateProvider) {
+
+  $stateProvider
+
+    .state('app.itens', {
+      url: '/itens',
+      abstract: '.destaques',
+      resolve: {
+        inventory: function (ItensService) {
+          return ItensService.inventory();
+        },
+        storeList: function (ItensService) {
+          return ItensService.storeList();
+        }
+      },
+      templateUrl: 'itens.html',
+      controller: itensController,
+      controllerAs: '$itensCtrl'
+    })
+
+    .state('app.itens.destaques', {
+      url: '',
+      templateUrl: 'itens-highlights.html',
+    })
+
+    .state('app.itens.itens', {
+      url: '/:inventario/:centro/:category',
+      params: {
+        category: {
+          value: '13',
+          squash: false
+        },
+        inventario: {
+          value: 'loja',
+          squash: false
+        },
+        centro: {
+          value: null,
+          squash: true
+        }
+      },
+      resolve: {
+        itens: function ($stateParams, inventory, storeList) {
+          var data, itens;
+
+          if ( $stateParams.inventario === 'inventario' ) {
+            data = inventory.data.data;
+          } else {
+            data = storeList.data.data;
           }
-        },
-        templateUrl: 'itens.html',
-        controller: 'ItensController as $itensCtrl'
-      })
 
-      .state('app.itens.destaques', {
-        url: '',
-        templateUrl: 'itens-highlights.html',
-      })
-
-      .state('app.itens.itens', {
-        url: '/:inventario/:centro/:category',
-        params: {
-          category: {
-            value: '13',
-            squash: false
-          },
-          inventario: {
-            value: 'loja',
-            squash: false
-          },
-          centro: {
-            value: null,
-            squash: true
+          if ( $stateParams.centro === 'centro' ) {
+            itens = data.TrainingCenterItems.filter(function (item) {
+              return item.League === $stateParams.category;
+            });
+          } else {
+            itens = data.TeamPlayerItems.filter(function (item) {
+              return item.Category === parseInt($stateParams.category);
+            });
           }
-        },
-        resolve: {
-          itens: function ($stateParams, inventory, storeList) {
-            var data, itens;
 
-            if ( $stateParams.inventario === 'inventario' ) {
-              data = inventory.data.data;
-            } else {
-              data = storeList.data.data;
-            }
+          return itens;
 
-            if ( $stateParams.centro === 'centro' ) {
-              itens = data.TrainingCenterItems.filter(function (item) {
-                return item.League === $stateParams.category;
-              });
-            } else {
-              itens = data.TeamPlayerItems.filter(function (item) {
-                return item.Category === parseInt($stateParams.category);
-              });
-            }
+        }
+      },
+      templateUrl: 'itens-itens.html',
+      controller: function (itens) {
+        this.itens = itens;
+      },
+      controllerAs: '$ctrl'
+    });
 
-            return itens;
-
-          }
-        },
-        templateUrl: 'itens-itens.html',
-        controller: function (itens) {
-          this.itens = itens;
-        },
-        controllerAs: '$ctrl'
-      });
-
-  });
+}
