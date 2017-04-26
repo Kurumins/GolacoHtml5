@@ -9,9 +9,13 @@
 <div class="itens-menu">
   <div>
     <a ui-sref="app.itens.destaques" ui-sref-active="active" >Destaques</a>
-    <a ui-sref="app.itens.itens({category: 13})" ui-sref-active="active" >Camisas</a>
-    <a ui-sref="app.itens.itens({category: 14})" ui-sref-active="active" >Bermudas</a>
-    <a ui-sref="app.itens.itens({category: 15})" ui-sref-active="active" >Chuteiras</a>
+    <a ui-sref="app.itens.itens({category: 13, centro: null})" ui-sref-active="active" >Camisas</a>
+    <a ui-sref="app.itens.itens({category: 14, centro: null})" ui-sref-active="active" >Bermudas</a>
+    <a ui-sref="app.itens.itens({category: 15, centro: null})" ui-sref-active="active" >Chuteiras</a>
+    <a ui-sref="app.itens.itens({category: 'D', centro: 'centro'})" ui-sref-active="active" >Centro D</a>
+    <a ui-sref="app.itens.itens({category: 'C', centro: 'centro'})" ui-sref-active="active" >Centro C</a>
+    <a ui-sref="app.itens.itens({category: 'B', centro: 'centro'})" ui-sref-active="active" >Centro B</a>
+    <a ui-sref="app.itens.itens({category: 'A', centro: 'centro'})" ui-sref-active="active" >Centro A</a>
   </div>
 </div>
 <div ui-view></div>

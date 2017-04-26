@@ -33,30 +33,42 @@ angular.module('app')
       })
 
       .state('app.itens.itens', {
-        url: '/:category/:inventario',
+        url: '/:inventario/:centro/:category',
         params: {
           category: {
             value: '13',
             squash: false
           },
           inventario: {
+            value: 'loja',
+            squash: false
+          },
+          centro: {
             value: null,
             squash: true
           }
         },
         resolve: {
           itens: function ($stateParams, inventory, storeList) {
-            var itens;
+            var data, itens;
 
-            if ( $stateParams.inventario ) {
-              itens = inventory.data.data.TeamPlayerItems;
+            if ( $stateParams.inventario === 'inventario' ) {
+              data = inventory.data.data;
             } else {
-              itens = storeList.data.data.TeamPlayerItems;
+              data = storeList.data.data;
             }
 
-            return itens.filter(function (item) {
-              return item.Category === parseInt($stateParams.category);
-            })
+            if ( $stateParams.centro === 'centro' ) {
+              itens = data.TrainingCenterItems.filter(function (item) {
+                return item.League === $stateParams.category;
+              });
+            } else {
+              itens = data.TeamPlayerItems.filter(function (item) {
+                return item.Category === parseInt($stateParams.category);
+              });
+            }
+
+            return itens;
 
           }
         },
