@@ -21,62 +21,14 @@ function routesConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
               // console.log(result.data.auth);
               return AppService.userVerify();
             });
-        }
+        },
+        teamPreview: function (AppService) {
+          return AppService.teamPreview();
+        },
       },
       // component: 'app'
       templateUrl: 'app.html',
-      controller: 'AppController as appCtrl'
-    })
-
-    // .state('app.itens', {
-    //   url: '/itens',
-    //   abstract: '.destaques',
-    //   resolve: {
-    //     inventory: function (ItensService) {
-    //       return ItensService.inventory();
-    //     },
-    //     storeList: function (ItensService) {
-    //       return ItensService.storeList();
-    //     }
-    //   },
-    //   templateUrl: 'itens.html',
-    //   controller: 'ItensController as $itensCtrl'
-    // })
-
-    // .state('app.itens.destaques', {
-    //   url: '',
-    //   // component: 'itens'
-    //   templateUrl: 'itens-highlights.html',
-    //   // controller: 'ItensController'
-    //   // template: 'destaques'
-    // })
-
-    // .state('app.itens.itens', {
-    //   url: '/:category/:loja',
-    //   params: {
-    //     category: {
-    //       value: '13',
-    //       // default: 13,
-    //       squash: false
-    //     },
-    //     loja: {
-    //       value: null,
-    //       squash: true
-    //     }
-    //   },
-    //   resolve: {
-    //     teste: function ($stateParams, inventory, storeList) {
-    //       // console.log($stateParams);
-    //     }
-    //   },
-    //   templateUrl: 'itens-itens.html',
-    //   // controller: 'ItensController'
-    //   // template: 'destaques'
-    // })
-
-    .state('app.teste', {
-      url: '/',
-      component: 'teste'
+      controller: 'AppController as $appCtrl'
     });
 
 }

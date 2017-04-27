@@ -1,0 +1,78 @@
+<div class="main">
+  <div class="main-header">
+    <div style="float: right">
+      <a ui-sref-="">Config</a>
+      <a ui-sref-="">Trofs</a>
+      <a ui-sref-="">Estats</a>
+      <a ui-sref-="">Bonus</a>
+      <a ui-sref-="">Bugs</a>
+    </div>
+    <h2>Minha equipe</h2>
+  </div>
+
+  <div style="float: left; width: 50%;">
+    <h3>{{$appCtrl.user.TeamName}}</h3>
+    <img ng-src="{{$appCtrl.teamPreview.Badge}}" style="float: left;">
+
+    <div>
+      <h4>Detalhes do Manager</h4>
+      <img ng-src="{{$windowUser.picture}}" style="float: left; margin-right: 5px;" height="30">
+      <h5 style="margin-bottom: 0; ">{{$windowUser.userName}}</h5>
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
+    </div>
+
+    <div style="float: left;">
+      <h4>Detalhes do Time</h4>
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
+      <p>Fundado em {{$appCtrl.teamPreview.FoundationDate | date:'shortDate'}}</p>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div>
+      <h3>Uniforme</h3>
+
+      <div class="main-uniformes">
+        <div class="main-uniforme">uniforme</div>
+        <div class="main-uniforme">uniforme</div>
+      </div>
+
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor">
+    </div>
+
+  </div>
+
+  <div style="float: left; width: 50%;" class="right-container">
+    <h3>Missões</h3>
+
+    <ul class="main-missions">
+      <li ng-repeat="mission in $ctrl.missionList.Missions">
+        <img ng-src="{{mission.Mission.urls.icon_up}}">
+      </li>
+    </ul>
+
+    <h3>Avisos</h3>
+
+    <div class="main-warnings">
+      <div ng-repeat="warning in $appCtrl.teamPreview.Warnings">
+        <span class="close">X</span>
+        <span class="icon-exclamation-triangle"></span>
+        <span>{{warning.Message}}</span>
+      </div>
+    </div>
+
+    <label style="float: left">
+      <input type="checkbox" name="" checked>
+      Compartilhar
+    </label>
+
+    <h3>Nota à imprensa</h3>
+    <textarea width="100%" class="main-note"></textarea>
+
+  </div>
+
+
+  <div style="clear: both;"></div>
+
+  <!-- <pre>{{$appCtrl | json}}</pre> -->
+</div>
