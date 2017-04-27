@@ -1,11 +1,19 @@
 <div class="main">
   <div class="main-header">
     <div style="float: right">
-      <a ui-sref-="">Config</a>
-      <a ui-sref-="">Trofs</a>
-      <a ui-sref-="">Estats</a>
-      <a ui-sref-="">Bonus</a>
-      <a ui-sref-="">Bugs</a>
+      <a
+        ng-dialog="main-config.html"
+        ng-dialog-append-class="ngdialog-main-config"
+        ng-dialog-controller="MainConfigController"
+        ng-dialog-controller-as="$ctrl"
+        ng-dialog-show-close="true"
+        ng-dialog-data="{{$appCtrl}}"
+        ng-dialog-close-previous
+        ng-dialog-bind-to-controller>Config</a>
+      <a>Trofs</a>
+      <a>Estats</a>
+      <a>Bonus</a>
+      <a>Bugs</a>
     </div>
     <h2>Minha equipe</h2>
   </div>
