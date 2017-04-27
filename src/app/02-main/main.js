@@ -18,8 +18,12 @@ function routesConfig ($stateProvider) {
     })
 }
 
-function mainController(missionList) {
+function mainController(missionList/*, ngDialog*/) {
   var vm = this;
 
   vm.missionList = missionList.data.data;
+
+  // ngDialog.open({ template: 'main.html', className: 'ngdialog-theme-default' });
+  // ngDialog.open({ template: 'main.html', className2: 'ngdialog-theme-default' });
+
 }

@@ -47,7 +47,13 @@
 
     <ul class="main-missions">
       <li ng-repeat="mission in $ctrl.missionList.Missions">
-        <img ng-src="{{mission.Mission.urls.icon_up}}">
+        <img ng-src="{{mission.Mission.urls.icon_up}}"
+          ng-dialog="mission-popup.html"
+          ng-dialog-append-class="ngdialog-mission-popup"
+          ng-dialog-controller="MissionPopupController"
+          ng-dialog-show-close="false"
+          ng-dialog-data="{{mission}}"
+          ng-dialog-close-previous>
       </li>
     </ul>
 

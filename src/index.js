@@ -3,5 +3,6 @@ angular
   .module('app', [
     'ui.router',
     'ui.router.default',
-    'slickCarousel'
+    'slickCarousel',
+    'ngDialog'
   ]);
