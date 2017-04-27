@@ -8,4 +8,8 @@ angular.module('app')
       return $http.get('/data/Team/Settings');
     };
 
+    vm.teamTrophyRoom = function () {
+      return $http.get('/data/Team/TrophyRoom');
+    };
+
   });
