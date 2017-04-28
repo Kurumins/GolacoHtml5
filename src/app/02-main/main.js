@@ -29,11 +29,29 @@ function mainController($scope, missionList, ngDialog) {
   //   }
   // }
 
+  vm.config = function () {
+    ngDialog.open({
+      template: 'main-config.html',
+      appendClassName: 'ngdialog-main-config',
+      controller: 'MainConfigController as $ctrl',
+      scope: $scope,
+      resolve: {
+        settings: function (MainService) {
+          return MainService.teamSettings()
+            .then(function (result) {
+              return result.data.data;
+            })
+        }
+      },
+    });
+  };
+
   vm.teamTrophyRoom = function () {
     ngDialog.open({
       template: 'main-trophy.html',
       appendClassName: 'ngdialog-main-trophy',
       controller: 'MainTrophyController as $ctrl',
+      scope: $scope,
       resolve: {
         teamTrophyRoom: function (MainService) {
           return MainService.teamTrophyRoom()

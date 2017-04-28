@@ -1,12 +1,9 @@
 'use strict';
 angular.module('app')
-  .controller('MainConfigController', function (MainService) {
+  .controller('MainConfigController', function (settings) {
 
     var vm = this;
 
-    MainService.teamSettings()
-      .then(function (result) {
-        vm.settings = result.data.data;
-      });
+    vm.settings = settings;
 
   })

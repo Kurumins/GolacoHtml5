@@ -1,14 +1,7 @@
 <div class="main">
   <div class="main-header">
     <div style="float: right">
-      <a
-        ng-dialog="main-config.html"
-        ng-dialog-append-class="ngdialog-main-config"
-        ng-dialog-controller="MainConfigController"
-        ng-dialog-controller-as="$ctrl"
-        ng-dialog-show-close="true"
-        ng-dialog-data="{{$appCtrl}}"
-        ng-dialog-close-previous>Config</a>
+      <button ng-click="$ctrl.config()">Config</button>
       <button ng-click="$ctrl.teamTrophyRoom()">Trofs</button>
       <button ng-click="$ctrl.stats()">Estats</button>
       <a>Bonus</a>
