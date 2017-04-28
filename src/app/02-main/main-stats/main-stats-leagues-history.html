@@ -1,1 +1,16 @@
-main-stats-leagues-history.html
+<slick infinite=false slides-to-show=2 slides-to-scroll=2 rows="3" arrows="false"
+  settings="$ctrl.slickConfig">
+  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="trophy">
+    <div>
+      Temporada {{$ctrl.teamStats.LeaguesHistory.length - $index}}
+      <button>{{['','A','B','C','D'][league.IdLeague]}}</button>
+      {{league.Position}}º lugar
+    </div>
+  </div>
+</slick>
+
+<div class="slide-control">
+  <button ng-click="$ctrl.slickConfig.method.slickPrev()">«</button>
+  {{$ctrl.currentSlide}} / {{($ctrl.slideCount+.99)/2 | number:0}}
+  <button ng-click="$ctrl.slickConfig.method.slickNext()">»</button>
+</div>

@@ -23,12 +23,6 @@ function mainController($scope, missionList, ngDialog) {
 
   vm.missionList = missionList.data.data;
 
-  // vm.teamTrophyRoomResolve = {
-  //   teamTrophyRoom: function (MainService) {
-  //     return MainService.teamTrophyRoom()
-  //   }
-  // }
-
   vm.config = function () {
     ngDialog.open({
       template: 'main-config.html',
@@ -79,11 +73,4 @@ function mainController($scope, missionList, ngDialog) {
       },
     });
   };
-
-  vm.stats();
-
-
-  // ngDialog.open({ template: 'main.html', className: 'ngdialog-theme-default' });
-  // ngDialog.open({ template: 'main.html', className2: 'ngdialog-theme-default' });
-
 }

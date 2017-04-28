@@ -68,6 +68,51 @@
         "Flag": "https://www.golacogame.com.br/Content/flag/4.jpg"
       }
     },
-    "LeaguesHistory": []
+    "LeaguesHistory": [
+      {
+        "IdLeague": 1,
+        "Position": 6
+      },
+      {
+        "IdLeague": 1,
+        "Position": 3
+      },
+      {
+        "IdLeague": 1,
+        "Position": 1
+      },
+      {
+        "IdLeague": 1,
+        "Position": 4
+      },
+      {
+        "IdLeague": 1,
+        "Position": 3
+      },
+      {
+        "IdLeague": 1,
+        "Position": 3
+      },
+      {
+        "IdLeague": 1,
+        "Position": 2
+      },
+      {
+        "IdLeague": 2,
+        "Position": 1
+      },
+      {
+        "IdLeague": 2,
+        "Position": 8
+      },
+      {
+        "IdLeague": 3,
+        "Position": 3
+      },
+      {
+        "IdLeague": 4,
+        "Position": 2
+      }
+    ]
   }
 }
