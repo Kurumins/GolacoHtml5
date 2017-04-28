@@ -18,6 +18,20 @@
     font-size: 14px;
   }
 
+  .stats-badge {
+    float: left;
+    position: relative;
+
+    .badge-serie {
+      position: absolute;
+      right: 5px;
+      top: -10px;
+      background: azure;
+      width: 20px;
+      text-align: center;
+    }
+  }
+
   .stats-menu {
     // float: right;
     text-align: right;
