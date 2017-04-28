@@ -1,0 +1,73 @@
+{
+  "data": {
+    "Success": true,
+    "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/90x90/002278811.png",
+    "Statistics": {
+      "Team": {
+        "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/002278811.png",
+        "Statistics": {
+          "MatchCount": 34,
+          "Victory": 18,
+          "Draws": 1,
+          "Lost": 15,
+          "ScoredGoals": 61,
+          "SufferedGoals": 58,
+          "GoalBalance": 3
+        }
+      },
+      "Executioner": {
+        "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/002278814.png",
+        "Statistics": {
+          "MatchCount": 3,
+          "Victory": 3,
+          "Draws": 0,
+          "Lost": 0,
+          "ScoredGoals": 8,
+          "SufferedGoals": 2,
+          "GoalBalance": 6
+        },
+        "Name": "corinthians",
+        "Acronym": "COR"
+      },
+      "Customer": {
+        "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/000900757.png",
+        "Statistics": {
+          "MatchCount": 4,
+          "Victory": 0,
+          "Draws": 0,
+          "Lost": 4,
+          "ScoredGoals": 0,
+          "SufferedGoals": 12,
+          "GoalBalance": -12
+        },
+        "Name": "DENIS Silva",
+        "Acronym": "DFC"
+      }
+    },
+    "Overview": {
+      "LastLeague": null,
+      "LastCup": {
+        "Position": null,
+        "Phase": 1,
+        "Eliminated": true
+      },
+      "LastFriendlyLeague": null,
+      "LastTournment": {
+        "Position": null,
+        "Phase": 1,
+        "Eliminated": true
+      },
+      "LastRecruitment": null,
+      "DangerousPlayer": {
+        "Goals": 12,
+        "Name": "Custódio Alan",
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "ShirtNumber": 14,
+        "Position": "TeamPlayerPosition_Atacante",
+        "Ranking": 0,
+        "Flag": "https://www.golacogame.com.br/Content/flag/4.jpg"
+      }
+    },
+    "LeaguesHistory": []
+  }
+}

@@ -18,7 +18,7 @@ function routesConfig ($stateProvider) {
     })
 }
 
-function mainController(missionList, ngDialog) {
+function mainController($scope, missionList, ngDialog) {
   var vm = this;
 
   vm.missionList = missionList.data.data;
@@ -34,7 +34,6 @@ function mainController(missionList, ngDialog) {
       template: 'main-trophy.html',
       appendClassName: 'ngdialog-main-trophy',
       controller: 'MainTrophyController as $ctrl',
-      // controllerAs="$ctrl",
       resolve: {
         teamTrophyRoom: function (MainService) {
           return MainService.teamTrophyRoom()
@@ -43,9 +42,25 @@ function mainController(missionList, ngDialog) {
             })
         }
       },
-      // data="{{$appCtrl}}",
     });
-  }
+  };
+
+  vm.stats = function () {
+    ngDialog.open({
+      template: 'main-stats.html',
+      appendClassName: 'ngdialog-main-stats',
+      controller: 'MainStatsController as $ctrl',
+      scope: $scope,
+      resolve: {
+        teamStats: function (MainService) {
+          return MainService.teamStats()
+            .then(function (result) {
+              return result.data.data;
+            })
+        }
+      },
+    });
+  };
 
 
   // ngDialog.open({ template: 'main.html', className: 'ngdialog-theme-default' });

@@ -12,4 +12,8 @@ angular.module('app')
       return $http.get('/data/Team/TrophyRoom');
     };
 
+    vm.teamStats = function () {
+      return $http.get('/data/Team/Statistics');
+    };
+
   });

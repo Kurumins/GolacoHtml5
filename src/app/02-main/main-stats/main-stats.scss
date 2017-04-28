@@ -1,0 +1,59 @@
+.ngdialog.ngdialog-main-stats {
+
+  .ngdialog-content {
+    width: 750px;
+    height: 500px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .stats-menu {
+    // float: right;
+    text-align: right;
+    margin-bottom: 25px;
+  }
+
+  .overview-lasts {
+    display: flex;
+    margin: 30px;
+
+    > * {
+      flex: 1;
+    }
+
+    > div {
+      text-align: center;
+    }
+  }
+
+  .dangerous-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+
+    > * {
+      // flex: 1;
+    }
+
+    .ranking{
+      background: #333;
+      align-self: stretch;
+      color: #fff;
+      padding: 25px 15px;
+      text-align: center;
+    }
+  }
+
+}
