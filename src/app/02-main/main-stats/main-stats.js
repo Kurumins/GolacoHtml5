@@ -20,4 +20,4 @@ angular.module('app')
 
     vm.currentSlide = 1;
 
-  })
+  });

@@ -15,10 +15,10 @@ function routesConfig ($stateProvider) {
       templateUrl: 'main.html',
       controller: mainController,
       controllerAs: '$ctrl'
-    })
+    });
 }
 
-function mainController($scope, missionList, ngDialog) {
+function mainController ($scope, missionList, ngDialog) {
   var vm = this;
 
   vm.missionList = missionList.data.data;
@@ -34,7 +34,7 @@ function mainController($scope, missionList, ngDialog) {
           return MainService.teamSettings()
             .then(function (result) {
               return result.data.data;
-            })
+            });
         }
       },
     });
@@ -51,7 +51,7 @@ function mainController($scope, missionList, ngDialog) {
           return MainService.teamTrophyRoom()
             .then(function (result) {
               return result.data.data;
-            })
+            });
         }
       },
     });
@@ -68,7 +68,7 @@ function mainController($scope, missionList, ngDialog) {
           return MainService.teamStats()
             .then(function (result) {
               return result.data.data;
-            })
+            });
         }
       },
     });

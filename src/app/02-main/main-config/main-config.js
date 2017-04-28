@@ -6,4 +6,4 @@ angular.module('app')
 
     vm.settings = settings;
 
-  })
+  });

@@ -1,14 +1,12 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, user, teamPreview, AppService) {
+  .controller('AppController', function ($rootScope, user, teamPreview, $window) {
 
     var vm = this;
 
     vm.user = user.data.data;
-
-    // AppService.teamPreview();
     vm.teamPreview = teamPreview.data.data;
 
-    $rootScope.$windowUser = window.user;
+    $rootScope.$windowUser = $window.user;
 
   });

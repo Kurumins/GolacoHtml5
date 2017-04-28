@@ -2,4 +2,4 @@
 angular.module('app')
   .controller('MissionPopupController', function () {
 
-  })
+  });
