@@ -80,6 +80,8 @@ function mainController($scope, missionList, ngDialog) {
     });
   };
 
+  vm.stats();
+
 
   // ngDialog.open({ template: 'main.html', className: 'ngdialog-theme-default' });
   // ngDialog.open({ template: 'main.html', className2: 'ngdialog-theme-default' });
