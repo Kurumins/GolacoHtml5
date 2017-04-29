@@ -73,4 +73,16 @@ function mainController ($scope, missionList, ngDialog) {
       },
     });
   };
+
+  vm.dailyBonus = function () {
+    ngDialog.open({
+      template: 'daily-bonus.html',
+      appendClassName: 'ngdialog-daily-bonus',
+      controller: 'DailyBonusController as $ctrl',
+      scope: $scope
+    });
+  };
+
+  vm.dailyBonus();
+
 }
