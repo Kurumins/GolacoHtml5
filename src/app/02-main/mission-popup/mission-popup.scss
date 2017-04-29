@@ -1,0 +1,33 @@
+.ngdialog.ngdialog-mission-popup {
+  padding-left: 90px;
+
+  .ngdialog-content {
+    width: 560px;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
+  }
+
+  .mission_detail {
+    position: absolute;
+    left: -110px;
+    top: -110px;
+  }
+  .mission-description {
+    margin-left: 110px;
+  }
+
+  footer {
+    overflow: auto;
+  }
+
+  .ok-button {
+    float: right;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "data": {
+    "Success": true,
+    "Settings": [
+      {
+        "Id": 1,
+        "Name": "DailyReportLeague",
+        "Subscribe": 1
+      },
+      {
+        "Id": 2,
+        "Name": "DailyReportCup",
+        "Subscribe": 1
+      },
+      {
+        "Id": 3,
+        "Name": "DailyReportTournment",
+        "Subscribe": 1
+      },
+      {
+        "Id": 4,
+        "Name": "CompetitionGameAlert",
+        "Subscribe": 0
+      },
+      {
+        "Id": 5,
+        "Name": "CompetitionCupNextPhase",
+        "Subscribe": 0
+      },
+      {
+        "Id": 6,
+        "Name": "CompetitionCupEliminated",
+        "Subscribe": 0
+      },
+      {
+        "Id": 7,
+        "Name": "CompetitionLeagueOpen",
+        "Subscribe": 1
+      },
+      {
+        "Id": 8,
+        "Name": "CompetitionCupOpen",
+        "Subscribe": 1
+      },
+      {
+        "Id": 11,
+        "Name": "PlayerRetired",
+        "Subscribe": 0
+      },
+      {
+        "Id": 13,
+        "Name": "PlayerRetirementDeclaration",
+        "Subscribe": 0
+      },
+      {
+        "Id": 16,
+        "Name": "CompetitionTournamentOpen",
+        "Subscribe": 1
+      }
+    ],
+    "Price": 30,
+    "ChangeCountryPrice": 15,
+    "TeamIdCountry": 4
+  }
+}

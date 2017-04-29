@@ -6,6 +6,66 @@
     "UniformSerializedObject": "CgsBBXUxCjMBC3NoaXJ0DXNob3J0cwtzb2NrcwpTAQtpbmRleA90ZXh0dXJlC2NvbG9yF2RldGFp\nbENvbG9yE2hhc0RldGFpbAQECiMBCAwEAAQABAAEgObmzAQACg0EBASDmf+ZCg0EBQTmMwdnazIK\nBQoJBAYKDQQABAAEgrP/AAQABAAKDQQDBIHMszMKDQQBBIP+gAAFdTIKBQoJBAkKDQQABAAEgcxm\nBOd/BAEKDQQFBIHMszMKDQQCBIP+5gAHZ2sxCgUKCQQCCg0EBAQABIDnmcwEAAQACg0EAgSBzLNm\nCg0EAQSBzZn/AQ==",
     "Warnings": [
       {
+        "Id": 532758894,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532741880,
+        "Message": "LabelPlayerBirthday;tSilvério Clemente;t27"
+      },
+      {
+        "Id": 532725001,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532693356,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532673600,
+        "Message": "LabelPlayerBirthday;tRaimundo Belmiro;t23"
+      },
+      {
+        "Id": 532755739,
+        "Message": "LabelFinance1"
+      },
+      {
+        "Id": 532755740,
+        "Message": "LabelFinance2;$600000.0000"
+      },
+      {
+        "Id": 532755741,
+        "Message": "LabelFinance3;$24669.38520"
+      },
+      {
+        "Id": 532755742,
+        "Message": "LabelFinance4"
+      },
+      {
+        "Id": 532655109,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532653482,
+        "Message": "LabelJuniorPlayerDeadlineDismissal;tHilton Dulio"
+      },
+      {
+        "Id": 532624659,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532606850,
+        "Message": "LabelPlayerBirthday;tMaicosuel Aleixo;t32"
+      },
+      {
+        "Id": 532589766,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532574606,
+        "Message": "LabelPlayerBirthday;tSimeço Deivison;t29"
+      },
+      {
         "Id": 532559561,
         "Message": "LabelLeaguePosition;p5"
       },
@@ -24,98 +84,6 @@
       {
         "Id": 532523835,
         "Message": "LabelTournamentLightPhaseFinished"
-      },
-      {
-        "Id": 532493082,
-        "Message": "LabelRankDecrease;p6"
-      },
-      {
-        "Id": 532490094,
-        "Message": "LabelRankTournamentLightDecrease;p2"
-      },
-      {
-        "Id": 532475436,
-        "Message": "LabelPlayerBirthday;tAdriano Cléber;t21"
-      },
-      {
-        "Id": 532456399,
-        "Message": "LabelRankIncrease;p3"
-      },
-      {
-        "Id": 532455448,
-        "Message": "LabelCompetitionTournamentLightNextPhase;d1492457341554.01"
-      },
-      {
-        "Id": 532455126,
-        "Message": "LabelRankTournamentLightDecrease;p2"
-      },
-      {
-        "Id": 532455127,
-        "Message": "LabelTournamentLightPhaseFinished"
-      },
-      {
-        "Id": 532454083,
-        "Message": "LabelCompetitionTournamentEliminated;d1492450140967.87"
-      },
-      {
-        "Id": 532453853,
-        "Message": "LabelTournamentPosition;p3"
-      },
-      {
-        "Id": 532453854,
-        "Message": "LabelTournamentPhaseFinished"
-      },
-      {
-        "Id": 532452049,
-        "Message": "LabelCupPhaseFinished"
-      },
-      {
-        "Id": 532437927,
-        "Message": "LabelPlayerBirthday;tAbel Abelardo;t27"
-      },
-      {
-        "Id": 532452654,
-        "Message": "LabelFinance1"
-      },
-      {
-        "Id": 532452655,
-        "Message": "LabelFinance2;$600000.0000"
-      },
-      {
-        "Id": 532452656,
-        "Message": "LabelFinance3;$24070.82630"
-      },
-      {
-        "Id": 532452657,
-        "Message": "LabelFinance4"
-      },
-      {
-        "Id": 532420636,
-        "Message": "LabelRankDecrease;p5"
-      },
-      {
-        "Id": 532417571,
-        "Message": "LabelRankTournamentLightIncrease;p1"
-      },
-      {
-        "Id": 532416706,
-        "Message": "LabelTournamentPosition;p3"
-      },
-      {
-        "Id": 532415959,
-        "Message": "LabelCupPhaseFinished"
-      },
-      {
-        "Id": 532403252,
-        "Message": "LabelPlayerBirthday;tAbel Levi;t21"
-      },
-      {
-        "Id": 532384872,
-        "Message": "LabelRankIncrease;p4"
-      },
-      {
-        "Id": 532383997,
-        "Message": "LabelRankTournamentLightDecrease;p2"
       }
     ],
     "HasUnreadMessages": 0,

@@ -1,0 +1,30 @@
+<div>
+  <img ng-src="{{ngDialogData.Mission.urls.image_detail}}" class="mission_detail">
+  <div class="mission-description">
+    <h3>{{ngDialogData.Mission.Name}}</h3>
+    <h2>{{ngDialogData.Mission.Message}}</h2>
+    <p>{{ngDialogData.Mission.Description}}</p>
+  </div>
+  <img ng-src="{{ngDialogData.Mission.urls.image_roadmap}}" class="mission_roadmap">
+
+  <h3 ng-if="ngDialogData.Mission.Money||ngDialogData.Mission.Credits">Recompensa</h3>
+
+  <hr>
+
+  <footer>
+
+    <button type="button" class="ok-button" ng-click="closeThisDialog(0)">OK</button>
+
+    <div ng-if="ngDialogData.Mission.Money">
+      <h5>Dinheiro Virtual</h5>
+      <h3>{{ngDialogData.Mission.Money | currency}}</h3>
+    </div>
+
+    <div ng-if="ngDialogData.Mission.Credits">
+      <h5>Créditos</h5>
+      <h3>{{ngDialogData.Mission.Credits}}</h3>
+    </div>
+
+  </footer>
+
+</div>

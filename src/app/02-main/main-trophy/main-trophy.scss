@@ -1,0 +1,26 @@
+.ngdialog.ngdialog-main-trophy {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 30px 50px;
+  }
+
+  .trophy {
+    // line-height: 150px;
+    padding: 20px 50px;
+    text-align: center;
+
+    > div {
+      background: white;
+      padding: 20px 0;
+    }
+  }
+
+  .slide-control {
+    text-align: center;
+  }
+
+  footer {
+  }
+
+}

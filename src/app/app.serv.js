@@ -43,4 +43,8 @@ angular.module('app')
     }*/);
   };
 
+  this.missionList = function () {
+    return $http.get('/data/Mission/List');
+  };
+
 });
