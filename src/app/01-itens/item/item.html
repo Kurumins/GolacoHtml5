@@ -1,3 +1,34 @@
 <div>
-  {{$ctrl.item.Name}}
+  <h4 class="item-name">{{$ctrl.item.Name}}</h4>
+  <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
+
+  <div class="item-effects">
+    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
+      <label>{{effect.Description | limitTo:3}}</label>
+      {{effect.Effect}}
+    </div>
+    <div class="item-effect">
+      <label>--</label>
+      --
+    </div>
+    <div class="item-effect">
+      <label><i class="icon icon-clock"></i></label>
+      {{$ctrl.item.Duration}}
+    </div>
+  </div>
+
+    <div ng-if="$ctrl.item.MoneyPrice" class="item-price">
+      <i class="icon icon-money"></i>
+      <p>{{$ctrl.item.MoneyPrice | currency}}</p>
+    </div>
+    <div ng-if="$ctrl.item.CreditPrice" class="item-price">
+      <i class="icon icon-credit-card"></i>
+      <div ng-if="$ctrl.item.SalePrice">
+        <p>De: {{$ctrl.item.CreditPrice}}</p>
+        <p>Por: {{$ctrl.item.SalePrice}}</p>
+      </div>
+      <div ng-if="!$ctrl.item.SalePrice">
+        <p>{{$ctrl.item.CreditPrice}}</p>
+      </div>
+    </div>
 </div>
