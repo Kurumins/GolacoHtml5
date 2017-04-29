@@ -83,6 +83,4 @@ function mainController ($scope, missionList, ngDialog) {
     });
   };
 
-  vm.dailyBonus();
-
 }
