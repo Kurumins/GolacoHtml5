@@ -1,0 +1,1247 @@
+{
+  "data": {
+    "Success": true,
+    "TeamPlayers": [
+      {
+        "Id": 36092807,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 1,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Ariovaldo Agnelo",
+        "Age": 26,
+        "RetirementAge": 0,
+        "ShirtNumber": 1,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 672146.2385,
+        "Moral": 74,
+        "Potential": 4,
+        "Position": "TeamPlayerPosition_Goleiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1493485257000,
+        "TrainingLimitDate": 1493571656953,
+        "HasTrainingPlan": true,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 10,
+            "Name": "TeamPlayerSkill_DefesaGol",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 11,
+            "Name": "TeamPlayerSkill_Reflexos",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill5": null
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092808,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 1,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Adriano Cléber",
+        "Age": 21,
+        "RetirementAge": 0,
+        "ShirtNumber": 2,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 837851.6541,
+        "Moral": 99,
+        "Potential": 5,
+        "Position": "TeamPlayerPosition_Goleiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 10,
+            "Name": "TeamPlayerSkill_DefesaGol",
+            "Value": 10,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 11,
+            "Name": "TeamPlayerSkill_Reflexos",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": null
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092809,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 2,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Raimundo Belmiro",
+        "Age": 23,
+        "RetirementAge": 0,
+        "ShirtNumber": 3,
+        "Salary": 2,
+        "SalaryOptions": [
+          1253.48176,
+          1566.8522,
+          1880.22264
+        ],
+        "TransferFee": 524144.4120,
+        "Moral": 74,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Zagueiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 8,
+            "Name": "TeamPlayerSkill_Marcacao",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092810,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 2,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Florestano Cássio",
+        "Age": 29,
+        "RetirementAge": 0,
+        "ShirtNumber": 4,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 371665.3000,
+        "Moral": 61,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Zagueiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 8,
+            "Name": "TeamPlayerSkill_Marcacao",
+            "Value": 6,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 6,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 6,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092811,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 2,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Filiberto Benito",
+        "Age": 32,
+        "RetirementAge": 0,
+        "ShirtNumber": 5,
+        "Salary": 2,
+        "SalaryOptions": [
+          1241.77072,
+          1552.2134,
+          1862.65608
+        ],
+        "TransferFee": 360207.6610,
+        "Moral": 74,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Zagueiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 8,
+            "Name": "TeamPlayerSkill_Marcacao",
+            "Value": 8,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 6,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 6,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092812,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 2,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Abel Abelardo",
+        "Age": 27,
+        "RetirementAge": 0,
+        "ShirtNumber": 6,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 497449.1363,
+        "Moral": 99,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Zagueiro",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 8,
+            "Name": "TeamPlayerSkill_Marcacao",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092813,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 3,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Silvério Clemente",
+        "Age": 27,
+        "RetirementAge": 0,
+        "ShirtNumber": 7,
+        "Salary": 2,
+        "SalaryOptions": [
+          1251.58792,
+          1564.4849,
+          1877.38188
+        ],
+        "TransferFee": 1031906.3370,
+        "Moral": 72,
+        "Potential": 5,
+        "Position": "TeamPlayerPosition_Lateral",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 1,
+            "Name": "TeamPlayerSkill_Cruzamento",
+            "Value": 10,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092814,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 3,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Maicosuel Aleixo",
+        "Age": 32,
+        "RetirementAge": 0,
+        "ShirtNumber": 8,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 509878.0533,
+        "Moral": 74,
+        "Potential": 5,
+        "Position": "TeamPlayerPosition_Lateral",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 1,
+            "Name": "TeamPlayerSkill_Cruzamento",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092815,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 4,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Alberto Vitório",
+        "Age": 22,
+        "RetirementAge": 0,
+        "ShirtNumber": 9,
+        "Salary": 2,
+        "SalaryOptions": [
+          1230.05960,
+          1537.5745,
+          1845.08940
+        ],
+        "TransferFee": 493323.7076,
+        "Moral": 74,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_MeioCampo",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 8,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092816,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 4,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Rafael Danilo",
+        "Age": 26,
+        "RetirementAge": 0,
+        "ShirtNumber": 10,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 511944.5722,
+        "Moral": 74,
+        "Potential": 1,
+        "Position": "TeamPlayerPosition_MeioCampo",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 6,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 6,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 6,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092817,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 4,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Simeço Deivison",
+        "Age": 29,
+        "RetirementAge": 0,
+        "ShirtNumber": 11,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 277130.5722,
+        "Moral": 74,
+        "Potential": 2,
+        "Position": "TeamPlayerPosition_MeioCampo",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 6,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092818,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 4,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Godofredo Walter",
+        "Age": 26,
+        "RetirementAge": 0,
+        "ShirtNumber": 12,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 614522.3145,
+        "Moral": 99,
+        "Potential": 4,
+        "Position": "TeamPlayerPosition_MeioCampo",
+        "ShirtItem": {
+          "Name": "Label_Shirt_General_1_Credits",
+          "Picture": "https://www.golacogame.com.br/Content/item/286m.png",
+          "Description": "Label_Shirt_General_1_Credits"
+        },
+        "ShortItem": null,
+        "CleatsItem": {
+          "Name": "Label_Cleats_General_1",
+          "Picture": "https://www.golacogame.com.br/Content/item/214m.png",
+          "Description": "Label_ChuteiraGenerica_Nvl_1_Desc"
+        },
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 7,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092819,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 4,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Baruque Natanael",
+        "Age": 26,
+        "RetirementAge": 0,
+        "ShirtNumber": 13,
+        "Salary": 2,
+        "SalaryOptions": [
+          1256.82024,
+          1571.0253,
+          1885.23036
+        ],
+        "TransferFee": 397777.2047,
+        "Moral": 95,
+        "Potential": 2,
+        "Position": "TeamPlayerPosition_MeioCampo",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092820,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 5,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Custódio Alan",
+        "Age": 24,
+        "RetirementAge": 0,
+        "ShirtNumber": 14,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 720227.3562,
+        "Moral": 74,
+        "Potential": 4,
+        "Position": "TeamPlayerPosition_Atacante",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092821,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 5,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Calisto Jô",
+        "Age": 26,
+        "RetirementAge": 0,
+        "ShirtNumber": 15,
+        "Salary": 2,
+        "SalaryOptions": [
+          1235.29192,
+          1544.1149,
+          1852.93788
+        ],
+        "TransferFee": 528574.9920,
+        "Moral": 74,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Atacante",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 9,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36092822,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 5,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Abel Levi",
+        "Age": 21,
+        "RetirementAge": 0,
+        "ShirtNumber": 16,
+        "Salary": 2,
+        "SalaryOptions": [
+          1226.64960,
+          1533.3120,
+          1839.97440
+        ],
+        "TransferFee": 534389.8560,
+        "Moral": 99,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Atacante",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1492744413000,
+        "TrainingLimitDate": 1492830812850,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 10,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 7,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 9,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 8,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 7,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      }
+    ],
+    "Items": [
+      {
+        "Id": 210,
+        "Picture": "https://www.golacogame.com.br/Content/item/210.png",
+        "Cost": 3,
+        "Name": "Label_BasicMoraleBoost",
+        "Description": "Label_BasicMoraleBoostDesc",
+        "Effect": 10
+      },
+      {
+        "Id": 211,
+        "Picture": "https://www.golacogame.com.br/Content/item/211.png",
+        "Cost": 5,
+        "Name": "Label_MediumMoraleBoost",
+        "Description": "Label_MediumMoraleBoostDesc",
+        "Effect": 15
+      },
+      {
+        "Id": 212,
+        "Picture": "https://www.golacogame.com.br/Content/item/212.png",
+        "Cost": 7,
+        "Name": "Label_AdvancedMoraleBoost",
+        "Description": "Label_AdvancedMoraleBoostDesc",
+        "Effect": 20
+      }
+    ]
+  }
+}
