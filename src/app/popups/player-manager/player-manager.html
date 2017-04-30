@@ -3,6 +3,7 @@
 <h3>{{$ctrl.currentPlayer.Name}}</h3>
 
 <div class="left-content">
+
   <div class="player-picture">
     <img ng-src="{{$ctrl.currentPlayer.Picture}}">
     <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.currentPlayer.Flag}}.jpg" class="player-flag">
@@ -10,25 +11,36 @@
     <button ng-click="$ctrl.prevPlayer()" class="prev-player" >«</button>
     <button ng-click="$ctrl.nextPlayer()" class="next-player" >»</button>
   </div>
+
+  <div class="manager-itens">
+    <h6>Equipe os itens abaixo</h6>
+
+    <button class="icon-t-shirt"></button>
+    <button class="icon-shorts"></button>
+    <button class="icon-shoes-snickers-streamline"></button>
+
+  </div>
+
+  <div class="manager-menu">
+    <label>
+      <input type="radio" ng-model="current" value="player-manager-general" ng-checked="true">
+      <span>Geral</span>
+    </label>
+    <label>
+      <input type="radio" ng-model="current" value="player-manager-stats">
+      <span>Estatítsticas</span>
+    </label>
+    <label title="Transações">
+      <input type="radio" ng-model="current" value="player-manager-transactions">
+      <span>Transações</span>
+    </label>
+    <label title="Vender Jogador">
+      <span>Vender Jogador</span>
+    </label>
+  </div>
+
 </div>
 
-<!-- {{$ctrl.currentPlayer | json}} -->
+<div ng-include="(current||'player-manager-general')+'.html'" class="manager-content" ></div>
 
 <div style="clear: both;"></div>
-
-<div class="stats-menu">
-  <label>
-    <input type="radio" ng-model="current" value="main-stats-general.html" ng-checked="true">
-    Geral
-  </label>
-  <label>
-    <input type="radio" ng-model="current" value="main-stats-stats.html">
-    Estatítsticas
-  </label>
-  <label title="Histórico de Ligas">
-    <input type="radio" ng-model="current" value="main-stats-leagues-history.html">
-    Histórico
-  </label>
-</div>
-
-<ng-include src="current||'main-stats-general.html'" ></ng-include>

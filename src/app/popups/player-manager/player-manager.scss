@@ -2,7 +2,7 @@
 
   .ngdialog-content {
     width: 750px;
-    height: 500px;
+    // height: 500px;
   }
 
   h3,
@@ -14,12 +14,19 @@
   }
 
   .left-content {
-    width: 250px;
+    width: 150px;
+    margin-right: 20px;
+    float: left;
+    text-align: center;
   }
 
   .player-picture {
     position: relative;
     display: inline-block;
+
+    img {
+      vertical-align: middle;
+    }
 
     .prev-player,
     .next-player {
@@ -40,6 +47,10 @@
       position: absolute;
       right: 0;
       top: 0;
+      width: 40px;
+      text-align: center;
+      background-color: white;
+      border-radius: 0 0 0 5px;
     }
 
     .player-flag {
@@ -49,6 +60,42 @@
 
   }
 
+  .manager-itens {
+    margin: 10px 0 30px;
 
+    button {
+      width: 40px;
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+
+  .manager-menu {
+    label {
+      display: block;
+      margin-bottom: 5px;
+      input {
+        display: none;
+
+        &:checked + span {
+          background-color: #ccc;
+        }
+      }
+
+      span {
+        display: block;
+        background-color: white;
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+    }
+
+
+  }
+
+  .manager-content {
+    margin-left: 170px;
+  }
 
 }
