@@ -1,15 +1,12 @@
 <div class="players">
   <div class="players-header">
     <div class="players-menu">
-      16/40
-      <button ng-click="$ctrl.config()">Config</button>
+      {{$appCtrl.user.MaxProPlayers}}/40
+      <button class="icon-user-add" ng-click="$ctrl.config()"></button>
       |
-      <button ng-click="$ctrl.teamTrophyRoom()">Trofs</button>
-      <button ng-click="$ctrl.stats()">Estats</button>
-      <button ng-click="$ctrl.dailyBonus()">Bonus</button>
-      <button
-        ng-dialog="bug-report.html"
-        ng-dialog-append-class="ngdialog-bug-report">Bugs</button>
+      <button class="icon-user" ng-click="$ctrl.teamTrophyRoom()"></button>
+      <button class="icon-users-1" ng-click="$ctrl.stats()"></button>
+      <button class="icon-up-thin" ng-click="$ctrl.stats()"></button>
     </div>
     <h2>Jogadores</h2>
   </div>
@@ -18,7 +15,7 @@
     <table width="100%">
       <tr>
         <th colspan="3"></th>
-        <th title="número">n</th>
+        <th class="icon-t-shirt" title="número"></th>
         <th class="icon-male" title="idade"></th>
         <th title="potencia/moral"><i class="icon-star"></i>/<i class="icon-arrow-up"></i></th>
         <th class="icon icon-plus" title="Lesões"></th>
