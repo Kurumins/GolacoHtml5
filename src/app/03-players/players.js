@@ -42,4 +42,23 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
     });
   };
 
+  vm.moraleRecovery = function () {
+    ngDialog.open({
+      template: 'morale-recovery.html',
+      appendClassName: 'ngdialog-morale-recovery',
+      controller: 'MoraleRecoveryController as $moraleCtrl',
+      scope: $scope,
+      // resolve: {
+      //   teamSpotPrices: function (TeamPlayerService) {
+      //     return TeamPlayerService.teamSpotPrices()
+      //       .then(function (result) {
+      //         return result.data.data;
+      //       });
+      //   }
+      // },
+    });
+  };
+
+  vm.moraleRecovery();
+
 }
