@@ -4,8 +4,8 @@
       {{$appCtrl.user.MaxProPlayers}}/40
       <button class="icon-user-add" ng-click="$ctrl.extraPlayer()"></button>
       |
-      <button class="icon-user" ng-click="$ctrl.teamTrophyRoom()"></button>
-      <button class="icon-users-1" ng-click="$ctrl.stats()"></button>
+      <input type="radio" ng-model="$ctrl.teamPlayerType" value="1" ng-checked="true" class="icon-user">
+      <input type="radio" ng-model="$ctrl.teamPlayerType" value="2" class="icon-users-1">
       <button class="icon-up-thin" ng-click="$ctrl.stats()"></button>
     </div>
     <h2>Jogadores</h2>
@@ -31,7 +31,7 @@
         <th title="pas">pas</th>
         <th title="dri">dri</th>
       </tr>
-      <tr ng-repeat="player in $ctrl.teamPlayers.TeamPlayers" class="player">
+      <tr ng-repeat="player in $ctrl.teamPlayers.TeamPlayers | filter:{TeamPlayerType: $ctrl.teamPlayerType}" class="player">
         <td class="player-country -s{{player.IdPosition}}"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{player.Flag}}.jpg"></td>
         <td><img ng-src="{{player.Picture}}" height="20"></td>
         <td align="left">{{player.Name}}</td>
@@ -45,7 +45,7 @@
             low: player.Moral <= 33,
             medium: player.Moral > 33 && player.Moral <= 66,
             hight: player.Moral > 66
-          }" style="width: {{player.Moral}}%"></span></div>
+          }" ng-style="{width: player.Moral+'%'}"></span></div>
         </td>
         <td class="icon icon-plus-square player-injury" ng-class="{'has-injury': player.HasInjury}"></td>
         <td class="player-item icon-t-shirt" ng-class="{equiped: player.ShirtItem}" title="{{player.ShirtItem.Name}}"><!-- <img ng-src="{{player.ShirtItem.Picture}}" height="15"> --></td>
@@ -69,7 +69,7 @@
           <button class="icon icon-traffic-cone" ng-class="{blink: !player.HasTrainingPlan}"></button>
         </td>
         <td width="1">
-          <button class="icon icon-widget"></button>
+          <button class="icon icon-widget" ng-disabled="player.TeamPlayerType==2"></button>
         </td>
       </tr>
     </table>
