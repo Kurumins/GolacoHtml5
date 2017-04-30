@@ -55,6 +55,37 @@
       }
     }
 
+    .player-potential {
+      font-size: 6px;
+    }
+
+    .player-moral {
+      border: 1px solid;
+      border-radius: 3px;
+
+      span {
+        display: block;
+        height: 3px;
+
+        // if (_moralValue <= 33
+        //   cTransf.color = 0xff0000;
+        // else if (_moralValue >= 34 && _moralValue <= 66)
+        //   cTransf.color = 0xff9900;
+        // else if (_moralValue > 66)
+        //   cTransf.color = 0x009900;
+
+        &.low {
+          background-color: #ff0000;
+        }
+        &.medium {
+          background-color: #ff9900;
+        }
+        &.hight {
+          background-color: #009900;
+        }
+      }
+    }
+
     .player-injury:not(.has-injury) {
       opacity: 0.25;
     }
