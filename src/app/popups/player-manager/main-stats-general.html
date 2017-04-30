@@ -1,0 +1,74 @@
+<div class="overview-lasts">
+
+  <h5>Últimas colocações em competição</h5>
+
+  <div>
+    <i class="icon-trophy"></i>
+    <h5>Liga Golaço</h5>
+    <ng-switch on="!!$ctrl.teamStats.Overview.LastLeague">
+      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastLeague.Phase}}</span>
+      <span ng-switch-when="false">--</span>
+    </ng-switch>
+  </div>
+
+  <div>
+    <i class="icon-trophy"></i>
+    <h5>Torneio Golaço</h5>
+    <ng-switch on="!!$ctrl.teamStats.Overview.LastTournment">
+      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastTournment.Phase}}</span>
+      <span ng-switch-when="false">--</span>
+    </ng-switch>
+  </div>
+
+  <div>
+    <i class="icon-trophy"></i>
+    <h5>Copa Golaço</h5>
+    <ng-switch on="!!$ctrl.teamStats.Overview.LastCup">
+      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastCup.Phase}}</span>
+      <span ng-switch-when="false">--</span>
+    </ng-switch>
+  </div>
+
+  <div>
+    <i class="icon-trophy"></i>
+    <h5>Liga de Amigos</h5>
+    <ng-switch on="!!$ctrl.teamStats.Overview.LastFriendlyLeague">
+      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastFriendlyLeague.Phase}}</span>
+      <span ng-switch-when="false">--</span>
+    </ng-switch>
+  </div>
+
+</div>
+
+<div class="dangerous-player">
+
+  <h5>Jogador <br>perigoso</h5>
+
+  <img ng-src="{{$ctrl.teamStats.Overview.DangerousPlayer.Picture}}" height="80px">
+
+  <div>
+    <p>{{$ctrl.teamStats.Overview.DangerousPlayer.Name}}</p>
+    <p>
+      <span>{{$ctrl.teamStats.Overview.DangerousPlayer.ShirtNumber}}</span>
+      {{$ctrl.teamStats.Overview.DangerousPlayer.Position}}
+    </p>
+    <p>
+      <span>{{$ctrl.teamStats.Overview.DangerousPlayer.Goals}}</span>
+      Gols
+    </p>
+
+  </div>
+
+  <div class="ranking">
+    <h6>Ranking Geral</h6>
+    <h3>Em Breve</h3>
+  </div>
+
+  <div>
+    <ng-switch on="!!$ctrl.teamStats.Overview.LastRecruitment">
+      <span ng-switch-when="true">Negociações</span>
+      <p ng-switch-when="false">Seu Time nunca fez <br>negociações</p>
+    </ng-switch>
+  </div>
+
+</div>

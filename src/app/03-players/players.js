@@ -59,6 +59,26 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
     });
   };
 
-  vm.moraleRecovery();
+  vm.playerManager = function (playerId) {
+    ngDialog.open({
+      template: 'player-manager.html',
+      appendClassName: 'ngdialog-player-manager',
+      controller: 'PlayerManagerController as $ctrl',
+      scope: $scope,
+      resolve: {
+        teamPlayerManage: function (TeamPlayerService) {
+          return TeamPlayerService.teamPlayerManage()
+            .then(function (result) {
+              return result.data.data;
+            });
+        },
+        currentPlayer: function () {
+          return playerId;
+        }
+      },
+    });
+  };
+
+  vm.playerManager(36092807);
 
 }

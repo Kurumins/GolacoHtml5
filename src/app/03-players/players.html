@@ -69,7 +69,7 @@
           <button class="icon icon-traffic-cone" ng-class="{blink: !player.HasTrainingPlan}"></button>
         </td>
         <td width="1">
-          <button class="icon icon-widget" ng-disabled="player.TeamPlayerType==2"></button>
+          <button class="icon icon-widget" ng-click="$ctrl.playerManager(player.Id)" ng-disabled="player.TeamPlayerType==2"></button>
         </td>
       </tr>
     </table>

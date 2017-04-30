@@ -12,4 +12,8 @@ angular.module('app')
       return $http.get('/data/Team/GetProPlayerSpotPrices');
     };
 
+    vm.teamPlayerManage = function () {
+      return $http.get('/data/TeamPlayer/Manage');
+    };
+
   });
