@@ -13,6 +13,22 @@
 
   .players-menu {
     float: right;
+
+    button,
+    input[type="radio"] {
+      appearance: none;
+      border: 0;
+      background-color: #008dfb;
+      color: white;
+      width: 30px;
+      // line-height: 25px;
+      padding: 7px 5px 5px;
+      text-align: center;
+      margin: 0;
+    }
+    input[type="radio"]:checked {
+      background-color: #ffb700;
+    }
   }
 
   .players-table {

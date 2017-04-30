@@ -1215,6 +1215,74 @@
         },
         "InAuction": false,
         "TeamPlayerType": 1
+      },
+      {
+        "Id": 3221733,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/junior.png",
+        "IdPosition": 5,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Tobias Maximiliano",
+        "Age": 16,
+        "RetirementAge": 0,
+        "ShirtNumber": 0,
+        "Salary": 2,
+        "TransferFee": 100000,
+        "Moral": 70,
+        "Potential": 2,
+        "Position": "TeamPlayerPosition_Atacante",
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "HasTrainingPlan": false,
+        "TrainingLastDate": 0,
+        "TrainingLimitDate": 0,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 8,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 5,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 5,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 6,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 5,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 5,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 6,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 2
       }
     ],
     "Items": [

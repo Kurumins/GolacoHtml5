@@ -23,6 +23,8 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
 
   vm.teamPlayers = teamPlayerList.data.data;
 
+  vm.teamPlayerType = 1;
+
   vm.extraPlayer = function () {
     ngDialog.open({
       template: 'extra-player.html',
@@ -39,7 +41,5 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
       },
     });
   };
-
-  vm.extraPlayer();
 
 }
