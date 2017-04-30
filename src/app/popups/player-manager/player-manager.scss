@@ -1,0 +1,54 @@
+.ngdialog.ngdialog-player-manager {
+
+  .ngdialog-content {
+    width: 750px;
+    height: 500px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  .left-content {
+    width: 250px;
+  }
+
+  .player-picture {
+    position: relative;
+    display: inline-block;
+
+    .prev-player,
+    .next-player {
+      position: absolute;
+      top: 50%;
+      height: 25px;
+      margin-top: -12.5px;
+    }
+
+    .prev-player {
+      left: -10px;
+    }
+    .next-player {
+      right: -10px;
+    }
+
+    .player-shirt-number {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .player-flag {
+      position: absolute;
+      bottom: 0;
+    }
+
+  }
+
+
+
+}
