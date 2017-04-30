@@ -69,7 +69,7 @@
     "Promotion": false,
     "IdApplication": 1,
     "FirstPurchase": true,
-    "MaxProPlayers": 16,
+    "MaxProPlayers": 17,
     "IdCountry": "0",
     "IdTeamTrainCenter": 2443830
   }
