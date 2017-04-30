@@ -1,0 +1,83 @@
+.ngdialog.ngdialog-extra-player {
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+  }
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 30px 50px;
+    background-color: white;
+  }
+
+  .spot-prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .spot-price {
+    width: 11%;
+    margin: .5%;
+    position: relative;
+    overflow: hidden;
+
+    &.acquired {
+      .icon-user {
+        background-color: #0064b3;
+      }
+    }
+
+    &.available {
+      .icon-user {
+        background-color: #088705;
+      }
+    }
+
+    .icon-user {
+      color: white;
+      background-color: #bbb;
+      font-size: 70px;
+      margin-left: -10px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .add {
+      color: white;
+      position: absolute;
+      right: 3px;
+      top: 5px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+
+      p {
+        margin: 0;
+        line-height: .8;
+      }
+    }
+
+    .price {
+      i {
+        float: left;
+        margin-right: 5px;
+      }
+
+      p {
+        font-size: 12px;
+        margin: 0;
+        line-height: 1;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  footer {
+  }
+
+}

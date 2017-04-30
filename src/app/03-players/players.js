@@ -23,15 +23,15 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
 
   vm.teamPlayers = teamPlayerList.data.data;
 
-  vm.config = function () {
+  vm.extraPlayer = function () {
     ngDialog.open({
-      template: 'main-config.html',
-      appendClassName: 'ngdialog-main-config',
-      controller: 'MainConfigController as $ctrl',
+      template: 'extra-player.html',
+      appendClassName: 'ngdialog-extra-player',
+      controller: 'ExtraPlayerController as $ctrl',
       scope: $scope,
       resolve: {
-        settings: function (MainService) {
-          return MainService.teamSettings()
+        teamSpotPrices: function (TeamPlayerService) {
+          return TeamPlayerService.teamSpotPrices()
             .then(function (result) {
               return result.data.data;
             });
@@ -40,47 +40,6 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
     });
   };
 
-  vm.teamTrophyRoom = function () {
-    ngDialog.open({
-      template: 'main-trophy.html',
-      appendClassName: 'ngdialog-main-trophy',
-      controller: 'MainTrophyController as $ctrl',
-      scope: $scope,
-      resolve: {
-        teamTrophyRoom: function (MainService) {
-          return MainService.teamTrophyRoom()
-            .then(function (result) {
-              return result.data.data;
-            });
-        }
-      },
-    });
-  };
-
-  vm.stats = function () {
-    ngDialog.open({
-      template: 'main-stats.html',
-      appendClassName: 'ngdialog-main-stats',
-      controller: 'MainStatsController as $ctrl',
-      scope: $scope,
-      resolve: {
-        teamStats: function (MainService) {
-          return MainService.teamStats()
-            .then(function (result) {
-              return result.data.data;
-            });
-        }
-      },
-    });
-  };
-
-  vm.dailyBonus = function () {
-    ngDialog.open({
-      template: 'daily-bonus.html',
-      appendClassName: 'ngdialog-daily-bonus',
-      controller: 'DailyBonusController as $ctrl',
-      scope: $scope
-    });
-  };
+  vm.extraPlayer();
 
 }
