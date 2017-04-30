@@ -1,0 +1,71 @@
+<div class="players">
+  <div class="players-header">
+    <div class="players-menu">
+      16/40
+      <button ng-click="$ctrl.config()">Config</button>
+      |
+      <button ng-click="$ctrl.teamTrophyRoom()">Trofs</button>
+      <button ng-click="$ctrl.stats()">Estats</button>
+      <button ng-click="$ctrl.dailyBonus()">Bonus</button>
+      <button
+        ng-dialog="bug-report.html"
+        ng-dialog-append-class="ngdialog-bug-report">Bugs</button>
+    </div>
+    <h2>Jogadores</h2>
+  </div>
+
+  <div class="players-table">
+    <table width="100%">
+      <tr>
+        <th colspan="3"></th>
+        <th title="número">n</th>
+        <th title="idade">i</th>
+        <th title="potencia/moral">p/m</th>
+        <th class="icon icon-plus" title="Lesões"></th>
+        <th title="camisa">c</th>
+        <th title="short">s</th>
+        <th title="chuteira">c</th>
+        <th title="cartões">c</th>
+        <th title="hab 1" colspan="2">hab 1</th>
+        <th title="hab 2" colspan="2">hab 2</th>
+        <th title="tec">tec</th>
+        <th title="vel">vel</th>
+        <th title="res">res</th>
+        <th title="pas">pas</th>
+        <th title="dri">dri</th>
+      </tr>
+      <tr ng-repeat="player in $ctrl.teamPlayers.TeamPlayers" class="player">
+        <td class="player-country -s{{player.IdPosition}}"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{player.Flag}}.jpg"></td>
+        <td><img ng-src="{{player.Picture}}" height="20"></td>
+        <td align="left">{{player.Name}}</td>
+        <td>{{player.ShirtNumber}}</td>
+        <td>{{player.Age}}</td>
+        <td>{{player.Potential}} / {{player.Moral}}</td>
+        <td class="icon icon-plus-square player-injury" ng-class="{'has-injury': player.HasInjury}"></td>
+        <td class="player-item icon-t-shirt" ng-class="{equiped: player.ShirtItem}" title="{{player.ShirtItem.Name}}"><!-- <img ng-src="{{player.ShirtItem.Picture}}" height="15"> --></td>
+        <td class="player-item icon-shorts" ng-class="{equiped: player.ShortItem}" title="{{player.ShortItem.Name}}"><!-- <img ng-src="{{player.ShortItem.Picture}}" height="15"> --></td>
+        <td class="player-item icon-shoes-snickers-streamline" ng-class="{equiped: player.CleatsItem}" title="{{player.CleatsItem.Name}}"><!-- <img ng-src="{{player.CleatsItem.Picture}}" height="15"> --></td>
+        <td>{{!!player.Cards.length}}</td>
+        <td>
+          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name | limitTo: 3}}</span>
+        </td>
+        <td>{{player.Attributes.PrimarySkill1.Value}}</td>
+        <td>
+          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name | limitTo: 3}}</span>
+        </td>
+        <td>{{player.Attributes.PrimarySkill2.Value}}</td>
+        <td>{{player.Attributes.SecondSkill1.Value}}</td>
+        <td>{{player.Attributes.SecondSkill2.Value}}</td>
+        <td>{{player.Attributes.SecondSkill3.Value}}</td>
+        <td>{{player.Attributes.SecondSkill4.Value}}</td>
+        <td>{{player.Attributes.SecondSkill5.Value || '--'}}</td>
+        <td>
+          <button class="icon icon-traffic-cone" ng-class="{blink: !player.HasTrainingPlan}"></button>
+        </td>
+        <td>
+          <button class="icon icon-widget"></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
