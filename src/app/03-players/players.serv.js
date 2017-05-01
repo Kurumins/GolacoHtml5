@@ -20,4 +20,8 @@ angular.module('app')
       return $http.get('/data/TeamPlayer/HealthHistory');
     };
 
+    vm.statistics = function () {
+      return $http.get('/data/TeamPlayer/Statistics');
+    };
+
   });
