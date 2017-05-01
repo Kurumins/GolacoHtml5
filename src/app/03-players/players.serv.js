@@ -24,4 +24,8 @@ angular.module('app')
       return $http.get('/data/TeamPlayer/Statistics');
     };
 
+    vm.history = function () {
+      return $http.get('/data/TeamPlayer/History');
+    };
+
   });

@@ -97,6 +97,27 @@ angular.module('app')
       });
     };
 
-    // vm.statistics();
+    vm.history = function (playerId) {
+      ngDialog.open({
+        template: 'player-manager-history.html',
+        appendClassName: 'ngdialog-player-manager-history',
+        // controller: 'healthHistoryController as $ctrl',
+        scope: $scope,
+        resolve: {
+          history: function (TeamPlayerService) {
+            return TeamPlayerService.history(playerId)
+              .then(function (result) {
+                return result.data.data.History;
+              });
+          }
+        },
+        controller: function (history) {
+          this.history = history;
+        },
+        controllerAs: '$historyCtrl'
+      });
+    };
+
+    // vm.history();
 
   });
