@@ -25,6 +25,44 @@
 
 </div>
 
+<div class="half">
+  <dl>
+
+    <dt>Posição</dt>
+    <dd>{{$ctrl.currentPlayer.Position}}</dd>
+
+    <dt>Potencial</dt>
+    <dd>
+      <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.currentPlayer.Potential<star?'-o':''}}"></span>
+    </dd>
+
+    <dt>Idade</dt>
+    <dd>{{$ctrl.currentPlayer.Age}}</dd>
+
+    <dt>Aniversário</dt>
+    <dd>{{$ctrl.currentPlayer.Birthday}}</dd>
+
+    <dt>Aposentadoria</dt>
+    <dd>{{$ctrl.currentPlayer.RetirementAge || 'Ainda não definido'}}</dd>
+
+    <dt>Saúde</dt>
+    <dd>{{$ctrl.currentPlayer.hasSeriousInjury ? 'Player_Health_SeriouslyInjured' : $ctrl.currentPlayer.hasInjury ? 'Player_Health_Injured' : 'Player_Health_Healthy'}}</dd>
+
+    <dt>Passe</dt>
+    <dd>{{$ctrl.currentPlayer.TransferFee | currency}}</dd>
+
+    <dt>Salário</dt>
+    <dd class="player-salary-options">
+      <label class="-left">Baixo</label>
+      <label class="-center">Médio</label>
+      <label class="-right">Alto</label>
+      <input type="range" name="volume" min="1" max="3" ng-value="$ctrl.currentPlayer.Salary">
+      <label ng-repeat="salary in $ctrl.currentPlayer.SalaryOptions" class="-{{['left', 'center', 'right'][$index]}}">{{salary | currency}}</label>
+    </dd>
+
+  </dl>
+</div>
+
 <div style="clear: both;"></div>
 
 <pre>{{$ctrl.currentPlayer | json}}</pre>
