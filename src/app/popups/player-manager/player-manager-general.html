@@ -26,7 +26,7 @@
 </div>
 
 <div class="half">
-  <dl>
+  <dl class="player-datails">
 
     <dt>Posição</dt>
     <dd>{{$ctrl.currentPlayer.Position}}</dd>
@@ -60,9 +60,18 @@
       <label ng-repeat="salary in $ctrl.currentPlayer.SalaryOptions" class="-{{['left', 'center', 'right'][$index]}}">{{salary | currency}}</label>
     </dd>
 
+    <dt>Moral</dt>
+    <dd class="player-moral">
+      <span ng-class="{
+        low: $ctrl.currentPlayer.Moral <= 33,
+        medium: $ctrl.currentPlayer.Moral > 33 && $ctrl.currentPlayer.Moral <= 66,
+        hight: $ctrl.currentPlayer.Moral > 66
+      }" ng-style="{width: $ctrl.currentPlayer.Moral+'%'}"></span>
+    </dd>
+
   </dl>
 </div>
 
 <div style="clear: both;"></div>
 
-<pre>{{$ctrl.currentPlayer | json}}</pre>
+<!-- <pre>{{$ctrl.currentPlayer | json}}</pre> -->

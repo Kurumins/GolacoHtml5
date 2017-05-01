@@ -179,11 +179,16 @@
     }
   }
 
+  .player-datails {
+    dd {
+      font-size: 14px;
+    }
+  }
+
   .player-salary-options {
     display: flex;
     flex-wrap: wrap;
     // justify-content: space-between;
-    font-size: 13px;
     // position: relative;
 
     input[type="range"] {
@@ -191,6 +196,7 @@
     }
 
     label {
+      font-size: 12px;
       flex: 1;
       // width: 33.33%;
       // text-align: center;
@@ -203,6 +209,35 @@
       }
       &.-right {
         text-align: right;
+      }
+    }
+  }
+
+  .player-moral {
+    background-color: #666;
+    border-radius: 3px;
+
+    span {
+      display: block;
+      margin-top: 10px;
+      height: 5px;
+      transition: width .4s, background-color .4s;
+
+      // if (_moralValue <= 33
+      //   cTransf.color = 0xff0000;
+      // else if (_moralValue >= 34 && _moralValue <= 66)
+      //   cTransf.color = 0xff9900;
+      // else if (_moralValue > 66)
+      //   cTransf.color = 0x009900;
+
+      &.low {
+        background-color: #ff0000;
+      }
+      &.medium {
+        background-color: #ff9900;
+      }
+      &.hight {
+        background-color: #009900;
       }
     }
   }
