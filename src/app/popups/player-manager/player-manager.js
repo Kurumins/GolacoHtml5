@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function (teamPlayerManage, currentPlayer) {
+  .controller('PlayerManagerController', function ($scope, teamPlayerManage, currentPlayer, ngDialog) {
 
     var vm = this;
 
@@ -54,5 +54,28 @@ angular.module('app')
       return total;
 
     }
+
+    vm.healthHistory = function (playerId) {
+      ngDialog.open({
+        template: 'player-manager-health-history.html',
+        appendClassName: 'ngdialog-player-manager-health-history',
+        // controller: 'healthHistoryController as $ctrl',
+        scope: $scope,
+        resolve: {
+          healthHistory: function (TeamPlayerService) {
+            return TeamPlayerService.healthHistory(playerId)
+              .then(function (result) {
+                return result.data.data;
+              });
+          }
+        },
+        controller: function (healthHistory) {
+          this.healthHistory = healthHistory.HealthHistory;
+        },
+        controllerAs: '$historyCtrl'
+      });
+    };
+
+    vm.healthHistory();
 
   });

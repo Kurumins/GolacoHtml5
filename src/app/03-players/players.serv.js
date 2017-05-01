@@ -16,4 +16,8 @@ angular.module('app')
       return $http.get('/data/TeamPlayer/Manage');
     };
 
+    vm.healthHistory = function () {
+      return $http.get('/data/TeamPlayer/HealthHistory');
+    };
+
   });
