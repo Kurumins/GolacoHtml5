@@ -118,6 +118,25 @@ angular.module('app')
       });
     };
 
-    // vm.history();
+    vm.sellPlayer = function () {
+      ngDialog.openConfirm({
+        template: 'player-manager-sell-player.html',
+        resolve: {
+          currentValue: function (TeamPlayerService) {
+            var currentPlayer = vm.currentPlayer;
+            return TeamPlayerService.takeCurrentValue(currentPlayer.playerId)
+              .then(function (result) {
+                return currentPlayer.CurrentValue = result.data.data.CurrentValue;
+              });
+          }
+        },
+        scope: $scope
+      })
+        .then(function () {
+        }, function () {
+        });
+    };
+
+    // vm.sellPlayer();
 
   });

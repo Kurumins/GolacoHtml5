@@ -28,4 +28,8 @@ angular.module('app')
       return $http.get('/data/TeamPlayer/History');
     };
 
+    vm.takeCurrentValue = function () {
+      return $http.get('/data/TeamPlayer/TakeCurrentValue');
+    };
+
   });
