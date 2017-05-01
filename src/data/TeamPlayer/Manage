@@ -68,7 +68,20 @@
           "SecondSkill5": null
         },
         "HasTrainingPlan": false,
-        "Cards": [],
+        "Cards": [
+          {
+            "competitionName": "asdfasdf",
+            "competitionType": 1,
+            "cardType": 1,
+            "expirationDate": 321651
+          },
+          {
+            "competitionName": "asdfasdf asdfasdf",
+            "competitionType": 2,
+            "cardType": 2,
+            "expirationDate": 321651
+          }
+        ],
         "TeamPlayerType": 1
       },
       {

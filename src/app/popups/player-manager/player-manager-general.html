@@ -13,6 +13,16 @@
     </div>
   </div>
 
+  <h4>Cartõers por competição</h4>
+
+  <div class="player-cards">
+    <div ng-repeat="card in $ctrl.currentPlayer.Cards" class="player-card">
+      <p class="icon-trophy"></p>
+      <p class="icon-card -{{card.cardType==1?'yellow':'red'}}"></p>
+    </div>
+    <h5 ng-if="!$ctrl.currentPlayer.Cards.length">sem cartões</h5>
+  </div>
+
 </div>
 
 <div style="clear: both;"></div>

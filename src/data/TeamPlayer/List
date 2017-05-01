@@ -25,7 +25,20 @@
         "ShirtItem": null,
         "ShortItem": null,
         "CleatsItem": null,
-        "Cards": [],
+        "Cards": [
+          {
+            "competitionName": "asdfasdf",
+            "competitionType": 1,
+            "cardType": 1,
+            "expirationDate": 321651
+          },
+          {
+            "competitionName": "asdfasdf asdfasdf",
+            "competitionType": 2,
+            "cardType": 2,
+            "expirationDate": 321651
+          }
+        ],
         "HasInjury": false,
         "HasSeriousInjury": false,
         "TrainingLastDate": 1493485257000,
@@ -243,7 +256,7 @@
         "ShirtItem": null,
         "ShortItem": null,
         "CleatsItem": null,
-        "Cards": [{}],
+        "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
         "TrainingLastDate": 1492744413000,
