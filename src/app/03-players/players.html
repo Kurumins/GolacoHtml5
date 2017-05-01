@@ -53,11 +53,11 @@
         <td class="player-item icon-shoes-snickers-streamline" ng-class="{equiped: player.CleatsItem}" title="{{player.CleatsItem.Name}}"><!-- <img ng-src="{{player.CleatsItem.Picture}}" height="15"> --></td>
         <td class="player-item icon-card" ng-class="{equiped: player.Cards.length}"></td>
         <td>
-          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name | limitTo: 3}}</span>
+          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span>
         </td>
         <td>{{player.Attributes.PrimarySkill1.Value}}</td>
         <td>
-          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name | limitTo: 3}}</span>
+          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span>
         </td>
         <td>{{player.Attributes.PrimarySkill2.Value}}</td>
         <td>{{player.Attributes.SecondSkill1.Value}}</td>

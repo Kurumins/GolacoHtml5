@@ -835,7 +835,22 @@
             }
           ]
         },
-        "ShortItem": null,
+        "ShortItem": {
+          "Id": 150,
+          "Name": "Label_Short_General_1",
+          "Picture": "https://www.golacogame.com.br/Content/item/250m.png",
+          "Duration": 10,
+          "Effects": [
+            {
+              "IdTeamPlayerSkill": 2,
+              "Effect": 2
+            },
+            {
+              "IdTeamPlayerSkill": 3,
+              "Effect": 2
+            }
+          ]
+        },
         "CleatsItem": {
           "Id": 114,
           "Name": "Label_Cleats_General_1",

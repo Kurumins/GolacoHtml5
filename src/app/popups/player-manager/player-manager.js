@@ -9,21 +9,50 @@ angular.module('app')
     });
 
     // vm.teamPlayerManage = teamPlayerManage;
-
     for (var i = 0; i < players.length; i++) {
+
       var player = players[i];
+
       if (player.Id == currentPlayer) {
-        vm.currentPlayer = player;
+
+        updateCurrentPlayer(player);
+
         break;
+
       }
     }
 
+    function updateCurrentPlayer(player) {
+
+      player.effects = []
+        .concat(player.CleatsItem && player.CleatsItem.Effects || [])
+        .concat(player.ShirtItem && player.ShirtItem.Effects || [])
+        .concat(player.ShirtItem && player.ShirtItem.Effects || []);
+
+      vm.currentPlayer = player;
+
+    }
+
     vm.nextPlayer = function () {
-      vm.currentPlayer = players[ (players.indexOf(vm.currentPlayer)+1) % players.length ];
+      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer)+1) % players.length ]);
     };
 
     vm.prevPlayer = function () {
-      vm.currentPlayer = players[ (players.indexOf(vm.currentPlayer)-1 + players.length) % players.length ];
+      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer)-1 + players.length) % players.length ]);
     };
+
+    vm.getEffectModifier = function (skill) {
+
+      var total = 0;
+
+      for (var i = 0; i < vm.currentPlayer.effects.length; i++) {
+        if ( vm.currentPlayer.effects[i].IdTeamPlayerSkill === skill ) {
+          total += (vm.currentPlayer.effects[i].Effect);
+        }
+      }
+
+      return total;
+
+    }
 
   });

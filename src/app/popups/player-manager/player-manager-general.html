@@ -1,1 +1,20 @@
+<div class="half">
+  <h4>Atributos</h4>
+  <div class="player-attributes">
+    <div ng-repeat="attribute in $ctrl.currentPlayer.Attributes" class="player-attribute">
+      <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
+      <hr>
+      <div class="att-bar">
+        <div class="att-value" style="height: {{attribute.Value}}%"></div>
+        <div class="att-modifier" style="height: {{$ctrl.getEffectModifier(attribute.Id)}}%"></div>
+      </div>
+      <hr>
+      {{attribute.Value}}
+    </div>
+  </div>
+
+</div>
+
+<div style="clear: both;"></div>
+
 <pre>{{$ctrl.currentPlayer | json}}</pre>
