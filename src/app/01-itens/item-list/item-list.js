@@ -5,12 +5,13 @@ angular.module('app')
     bindings: {
       itens: '=data',
       rows: '=',
+      cols: '=',
       arrow: '='
     },
     controller: itemListController
   });
 
-function itemListController () {
+function itemListController ($scope) {
 
   var vm = this;
 
@@ -18,7 +19,7 @@ function itemListController () {
     method: {},
     event: {
       afterChange: function (event, slick, currentSlide/*, nextSlide*/) {
-        vm.currentSlide = currentSlide / 3 + 1;
+        vm.currentSlide = currentSlide / (vm.cols || 3) + 1;
       },
       // init: function (event, slick) {
       // }
@@ -26,5 +27,10 @@ function itemListController () {
   };
 
   vm.currentSlide = 1;
+
+  $scope.$watch('itens', function(/*newValue, oldValue*/) {
+    // debugger;
+    vm.totalSlides = parseInt((vm.itens.length+(vm.rows*(vm.cols||3))-1)/(vm.rows*(vm.cols||3)));
+  });
 
 }

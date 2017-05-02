@@ -4,7 +4,7 @@
 
   <div class="item-effects">
     <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
-      <label>{{effect.Description | limitTo:3}}</label>
+      <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label>
       {{effect.Effect}}
     </div>
     <div class="item-effect">

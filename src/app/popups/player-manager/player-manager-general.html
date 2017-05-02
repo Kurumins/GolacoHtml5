@@ -1,0 +1,77 @@
+<div class="half">
+  <h4>Atributos</h4>
+  <div class="player-attributes">
+    <div ng-repeat="attribute in $ctrl.currentPlayer.Attributes" class="player-attribute">
+      <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
+      <hr>
+      <div class="att-bar">
+        <div class="att-value" style="height: {{attribute.Value}}%"></div>
+        <div class="att-modifier" style="height: {{$ctrl.getEffectModifier(attribute.Id)}}%"></div>
+      </div>
+      <hr>
+      {{attribute.Value}}
+    </div>
+  </div>
+
+  <h4>Cartõers por competição</h4>
+
+  <div class="player-cards">
+    <div ng-repeat="card in $ctrl.currentPlayer.Cards" class="player-card">
+      <p class="icon-trophy"></p>
+      <p class="icon-card -{{card.cardType==1?'yellow':'red'}}"></p>
+    </div>
+    <h5 ng-if="!$ctrl.currentPlayer.Cards.length">sem cartões</h5>
+  </div>
+
+</div>
+
+<div class="half">
+  <dl class="player-datails">
+
+    <dt>Posição</dt>
+    <dd>{{$ctrl.currentPlayer.Position}}</dd>
+
+    <dt>Potencial</dt>
+    <dd>
+      <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.currentPlayer.Potential<star?'-o':''}}"></span>
+    </dd>
+
+    <dt>Idade</dt>
+    <dd>{{$ctrl.currentPlayer.Age}}</dd>
+
+    <dt>Aniversário</dt>
+    <dd>{{$ctrl.currentPlayer.Birthday}}</dd>
+
+    <dt>Aposentadoria</dt>
+    <dd>{{$ctrl.currentPlayer.RetirementAge || 'Ainda não definido'}}</dd>
+
+    <dt>Saúde</dt>
+    <dd>{{$ctrl.currentPlayer.hasSeriousInjury ? 'Player_Health_SeriouslyInjured' : $ctrl.currentPlayer.hasInjury ? 'Player_Health_Injured' : 'Player_Health_Healthy'}}</dd>
+
+    <dt>Passe</dt>
+    <dd>{{$ctrl.currentPlayer.TransferFee | currency}}</dd>
+
+    <dt>Salário</dt>
+    <dd class="player-salary-options">
+      <label class="-left">Baixo</label>
+      <label class="-center">Médio</label>
+      <label class="-right">Alto</label>
+      <input type="range" name="volume" min="1" max="3" ng-value="$ctrl.currentPlayer.Salary">
+      <label ng-repeat="salary in $ctrl.currentPlayer.SalaryOptions" class="-{{['left', 'center', 'right'][$index]}}">{{salary | currency}}</label>
+    </dd>
+
+    <dt>Moral</dt>
+    <dd class="player-moral">
+      <span ng-class="{
+        low: $ctrl.currentPlayer.Moral <= 33,
+        medium: $ctrl.currentPlayer.Moral > 33 && $ctrl.currentPlayer.Moral <= 66,
+        hight: $ctrl.currentPlayer.Moral > 66
+      }" ng-style="{width: $ctrl.currentPlayer.Moral+'%'}"></span>
+    </dd>
+
+  </dl>
+</div>
+
+<div style="clear: both;"></div>
+
+<!-- <pre>{{$ctrl.currentPlayer | json}}</pre> -->

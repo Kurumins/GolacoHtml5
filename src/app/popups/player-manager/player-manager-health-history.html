@@ -1,0 +1,16 @@
+<h2>Histórico de Lesões</h2>
+
+<table width="100%">
+  <tr>
+    <th align="left">Time</th>
+    <th align="left">Lesão</th>
+    <th>Data</th>
+    <th>Replay</th>
+  </tr>
+  <tr ng-repeat="healthHistory in $historyCtrl.healthHistory">
+    <td>{{healthHistory.TeamName}}</td>
+    <td>{{healthHistory.Health}}</td>
+    <td align="center">{{healthHistory.Date}}</td>
+    <td align="center"><button ng-click="replay(healthHistory.IdMatch)">Replay</button></td>
+  </tr>
+</table>

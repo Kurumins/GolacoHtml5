@@ -1,0 +1,151 @@
+.players {
+  padding: 15px;
+  background-color: #cbdaef;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 5px 0;
+  }
+
+  .players-menu {
+    float: right;
+
+    button,
+    input[type="radio"] {
+      appearance: none;
+      border: 0;
+      background-color: #008dfb;
+      color: white;
+      width: 30px;
+      // line-height: 25px;
+      padding: 7px 5px 5px;
+      text-align: center;
+      margin: 0;
+    }
+    input[type="radio"]:checked {
+      background-color: #ffb700;
+    }
+  }
+
+  .players-table {
+    max-height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    table {
+      // max-width: 100%;
+      white-space: nowrap;
+      font-size: 14px;
+      text-align: center;
+      // border-collapse:separate;
+      border-spacing: 0 2px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    .player {
+      background-color: white;
+    }
+
+    .player-country {
+      &.-s1 {
+        background-color: #ff9c00;
+      }
+      &.-s2 {
+        background-color: #00a8ff;
+      }
+      &.-s3 {
+        background-color: #7f7f7f;
+      }
+      &.-s4 {
+        background-color: #006600;
+      }
+      &.-s5 {
+        background-color: #db2d2d;
+      }
+    }
+
+    .player-potential {
+      font-size: 6px;
+    }
+
+    .player-moral {
+      border: 1px solid;
+      border-radius: 3px;
+
+      span {
+        display: block;
+        height: 3px;
+
+        // if (_moralValue <= 33
+        //   cTransf.color = 0xff0000;
+        // else if (_moralValue >= 34 && _moralValue <= 66)
+        //   cTransf.color = 0xff9900;
+        // else if (_moralValue > 66)
+        //   cTransf.color = 0x009900;
+
+        &.low {
+          background-color: #ff0000;
+        }
+        &.medium {
+          background-color: #ff9900;
+        }
+        &.hight {
+          background-color: #009900;
+        }
+      }
+    }
+
+    .player-injury:not(.has-injury) {
+      opacity: 0.25;
+    }
+
+    .player-item {
+      font-size: 14px;
+
+      &:not(.equiped) {
+        opacity: 0.25;
+      }
+      // &.equiped {
+      //   color: #2424b3;
+      // }
+    }
+
+    .primary-skill {
+      font-size: 10px;
+      padding: 2px;
+      color: #fff;
+
+      &.-s1 {
+        background-color: #ff9c00;
+      }
+      &.-s2 {
+        background-color: #00a8ff;
+      }
+      &.-s3 {
+        background-color: #7f7f7f;
+      }
+      &.-s4 {
+        background-color: #006600;
+      }
+      &.-s5 {
+        background-color: #db2d2d;
+      }
+    }
+  }
+
+}
+
+.blink {
+  animation: blink-animation 1s infinite linear;
+}
+@keyframes blink-animation {
+  50% { background-color: #00dcff; }
+  // 100% { color: black; }
+}

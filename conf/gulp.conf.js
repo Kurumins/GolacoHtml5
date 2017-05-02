@@ -28,7 +28,7 @@ exports.paths = {
 * used on gulp dist
 */
 exports.htmlmin = {
-  ignoreCustomFragments: [/{{.*?}}/]
+  ignoreCustomFragments: [ /\{\{[\s\S]*?\}\}/ ]
 };
 
 exports.path = {};

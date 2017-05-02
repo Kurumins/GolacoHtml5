@@ -1,4 +1,6 @@
 item-list {
+  position: relative;
+  display: block;
 
   // garante o layout com 1 ou mais linhas
   .slick-list {
@@ -17,6 +19,18 @@ item-list {
   .slide-control {
     text-align: center;
     margin: 15px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    height: 25px;
+    margin-top: -12.5px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 0;
   }
 
 }

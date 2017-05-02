@@ -1,0 +1,41 @@
+<h2>Gerenciar Jogador</h2>
+
+<h3>{{$ctrl.currentPlayer.Name}}</h3>
+
+<div class="left-content">
+
+  <div class="player-picture">
+    <img ng-src="{{$ctrl.currentPlayer.Picture}}">
+    <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.currentPlayer.Flag}}.jpg" class="player-flag">
+    <span class="player-shirt-number">{{$ctrl.currentPlayer.ShirtNumber}}</span>
+    <button ng-click="$ctrl.prevPlayer()" class="prev-player" >«</button>
+    <button ng-click="$ctrl.nextPlayer()" class="next-player" >»</button>
+  </div>
+
+  <div class="manager-itens">
+    <h6>Equipe os itens abaixo</h6>
+
+    <button class="icon-t-shirt"></button>
+    <button class="icon-shorts"></button>
+    <button class="icon-shoes-snickers-streamline"></button>
+  </div>
+
+  <div class="manager-menu">
+    <label ng-click="$ctrl.statistics($ctrl.currentPlayer.Id)">
+      <span>Estatítsticas</span>
+    </label>
+    <label ng-click="$ctrl.healthHistory($ctrl.currentPlayer.Id)">
+      <span>Histórico de Lesões</span>
+    </label>
+    <label>
+    <label ng-click="$ctrl.history($ctrl.currentPlayer.Id)">
+      <span>Transações</span>
+    </label>
+    <label>
+      <span ng-click="$ctrl.sellPlayer()">Vender Jogador</span>
+    </label>
+  </div>
+
+</div>
+
+<div ng-include="'player-manager-general.html'" class="manager-content player-manager-general" ></div>

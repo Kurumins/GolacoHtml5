@@ -1,0 +1,16 @@
+<h2>Transações</h2>
+
+<table width="100%">
+  <tr>
+    <th align="left">Time</th>
+    <th align="left">Motivo</th>
+    <th>Passe</th>
+    <th>Data</th>
+  </tr>
+  <tr ng-repeat="history in $historyCtrl.history">
+    <td>{{history.TeamName}}</td>
+    <td>{{history.Motive.replace('TeamPlayerHistoryMotive_','')}}</td>
+    <td align="right">{{history.TransactionMoney | currency}}</td>
+    <td align="center">{{history.Date | date:'short'}}</td>
+  </tr>
+</table>

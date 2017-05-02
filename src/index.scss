@@ -3,7 +3,8 @@ body {
 }
 
 // centraliza verticalmente os icones
-.icon {
+[class^="icon-"],
+[class*=" icon-"] {
   vertical-align: middle;
   &:before {
     vertical-align: text-top;
@@ -16,4 +17,10 @@ a {
   &.active {
     text-decoration: underline;
   }
+}
+
+.ngdialog.ngdialog-theme-default {
+  // padding: 0;
+  display: flex;
+  align-items: center;
 }
