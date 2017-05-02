@@ -13,7 +13,7 @@ angular.module('app')
 
       var player = players[i];
 
-      if (player.Id == currentPlayer) {
+      if (player.Id === currentPlayer) {
 
         updateCurrentPlayer(player);
 
@@ -22,7 +22,7 @@ angular.module('app')
       }
     }
 
-    function updateCurrentPlayer(player) {
+    function updateCurrentPlayer (player) {
 
       player.effects = []
         .concat(player.CleatsItem && player.CleatsItem.Effects || [])
@@ -34,11 +34,11 @@ angular.module('app')
     }
 
     vm.nextPlayer = function () {
-      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer)+1) % players.length ]);
+      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer) + 1) % players.length ]);
     };
 
     vm.prevPlayer = function () {
-      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer)-1 + players.length) % players.length ]);
+      updateCurrentPlayer(players[ (players.indexOf(vm.currentPlayer) - 1 + players.length) % players.length ]);
     };
 
     vm.getEffectModifier = function (skill) {
@@ -53,7 +53,7 @@ angular.module('app')
 
       return total;
 
-    }
+    };
 
     vm.healthHistory = function (playerId) {
       ngDialog.open({
@@ -70,7 +70,8 @@ angular.module('app')
           }
         },
         controller: function (healthHistory) {
-          this.healthHistory = healthHistory.HealthHistory;
+          var vm = this;
+          vm.healthHistory = healthHistory.HealthHistory;
         },
         controllerAs: '$historyCtrl'
       });
@@ -91,7 +92,8 @@ angular.module('app')
           }
         },
         controller: function (statistics) {
-          this.statistics = statistics;
+          var vm = this;
+          vm.statistics = statistics;
         },
         controllerAs: '$statisticsCtrl'
       });
@@ -112,7 +114,8 @@ angular.module('app')
           }
         },
         controller: function (history) {
-          this.history = history;
+          var vm = this;
+          vm.history = history;
         },
         controllerAs: '$historyCtrl'
       });

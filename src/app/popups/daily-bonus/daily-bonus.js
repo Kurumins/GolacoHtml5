@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('DailyBonusController', function (MainService) {
+  .controller('DailyBonusController', function (/*MainService*/) {
 
     var vm = this;
 

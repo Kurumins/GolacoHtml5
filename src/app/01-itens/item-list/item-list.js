@@ -28,9 +28,9 @@ function itemListController ($scope) {
 
   vm.currentSlide = 1;
 
-  $scope.$watch('itens', function(/*newValue, oldValue*/) {
+  $scope.$watch('itens', function (/*newValue, oldValue*/) {
     // debugger;
-    vm.totalSlides = parseInt((vm.itens.length+(vm.rows*(vm.cols||3))-1)/(vm.rows*(vm.cols||3)));
+    vm.totalSlides = parseInt((vm.itens.length + (vm.rows * (vm.cols || 3)) - 1) / (vm.rows * (vm.cols || 3)));
   });
 
 }
