@@ -37,7 +37,7 @@ function build() {
     .pipe(rev())
     .pipe(jsFilter.restore)
     .pipe(cssFilter)
-    .pipe(cssnano())
+    .pipe(cssnano({reduceIdents: false}))
     .pipe(rev())
     .pipe(cssFilter.restore)
     .pipe(revReplace())

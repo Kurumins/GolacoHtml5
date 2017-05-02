@@ -140,12 +140,12 @@
     }
   }
 
+  .blink {
+    animation: blink-animation 1s infinite linear;
+  }
+  @keyframes blink-animation {
+    50% { background-color: #00dcff; }
+    // 100% { color: black; }
+  }
 }
 
-.blink {
-  animation: blink-animation 1s infinite linear;
-}
-@keyframes blink-animation {
-  50% { background-color: #00dcff; }
-  // 100% { color: black; }
-}
