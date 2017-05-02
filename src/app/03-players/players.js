@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app')
-  .config(routesConfig);
+  .config(playersRoutesConfig);
 
-function routesConfig ($stateProvider) {
+function playersRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.players', {
@@ -18,7 +18,7 @@ function routesConfig ($stateProvider) {
     });
 }
 
-function teamPlayerController ($scope, teamPlayerList, ngDialog) {
+function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerService) {
   var vm = this;
 
   vm.teamPlayers = teamPlayerList.data.data;
@@ -32,7 +32,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
       controller: 'ExtraPlayerController as $ctrl',
       scope: $scope,
       resolve: {
-        teamSpotPrices: function (TeamPlayerService) {
+        teamSpotPrices: function () {
           return TeamPlayerService.teamSpotPrices()
             .then(function (result) {
               return result.data.data;
@@ -49,7 +49,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
       controller: 'MoraleRecoveryController as $moraleCtrl',
       scope: $scope,
       // resolve: {
-      //   teamSpotPrices: function (TeamPlayerService) {
+      //   teamSpotPrices: function () {
       //     return TeamPlayerService.teamSpotPrices()
       //       .then(function (result) {
       //         return result.data.data;
@@ -66,7 +66,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog) {
       controller: 'PlayerManagerController as $ctrl',
       scope: $scope,
       resolve: {
-        teamPlayerManage: function (TeamPlayerService) {
+        teamPlayerManage: function () {
           return TeamPlayerService.teamPlayerManage()
             .then(function (result) {
               return result.data.data;

@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app')
-  .config(routesConfig);
+  .config(mainRoutesConfig);
 
-function routesConfig ($stateProvider) {
+function mainRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.main', {
@@ -18,7 +18,7 @@ function routesConfig ($stateProvider) {
     });
 }
 
-function mainController ($scope, missionList, ngDialog) {
+function mainController ($scope, missionList, ngDialog, MainService) {
   var vm = this;
 
   vm.missionList = missionList.data.data;
@@ -30,7 +30,7 @@ function mainController ($scope, missionList, ngDialog) {
       controller: 'MainConfigController as $ctrl',
       scope: $scope,
       resolve: {
-        settings: function (MainService) {
+        settings: function () {
           return MainService.teamSettings()
             .then(function (result) {
               return result.data.data;
@@ -47,7 +47,7 @@ function mainController ($scope, missionList, ngDialog) {
       controller: 'MainTrophyController as $ctrl',
       scope: $scope,
       resolve: {
-        teamTrophyRoom: function (MainService) {
+        teamTrophyRoom: function () {
           return MainService.teamTrophyRoom()
             .then(function (result) {
               return result.data.data;
@@ -64,7 +64,7 @@ function mainController ($scope, missionList, ngDialog) {
       controller: 'MainStatsController as $ctrl',
       scope: $scope,
       resolve: {
-        teamStats: function (MainService) {
+        teamStats: function () {
           return MainService.teamStats()
             .then(function (result) {
               return result.data.data;
