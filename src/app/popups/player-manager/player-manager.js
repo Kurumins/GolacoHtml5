@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function ($scope, teamPlayerManage, currentPlayer, ngDialog) {
+  .controller('PlayerManagerController', function ($scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService) {
 
     var vm = this;
 
@@ -62,7 +62,7 @@ angular.module('app')
         // controller: 'healthHistoryController as $ctrl',
         scope: $scope,
         resolve: {
-          healthHistory: function (TeamPlayerService) {
+          healthHistory: function () {
             return TeamPlayerService.healthHistory(playerId)
               .then(function (result) {
                 return result.data.data;
@@ -104,7 +104,7 @@ angular.module('app')
         // controller: 'healthHistoryController as $ctrl',
         scope: $scope,
         resolve: {
-          history: function (TeamPlayerService) {
+          history: function () {
             return TeamPlayerService.history(playerId)
               .then(function (result) {
                 return result.data.data.History;
@@ -122,7 +122,7 @@ angular.module('app')
       ngDialog.openConfirm({
         template: 'player-manager-sell-player.html',
         resolve: {
-          currentValue: function (TeamPlayerService) {
+          currentValue: function () {
             var currentPlayer = vm.currentPlayer;
             return TeamPlayerService.takeCurrentValue(currentPlayer.playerId)
               .then(function (result) {

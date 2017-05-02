@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .config(routesConfig);
+  .config(itensRoutesConfig);
 
 function itensController (ItensService, inventory, storeList) {
 
@@ -18,7 +18,7 @@ function itensController (ItensService, inventory, storeList) {
 
 }
 
-function routesConfig ($stateProvider) {
+function itensRoutesConfig ($stateProvider) {
 
   $stateProvider
 
