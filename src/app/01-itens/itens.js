@@ -9,6 +9,13 @@ function itensController (ItensService, inventory, storeList) {
   vm.inventory = inventory.data.data;
   vm.storeList = storeList.data.data;
 
+  vm.saleItens = []
+    .concat( vm.storeList.TeamPlayerItems || [] )
+    .concat( vm.storeList.TrainingCenterItems || [] )
+    .filter(function (item) {
+      return item.SalePrice !== 0;
+    });
+
 }
 
 function routesConfig ($stateProvider) {
