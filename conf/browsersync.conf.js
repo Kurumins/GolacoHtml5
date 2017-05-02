@@ -1,6 +1,12 @@
 const conf = require('./gulp.conf');
+const url = require('url');
+const proxyMiddleware = require('proxy-middleware');
 
 module.exports = function () {
+
+  var proxyOptions = url.parse('https://www.golacogame.com.br');
+  proxyOptions.route = '/golaco';
+
   return {
     server: {
       baseDir: [
@@ -9,8 +15,10 @@ module.exports = function () {
       ],
       routes: {
         '/bower_components': 'bower_components'
-      }
+      },
+      middleware: [proxyMiddleware(proxyOptions)]
     },
-    open: false
+    open: true,
+    notify: false,
   };
 };

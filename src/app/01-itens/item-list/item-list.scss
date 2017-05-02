@@ -1,0 +1,36 @@
+item-list {
+  position: relative;
+  display: block;
+
+  // garante o layout com 1 ou mais linhas
+  .slick-list {
+    background: #e6e6e6;
+    padding: 0 5px;
+    .slick-slide {
+      outline: none;
+      margin: 10px 5px;
+      // &,
+      > div:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .slide-control {
+    text-align: center;
+    margin: 15px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    height: 25px;
+    margin-top: -12.5px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 0;
+  }
+
+}

@@ -4,24 +4,31 @@ angular
   .config(routesConfig);
 
 /** @ngInject */
-function routesConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
+function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/) {
 
-  $locationProvider.html5Mode(true);// .hashPrefix('!');
+  // $locationProvider.html5Mode(true);// .hashPrefix('!');
 
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('app', {
       url: '',
-      component: 'app'
-    })
-    .state('app.main', {
-      url: '/',
-      component: 'main'
-    })
-    .state('app.teste', {
-      url: '/teste',
-      component: 'teste'
+      abstract: true,
+      resolve: {
+        user: function (AppService) {
+          return AppService.auth()
+            .then(function (/*result*/) {
+              // console.log(result.data.auth);
+              return AppService.userVerify();
+            });
+        },
+        teamPreview: function (AppService) {
+          return AppService.teamPreview();
+        },
+      },
+      // component: 'app'
+      templateUrl: 'app.html',
+      controller: 'AppController as $appCtrl'
     });
 
 }

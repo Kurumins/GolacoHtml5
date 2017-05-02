@@ -1,0 +1,99 @@
+{
+  "data": {
+    "Success": true,
+    "IdCountry": 4,
+    "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/002278811.png",
+    "UniformSerializedObject": "CgsBBXUxCjMBC3NoaXJ0DXNob3J0cwtzb2NrcwpTAQtpbmRleA90ZXh0dXJlC2NvbG9yF2RldGFp\nbENvbG9yE2hhc0RldGFpbAQECiMBCAwEAAQABAAEgObmzAQACg0EBASDmf+ZCg0EBQTmMwdnazIK\nBQoJBAYKDQQABAAEgrP/AAQABAAKDQQDBIHMszMKDQQBBIP+gAAFdTIKBQoJBAkKDQQABAAEgcxm\nBOd/BAEKDQQFBIHMszMKDQQCBIP+5gAHZ2sxCgUKCQQCCg0EBAQABIDnmcwEAAQACg0EAgSBzLNm\nCg0EAQSBzZn/AQ==",
+    "Warnings": [
+      {
+        "Id": 532758894,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532741880,
+        "Message": "LabelPlayerBirthday;tSilvério Clemente;t27"
+      },
+      {
+        "Id": 532725001,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532693356,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532673600,
+        "Message": "LabelPlayerBirthday;tRaimundo Belmiro;t23"
+      },
+      {
+        "Id": 532755739,
+        "Message": "LabelFinance1"
+      },
+      {
+        "Id": 532755740,
+        "Message": "LabelFinance2;$600000.0000"
+      },
+      {
+        "Id": 532755741,
+        "Message": "LabelFinance3;$24669.38520"
+      },
+      {
+        "Id": 532755742,
+        "Message": "LabelFinance4"
+      },
+      {
+        "Id": 532655109,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532653482,
+        "Message": "LabelJuniorPlayerDeadlineDismissal;tHilton Dulio"
+      },
+      {
+        "Id": 532624659,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532606850,
+        "Message": "LabelPlayerBirthday;tMaicosuel Aleixo;t32"
+      },
+      {
+        "Id": 532589766,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532574606,
+        "Message": "LabelPlayerBirthday;tSimeço Deivison;t29"
+      },
+      {
+        "Id": 532559561,
+        "Message": "LabelLeaguePosition;p5"
+      },
+      {
+        "Id": 532524908,
+        "Message": "LabelRankIncrease;p5"
+      },
+      {
+        "Id": 532524101,
+        "Message": "LabelCompetitionTournamentLightEliminated;d1492630184704.08"
+      },
+      {
+        "Id": 532523834,
+        "Message": "LabelTournamentLightPosition;p2"
+      },
+      {
+        "Id": 532523835,
+        "Message": "LabelTournamentLightPhaseFinished"
+      }
+    ],
+    "HasUnreadMessages": 0,
+    "History": "",
+    "Serie": "D",
+    "SponsorName": "FIR Capital",
+    "FoundationDate": 1491922409000,
+    "ChangeTeamNameCreditPrice": 30,
+    "ChangeTeamNameCreditDiscountPrice": 0.00,
+    "ChangeTeamCountryCreditPrice": 15,
+    "ChangeTeamCountryCreditDiscountPrice": 0.00
+  }
+}

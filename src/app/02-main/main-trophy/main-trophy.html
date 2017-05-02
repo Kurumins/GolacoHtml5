@@ -1,0 +1,16 @@
+<h2>Sala de troféus</h2>
+
+<slick infinite=true slides-to-show=2 slides-to-scroll=2 rows="2" arrows="false" settings="$ctrl.slickConfig">
+  <div ng-repeat="trophy in $ctrl.teamTrophys" class="trophy">
+    <div>
+      <i class="icon-trophy"></i>
+      <br>Sem troféus
+    </div>
+  </div>
+</slick>
+
+<div class="slide-control">
+  <button ng-click="$ctrl.slickConfig.method.slickPrev()">«</button>
+  {{$ctrl.currentSlide}} / {{($ctrl.teamTrophys.length+2)/4 | number:0}}
+  <button ng-click="$ctrl.slickConfig.method.slickNext()">»</button>
+</div>

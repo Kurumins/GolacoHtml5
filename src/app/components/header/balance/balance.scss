@@ -1,0 +1,18 @@
+balance {
+  padding: 5px;
+  background-color: #eee;
+
+  line-height: 25px;
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .credit-balance,
+  .suportters {
+    float: left;
+  }
+  .credit-balance {
+    margin-right: 30px;
+  }
+}

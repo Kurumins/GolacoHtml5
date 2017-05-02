@@ -1,0 +1,56 @@
+<h2>Estatísticas</h2>
+
+<div class="half">
+  <h3>Dados Globais</h3>
+  <dl class="player-datails">
+
+    <dt>Gols</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.Goals}}</dd>
+
+    <dt>Faltas</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.Fouls}}</dd>
+
+    <dt>Cartões Amarelos</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.YellowCards}}</dd>
+
+    <dt>Cartões Vermelhos</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.RedCards}}</dd>
+
+    <dt>Assistencias</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.Assistances}}</dd>
+
+    <dt>Lesões</dt>
+    <dd>{{$statisticsCtrl.statistics.GlobalStatistics.Injuries}}</dd>
+
+  </dl>
+</div>
+
+<div class="half">
+  <h3>Histórico Profissional</h3>
+  <dl class="player-datails">
+
+    <dt>Partidas</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.Matches}}</dd>
+
+    <dt>Passes Certos</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.GoodPasses}}</dd>
+
+    <dt>Passes Errados</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.BadPasses}}</dd>
+
+    <dt>Desarmes</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.Disarms}}</dd>
+
+    <dt>Chutes a Gol</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.GoalAttempts}}</dd>
+
+    <dt>Defesas</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.Saves}}</dd>
+
+    <dt>Gols Sofridos</dt>
+    <dd>{{$statisticsCtrl.statistics.CurrentTeamStatistics.SufferedGoals}}</dd>
+
+  </dl>
+</div>
+
+<div style="clear: both"></div>

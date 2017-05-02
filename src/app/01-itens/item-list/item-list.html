@@ -1,0 +1,18 @@
+<slick
+  infinite=false
+  slides-to-show="{{$ctrl.cols || 3}}" slides-to-scroll="{{$ctrl.cols || 3}}"
+  rows="{{$ctrl.rows}}"
+  arrows="false"
+  settings="$ctrl.slickConfig">
+  <item value="item" ng-repeat="item in $ctrl.itens"></item>
+</slick>
+
+<button type="button" class="slick-prev" ng-if="!!$ctrl.arrow" ng-click="$ctrl.slickConfig.method.slickPrev()" ng-disabled="$ctrl.currentSlide === 1">«</button>
+
+<button type="button" class="slick-next" ng-if="!!$ctrl.arrow" ng-click="$ctrl.slickConfig.method.slickNext()" ng-disabled="$ctrl.currentSlide === $ctrl.totalSlides">»</button>
+
+<div class="slide-control" ng-if="!$ctrl.arrow">
+  <button ng-click="$ctrl.slickConfig.method.slickPrev()" ng-disabled="$ctrl.currentSlide === 1">«</button>
+  {{$ctrl.currentSlide}} / {{$ctrl.totalSlides}}
+  <button ng-click="$ctrl.slickConfig.method.slickNext()" ng-disabled="$ctrl.currentSlide === $ctrl.totalSlides">»</button>
+</div>

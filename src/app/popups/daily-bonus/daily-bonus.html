@@ -1,0 +1,22 @@
+<h2>Bônus Diário</h2>
+<div class="bonus-message">
+  <h5>Cuide do seu time todo dia e ganhe dinheiro e créditos para investir no seu time.</h5>
+  <p>Persistência é uma característica importante para se tornar um bom treinador, e isso você tem de sobra!</p>
+</div>
+
+<div class="bonus-list">
+  <div ng-repeat="bonus in $ctrl.bonus" class="day-bonus" ng-class="{active: $windowUser.ConsecutiveDays > $index}">
+    <h3>Dia {{$index+1}}</h3>
+    <div>
+      <i class="icon icon-money"></i>
+      <h5>{{bonus.cash | currency}}</h5>
+      <h6>Dinheiro virtual</h6>
+    </div>
+    <div ng-if="bonus.credits">
+      <hr>
+      <i class="icon icon-credit-card"></i>
+      <h5>{{bonus.credits}}</h5>
+      <h6>Créditos</h6>
+    </div>
+  </div>
+</div>

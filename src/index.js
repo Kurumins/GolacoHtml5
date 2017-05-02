@@ -1,3 +1,8 @@
 'use strict';
 angular
-  .module('app', ['ui.router']);
+  .module('app', [
+    'ui.router',
+    'ui.router.default',
+    'slickCarousel',
+    'ngDialog'
+  ]);

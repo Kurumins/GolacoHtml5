@@ -1,0 +1,28 @@
+<h2>Estatísticas</h2>
+
+<img ng-src="{{$windowUser.picture}}" height="56" style="float: left;">
+<div class="stats-badge">
+  <img ng-src="{{$ctrl.teamStats.Badge}}">
+  <span class="badge-serie">{{$appCtrl.user.Serie}}</span>
+</div>
+<h5>{{$windowUser.userName}}</h5>
+<h3>{{$appCtrl.user.TeamName}}</h3>
+
+<div style="clear: both;"></div>
+
+<div class="stats-menu">
+  <label>
+    <input type="radio" ng-model="current" value="main-stats-general.html" ng-checked="true">
+    Geral
+  </label>
+  <label>
+    <input type="radio" ng-model="current" value="main-stats-stats.html">
+    Estatítsticas
+  </label>
+  <label title="Histórico de Ligas">
+    <input type="radio" ng-model="current" value="main-stats-leagues-history.html">
+    Histórico
+  </label>
+</div>
+
+<ng-include src="current||'main-stats-general.html'" ></ng-include>
