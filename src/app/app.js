@@ -4,7 +4,7 @@ angular.module('app')
 
     var vm = this;
 
-    vm.user = user.data.data;
+    vm.user = user; // .data.data;
     vm.teamPreview = teamPreview.data.data;
 
     $rootScope.$windowUser = $window.user;
