@@ -63,43 +63,43 @@ angular.module('app')
         scope: $scope,
         resolve: {
           healthHistory: function () {
-            return TeamPlayerService.healthHistory(playerId)
+            return TeamPlayerService.healthHistory(currentPlayer.playerId)
               .then(function (result) {
-                return result.data.data;
+                return vm.currentPlayer.healthHistory = result.data.data.HealthHistory;
               });
           }
         },
-        controller: function (healthHistory) {
-          var vm = this;
-          vm.healthHistory = healthHistory.HealthHistory;
-        },
-        controllerAs: '$historyCtrl'
+        // controller: function (healthHistory) {
+        //   var vm = this;
+        //   vm.healthHistory = healthHistory.HealthHistory;
+        // },
+        // controllerAs: '$historyCtrl'
       });
     };
 
-    vm.statistics = function (playerId) {
+    vm.statistics = function () {
       ngDialog.open({
         template: 'player-manager-statistics.html',
         appendClassName: 'ngdialog-player-manager-statistics',
         // controller: 'healthHistoryController as $ctrl',
         scope: $scope,
         resolve: {
-          statistics: function (TeamPlayerService) {
-            return TeamPlayerService.statistics(playerId)
+          statistics: function () {
+            return TeamPlayerService.statistics(currentPlayer.playerId)
               .then(function (result) {
-                return result.data.data;
+                return vm.currentPlayer.statistics = result.data.data;
               });
           }
         },
-        controller: function (statistics) {
-          var vm = this;
-          vm.statistics = statistics;
-        },
-        controllerAs: '$statisticsCtrl'
+        // controller: function (statistics) {
+        //   var vm = this;
+        //   vm.statistics = statistics;
+        // },
+        // controllerAs: '$statisticsCtrl'
       });
     };
 
-    vm.history = function (playerId) {
+    vm.history = function () {
       ngDialog.open({
         template: 'player-manager-history.html',
         appendClassName: 'ngdialog-player-manager-history',
@@ -107,17 +107,17 @@ angular.module('app')
         scope: $scope,
         resolve: {
           history: function () {
-            return TeamPlayerService.history(playerId)
+            return TeamPlayerService.history(currentPlayer.playerId)
               .then(function (result) {
-                return result.data.data.History;
+                return vm.currentPlayer.history = result.data.data.History;
               });
           }
         },
-        controller: function (history) {
-          var vm = this;
-          vm.history = history;
-        },
-        controllerAs: '$historyCtrl'
+        // controller: function (history) {
+        //   var vm = this;
+        //   vm.history = history;
+        // },
+        // controllerAs: '$historyCtrl'
       });
     };
 
