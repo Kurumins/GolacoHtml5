@@ -7,7 +7,7 @@
     <th>Passe</th>
     <th>Data</th>
   </tr>
-  <tr ng-repeat="history in $historyCtrl.history">
+  <tr ng-repeat="history in $ctrl.currentPlayer.history">
     <td>{{history.TeamName}}</td>
     <td>{{history.Motive.replace('TeamPlayerHistoryMotive_','')}}</td>
     <td align="right">{{history.TransactionMoney | currency}}</td>
