@@ -6,12 +6,18 @@ angular
     'slickCarousel',
     'ngDialog'
   ])
-  .run(function ($window, $q) {
-
-    var vm = {};
+  .run(function ($window) {
 
     $window._gaq = [];
     $window.fbq = null;
+
+    $window.baseUrl = '/golaco/';
+
+  })
+
+  .factory('PostToJs', function($window, $q) {
+
+    var vm = this;
 
     vm.callbacks = [];
 
@@ -19,12 +25,8 @@ angular
       return vm.callbacks;
     };
 
-    $window.baseUrl = '/golaco/';
-
-    // $window._doAction = $window.doAction;
-
     // postToJs(actionObj:Object, callbackAS:Function, data:Object = null, signed:Boolean = true, cacheId:Number = -1)
-    $window.postToJs = function (action, callback, data, signed, cacheId) {
+    return function (action, callback, data, signed, cacheId) {
 
       var deferred = $q.defer();
 
@@ -40,6 +42,7 @@ angular
 
       return deferred.promise;
 
-    };
+    };;
+  })
 
-  });
+  ;

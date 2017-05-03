@@ -15,12 +15,14 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
       url: '',
       abstract: true,
       resolve: {
-        user: function (AppService) {
-          return AppService.auth()
-            .then(function (/*result*/) {
-              // console.log(result.data.auth);
+        userData: function (AppService) {
+          return AppService.getUserData();
+        },
+        user: function (AppService, userData) {
+          // return AppService.auth()
+          //   .then(function (/*result*/) {/
               return AppService.userVerify();
-            });
+            // });
         },
         teamPreview: function (AppService) {
           return AppService.teamPreview();

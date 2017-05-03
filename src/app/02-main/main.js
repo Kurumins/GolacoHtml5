@@ -21,7 +21,7 @@ function mainRoutesConfig ($stateProvider) {
 function mainController ($scope, missionList, ngDialog, MainService) {
   var vm = this;
 
-  vm.missionList = missionList.data.data;
+  vm.missionList = missionList;
 
   vm.config = function () {
     ngDialog.open({
@@ -33,7 +33,7 @@ function mainController ($scope, missionList, ngDialog, MainService) {
         settings: function () {
           return MainService.teamSettings()
             .then(function (result) {
-              return result.data.data;
+              return result;
             });
         }
       },
