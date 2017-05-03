@@ -55,7 +55,7 @@ angular.module('app')
 
     };
 
-    vm.healthHistory = function (playerId) {
+    vm.healthHistory = function () {
       ngDialog.open({
         template: 'player-manager-health-history.html',
         appendClassName: 'ngdialog-player-manager-health-history',
