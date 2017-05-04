@@ -10,16 +10,6 @@
     margin: 5px 0;
   }
 
-  .col-md-10 {
-    float: left;
-    width: 370px;
-    // text-align: center;
-
-    > div {
-      // height: 39px;
-    }
-  }
-
   .reservas {
     width: 35px;
     float: left;
@@ -27,13 +17,15 @@
   }
 
   .campo {
-    // display: flex;
-    // flex-direction: column-reverse;
-    // align-items: center;
+    float: left;
     text-align: center;
     width: 250px;
-    // margin: 0 20px;
     margin-top: 37px;
+  }
+
+  .ct {
+    float: left;
+    width: 370px;
   }
 
   .lvl-over {
@@ -157,4 +149,28 @@
     font-size:12pt;
   }
 
+}
+
+.tactics {
+  float: left;
+  width: 450px;
+
+  .tactics-field {
+    width: 45%;
+    margin: 0 5% 15px 0;
+    float: left;
+
+    label {
+      display: block;
+    }
+    select {
+      width: 100%;
+    }
+  }
+
+  button {
+    margin: 15px auto;
+    display: block;
+    line-height: 30px;
+  }
 }
