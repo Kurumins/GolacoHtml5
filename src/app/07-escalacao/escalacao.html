@@ -1,0 +1,87 @@
+<div class="escalacao">
+  <h2>Escalação</h2>
+
+  <div class="reservas">
+    <span class="slot -position-{{c}}" ng-repeat="c in [5, 4, 3, 2, 1]"
+        x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="{{c+29}}">
+        <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]"></player-formation>
+    </span>
+  </div>
+
+  <div class="campo">
+    <div ng-repeat="r in $ctrl.campo">
+      <span ng-repeat="c in r track by $index" class="slot -position-{{c[1]}}" ng-if="!!c"
+        x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="{{c[0]}}">
+        <player-formation player="$ctrl.slots[c[0]]" ng-if="$ctrl.slots[c[0]]"></player-formation>
+      </span>
+    </div>
+  </div>
+
+  <div class="ct" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="0">
+    <div ng-repeat="r in [0, 1, 2, 3]">
+      <span class="slot circle" ng-repeat="c in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        >
+        <player-formation player="$ctrl.teamTactic[r*10+c]" ng-if="$ctrl.teamTactic[r*10+c].IdTactic==0" popover-placement="left|top"></player-formation>
+      </span>
+    </div>
+  </div>
+
+</div>
+
+<div class="tactics">
+  <h2>Táticas e definições</h2>
+
+  <div class="tactics-field">
+    <label>Tipo de marcação</label>
+    <select name="cbMarkingType">
+      <option value="0">_normal</option>
+      <option value="1">_heavy</option>
+      <option value="2">_light</option>
+    </select>
+  </div>
+
+  <div class="tactics-field">
+    <label>Linha de impedimento</label>
+    <select name="cbOffsideLine">
+      <option value="0">_no</option>
+      <option value="1">_yes</option>
+    </select>
+  </div>
+
+  <div class="tactics-field">
+    <label>Tipo de passe</label>
+    <select name="cbPassingType">
+      <option value="0">_mixed</option>
+      <option value="1">_long</option>
+      <option value="2">_short</option>
+    </select>
+  </div>
+
+  <div class="tactics-field">
+    <label>Postura em campo</label>
+    <select name="cbFieldPosture">
+      <option value="0">_normal</option>
+      <option value="1">_defensive</option>
+      <option value="2">_ofensive</option>
+    </select>
+  </div>
+
+  <div class="tactics-field">
+    <label>Jogar pelas laterais</label>
+    <select name="cbWingPlay">
+      <option value="0">_no</option>
+      <option value="1">_yes</option>
+    </select>
+  </div>
+
+  <div class="tactics-field">
+    <label>Marcar por pressão</label>
+    <select name="cbPressure">
+      <option value="0">_no</option>
+      <option value="1">_yes</option>
+    </select>
+  </div>
+
+  <button>Salvar escalação</button>
+
+</div>
