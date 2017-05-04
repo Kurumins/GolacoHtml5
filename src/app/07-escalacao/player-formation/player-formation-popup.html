@@ -1,8 +1,29 @@
 <i class="triangle"></i>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
-<p>sdfsdf</p>
+
+  <dl class="player-datails">
+
+    <dt>Posição</dt>
+    <dd>{{$ctrl.player.Position.replace('TeamPlayerPosition_','')}}</dd>
+
+    <dt>Potencial</dt>
+    <dd>
+      <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.player.Potential<star?'-o':''}}"></span>
+    </dd>
+
+    <dt>Moral</dt>
+    <dd class="player-moral">
+      <span ng-class="{
+        low: $ctrl.player.Moral <= 33,
+        medium: $ctrl.player.Moral > 33 && $ctrl.player.Moral <= 66,
+        hight: $ctrl.player.Moral > 66
+      }" ng-style="{width: $ctrl.player.Moral+'%'}"></span>
+    </dd>
+
+    <dt>Idade</dt>
+    <dd>{{$ctrl.player.Age}}</dd>
+
+  </dl>
+
+  <player-attributes player="$ctrl.player"></player-attributes>
+
+</div>

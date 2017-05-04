@@ -4,7 +4,7 @@
   <div class="col-md-1 reservas">
     <span class="slot -position-{{c}}" ng-repeat="c in [5, 4, 3, 2, 1]"
         x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="{{c+29}}">
-        <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]" popover-placement="right|center"></player-formation>
+        <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]"></player-formation>
     </span>
   </div>
 
@@ -21,7 +21,7 @@
     <div ng-repeat="r in [0, 1, 2, 3]">
       <span class="slot circle" ng-repeat="c in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
         >
-        <player-formation player="$ctrl.teamTactic[r*10+c]" ng-if="$ctrl.teamTactic[r*10+c].IdTactic==0"></player-formation>
+        <player-formation player="$ctrl.teamTactic[r*10+c]" ng-if="$ctrl.teamTactic[r*10+c].IdTactic==0" popover-placement="left|top"></player-formation>
       </span>
     </div>
   </div>

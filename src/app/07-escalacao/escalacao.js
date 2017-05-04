@@ -9,7 +9,7 @@ function mainRoutesConfig ($stateProvider) {
       url: '/escalacao',
       resolve: {
         teamPlayerList: function (TeamPlayerService) {
-          return TeamPlayerService.teamPlayerList();
+          return TeamPlayerService.teamPlayerManage();
         },
         loadTactic: function (EscalacaoService) {
           return EscalacaoService.loadTactic();
