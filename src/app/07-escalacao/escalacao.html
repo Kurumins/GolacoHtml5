@@ -1,47 +1,29 @@
 <div class="escalacao">
   <h2>Escalação</h2>
 
-    <div style="margin-top:50px;">
+  <div class="col-md-1 reservas">
+    <span class="slot -position-{{c}}" ng-repeat="c in [5, 4, 3, 2, 1]"
+        x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="{{c+29}}">
+        <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]" popover-placement="right|center"></player-formation>
+    </span>
+  </div>
 
-        <!-- <div class="col-md-1 col-md-offset-1">
-          <div class="peg green" x-lvl-draggable="true" data-color="green"></div>
-          <div class="peg red" x-lvl-draggable="true" data-color="red"></div>
-          <div class="peg blue" x-lvl-draggable="true" data-color="blue"></div>
-          <div class="peg black" x-lvl-draggable="true" data-color="black"></div>
-          <div class="peg grey" x-lvl-draggable="true" data-color="grey"></div>
-        </div> -->
-
-        <div class="col-md-1 reservas">
-          <span class="slot -position-{{c}}" ng-repeat="c in [5, 4, 3, 2, 1]"
-              x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
-              <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]" popover-placement="right|center"></player-formation>
-          </span>
-        </div>
-
-        <div class="col-md-10 campo">
-          <div ng-repeat="r in $ctrl.campo">
-            <span ng-repeat="c in r track by $index" class="slot -position-{{c[1]}}" ng-if="!!c"
-              x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
-              <player-formation player="$ctrl.slots[c[0]]" ng-if="$ctrl.slots[c[0]]"></player-formation>
-            </span>
-          </div>
-          <!-- <div ng-repeat="r in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
-            <span class="slot circle" ng-repeat="c in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-              x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
-              </span>
-          </div> -->
-        </div>
-
-        <div class="col-md-10">
-          <div ng-repeat="r in [0, 1, 2, 3]">
-            <span class="slot circle" ng-repeat="c in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
-              x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
-              <player-formation player="$ctrl.teamTactic[r*10+c]" ng-if="$ctrl.teamTactic[r*10+c].IdTactic===0"></player-formation>
-            </span>
-          </div>
-        </div>
-
-      </div>
+  <div class="col-md-10 campo">
+    <div ng-repeat="r in $ctrl.campo">
+      <span ng-repeat="c in r track by $index" class="slot -position-{{c[1]}}" ng-if="!!c"
+        x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="{{c[0]}}">
+        <player-formation player="$ctrl.slots[c[0]]" ng-if="$ctrl.slots[c[0]]"></player-formation>
+      </span>
     </div>
+  </div>
+
+  <div class="col-md-10" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" data-slot="0">
+    <div ng-repeat="r in [0, 1, 2, 3]">
+      <span class="slot circle" ng-repeat="c in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        >
+        <player-formation player="$ctrl.teamTactic[r*10+c]" ng-if="$ctrl.teamTactic[r*10+c].IdTactic==0"></player-formation>
+      </span>
+    </div>
+  </div>
 
 </div>

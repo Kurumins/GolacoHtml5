@@ -18,6 +18,7 @@ function mainRoutesConfig ($stateProvider) {
 
           for (var i = 0; i < teamPlayerList.data.data.TeamPlayers.length; i++) {
             var player = teamPlayerList.data.data.TeamPlayers[i];
+            player.index = i;
 
             for (var i = 0; i < loadTactic.data.data.TeamPlayers.length; i++) {
               var tactic = loadTactic.data.data.TeamPlayers[i];
@@ -86,33 +87,22 @@ function escalacaoController ($scope, teamTactic) {
   // };
 
   $scope.dropped = function(dragEl, dropEl) { // function referenced by the drop target
-      //this is application logic, for the demo we just want to color the grid squares
-      //the directive provides a native dom object, wrap with jqlite
-      // debugger;
+    //this is application logic, for the demo we just want to color the grid squares
+    //the directive provides a native dom object, wrap with jqlite
+    // debugger;
 
-      var drop = angular.element('#' + dropEl);
-      var drag = angular.element('#' + dragEl);
+    var drop = angular.element('#' + dropEl);
+    var drag = angular.element('#' + dragEl);
 
-      if ( drop.children().length == 0 ) {
-        drop.append( drag );
-      }
+    // debugger;
 
-      // //clear the previously applied color, if it exists
-      // var bgClass = drop.attr('data-color');
-      // if (bgClass) {
-      //   drop.removeClass(bgClass);
-      // }
+    var player = vm.teamTactic[drag.attr('data-player')];
+    var slot = drop.attr('data-slot');
 
-      // //add the dragged color
-      // bgClass = drag.attr("data-color");
-      // drop.addClass(bgClass);
-      // drop.attr('data-color', bgClass);
+    vm.slots[player.IdTactic] = null;
+    player.IdTactic = slot;
+    vm.slots[player.IdTactic] = player;
 
-      // //if element has been dragged from the grid, clear dragged color
-      // if (drag.attr("x-lvl-drop-target")) {
-      //   drag.removeClass(bgClass);
-      // }
+  };
 
-    };
-
-}
+};

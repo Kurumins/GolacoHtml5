@@ -6,7 +6,8 @@
   ns-popover-hide-on-inside-click="true"
   ns-popover-timeout="0"
   ns-popover-placement="{{$ctrl.popoverPlacement||'top|center'}}"
-  ng-mousedown="hidePopover()" >
+  ng-mousedown="hidePopover()"
+  data-player="{{$ctrl.player.index}}" >
   <img ng-src="{{$ctrl.player.Picture}}" height="33">
   <span class="-position-{{$ctrl.player.IdPosition}}">{{$ctrl.player.ShirtNumber}}{{status}}</span>
 </div>
