@@ -4,5 +4,6 @@ angular
     'ui.router',
     'ui.router.default',
     'slickCarousel',
-    'ngDialog'
+    'ngDialog',
+    'lvl.directives.dragdrop'
   ]);

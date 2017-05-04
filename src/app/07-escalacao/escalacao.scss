@@ -1,0 +1,159 @@
+.escalacao {
+  padding: 15px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 5px 0;
+  }
+
+  .col-md-10 {
+    float: left;
+    width: 370px;
+    // text-align: center;
+
+    > div {
+      // height: 39px;
+    }
+  }
+
+  .reservas {
+    width: 35px;
+    float: left;
+    margin-top: 148px;
+  }
+
+  .campo {
+    // display: flex;
+    // flex-direction: column-reverse;
+    // align-items: center;
+    text-align: center;
+    width: 250px;
+    // margin: 0 20px;
+    margin-top: 37px;
+  }
+
+  .lvl-over {
+    /* applied to a drop target when a draggable object is over it */
+    // border: 2px dashed black !important;
+  }
+
+  .lvl-target {
+    /* applied to all drop targets when a drag operation begins, used to indicate drop targets on a page */
+    background-color: #ddd;
+    opacity: .5;
+  }
+
+  [draggable] {
+    // -moz-user-select: none;
+    // -khtml-user-select: none;
+    // -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    // -khtml-user-drag: element;
+    // -webkit-user-drag: element;
+    cursor: move;
+    // border: 1px solid black;
+  }
+
+  .peg {
+    position: relative;
+    width: 33px;
+    height: 33px;
+    // margin: 10px;
+    box-sizing: border-box;
+    // border: 1px solid;
+
+    span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      text-align: center;
+      font-size: 10px;
+      line-height: 15px;
+      width: 15px;
+      color: #fff;
+
+      &.-position {
+        &-1 {
+          background-color: #ff9c00;
+        }
+        &-2 {
+          background-color: #00a7ff;
+        }
+        &-3 {
+          background-color: #7f7f7f;
+        }
+        &-4 {
+          background-color: #006600;
+        }
+        &-5 {
+          background-color: #db2d2d;
+        }
+      }
+    }
+  }
+
+  .slot {
+    margin: 1px;
+    width:35px;
+    height:35px;
+    display:inline-block;
+    // pointer-events: none;
+    box-sizing: border-box;
+    border: 2px solid;
+    vertical-align: top;
+
+    &.-position {
+      &-1 {
+        border-color: #ff9c00;
+      }
+      &-2 {
+        border-color: #00a7ff;
+      }
+      &-3 {
+        border-color: #7f7f7f;
+      }
+      &-4 {
+        border-color: #006600;
+      }
+      &-5 {
+        border-color: #db2d2d;
+      }
+    }
+
+    .peg {
+      margin: -1px;
+    }
+  }
+
+  .red {
+    background-color: red;
+  }
+
+  .blue {
+    background-color: blue;
+  }
+
+  .green {
+    background-color: green;
+  }
+
+  .black {
+    background-color: black;
+    color: white;
+  }
+
+  .grey {
+    background-color: grey;
+  }
+
+  pre strong {
+    font-size:12pt;
+  }
+
+}

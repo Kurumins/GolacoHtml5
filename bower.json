@@ -8,7 +8,8 @@
     "angular-slick-carousel": "^3.1.7",
     "angular-ui-router-default": "^0.0.6",
     "ng-dialog": "^1.1.0",
-    "normalize-css": "^6.0.0"
+    "normalize-css": "^6.0.0",
+    "lvlDragDrop": "https://github.com/logicbomb/lvlDragDrop.git"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.2"
