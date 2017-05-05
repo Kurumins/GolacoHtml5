@@ -2,7 +2,44 @@
 
   .ngdialog-content {
     width: 650px;
+    // height: 300px;
+    // overflow: auto;
     padding: 30px 50px;
+  }
+
+  .match-title {
+    text-align: center;
+    margin: 0;
+  }
+
+  .match-game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid;
+
+    button {
+      display: block;
+      // margin: 5px;
+      width: 100%;
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .match-team {
+    display: block;
+    // border: 1px solid;
+    // padding: 10px;
+    flex: 1;
+    text-align: center;
+    // margin: 10px;
+
+    // line-height: 50px;
+    // float: left;
   }
 
 }
