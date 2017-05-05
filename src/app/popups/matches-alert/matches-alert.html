@@ -1,0 +1,10 @@
+<h2>Seu time entrou em campo!</h2>
+<h3>Confira o que rolou nas partidas</h3>
+
+<div ng-repeat="matcheAlert in $appCtrl.teamMatchesAlert">
+  <h4>Partida da {{matcheAlert.Type}} - {{matcheAlert.Date | date:'short'}}</h4>
+</div>
+
+<footer>
+  <button ng-click="closeThisDialog('Some value')">ok</button>
+</footer>

@@ -25,6 +25,9 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
         teamPreview: function (AppService) {
           return AppService.teamPreview();
         },
+        teamMatchesAlert: function (AppService) {
+          return AppService.teamMatchesAlertView();
+        }
       },
       // component: 'app'
       templateUrl: 'app.html',
