@@ -30,4 +30,11 @@ angular.module('app')
       });
     }
 
+    // ngDialog.open({
+    //   template: 'splash-ad.html',
+    //   appendClassName: 'ngdialog-splash-ad',
+    //   // controller: 'DailyBonusController as $ctrl',
+    //   scope: $scope
+    // });
+
   });
