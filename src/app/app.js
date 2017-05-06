@@ -16,18 +16,18 @@ angular.module('app')
       ngDialog.open({
         template: 'matches-alert.html',
         appendClassName: 'ngdialog-matches-alert',
-        // controller: 'MainConfigController as $ctrl',
         scope: $scope
-        // resolve: {
-        //   settings: function () {
-        //     return MainService.teamSettings()
-        //       .then(function (result) {
-        //         return result.data.data;
-        //       });
-        //   }
-        // },
       });
 
+    }
+
+    if ( $window.user.firstLogin ) {
+      ngDialog.open({
+        template: 'daily-bonus.html',
+        appendClassName: 'ngdialog-daily-bonus',
+        controller: 'DailyBonusController as $ctrl',
+        scope: $scope
+      });
     }
 
   });
