@@ -47,4 +47,8 @@ angular.module('app')
     return $http.get('/data/Mission/List');
   };
 
+  this.teamMatchesAlertView = function () {
+    return $http.get('/data/Team/MatchesAlertView');
+  };
+
 });
