@@ -1,0 +1,25 @@
+ <div class="competition">
+  <h2>Competições</h2>
+
+  <ul>
+    <li ng-repeat="competition in $ctrl.competitions">
+      {{competition.data.name}}
+      <div ng-if="competition.preview.IsStarted">
+        <p>Posição: {{competition.preview.Position}}º</p>
+        <p>Rodada: {{competition.preview.Round}}</p>
+        <p><button>Ver Competição</button></p>
+      </div>
+      <div ng-if="!competition.preview.IsStarted">
+        <p>{{competition.registrations}} / {{competition.data.teamsQty}} inscritos</p>
+        <div ng-if="competition.preview.IsRegistered">
+          <p>aguarde</p>
+        </div>
+        <div ng-if="!competition.preview.IsRegistered">
+          <p>{{competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i></p>
+          <p><button>Increva-se agora</button></p>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+ </div>
