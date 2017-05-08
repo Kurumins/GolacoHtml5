@@ -16,7 +16,7 @@
         </div>
         <div ng-if="!competition.preview.IsRegistered">
           <p>{{competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i></p>
-          <p><button>Increva-se agora</button></p>
+          <p><button ng-click="$ctrl.competitionDetails(competition);">Increva-se agora</button></p>
         </div>
       </div>
     </li>

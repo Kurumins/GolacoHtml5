@@ -101,12 +101,26 @@ function mainRoutesConfig ($stateProvider) {
     });
 }
 
-function competitionController ($scope, competitions) {
+function competitionController ($scope, competitions, ngDialog) {
 
   var vm = this;
 
-  // vm.competitionPreview = competitionPreview.data.data;
-  // vm.competitionData = competitionData;
   vm.competitions = competitions;
+
+  vm.competitionDetails = function (competition) {
+    ngDialog.open({
+      template: 'competition-details.html',
+      appendClassName: 'ngdialog-competition-details',
+      controller: 'CompetitionDetailsController as $ctrl',
+      scope: $scope,
+      resolve: {
+        competition: function () {
+          return competition;
+        }
+      },
+    });
+  };
+
+  vm.competitionDetails(vm.competitions[4]);
 
 };

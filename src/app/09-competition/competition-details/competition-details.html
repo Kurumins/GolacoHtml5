@@ -1,0 +1,18 @@
+<h2>{{$ctrl.competition.data.name}}</h2>
+
+<p>Participantes: {{$ctrl.competition.data.teamsQty}}</p>
+<p>Formato: {{$ctrl.matchTypes[$ctrl.competition.data.matchType]}}</p>
+<p>Duração: {{$ctrl.competition.data.length}} dias</p>
+
+<h4>Premiação</h4>
+
+<table width="100%">
+  <tr ng-repeat="prize in $ctrl.competition.data.prizeList.prize">
+    <td>{{prize.position}}º</td>
+    <td>{{prize['money'+$appCtrl.teamPreview.Serie] | currency}}</td>
+    <td><i class="icon icon-credit-card"> {{prize['credits'+$appCtrl.teamPreview.Serie]}}</td>
+    <td><i class="icon-up-thin"></i> {{prize.morale}}º</td>
+  </tr>
+</table>
+
+{{$ctrl.competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i>
