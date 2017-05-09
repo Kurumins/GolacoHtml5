@@ -16,7 +16,14 @@ module.exports = function () {
       routes: {
         '/bower_components': 'bower_components'
       },
-      middleware: [proxyMiddleware(proxyOptions)]
+      middleware: [
+        proxyMiddleware(proxyOptions),
+        function(req, res, next) {
+          // req.url = '/index.html';
+          req.method = 'GET';
+          next();
+        }
+      ]
     },
     open: true,
     notify: false,

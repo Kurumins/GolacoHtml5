@@ -1,35 +1,43 @@
 'use strict';
 angular.module('app')
-  .service('TeamPlayerService', function ($http) {
+  .service('TeamPlayerService', function (PostToJs) {
 
     var vm = this;
 
     vm.teamPlayerList = function () {
-      return $http.get('/data/TeamPlayer/List');
+      return PostToJs('TeamPlayer/List');
     };
 
     vm.teamSpotPrices = function () {
-      return $http.get('/data/Team/GetProPlayerSpotPrices');
+      return PostToJs('Team/GetProPlayerSpotPrices');
     };
 
     vm.teamPlayerManage = function () {
-      return $http.get('/data/TeamPlayer/Manage');
+      return PostToJs('TeamPlayer/Manage');
     };
 
-    vm.healthHistory = function () {
-      return $http.get('/data/TeamPlayer/HealthHistory');
+    vm.healthHistory = function (teamPlayerId) {
+      return PostToJs('TeamPlayer/HealthHistory', {
+        TeamPlayerId: teamPlayerId
+      });
     };
 
-    vm.statistics = function () {
-      return $http.get('/data/TeamPlayer/Statistics');
+    vm.statistics = function (teamPlayerId) {
+      return PostToJs('TeamPlayer/Statistics', {
+        TeamPlayerId: teamPlayerId
+      });
     };
 
-    vm.history = function () {
-      return $http.get('/data/TeamPlayer/History');
+    vm.history = function (teamPlayerId) {
+      return PostToJs('TeamPlayer/History', {
+        TeamPlayerId: teamPlayerId
+      });
     };
 
-    vm.takeCurrentValue = function () {
-      return $http.get('/data/TeamPlayer/TakeCurrentValue');
+    vm.takeCurrentValue = function (teamPlayerId) {
+      return PostToJs('TeamPlayer/TakeCurrentValue', {
+        IdTeamPlayer: teamPlayerId
+      });
     };
 
   });

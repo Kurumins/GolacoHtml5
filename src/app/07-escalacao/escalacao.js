@@ -16,12 +16,12 @@ function mainRoutesConfig ($stateProvider) {
         },
         teamTactic: function (loadTactic, teamPlayerList) {
 
-          for (var i = 0; i < teamPlayerList.data.data.TeamPlayers.length; i++) {
-            var player = teamPlayerList.data.data.TeamPlayers[i];
+          for (var i = 0; i < teamPlayerList.TeamPlayers.length; i++) {
+            var player = teamPlayerList.TeamPlayers[i];
             player.index = i;
 
-            for (var i = 0; i < loadTactic.data.data.TeamPlayers.length; i++) {
-              var tactic = loadTactic.data.data.TeamPlayers[i];
+            for (var t = 0; t < loadTactic.TeamPlayers.length; t++) {
+              var tactic = loadTactic.TeamPlayers[t];
 
               if (player.Id === tactic.IdTeamPlayer) {
 
@@ -34,7 +34,7 @@ function mainRoutesConfig ($stateProvider) {
 
           }
 
-          return teamPlayerList.data.data.TeamPlayers;
+          return teamPlayerList.TeamPlayers;
         },
       },
       templateUrl: 'escalacao.html',

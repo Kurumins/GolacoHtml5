@@ -63,9 +63,9 @@ angular.module('app')
         scope: $scope,
         resolve: {
           healthHistory: function () {
-            return TeamPlayerService.healthHistory(currentPlayer.playerId)
+            return TeamPlayerService.healthHistory(vm.currentPlayer.Id)
               .then(function (result) {
-                return vm.currentPlayer.healthHistory = result.data.data.HealthHistory;
+                return vm.currentPlayer.healthHistory = result.HealthHistory;
               });
           }
         },
@@ -85,9 +85,9 @@ angular.module('app')
         scope: $scope,
         resolve: {
           statistics: function () {
-            return TeamPlayerService.statistics(currentPlayer.playerId)
+            return TeamPlayerService.statistics(vm.currentPlayer.Id)
               .then(function (result) {
-                return vm.currentPlayer.statistics = result.data.data;
+                return vm.currentPlayer.statistics = result;
               });
           }
         },
@@ -107,9 +107,9 @@ angular.module('app')
         scope: $scope,
         resolve: {
           history: function () {
-            return TeamPlayerService.history(currentPlayer.playerId)
+            return TeamPlayerService.history(vm.currentPlayer.Id)
               .then(function (result) {
-                return vm.currentPlayer.history = result.data.data.History;
+                return vm.currentPlayer.history = result.History;
               });
           }
         },
@@ -127,9 +127,9 @@ angular.module('app')
         resolve: {
           currentValue: function () {
             var currentPlayer = vm.currentPlayer;
-            return TeamPlayerService.takeCurrentValue(currentPlayer.playerId)
+            return TeamPlayerService.takeCurrentValue(vm.currentPlayer.Id)
               .then(function (result) {
-                return currentPlayer.CurrentValue = result.data.data.CurrentValue;
+                return currentPlayer.CurrentValue = result.CurrentValue;
               });
           }
         },

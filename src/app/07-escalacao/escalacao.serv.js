@@ -1,11 +1,11 @@
 'use strict';
 angular.module('app')
-  .service('EscalacaoService', function ($http) {
+  .service('EscalacaoService', function (PostToJs) {
 
     var vm = this;
 
     vm.loadTactic = function () {
-      return $http.get('/data/Team/LoadTactic');
+      return PostToJs('Team/LoadTactic');
     };
 
   });

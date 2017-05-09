@@ -1,17 +1,21 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, teamPreview, teamMatchesAlert) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList) {
 
     var vm = this;
 
-    vm.user = user.data.data;
-    vm.teamPreview = teamPreview.data.data;
+    // debugger;
 
-    $rootScope.$windowUser = $window.user;
+    vm.userData = userData;
+    vm.user = user;
+    vm.teamPreview = teamPreview;
+    vm.countryList = countryList.data;
 
-    if ( teamMatchesAlert.data.data.Matches.length ) {
+    $rootScope.$window = $window;
 
-      vm.teamMatchesAlert = teamMatchesAlert.data.data.Matches;
+    if ( teamMatchesAlert.Matches.length ) {
+
+      vm.teamMatchesAlert = teamMatchesAlert.Matches;
 
       ngDialog.open({
         template: 'matches-alert.html',
@@ -21,7 +25,7 @@ angular.module('app')
 
     }
 
-    if ( $window.user.firstLogin ) {
+    if ( $window.firstLogin ) {
       ngDialog.open({
         template: 'daily-bonus.html',
         appendClassName: 'ngdialog-daily-bonus',

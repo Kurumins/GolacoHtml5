@@ -5,7 +5,7 @@
 </div>
 
 <div class="bonus-list">
-  <div ng-repeat="bonus in $ctrl.bonus" class="day-bonus" ng-class="{active: $windowUser.ConsecutiveDays > $index}">
+  <div ng-repeat="bonus in $ctrl.bonus" class="day-bonus" ng-class="{active: $window.ConsecutiveDays > $index}">
     <h3>Dia {{$index+1}}</h3>
     <div>
       <i class="icon icon-money"></i>

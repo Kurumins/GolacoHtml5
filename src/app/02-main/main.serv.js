@@ -1,19 +1,19 @@
 'use strict';
 angular.module('app')
-  .service('MainService', function ($http) {
+  .service('MainService', function (PostToJs, $window) {
 
     var vm = this;
 
     vm.teamSettings = function () {
-      return $http.get('/data/Team/Settings');
+      return PostToJs('Team/Settings');
     };
 
     vm.teamTrophyRoom = function () {
-      return $http.get('/data/Team/TrophyRoom');
+      return PostToJs('Team/TrophyRoom', {snId: $window.idSocialNetwork});
     };
 
     vm.teamStats = function () {
-      return $http.get('/data/Team/Statistics');
+      return PostToJs('Team/Statistics');
     };
 
   });

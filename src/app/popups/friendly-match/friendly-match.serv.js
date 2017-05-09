@@ -1,11 +1,11 @@
 'use strict';
 angular.module('app')
-  .service('FriendlyMatchService', function ($http) {
+  .service('FriendlyMatchService', function (PostToJs) {
 
     var vm = this;
 
-    vm.findFriendlyMatches = function () {
-      return $http.get('/data/Match/FindFriendlyMatches');
+    vm.findFriendlyMatches = function (filter) {
+      return PostToJs('Match/FindFriendlyMatches', filter);
     };
 
   });
