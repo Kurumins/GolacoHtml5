@@ -20,8 +20,8 @@ function mainRoutesConfig ($stateProvider) {
             var player = teamPlayerList.TeamPlayers[i];
             player.index = i;
 
-            for (var i = 0; i < loadTactic.TeamPlayers.length; i++) {
-              var tactic = loadTactic.TeamPlayers[i];
+            for (var t = 0; t < loadTactic.TeamPlayers.length; t++) {
+              var tactic = loadTactic.TeamPlayers[t];
 
               if (player.Id === tactic.IdTeamPlayer) {
 
