@@ -12,14 +12,14 @@ angular.module('app')
   // };
 
   vm.getUserData = function () {
-    return PostToJs('userData', 'user_data_callback')
+    return PostToJs('userData')
       .then(function (result) {
-        vm.userData = result;
+        return vm.userData = result;
       });
   }
 
   vm.userVerify = function () {
-    return PostToJs('User/Verify', 'user_verify_callback', {
+    return PostToJs('User/Verify', {
       idCity: vm.userData.idCity,
       idCountry: vm.userData.idCountry,
       idState: vm.userData.idState
@@ -27,15 +27,15 @@ angular.module('app')
   };
 
   vm.teamPreview = function () {
-    return PostToJs('Team/Preview', 'team_preview_callback');
+    return PostToJs('Team/Preview');
   };
 
   vm.missionList = function () {
-    return PostToJs('Mission/List', 'mission_list_callback');
+    return PostToJs('Mission/List');
   };
 
-  this.teamMatchesAlertView = function () {
-    return $http.get('/data/Team/MatchesAlertView');
+  vm.teamMatchesAlertView = function () {
+    return PostToJs('Team/MatchesAlertView');
   };
 
 });

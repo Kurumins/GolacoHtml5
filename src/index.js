@@ -28,11 +28,11 @@ angular
     };
 
     // postToJs(actionObj:Object, callbackAS:Function, data:Object = null, signed:Boolean = true, cacheId:Number = -1)
-    return function (action, callback, data, signed, cacheId) {
+    return function (action, data, signed, cacheId) {
 
       var deferred = $q.defer();
 
-      vm.callbacks[callback] = function (result) {
+      vm.callbacks[action] = function (result) {
         if ( result.Success !== false) {
           deferred.resolve(result);
         } else {
@@ -40,7 +40,7 @@ angular
         }
       };
 
-      $window.doAction(action, callback, data, signed || true, cacheId || +new Date() );
+      $window.doAction(action, action, data, signed || true, cacheId || +new Date() );
 
       return deferred.promise;
 

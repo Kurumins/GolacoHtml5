@@ -32,9 +32,9 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       resolve: {
         settings: function () {
           return MainService.teamSettings()
-            .then(function (result) {
-              return result;
-            });
+            // .then(function (result) {
+            //   return result;
+            // });
         }
       },
     });
@@ -49,9 +49,9 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       resolve: {
         teamTrophyRoom: function () {
           return MainService.teamTrophyRoom()
-            .then(function (result) {
-              return result.data.data;
-            });
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         }
       },
     });
@@ -66,9 +66,9 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       resolve: {
         teamStats: function () {
           return MainService.teamStats()
-            .then(function (result) {
-              return result.data.data;
-            });
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         }
       },
     });
