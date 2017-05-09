@@ -1,0 +1,68 @@
+<h2>Amistoso</h2>
+
+<h3>Pesquisar</h3>
+
+<div class="team-filter">
+  <label>
+    Time
+    <input type="type" name="">
+  </label>
+  <label>
+    Treinador
+    <input type="type" name="">
+  </label>
+  <label>
+    Série
+    <label>
+      <input type="checkbox" name=""> D
+    </label>
+    <label>
+      <input type="checkbox" name=""> C
+    </label>
+    <label>
+      <input type="checkbox" name=""> B
+    </label>
+    <label>
+      <input type="checkbox" name=""> A
+    </label>
+  </label>
+  <label>
+    País
+    <select>
+      <option>Todos</option>
+    </select>
+  </label>
+  <button>Pesquisar</button>
+</div>
+
+<div>
+  <label><input type="checkbox" name=""> Não usar itens ao desafiar</label>
+</div>
+
+<div class="half">
+  <h4>Equipes selecionadas</h4>
+  <table width="90%" class="friendly-teams">
+    <tr ng-repeat="team in $ctrl.friendlyMatches" ng-click="$ctrl.currentMatch = team">
+      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" height="10"></td>
+      <td>{{team.League}}</td>
+      <td>{{team.Name}}</td>
+      <td align="right">{{team.UserName}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="half">
+  <h4>Partida Selecionada</h4>
+  <div class="current-match">
+    <div>
+      <img ng-src="{{$ctrl.me.BadgePicture}}">
+      <h4>{{$ctrl.me.Acronym}}</h4>
+    </div>
+    X
+    <div>
+      <img ng-src="{{$ctrl.currentMatch.BadgePicture}}">
+      <h4>{{$ctrl.currentMatch.Acronym}}</h4>
+    </div>
+  </div>
+  <button>Jogar</button>
+</div>

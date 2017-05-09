@@ -1,0 +1,96 @@
+{
+  "data": {
+    "Success": true,
+    "CompetitionLeague": {
+      "IdCompetition": 289755,
+      "IsRegistered": false,
+      "IsStarted": true,
+      "InterSeasonDate": 0,
+      "InterSeasonCreditPrice": 9,
+      "IsCompetitionInterSeason": false,
+      "Position": 5,
+      "Round": 26,
+      "RegisterPrice": 0
+    },
+    "CompetitionCup": {
+      "IdCompetition": 0,
+      "IsRegistered": false,
+      "IsStarted": false,
+      "IsCompetitionInterSeason": false,
+      "Round": 0,
+      "RegisterPrice": 3
+    },
+    "CompetitionTournament": {
+      "IdCompetition": 0,
+      "IsRegistered": true,
+      "IsStarted": false,
+      "InterSeasonCreditPrice": 7,
+      "Round": 0,
+      "Position": 0,
+      "RegisterPrice": 5
+    },
+    "CompetitionCupLight": {
+      "IdCompetition": 0,
+      "IsRegistered": false,
+      "IsStarted": false,
+      "Round": 0,
+      "RegisterPrice": 2
+    },
+    "CompetitionTournamentLight": {
+      "IdCompetition": 0,
+      "IsRegistered": false,
+      "IsStarted": false,
+      "Round": 0,
+      "Position": 0,
+      "RegisterPrice": 3
+    },
+    "CompetitionCopaNordeste": {
+      "IdCompetition": 0,
+      "IsRegistered": false,
+      "IsStarted": false,
+      "Round": 0,
+      "Position": 0,
+      "RegisterPrice": 0
+    },
+    "CompetitionTournamentBeta": {
+      "IdCompetition": 0,
+      "IsRegistered": false,
+      "IsStarted": false,
+      "Round": 0,
+      "Position": 0,
+      "RegisterPrice": 0
+    },
+    "FriendlyMatchCost": 2,
+    "FriendlyMatchesLeft": 2,
+    "RegistrationsByLeague": [
+      {
+        "Id": 1,
+        "Teams": 6
+      },
+      {
+        "Id": 2,
+        "Teams": 12
+      },
+      {
+        "Id": 3,
+        "Teams": 7
+      },
+      {
+        "Id": 4,
+        "Teams": 8
+      },
+      {
+        "Id": 5,
+        "Teams": 19
+      },
+      {
+        "Id": 6,
+        "Teams": 0
+      },
+      {
+        "Id": 7,
+        "Teams": 0
+      }
+    ]
+  }
+}

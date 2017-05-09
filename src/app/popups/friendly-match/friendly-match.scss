@@ -1,0 +1,51 @@
+.ngdialog.ngdialog-friendly-match {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 30px 50px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  .team-filter {
+    overflow: auto;
+    position: relative;
+    margin-bottom: 10px;
+
+    > label {
+      width: 50%;
+      display: block;
+      float: left;
+    }
+
+    > button {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .half {
+    float: left;
+    width: 50%;
+  }
+
+  .friendly-teams {
+    font-size: 12px;
+  }
+
+  .current-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    + button {
+      margin: auto;
+      display: block;
+    }
+  }
+
+}
