@@ -91,6 +91,7 @@ function itensRoutesConfig ($stateProvider) {
               return item.Category === parseInt($stateParams.category);
             });
           }
+
           return itens;
 
         }

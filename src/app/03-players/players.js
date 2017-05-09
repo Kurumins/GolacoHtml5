@@ -21,7 +21,7 @@ function playersRoutesConfig ($stateProvider) {
 function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerService) {
   var vm = this;
 
-  vm.teamPlayers = teamPlayerList.data.data;
+  vm.teamPlayers = teamPlayerList;
 
   vm.teamPlayerType = 1;
 
@@ -34,9 +34,9 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       resolve: {
         teamSpotPrices: function () {
           return TeamPlayerService.teamSpotPrices()
-            .then(function (result) {
-              return result.data.data;
-            });
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         }
       },
     });
@@ -68,9 +68,9 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       resolve: {
         teamPlayerManage: function () {
           return TeamPlayerService.teamPlayerManage()
-            .then(function (result) {
-              return result.data.data;
-            });
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         },
         currentPlayer: function () {
           return playerId;
