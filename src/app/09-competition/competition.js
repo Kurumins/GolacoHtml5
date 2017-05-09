@@ -121,6 +121,20 @@ function competitionController ($scope, competitions, ngDialog) {
     });
   };
 
-  vm.competitionDetails(vm.competitions[4]);
+  vm.friendlyMatch = function (/*competition*/) {
+    ngDialog.open({
+      template: 'friendly-match.html',
+      appendClassName: 'ngdialog-friendly-match',
+      controller: 'FriendlyMatchController as $ctrl',
+      scope: $scope,
+      // resolve: {
+      //   competition: function () {
+      //     return competition;
+      //   }
+      // },
+    });
+  };
+
+  vm.friendlyMatch();
 
 };
