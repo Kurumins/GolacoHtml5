@@ -34,4 +34,8 @@ angular.module('app')
     return PostToJs('Mission/List', 'mission_list_callback');
   };
 
+  this.teamMatchesAlertView = function () {
+    return $http.get('/data/Team/MatchesAlertView');
+  };
+
 });

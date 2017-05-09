@@ -1,0 +1,69 @@
+{
+  "data": {
+    "Success": true,
+    "CurrentTeam": {
+      "Id": 2278811,
+      "Name": "Tonussi Esporte Clube",
+      "Acronym": "TEC",
+      "League": "D",
+      "XublauzinhoStatus": false,
+      "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/002278811.png"
+    },
+    "Teams": [
+      {
+        "Id": 420685,
+        "Name": "FC Time do Povo",
+        "UserName": "Alexandre Gimenes",
+        "Acronym": "TDP",
+        "League": "A",
+        "Flag": 4,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/000420685.png"
+      },
+      {
+        "Id": 420944,
+        "Name": "Centro do Futebol Total",
+        "UserName": "Luís Felipe Freitas",
+        "Acronym": "CFT",
+        "League": "A",
+        "Flag": 4,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/000420944.png"
+      },
+      {
+        "Id": 2279346,
+        "Name": "Mahos Ilkju",
+        "UserName": "Mahos Ilkju",
+        "Acronym": "MI",
+        "League": "D",
+        "Flag": 80,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/uploadBadges/129x129/002279346-1.png"
+      },
+      {
+        "Id": 2279011,
+        "Name": "Estratégia F.C",
+        "UserName": "Amauri Junior",
+        "Acronym": "EFC",
+        "League": "D",
+        "Flag": 4,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/002279011.png"
+      },
+      {
+        "Id": 435532,
+        "Name": "GJJHDVMHDJ",
+        "UserName": "João Pedro",
+        "Acronym": "BJFG",
+        "League": "D",
+        "Flag": 4,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/000435532.png"
+      },
+      {
+        "Id": 2231606,
+        "Name": "vasco",
+        "UserName": "Alax Fernandes",
+        "Acronym": "VAS",
+        "League": "D",
+        "Flag": 4,
+        "BadgePicture": "https://o2games-golaco.s3.amazonaws.com/badges/129x129/002231606.png"
+      }
+    ]
+  }
+}

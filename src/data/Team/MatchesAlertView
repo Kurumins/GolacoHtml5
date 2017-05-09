@@ -1,0 +1,42 @@
+{
+  "data": {
+    "Success": true,
+    "Matches": [],
+    "Matches-": [
+      {
+        "Id": 71933286,
+        "Type": 1,
+        "Date": 1493931600000,
+        "HomeTeam": {
+          "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/000202185.png",
+          "Name": "Flamengo Futeboll Club RJ",
+          "Acronym": "FFCR",
+          "Goals": 0
+        },
+        "VisitorTeam": {
+          "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/002278811.png",
+          "Name": "Tonussi Esporte Clube",
+          "Acronym": "TEC",
+          "Goals": 3
+        }
+      },
+      {
+        "Id": 71933286,
+        "Type": 1,
+        "Date": 1493931600000,
+        "HomeTeam": {
+          "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/002278811.png",
+          "Name": "Tonussi Esporte Clube",
+          "Acronym": "TEC",
+          "Goals": 3
+        },
+        "VisitorTeam": {
+          "Badge": "https://o2games-golaco.s3.amazonaws.com/badges/24x24/000202185.png",
+          "Name": "Flamengo Futeboll Club RJ",
+          "Acronym": "FFCR",
+          "Goals": 0
+        }
+      }
+    ]
+  }
+}
