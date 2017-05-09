@@ -25,10 +25,13 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
             // });
         },
         teamPreview: function (AppService) {
-          return AppService.teamPreview();
+          return AppService.getTeamPreview();
         },
         teamMatchesAlert: function (AppService) {
           return AppService.teamMatchesAlertView();
+        },
+        countryList: function (AppService) {
+          return AppService.countryList();
         }
       },
       // component: 'app'

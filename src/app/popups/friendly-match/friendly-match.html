@@ -5,35 +5,36 @@
 <div class="team-filter">
   <label>
     Time
-    <input type="type" name="">
+    <input type="type" name="" ng-model="$ctrl.filter.TeamName">
   </label>
   <label>
     Treinador
-    <input type="type" name="">
+    <input type="type" name="" ng-model="$ctrl.filter.Couch">
   </label>
   <label>
     Série
     <label>
-      <input type="checkbox" name=""> D
+      <input type="checkbox" ng-model="$ctrl.filter.League.D">D
     </label>
     <label>
-      <input type="checkbox" name=""> C
+      <input type="checkbox" ng-model="$ctrl.filter.League.C">C
     </label>
     <label>
-      <input type="checkbox" name=""> B
+      <input type="checkbox" ng-model="$ctrl.filter.League.B">B
     </label>
     <label>
-      <input type="checkbox" name=""> A
+      <input type="checkbox" ng-model="$ctrl.filter.League.A">A
     </label>
   </label>
-  <label>
+  <label ng-init-="$ctrl.filter.Country=$appCtrl.countryList[0].id">
     País
-    <select>
-      <option>Todos</option>
+    <!-- <select ng-options="item.id as item.name for item in $appCtrl.countryList track by item.id" ng-model="$ctrl.filter.Country"></select> -->
+    <select ng-model="$ctrl.filter.Country">
+      <option ng-value="0" selected="selected">Todos</option>
+      <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
     </select>
   </label>
-  <button>Pesquisar</button>
-</div>
+  <button ng-click="$ctrl.findFriendlyMatches($ctrl.filter)" ng-disabled="!($ctrl.filter.League.D || $ctrl.filter.League.C || $ctrl.filter.League.B || $ctrl.filter.League.A)">Pesquisar</button> </div>
 
 <div>
   <label><input type="checkbox" name=""> Não usar itens ao desafiar</label>
@@ -41,9 +42,9 @@
 
 <div class="half">
   <h4>Equipes selecionadas</h4>
-  <table width="90%" class="friendly-teams">
+  <table width="95%" class="friendly-teams">
     <tr ng-repeat="team in $ctrl.friendlyMatches" ng-click="$ctrl.currentMatch = team">
-      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" height="10"></td>
+      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" height="14"></td>
       <td>{{team.League}}</td>
       <td>{{team.Name}}</td>
       <td align="right">{{team.UserName}}</td>

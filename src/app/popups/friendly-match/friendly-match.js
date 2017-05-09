@@ -1,14 +1,55 @@
 'use strict';
 angular.module('app')
-  .controller('FriendlyMatchController', function (FriendlyMatchService) {
+  .controller('FriendlyMatchController', function (FriendlyMatchService, AppService) {
 
     var vm = this;
 
-    FriendlyMatchService.findFriendlyMatches()
-      .then(function (friendlyMatches) {
-        vm.friendlyMatches = friendlyMatches.data.data.Teams;
-        vm.me = friendlyMatches.data.data.CurrentTeam;
-        vm.currentMatch = vm.friendlyMatches[0];
-      })
+    vm.findFriendlyMatches = function (filter) {
+
+      League = [];
+
+      for (var league in filter.League) {
+        if (filter.League[league]) {
+          League.push(league);
+        }
+      }
+
+      var newFilter = angular.copy(filter);
+      newFilter.League = League.join(';');
+
+      FriendlyMatchService.findFriendlyMatches(newFilter)
+        .then(function (friendlyMatches) {
+          vm.friendlyMatches = friendlyMatches.Teams;
+          vm.me = friendlyMatches.CurrentTeam;
+          vm.currentMatch = vm.friendlyMatches[0];
+        });
+
+    };
+
+    // findFriendlyMatches({
+    //   League: AppService.teamPreview.Serie,
+    //   TeamName: '',
+    //   Country: 0,
+    //   Couch: ''
+    // });
+
+    vm.filter = {
+      League: [],
+      TeamName: '',
+      Country: 0,
+      Couch: ''
+    };
+    vm.filter.League[AppService.teamPreview.Serie] = true;
+
+    vm.findFriendlyMatches(vm.filter);
+
+    // function findFriendlyMatches (filter) {
+    //   FriendlyMatchService.findFriendlyMatches(filter)
+    //     .then(function (friendlyMatches) {
+    //       vm.friendlyMatches = friendlyMatches.Teams;
+    //       vm.me = friendlyMatches.CurrentTeam;
+    //       vm.currentMatch = vm.friendlyMatches[0];
+    //     });
+    // };
 
   });

@@ -12,15 +12,15 @@ function mainRoutesConfig ($stateProvider) {
           return CompetitionService.competitionPreview()
             .then(function (competitionPreview) {
 
-              competitionPreview.data.data.registrations = [];
+              competitionPreview.registrations = [];
 
-              for (var i = 0; i < competitionPreview.data.data.RegistrationsByLeague.length; i++) {
-                var registrations = competitionPreview.data.data.RegistrationsByLeague[i];
-                competitionPreview.data.data.registrations[registrations.Id] = registrations.Teams;
+              for (var i = 0; i < competitionPreview.RegistrationsByLeague.length; i++) {
+                var registrations = competitionPreview.RegistrationsByLeague[i];
+                competitionPreview.registrations[registrations.Id] = registrations.Teams;
 
               }
 
-              return competitionPreview.data.data;
+              return competitionPreview;
 
             })
         },
@@ -121,18 +121,15 @@ function competitionController ($scope, competitions, ngDialog) {
     });
   };
 
-  vm.friendlyMatch = function (/*competition*/) {
+  vm.friendlyMatch = function () {
     ngDialog.open({
       template: 'friendly-match.html',
       appendClassName: 'ngdialog-friendly-match',
       controller: 'FriendlyMatchController as $ctrl',
-      scope: $scope,
-      // resolve: {
-      //   competition: function () {
-      //     return competition;
-      //   }
-      // },
+      scope: $scope
     });
   };
+
+  vm.friendlyMatch();
 
 };

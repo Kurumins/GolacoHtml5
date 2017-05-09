@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-.service('AppService', function (PostToJs) {
+.service('AppService', function (PostToJs, $http) {
 
   var vm = this;
 
@@ -26,8 +26,11 @@ angular.module('app')
     });
   };
 
-  vm.teamPreview = function () {
-    return PostToJs('Team/Preview');
+  vm.getTeamPreview = function () {
+    return PostToJs('Team/Preview')
+      .then(function (result) {
+        return vm.teamPreview = result;
+      });
   };
 
   vm.missionList = function () {
@@ -36,6 +39,10 @@ angular.module('app')
 
   vm.teamMatchesAlertView = function () {
     return PostToJs('Team/MatchesAlertView');
+  };
+
+  vm.countryList = function () {
+    return $http.get('/data/countryList');
   };
 
 });

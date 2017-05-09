@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList) {
 
     var vm = this;
 
@@ -9,6 +9,7 @@ angular.module('app')
     vm.userData = userData;
     vm.user = user;
     vm.teamPreview = teamPreview;
+    vm.countryList = countryList.data;
 
     $rootScope.$window = $window;
 
