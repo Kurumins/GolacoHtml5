@@ -31,7 +31,7 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         settings: function () {
-          return MainService.teamSettings()
+          return MainService.teamSettings();
             // .then(function (result) {
             //   return result;
             // });
@@ -48,7 +48,7 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         teamTrophyRoom: function () {
-          return MainService.teamTrophyRoom()
+          return MainService.teamTrophyRoom();
             // .then(function (result) {
             //   return result.data.data;
             // });
@@ -65,7 +65,7 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         teamStats: function () {
-          return MainService.teamStats()
+          return MainService.teamStats();
             // .then(function (result) {
             //   return result.data.data;
             // });

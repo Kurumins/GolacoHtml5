@@ -22,7 +22,7 @@ function mainRoutesConfig ($stateProvider) {
 
               return competitionPreview;
 
-            })
+            });
         },
 
         competitionData: function (CompetitionService) {
@@ -38,12 +38,12 @@ function mainRoutesConfig ($stateProvider) {
 
               return result;
 
-            })
+            });
         },
 
         competitions: function (competitionPreview, competitionData) {
 
-          var competitions= [
+          var competitions = [
             {
               id: 1,
               name: 'CompetitionLeague',
@@ -86,7 +86,7 @@ function mainRoutesConfig ($stateProvider) {
 
             competition.preview = competitionPreview[competition.name];
             competition.data = competitionData[competition.id];
-            competition.registrations = competitionPreview.registrations[competition.id];;
+            competition.registrations = competitionPreview.registrations[competition.id];
 
           }
 
@@ -132,4 +132,4 @@ function competitionController ($scope, competitions, ngDialog) {
 
   // vm.friendlyMatch();
 
-};
+}

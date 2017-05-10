@@ -19,10 +19,7 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
           return AppService.getUserData();
         },
         user: function (AppService, userData) {
-          // return AppService.auth()
-          //   .then(function (/*result*/) {/
-              return AppService.userVerify();
-            // });
+          return AppService.userVerify(userData);
         },
         teamPreview: function (AppService) {
           return AppService.getTeamPreview();

@@ -48,13 +48,13 @@ function escalacaoController ($scope, teamTactic) {
   var vm = this;
 
   vm.campo = [
-    [[27,5], [28,5], [29,5]],
-    [[22,3], [23,5], [24,5], [25,5], [26,3]],
-    [[17,3], [18,4], [19,4], [20,4], [21,3]],
-    [[12,3], [13,4], [14,4], [15,4], [16,3]],
-    [[7,3], [8,2], [9,2], [10,2], [11,3]],
-    [[2,3], [3,2], [4,2], [5,2], [6,3]],
-    [[1,1]],
+    [[27, 5], [28, 5], [29, 5]],
+    [[22, 3], [23, 5], [24, 5], [25, 5], [26, 3]],
+    [[17, 3], [18, 4], [19, 4], [20, 4], [21, 3]],
+    [[12, 3], [13, 4], [14, 4], [15, 4], [16, 3]],
+    [[7, 3], [8, 2], [9, 2], [10, 2], [11, 3]],
+    [[2, 3], [3, 2], [4, 2], [5, 2], [6, 3]],
+    [[1, 1]],
   ];
 
   vm.i = 1;
@@ -86,7 +86,7 @@ function escalacaoController ($scope, teamTactic) {
   //   });
   // };
 
-  $scope.dropped = function(dragEl, dropEl) { // function referenced by the drop target
+  $scope.dropped = function (dragEl, dropEl) { // function referenced by the drop target
     //this is application logic, for the demo we just want to color the grid squares
     //the directive provides a native dom object, wrap with jqlite
     // debugger;
@@ -105,4 +105,4 @@ function escalacaoController ($scope, teamTactic) {
 
   };
 
-};
+}

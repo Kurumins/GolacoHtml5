@@ -18,7 +18,7 @@ angular
 
   })
 
-  .factory('PostToJs', function($window, $q) {
+  .factory('PostToJs', function ($window, $q) {
 
     var vm = this;
 
@@ -45,5 +45,5 @@ angular
 
       return deferred.promise;
 
-    }
+    };
   });

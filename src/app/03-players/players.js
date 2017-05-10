@@ -33,7 +33,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       scope: $scope,
       resolve: {
         teamSpotPrices: function () {
-          return TeamPlayerService.teamSpotPrices()
+          return TeamPlayerService.teamSpotPrices();
             // .then(function (result) {
             //   return result.data.data;
             // });
@@ -67,7 +67,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       scope: $scope,
       resolve: {
         teamPlayerManage: function () {
-          return TeamPlayerService.teamPlayerManage()
+          return TeamPlayerService.teamPlayerManage();
             // .then(function (result) {
             //   return result.data.data;
             // });

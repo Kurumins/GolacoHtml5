@@ -16,13 +16,13 @@ angular.module('app')
       .then(function (result) {
         return vm.userData = result;
       });
-  }
+  };
 
-  vm.userVerify = function () {
+  vm.userVerify = function (userData) {
     return PostToJs('User/Verify', {
-      idCity: vm.userData.idCity,
-      idCountry: vm.userData.idCountry,
-      idState: vm.userData.idState
+      idCity: userData.idCity,
+      idCountry: userData.idCountry,
+      idState: userData.idState
     })
       .then(function (result) {
         return vm.user = result;

@@ -6,7 +6,7 @@ angular.module('app')
 
     vm.findFriendlyMatches = function (filter) {
 
-      League = [];
+      var League = [];
 
       for (var league in filter.League) {
         if (filter.League[league]) {
@@ -45,6 +45,6 @@ angular.module('app')
 
     vm.play = function () {
       MatchResult.open(123123);
-    }
+    };
 
   });

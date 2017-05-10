@@ -20,7 +20,7 @@ angular.module('app')
 
     var me, adversary;
 
-    if ( vm.matchData.HomeTeam.Id == AppService.user.TeamId) {
+    if ( vm.matchData.HomeTeam.Id === AppService.user.TeamId) {
       me = vm.matchData.HomeTeam;
       adversary = vm.matchData.VisitorTeam;
     } else {
@@ -48,15 +48,16 @@ angular.module('app')
       //Console.getInstance().dump(m);
       for (var label in m) {
 
-        if (label == "IdTeamPlayer" ||
-          label == "Played" ||
-          label == "ShirtNumber" ||
-          label == "Injuries" ||
-          label == "Name" ||
-          label == "Goals" ||
-          label == "PenaltySaves" ||
-          label == "Saves")
+        if (label === 'IdTeamPlayer' ||
+          label === 'Played' ||
+          label === 'ShirtNumber' ||
+          label === 'Injuries' ||
+          label === 'Name' ||
+          label === 'Goals' ||
+          label === 'PenaltySaves' ||
+          label === 'Saves') {
           continue;
+        }
 
         var item = {
           label: label
@@ -86,7 +87,7 @@ angular.module('app')
       return ss;
     }
 
-    function allPlayers(dt) {
+    function allPlayers (dt) {
 
       var players = {};
 
@@ -117,14 +118,11 @@ angular.module('app')
         // scope: $scope,
         resolve: {
           matchData: function () {
-            return MatchResultService.matchData()
-              // .then(function (result) {
-              //   return result;
-              // });
+            return MatchResultService.matchData(matchId);
           }
         },
       });
-    }
+    };
 
     return this;
 
