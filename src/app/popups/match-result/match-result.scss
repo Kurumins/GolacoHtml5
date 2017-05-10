@@ -12,6 +12,10 @@
   .placar {
     text-align: center;
     margin: 15px 0;
+
+    img {
+      margin: 0 20px;
+    }
   }
 
   .result-tabs {
@@ -22,6 +26,12 @@
       width: 40%;
       float: left;
     }
+  }
+
+  .stats-table {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1;
   }
 
 }

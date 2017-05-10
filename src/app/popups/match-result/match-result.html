@@ -3,18 +3,18 @@
 <div class="game-result">
   <h3>Resultado</h3>
   <div class="placar">
-    <img ng-src="{{$ctrl.matchData.HomeTeam.Badge}}">
+    <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge90x90']}}">
     {{$ctrl.matchData.HomeTeam.Acronym}}
     {{$ctrl.matchData.HomeTeam.Goals}}
     X
     {{$ctrl.matchData.VisitorTeam.Goals}}
     {{$ctrl.matchData.VisitorTeam.Acronym}}
-    <img ng-src="{{$ctrl.matchData.VisitorTeam.Badge}}">
+    <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge90x90']}}">
   </div>
 </div>
 
 <div class="result-tabs">
-  <div ng-init-="selection = 1">
+  <div>
     <label><input type="radio" ng-model="selection" checked>Estatísticas</label>
     <label><input type="radio" ng-model="selection" value="1">Escalação</label>
     <label><input type="radio" ng-model="selection" value="2">Reservas</label>
@@ -22,7 +22,26 @@
   </div>
 
   <div class="animate-switch-container" ng-switch on="selection">
-    <div class="animate-switch" ng-switch-default>Estatísticas</div>
+    <div class="animate-switch" ng-switch-default>
+      <table width="100%" class="stats-table">
+        <tr>
+          <th>
+            <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.HomeTeam.Acronym}}
+          </th>
+          <th></th>
+          <th>
+            <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.VisitorTeam.Acronym}}
+          </th>
+        </tr>
+        <tr ng-repeat="stat in $ctrl.matchData.stats">
+          <td>{{stat.homeValue}}</td>
+          <td>{{stat.label}}</td>
+          <td>{{stat.visitorValue}}</td>
+        </tr>
+      </table>
+    </div>
     <div class="animate-switch" ng-switch-when="1">Escalação</div>
     <div class="animate-switch" ng-switch-when="2">Reservas</div>
     <div class="animate-switch" ng-switch-when="3">Gols</div>
@@ -33,7 +52,7 @@
   <div class="result-data">
     <h4>Dados da partida</h4>
     <p>Data do jogo: {{$ctrl.matchData.MatchData.MatchDate | date:'short'}}</p>
-    <p>Data do jogo: {{$ctrl.matchData.MatchData.StadiumName}}</p>
+    <p>Estádio: {{$ctrl.matchData.MatchData.StadiumName}}</p>
     <p>Tipo de jogo: {{$ctrl.matchData.MatchData.MatchType}}</p>
     <p>Público: {{$ctrl.matchData.MatchData.HomeAttendance + $ctrl.matchData.MatchData.VisitorAttendance}}</p>
   </div>
@@ -41,12 +60,12 @@
   <div class="result-data">
     <h4>Renda do jogo</h4>
     <p>
-      <img ng-src="{{$ctrl.matchData.HomeTeam.Badge}}" height="20">
+      <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge24x24']}}">
       {{$ctrl.matchData.HomeTeam.Acronym}}
       {{$ctrl.matchData.MatchData.HomeTeamBudget}}
     </p>
     <p>
-      <img ng-src="{{$ctrl.matchData.VisitorTeam.Badge}}" height="20">
+      <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge24x24']}}">
       {{$ctrl.matchData.VisitorTeam.Acronym}}
       {{$ctrl.matchData.MatchData.VisitorTeamBudget}}
     </p>
