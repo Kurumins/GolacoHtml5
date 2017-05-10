@@ -36,7 +36,8 @@ angular.module('app')
       vm.matchData.result = 'draw';
     }
 
-    statsContent(vm.matchData);
+    vm.matchData.stats = statsContent(vm.matchData);
+    vm.allPlayers = allPlayers(vm.matchData);
 
     function statsContent (dt) {
       var s = dt.HomeTeam.Lineup;
@@ -62,23 +63,47 @@ angular.module('app')
         };
 
         aux = 0;
-        for (i = 0; i < dt.HomeTeam.Lineup.length; i++)
+        for (i = 0; i < dt.HomeTeam.Lineup.length; i++) {
           aux += dt.HomeTeam.Lineup[i][label];
-        for (i = 0; i < dt.HomeTeam.Bench.length; i++)
+        }
+        for (i = 0; i < dt.HomeTeam.Bench.length; i++) {
           aux += dt.HomeTeam.Bench[i][label];
+        }
         item.homeValue = aux;
 
         aux = 0;
-        for (i = 0; i < dt.VisitorTeam.Lineup.length; i++)
+        for (i = 0; i < dt.VisitorTeam.Lineup.length; i++) {
           aux += dt.VisitorTeam.Lineup[i][label];
-        for (i = 0; i < dt.VisitorTeam.Bench.length; i++)
+        }
+        for (i = 0; i < dt.VisitorTeam.Bench.length; i++) {
           aux += dt.VisitorTeam.Bench[i][label];
+        }
         item.visitorValue = aux;
 
         ss.push(item);
       }
 
-      dt.stats = ss;
+      return ss;
+    }
+
+    function allPlayers(dt) {
+
+      var players = {};
+
+      for (var i = 0; i < dt.HomeTeam.Lineup.length; i++) {
+        players[dt.HomeTeam.Lineup[i].IdTeamPlayer] = dt.HomeTeam.Lineup[i];
+      }
+      for (i = 0; i < dt.HomeTeam.Bench.length; i++) {
+        players[dt.HomeTeam.Bench[i].IdTeamPlayer] = dt.HomeTeam.Bench[i];
+      }
+      for (i = 0; i < dt.VisitorTeam.Lineup.length; i++) {
+        players[dt.VisitorTeam.Lineup[i].IdTeamPlayer] = dt.VisitorTeam.Lineup[i];
+      }
+      for (i = 0; i < dt.VisitorTeam.Bench.length; i++) {
+        players[dt.VisitorTeam.Bench[i].IdTeamPlayer] = dt.VisitorTeam.Bench[i];
+      }
+
+      return players;
     }
 
   })

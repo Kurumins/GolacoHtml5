@@ -14,7 +14,7 @@
 </div>
 
 <div class="result-tabs">
-  <div>
+  <div ng-init="selection=3">
     <label><input type="radio" ng-model="selection" checked>Estatísticas</label>
     <label><input type="radio" ng-model="selection" value="1">Escalação</label>
     <label><input type="radio" ng-model="selection" value="2">Reservas</label>
@@ -42,9 +42,62 @@
         </tr>
       </table>
     </div>
-    <div class="animate-switch" ng-switch-when="1">Escalação</div>
-    <div class="animate-switch" ng-switch-when="2">Reservas</div>
-    <div class="animate-switch" ng-switch-when="3">Gols</div>
+    <div class="animate-switch" ng-switch-when="1">
+      <table width="100%" class="lineup-table">
+        <tr>
+          <th colspan="2">
+            <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.HomeTeam.Acronym}}
+          </th>
+          <th colspan="2">
+            <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.VisitorTeam.Acronym}}
+          </th>
+        </tr>
+        <tr ng-repeat="stat in [0,1,2,3,4,5,6,7,8,9,10]">
+          <td align="center">{{$ctrl.matchData.HomeTeam.Lineup[$index].ShirtNumber}}</td>
+          <td>{{$ctrl.matchData.HomeTeam.Lineup[$index].Name}}</td>
+          <td align="center">{{$ctrl.matchData.VisitorTeam.Lineup[$index].ShirtNumber}}</td>
+          <td>{{$ctrl.matchData.VisitorTeam.Lineup[$index].Name}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="animate-switch" ng-switch-when="2">
+      <table width="100%" class="lineup-table">
+        <tr>
+          <th colspan="2">
+            <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.HomeTeam.Acronym}}
+          </th>
+          <th colspan="2">
+            <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge24x24']}}">
+            {{$ctrl.matchData.VisitorTeam.Acronym}}
+          </th>
+        </tr>
+        <tr ng-repeat="stat in [0,1,2,3,4]">
+          <td align="center">{{$ctrl.matchData.HomeTeam.Bench[$index].ShirtNumber}}</td>
+          <td>{{$ctrl.matchData.HomeTeam.Bench[$index].Name}}</td>
+          <td align="center">{{$ctrl.matchData.VisitorTeam.Bench[$index].ShirtNumber}}</td>
+          <td>{{$ctrl.matchData.VisitorTeam.Bench[$index].Name}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="animate-switch" ng-switch-when="3">
+      <div class="result-goals">
+        <h5>1º tempo</h5>
+        <p ng-repeat="goal in $ctrl.matchData.Goals | filter:{'Half': 1} ">
+          {{goal.Data.GoalTime}}'
+          {{$ctrl.allPlayers[goal.Data.IdTeamPlayer].ShirtNumber}} - {{$ctrl.allPlayers[goal.Data.IdTeamPlayer].Name}}
+        </p>
+      </div>
+      <div class="result-goals">
+        <h5>2º tempo</h5>
+        <p ng-repeat="goal in $ctrl.matchData.Goals | filter:{'Half': 2} ">
+          {{goal.Data.GoalTime}}'
+          {{$ctrl.allPlayers[goal.Data.IdTeamPlayer].ShirtNumber}} - {{$ctrl.allPlayers[goal.Data.IdTeamPlayer].Name}}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 

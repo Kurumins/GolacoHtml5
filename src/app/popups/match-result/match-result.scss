@@ -28,10 +28,23 @@
     }
   }
 
+
   .stats-table {
     text-align: center;
     font-size: 14px;
     line-height: 1;
+  }
+
+  .lineup-table {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .result-goals {
+    font-size: 16px;
+    line-height: 1;
+    float: left;
+    width: 50%;
   }
 
 }

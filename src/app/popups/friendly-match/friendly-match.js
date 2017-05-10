@@ -47,6 +47,4 @@ angular.module('app')
       MatchResult.open(123123);
     }
 
-    vm.play();
-
   });
