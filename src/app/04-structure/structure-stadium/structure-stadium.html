@@ -5,7 +5,7 @@
   <div class="stadium-itens">
 
     <div class="stadium-itens-row" ng-repeat="list in ['Capacity','Atractivity','Rentability']">
-      <i class="icon-user"></i>
+      <i class="{{['icon-user','icon-star','icon-usd'][$index]}}"></i>
       <div ng-repeat="i in [0,1,2]" class="stadium-item">
         <img ng-if="$ctrl.stadium[list+'Items'][i]" ng-src="{{$ctrl.stadium[list+'Items'][i].Picture}}" height="55" >
         <span ng-if="!$ctrl.stadium[list+'Items'][i]">
