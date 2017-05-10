@@ -1,0 +1,27 @@
+.ngdialog.ngdialog-match-result {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 30px 25px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  .placar {
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .result-tabs {
+    width: 60%;
+    float: left;
+
+    + div {
+      width: 40%;
+      float: left;
+    }
+  }
+
+}

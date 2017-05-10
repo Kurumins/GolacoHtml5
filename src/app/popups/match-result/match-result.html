@@ -1,0 +1,54 @@
+<h2>{{$ctrl.matchData.result}}</h2>
+
+<div class="game-result">
+  <h3>Resultado</h3>
+  <div class="placar">
+    <img ng-src="{{$ctrl.matchData.HomeTeam.Badge}}">
+    {{$ctrl.matchData.HomeTeam.Acronym}}
+    {{$ctrl.matchData.HomeTeam.Goals}}
+    X
+    {{$ctrl.matchData.VisitorTeam.Goals}}
+    {{$ctrl.matchData.VisitorTeam.Acronym}}
+    <img ng-src="{{$ctrl.matchData.VisitorTeam.Badge}}">
+  </div>
+</div>
+
+<div class="result-tabs">
+  <div ng-init-="selection = 1">
+    <label><input type="radio" ng-model="selection" checked>Estatísticas</label>
+    <label><input type="radio" ng-model="selection" value="1">Escalação</label>
+    <label><input type="radio" ng-model="selection" value="2">Reservas</label>
+    <label><input type="radio" ng-model="selection" value="3">Gols</label>
+  </div>
+
+  <div class="animate-switch-container" ng-switch on="selection">
+    <div class="animate-switch" ng-switch-default>Estatísticas</div>
+    <div class="animate-switch" ng-switch-when="1">Escalação</div>
+    <div class="animate-switch" ng-switch-when="2">Reservas</div>
+    <div class="animate-switch" ng-switch-when="3">Gols</div>
+  </div>
+</div>
+
+<div>
+  <div class="result-data">
+    <h4>Dados da partida</h4>
+    <p>Data do jogo: {{$ctrl.matchData.MatchData.MatchDate | date:'short'}}</p>
+    <p>Data do jogo: {{$ctrl.matchData.MatchData.StadiumName}}</p>
+    <p>Tipo de jogo: {{$ctrl.matchData.MatchData.MatchType}}</p>
+    <p>Público: {{$ctrl.matchData.MatchData.HomeAttendance + $ctrl.matchData.MatchData.VisitorAttendance}}</p>
+  </div>
+
+  <div class="result-data">
+    <h4>Renda do jogo</h4>
+    <p>
+      <img ng-src="{{$ctrl.matchData.HomeTeam.Badge}}" height="20">
+      {{$ctrl.matchData.HomeTeam.Acronym}}
+      {{$ctrl.matchData.MatchData.HomeTeamBudget}}
+    </p>
+    <p>
+      <img ng-src="{{$ctrl.matchData.VisitorTeam.Badge}}" height="20">
+      {{$ctrl.matchData.VisitorTeam.Acronym}}
+      {{$ctrl.matchData.MatchData.VisitorTeamBudget}}
+    </p>
+  </div>
+</div>

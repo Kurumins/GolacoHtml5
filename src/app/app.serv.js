@@ -23,7 +23,10 @@ angular.module('app')
       idCity: vm.userData.idCity,
       idCountry: vm.userData.idCountry,
       idState: vm.userData.idState
-    });
+    })
+      .then(function (result) {
+        return vm.user = result;
+      });
   };
 
   vm.getTeamPreview = function () {
@@ -43,6 +46,10 @@ angular.module('app')
 
   vm.countryList = function () {
     return $http.get('/data/countryList');
+  };
+
+  vm.getCurrentUploadBadge = function (idTeam) {
+    return PostToJs('Team/GetCurrentUploadBadge', { IdTeam: idTeam });
   };
 
 });

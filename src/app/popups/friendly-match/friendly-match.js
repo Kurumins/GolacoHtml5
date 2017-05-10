@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('FriendlyMatchController', function (FriendlyMatchService, AppService) {
+  .controller('FriendlyMatchController', function (FriendlyMatchService, AppService, MatchResult) {
 
     var vm = this;
 
@@ -43,13 +43,10 @@ angular.module('app')
 
     vm.findFriendlyMatches(vm.filter);
 
-    // function findFriendlyMatches (filter) {
-    //   FriendlyMatchService.findFriendlyMatches(filter)
-    //     .then(function (friendlyMatches) {
-    //       vm.friendlyMatches = friendlyMatches.Teams;
-    //       vm.me = friendlyMatches.CurrentTeam;
-    //       vm.currentMatch = vm.friendlyMatches[0];
-    //     });
-    // };
+    vm.play = function () {
+      MatchResult.open(123123);
+    }
+
+    vm.play();
 
   });
