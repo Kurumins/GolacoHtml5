@@ -1,3 +1,61 @@
 .structure-stadium {
+  .stadium-picture {
+    float: left;
+    margin: 10px;
+  }
+  .stadium-itens {
+    float: left;
+    width: 400px;
+    margin: 10px;
+    text-align: center;
+    line-height: 64px;
+    // padding: 5px;
+    margin: 10px 0;
 
+    .stadium-itens-row {
+      width: 100%;
+      // align-items: center;
+      // justify-content: space-between;
+      // background: #017fe5;
+      overflow: auto;
+      // margin: 5px 0;
+      margin-bottom: 1%;
+
+      > i {
+        // width: 50px;
+        color: white;
+        float: left;
+        width: 10%;
+        // padding-left: 1%;
+        // border: 1px solid #000;
+        box-sizing: border-box;
+        background: #017fe5;
+      }
+    }
+
+    .stadium-item {
+      float: left;
+      width: 29%;
+      border: 1px solid;
+      box-sizing: border-box;
+      margin-left: 1%;
+      background: white;
+      height: 64px;
+    }
+
+    .icon-lock {
+      font-size: 26px;
+      color: #666;
+    }
+
+    .item-equip {
+      line-height: 16px;
+      display: block;
+      font-size: 14px;
+      padding: 14px 0;
+      box-sizing: border-box;
+      height: 62px;
+      cursor: pointer;
+    }
+  }
 }

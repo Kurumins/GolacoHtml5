@@ -2,21 +2,21 @@
 angular.module('app')
   .config(structureRoutesConfig);
 
-function structureController (/*ItensService, inventory, storeList*/) {
+// function structureController (/*ItensService, inventory, storeList*/) {
 
-  var vm = this;
+//   var vm = this;
 
-  // vm.inventory = inventory;
-  // vm.storeList = storeList;
+//   // vm.inventory = inventory;
+//   // vm.storeList = storeList;
 
-  // vm.saleItens = []
-  //   .concat( vm.storeList.TeamPlayerItems || [] )
-  //   .concat( vm.storeList.TrainingCenterItems || [] )
-  //   .filter(function (item) {
-  //     return item.SalePrice !== 0;
-  //   });
+//   // vm.saleItens = []
+//   //   .concat( vm.storeList.TeamPlayerItems || [] )
+//   //   .concat( vm.storeList.TrainingCenterItems || [] )
+//   //   .filter(function (item) {
+//   //     return item.SalePrice !== 0;
+//   //   });
 
-}
+// }
 
 function structureRoutesConfig ($stateProvider) {
 
@@ -25,22 +25,27 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure', {
       url: '/structure',
       abstract: '.stadium',
-      // resolve: {
-      //   inventory: function (ItensService) {
-      //     return ItensService.inventory();
-      //   },
-      //   storeList: function (ItensService) {
-      //     return ItensService.storeList();
-      //   }
-      // },
       templateUrl: 'structure.html',
-      controller: structureController,
-      controllerAs: '$structureCtrl'
+      // controller: structureController,
+      // controllerAs: '$structureCtrl'
     })
 
     .state('app.structure.stadium', {
       url: '/stadium',
       templateUrl: 'structure-stadium.html',
+      resolve: {
+        stadiumManage: function (StructureService) {
+          return StructureService.stadiumManage()
+            .then( function (stadiumManage) {
+              stadiumManage.Stadium.CapacitySlots = stadiumManage.Stadium.CampacitySlots;
+              return stadiumManage;
+            })
+        }
+      },
+      controller: function (stadiumManage) {
+        this.stadium = stadiumManage.Stadium;
+      },
+      controllerAs: '$ctrl'
     })
 
     .state('app.structure.training-center', {

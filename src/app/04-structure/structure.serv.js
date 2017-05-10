@@ -1,11 +1,11 @@
 'use strict';
 angular.module('app')
-  .service('ItensService', function (PostToJs) {
+  .service('StructureService', function (PostToJs) {
 
     var vm = this;
 
-    vm.inventory = function () {
-      return PostToJs('Team/Inventory');
+    vm.stadiumManage = function () {
+      return PostToJs('Stadium/Manage');
     };
 
     vm.storeList = function () {
