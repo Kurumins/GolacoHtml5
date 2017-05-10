@@ -1,0 +1,16 @@
+{
+  "data": {
+    "Success": true,
+    "Name": "CTT",
+    "TeamPlayerCostPerWeek": 2000.00,
+    "Picture": "https://www.golacogame.com.br/Content/structures/45.png",
+    "ZoomPicture": "https://www.golacogame.com.br/Content/structures/45b.png",
+    "ConstructionDate": 1492550248000,
+    "StructureLevel": 1,
+    "Capacity": 3,
+    "AgentCost": 20,
+    "HasJuniorCenter": true,
+    "TimeToNewDraft": 1494544105120,
+    "Players": []
+  }
+}

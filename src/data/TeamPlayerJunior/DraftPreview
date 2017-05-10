@@ -1,0 +1,123 @@
+{
+  "data": {
+    "Success": true,
+    "PriceToInstantDraft": 9,
+    "TimeToNewDraft": 1494544105120,
+    "TimeToShowDraft": 0,
+    "DraftCost": 10000.00,
+    "CurrentTeamPlayers": 0,
+    "TeamPlayerCapacity": 3,
+    "Scouts": [
+      {
+        "Id": 7,
+        "Name": "Lucas Epaminondas",
+        "MeansScoutBonus": 0.90,
+        "TeamPlayerBonus": 1,
+        "ReleaseTimeBonus": 90,
+        "MoneyCost": 48000,
+        "CreditCost": 12,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      },
+      {
+        "Id": 8,
+        "Name": "Romulo Snow",
+        "MeansScoutBonus": 1.00,
+        "TeamPlayerBonus": 0,
+        "ReleaseTimeBonus": 80,
+        "MoneyCost": 96000,
+        "CreditCost": 4,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      },
+      {
+        "Id": 9,
+        "Name": "Rodrigo Boa Vista",
+        "MeansScoutBonus": 1.10,
+        "TeamPlayerBonus": 1,
+        "ReleaseTimeBonus": 80,
+        "MoneyCost": 168000,
+        "CreditCost": 16,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      },
+      {
+        "Id": 10,
+        "Name": "Glauco Olho-de-Águia",
+        "MeansScoutBonus": 1.20,
+        "TeamPlayerBonus": 0,
+        "ReleaseTimeBonus": 70,
+        "MoneyCost": 275000,
+        "CreditCost": 9,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      },
+      {
+        "Id": 11,
+        "Name": "Luiz Folha Verde",
+        "MeansScoutBonus": 1.30,
+        "TeamPlayerBonus": 1,
+        "ReleaseTimeBonus": 70,
+        "MoneyCost": 530000,
+        "CreditCost": 25,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      },
+      {
+        "Id": 12,
+        "Name": "Professor Matheus (+1 P5)",
+        "MeansScoutBonus": 1.35,
+        "TeamPlayerBonus": 0,
+        "ReleaseTimeBonus": 50,
+        "MoneyCost": 975000,
+        "CreditCost": 45,
+        "Picture": "https://www.golacogame.com.br/Content/scout/olheiro.png"
+      }
+    ],
+    "Players": [
+      {
+        "Id": 3228082,
+        "Name": "Valério Alípio",
+        "Birthday": 3,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/junior.png",
+        "Age": 16,
+        "Potential": 2,
+        "CreditsCost": 2,
+        "MoneyCost": 50000,
+        "Position": 3,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 1,
+            "PrimarySkill1": 1,
+            "Value": 5
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "PrimarySkill2": 9,
+            "Value": 7
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "SecondSkill1": 7,
+            "Value": 5
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "SecondSkill2": 2,
+            "Value": 6
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "SecondSkill3": 3,
+            "Value": 5
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "SecondSkill4": 6,
+            "Value": 5
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "SecondSkill5": 5,
+            "Value": 5
+          }
+        }
+      }
+    ]
+  }
+}

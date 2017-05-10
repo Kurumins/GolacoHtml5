@@ -12,4 +12,14 @@ angular.module('app')
       return PostToJs('Store/List');
     };
 
+    vm.juniorPreview = function () {
+      return PostToJs('TeamPlayerJunior/Preview');
+    };
+
+    vm.juniorDraft = function () {
+      return PostToJs('TeamPlayerJunior/DraftPreview');
+    };
+
+
+
   });

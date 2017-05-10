@@ -1,0 +1,25 @@
+.junior-center {
+
+  .center-structure {
+    border: 1px solid;
+    overflow: auto;
+  }
+
+  .center-picture {
+    float: left;
+    margin: 10px;
+  }
+
+  .junior-players {
+    float: left;
+    width: 450px;
+    margin: 10px;
+  }
+
+  .no-players {
+    text-align: center;
+    display: block;
+    padding: 65px 90px;
+  }
+
+}
