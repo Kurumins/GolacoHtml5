@@ -40,21 +40,7 @@
 <div class="draft-players">
   <span style="float: right;">{{$ctrl.juniorDraft.CurrentTeamPlayers}} / {{$ctrl.juniorDraft.TeamPlayerCapacity}} jogadores no CT</span>
   <h3>Jogadores encontrados</h3>
-  <table class="players-table" width="100%" cellspacing="0"
-    ng-init="$ctrl.currentPlayer = $ctrl.juniorDraft.Players[0]">
-    <tr ng-repeat="player in $ctrl.juniorDraft.Players" ng-class="{active: $ctrl.currentPlayer == player}" ng-click="$ctrl.currentPlayer = player">
-      <td><img ng-src="{{player.Picture}}" height="25"></td>
-      <td>{{player.Name}}</td>
-      <td>{{player.Age}}</td>
-      <td>{{player.Birthday}}</td>
-      <td width="1"><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></td>
-      <td align="center" ng-repeat="(key, value) in player.Attributes">
-        <!-- <p>skill_{{value[key]}}_acr</p> -->
-        <p>skill_{{value[key]}}</p>
-        <p>{{value.Value}}</p>
-      </td>
-    </tr>
-  </table>
+  <junior-table players="$ctrl.juniorDraft.Players" current-player="$ctrl.currentPlayer"></junior-table>
   <p ng-if="!$ctrl.juniorDraft.Players.length" class="no-players">Você não tem jogadores na peneira</p>
   <button class="plyer-recruit" ng-if="$ctrl.juniorDraft.Players.length">Recrutar</button>
 </div>

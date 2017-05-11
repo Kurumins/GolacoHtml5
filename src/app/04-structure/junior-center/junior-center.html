@@ -8,6 +8,7 @@
   <div class="center-structure">
     <img ng-src="{{$ctrl.juniorPreview.Picture}}" class="center-picture">
     <div class="junior-players">
+      <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" class="small"></junior-table>
       <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length">Você não tem jogadores no seu Centro de Juniores. Clique no botão "Peneira" e recrute!</span>
     </div>
   </div>
@@ -22,7 +23,29 @@
     <dd>{{$ctrl.juniorPreview.TimeToNewDraft | date:'short'}}</dd>
   </dl>
   <div class="player-info">
-
+    <dl>
+      <dt>Jogador</dt>
+      <dd>{{$ctrl.currentPlayer.Name}}</dd>
+      <dt>Data da liberação</dt>
+      <dd>{{$ctrl.currentPlayer.ReleaseDate | date:'short'}}</dd>
+      <dt>Custo de liberação</dt>
+      <dd>
+        <div>{{$ctrl.currentPlayer.MoneyCost | currency}} <i class="icon-money"></i></div>
+        <div>{{$ctrl.currentPlayer.CreditsCost}} <i class="icon-credit-card"></i></div>
+      </dd>
+    </dl>
+    <footer>
+      <div style="float: right;">
+        <button>X</button>
+        <button class="icon-star"></button>
+      </div>
+      <label>
+        <input type="checkbox" name=""> Contratar despachante
+        <i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
+      </label>
+    </footer>
+    <!-- {{$ctrl.currentPlayer}} -->
   </div>
+
+
 </div>
-{{$ctrl.juniorPreview | json}}

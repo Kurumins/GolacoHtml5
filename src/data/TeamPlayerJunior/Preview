@@ -11,6 +11,58 @@
     "AgentCost": 20,
     "HasJuniorCenter": true,
     "TimeToNewDraft": 1494544105120,
-    "Players": []
+    "Players-": [],
+    "Players": [
+      {
+        "Id": 3228082,
+        "Name": "Valério Alípio",
+        "Birthday": 3,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/junior.png",
+        "Age": 16,
+        "Potential": 2,
+        "ReleaseDate": 1495078955623,
+        "CreditsCost": 2,
+        "MoneyCost": 50000,
+        "Position": 3,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 1,
+            "PrimarySkill1": 1,
+            "Value": 5
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "PrimarySkill2": 9,
+            "Value": 7
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "SecondSkill1": 7,
+            "Value": 5
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "SecondSkill2": 2,
+            "Value": 6
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "SecondSkill3": 3,
+            "Value": 5
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "SecondSkill4": 6,
+            "Value": 5
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "SecondSkill5": 5,
+            "Value": 4
+          }
+        },
+        "IsTraining": false
+      }
+    ]
   }
 }

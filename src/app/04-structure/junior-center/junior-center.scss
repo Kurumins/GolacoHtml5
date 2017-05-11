@@ -22,4 +22,36 @@
     padding: 65px 90px;
   }
 
+  dl {
+    margin: 0;
+    line-height: 1.5;
+  }
+  dt {
+    float: left;
+    width: 50%;
+  }
+  dd {
+    float: right;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+  }
+
+  .center-info {
+    float: left;
+    width: 45%;
+    margin: 15px 5% 15px 0;
+  }
+
+  .player-info {
+    float: left;
+    width: 50%;
+    margin: 15px 0;
+  }
+
+  footer {
+    clear: both;
+    margin-top: 100px;
+  }
+
 }
