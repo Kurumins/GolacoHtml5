@@ -4,9 +4,29 @@
   <div class="draft-scouts">
     <p ng-if="$ctrl.juniorDraft.TimeToNewDraft">Você não pode realizar uma nova peneira ainda</p>
     <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">Aguarde o liberação da peneira em curso</p>
-    <p ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-      Melhore sua peneira contratando um olheiro!
-    </p>
+    <div ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
+      <div ng-if="$ctrl.currentScout" class="scout-detail">
+        <div class="scout-picture">
+          <img ng-src="{{$ctrl.currentScout.Picture}}" height="80">
+          <button ng-click="$ctrl.currentScout=null" class="scout-remove">Remover<br>Olheiro</button>
+        </div>
+        <dl>
+          <dt>Olheiro</dt>
+          <dd>{{$ctrl.currentScout.Name}}</dd>
+          <dt>Olhar técnico</dt>
+          <dd>{{$ctrl.currentScout.MeansScoutBonus*10}}</dd>
+          <dt>Jogadores extras</dt>
+          <dd>{{$ctrl.currentScout.TeamPlayerBonus}}</dd>
+          <dt>Tempo de pesquisa</dt>
+          <dd>{{$ctrl.currentScout.ReleaseTimeBonus}}%</dd>
+          <dt><i class="icon-credit-card"></i> {{$ctrl.currentScout.CreditCost}}</dt>
+          <dt><i class="icon-money"></i> {{$ctrl.currentScout.MoneyCost | currency}}</dt>
+        </dl>
+      </div>
+      <p ng-if="!$ctrl.currentScout" class="select-scouts" ng-click="$ctrl.juniorScouts()">
+        Melhore sua peneira contratando um olheiro!
+      </p>
+    </div>
   </div>
 
   <div class="new-draft">
@@ -17,23 +37,25 @@
     <dl>
       <dt ng-if="$ctrl.juniorDraft.TimeToShowDraft">Resultado em</dt>
       <dd ng-if="$ctrl.juniorDraft.TimeToShowDraft">{{$ctrl.juniorDraft.TimeToShowDraft | date:'short'}}</dd>
-      <dt ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">Posição</dt>
-      <dd ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-        <select>
+      <dt ng-if="!$ctrl.juniorDraft.TimeToNewDraft">Posição</dt>
+      <dd ng-if="!$ctrl.juniorDraft.TimeToNewDraft">
+        <select ng-disabled="$ctrl.juniorDraft.TimeToShowDraft">
           <option>Todas</option>
         </select>
       </dd>
     </dl>
-    <p ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-      <button>Realizar peneira</button> |
-      <i class="icon-money"></i>
-      {{$ctrl.juniorDraft.DraftCost | currency}}
-    </p>
-    <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">
-      <button>Liberar resultados</button> |
-      <i class="icon-credit-card"></i>
-      {{$ctrl.juniorDraft.PriceToInstantDraft}}
-    </p>
+    <footer>
+      <p ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
+        <button>Realizar peneira</button> |
+        <i class="icon-money"></i>
+        {{$ctrl.juniorDraft.DraftCost | currency}}
+      </p>
+      <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">
+        <button>Liberar resultados</button> |
+        <i class="icon-credit-card"></i>
+        {{$ctrl.juniorDraft.PriceToInstantDraft}}
+      </p>
+    </footer>
   </div>
 </div>
 

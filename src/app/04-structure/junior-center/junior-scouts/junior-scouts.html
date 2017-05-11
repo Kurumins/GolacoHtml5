@@ -1,0 +1,21 @@
+<h2>Selecione um olheiro</h2>
+<h5>Clique em um olheiro para selecionar</h5>
+
+<table width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <th></th>
+    <th>Olhar<br>técnico</th>
+    <th>Jogadores<br>Extras</th>
+    <th>Tempo de<br>Pesquisa</th>
+    <th class="icon-credit-card"></th>
+    <th class="icon-money"></th>
+  </tr>
+  <tr ng-repeat="scout in $ctrl.juniorScouts" ng-click="confirm(scout)">
+    <td class="scout-name">{{scout.Name}}</td>
+    <td align="center">{{scout.MeansScoutBonus*10}}</td>
+    <td align="center">{{scout.TeamPlayerBonus}}</td>
+    <td align="center">{{scout.ReleaseTimeBonus}}%</td>
+    <td align="center">{{scout.CreditCost}}</td>
+    <td align="right">{{scout.MoneyCost | currency}}</td>
+  </tr>
+</table>

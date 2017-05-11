@@ -1,0 +1,53 @@
+.ngdialog.ngdialog-junior-scouts {
+
+  .ngdialog-content {
+    width: 550px;
+    padding: 30px 25px;
+  }
+
+  // h4,
+  h3,
+  h2 {
+    margin: 0;
+  }
+
+  table {
+    font-size: 14px;
+
+    tr:nth-child(even) td {
+      background: #ddd;
+    }
+    tr:nth-child(odd) td {
+      background: #fff;
+    }
+
+    th {
+      font-size: 9px;
+      line-height: 10px;
+      font-weight: normal;
+      padding: 5px 0;
+    }
+
+    td {
+      white-space: nowrap;
+      // min-width: 40px;
+      padding: 0 10px;
+      position: relative;
+
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        right: 0;
+        border-right: 1px solid #666;
+      }
+    }
+
+    .icon-money,
+    .icon-credit-card {
+      font-size: 16px;
+    }
+  }
+
+}

@@ -12,17 +12,90 @@
 
   .draft-scouts {
     float: left;
-    width: 45%;
-    text-align: center;
-    padding: 30px 50px;
+    width: 50%;
     border: 1px solid;
-    margin-right: 5%;
+    // margin-right: 5%;
     font-size: 16px;
+
+    height: 170px;
+    // display: flex;
+    // align-items: center;
+
+    p {
+      text-align: center;
+      margin: 0;
+      padding: 60px 50px 50px;
+    }
+
+    .select-scouts {
+      cursor: pointer;
+    }
+
+    .scout-detail {
+      padding: 5px;
+      position: relative;
+      // font-size: 16px;
+
+      .scout-picture {
+        float: left;
+        // margin-right: 5px;
+        .scout-remove {
+          display: block;
+          width: 100%;
+          margin-top: 5px;
+        }
+      }
+
+      dl {
+        margin: 0px;
+        padding-left: 5px;
+        overflow: auto;
+        // float: left;
+        // width: 100%;
+      }
+      dt {
+        clear: both;
+        float: left;
+        // width: 50%;
+      }
+      dd {
+        float: right;
+        margin: 0;
+        // width: 50%;
+        text-align: right;
+      }
+
+      // .scout-remove {
+      //   position: absolute;
+      //   top: -20px;
+      //   right: 0;
+      //   // width: 100%;
+      //   // height: 100%;
+      //   cursor: pointer;
+
+      //   border: 0;
+      //   background: transparentize(red, .9);
+
+      //   font-size: 90px;
+      //   color: transparentize(red, .0);
+      //   // text-align: right;
+
+      //   &:not(:hover) {
+      //     // opacity: 0;
+      //   }
+      // }
+
+    }
   }
 
   .new-draft {
     float: left;
-    width: 50%;
+    width: 45%;
+    margin-left: 5%;
+
+    dl {
+      overflow: auto;
+    }
 
     dt,
     dd {
@@ -32,9 +105,13 @@
     }
     dd {
       text-align: right;
+      select {
+        width: 100%;
+      }
     }
-    select {
-      width: 100%;
+
+    footer {
+      margin-top: 10px;
     }
   }
 

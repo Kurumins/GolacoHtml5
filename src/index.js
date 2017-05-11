@@ -8,6 +8,9 @@ angular
     'lvl.directives.dragdrop',
     'nsPopover'
   ])
+  .config(function ($qProvider) {
+      $qProvider.errorOnUnhandledRejections(false);
+  })
   .run(function ($window) {
 
     $window._gaq = [];
