@@ -1,0 +1,83 @@
+<h2>Reforma centro de juniores</h2>
+
+<div class="junior-center">
+  <img ng-src="{{$ctrl.current.BigPicture}}" height="190">
+  <p class="text-center">Nível do centro de juniores</p>
+  <h1 class="text-center">{{$ctrl.current.StructureLevel}}</h1>
+  <footer>
+    <p><i class="icon-money"></i> {{$ctrl.current.MoneyPrice | currency}}</p>
+    <p><i class="icon-credit-card"></i> {{$ctrl.current.CreditPrice}}</p>
+    <button>Reformar CJ</button>
+  </footer>
+</div>
+
+<div class="junior-compare">
+  <h3>Atributos</h3>
+  <table width="100%" cellspacing="0" cellpadding="5">
+    <tr>
+      <td>Capacidade</td>
+      <td align="right">{{$ctrl.myTrainCenter.TeamPlayerCapacity}}</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.TeamPlayerCapacity < $ctrl.current.TeamPlayerCapacity,
+        worst: $ctrl.myTrainCenter.TeamPlayerCapacity > $ctrl.current.TeamPlayerCapacity,
+      }">{{$ctrl.current.TeamPlayerCapacity}}</td>
+    </tr>
+    <tr>
+      <td>Jogadores na peneira</td>
+      <td align="right">{{$ctrl.myTrainCenter.TeamPlayersPerDraft}}</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.TeamPlayersPerDraft < $ctrl.current.TeamPlayersPerDraft,
+        worst: $ctrl.myTrainCenter.TeamPlayersPerDraft > $ctrl.current.TeamPlayersPerDraft,
+      }">{{$ctrl.current.TeamPlayersPerDraft}}</td>
+    </tr>
+    <tr>
+      <td>Nível da peneira</td>
+      <td align="right">{{$ctrl.myTrainCenter.StructureLevel}}</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.StructureLevel < $ctrl.current.StructureLevel,
+        worst: $ctrl.myTrainCenter.StructureLevel > $ctrl.current.StructureLevel,
+      }">{{$ctrl.current.StructureLevel}}</td>
+    </tr>
+    <tr>
+      <td>Tempo da peneira</td>
+      <td align="right">{{$ctrl.myTrainCenter.ReleaseTimeDraft}}</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.ReleaseTimeDraft > $ctrl.current.ReleaseTimeDraft,
+        worst: $ctrl.myTrainCenter.ReleaseTimeDraft < $ctrl.current.ReleaseTimeDraft,
+      }">{{$ctrl.current.ReleaseTimeDraft}}</td>
+    </tr>
+    <tr>
+      <td>Intervalo entre peneiras</td>
+      <td align="right">{{$ctrl.myTrainCenter.TimeToNewDraft}} dias</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.TimeToNewDraft < $ctrl.current.TimeToNewDraft,
+        worst: $ctrl.myTrainCenter.TimeToNewDraft > $ctrl.current.TimeToNewDraft,
+      }">{{$ctrl.current.TimeToNewDraft}} dias</td>
+    </tr>
+    <tr>
+      <td>Custo por peneira</td>
+      <td align="right">{{$ctrl.myTrainCenter.DraftCost | currency}}</td>
+      <td align="right" ng-class="{
+        better: $ctrl.myTrainCenter.DraftCost > $ctrl.current.DraftCost,
+        worst: $ctrl.myTrainCenter.DraftCost < $ctrl.current.DraftCost,
+      }">{{$ctrl.current.DraftCost | currency}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="train-centers">
+  <slick
+    infinite=false
+    slides-to-show="3" slides-to-scroll="3"
+    prev-arrow=".slick-prev"
+    next-arrow=".slick-next">
+    <div ng-repeat="trainCenter in $ctrl.trainCenters" ng-click="$ctrl.current = trainCenter">
+      <div class="train-center-picture" ng-class="{active: $ctrl.current == trainCenter}">
+        <img ng-src="{{trainCenter.MiniPicture}}">
+        <span>{{['','A','B','C','D'][trainCenter.Requirement_IdLeague]}}</span>
+      </div>
+    </div>
+  </slick>
+  <button type="button" class="slick-prev">«</button>
+  <button type="button" class="slick-next">»</button>
+</div>

@@ -20,6 +20,10 @@ angular.module('app')
       return PostToJs('TeamPlayerJunior/DraftPreview');
     };
 
+    vm.juniorReform = function () {
+      return PostToJs('TeamPlayerJunior/GetJuniorTrainCenter');
+    };
+
 
 
   });
