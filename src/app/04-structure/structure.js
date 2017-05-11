@@ -66,14 +66,15 @@ function structureRoutesConfig ($stateProvider) {
           return StructureService.juniorPreview();
         }
       },
-      controller: function (juniorPreview, JuniorDraft) {
-        var vm = this;
-        vm.juniorPreview = juniorPreview;
+      controller: 'JuniorCenterController as $ctrl'
+      // controller: function (juniorPreview, JuniorDraft) {
+      //   var vm = this;
+      //   vm.juniorPreview = juniorPreview;
 
-        vm.juniorDraft = JuniorDraft.open;
-        vm.juniorDraft();
-      },
-      controllerAs: '$ctrl'
+      //   vm.juniorDraft = JuniorDraft.open;
+      //   vm.juniorDraft();
+      // },
+      // controllerAs: '$ctrl'
     })
 
     // .state('app.itens.itens', {

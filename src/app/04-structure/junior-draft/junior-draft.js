@@ -4,6 +4,7 @@ angular.module('app')
 
     var vm = this;
 
+    vm.juniorDraft = juniorDraft;
 
   })
   .factory('JuniorDraft', function (StructureService, ngDialog) {

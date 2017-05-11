@@ -1,9 +1,9 @@
 'use strict';
 angular.module('app')
-  .controller('MainConfigController', function (settings) {
-
+  .controller('JuniorCenterController', function (juniorPreview, JuniorDraft) {
     var vm = this;
+    vm.juniorPreview = juniorPreview;
 
-    vm.settings = settings;
-
+    vm.juniorDraft = JuniorDraft.open;
+    // vm.juniorDraft();
   });

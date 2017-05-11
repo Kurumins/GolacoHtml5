@@ -1,50 +1,83 @@
-.ngdialog.ngdialog-match-result {
+.ngdialog.ngdialog-junior-draft {
 
   .ngdialog-content {
     width: 750px;
-    padding: 30px 25px;
+    padding: 10px 25px;
   }
 
-  h4 {
+  h4,
+  h3 {
     margin: 0;
   }
 
-  .placar {
-    text-align: center;
-    margin: 15px 0;
-
-    img {
-      margin: 0 20px;
-    }
-  }
-
-  .result-tabs {
-    width: 60%;
+  .draft-scouts {
     float: left;
-
-    + div {
-      width: 40%;
-      float: left;
-    }
-  }
-
-
-  .stats-table {
+    width: 45%;
     text-align: center;
-    font-size: 14px;
-    line-height: 1;
+    padding: 30px 50px;
+    border: 1px solid;
+    margin-right: 5%;
+    font-size: 16px;
   }
 
-  .lineup-table {
-    font-size: 16px;
-    line-height: 1;
-  }
-
-  .result-goals {
-    font-size: 16px;
-    line-height: 1;
+  .new-draft {
     float: left;
     width: 50%;
+
+    dt,
+    dd {
+      float: left;
+      width: 50%;
+      margin: 0;
+    }
+    dd {
+      text-align: right;
+    }
+    select {
+      width: 100%;
+    }
+  }
+
+  .draft-players {
+    margin-top: 30px;
+  }
+
+  .players-table {
+    font-size: 12px;
+    line-height: 1.2;
+    border: 1px solid;
+    font-weight: bold;
+
+    td {
+      padding: 2px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    tr:nth-child(even) {
+      background: #fff;
+    }
+    tr:nth-child(odd) {
+      background: #ddd;
+    }
+
+    tr.active {
+      background-color: #bbb;
+    }
+  }
+
+  .no-players {
+    text-align: center;
+    padding: 50px;
+    border: 1px solid;
+  }
+
+  .plyer-recruit {
+    float: right;
+    margin-top: 10px;
   }
 
 }
