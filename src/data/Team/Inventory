@@ -3,186 +3,6 @@
     "Success": true,
     "TeamPlayerItems": [
       {
-        "Id": 16724833,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724834,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724835,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724836,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724837,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724838,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724839,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724840,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16724841,
-        "Name": "Label_Shirt_General_1_Credits",
-        "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
-        "Duration": 12,
-        "RemainDuration": 12,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 3
-          }
-        ],
-        "Category": 13,
-        "MoneySellPrice": 0,
-        "CreditSellPrice": 0
-      },
-      {
         "Id": 16724842,
         "Name": "Label_Shirt_General_1_Credits",
         "Picture": "https://www.golacogame.com.br/Content/item/286s.png",
@@ -203,7 +23,7 @@
         "CreditSellPrice": 0
       },
       {
-        "Id": 16739942,
+        "Id": 16803695,
         "Name": "Label_Shirt_General_3_Credits",
         "Picture": "https://www.golacogame.com.br/Content/item/288s.png",
         "Duration": 12,
@@ -223,9 +43,9 @@
         "CreditSellPrice": 1
       },
       {
-        "Id": 16735238,
-        "Name": "Label_Short_General_1",
-        "Picture": "https://www.golacogame.com.br/Content/item/250s.png",
+        "Id": 16803935,
+        "Name": "Label_Shirt_General_1",
+        "Picture": "https://www.golacogame.com.br/Content/item/246s.png",
         "Duration": 10,
         "RemainDuration": 10,
         "Effects": [
@@ -238,92 +58,12 @@
             "Effect": 2
           }
         ],
-        "Category": 14,
-        "MoneySellPrice": 16667,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16740025,
-        "Name": "Label_Short_General_1",
-        "Picture": "https://www.golacogame.com.br/Content/item/250s.png",
-        "Duration": 10,
-        "RemainDuration": 10,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 2,
-            "Effect": 2
-          },
-          {
-            "IdTeamPlayerSkill": 3,
-            "Effect": 2
-          }
-        ],
-        "Category": 14,
-        "MoneySellPrice": 16667,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16740027,
-        "Name": "Label_Cleats_General_1",
-        "Picture": "https://www.golacogame.com.br/Content/item/214s.png",
-        "Duration": 10,
-        "RemainDuration": 10,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 6,
-            "Effect": 3
-          },
-          {
-            "IdTeamPlayerSkill": 7,
-            "Effect": 2
-          }
-        ],
-        "Category": 15,
-        "MoneySellPrice": 16667,
-        "CreditSellPrice": 0
-      },
-      {
-        "Id": 16740028,
-        "Name": "Label_Cleats_General_1",
-        "Picture": "https://www.golacogame.com.br/Content/item/214s.png",
-        "Duration": 10,
-        "RemainDuration": 10,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 6,
-            "Effect": 3
-          },
-          {
-            "IdTeamPlayerSkill": 7,
-            "Effect": 2
-          }
-        ],
-        "Category": 15,
+        "Category": 13,
         "MoneySellPrice": 16667,
         "CreditSellPrice": 0
       }
     ],
     "TrainingCenterItems": [
-      {
-        "Id": 8499719,
-        "Name": "Label_TreinadorDeGoleiro",
-        "Picture": "https://www.golacogame.com.br/Content/item/3s.png",
-        "Durability": 25,
-        "RemainDurability": 25,
-        "Effects": [
-          {
-            "IdTeamPlayerSkill": 10,
-            "Effect": 1
-          },
-          {
-            "IdTeamPlayerSkill": 11,
-            "Effect": 1
-          }
-        ],
-        "Category": 1,
-        "MoneySellPrice": 1819,
-        "CreditSellPrice": 0
-      },
       {
         "Id": 8496552,
         "Name": "Label_TreinadorDeDefesa",
