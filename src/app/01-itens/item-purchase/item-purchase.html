@@ -1,0 +1,37 @@
+<h2>Comprar item</h2>
+<h5>Escolha quantos itens deseja comprar:</h5>
+
+<div class="item-details">
+  <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
+  <h4 class="item-name">{{$ctrl.item.Name.replace('Label_','')}}</h4>
+  <div class="item-effects">
+    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
+      <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label>
+      +{{effect.Effect}}
+    </div>
+    <div class="item-effect">
+      <label>--</label>
+      --
+    </div>
+    <div class="item-effect">
+      <label><i class="icon icon-clock"></i></label>
+      {{$ctrl.item.Duration}}
+    </div>
+  </div>
+</div>
+
+<div>
+  <label ng-init="$ctrl.qty=1">
+    Quantidade
+    <input type="number" min="1" max="999" ng-model="$ctrl.qty" >
+  </label>
+  <span ng-if="$ctrl.item.MoneyPrice"><i class="icon icon-money"></i> {{($ctrl.item.MoneyPrice)*$ctrl.qty | currency}}</span>
+  <span ng-if="$ctrl.item.CreditPrice"><i class="icon icon-credit-card"></i> {{($ctrl.item.SalePrice || $ctrl.item.CreditPrice)*$ctrl.qty}}</span>
+</div>
+<br>
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm(1)">Sim</button>
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog(0)">Não</button>
+</div>
+
+<!-- <item value="$ctrl.item"></item> -->

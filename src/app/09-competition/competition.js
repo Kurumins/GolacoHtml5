@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app')
-  .config(mainRoutesConfig);
+  .config(competitionRoutesConfig);
 
-function mainRoutesConfig ($stateProvider) {
+function competitionRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.competition', {

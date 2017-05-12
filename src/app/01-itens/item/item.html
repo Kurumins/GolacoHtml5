@@ -1,11 +1,21 @@
+<script type="text/ng-template" id="templateId">
+  <h2>Atenção</h2>
+  <p>{{ngDialogData.content}}</p>
+  <div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm(1)">Sim</button>
+    <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog(0)">Não</button>
+  </div>
+</script>
+
 <div>
   <h4 class="item-name">{{$ctrl.item.Name}}</h4>
   <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
 
   <div class="item-effects">
     <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
-      <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label>
-      {{effect.Effect}}
+      <!-- <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label> -->
+      <label>skill_{{effect.IdTeamPlayerSkill}}</label>
+      +{{effect.Effect}}
     </div>
     <div class="item-effect">
       <label>--</label>
@@ -13,10 +23,10 @@
     </div>
     <div class="item-effect">
       <label><i class="icon icon-clock"></i></label>
-      {{$ctrl.item.Duration}}
+      {{$ctrl.item.Duration || $ctrl.item.Durability}}
     </div>
   </div>
-
+  <div ng-if="$ctrl.item.MoneyPrice || $ctrl.item.CreditPrice" ng-click="$ctrl.itenPurchase($ctrl.item)">
     <div ng-if="$ctrl.item.MoneyPrice" class="item-price">
       <i class="icon icon-money"></i>
       <p>{{$ctrl.item.MoneyPrice | currency}}</p>
@@ -31,4 +41,14 @@
         <p>{{$ctrl.item.CreditPrice}}</p>
       </div>
     </div>
+  </div>
+  <div ng-if="!$ctrl.item.MoneyPrice && !$ctrl.item.CreditPrice" ng-click-="$ctrl.itenPurchase($ctrl.item)">
+    <div class="sell-item" ng-if="$ctrl.item.CreditSellPrice || $ctrl.item.MoneySellPrice" ng-click="$ctrl.sellItem()">
+      <p ng-if="$ctrl.item.CreditSellPrice"><i class="icon icon-credit-card"></i>{{$ctrl.item.CreditSellPrice}}</p>
+      <p ng-if="$ctrl.item.MoneySellPrice"><i class="icon icon-money"></i>{{$ctrl.item.MoneySellPrice | currency}}</p>
+    </div>
+    <div class="discart-item" ng-if="!$ctrl.item.CreditSellPrice && !$ctrl.item.MoneySellPrice" ng-click="$ctrl.discartItem()">
+      <p><i class="icon-cancel-circled"></i>Descartar</p>
+    </div>
+  </div>
 </div>
