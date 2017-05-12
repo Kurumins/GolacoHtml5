@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app')
-  .config(mainRoutesConfig);
+  .config(escalacaoRoutesConfig);
 
-function mainRoutesConfig ($stateProvider) {
+function escalacaoRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.escalacao', {
