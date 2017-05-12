@@ -1,8 +1,11 @@
 .app {
   min-height: 500px;
-  width: 800px;
+  width: 100%;
+  min-width: 768px;
+  max-width: 960px;
   margin: auto;
   border: 1px solid;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
