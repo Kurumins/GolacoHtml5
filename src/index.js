@@ -9,7 +9,7 @@ angular
     'nsPopover'
   ])
   .config(function ($qProvider) {
-      $qProvider.errorOnUnhandledRejections(false);
+    $qProvider.errorOnUnhandledRejections(false);
   })
   .run(function ($window) {
 

@@ -5,7 +5,7 @@ angular.module('app')
     vm.juniorPreview = juniorPreview;
 
     vm.juniorDraft = JuniorDraft.open;
-    vm.juniorDraft();
+    // vm.juniorDraft();
 
     vm.juniorReform = JuniorReform.open;
     // vm.juniorReform();

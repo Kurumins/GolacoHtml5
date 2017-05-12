@@ -24,6 +24,4 @@ angular.module('app')
       return PostToJs('TeamPlayerJunior/GetJuniorTrainCenter');
     };
 
-
-
   });

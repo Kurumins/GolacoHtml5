@@ -6,14 +6,14 @@ angular.module('app')
 
     vm.juniorDraft = juniorDraft;
 
-    vm.juniorScouts = function function_name() {
+    vm.juniorScouts = function () {
       JuniorScouts.open(vm.juniorDraft.Scouts)
         .then(function (scout) {
           vm.currentScout = scout;
         });
     };
     // vm.juniorScouts();
-    vm.currentScout = vm.juniorDraft.Scouts[0];
+    // vm.currentScout = vm.juniorDraft.Scouts[0];
 
   })
   .factory('JuniorDraft', function (StructureService, ngDialog) {
