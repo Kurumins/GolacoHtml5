@@ -97,8 +97,9 @@ function itensRoutesConfig ($stateProvider) {
         }
       },
       templateUrl: 'itens-itens.html',
-      controller: function (itens) {
+      controller: function (itens, ItenPurchase) {
         this.itens = itens;
+        // ItenPurchase.open(itens[0]);
       },
       controllerAs: '$ctrl'
     });

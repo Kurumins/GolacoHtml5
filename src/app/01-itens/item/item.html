@@ -4,8 +4,9 @@
 
   <div class="item-effects">
     <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
-      <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label>
-      {{effect.Effect}}
+      <!-- <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label> -->
+      <label>skill_{{effect.IdTeamPlayerSkill}}</label>
+      +{{effect.Effect}}
     </div>
     <div class="item-effect">
       <label>--</label>
@@ -16,7 +17,7 @@
       {{$ctrl.item.Duration}}
     </div>
   </div>
-
+  <div ng-click="$ctrl.itenPurchase($ctrl.item)">
     <div ng-if="$ctrl.item.MoneyPrice" class="item-price">
       <i class="icon icon-money"></i>
       <p>{{$ctrl.item.MoneyPrice | currency}}</p>
@@ -31,4 +32,5 @@
         <p>{{$ctrl.item.CreditPrice}}</p>
       </div>
     </div>
+  </div>
 </div>
