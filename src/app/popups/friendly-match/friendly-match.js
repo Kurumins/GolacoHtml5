@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('FriendlyMatchController', function (FriendlyMatchService, AppService, MatchResult) {
+  .controller('FriendlyMatchController', function ($rootScope, FriendlyMatchService, AppService, MatchResult, ngDialog) {
 
     var vm = this;
 
@@ -26,13 +26,6 @@ angular.module('app')
 
     };
 
-    // findFriendlyMatches({
-    //   League: AppService.teamPreview.Serie,
-    //   TeamName: '',
-    //   Country: 0,
-    //   Couch: ''
-    // });
-
     vm.filter = {
       League: [],
       TeamName: '',
@@ -43,8 +36,17 @@ angular.module('app')
 
     vm.findFriendlyMatches(vm.filter);
 
-    vm.play = function () {
-      MatchResult.open(123123);
+    vm.play = function (ngDialogId) {
+
+      // ngdialog && ngDialog.close(ngdialog);
+
+      var deregisterListener = $rootScope.$on('ngDialog.opened', function (/*e, $dialog*/) {
+        deregisterListener();
+        ngDialogId && ngDialog.close(ngDialogId);
+      });
+
+      MatchResult.open(72014544);
+
     };
 
   });

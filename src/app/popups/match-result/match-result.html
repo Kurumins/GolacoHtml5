@@ -3,18 +3,18 @@
 <div class="game-result">
   <h3>Resultado</h3>
   <div class="placar">
-    <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge90x90']}}">
+    <img ng-src="{{$ctrl.matchData.HomeTeam.Badges['Badge90x90']}}" height="90">
     {{$ctrl.matchData.HomeTeam.Acronym}}
     {{$ctrl.matchData.HomeTeam.Goals}}
     X
     {{$ctrl.matchData.VisitorTeam.Goals}}
     {{$ctrl.matchData.VisitorTeam.Acronym}}
-    <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge90x90']}}">
+    <img ng-src="{{$ctrl.matchData.VisitorTeam.Badges['Badge90x90']}}" height="90">
   </div>
 </div>
 
 <div class="result-tabs">
-  <div ng-init="selection=3">
+  <div ng-init-="selection=3">
     <label><input type="radio" ng-model="selection" checked>Estatísticas</label>
     <label><input type="radio" ng-model="selection" value="1">Escalação</label>
     <label><input type="radio" ng-model="selection" value="2">Reservas</label>

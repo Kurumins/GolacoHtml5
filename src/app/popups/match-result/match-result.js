@@ -111,7 +111,7 @@ angular.module('app')
   .factory('MatchResult', function (MatchResultService, ngDialog) {
 
     this.open = function (matchId) {
-      ngDialog.open({
+      return ngDialog.open({
         template: 'match-result.html',
         appendClassName: 'ngdialog-match-result',
         controller: 'MatchResultController as $ctrl',

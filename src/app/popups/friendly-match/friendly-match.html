@@ -56,14 +56,14 @@
   <h4>Partida Selecionada</h4>
   <div class="current-match">
     <div>
-      <img ng-src="{{$ctrl.me.BadgePicture}}">
+      <img ng-src="{{$ctrl.me.BadgePicture}}" height="129" width="129">
       <h4>{{$ctrl.me.Acronym}}</h4>
     </div>
     X
     <div>
-      <img ng-src="{{$ctrl.currentMatch.BadgePicture}}">
+      <img ng-src="{{$ctrl.currentMatch.BadgePicture}}" height="129" width="129">
       <h4>{{$ctrl.currentMatch.Acronym}}</h4>
     </div>
   </div>
-  <button ng-click="$ctrl.play()">Jogar</button>
+  <button ng-click="$ctrl.play(ngDialogId)">Jogar</button>
 </div>
