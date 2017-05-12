@@ -4,9 +4,15 @@ angular
   .component('balance', {
     templateUrl: 'balance.html',
     controller: function ($scope, BalanceService) {
+
+      var vm = this;
+
+      vm.buyMoney = BalanceService.buyMoney;
+
       BalanceService.headerUserData()
         .then(function (result) {
-          $scope.HeaderData = result.data.data.HeaderData;
+          $scope.HeaderData = result.HeaderData;
         });
+
     }
   });
