@@ -94,14 +94,16 @@ function escalacaoController ($scope, teamTactic) {
     var drop = angular.element('#' + dropEl);
     var drag = angular.element('#' + dragEl);
 
-    // debugger;
-
     var player = vm.teamTactic[drag.attr('data-player')];
     var slot = drop.attr('data-slot');
 
-    vm.slots[player.IdTactic] = null;
-    player.IdTactic = slot;
-    vm.slots[player.IdTactic] = player;
+    // debugger;
+
+    if ( slot === '0' || !vm.slots[slot] ) {
+      vm.slots[player.IdTactic] = null;
+      player.IdTactic = slot;
+      vm.slots[slot] = player;
+    }
 
   };
 
