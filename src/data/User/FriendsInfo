@@ -1,0 +1,79 @@
+{
+  "data": {
+    "Success": true,
+    "Friends": [
+      {
+        "IdSocialNetwork": "1470457112973386",
+        "UserName": "Carlos Lima",
+        "TeamName": "Futz",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/1470457112973386/",
+        "Picture": "https://graph.facebook.com/v2.2/1470457112973386/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "903738576435458",
+        "UserName": "Floquinho Flocos",
+        "TeamName": "Floco",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/903738576435458/",
+        "Picture": "https://graph.facebook.com/v2.2/903738576435458/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "1201024763248138",
+        "UserName": "Hugo Rocha",
+        "TeamName": "THE_NIGGER",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/1201024763248138/",
+        "Picture": "https://graph.facebook.com/v2.2/1201024763248138/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "536382956",
+        "UserName": "Luiz Henrique Gama",
+        "TeamName": "Snow Devils",
+        "Profile": "http://www.facebook.com/luizhgama",
+        "Picture": "https://graph.facebook.com/536382956/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "1086877871377820",
+        "UserName": "Marcos Brasil",
+        "TeamName": "Luccas",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/1086877871377820/",
+        "Picture": "https://graph.facebook.com/v2.2/1086877871377820/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "1158103414261212",
+        "UserName": "Pedro Emiliano",
+        "TeamName": "Smurfs FC",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/1158103414261212/",
+        "Picture": "https://graph.facebook.com/v2.2/1158103414261212/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "100000485779413",
+        "UserName": "Pedro Henrique",
+        "TeamName": "Crazy People Futebol Clube",
+        "Profile": "http://www.facebook.com/profile.php?id=100000485779413",
+        "Picture": "https://graph.facebook.com/100000485779413/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "1060861729",
+        "UserName": "Raphael Felicio",
+        "TeamName": "Padcoopet",
+        "Profile": "http://www.facebook.com/raphael.felicio",
+        "Picture": "https://graph.facebook.com/1060861729/picture?type=normal",
+        "Serie": "D"
+      },
+      {
+        "IdSocialNetwork": "1356210261133599",
+        "UserName": "Vinícius Borba",
+        "TeamName": "Kenthucky",
+        "Profile": "https://www.facebook.com/app_scoped_user_id/1356210261133599/",
+        "Picture": "https://graph.facebook.com/v2.2/1356210261133599/picture?type=normal",
+        "Serie": "D"
+      }
+    ]
+  }
+}
