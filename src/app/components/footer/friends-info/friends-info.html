@@ -1,0 +1,35 @@
+<div class="frinds-invite">
+  <div class="icon-user"></div>
+  <button>Convidar<br>Amigos</button>
+</div>
+
+<div class="friends-list">
+  <button type="button" class="slick-prev">«</button>
+  <slick
+    infinite=false
+    slides-to-show="6" slides-to-scroll="6"
+    prev-arrow=".slick-prev"
+    next-arrow=".slick-next">
+    <div ng-repeat="friend in $ctrl.friendsInfo" class="friend-info">
+      <div class="friend-invite">
+        <button>Desafiar</button>
+        <button>Visitar</button>
+      </div>
+      <div class="friend-details">
+        <p class="friend-team-name">{{friend.TeamName}}</p>
+        <img ng-src="{{friend.Picture}}">
+        <span>{{friend.Serie}}</span>
+      </div>
+    </div>
+  </slick>
+  <button type="button" class="slick-next">»</button>
+</div>
+
+<!-- {
+  "IdSocialNetwork": "1470457112973386",
+  "UserName": "Carlos Lima",
+  "TeamName": "Futz",
+  "Profile": "https://www.facebook.com/app_scoped_user_id/1470457112973386/",
+  "Picture": "https://graph.facebook.com/v2.2/1470457112973386/picture?type=normal",
+  "Serie": "D"
+} -->
