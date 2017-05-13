@@ -12,4 +12,8 @@ angular.module('app')
       return $http.get('/data/Competition/CompetitionData');
     };
 
+    vm.getTournamentSummary = function () {
+      return PostToJs('CompetitionTournament/Summary');
+    };
+
   });

@@ -1,0 +1,12 @@
+<h2>Torneio Golaço</h2>
+
+<div>
+  <label>
+    <input type="radio" ng-model="current" ng-value=""> Resumo
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'Ranking'"> Classificação
+  </label>
+</div>
+
+<ng-include src="'competition-tournament-'+ (current || 'sumary') +'.html'" />

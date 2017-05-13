@@ -20,13 +20,22 @@
       "Round": 0,
       "RegisterPrice": 3
     },
-    "CompetitionTournament": {
+    "CompetitionTournament-": {
       "IdCompetition": 0,
       "IsRegistered": true,
       "IsStarted": false,
       "InterSeasonCreditPrice": 7,
       "Round": 0,
       "Position": 0,
+      "RegisterPrice": 5
+    },
+    "CompetitionTournament": {
+      "IdCompetition": 290047,
+      "IsRegistered": false,
+      "IsStarted": true,
+      "InterSeasonCreditPrice": 7,
+      "Round": 1,
+      "Position": 1,
       "RegisterPrice": 5
     },
     "CompetitionCupLight": {
