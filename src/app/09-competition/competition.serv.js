@@ -16,4 +16,8 @@ angular.module('app')
       return PostToJs('CompetitionTournament/Summary');
     };
 
+    vm.getTournamentRanking = function () {
+      return PostToJs('CompetitionTournament/Ranking');
+    };
+
   });

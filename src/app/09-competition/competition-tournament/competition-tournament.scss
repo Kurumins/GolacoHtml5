@@ -44,4 +44,18 @@
     }
   }
 
+
+
+}
+
+
+.button-bar {
+  button {
+    outline: none;
+    border: 0;
+    padding: 5px 10px;
+  }
+  .active {
+    background: #ccc;
+  }
 }
