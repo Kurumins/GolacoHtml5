@@ -1,12 +1,15 @@
 <h2>Torneio Golaço</h2>
 
-<div ng-init="current = 'ranking'">
+<div ng-init="current = 'match-table'">
   <label>
     <input type="radio" ng-model="current" ng-value=""> Resumo
   </label>
   <label>
     <input type="radio" ng-model="current" ng-value="'ranking'"> Classificação
   </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'match-table'"> Jogos
+  </label>
 </div>
 
-<ng-include src="'competition-tournament-'+ (current || 'sumary') +'.html'" />
+<ng-include class="competition-tournament-{{(current || 'sumary')}}" src="'competition-tournament-'+ (current || 'sumary') +'.html'" />

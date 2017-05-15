@@ -20,4 +20,8 @@ angular.module('app')
       return PostToJs('CompetitionTournament/Ranking');
     };
 
+    vm.getTournamentMatchTable = function () {
+      return PostToJs('CompetitionTournament/MatchTable');
+    };
+
   });

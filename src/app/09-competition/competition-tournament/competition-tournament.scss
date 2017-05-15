@@ -15,6 +15,9 @@
     margin-bottom: 0;
   }
 
+}
+
+.competition-tournament-sumary {
   .row {
     overflow: auto;
     margin: 0 -15px;
@@ -43,8 +46,25 @@
       height: 50px;
     }
   }
+}
 
 
+.competition-tournament-match-table {
+
+  .slick-slider {
+    margin: 0 -10px 0px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .match-table {
+    box-sizing: box-sizing;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
 
 }
 

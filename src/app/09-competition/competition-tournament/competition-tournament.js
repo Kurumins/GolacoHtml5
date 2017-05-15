@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionTournamentController', function (tournamentSummary, tournamentRanking) {
+  .controller('CompetitionTournamentController', function (tournamentSummary, tournamentRanking, tournamentMatchTable) {
 
     var vm = this;
 
@@ -8,6 +8,9 @@ angular.module('app')
 
     vm.tournamentRanking = tournamentRanking;
     vm.tournamentRankingCurrentGroup = tournamentRanking.Ranking[0];
+
+    vm.tournamentMatchTable = tournamentMatchTable;
+
 
   })
   .factory('CompetitionTournament', function (CompetitionService, ngDialog) {
@@ -24,6 +27,9 @@ angular.module('app')
           },
           tournamentRanking: function () {
             return CompetitionService.getTournamentRanking();
+          },
+          tournamentMatchTable: function () {
+            return CompetitionService.getTournamentMatchTable();
           },
         },
       });
