@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionTournamentController', function (tournamentSummary, tournamentRanking, tournamentMatchTable, tournamentCalendar) {
+  .controller('CompetitionTournamentController', function (tournamentSummary, tournamentRanking, tournamentMatchTable, tournamentCalendar, $timeout) {
 
     var vm = this;
 
@@ -12,7 +12,13 @@ angular.module('app')
     vm.tournamentMatchTable = tournamentMatchTable;
 
     vm.tournamentCalendar = tournamentCalendar;
-    vm.tournamentCalendarCurrentGroup = tournamentCalendar.Calendar[0];
+    vm.setCalendar = function (calendar) {
+      vm.tournamentCalendarCurrentGroup = null;
+      $timeout(function () {
+        vm.tournamentCalendarCurrentGroup = calendar;
+      }, 1);
+    };
+    vm.setCalendar(vm.tournamentCalendar.Calendar[0]);
 
   })
   .factory('CompetitionTournament', function (CompetitionService, ngDialog) {
