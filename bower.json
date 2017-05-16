@@ -8,12 +8,23 @@
     "angular-slick-carousel": "^3.1.7",
     "angular-ui-router-default": "^0.0.6",
     "ng-dialog": "^1.1.0",
-    "normalize-css": "^6.0.0",
-    "lvlDragDrop": "https://github.com/logicbomb/lvlDragDrop.git",
+    "lvlDragDrop": "",
     "nsPopover": "^0.6.8",
-    "pako": "^1.0.5"
+    "pako": "^1.0.5",
+    "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
   },
   "devDependencies": {
     "angular-mocks": "^1.6.2"
+  },
+  "resolutions": {
+    "angular": "^1.6.2"
   }
 }
