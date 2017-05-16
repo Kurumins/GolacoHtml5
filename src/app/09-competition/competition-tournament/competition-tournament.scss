@@ -71,6 +71,25 @@
 
 }
 
+.competition-tournament-play-off {
+  .slick-slider {
+    margin: 0 -10px 0px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .match-table {
+    box-sizing: box-sizing;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+
+
 .button-bar {
   button {
     outline: none;

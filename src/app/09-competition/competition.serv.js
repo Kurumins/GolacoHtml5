@@ -28,4 +28,8 @@ angular.module('app')
       return PostToJs('CompetitionTournament/Calendar');
     };
 
+    vm.getTournamentPlayOff = function () {
+      return PostToJs('CompetitionTournament/PlayOff');
+    };
+
   });

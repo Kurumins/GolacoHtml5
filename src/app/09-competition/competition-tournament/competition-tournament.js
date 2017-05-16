@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionTournamentController', function (tournamentSummary, tournamentRanking, tournamentMatchTable, tournamentCalendar, $timeout) {
+  .controller('CompetitionTournamentController', function ($timeout, tournamentSummary, tournamentRanking, tournamentMatchTable, tournamentCalendar, tournamentPlayOff) {
 
     var vm = this;
 
@@ -19,6 +19,8 @@ angular.module('app')
       }, 1);
     };
     vm.setCalendar(vm.tournamentCalendar.Calendar[0]);
+
+    vm.tournamentPlayOff = tournamentPlayOff;
 
   })
   .factory('CompetitionTournament', function (CompetitionService, ngDialog) {
@@ -41,6 +43,9 @@ angular.module('app')
           },
           tournamentCalendar: function () {
             return CompetitionService.getTournamentCalendar();
+          },
+          tournamentPlayOff: function () {
+            return CompetitionService.getTournamentPlayOff();
           },
         },
       });
