@@ -1,0 +1,32 @@
+<div style="float: right;" class="button-bar">
+  <button
+    ng-repeat="group in $ctrl.tournamentCalendar.Calendar"
+    ng-click="$ctrl.tournamentCalendarCurrentGroup = group"
+    ng-class="{active: $ctrl.tournamentCalendarCurrentGroup == group}">G{{group.Group}}</button>
+</div>
+
+<button type="button" class="slick-prev">«</button>
+<button type="button" class="slick-next">»</button>
+
+<slick
+  infinite=false
+  slides-to-show="2" slides-to-scroll="2" rows="2"
+  prev-arrow=".slick-prev"
+  next-arrow=".slick-next">
+  <div ng-repeat="matche in group.Matches" class="match-table">
+    <table width="100%">
+      <tr ng-repeat="team in group.Teams">
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" class="team-badge"></td>
+        <td><img ng-src="{{team.Badge}}" class="team-flag" width="24" height="24"></td>
+        <td width="50%">{{team.Name}}</td>
+        <td align="center" ng-repeat="status in group.MatchTable[$index]">
+          {{status.Status}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</slick>
+
+</div>
+
+<!-- {{$ctrl.tournamentCalendar}} -->

@@ -24,4 +24,8 @@ angular.module('app')
       return PostToJs('CompetitionTournament/MatchTable');
     };
 
+    vm.getTournamentCalendar = function () {
+      return PostToJs('CompetitionTournament/Calendar');
+    };
+
   });
