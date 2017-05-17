@@ -88,6 +88,23 @@
   }
 }
 
+.competition-tournament-prize {
+  h1 {
+    font-size: 120px;
+    line-height: 330px;
+    text-align: center;
+  }
+  .tournament-prizes {
+  }
+  .tournament-prize {
+    padding: 10px;
+    border: 1px solid;
+    margin: 5px;
+    p {
+      margin: 0;
+    }
+  }
+}
 
 
 .button-bar {

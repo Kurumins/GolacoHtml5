@@ -130,7 +130,7 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
     });
   };
 
-  CompetitionTournament.open();
+  CompetitionTournament.open(competitions[1]);
 
   // vm.friendlyMatch();
 
