@@ -1,9 +1,9 @@
 <h3>Prêmios</h3>
 
 <div class="row">
-  <h1 class="col-md-6">{{teamPreview.Serie}}</h1>
+  <h1 class="col-xs-6">{{teamPreview.Serie}}</h1>
 
-  <div class="col-md-6 tournament-prizes">
+  <div class="col-xs-6 tournament-prizes">
     <div ng-repeat="prize in $ctrl.tournament.data.prizeList.prize" class="tournament-prize">
       <p>{{prize.position}}º Lugar</p>
       <p><i class="icon icon-money"> {{prize['money'+teamPreview.Serie] | currency}}</p>

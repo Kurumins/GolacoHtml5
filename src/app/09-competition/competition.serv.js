@@ -12,6 +12,7 @@ angular.module('app')
       return $http.get('/data/Competition/CompetitionData');
     };
 
+    // Tournament
     vm.getTournamentSummary = function () {
       return PostToJs('CompetitionTournament/Summary');
     };
@@ -31,5 +32,26 @@ angular.module('app')
     vm.getTournamentPlayOff = function () {
       return PostToJs('CompetitionTournament/PlayOff');
     };
+
+    // League
+    vm.getLeagueSummary = function () {
+      return PostToJs('CompetitionLeague/Summary');
+    };
+
+    vm.getLeagueRanking = function () {
+      return PostToJs('CompetitionLeague/Ranking');
+    };
+
+    vm.getLeagueMatchTable = function () {
+      return PostToJs('CompetitionLeague/MatchTable');
+    };
+
+    vm.getLeagueCalendar = function () {
+      return PostToJs('CompetitionLeague/Calendar');
+    };
+
+    // vm.getLeaguePlayOff = function () {
+    //   return PostToJs('CompetitionLeague/PlayOff');
+    // };
 
   });

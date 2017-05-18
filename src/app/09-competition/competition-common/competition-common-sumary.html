@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="half">
+  <div class="col-xs-6">
     <h3>Classificação</h3>
     <table width="100%">
-      <tr ng-repeat="team in $ctrl.tournamentSummary.Ranking" ng-class="{first: $index == 0}">
+      <tr ng-repeat="team in $ctrl.commonSummary.Ranking" ng-class="{first: team.Position == 1}">
         <td>{{team.Position}}</td>
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.TeamFlag}}.jpg" class="team-flag"></td>
         <td align="center"><img ng-src="{{team.TeamBadge}}" class="team-badge"></td>
@@ -12,10 +12,10 @@
     </table>
   </div>
 
-  <div class="half">
+  <div class="col-xs-6">
     <h3 class="text-right">Artilheiros</h3>
     <table width="100%">
-      <tr ng-repeat="player in $ctrl.tournamentSummary.BestTeamPlayers">
+      <tr ng-repeat="player in $ctrl.commonSummary.BestTeamPlayers">
         <td>{{$index+1}}º</td>
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{player.TeamFlag}}.jpg" class="player-flag"></td>
         <td align="center"><img ng-src="{{player.TeamBadge}}"></td>
@@ -30,48 +30,48 @@
 <h3>Melhor ataque</h3>
 <table width="100%">
   <tr>
-    <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.tournamentSummary.BestOffense.TeamFlag}}.jpg" class="team-flag"></td>
-    <td align="center"><img ng-src="{{$ctrl.tournamentSummary.BestOffense.TeamBadge}}"></td>
-    <td>{{$ctrl.tournamentSummary.BestOffense.TeamName}}</td>
-    <td align="right">{{$ctrl.tournamentSummary.BestOffense.Goals}} gols</td>
+    <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.commonSummary.BestOffense.TeamFlag}}.jpg" class="team-flag"></td>
+    <td align="center"><img ng-src="{{$ctrl.commonSummary.BestOffense.TeamBadge}}"></td>
+    <td>{{$ctrl.commonSummary.BestOffense.TeamName}}</td>
+    <td align="right">{{$ctrl.commonSummary.BestOffense.Goals}} gols</td>
   </tr>
 </table>
 
 <div class="row">
-  <div class="half">
+  <div class="col-xs-6">
     <h3>Última Partida</h3>
-    <h5>{{$ctrl.tournamentSummary.Match1.MatchDate | date:'short'}}</h5>
+    <h5>{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).MatchDate | date:'short'}}</h5>
     <table width="100%">
       <tr>
-        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.tournamentSummary.Match1.HomeTeam.Flag}}.jpg" class="team-flag"></td>
-        <td align="center"><img ng-src="{{$ctrl.tournamentSummary.Match1.HomeTeam.Badge}}"></td>
-        <td align="center" width="30">{{$ctrl.tournamentSummary.Match1.HomeTeam.Acronym}}</td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).HomeTeam.Badge}}"></td>
+        <td align="center" width="30">{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).HomeTeam.Acronym}}</td>
         <td align="center" width="50%">
-          {{$ctrl.tournamentSummary.Match1.HomeTeam.Goals}}
+          {{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).HomeTeam.Goals}}
           x
-          {{$ctrl.tournamentSummary.Match1.VisitorTeam.Goals}}
+          {{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).VisitorTeam.Goals}}
         </td>
-        <td align="center" width="30">{{$ctrl.tournamentSummary.Match1.VisitorTeam.Acronym}}</td>
-        <td align="center"><img ng-src="{{$ctrl.tournamentSummary.Match1.VisitorTeam.Badge}}"></td>
-        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.tournamentSummary.Match1.VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center" width="30">{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).VisitorTeam.Badge}}"></td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match1 || $ctrl.commonSummary.LastMatch).VisitorTeam.Flag}}.jpg" class="team-flag"></td>
       </tr>
     </table>
   </div>
 
-  <div class="half">
+  <div class="col-xs-6">
     <h3 class="text-right">Próxima Partida</h3>
-    <h5 class="text-right">{{$ctrl.tournamentSummary.Match2.MatchDate | date:'short'}}</h5>
+    <h5 class="text-right">{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).MatchDate | date:'short'}}</h5>
     <table width="100%">
       <tr>
-        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.tournamentSummary.Match2.HomeTeam.Flag}}.jpg" class="team-flag"></td>
-        <td align="center"><img ng-src="{{$ctrl.tournamentSummary.Match2.HomeTeam.Badge}}"></td>
-        <td align="center" width="30">{{$ctrl.tournamentSummary.Match2.HomeTeam.Acronym}}</td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).HomeTeam.Badge}}"></td>
+        <td align="center" width="30">{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).HomeTeam.Acronym}}</td>
         <td align="center" width="50%">
           x
         </td>
-        <td align="center" width="30">{{$ctrl.tournamentSummary.Match2.VisitorTeam.Acronym}}</td>
-        <td align="center"><img ng-src="{{$ctrl.tournamentSummary.Match2.VisitorTeam.Badge}}"></td>
-        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.tournamentSummary.Match2.VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center" width="30">{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).VisitorTeam.Badge}}"></td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match2 || $ctrl.commonSummary.NextMatch).VisitorTeam.Flag}}.jpg" class="team-flag"></td>
       </tr>
     </table>
   </div>
@@ -138,4 +138,4 @@
   "UserFlag": 4
 }, -->
 
-<!-- <pre>{{$ctrl.tournamentSummary | json}}</pre> -->
+<!-- <pre>{{$ctrl.commonSummary | json}}</pre> -->

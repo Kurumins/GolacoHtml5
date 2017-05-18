@@ -6,7 +6,7 @@ angular.module('app')
 
     vm.tournament = tournament;
 
-    vm.tournamentSummary = tournamentSummary;
+    vm.commonSummary = tournamentSummary;
 
     vm.tournamentRanking = tournamentRanking;
     vm.tournamentRankingCurrentGroup = tournamentRanking.Ranking[0];

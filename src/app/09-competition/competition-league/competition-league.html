@@ -1,0 +1,24 @@
+<h2>Liga Golaço</h2>
+
+<div ng-init="current='league-match-table'">
+  <label>
+    <input type="radio" ng-model="current" ng-value=""> Resumo
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'league-ranking'"> Classificação
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'league-match-table'"> Jogos
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'league-calendar'"> Rodadas
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'league-play-off'"> Oitavas de final
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'league-prize'"> Prêmios
+  </label>
+</div>
+
+<ng-include class="competition-{{(current || 'common-sumary')}}" src="'competition-'+ (current || 'common-sumary') +'.html'" />

@@ -101,7 +101,7 @@ function competitionRoutesConfig ($stateProvider) {
     });
 }
 
-function competitionController ($scope, competitions, ngDialog, CompetitionTournament) {
+function competitionController ($scope, competitions, ngDialog, CompetitionTournament, CompetitionLeague) {
 
   var vm = this;
 
@@ -130,7 +130,8 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
     });
   };
 
-  CompetitionTournament.open(competitions[1]);
+  // CompetitionTournament.open(competitions[1]);
+  CompetitionLeague.open(competitions[0]);
 
   // vm.friendlyMatch();
 

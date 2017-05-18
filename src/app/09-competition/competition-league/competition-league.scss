@@ -1,0 +1,118 @@
+.ngdialog.ngdialog-competition-league {
+
+  .ngdialog-content {
+    width: 750px;
+    min-height: 550px;
+    padding: 10px 25px;
+  }
+
+  h5,
+  h4 {
+    margin: 0;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+}
+
+.competition-league-match-table {
+
+  .match-table {
+    font-size: 11px;
+    white-space: nowrap;
+
+    th {
+      text-align: center;
+    }
+
+    tr:nth-child(odd) {
+      td {
+        background: #ccc;
+      }
+      td:nth-child(2n+4) {
+        background: #ddd;
+      }
+    }
+    tr:nth-child(even) {
+      td {
+        background: #ddd;
+      }
+      td:nth-child(2n+4) {
+        background: #ccc;
+      }
+    }
+
+    span {
+      display: block;
+      padding-top: 2px;
+    }
+
+    .status {
+      color: white;
+      font-weight: bold;
+      &.-D {
+        background-color: red;
+      }
+      &.-V {
+        background-color: green;
+      }
+      &.-E {
+        background-color: orange;
+      }
+    }
+  }
+
+}
+
+.competition-league-calendar {
+
+}
+
+.competition-league-play-off {
+  .slick-slider {
+    margin: 0 -10px 0px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .match-table {
+    box-sizing: box-sizing;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+.competition-league-prize {
+  h1 {
+    font-size: 120px;
+    line-height: 330px;
+    text-align: center;
+  }
+  .league-prizes {
+  }
+  .league-prize {
+    padding: 10px;
+    border: 1px solid;
+    margin: 5px;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+.button-bar {
+  button {
+    outline: none;
+    border: 0;
+    padding: 5px 10px;
+  }
+  .active {
+    background: #ccc;
+  }
+}
