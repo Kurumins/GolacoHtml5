@@ -131,7 +131,10 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
   };
 
   // CompetitionTournament.open(competitions[1]);
-  CompetitionLeague.open(competitions[0]);
+  // CompetitionLeague.open(competitions[0]);
+
+  vm.CompetitionTournament = CompetitionTournament.open;
+  vm.CompetitionLeague = CompetitionLeague.open;
 
   // vm.friendlyMatch();
 

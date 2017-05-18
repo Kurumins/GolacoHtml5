@@ -10,7 +10,7 @@
       <div ng-if="competition.preview.IsStarted">
         <p>Posição: {{competition.preview.Position}}º</p>
         <p>Rodada: {{competition.preview.Round}}</p>
-        <p><button>Ver Competição</button></p>
+        <p><button ng-click="$ctrl[competition.name](competition)">Ver Competição</button></p>
       </div>
       <div ng-if="!competition.preview.IsStarted">
         <p>{{competition.registrations}} / {{competition.data.teamsQty}} inscritos</p>
