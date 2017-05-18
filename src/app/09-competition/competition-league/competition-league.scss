@@ -17,6 +17,12 @@
 
 }
 
+.competition-league-ranking {
+  th {
+    text-align: center;
+  }
+}
+
 .competition-league-match-table {
 
   .match-table {
@@ -67,7 +73,43 @@
 }
 
 .competition-league-calendar {
+  .slick-nav {
+    // text-align: center;
+    margin: 0 20px;
+  }
 
+  .match-table {
+    outline: none;
+
+    .table-title {
+      text-align: center;
+    }
+    td {
+      padding: 10px 0;
+    }
+  }
+
+  .slick-dots {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+
+    li {
+      display: inline-block;
+    }
+    button {
+      border: 0;
+      padding: 0;
+      margin-left: 2px;
+      font-size: 12px;
+      width: 20px;
+      line-height: 20px;
+    }
+    .slick-active button {
+      background: orange;
+    }
+  }
 }
 
 .competition-league-play-off {

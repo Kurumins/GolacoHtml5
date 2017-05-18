@@ -14,17 +14,23 @@ angular.module('app')
     vm.leagueMatchTable = leagueMatchTable;
 
     vm.leagueCalendar = leagueCalendar;
-    // vm.setCalendar = function (calendar) {
-    //   vm.leagueCalendarCurrentGroup = null;
-    //   $timeout(function () {
-    //     vm.leagueCalendarCurrentGroup = calendar;
-    //   }, 1);
-    // };
-    // vm.setCalendar(vm.leagueCalendar.Calendar[0]);
+    vm.currentSlide = leagueCalendar.Round;
+    vm.calendarSlider = {
+      method: {},
+      event: {
+        afterChange: function (event, slick, currentSlide/*, nextSlide*/) {
+          vm.currentSlide = currentSlide + 1;
+        },
+        init: function (event, slick) {
+           slick.slickGoTo(vm.currentSlide - 1);
+        }
+      }
+    };
 
     // vm.leaguePlayOff = leaguePlayOff;
 
   })
+
   .factory('CompetitionLeague', function (CompetitionService, ngDialog) {
 
     this.open = function (league) {
