@@ -112,33 +112,17 @@
   }
 }
 
-.competition-league-play-off {
-  .slick-slider {
-    margin: 0 -10px 0px;
-  }
-
-  .slick-slide {
-    outline: none;
-  }
-
-  .match-table {
-    box-sizing: box-sizing;
-    padding: 10px;
-    font-size: 12px;
-    white-space: nowrap;
-  }
-}
-
 .competition-league-prize {
   h1 {
-    font-size: 120px;
-    line-height: 330px;
+    font-size: 110px;
+    line-height: 1;
     text-align: center;
+    margin: 0;
   }
   .league-prizes {
   }
   .league-prize {
-    padding: 10px;
+    padding: 5px 10px;
     border: 1px solid;
     margin: 5px;
     p {

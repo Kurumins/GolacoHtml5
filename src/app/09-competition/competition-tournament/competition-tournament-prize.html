@@ -6,8 +6,8 @@
   <div class="col-xs-6 tournament-prizes">
     <div ng-repeat="prize in $ctrl.tournament.data.prizeList.prize" class="tournament-prize">
       <p>{{prize.position}}º Lugar</p>
-      <p><i class="icon icon-money"> {{prize['money'+teamPreview.Serie] | currency}}</p>
-      <p><i class="icon icon-credit-card"> {{prize['credits'+teamPreview.Serie]}}</p>
+      <p><i class="icon icon-money"></i> {{prize['money'+teamPreview.Serie] | currency}}</p>
+      <p><i class="icon icon-credit-card"></i> {{prize['credits'+teamPreview.Serie]}}</p>
       <p><i class="icon-up-thin"></i> {{prize.morale}}º</p>
     </div>
   </div>
