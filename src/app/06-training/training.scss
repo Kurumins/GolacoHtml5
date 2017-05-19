@@ -11,6 +11,19 @@
     margin: 5px 0;
   }
 
+  .training-levels{
+    margin-bottom: 20px;
+
+    th {
+      text-align: center;
+    }
+    td {
+      font-size: 16px;
+      color: blue;
+      font-weight: bold;
+    }
+  }
+
   .players-table {
     // max-height: 460px;
     // overflow-y: auto;
