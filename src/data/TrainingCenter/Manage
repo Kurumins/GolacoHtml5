@@ -1,0 +1,104 @@
+{
+  "data": {
+    "Success": true,
+    "TrainingCenter": {
+      "Id": 1,
+      "Name": "Label_CTBasicoD",
+      "Picture": "https://www.golacogame.com.br/Content/structures/2.png",
+      "ZoomPicture": "https://www.golacogame.com.br/Content/structures/2b.png",
+      "Level": 1,
+      "MaxItemSlot": 5,
+      "IdTeamTrainCenter": 2443830,
+      "TrainingLevelBase": 1,
+      "Requirement_IdLeague": 4,
+      "TrainingCenterItems": [
+        {
+          "Id": 5,
+          "Name": "Label_TreinadorDeDefesa",
+          "Picture": "https://www.golacogame.com.br/Content/item/24.png",
+          "Slot": 1,
+          "Durability": 25,
+          "Used": 17,
+          "Effects": [
+            {
+              "IdTeamPlayerSkill": 8,
+              "Effect": 1
+            },
+            {
+              "IdTeamPlayerSkill": 9,
+              "Effect": 1
+            }
+          ]
+        },
+        {
+          "Id": 3,
+          "Name": "Label_TreinadorDeGoleiro",
+          "Picture": "https://www.golacogame.com.br/Content/item/3.png",
+          "Slot": 2,
+          "Durability": 25,
+          "Used": 19,
+          "Effects": [
+            {
+              "IdTeamPlayerSkill": 10,
+              "Effect": 1
+            },
+            {
+              "IdTeamPlayerSkill": 11,
+              "Effect": 1
+            }
+          ]
+        },
+        {
+          "Id": 13,
+          "Name": "Label_EsteiraAvancada",
+          "Picture": "https://www.golacogame.com.br/Content/item/32.png",
+          "Slot": 3,
+          "Durability": 50,
+          "Used": 47,
+          "Effects": [
+            {
+              "IdTeamPlayerSkill": 2,
+              "Effect": 2
+            },
+            {
+              "IdTeamPlayerSkill": 3,
+              "Effect": 2
+            }
+          ]
+        },
+        {
+          "Id": 9,
+          "Name": "Label_QuadroNegroTatico",
+          "Picture": "https://www.golacogame.com.br/Content/item/28.png",
+          "Slot": 4,
+          "Durability": 50,
+          "Used": 44,
+          "Effects": [
+            {
+              "IdTeamPlayerSkill": 1,
+              "Effect": 2
+            },
+            {
+              "IdTeamPlayerSkill": 6,
+              "Effect": 2
+            }
+          ]
+        }
+      ],
+      "TeamPlayerSkill1Level": 3,
+      "TeamPlayerSkill2Level": 3,
+      "TeamPlayerSkill3Level": 3,
+      "TeamPlayerSkill4Level": 1,
+      "TeamPlayerSkill5Level": 1,
+      "TeamPlayerSkill6Level": 3,
+      "TeamPlayerSkill7Level": 1,
+      "TeamPlayerSkill8Level": 2,
+      "TeamPlayerSkill9Level": 2,
+      "TeamPlayerSkill10Level": 2,
+      "TeamPlayerSkill11Level": 2,
+      "TeamPlayerSkill12Level": 1,
+      "RushPrice": 3,
+      "MoralPenality": 5
+    }
+  }
+}
