@@ -44,7 +44,7 @@
         <td skill-value="player.Attributes.SecondSkill3"></td>
         <td skill-value="player.Attributes.SecondSkill4"></td>
         <td skill-value="player.Attributes.SecondSkill5"></td>
-        <td>{{player.checked}}</td>
+        <td training-limit="player"></td>
         <td ng-if="!player.HasTrainingPlan">
           <input type="checkbox" ng-model="player.checked" ng-checked-="all" ng-true-value-="5" ng-change="$ctrl.updateplayersListAtt();">
         </td>

@@ -19,7 +19,7 @@
           8498.66520
         ],
         "TransferFee": 1306243.6525,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 4,
         "Position": "TeamPlayerPosition_Goleiro",
         "ShirtItem": null,
@@ -89,7 +89,7 @@
           8069.1914,
           9683.02968
         ],
-        "TransferFee": 1498061.0125,
+        "TransferFee": 1643648.7559,
         "Moral": 100,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Goleiro",
@@ -173,7 +173,7 @@
           6971.62692
         ],
         "TransferFee": 941014.1268,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -249,7 +249,7 @@
           3827.26992
         ],
         "TransferFee": 521376.3706,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -316,7 +316,7 @@
         "Flag": 4,
         "Name": "Filiberto Benito",
         "Age": 33,
-        "RetirementAge": 1507850871879.7253,
+        "RetirementAge": 1507839646482.1621,
         "ShirtNumber": 5,
         "Salary": 2,
         "SalaryOptions": [
@@ -325,7 +325,7 @@
           5231.86296
         ],
         "TransferFee": 617999.2688,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -401,7 +401,7 @@
           7322.77512
         ],
         "TransferFee": 888264.4939,
-        "Moral": 100,
+        "Moral": 96,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -477,7 +477,7 @@
           10422.78204
         ],
         "TransferFee": 1773318.5701,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Lateral",
         "ShirtItem": null,
@@ -553,7 +553,7 @@
           6218.65968
         ],
         "TransferFee": 922378.9268,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Lateral",
         "ShirtItem": null,
@@ -705,7 +705,7 @@
           6620.47860
         ],
         "TransferFee": 959739.3848,
-        "Moral": 100,
+        "Moral": 96,
         "Potential": 3,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -781,7 +781,7 @@
           4756.93488
         ],
         "TransferFee": 959223.7426,
-        "Moral": 86,
+        "Moral": 77,
         "Potential": 1,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -857,7 +857,7 @@
           3748.54248
         ],
         "TransferFee": 495334.3955,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 2,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -933,7 +933,7 @@
           7196.88852
         ],
         "TransferFee": 1197394.9554,
-        "Moral": 78,
+        "Moral": 66,
         "Potential": 4,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -941,9 +941,9 @@
         "CleatsItem": null,
         "Cards": [
           {
-            "CompetitionTypeId": 1,
-            "Card": 2,
-            "ValidDate": 1495163185000
+            "CompetitionTypeId": 4,
+            "Card": 1,
+            "ValidDate": 1495328444000
           }
         ],
         "HasInjury": false,
@@ -1015,7 +1015,7 @@
           6050.38944
         ],
         "TransferFee": 705461.2280,
-        "Moral": 100,
+        "Moral": 96,
         "Potential": 2,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -1091,7 +1091,7 @@
           8159.84232
         ],
         "TransferFee": 1293066.5524,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 4,
         "Position": "TeamPlayerPosition_Atacante",
         "ShirtItem": null,
@@ -1243,7 +1243,7 @@
           7237.02468
         ],
         "TransferFee": 925460.8944,
-        "Moral": 89,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Atacante",
         "ShirtItem": null,

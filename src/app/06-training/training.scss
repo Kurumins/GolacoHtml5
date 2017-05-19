@@ -96,5 +96,19 @@
     }
   }
 
+  [training-limit] {
+    width: 30px;
+    div {
+      border: 1px solid;
+      border-radius: 2px;
+      // height: 2px;
+    }
+    span {
+      display: block;
+      background-color: blue;
+      height: 2px;
+    }
+  }
+
 }
 

@@ -8,6 +8,30 @@ angular.module('app')
       },
       template: '{{skillValue.Value || \'--\'}} <span ng-if="skillValue.addValue!==0" class="-{{skillValue.addValue > 0 ? \'add\' : \'dec\'}}">{{skillValue.addValue}}</span>'
     };
+  })
+  .directive('trainingLimit', function() {
+    return {
+      scope: {
+        player: '=trainingLimit'
+      },
+      template: '<div title="Tempo restante: {{::time}}" ng-if="trainingStatus"><span style="width: {{::trainingStatus}}%"></span></div>',
+      link: function link(scope, element, attrs) {
+        var now = +new Date;
+
+        scope.trainingStatus = getTrainingStatus();
+        scope.time = getTime();
+
+        function getTrainingStatus () {
+          var trainingLimit = (scope.player.TrainingLimitDate - now) / 1000;
+          return trainingLimit > 0 ? 100 - trainingLimit / (24 * 60 * 60) * 100 : 0;
+        };
+
+        function getTime () {
+          return new Date(1970,0,1,0,0,0,scope.player.TrainingLimitDate - now).toTimeString().substring(0,5);
+        }
+
+      }
+    };
   });
 
 function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
@@ -31,7 +55,16 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
     });
 
      vm.updateplayersListAtt();
-  }
+  };
+
+  var now = new Date;
+
+  vm.getTrainingLimit = function (player) {
+    var trainingLimit = (player.TrainingLimitDate - new Date) / 1000;
+    return trainingLimit > 0 ? trainingLimit : null;
+  };
+
+  //----------- calculo de atributos --------
 
   vm._btnType0 = 2;
   vm._btnType1 = 2;
