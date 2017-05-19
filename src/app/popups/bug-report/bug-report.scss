@@ -5,7 +5,34 @@
     padding: 30px 50px;
     text-align: center;
   }
-
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    &:before{
+      outline: none;
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+    }
+  }
+   button{
+    border-radius: 3px;
+    border:1px solid #0b62a9;
+    background: #0b62a9;
+    color: #ffffff;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    &:hover{
+      border:1px solid #0b62a9;
+      background: #ffffff;
+      color: #0b62a9;
+    }
+  }
   p {
     font-size: 14px;
   }

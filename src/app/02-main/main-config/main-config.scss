@@ -5,17 +5,54 @@
   h5 {
     margin: 0;
   }
+  hr{
+    border: 1px solid #0b62a9;
+  }
+  button{
+    border-radius: 3px;
+    border:1px solid #0b62a9;
+    background: #0b62a9;
+    color: #ffffff;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    &:hover{
+      border:1px solid #0b62a9;
+      background: #ffffff;
+      color: #0b62a9;
+    }
+  }
 
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    &:before{
+      outline: none;
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+
+    }
+  }
   .ngdialog-content {
     width: 750px;
     padding: 30px 50px;
+    h2{
+      color: #4e5667;
+    }
   }
 
   .change-name {
     float: left;
     width: 60%;
     padding-right: 50px;
-
+    h4{
+      color: #4682B4;
+    }
     .team-name input {
       width: 100%;
     }
@@ -30,6 +67,9 @@
   .price {
     padding-left: 30px;
     float: right;
+    .icon-credit-card:before{
+        color:#DAA520;
+    }
   }
 
   .change-country {
@@ -37,7 +77,11 @@
     width: 40%;
     padding-left: 50px;
     padding-top: 25px;
-    border-left: 1px solid;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=180, Color=#0b62a9)";/*IE 8*/
+    -moz-box-shadow: 24px 0 0 -23px rgba(11,98,169,0.4) inset;/*FF 3.5+*/
+    -webkit-box-shadow: 24px 0 0 -23px rgba(0,0,0,0.4) inset;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 24px 0 0 -23px rgba(11,98,169,0.4) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color=#0b62a9); /*IE 5.5-7*/
     .team-country select {
       width: 100%;
     }
@@ -51,9 +95,43 @@
       column-count: 2;
       // column-gap: 0;
     }
+    h3{
+      padding: 15px 0;
+      color: #4e5667;
+    }
 
     label {
       display: block;
+      font-size: 16px;
+    }
+
+    input[type=checkbox] {
+        opacity: 0;
+        margin-right: -12px;
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+
+    }
+    input[type=checkbox]:checked + span:before {
+        content: '\2714';
+        color: #0265b3;
+    }
+    input[type=checkbox] + span:before {
+         content: '\2714';
+        color: transparent;
+        display: inline-block;
+        margin-right: 18px;
+        width: 18px;
+        height: 18px;
+        visibility: visible;
+        background: transparent;
+        border: 1px solid #0265b3;
+        border-radius: 2px;
+        line-height: 18px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17px;
     }
   }
 
