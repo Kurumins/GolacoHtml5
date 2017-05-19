@@ -1,18 +1,52 @@
 balance {
-  padding: 5px;
-  background-color: #eee;
-
-  line-height: 25px;
-
-  .icon {
-    font-size: 20px;
-  }
-
-  .credit-balance,
-  .suportters {
-    float: left;
-  }
-  .credit-balance {
-    margin-right: 30px;
-  }
+    padding: 5px;
+    line-height: 25px;
+    font-size:13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    color: #4e5667;
+    background: #eeeeee;
+    button{
+        margin:0 5px;
+        background:#cecece;
+        box-shadow: none;
+        border: none;
+        color:#ffffff;
+        font-weight:600;
+        font-size: 16px;
+        padding: 0px 7px;
+        border-radius:3px;
+        transition: .5s cubic-bezier(1,-0.19, 0, 1.2);
+        cursor:pointer;
+        &:hover{
+            background:#ffffff;
+            color:#cecece;
+        }
+    }
+    .icon {
+        font-size: 20px;
+    }
+    .icon-money:before{
+        color:#00b100;
+    }
+    .icon-credit-card:before{
+        color:#DAA520;
+    }
+    .icon-users:before{
+        color:#1574a9;
+        font-size:18px;
+        margin-right: 5px;
+    }
+    .credit-balance,
+    .suportters {
+        float: left;
+    }
+    .credit-balance {
+        margin-right: 15px;
+    }
+    .financial-balance{
+        .ng-binding{
+            color:#0166b5;
+        }
+    }
 }
