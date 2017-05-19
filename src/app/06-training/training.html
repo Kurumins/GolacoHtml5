@@ -1,6 +1,28 @@
 <div class="training">
   <h2>Treinamento</h2>
 
+  <table width="100%">
+    <tr>
+      <th></th>
+      <th>CRU</th>
+      <th>VEL</th>
+      <th>RED</th>
+      <th>FIN</th>
+      <th>DRI</th>
+      <th>PAS</th>
+      <th>TEC</th>
+      <th>MAR</th>
+      <th>DES</th>
+      <th>DEF</th>
+      <th>REF</th>
+      <th>CAB</th>
+    </tr>
+    <tr>
+    <td>Níveis de treinamento</td>
+      <td align="center" ng-repeat="skill in [] | range:12:1">{{$ctrl.trainingCenter['TeamPlayerSkill' + skill + 'Level']}}</td>
+    </tr>
+  </table>
+
   <div class="players-table">
     <table width="100%">
       <thead>
@@ -46,14 +68,23 @@
         <td skill-value="player.Attributes.SecondSkill5"></td>
         <td training-limit="player"></td>
         <td ng-if="!player.HasTrainingPlan">
-          <input type="checkbox" ng-model="player.checked" ng-checked-="all" ng-true-value-="5" ng-change="$ctrl.updateplayersListAtt();">
+          <input type="checkbox" ng-model="player.checked" ng-change="$ctrl.updateplayersListAtt();">
         </td>
-        <td ng-if="player.HasTrainingPlan">
-          >>
-        </td>
+        <td ng-if="player.HasTrainingPlan"><button class="icon-fast-forward"></button></td>
       </tr>
     </table>
   </div>
+
+  <select
+    ng-repeat="type in [] | range:4"
+    ng-model="$ctrl['_btnType'+type]" ng-change="$ctrl.updateplayersListAtt();">
+    <option ng-value="1"></option>
+    <option ng-value="2">Treino de Habilidade</option>
+    <option ng-value="3">Treino Físico</option>
+    <option ng-value="4">Treino Técnico</option>
+  </select>
+
+  <button ng-disabled="!$ctrl.train">treinar</button>
+
 </div>
 
-<button ng-disabled="!$ctrl.train">{{$ctrl.train}}</button>

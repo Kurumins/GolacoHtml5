@@ -66,10 +66,10 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
 
   //----------- calculo de atributos --------
 
-  vm._btnType0 = 2;
-  vm._btnType1 = 2;
-  vm._btnType2 = 2;
-  vm._btnType3 = 2;
+  vm._btnType0 = 1;
+  vm._btnType1 = 1;
+  vm._btnType2 = 1;
+  vm._btnType3 = 1;
 
   var playersList = vm.teamPlayers;
 
