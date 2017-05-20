@@ -3,6 +3,21 @@
   .ngdialog-content {
     width: 750px;
     padding: 30px 50px;
+     h2{
+      color: #4e5667;
+    }
+  }
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    &:before{
+      outline: none;
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+    }
   }
 
   .trophy {
@@ -13,6 +28,11 @@
     > div {
       background: white;
       padding: 20px 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=20, Direction=0, Color=#000000)";/*IE 8*/
+      -moz-box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/*FF 3.5+*/
+      -webkit-box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+      box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=20, Direction=135, Color=#000000); /*IE 5.5-7*/
     }
   }
 
