@@ -70,7 +70,7 @@
         <td ng-if="!player.HasTrainingPlan">
           <input type="checkbox" ng-model="player.checked" ng-change="$ctrl.updateplayersListAtt();">
         </td>
-        <td ng-if="player.HasTrainingPlan"><button class="icon-fast-forward"></button></td>
+        <td ng-if="player.HasTrainingPlan"><button ng-click="$ctrl.refreshTraining(player)" class="icon-fast-forward"></button></td>
       </tr>
     </table>
   </div>
@@ -84,7 +84,7 @@
     <option ng-value="4">Treino Técnico</option>
   </select>
 
-  <button ng-disabled="!$ctrl.train">treinar</button>
+  <button ng-disabled="!$ctrl.canTrain" ng-click="$ctrl.train();">treinar</button>
 
 </div>
 

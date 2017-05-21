@@ -34,7 +34,7 @@ angular.module('app')
     };
   });
 
-function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
+function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup) {
   var vm = this;
 
   vm.teamPlayers = teamPlayerList.TeamPlayers;
@@ -62,6 +62,24 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
   vm.getTrainingLimit = function (player) {
     var trainingLimit = (player.TrainingLimitDate - new Date) / 1000;
     return trainingLimit > 0 ? trainingLimit : null;
+  };
+
+  vm.train = function () {
+    ConfirmPopup.open({
+      title: 'Treinamento',
+      content: 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.'
+    })
+      .then(function () {
+      })
+  };
+
+  vm.refreshTraining = function (player) {
+    ConfirmPopup.open({
+      title: 'Adiantar treinamento',
+      content: 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?'
+    })
+      .then(function () {
+      })
   };
 
   //----------- calculo de atributos --------
@@ -162,7 +180,7 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog) {
     }
 
     //enable train btn
-    vm.train = (trainingPlanExist && baseNumplayersList < 1.32);
+    vm.canTrain = (trainingPlanExist && baseNumplayersList < 1.32);
 
     //update all playersList
     for (i = 0; i < playersList.length; i++) {  //calc for each player
