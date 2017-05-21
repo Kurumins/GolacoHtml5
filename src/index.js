@@ -17,8 +17,8 @@ angular
     $window._gaq = [];
     $window.fbq = null;
 
-    // $window.baseUrl = '/golaco/';
-    $window.baseUrl = '/data/';
+    $window.baseUrl = '/golaco/';
+    // $window.baseUrl = '/data/';
 
   })
 
