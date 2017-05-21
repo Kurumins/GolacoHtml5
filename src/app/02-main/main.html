@@ -1,7 +1,7 @@
 <div class="main">
 
     <div class="main-header">
-   
+
         <div class="header-item">
           <h2>Minha equipe</h2>
         </div>
@@ -41,7 +41,7 @@
 
             </div>
 
-            <div class="detail-team"style="float: left;">
+            <div class="detail-team">
                 <h4>Detalhes do Time</h4>
                 <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
                 <p>Fundado em {{$appCtrl.teamPreview.FoundationDate | date:'shortDate'}}</p>
@@ -52,12 +52,17 @@
             <div class="detail-uniform">
                 <h3>Uniforme</h3>
 
-                <div class="main-uniformes">
+                <div class="clearfix main-uniformes">
                     <div class="main-uniforme">uniforme</div>
                     <div class="main-uniforme">uniforme</div>
                 </div>
 
-                <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor">
+                <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor" ng-if="$appCtrl.teamPreview.SponsorName">
+
+                <div ng-if="!$appCtrl.teamPreview.SponsorName">
+                    Clique aqui para contratar um patrocinador!
+                </div>
+
             </div>
 
 
@@ -74,8 +79,8 @@
                     ng-dialog-controller="MissionPopupController"
                     ng-dialog-show-close="false"
                     ng-dialog-data="{{mission}}"
-                    ng-dialog-close-previous 
-                    alt="{{mission.Mission.Name}}" 
+                    ng-dialog-close-previous
+                    alt="{{mission.Mission.Name}}"
                     title="{{mission.Mission.Name}}">
                 </li>
             </ul>
