@@ -59,6 +59,13 @@ angular
 
       $loading.start('PostToJs');
 
+      deferred.promise.noLoading = function () {
+        if ( Object.size(vm.callbacks) === 1 ) {
+          $loading.finish('PostToJs');
+        }
+        return deferred.promise;
+      };
+
       $window.doAction(action, action, data, signed || true, cacheId || +new Date() );
 
       return deferred.promise;
