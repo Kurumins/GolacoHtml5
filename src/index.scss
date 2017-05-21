@@ -1,3 +1,9 @@
+html,
+body {
+  min-height: 700px;
+  height: 100%;
+}
+
 body {
   font-family: arial, verdana;
 }
@@ -29,7 +35,12 @@ a {
 }
 
 .ngdialog.ngdialog-theme-default {
+  overflow: auto;
   // padding: 0;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
+}
+
+.dw-loading.dw-loading-overlay {
+  z-index: 10001;
 }
