@@ -7,21 +7,29 @@ function mainRoutesConfig ($stateProvider) {
   $stateProvider
     .state('app.main', {
       url: '/',
-      resolve: {
-        missionList: function (AppService) {
-          return AppService.missionList();
-        },
-      },
+      sticky: true,
+      // resolve: {
+      //   missionList: function (AppService) {
+      //     return AppService.missionList();
+      //   },
+      // },
       templateUrl: 'main.html',
       controller: mainController,
       controllerAs: '$ctrl'
     });
 }
 
-function mainController ($scope, missionList, ngDialog, MainService) {
+function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService) {
   var vm = this;
 
-  vm.missionList = missionList;
+  // if ( missionList ) {
+  //   vm.missionList = missionList;
+  // } else {
+    AppService.missionList().noLoading()
+      .then(function (missionList) {
+        vm.missionList = missionList;
+      });
+  // }
 
   vm.config = function () {
     ngDialog.open({

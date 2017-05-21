@@ -25,6 +25,7 @@ function itensRoutesConfig ($stateProvider) {
     .state('app.itens', {
       url: '/itens',
       abstract: '.destaques',
+      sticky: true,
       resolve: {
         inventory: function (ItensService) {
           return ItensService.inventory();
@@ -40,11 +41,13 @@ function itensRoutesConfig ($stateProvider) {
 
     .state('app.itens.destaques', {
       url: '',
+      sticky: true,
       templateUrl: 'itens-highlights.html',
     })
 
     .state('app.itens.itens', {
       url: '/:inventario/:centro/:category',
+      sticky: true,
       params: {
         category: {
           value: '13',

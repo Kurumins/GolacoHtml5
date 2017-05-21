@@ -3,6 +3,7 @@ angular
   .module('app', [
     'ui.router',
     'ui.router.default',
+    'ct.ui.router.extras',
     'slickCarousel',
     'ngDialog',
     'lvl.directives.dragdrop',
