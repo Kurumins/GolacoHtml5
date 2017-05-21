@@ -6,7 +6,8 @@ angular
     'slickCarousel',
     'ngDialog',
     'lvl.directives.dragdrop',
-    'nsPopover'
+    'nsPopover',
+    'angular.filter'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);

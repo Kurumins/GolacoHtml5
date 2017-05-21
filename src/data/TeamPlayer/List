@@ -9,76 +9,63 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Ariovaldo Agnelo",
-        "Age": 26,
+        "Age": 27,
         "RetirementAge": 0,
         "ShirtNumber": 1,
-        "Salary": 2,
+        "Salary": 3,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          5665.77680,
+          7082.2210,
+          8498.66520
         ],
-        "TransferFee": 672146.2385,
-        "Moral": 74,
+        "TransferFee": 1306243.6525,
+        "Moral": 80,
         "Potential": 4,
         "Position": "TeamPlayerPosition_Goleiro",
         "ShirtItem": null,
         "ShortItem": null,
         "CleatsItem": null,
-        "Cards": [
-          {
-            "competitionName": "asdfasdf",
-            "competitionType": 1,
-            "cardType": 1,
-            "expirationDate": 321651
-          },
-          {
-            "competitionName": "asdfasdf asdfasdf",
-            "competitionType": 2,
-            "cardType": 2,
-            "expirationDate": 321651
-          }
-        ],
+        "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1493485257000,
-        "TrainingLimitDate": 1493571656953,
-        "HasTrainingPlan": true,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
+        "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 10,
             "Name": "TeamPlayerSkill_DefesaGol",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 11,
             "Name": "TeamPlayerSkill_Reflexos",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill5": null
@@ -93,63 +80,75 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Adriano Cléber",
-        "Age": 21,
+        "Age": 22,
         "RetirementAge": 0,
         "ShirtNumber": 2,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          6455.35312,
+          8069.1914,
+          9683.02968
         ],
-        "TransferFee": 837851.6541,
-        "Moral": 99,
+        "TransferFee": 1643648.7559,
+        "Moral": 100,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Goleiro",
-        "ShirtItem": null,
-        "ShortItem": null,
-        "CleatsItem": null,
+        "ShirtItem": {
+          "Name": "Label_Shirt_General_3_Credits",
+          "Picture": "https://www.golacogame.com.br/Content/item/288m.png",
+          "Description": "Label_Shirt_General_3_Credits"
+        },
+        "ShortItem": {
+          "Name": "Label_Short_General_1",
+          "Picture": "https://www.golacogame.com.br/Content/item/250m.png",
+          "Description": "Label_Short_General_1"
+        },
+        "CleatsItem": {
+          "Name": "Label_Cleats_General_1",
+          "Picture": "https://www.golacogame.com.br/Content/item/214m.png",
+          "Description": "Label_ChuteiraGenerica_Nvl_1_Desc"
+        },
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
-        "HasTrainingPlan": false,
+        "TrainingLastDate": 1495150072000,
+        "TrainingLimitDate": 1495236471500,
+        "HasTrainingPlan": true,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 10,
             "Name": "TeamPlayerSkill_DefesaGol",
-            "Value": 10,
+            "Value": 15,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 11,
             "Name": "TeamPlayerSkill_Reflexos",
-            "Value": 7,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 15,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 14,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 14,
             "Max": false
           },
           "SecondSkill5": null
@@ -169,64 +168,64 @@
         "ShirtNumber": 3,
         "Salary": 2,
         "SalaryOptions": [
-          1253.48176,
-          1566.8522,
-          1880.22264
+          4647.75128,
+          5809.6891,
+          6971.62692
         ],
-        "TransferFee": 524144.4120,
-        "Moral": 74,
+        "TransferFee": 941014.1268,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
         "ShortItem": null,
         "CleatsItem": null,
         "Cards": [],
-        "HasInjury": true,
+        "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 8,
             "Name": "TeamPlayerSkill_Marcacao",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -240,17 +239,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Florestano Cássio",
-        "Age": 29,
+        "Age": 30,
         "RetirementAge": 0,
         "ShirtNumber": 4,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          2551.51328,
+          3189.3916,
+          3827.26992
         ],
-        "TransferFee": 371665.3000,
-        "Moral": 61,
+        "TransferFee": 521376.3706,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -259,50 +258,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 8,
             "Name": "TeamPlayerSkill_Marcacao",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           }
         },
@@ -316,17 +315,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Filiberto Benito",
-        "Age": 32,
-        "RetirementAge": 0,
+        "Age": 33,
+        "RetirementAge": 1507839646482.1621,
         "ShirtNumber": 5,
         "Salary": 2,
         "SalaryOptions": [
-          1241.77072,
-          1552.2134,
-          1862.65608
+          3487.90864,
+          4359.8858,
+          5231.86296
         ],
-        "TransferFee": 360207.6610,
-        "Moral": 74,
+        "TransferFee": 617999.2688,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -335,50 +334,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 8,
             "Name": "TeamPlayerSkill_Marcacao",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           }
         },
@@ -392,17 +391,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Abel Abelardo",
-        "Age": 27,
+        "Age": 28,
         "RetirementAge": 0,
         "ShirtNumber": 6,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          4881.85008,
+          6102.3126,
+          7322.77512
         ],
-        "TransferFee": 497449.1363,
-        "Moral": 33,
+        "TransferFee": 888264.4939,
+        "Moral": 96,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Zagueiro",
         "ShirtItem": null,
@@ -411,50 +410,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 8,
             "Name": "TeamPlayerSkill_Marcacao",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -473,12 +472,12 @@
         "ShirtNumber": 7,
         "Salary": 2,
         "SalaryOptions": [
-          1251.58792,
-          1564.4849,
-          1877.38188
+          6948.52136,
+          8685.6517,
+          10422.78204
         ],
-        "TransferFee": 1031906.3370,
-        "Moral": 72,
+        "TransferFee": 1773318.5701,
+        "Moral": 80,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Lateral",
         "ShirtItem": null,
@@ -487,50 +486,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 1,
             "Name": "TeamPlayerSkill_Cruzamento",
-            "Value": 10,
+            "Value": 15,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 14,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -549,12 +548,12 @@
         "ShirtNumber": 8,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          4145.77312,
+          5182.2164,
+          6218.65968
         ],
-        "TransferFee": 509878.0533,
-        "Moral": 74,
+        "TransferFee": 922378.9268,
+        "Moral": 80,
         "Potential": 5,
         "Position": "TeamPlayerPosition_Lateral",
         "ShirtItem": null,
@@ -563,20 +562,96 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 1,
             "Name": "TeamPlayerSkill_Cruzamento",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 7,
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 11,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 12,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 11,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 12,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 10,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36110070,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 3,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Aluísio Evaldo",
+        "Age": 18,
+        "RetirementAge": 0,
+        "ShirtNumber": 18,
+        "Salary": 2,
+        "SalaryOptions": [
+          1229.01880,
+          1536.2735,
+          1843.52820
+        ],
+        "TransferFee": 590140.5748,
+        "Moral": 95,
+        "Potential": 3,
+        "Position": "TeamPlayerPosition_Lateral",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 1,
+            "Name": "TeamPlayerSkill_Cruzamento",
+            "Value": 8,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 9,
             "Max": false
           },
           "SecondSkill1": {
@@ -588,7 +663,7 @@
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill3": {
@@ -600,7 +675,7 @@
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 9,
             "Max": false
           },
           "SecondSkill5": {
@@ -620,17 +695,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Alberto Vitório",
-        "Age": 22,
+        "Age": 23,
         "RetirementAge": 0,
         "ShirtNumber": 9,
         "Salary": 2,
         "SalaryOptions": [
-          1230.05960,
-          1537.5745,
-          1845.08940
+          4413.65240,
+          5517.0655,
+          6620.47860
         ],
-        "TransferFee": 493323.7076,
-        "Moral": 74,
+        "TransferFee": 959739.3848,
+        "Moral": 96,
         "Potential": 3,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -639,50 +714,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -701,12 +776,12 @@
         "ShirtNumber": 10,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          3171.28992,
+          3964.1124,
+          4756.93488
         ],
-        "TransferFee": 511944.5722,
-        "Moral": 74,
+        "TransferFee": 959223.7426,
+        "Moral": 77,
         "Potential": 1,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -715,50 +790,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           }
         },
@@ -777,12 +852,12 @@
         "ShirtNumber": 11,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          2499.02832,
+          3123.7854,
+          3748.54248
         ],
-        "TransferFee": 277130.5722,
-        "Moral": 74,
+        "TransferFee": 495334.3955,
+        "Moral": 80,
         "Potential": 2,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -791,50 +866,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 6,
+            "Value": 10,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           }
         },
@@ -848,77 +923,75 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Godofredo Walter",
-        "Age": 26,
+        "Age": 27,
         "RetirementAge": 0,
         "ShirtNumber": 12,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          4797.92568,
+          5997.4071,
+          7196.88852
         ],
-        "TransferFee": 614522.3145,
-        "Moral": 99,
+        "TransferFee": 1197394.9554,
+        "Moral": 66,
         "Potential": 4,
         "Position": "TeamPlayerPosition_MeioCampo",
-        "ShirtItem": {
-          "Name": "Label_Shirt_General_1_Credits",
-          "Picture": "https://www.golacogame.com.br/Content/item/286m.png",
-          "Description": "Label_Shirt_General_1_Credits"
-        },
+        "ShirtItem": null,
         "ShortItem": null,
-        "CleatsItem": {
-          "Name": "Label_Cleats_General_1",
-          "Picture": "https://www.golacogame.com.br/Content/item/214m.png",
-          "Description": "Label_ChuteiraGenerica_Nvl_1_Desc"
-        },
-        "Cards": [],
+        "CleatsItem": null,
+        "Cards": [
+          {
+            "CompetitionTypeId": 4,
+            "Card": 1,
+            "ValidDate": 1495328444000
+          }
+        ],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -932,17 +1005,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Baruque Natanael",
-        "Age": 26,
+        "Age": 27,
         "RetirementAge": 0,
         "ShirtNumber": 13,
         "Salary": 2,
         "SalaryOptions": [
-          1256.82024,
-          1571.0253,
-          1885.23036
+          4033.59296,
+          5041.9912,
+          6050.38944
         ],
-        "TransferFee": 397777.2047,
-        "Moral": 95,
+        "TransferFee": 705461.2280,
+        "Moral": 96,
         "Potential": 2,
         "Position": "TeamPlayerPosition_MeioCampo",
         "ShirtItem": null,
@@ -951,50 +1024,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 9,
             "Name": "TeamPlayerSkill_Desarme",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           }
         },
@@ -1008,17 +1081,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Custódio Alan",
-        "Age": 24,
+        "Age": 25,
         "RetirementAge": 0,
         "ShirtNumber": 14,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          5439.89488,
+          6799.8686,
+          8159.84232
         ],
-        "TransferFee": 720227.3562,
-        "Moral": 74,
+        "TransferFee": 1293066.5524,
+        "Moral": 80,
         "Potential": 4,
         "Position": "TeamPlayerPosition_Atacante",
         "ShirtItem": null,
@@ -1027,50 +1100,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 9,
+            "Value": 13,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 14,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -1084,17 +1157,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Calisto Jô",
-        "Age": 26,
+        "Age": 27,
         "RetirementAge": 0,
         "ShirtNumber": 15,
         "Salary": 2,
         "SalaryOptions": [
-          1235.29192,
-          1544.1149,
-          1852.93788
+          4824.68312,
+          6030.8539,
+          7237.02468
         ],
-        "TransferFee": 528574.9920,
-        "Moral": 74,
+        "TransferFee": 938268.4608,
+        "Moral": 89,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Atacante",
         "ShirtItem": null,
@@ -1103,50 +1176,50 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 9,
+            "Value": 12,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 7,
+            "Value": 10,
             "Max": false
           },
           "SecondSkill1": {
             "Id": 7,
             "Name": "TeamPlayerSkill_Tecnica",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill2": {
             "Id": 2,
             "Name": "TeamPlayerSkill_Velocidade",
-            "Value": 10,
+            "Value": 13,
             "Max": false
           },
           "SecondSkill3": {
             "Id": 3,
             "Name": "TeamPlayerSkill_Resistencia",
-            "Value": 8,
+            "Value": 11,
             "Max": false
           },
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 12,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 11,
             "Max": false
           }
         },
@@ -1160,17 +1233,17 @@
         "IdCountry": 4,
         "Flag": 4,
         "Name": "Abel Levi",
-        "Age": 21,
+        "Age": 22,
         "RetirementAge": 0,
         "ShirtNumber": 16,
         "Salary": 2,
         "SalaryOptions": [
-          1226.64960,
-          1533.3120,
-          1839.97440
+          4824.68312,
+          6030.8539,
+          7237.02468
         ],
-        "TransferFee": 534389.8560,
-        "Moral": 99,
+        "TransferFee": 925460.8944,
+        "Moral": 80,
         "Potential": 3,
         "Position": "TeamPlayerPosition_Atacante",
         "ShirtItem": null,
@@ -1179,20 +1252,96 @@
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
-        "TrainingLastDate": 1492744413000,
-        "TrainingLimitDate": 1492830812850,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
         "HasTrainingPlan": false,
         "Attributes": {
           "PrimarySkill1": {
             "Id": 4,
             "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 10,
+            "Value": 13,
             "Max": false
           },
           "PrimarySkill2": {
             "Id": 12,
             "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 7,
+            "Value": 10,
+            "Max": false
+          },
+          "SecondSkill1": {
+            "Id": 7,
+            "Name": "TeamPlayerSkill_Tecnica",
+            "Value": 12,
+            "Max": false
+          },
+          "SecondSkill2": {
+            "Id": 2,
+            "Name": "TeamPlayerSkill_Velocidade",
+            "Value": 12,
+            "Max": false
+          },
+          "SecondSkill3": {
+            "Id": 3,
+            "Name": "TeamPlayerSkill_Resistencia",
+            "Value": 11,
+            "Max": false
+          },
+          "SecondSkill4": {
+            "Id": 6,
+            "Name": "TeamPlayerSkill_Passe",
+            "Value": 12,
+            "Max": false
+          },
+          "SecondSkill5": {
+            "Id": 5,
+            "Name": "TeamPlayerSkill_Drible",
+            "Value": 11,
+            "Max": false
+          }
+        },
+        "InAuction": false,
+        "TeamPlayerType": 1
+      },
+      {
+        "Id": 36109691,
+        "Picture": "https://www.golacogame.com.br/Content/teamPlayer/jogador.png",
+        "IdPosition": 5,
+        "IdCountry": 4,
+        "Flag": 4,
+        "Name": "Tobias Maximiliano",
+        "Age": 17,
+        "RetirementAge": 0,
+        "ShirtNumber": 17,
+        "Salary": 2,
+        "SalaryOptions": [
+          1229.01880,
+          1536.2735,
+          1843.52820
+        ],
+        "TransferFee": 472833.3089,
+        "Moral": 97,
+        "Potential": 2,
+        "Position": "TeamPlayerPosition_Atacante",
+        "ShirtItem": null,
+        "ShortItem": null,
+        "CleatsItem": null,
+        "Cards": [],
+        "HasInjury": false,
+        "HasSeriousInjury": false,
+        "TrainingLastDate": 1494538801000,
+        "TrainingLimitDate": 1494625200937,
+        "HasTrainingPlan": false,
+        "Attributes": {
+          "PrimarySkill1": {
+            "Id": 4,
+            "Name": "TeamPlayerSkill_Finalizacao",
+            "Value": 11,
+            "Max": false
+          },
+          "PrimarySkill2": {
+            "Id": 12,
+            "Name": "TeamPlayerSkill_Cabeceio",
+            "Value": 8,
             "Max": false
           },
           "SecondSkill1": {
@@ -1216,13 +1365,13 @@
           "SecondSkill4": {
             "Id": 6,
             "Name": "TeamPlayerSkill_Passe",
-            "Value": 8,
+            "Value": 9,
             "Max": false
           },
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 7,
+            "Value": 9,
             "Max": false
           }
         },
@@ -1230,12 +1379,12 @@
         "TeamPlayerType": 1
       },
       {
-        "Id": 3221733,
+        "Id": 3228082,
         "Picture": "https://www.golacogame.com.br/Content/teamPlayer/junior.png",
-        "IdPosition": 5,
+        "IdPosition": 3,
         "IdCountry": 4,
         "Flag": 4,
-        "Name": "Tobias Maximiliano",
+        "Name": "Valério Alípio",
         "Age": 16,
         "RetirementAge": 0,
         "ShirtNumber": 0,
@@ -1243,24 +1392,24 @@
         "TransferFee": 100000,
         "Moral": 70,
         "Potential": 2,
-        "Position": "TeamPlayerPosition_Atacante",
+        "Position": "TeamPlayerPosition_Lateral",
         "Cards": [],
         "HasInjury": false,
         "HasSeriousInjury": false,
         "HasTrainingPlan": false,
-        "TrainingLastDate": 0,
-        "TrainingLimitDate": 0,
+        "TrainingLastDate": 1494538800937,
+        "TrainingLimitDate": 1494625200937,
         "Attributes": {
           "PrimarySkill1": {
-            "Id": 4,
-            "Name": "TeamPlayerSkill_Finalizacao",
-            "Value": 8,
+            "Id": 1,
+            "Name": "TeamPlayerSkill_Cruzamento",
+            "Value": 6,
             "Max": false
           },
           "PrimarySkill2": {
-            "Id": 12,
-            "Name": "TeamPlayerSkill_Cabeceio",
-            "Value": 5,
+            "Id": 9,
+            "Name": "TeamPlayerSkill_Desarme",
+            "Value": 8,
             "Max": false
           },
           "SecondSkill1": {
@@ -1290,7 +1439,7 @@
           "SecondSkill5": {
             "Id": 5,
             "Name": "TeamPlayerSkill_Drible",
-            "Value": 6,
+            "Value": 4,
             "Max": false
           }
         },

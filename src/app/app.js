@@ -8,7 +8,7 @@ angular.module('app')
 
     vm.userData = userData;
     vm.user = user;
-    vm.teamPreview = teamPreview;
+    $rootScope.teamPreview = vm.teamPreview = teamPreview;
     vm.countryList = countryList.data;
 
     $rootScope.$window = $window;

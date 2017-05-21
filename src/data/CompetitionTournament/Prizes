@@ -1,0 +1,44 @@
+{
+  "data": {
+    "Success": true,
+    "Prizes": [
+      {
+        "Place": 1,
+        "CreditD": 15,
+        "CreditC": 15,
+        "CreditB": 20,
+        "CreditA": 28,
+        "Morale": 30,
+        "MoneyLeagueD": 1500000,
+        "MoneyLeagueC": 3000000,
+        "MoneyLeagueB": 6000000,
+        "MoneyLeagueA": 14000000
+      },
+      {
+        "Place": 2,
+        "CreditD": 12,
+        "CreditC": 12,
+        "CreditB": 15,
+        "CreditA": 21,
+        "Morale": 15,
+        "MoneyLeagueD": 1000000,
+        "MoneyLeagueC": 2000000,
+        "MoneyLeagueB": 4000000,
+        "MoneyLeagueA": 10500000
+      },
+      {
+        "Place": 3,
+        "CreditD": 8,
+        "CreditC": 8,
+        "CreditB": 10,
+        "CreditA": 14,
+        "Morale": 10,
+        "MoneyLeagueD": 500000,
+        "MoneyLeagueC": 1000000,
+        "MoneyLeagueB": 2000000,
+        "MoneyLeagueA": 7000000
+      }
+    ],
+    "IdLeague": 4
+  }
+}

@@ -1,0 +1,45 @@
+<h3>Oitavas de final</h3>
+
+<button type="button" class="slick-prev">«</button>
+<button type="button" class="slick-next">»</button>
+
+<slick
+  infinite=false
+  slides-to-show="2" slides-to-scroll="2" rows="2"
+  prev-arrow=".slick-prev"
+  next-arrow=".slick-next">
+  <div ng-repeat="block in $ctrl.tournamentPlayOff.Rounds[0].Matches | chunkBy: 2" class="match-table">
+    <table width="100%">
+      <tr>
+        <td colspan="9">Jogo de ida: {{ block[0].MatchDate | date:'short' }}</td>
+      </tr>
+      <tr>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[0].HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{block[0].HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td width="30%">{{block[0].HomeTeam.Acronym}}</td>
+        <td align="right">{{block[0].HomeTeam.Goals}}</td>
+        <td align="center">x</td>
+        <td>{{block[0].VisitorTeam.Goals}}</td>
+        <td width="30%" align="right">{{block[0].VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{block[0].VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[0].VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+      </tr>
+      <tr>
+        <td colspan="9">Jogo de volta: {{ block[1].MatchDate | date:'short' }}</td>
+      </tr>
+      <tr>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[1].HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{block[1].HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td width="30%">{{block[1].HomeTeam.Acronym}}</td>
+        <td align="right">{{block[1].HomeTeam.Goals}}</td>
+        <td align="center">x</td>
+        <td>{{block[1].VisitorTeam.Goals}}</td>
+        <td width="30%" align="right">{{block[1].VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{block[1].VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[1].VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+      </tr>
+    </table>
+  </div>
+</slick>
+
+</div>
