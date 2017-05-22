@@ -24,7 +24,7 @@
   <label class="team-country">
     Alterar país
     <select>
-      <option></option>
+      <option>Paises</option>
     </select>
   </label>
   <label class="price">
@@ -39,11 +39,11 @@
   <div class="setting-list">
     <label ng-repeat="setting in $ctrl.settings.Settings">
       <input type="checkbox" name="" ng-checked="setting.Subscribe">
-      {{setting.Name}}
+      <span>{{setting.Name}}</span>
     </label>
   </div>
   <hr>
-  <button type="button" class="" ng-click="">OK</button>
+  <button type="button" class="closeDialog" ng-click="">OK</button>
 </div>
 
 

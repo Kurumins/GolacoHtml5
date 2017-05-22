@@ -13,7 +13,9 @@
     margin: 0;
     line-height: 1.1;
   }
-
+  h2{
+   color: rgb(78, 86, 103);
+  }
   p {
     font-size: 14px;
   }
@@ -29,6 +31,7 @@
       background: azure;
       width: 20px;
       text-align: center;
+      border-radius: 3px;
     }
   }
 
@@ -41,13 +44,22 @@
   .overview-lasts {
     display: flex;
     margin: 30px;
-
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
     > * {
       flex: 1;
     }
 
     > div {
       text-align: center;
+    }
+    h5{
+      padding-top: 10px;
+      color: #0b62a9;
+    }
+    .icon-trophy:before {
+        color: #f6c325;
     }
   }
 
@@ -56,13 +68,33 @@
     align-items: center;
     justify-content: space-between;
     margin: 30px;
-
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
     > * {
       // flex: 1;
     }
 
+    h5{
+      color: #0b62a9;
+    }
+    p{
+      
+    }
+    .attributes{
+      color: #0b62a9;
+      span{
+        color: #444;
+      }
+    }
     .ranking{
-      background: #333;
+      background: -moz-linear-gradient(356deg, #313131 0, #565656 50%);/* FF3.6+ */
+      background: -webkit-gradient(linear, 356deg, color-stop(0, 313131), color-stop(50%, 565656));/* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(356deg, #313131 0, #565656 50%);/* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(356deg, #313131 0, #565656 50%);/* Opera 11.10+ */
+      background: -ms-linear-gradient(356deg, #313131 0, #565656 50%);/* IE10+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+      background: linear-gradient(356deg, #313131 0, #565656 50%);/* W3C */
       align-self: stretch;
       color: #fff;
       padding: 25px 15px;
@@ -70,4 +102,39 @@
     }
   }
 
+  .overview{
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    &:before{
+      
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+    }
+  }
+
+  .trophy{
+    text-align: center;
+
+  }
+  .slick-track{
+    background: #ffffff;
+    padding: 10px;
+  }
+
+  .slide-control{
+    margin: 15px 10px;
+  }
+
+  .ng-scope{
+
+  }
 }

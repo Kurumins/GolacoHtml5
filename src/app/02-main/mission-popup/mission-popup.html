@@ -15,12 +15,12 @@
 
     <button type="button" class="ok-button" ng-click="closeThisDialog(0)">OK</button>
 
-    <div ng-if="ngDialogData.Mission.Money">
+    <div ng-if="ngDialogData.Mission.Money" class="money">
       <h5>Dinheiro Virtual</h5>
       <h3>{{ngDialogData.Mission.Money | currency}}</h3>
     </div>
 
-    <div ng-if="ngDialogData.Mission.Credits">
+    <div ng-if="ngDialogData.Mission.Credits" class="credits">
       <h5>Créditos</h5>
       <h3>{{ngDialogData.Mission.Credits}}</h3>
     </div>

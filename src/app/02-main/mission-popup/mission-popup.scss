@@ -12,7 +12,22 @@
   p {
     margin: 0;
   }
-
+  button{
+    border-radius: 3px;
+    border:1px solid #3cc51c;
+    background: #3cc51c;
+    color: #ffffff;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    &:hover{
+      border:1px solid #3cc51c;
+      background: #ffffff;
+      color: #3cc51c;
+    }
+  }
   .mission_detail {
     position: absolute;
     left: -110px;
@@ -20,14 +35,28 @@
   }
   .mission-description {
     margin-left: 110px;
+    h2{
+      font-size: 19px;
+      color: #0b62a9;
+    }
+    h3{
+      font-size: 17px;
+      color: #4e5667;
+    }
   }
 
   footer {
     overflow: auto;
+    .credits, .money{
+      h3{
+        color: #ff6a02;
+      }
+    }
   }
 
   .ok-button {
     float: right;
     margin-top: 15px;
+    outline: none;
   }
 }

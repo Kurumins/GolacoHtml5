@@ -48,11 +48,11 @@
 
   <div>
     <p>{{$ctrl.teamStats.Overview.DangerousPlayer.Name}}</p>
-    <p>
+    <p class="attributes">
       <span>{{$ctrl.teamStats.Overview.DangerousPlayer.ShirtNumber}}</span>
       {{$ctrl.teamStats.Overview.DangerousPlayer.Position}}
     </p>
-    <p>
+    <p class="attributes">
       <span>{{$ctrl.teamStats.Overview.DangerousPlayer.Goals}}</span>
       Gols
     </p>
@@ -64,7 +64,7 @@
     <h3>Em Breve</h3>
   </div>
 
-  <div>
+  <div class="overview">
     <ng-switch on="!!$ctrl.teamStats.Overview.LastRecruitment">
       <span ng-switch-when="true">Negociações</span>
       <p ng-switch-when="false">Seu Time nunca fez <br>negociações</p>

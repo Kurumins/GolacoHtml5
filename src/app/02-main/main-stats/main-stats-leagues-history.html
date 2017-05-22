@@ -1,7 +1,7 @@
 <slick infinite=false slides-to-show=2 slides-to-scroll=2 rows="3" arrows="false"
   settings="$ctrl.slickConfig">
   <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="trophy">
-    <div>
+    <div class="content">
       Temporada {{$ctrl.teamStats.LeaguesHistory.length - $index}}
       <button>{{['','A','B','C','D'][league.IdLeague]}}</button>
       {{league.Position}}º lugar
