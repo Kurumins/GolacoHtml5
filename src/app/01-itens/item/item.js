@@ -17,9 +17,7 @@ angular.module('app')
         })
           .then(function () {
 
-          }/*, function () {
-
-          }*/);
+          });
       };
 
       vm.discartItem = function () {
@@ -29,9 +27,7 @@ angular.module('app')
         })
           .then(function () {
 
-          }/*, function () {
-
-          }*/);
+          });
       };
 
     },

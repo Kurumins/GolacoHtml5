@@ -34,3 +34,18 @@ item-list {
   }
 
 }
+
+item-list.bundle {
+  item .sale {
+    &:after {
+      border: 2px solid #ac8e4a;
+    }
+    .icon-star {
+      background: #ac8e4a;
+      color: white;
+    }
+    .item-price {
+      background: #ac8e4a;
+    }
+  }
+}
