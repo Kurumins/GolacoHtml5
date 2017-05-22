@@ -1,0 +1,39 @@
+<div style="float: right;" class="button-bar">
+  <button
+    ng-repeat="group in $ctrl.tournamentRanking.Ranking"
+    ng-click="$ctrl.tournamentRankingCurrentGroup = group"
+    ng-class="{active: $ctrl.tournamentRankingCurrentGroup == group}">G{{group.Group}}</button>
+</div>
+<h3>Classificação</h3>
+
+<table width="100%">
+  <tr>
+    <th colspan="4"></th>
+    <th>P</th>
+    <th>J</th>
+    <th>V</th>
+    <th>E</th>
+    <th>D</th>
+    <th>GM</th>
+    <th>GS</th>
+    <th>SG</th>
+    <th>%</th>
+  </tr>
+  <tr ng-repeat="team in $ctrl.tournamentRankingCurrentGroup.Teams">
+    <td>{{team.Position}}</td>
+    <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.TeamFlag}}.jpg" class="team-flag" ></td>
+    <td align="center"><img ng-src="{{team.TeamBadge}}" class="team-badge" width="50" height="50"></td>
+    <td>{{team.TeamName}}</td>
+    <td align="center">{{team.Points}}</td>
+    <td align="center">{{team.Matches}}</td>
+    <td align="center">{{team.Victories}}</td>
+    <td align="center">{{team.Draws}}</td>
+    <td align="center">{{team.Defeats}}</td>
+    <td align="center">{{team.Goals}}</td>
+    <td align="center">{{team.SufferedGoals}}</td>
+    <td align="center">{{team.GoalsBalance}}</td>
+    <td align="center">{{team.Percentual}}</td>
+  </tr>
+</table>
+
+<!-- {{$ctrl.tournamentRanking}} -->
