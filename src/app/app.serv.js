@@ -1,50 +1,55 @@
 'use strict';
 angular.module('app')
-.service('AppService', function ($http) {
+.service('AppService', function (PostToJs, $http) {
 
-  this.auth = function () {
-    return $http.get('/data/Container/Auth', {
-      'socket_id': '215916.7788328',
-      'channel_name': 'private-1602447546449533',
-    });
+  var vm = this;
+
+  // this.auth = function () {
+  //   return $http.get('/data/Container/Auth', {
+  //     'socket_id': '215916.7788328',
+  //     'channel_name': 'private-1602447546449533',
+  //   });
+  // };
+
+  vm.getUserData = function () {
+    return PostToJs('userData')
+      .then(function (result) {
+        return vm.userData = result;
+      });
   };
 
-  this.userVerify = function () {
-    // application/x-www-form-urlencoded
-    return $http.get('/data/User/Verify'/*, {
-      'locale': 'pt_BR',
-      'data[idCity]': '0',
-      'data[idCountry]': '0',
-      'data[idState]': '0',
-      'signature': 'BwyM92VpeYaRbSb7597EFXZAO2U=',
-      'idSocialNetwork': '1602447546449533',
-      'socialNetwork': '1',
-      'v': '1492474465217',
-      'refCode': '',
-    }*/);
+  vm.userVerify = function (userData) {
+    return PostToJs('User/Verify', {
+      idCity: userData.idCity,
+      idCountry: userData.idCountry,
+      idState: userData.idState
+    })
+      .then(function (result) {
+        return vm.user = result;
+      });
   };
 
-  this.teamPreview = function () {
-    return $http.get('/data/Team/Preview'/*, {
-      locale: 'pt_BR',
-      signature: 'BwyM92VpeYaRbSb7597EFXZAO2U=',
-      idSocialNetwork: '1602447546449533',
-      socialNetwork: '1',
-      v: '1492473859454',
-    }, {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-      transformRequest: function (obj) {
-        var str = [];
-        for (var p in obj) {
-          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
-        }
-        return str.join('&');
-      },
-    }*/);
+  vm.getTeamPreview = function () {
+    return PostToJs('Team/Preview')
+      .then(function (result) {
+        return vm.teamPreview = result;
+      });
   };
 
-  this.missionList = function () {
-    return $http.get('/data/Mission/List');
+  vm.missionList = function () {
+    return PostToJs('Mission/List');
+  };
+
+  vm.teamMatchesAlertView = function () {
+    return PostToJs('Team/MatchesAlertView');
+  };
+
+  vm.countryList = function () {
+    return $http.get('/data/countryList');
+  };
+
+  vm.getCurrentUploadBadge = function (idTeam) {
+    return PostToJs('Team/GetCurrentUploadBadge', { IdTeam: idTeam });
   };
 
 });

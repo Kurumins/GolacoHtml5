@@ -21,7 +21,7 @@ function mainRoutesConfig ($stateProvider) {
 function mainController ($scope, missionList, ngDialog, MainService) {
   var vm = this;
 
-  vm.missionList = missionList.data.data;
+  vm.missionList = missionList;
 
   vm.config = function () {
     ngDialog.open({
@@ -31,10 +31,10 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         settings: function () {
-          return MainService.teamSettings()
-            .then(function (result) {
-              return result.data.data;
-            });
+          return MainService.teamSettings();
+            // .then(function (result) {
+            //   return result;
+            // });
         }
       },
     });
@@ -48,10 +48,10 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         teamTrophyRoom: function () {
-          return MainService.teamTrophyRoom()
-            .then(function (result) {
-              return result.data.data;
-            });
+          return MainService.teamTrophyRoom();
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         }
       },
     });
@@ -65,10 +65,10 @@ function mainController ($scope, missionList, ngDialog, MainService) {
       scope: $scope,
       resolve: {
         teamStats: function () {
-          return MainService.teamStats()
-            .then(function (result) {
-              return result.data.data;
-            });
+          return MainService.teamStats();
+            // .then(function (result) {
+            //   return result.data.data;
+            // });
         }
       },
     });

@@ -1,0 +1,39 @@
+junior-table {
+  .players-table {
+    font-size: 12px;
+    line-height: 1.2;
+    border: 1px solid;
+    font-weight: bold;
+
+    td {
+      padding: 2px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    tr:nth-child(even) {
+      background: #fff;
+    }
+    tr:nth-child(odd) {
+      background: #ddd;
+    }
+
+    tr.active {
+      background-color: #bbb;
+    }
+  }
+
+  .icon-star,
+  .icon-star-o {
+    font-size: 8px;
+  }
+
+  &.small {
+    .players-table {
+      font-size: 10px;
+    }
+  }
+}

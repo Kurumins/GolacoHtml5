@@ -1,0 +1,133 @@
+.ngdialog.ngdialog-junior-draft {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 10px 25px;
+  }
+
+  h4,
+  h3 {
+    margin: 0;
+  }
+
+  .draft-scouts {
+    float: left;
+    width: 50%;
+    border: 1px solid;
+    // margin-right: 5%;
+    font-size: 16px;
+
+    height: 170px;
+    // display: flex;
+    // align-items: center;
+
+    p {
+      text-align: center;
+      margin: 0;
+      padding: 60px 50px 50px;
+    }
+
+    .select-scouts {
+      cursor: pointer;
+    }
+
+    .scout-detail {
+      padding: 5px;
+      position: relative;
+      // font-size: 16px;
+
+      .scout-picture {
+        float: left;
+        // margin-right: 5px;
+        .scout-remove {
+          display: block;
+          width: 100%;
+          margin-top: 5px;
+        }
+      }
+
+      dl {
+        margin: 0px;
+        padding-left: 5px;
+        overflow: auto;
+        // float: left;
+        // width: 100%;
+      }
+      dt {
+        clear: both;
+        float: left;
+        // width: 50%;
+      }
+      dd {
+        float: right;
+        margin: 0;
+        // width: 50%;
+        text-align: right;
+      }
+
+      // .scout-remove {
+      //   position: absolute;
+      //   top: -20px;
+      //   right: 0;
+      //   // width: 100%;
+      //   // height: 100%;
+      //   cursor: pointer;
+
+      //   border: 0;
+      //   background: transparentize(red, .9);
+
+      //   font-size: 90px;
+      //   color: transparentize(red, .0);
+      //   // text-align: right;
+
+      //   &:not(:hover) {
+      //     // opacity: 0;
+      //   }
+      // }
+
+    }
+  }
+
+  .new-draft {
+    float: left;
+    width: 45%;
+    margin-left: 5%;
+
+    dl {
+      overflow: auto;
+    }
+
+    dt,
+    dd {
+      float: left;
+      width: 50%;
+      margin: 0;
+    }
+    dd {
+      text-align: right;
+      select {
+        width: 100%;
+      }
+    }
+
+    footer {
+      margin-top: 10px;
+    }
+  }
+
+  .draft-players {
+    margin-top: 30px;
+  }
+
+  .no-players {
+    text-align: center;
+    padding: 50px;
+    border: 1px solid;
+  }
+
+  .plyer-recruit {
+    float: right;
+    margin-top: 10px;
+  }
+
+}

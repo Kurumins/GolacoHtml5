@@ -1,0 +1,19 @@
+<span class="clearfix"></span>
+<table width="100%" class="match-table" cellspacing="2">
+  <tr>
+    <th colspan="3"></th>
+    <th ng-repeat="team in $ctrl.leagueMatchTable.Teams"><img ng-src="{{team.Badge}}" class="team-badge" width="16" height="16"></th>
+  </tr>
+  <tr ng-repeat="team in $ctrl.leagueMatchTable.Teams">
+    <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" class="team-badge"></td>
+    <td align="center"><img ng-src="{{team.Badge}}" class="team-flag" width="16" height="16"></td>
+    <td>{{team.Name}}</td>
+    <td align="center" ng-repeat="status in $ctrl.leagueMatchTable.MatchTable[$index]">
+      <span ng-if="status.Id" class="status -{{status.Status}}">{{status.Status}}</span>
+      <span ng-if="!status.Id">{{status.Status | date:'d/M' || '-'}}</span>
+
+    </td>
+  </tr>
+</table>
+
+<!-- {{$ctrl.leagueMatchTable}} -->

@@ -1,0 +1,539 @@
+{
+  "data": {
+    "Success": true,
+    "competition": [
+      {
+        "type": "1",
+        "name": "lblLeague",
+        "teamsQty": "16",
+        "matchType": "1",
+        "length": "31",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "45000000",
+              "moneyB": "10000000",
+              "moneyC": "5000000",
+              "moneyD": "2500000",
+              "creditsA": "75",
+              "creditsB": "22",
+              "creditsC": "20",
+              "creditsD": "20",
+              "morale": "30",
+              "promoted": "1",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "33750000",
+              "moneyB": "6000000",
+              "moneyC": "3000000",
+              "moneyD": "1800000",
+              "creditsA": "56",
+              "creditsB": "20",
+              "creditsC": "15",
+              "creditsD": "15",
+              "morale": "30",
+              "promoted": "1",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "22500000",
+              "moneyB": "4000000",
+              "moneyC": "1800000",
+              "moneyD": "1100000",
+              "creditsA": "38",
+              "creditsB": "15",
+              "creditsC": "10",
+              "creditsD": "10",
+              "morale": "30",
+              "promoted": "1",
+              "demoted": "0"
+            },
+            {
+              "position": "4",
+              "moneyA": "11250000",
+              "moneyB": "1500000",
+              "moneyC": "800000",
+              "moneyD": "450000",
+              "creditsA": "19",
+              "creditsB": "10",
+              "creditsC": "5",
+              "creditsD": "5",
+              "morale": "30",
+              "promoted": "1",
+              "demoted": "0"
+            },
+            {
+              "position": "5",
+              "moneyA": "6750000",
+              "moneyB": "1100000",
+              "moneyC": "650000",
+              "moneyD": "280000",
+              "creditsA": "11",
+              "creditsB": "6",
+              "creditsC": "4",
+              "creditsD": "4",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "6",
+              "moneyA": "4500000",
+              "moneyB": "800000",
+              "moneyC": "480000",
+              "moneyD": "225000",
+              "creditsA": "8",
+              "creditsB": "5",
+              "creditsC": "3",
+              "creditsD": "3",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "7",
+              "moneyA": "3375000",
+              "moneyB": "600000",
+              "moneyC": "350000",
+              "moneyD": "150000",
+              "creditsA": "7",
+              "creditsB": "4",
+              "creditsC": "2",
+              "creditsD": "2",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "8",
+              "moneyA": "2700000",
+              "moneyB": "425000",
+              "moneyC": "350000",
+              "moneyD": "150000",
+              "creditsA": "6",
+              "creditsB": "3",
+              "creditsC": "2",
+              "creditsD": "2",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "9",
+              "moneyA": "2475000",
+              "moneyB": "300000",
+              "moneyC": "200000",
+              "moneyD": "100000",
+              "creditsA": "5",
+              "creditsB": "2",
+              "creditsC": "1",
+              "creditsD": "1",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "10",
+              "moneyA": "2250000",
+              "moneyB": "150000",
+              "moneyC": "100000",
+              "moneyD": "50000",
+              "creditsA": "4",
+              "creditsB": "2",
+              "creditsC": "1",
+              "creditsD": "1",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "13",
+              "moneyA": "0",
+              "moneyB": "0",
+              "moneyC": "0",
+              "moneyD": "0",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "1"
+            },
+            {
+              "position": "14",
+              "moneyA": "0",
+              "moneyB": "0",
+              "moneyC": "0",
+              "moneyD": "0",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "1"
+            },
+            {
+              "position": "15",
+              "moneyA": "0",
+              "moneyB": "0",
+              "moneyC": "0",
+              "moneyD": "0",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "1"
+            },
+            {
+              "position": "16",
+              "moneyA": "0",
+              "moneyB": "0",
+              "moneyC": "0",
+              "moneyD": "0",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "1"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "2",
+        "name": "lblChampionship",
+        "teamsQty": "32",
+        "matchType": "2",
+        "length": "14",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "14000000",
+              "moneyB": "6000000",
+              "moneyC": "3000000",
+              "moneyD": "1500000",
+              "creditsA": "28",
+              "creditsB": "20",
+              "creditsC": "15",
+              "creditsD": "15",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "10500000",
+              "moneyB": "4000000",
+              "moneyC": "2000000",
+              "moneyD": "1000000",
+              "creditsA": "21",
+              "creditsB": "15",
+              "creditsC": "12",
+              "creditsD": "12",
+              "morale": "15",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "7000000",
+              "moneyB": "2000000",
+              "moneyC": "1000000",
+              "moneyD": "500000",
+              "creditsA": "14",
+              "creditsB": "10",
+              "creditsC": "8",
+              "creditsD": "8",
+              "morale": "10",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "3",
+        "name": "lblCup",
+        "teamsQty": "64",
+        "matchType": "3",
+        "length": "12",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "12000000",
+              "moneyB": "4000000",
+              "moneyC": "2000000",
+              "moneyD": "1000000",
+              "creditsA": "24",
+              "creditsB": "15",
+              "creditsC": "10",
+              "creditsD": "10",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "9000000",
+              "moneyB": "3000000",
+              "moneyC": "1500000",
+              "moneyD": "750000",
+              "creditsA": "18",
+              "creditsB": "10",
+              "creditsC": "7",
+              "creditsD": "7",
+              "morale": "15",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "6000000",
+              "moneyB": "2000000",
+              "moneyC": "1000000",
+              "moneyD": "500000",
+              "creditsA": "12",
+              "creditsB": "7",
+              "creditsC": "5",
+              "creditsD": "5",
+              "morale": "10",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "4",
+        "name": "lblMiniChampionship",
+        "teamsQty": "16",
+        "matchType": "2",
+        "length": "12",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "12000000",
+              "moneyB": "4000000",
+              "moneyC": "2000000",
+              "moneyD": "1000000",
+              "creditsA": "24",
+              "creditsB": "10",
+              "creditsC": "7",
+              "creditsD": "7",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "9000000",
+              "moneyB": "2500000",
+              "moneyC": "1250000",
+              "moneyD": "600000",
+              "creditsA": "18",
+              "creditsB": "8",
+              "creditsC": "6",
+              "creditsD": "6",
+              "morale": "15",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "6000000",
+              "moneyB": "1500000",
+              "moneyC": "750000",
+              "moneyD": "400000",
+              "creditsA": "12",
+              "creditsB": "5",
+              "creditsC": "4",
+              "creditsD": "4",
+              "morale": "10",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "5",
+        "name": "lblMiniCup",
+        "teamsQty": "32",
+        "matchType": "3",
+        "length": "10",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "12000000",
+              "moneyB": "3000000",
+              "moneyC": "1500000",
+              "moneyD": "750000",
+              "creditsA": "20",
+              "creditsB": "8",
+              "creditsC": "5",
+              "creditsD": "5",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "9000000",
+              "moneyB": "2000000",
+              "moneyC": "1000000",
+              "moneyD": "500000",
+              "creditsA": "15",
+              "creditsB": "6",
+              "creditsC": "4",
+              "creditsD": "4",
+              "morale": "15",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "6000000",
+              "moneyB": "1250000",
+              "moneyC": "750000",
+              "moneyD": "325000",
+              "creditsA": "10",
+              "creditsB": "4",
+              "creditsC": "3",
+              "creditsD": "3",
+              "morale": "10",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "6",
+        "name": "lblNECup",
+        "teamsQty": "64",
+        "matchType": "2",
+        "length": "15",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "8000000",
+              "moneyB": "4000000",
+              "moneyC": "2000000",
+              "moneyD": "1000000",
+              "creditsA": "10",
+              "creditsB": "8",
+              "creditsC": "5",
+              "creditsD": "5",
+              "morale": "30",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "5000000",
+              "moneyB": "2500000",
+              "moneyC": "1250000",
+              "moneyD": "600000",
+              "creditsA": "8",
+              "creditsB": "6",
+              "creditsC": "4",
+              "creditsD": "4",
+              "morale": "15",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "3000000",
+              "moneyB": "1500000",
+              "moneyC": "750000",
+              "moneyD": "400000",
+              "creditsA": "5",
+              "creditsB": "3",
+              "creditsC": "2",
+              "creditsD": "2",
+              "morale": "10",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      },
+      {
+        "type": "7",
+        "name": "lblTournamentBeta",
+        "teamsQty": "16",
+        "matchType": "2",
+        "length": "12",
+        "prizeList": {
+          "prize": [
+            {
+              "position": "1",
+              "moneyA": "2000000",
+              "moneyB": "1500000",
+              "moneyC": "1000000",
+              "moneyD": "500000",
+              "creditsA": "1",
+              "creditsB": "1",
+              "creditsC": "1",
+              "creditsD": "1",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "2",
+              "moneyA": "1200000",
+              "moneyB": "800000",
+              "moneyC": "500000",
+              "moneyD": "300000",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            },
+            {
+              "position": "3",
+              "moneyA": "800000",
+              "moneyB": "500000",
+              "moneyC": "300000",
+              "moneyD": "150000",
+              "creditsA": "0",
+              "creditsB": "0",
+              "creditsC": "0",
+              "creditsD": "0",
+              "morale": "0",
+              "promoted": "0",
+              "demoted": "0"
+            }
+          ]
+        },
+        "price": {}
+      }
+    ]
+  }
+}

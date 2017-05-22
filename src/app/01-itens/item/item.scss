@@ -14,6 +14,7 @@ item {
   .item-picture {
     float: left;
     margin-right: 5px;
+    width: 58px;
   }
 
   .item-effects {
@@ -51,6 +52,7 @@ item {
     background-color: #ccc;
     height: 35px;
     align-items: center;
+    cursor: pointer;
 
     .icon {
       width: 35px;
@@ -64,4 +66,37 @@ item {
       font-weight: bold;
     }
   }
+
+  .discart-item,
+  .sell-item {
+    line-height: 34px;
+    margin-left: 50px;
+    display: flex;
+    padding: 0 5px;
+    cursor: pointer;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    i {
+      font-size: 18px;
+      margin-right: 5px;
+      &:not(.icon-cancel-circled) {
+        color: #000;
+      }
+    }
+  }
+
+  .sell-item {
+    background: #00b44b;
+  }
+
+  .discart-item {
+    background: #f54f4f;
+    text-transform: uppercase;
+  }
+
 }

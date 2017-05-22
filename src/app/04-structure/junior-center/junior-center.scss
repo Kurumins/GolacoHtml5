@@ -1,0 +1,57 @@
+.junior-center {
+
+  .center-structure {
+    border: 1px solid;
+    overflow: auto;
+  }
+
+  .center-picture {
+    float: left;
+    margin: 10px;
+  }
+
+  .junior-players {
+    float: left;
+    width: calc(100% - 325px);
+    margin: 10px;
+  }
+
+  .no-players {
+    text-align: center;
+    display: block;
+    padding: 65px 90px;
+  }
+
+  dl {
+    margin: 0;
+    line-height: 1.5;
+  }
+  dt {
+    float: left;
+    width: 50%;
+  }
+  dd {
+    float: right;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+  }
+
+  .center-info {
+    float: left;
+    width: 45%;
+    margin: 15px 5% 15px 0;
+  }
+
+  .player-info {
+    float: left;
+    width: 50%;
+    margin: 15px 0;
+
+    footer {
+      // clear: both;
+      margin-top: 110px;
+    }
+  }
+
+}

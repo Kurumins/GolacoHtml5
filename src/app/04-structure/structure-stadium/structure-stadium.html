@@ -1,0 +1,22 @@
+<h2>Estádio</h2>
+<div class="structure-stadium">
+  <h4>{{$ctrl.stadium.Name}}</h4>
+  <div style="margin: auto; width: 730px;">
+    <img ng-src="{{$ctrl.stadium.Picture}}" class="stadium-picture">
+    <div class="stadium-itens">
+      <div class="stadium-itens-row" ng-repeat="list in ['Capacity','Atractivity','Rentability']">
+        <i class="{{['icon-user','icon-star','icon-usd'][$index]}}"></i>
+        <div ng-repeat="i in [0,1,2]" class="stadium-item">
+          <img ng-if="$ctrl.stadium[list+'Items'][i]" ng-src="{{$ctrl.stadium[list+'Items'][i].Picture}}" height="55" >
+          <span ng-if="!$ctrl.stadium[list+'Items'][i]">
+            <span ng-if="$ctrl.stadium[list+'Slots'] > i" class="item-equip">
+              Clique para equipar
+            </span>
+            <i class="icon-lock" ng-if="$ctrl.stadium[list+'Slots'] <= i"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <pre>{{$ctrl.stadium | json}}</pre> -->
