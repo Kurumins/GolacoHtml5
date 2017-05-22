@@ -65,6 +65,16 @@
                 float:right;
                 button{
                     height: 30px;
+                    outline: none;
+                    background: none;
+                    border:none;
+                    &:hover{
+                        opacity: .7;
+                        -webkit-transition: 0.4s ease;
+                        -moz-transition: 0.4s ease;
+                        -o-transition: 0.4s ease;
+                        transition: 0.4s ease;
+                    }
                 }
             }
         }
@@ -114,7 +124,10 @@
 
             }
             .detail-team{
-
+                p{
+                    font-size: 13px;
+                    font-weight: 600;
+                }
             }
             .detail-uniform{
 

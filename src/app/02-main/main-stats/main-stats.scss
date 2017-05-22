@@ -13,7 +13,9 @@
     margin: 0;
     line-height: 1.1;
   }
-
+  h2{
+   color: rgb(78, 86, 103);
+  }
   p {
     font-size: 14px;
   }
@@ -29,6 +31,7 @@
       background: azure;
       width: 20px;
       text-align: center;
+      border-radius: 3px;
     }
   }
 
@@ -76,7 +79,7 @@
       color: #0b62a9;
     }
     p{
-      
+
     }
     .attributes{
       color: #0b62a9;
@@ -102,6 +105,33 @@
   .overview{
     font-size: 13px;
     text-align: center;
+  }
+
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    &:before{
+
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+    }
+  }
+
+  .trophy{
+    text-align: center;
+
+  }
+  .slick-track{
+    background: #ffffff;
+    padding: 10px;
+  }
+
+  .slide-control{
+    margin: 15px 10px;
   }
 
   .ng-scope{
