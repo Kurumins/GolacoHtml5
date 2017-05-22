@@ -12,8 +12,8 @@
     border: none;
     box-shadow: none;
     padding: 0;
+    outline: none;
     &:before{
-      outline: none;
       color: #0b62a9;
     }
     &:hover{
@@ -39,7 +39,9 @@
   p {
     font-size: 14px;
   }
-
+  h2{
+    color: rgb(78, 86, 103);
+  }
   .bonus-list {
     height: 170px;
     display: flex;
@@ -55,7 +57,7 @@
   .day-bonus {
     text-align: center;
     margin: 0 2.5px;
-
+    background: #ffffff;
     > div {
       margin: 15px 0px;
     }
@@ -69,14 +71,26 @@
     h3 {
       margin: 0;
       line-height: 50px;
-      background-color: #666;
+      background-color: #39b816;
       color: #fff;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
 
     i {
       font-size: 50px;
       display: block;
       margin: 15px 0;
+    }
+    .icon-money{
+      &:before{
+        color: #00b100;
+      }
+    }
+    .icon-credit-card{
+      &:before{
+        color: #fdc02e;
+      }
     }
 
     hr {
