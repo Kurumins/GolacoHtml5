@@ -18,10 +18,17 @@ angular.module('app')
     // data[ItemId]:187
     vm.itemPurchase = function (item, qty) {
       return PostToJs('Store/Purchase', {
-        TypeId: [1, 3, 4, 5, 6, 7, 8, 9].indexOf(item.Category) === -1 ? 1 : 2,
+        TypeId: item.TypeId || ([1, 3, 4, 5, 6, 7, 8, 9].indexOf(item.Category) === -1 ? 1 : 2),
         ItemQuantity: qty,
         ItemId: item.Id,
         BundleId: item.IdBundle
+      });
+    };
+
+    vm.sellEquip = function (item) {
+      return PostToJs('Store/SellEquip', {
+        TypeId: [1, 3, 4, 5, 6, 7, 8, 9].indexOf(item.Category) === -1 ? 1 : 2,
+        ItemId: item.Id,
       });
     };
 

@@ -11,6 +11,9 @@ angular.module('app')
         .then(function () {
           $scope.confirm();
           AlertPopup.open('Aviso', 'Item adquirido com sucesso.');
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message);
         });
     };
 

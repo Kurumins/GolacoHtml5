@@ -1,6 +1,6 @@
 <div ng-class="{sale: $ctrl.item.SalePrice}">
   <i class="icon-star" ng-class="{hidden: !$ctrl.item.SalePrice}"></i>
-  <h4 class="item-name">{{$ctrl.item.Name}}</h4>
+  <h4 class="item-name">{{$ctrl.item.Name}}{{$ctrl.item.TypeId}}</h4>
   <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
 
   <div class="item-effects">

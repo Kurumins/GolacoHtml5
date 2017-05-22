@@ -2,12 +2,16 @@
 angular.module('app')
   .config(itensRoutesConfig);
 
-function itensController (ItensService, inventory, storeList) {
+function itensController ($scope, $state, ItensService, inventory, storeList) {
 
   var vm = this;
 
   vm.inventory = inventory;
   vm.storeList = storeList;
+
+  storeList.BundleItems.forEach(function (item) {
+    item.TypeId = 3;
+  }) ;
 
   vm.saleItens = []
     .concat( vm.storeList.TeamPlayerItems || [] )
@@ -15,6 +19,10 @@ function itensController (ItensService, inventory, storeList) {
     .filter(function (item) {
       return item.SalePrice !== 0;
     });
+
+  $scope.$on('inventoryUpdate', function (event) {
+    $state.reload('app.itens');
+  });
 
 }
 
