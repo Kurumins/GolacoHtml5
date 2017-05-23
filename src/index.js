@@ -20,12 +20,12 @@ angular
     $window._gaq = [];
     $window.fbq = null;
 
-    // $window.baseUrl = '/golaco/';
-    $window.baseUrl = '/data/';
+    $window.baseUrl = '/golaco/';
+    // $window.baseUrl = '/data/';
 
   })
 
-  .factory('PostToJs', function ($window, $q, $loading) {
+  .factory('PostToJs', function ($window, $q, $loading, AlertPopup) {
 
     var vm = this;
 
@@ -42,13 +42,16 @@ angular
 
       vm.callbacks[action] = function (result) {
 
-        if ( result.Success !== false) {
+        if ( result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
         } else {
-          deferred.reject(result);
+          if (result.Message == 'LabelNotEnoughCredit' || result.Message == 'LabelNotEnoughMoney') {
+            AlertPopup.open('Atenção', 'Popup a ser criado: ' + result.Message);
+          } else {
+            deferred.reject(result);
+          }
         }
 
-        // debugger;
         delete vm.callbacks[action];
 
         if ( Object.size(vm.callbacks) === 0 ) {

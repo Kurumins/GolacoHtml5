@@ -16,4 +16,10 @@ angular.module('app')
       return PostToJs('Team/Statistics');
     };
 
+    vm.teamChangeCountry = function (idCountry) {
+      return PostToJs('Team/ChangeCountry', {
+        IdCountry: idCountry
+      });
+    };
+
   });

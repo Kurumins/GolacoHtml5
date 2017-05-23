@@ -9,7 +9,7 @@
         <div class="header-item">
             <div>
                 <!-- <button class="glyphicon-wrench" ng-click="$ctrl.config()">Config</button> -->
-                <button class="glyphicon-wrench" ng-click="$ctrl.config()"><img src="app/images/config.png" alt="Configurações" title="Configurações"></button>
+                <button class="" ng-click="$ctrl.config()"><img src="app/images/config.png" alt="Configurações" title="Configurações"></button>
                 <button class="" ng-click="$ctrl.teamTrophyRoom()"><!-- Trofs --><img src="app/images/trofs.png" alt="Troféus" title="Troféus"></button>
                 <button class="" ng-click="$ctrl.stats()"><!-- Estats --><img src="app/images/statistics.png" alt="Estatisticas" title="Estatisticass"></button>
                 <button class="" ng-click="$ctrl.dailyBonus()"><!-- Bonus --><img src="app/images/bonus.png" alt="Bônus" title="Bônus"></button>
@@ -96,16 +96,16 @@
                 </div>
             </div>
 
-            <div class="pull-left checkbox">
+            <!-- <div class="pull-left checkbox">
                 <label>
                     <input type="checkbox" name="" checked>
                     <span>Compartilhar</span>
                 </label>
-            </div>
+            </div> -->
 
             <h3>
                 Nota à imprensa
-                <a class="icon-pencil-square" role="button"></a>
+                <button class="btn-link icon-pencil-square"></button>
             </h3>
             <textarea width="100%" class="main-note">{{$appCtrl.teamPreview.History}}</textarea>
 

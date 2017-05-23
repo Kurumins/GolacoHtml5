@@ -23,14 +23,15 @@
 <div class="change-country">
   <label class="team-country">
     Alterar país
-    <select>
+    <select ng-model="$ctrl.settings.TeamIdCountry">
       <option>Paises</option>
+      <option ng-repeat="country in $appCtrl.countryList" ng-value="{{country.id}}">{{country.name}}</option>
     </select>
   </label>
   <label class="price">
     <i class="icon icon-credit-card"></i>
     {{$ctrl.settings.ChangeCountryPrice}}
-    <button type="button" class="" ng-click="">OK</button>
+    <button class="" ng-click="$ctrl.changeCountry($ctrl.settings.TeamIdCountry)">OK</button>
   </label>
 </div>
 

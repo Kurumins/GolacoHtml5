@@ -47,6 +47,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
+  vm.config();
 
   vm.teamTrophyRoom = function () {
     ngDialog.open({
