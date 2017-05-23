@@ -14,7 +14,10 @@ angular.module('app')
         .then(function () {
           MainService.teamChangeCountry(idCountry)
             .then(function () {
-              // body...
+              AlertPopup.open('Atenção', 'País do time alterado com sucesso!');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
             })
         })
     };
@@ -27,7 +30,23 @@ angular.module('app')
         .then(function () {
           MainService.changeTeamName(newName, newAcronym)
             .then(function () {
-              // body...
+              AlertPopup.open('Atenção', 'Nome do time alterado com sucesso!');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
+            })
+        })
+    };
+
+    vm.changeOptionMail = function (mailOptions) {
+      ConfirmPopup.open({
+        title: 'Atenção',
+        content: 'Confirmar alteração '
+      })
+        .then(function () {
+          MainService.changeOptionMail(mailOptions.join(';'))
+            .then(function () {
+              AlertPopup.open('Atenção', 'Opções de email alteradas com sucesso!');
             })
             .catch(function (error) {
               AlertPopup.open('Atenção', error.Message);

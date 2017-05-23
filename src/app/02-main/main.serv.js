@@ -29,4 +29,10 @@ angular.module('app')
       });
     };
 
+    vm.changeOptionMail = function (mailOptions) {
+      return PostToJs('Team/ChangingOptionMail', {
+        MailOptions: mailOptions
+      });
+    };
+
   });

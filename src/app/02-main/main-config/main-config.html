@@ -35,16 +35,16 @@
   </label>
 </div>
 
+<hr>
+
 <div class="mail-options">
   <h3>Opções de email</h3>
   <div class="setting-list">
     <label ng-repeat="setting in $ctrl.settings.Settings">
-      <input type="checkbox" name="" ng-checked="setting.Subscribe">
+      <input type="checkbox" ng-model="setting.Subscribe" ng-true-value="1" ng-false-calue="0">
       <span>{{setting.Name}}</span>
     </label>
   </div>
   <hr>
-  <button type="button" class="closeDialog" ng-click="">OK</button>
+  <button type="button" class="closeDialog" ng-click="$ctrl.changeOptionMail($ctrl.settings.Settings | map:'Subscribe')">OK</button>
 </div>
-
-
