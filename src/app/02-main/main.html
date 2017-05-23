@@ -89,11 +89,12 @@
             <h3>Avisos</h3>
 
             <div class="main-warnings">
-                <div ng-repeat="warning in $appCtrl.teamPreview.Warnings">
-                    <span class="close">X</span>
+                <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
+                    <span class="close" ng-click="$ctrl.deleteWarning(warning)">X</span>
                     <span class="icon-exclamation-triangle"></span>
                     <span>{{warning.Message}}</span>
                 </div>
+                <div class="no-warning">lblNoMessages</div>
             </div>
 
             <!-- <div class="pull-left checkbox">
@@ -105,9 +106,9 @@
 
             <h3>
                 Nota à imprensa
-                <button class="btn-link icon-pencil-square"></button>
+                <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
             </h3>
-            <textarea width="100%" class="main-note">{{$appCtrl.teamPreview.History}}</textarea>
+            <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
 
         </div>
 

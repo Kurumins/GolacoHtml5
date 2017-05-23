@@ -35,4 +35,16 @@ angular.module('app')
       });
     };
 
+    vm.updateHistory = function (history) {
+      return PostToJs('Team/UpdateHistory', {
+        History: history
+      });
+    };
+
+    vm.deleteWarning = function (warningId) {
+      return PostToJs('Team/DeleteWarning', {
+        WarningId: warningId
+      });
+    };
+
   });

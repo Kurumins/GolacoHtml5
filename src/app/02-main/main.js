@@ -47,7 +47,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
-  vm.config();
+  // vm.config();
 
   vm.teamTrophyRoom = function () {
     ngDialog.open({
@@ -90,6 +90,18 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       controller: 'DailyBonusController as $ctrl',
       scope: $scope
     });
+  };
+
+  vm.updateHistory = function (history) {
+    MainService.updateHistory(history)
+      .then(function () {
+        AlertPopup.open('Atenção', 'Nota à imprensa atualizada com sucesso.');
+      });
+  };
+
+  vm.deleteWarning = function (warning) {
+    warning.deleted = true;
+    MainService.deleteWarning(warning.Id).noLoading();
   };
 
 }
