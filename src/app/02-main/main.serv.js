@@ -22,4 +22,11 @@ angular.module('app')
       });
     };
 
+    vm.changeTeamName = function (newName, newAcronym) {
+      return PostToJs('Team/ChangingTeamName', {
+        NewName: newName,
+        NewAcronym: newAcronym
+      });
+    };
+
   });

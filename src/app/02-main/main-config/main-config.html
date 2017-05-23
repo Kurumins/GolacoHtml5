@@ -5,18 +5,18 @@
 
   <label class="team-name">
     Alterar o nome do time
-    <input type="text" name="">
+    <input type="text" ng-model="team.newName">
   </label>
 
   <label class="team-acronym">
     Sigla
-    <input type="text" name="">
+    <input type="text" ng-model="team.newAcronym">
   </label>
 
   <label class="price">
     <i class="icon icon-credit-card"></i>
     {{$ctrl.settings.Price}}
-    <button type="button" class="" ng-click="">OK</button>
+    <button type="button" class="" ng-click="$ctrl.changeTeamName(team.newName, team.newAcronym)">OK</button>
   </label>
 </div>
 
