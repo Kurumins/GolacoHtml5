@@ -3,26 +3,29 @@ angular
   .module('app', [
     'ui.router',
     'ui.router.default',
+    'ct.ui.router.extras',
     'slickCarousel',
     'ngDialog',
     'lvl.directives.dragdrop',
     'nsPopover',
-    'angular.filter'
+    'angular.filter',
+    'darthwade.dwLoading'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
   })
+
   .run(function ($window) {
 
     $window._gaq = [];
     $window.fbq = null;
 
-    // $window.baseUrl = '/golaco/';
-    $window.baseUrl = '/data/';
+    $window.baseUrl = '/golaco/';
+    // $window.baseUrl = '/data/';
 
   })
 
-  .factory('PostToJs', function ($window, $q) {
+  .factory('PostToJs', function ($window, $q, $loading, AlertPopup) {
 
     var vm = this;
 
@@ -38,11 +41,32 @@ angular
       var deferred = $q.defer();
 
       vm.callbacks[action] = function (result) {
-        if ( result.Success !== false) {
+
+        if ( result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
         } else {
-          deferred.reject(result);
+          if (result.Message == 'LabelNotEnoughCredit' || result.Message == 'LabelNotEnoughMoney') {
+            AlertPopup.open('Atenção', 'Popup a ser criado: ' + result.Message);
+          } else {
+            deferred.reject(result);
+          }
         }
+
+        delete vm.callbacks[action];
+
+        if ( Object.size(vm.callbacks) === 0 ) {
+          $loading.finish('PostToJs');
+        }
+
+      };
+
+      $loading.start('PostToJs');
+
+      deferred.promise.noLoading = function () {
+        if ( Object.size(vm.callbacks) === 1 ) {
+          $loading.finish('PostToJs');
+        }
+        return deferred.promise;
       };
 
       $window.doAction(action, action, data, signed || true, cacheId || +new Date() );
@@ -51,3 +75,11 @@ angular
 
     };
   });
+
+Object.size = function(obj) {
+  var size = 0, key;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
+  return size;
+};

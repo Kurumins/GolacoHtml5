@@ -7,6 +7,7 @@ function playersRoutesConfig ($stateProvider) {
   $stateProvider
     .state('app.players', {
       url: '/players',
+      sticky: true,
       resolve: {
         teamPlayerList: function (TeamPlayerService) {
           return TeamPlayerService.teamPlayerList();

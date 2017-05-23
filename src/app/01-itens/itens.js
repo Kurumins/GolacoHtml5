@@ -2,12 +2,16 @@
 angular.module('app')
   .config(itensRoutesConfig);
 
-function itensController (ItensService, inventory, storeList) {
+function itensController ($scope, $state, ItensService, inventory, storeList) {
 
   var vm = this;
 
   vm.inventory = inventory;
   vm.storeList = storeList;
+
+  storeList.BundleItems.forEach(function (item) {
+    item.TypeId = 3;
+  }) ;
 
   vm.saleItens = []
     .concat( vm.storeList.TeamPlayerItems || [] )
@@ -15,6 +19,10 @@ function itensController (ItensService, inventory, storeList) {
     .filter(function (item) {
       return item.SalePrice !== 0;
     });
+
+  $scope.$on('inventoryUpdate', function (event) {
+    $state.reload('app.itens');
+  });
 
 }
 
@@ -25,6 +33,7 @@ function itensRoutesConfig ($stateProvider) {
     .state('app.itens', {
       url: '/itens',
       abstract: '.destaques',
+      sticky: true,
       resolve: {
         inventory: function (ItensService) {
           return ItensService.inventory();
@@ -40,11 +49,13 @@ function itensRoutesConfig ($stateProvider) {
 
     .state('app.itens.destaques', {
       url: '',
+      sticky: true,
       templateUrl: 'itens-highlights.html',
     })
 
     .state('app.itens.itens', {
       url: '/:inventario/:centro/:category',
+      sticky: true,
       params: {
         category: {
           value: '13',

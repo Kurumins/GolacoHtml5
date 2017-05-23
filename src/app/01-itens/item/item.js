@@ -5,7 +5,7 @@ angular.module('app')
     bindings: {
       item: '=value'
     },
-    controller: function (ItenPurchase, ConfirmPopup) {
+    controller: function ($scope, ItenPurchase, ConfirmPopup, ItensService, AlertPopup) {
       var vm = this;
       // ItenPurchase.open({a: 1});
       vm.itenPurchase = ItenPurchase.open;
@@ -16,10 +16,20 @@ angular.module('app')
           content: 'Deseja realmente vender este item?'
         })
           .then(function () {
-
-          }/*, function () {
-
-          }*/);
+            // debugger;
+            ItensService.sellEquip(vm.item)
+              .then(function () {
+                // $scope.confirm();
+                AlertPopup.open('Atenção', 'Item vendido com sucesso.');
+                // ItensService.inventory()
+                //   .then(function (inventory) {
+                    $scope.$emit('inventoryUpdate');
+                  // });
+              })
+              .catch(function (error) {
+                AlertPopup.open('Atenção', error.Message);
+              });
+          });
       };
 
       vm.discartItem = function () {
@@ -29,9 +39,7 @@ angular.module('app')
         })
           .then(function () {
 
-          }/*, function () {
-
-          }*/);
+          });
       };
 
     },

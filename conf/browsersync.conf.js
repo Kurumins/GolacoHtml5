@@ -7,6 +7,9 @@ module.exports = function () {
   var proxyOptions = url.parse('https://www.golacogame.com.br');
   proxyOptions.route = '/golaco';
 
+  var proxyOptions2 = url.parse('https://o2games-golaco.s3.amazonaws.com/matches');
+  proxyOptions2.route = '/matches';
+
   return {
     server: {
       baseDir: [
@@ -18,6 +21,7 @@ module.exports = function () {
       },
       middleware: [
         proxyMiddleware(proxyOptions),
+        proxyMiddleware(proxyOptions2),
         function(req, res, next) {
           // req.url = '/index.html';
           req.method = 'GET';
