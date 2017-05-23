@@ -58,7 +58,11 @@
       text-align: center;
       // border-collapse:separate;
       border-spacing: 0 2px;
-     color: #4f5776; 
+      color: #4f5776;
+
+      td {
+        padding: 2px;
+      }
 
       img {
         vertical-align: middle;
@@ -71,7 +75,7 @@
         background: #008dfb;
         border: none;
         border-radius: 3px;
-        padding: 2px 6px;
+        // padding: 2px 6px;
         &:before{
           color: #ffffff;
           vertical-align: middle;
@@ -207,9 +211,10 @@
 
   .blink {
     animation: blink-animation 1s infinite linear;
+    background-color: #008dfb;
   }
   @keyframes blink-animation {
-    50% { background-color: #042d4d; }
+    50% { background-color: #6fe4fd; }
     // 100% { color: black; }
   }
 }
