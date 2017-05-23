@@ -124,6 +124,7 @@ angular.module('app')
     vm.sellPlayer = function () {
       ngDialog.openConfirm({
         template: 'player-manager-sell-player.html',
+        appendClassName: 'ngdialog-player-manager-sell-player',
         resolve: {
           currentValue: function () {
             var currentPlayer = vm.currentPlayer;
