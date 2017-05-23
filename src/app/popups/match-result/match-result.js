@@ -13,7 +13,6 @@ angular.module('app')
       })
       .then(function (badges) {
         vm.matchData.VisitorTeam.Badges = badges;
-        // body...
       });
 
     // var visitor = vm.matchData.VisitorTeam.Goals;
@@ -111,7 +110,7 @@ angular.module('app')
   .factory('MatchResult', function (MatchResultService, ngDialog) {
 
     this.open = function (matchId) {
-      return ngDialog.open({
+      return ngDialog.openConfirm({
         template: 'match-result.html',
         appendClassName: 'ngdialog-match-result',
         controller: 'MatchResultController as $ctrl',

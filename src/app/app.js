@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList, MatchAlert) {
 
     var vm = this;
 
@@ -15,13 +15,15 @@ angular.module('app')
 
     if ( teamMatchesAlert.Matches.length ) {
 
-      vm.teamMatchesAlert = teamMatchesAlert.Matches;
+      MatchAlert.open(teamMatchesAlert.Matches);
 
-      ngDialog.open({
-        template: 'matches-alert.html',
-        appendClassName: 'ngdialog-matches-alert',
-        scope: $scope
-      });
+      // vm.teamMatchesAlert = teamMatchesAlert.Matches;
+
+      // ngDialog.open({
+      //   template: 'matches-alert.html',
+      //   appendClassName: 'ngdialog-matches-alert',
+      //   scope: $scope
+      // });
 
     }
 
