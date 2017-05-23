@@ -1,0 +1,50 @@
+<h3>Playoffs</h3>
+
+<div class="slick-nav">
+  <button type="button" class="slick-prev">«</button>
+  <span class="dots"></span>
+  <button type="button" class="slick-next">»</button>
+</div>
+
+<slick
+  infinite=false
+  dots=true
+  slides-to-show="2" slides-to-scroll="2" rows="2"
+  prev-arrow=".slick-prev"
+  next-arrow=".slick-next"
+  settings="{appendDots:'.dots'}"
+  >
+  <div ng-repeat="blocks in ($ctrl.cupPlayOff.Rounds | map:'Matches' | flatten:true) | chunkBy: 2" class="match-table">
+    <table width="100%">
+      <tr ng-repeat-start="block in blocks">
+        <td colspan="9">Jogo de {{['ida','volta'][$index]}}: {{ block.MatchDate | date:'short' }}</td>
+      </tr>
+      <tr ng-repeat-end>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block.HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{block.HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td width="30%">{{block.HomeTeam.Acronym}}</td>
+        <td align="right">{{block.HomeTeam.Goals}}</td>
+        <td align="center">x</td>
+        <td>{{block.VisitorTeam.Goals}}</td>
+        <td width="30%" align="right">{{block.VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{block.VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block.VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+      </tr>
+      <!-- <tr>
+        <td colspan="9">Jogo de volta: {{ block[1].MatchDate | date:'short' }}</td>
+      </tr>
+      <tr>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[1].HomeTeam.Flag}}.jpg" class="team-flag"></td>
+        <td align="center"><img ng-src="{{block[1].HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td width="30%">{{block[1].HomeTeam.Acronym}}</td>
+        <td align="right">{{block[1].HomeTeam.Goals}}</td>
+        <td align="center">x</td>
+        <td>{{block[1].VisitorTeam.Goals}}</td>
+        <td width="30%" align="right">{{block[1].VisitorTeam.Acronym}}</td>
+        <td align="center"><img ng-src="{{block[1].VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+        <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block[1].VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+      </tr> -->
+    </table>
+  </div>
+</slick>
+

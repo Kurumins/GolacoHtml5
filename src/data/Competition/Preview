@@ -2,55 +2,46 @@
   "data": {
     "Success": true,
     "CompetitionLeague": {
-      "IdCompetition": 289755,
+      "IdCompetition": 290080,
       "IsRegistered": false,
       "IsStarted": true,
-      "InterSeasonDate": 0,
+      "InterSeasonDate": 1494633600000,
       "InterSeasonCreditPrice": 9,
       "IsCompetitionInterSeason": false,
-      "Position": 5,
-      "Round": 26,
+      "Position": 4,
+      "Round": 9,
       "RegisterPrice": 0
     },
     "CompetitionCup": {
-      "IdCompetition": 0,
+      "IdCompetition": 290134,
       "IsRegistered": false,
-      "IsStarted": false,
+      "IsStarted": true,
       "IsCompetitionInterSeason": false,
-      "Round": 0,
+      "Round": 2,
       "RegisterPrice": 3
     },
-    "CompetitionTournament-": {
-      "IdCompetition": 0,
-      "IsRegistered": true,
-      "IsStarted": false,
-      "InterSeasonCreditPrice": 7,
-      "Round": 0,
-      "Position": 0,
-      "RegisterPrice": 5
-    },
     "CompetitionTournament": {
-      "IdCompetition": 290047,
+      "IdCompetition": 290133,
       "IsRegistered": false,
       "IsStarted": true,
       "InterSeasonCreditPrice": 7,
       "Round": 1,
-      "Position": 1,
+      "Position": 2,
       "RegisterPrice": 5
     },
     "CompetitionCupLight": {
-      "IdCompetition": 0,
+      "IdCompetition": 290148,
       "IsRegistered": false,
-      "IsStarted": false,
-      "Round": 0,
+      "IsStarted": true,
+      "Round": 1,
       "RegisterPrice": 2
     },
     "CompetitionTournamentLight": {
-      "IdCompetition": 0,
+      "IdCompetition": 290096,
       "IsRegistered": false,
-      "IsStarted": false,
-      "Round": 0,
-      "Position": 0,
+      "IsStarted": true,
+      "Round": 2,
+      "Position": 2,
       "RegisterPrice": 3
     },
     "CompetitionCopaNordeste": {
@@ -70,11 +61,11 @@
       "RegisterPrice": 0
     },
     "FriendlyMatchCost": 2,
-    "FriendlyMatchesLeft": 2,
+    "FriendlyMatchesLeft": 3,
     "RegistrationsByLeague": [
       {
         "Id": 1,
-        "Teams": 6
+        "Teams": 8
       },
       {
         "Id": 2,
@@ -82,15 +73,15 @@
       },
       {
         "Id": 3,
-        "Teams": 7
+        "Teams": 37
       },
       {
         "Id": 4,
-        "Teams": 8
+        "Teams": 6
       },
       {
         "Id": 5,
-        "Teams": 19
+        "Teams": 22
       },
       {
         "Id": 6,
