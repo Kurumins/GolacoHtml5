@@ -5,7 +5,7 @@ angular.module('app')
     bindings: {
       item: '=value'
     },
-    controller: function ($scope, ItenPurchase, ConfirmPopup, ItensService, AlertPopup) {
+    controller: function ($rootScope, ItenPurchase, ConfirmPopup, ItensService, AlertPopup) {
       var vm = this;
       // ItenPurchase.open({a: 1});
       vm.itenPurchase = ItenPurchase.open;
@@ -19,11 +19,12 @@ angular.module('app')
             // debugger;
             ItensService.sellEquip(vm.item)
               .then(function () {
-                // $scope.confirm();
+                // $rootScope.confirm();
                 AlertPopup.open('Atenção', 'Item vendido com sucesso.');
                 // ItensService.inventory()
                 //   .then(function (inventory) {
-                    $scope.$emit('inventoryUpdate');
+                    $rootScope.$emit('inventoryUpdate');
+                    $rootScope.$emit('balanceUpdate');
                   // });
               })
               .catch(function (error) {
