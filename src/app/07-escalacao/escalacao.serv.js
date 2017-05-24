@@ -8,4 +8,10 @@ angular.module('app')
       return PostToJs('Team/LoadTactic');
     };
 
+    vm.updateTactic = function (params) {
+      return PostToJs('Team/UpdateTactic', {
+        Params: params
+      });
+    };
+
   });
