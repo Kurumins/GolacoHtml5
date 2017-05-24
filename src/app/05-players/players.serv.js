@@ -40,4 +40,10 @@ angular.module('app')
       });
     };
 
+    vm.buyProSpot = function (spot) {
+      return PostToJs('Team/BuyProSpot', {
+        Spot: spot
+      });
+    };
+
   });

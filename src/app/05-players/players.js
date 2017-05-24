@@ -42,6 +42,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       },
     });
   };
+  vm.extraPlayer();
 
   vm.moraleRecovery = function () {
     ngDialog.open({
