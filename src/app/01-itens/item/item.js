@@ -19,13 +19,9 @@ angular.module('app')
             // debugger;
             ItensService.sellEquip(vm.item)
               .then(function () {
-                // $rootScope.confirm();
                 AlertPopup.open('Atenção', 'Item vendido com sucesso.');
-                // ItensService.inventory()
-                //   .then(function (inventory) {
-                    $rootScope.$emit('inventoryUpdate');
-                    $rootScope.$emit('balanceUpdate');
-                  // });
+                $rootScope.$emit('inventoryUpdate');
+                $rootScope.$emit('balanceUpdate');
               })
               .catch(function (error) {
                 AlertPopup.open('Atenção', error.Message);
@@ -39,7 +35,15 @@ angular.module('app')
           content: 'Deseja realmente descartar este item?'
         })
           .then(function () {
-
+            ItensService.sellEquip(vm.item)
+              .then(function () {
+                AlertPopup.open('Atenção', 'Item descartado com sucesso.');
+                $rootScope.$emit('inventoryUpdate');
+                $rootScope.$emit('balanceUpdate');
+              })
+              .catch(function (error) {
+                AlertPopup.open('Atenção', error.Message);
+              });
           });
       };
 

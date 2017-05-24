@@ -2,7 +2,7 @@
 angular.module('app')
   .config(itensRoutesConfig);
 
-function itensController ($scope, $state, ItensService, inventory, storeList) {
+function itensController ($rootScope, $state, ItensService, inventory, storeList) {
 
   var vm = this;
 
@@ -20,7 +20,7 @@ function itensController ($scope, $state, ItensService, inventory, storeList) {
       return item.SalePrice !== 0;
     });
 
-  $scope.$on('inventoryUpdate', function (event) {
+  $rootScope.$on('inventoryUpdate', function (event) {
     $state.reload('app.itens');
   });
 
