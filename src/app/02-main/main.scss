@@ -1,5 +1,5 @@
 .main {
-
+    
     padding: 15px;
     background-color: #cbdaef;
     font-family: 'Montserrat', sans-serif;
@@ -121,7 +121,7 @@
                 text-align: left;
             }
             .detail-manager{
-
+                
             }
             .detail-team{
                 p{
@@ -130,7 +130,7 @@
                 }
             }
             .detail-uniform{
-
+                
             }
         }
 
@@ -195,7 +195,7 @@
     }
 
     @media (max-width: 600px){
-         .body-item:nth-child(2) {
+        .body-item:nth-child(2) {
             margin-top: 20px;
             -webkit-align-self: auto !important;
             align-self: auto !important;
@@ -261,7 +261,7 @@
         padding: 10px 15px;
         margin-bottom: 10px;
         background: #0b62a9;
-
+        
         .icon-exclamation-triangle{
             color: #fdc336;
             &:before{

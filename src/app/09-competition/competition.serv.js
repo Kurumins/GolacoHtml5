@@ -50,8 +50,25 @@ angular.module('app')
       return PostToJs('CompetitionLeague/Calendar');
     };
 
-    // vm.getLeaguePlayOff = function () {
-    //   return PostToJs('CompetitionLeague/PlayOff');
-    // };
+    // Cup
+    vm.getCupSummary = function () {
+      return PostToJs('CompetitionCup/Summary');
+    };
+
+    vm.getCupRanking = function () {
+      return PostToJs('CompetitionCup/Ranking');
+    };
+
+    vm.getCupMatchTable = function () {
+      return PostToJs('CompetitionCup/MatchTable');
+    };
+
+    vm.getCupCalendar = function () {
+      return PostToJs('CompetitionCup/Calendar');
+    };
+
+    vm.getCupPlayOff = function () {
+      return PostToJs('CompetitionCup/PlayOff');
+    };
 
   });

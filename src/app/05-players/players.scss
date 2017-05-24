@@ -9,6 +9,11 @@
   h6,
   p {
     margin: 5px 0;
+    color: #4f5776;
+  }
+
+  h2{
+    color: #4f5776;
   }
 
   .players-menu {
@@ -25,10 +30,20 @@
       padding: 7px 5px 5px;
       text-align: center;
       margin: 0;
+      border-radius: 5px;
+      // &:hover{
+      //   background: #ffffff;
+      //   color: #008dfb;
+      // }
     }
     input[type="radio"]:checked {
       background-color: #ffb700;
     }
+
+    .icon-up-thin{
+      background: #90e218;
+    }
+
   }
 
   .players-table {
@@ -43,10 +58,35 @@
       text-align: center;
       // border-collapse:separate;
       border-spacing: 0 2px;
+      color: #4f5776;
+
+      td {
+        padding: 2px;
+      }
 
       img {
         vertical-align: middle;
       }
+      button{
+        border:none;
+        border-radius: 3px;
+      }
+      .icon-widget{
+        background: #008dfb;
+        border: none;
+        border-radius: 3px;
+        // padding: 2px 6px;
+        &:before{
+          color: #ffffff;
+          vertical-align: middle;
+        }
+      }
+      .icon-traffic-cone{
+        &:before{
+          color: #6fe4fd;
+        }
+      }
+
     }
 
     .player {
@@ -138,13 +178,43 @@
         background-color: #db2d2d;
       }
     }
+
+    .player-manager-general{
+      border-radius: 5px;
+    }
+
+    .icon-t-shirt,
+    .icon-male,
+    .icon-star,
+    .icon-arrow-up,
+    .icon-plus,
+    .con-t-shirt,
+    .icon-shorts,
+    .icon-shoes-snickers-streamline,
+    .icon-card{
+        color: #0064b6;
+    }
   }
+
+  .ngdialog-close{
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      outline: none;
+      &:before{
+          color: #df0000;
+      }
+      &:hover{
+          border: none;
+      }
+    }
 
   .blink {
     animation: blink-animation 1s infinite linear;
+    background-color: #008dfb;
   }
   @keyframes blink-animation {
-    50% { background-color: #00dcff; }
+    50% { background-color: #6fe4fd; }
     // 100% { color: black; }
   }
 }
