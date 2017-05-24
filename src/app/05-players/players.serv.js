@@ -46,4 +46,10 @@ angular.module('app')
       });
     };
 
+    vm.moraleBoost = function (idItem) {
+      return PostToJs('TeamPlayer/MoraleBoost', {
+        IdItem: idItem
+      });
+    };
+
   });

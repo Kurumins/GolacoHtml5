@@ -19,10 +19,17 @@ function playersRoutesConfig ($stateProvider) {
     });
 }
 
-function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerService) {
+function teamPlayerController ($rootScope, $scope, teamPlayerList, ngDialog, TeamPlayerService) {
   var vm = this;
 
   vm.teamPlayers = teamPlayerList;
+
+  $rootScope.$on('teamPlayerUpdate', function (event) {
+    TeamPlayerService.teamPlayerList()
+      .then(function (teamPlayerList) {
+        vm.teamPlayers = teamPlayerList;
+      })
+  });
 
   vm.teamPlayerType = 1;
 
@@ -42,7 +49,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       },
     });
   };
-  vm.extraPlayer();
+  // vm.extraPlayer();
 
   vm.moraleRecovery = function () {
     ngDialog.open({
@@ -60,6 +67,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       // },
     });
   };
+  vm.moraleRecovery();
 
   vm.playerManager = function (playerId) {
     ngDialog.open({
