@@ -44,16 +44,16 @@ angular.module('app')
             return league;
           },
           leagueSummary: function () {
-            return CompetitionService.getLeagueSummary();
+            return CompetitionService.getLeagueSummary(league.preview.IdCompetition);
           },
           leagueRanking: function () {
-            return CompetitionService.getLeagueRanking();
+            return CompetitionService.getLeagueRanking(league.preview.IdCompetition);
           },
           leagueMatchTable: function () {
-            return CompetitionService.getLeagueMatchTable();
+            return CompetitionService.getLeagueMatchTable(league.preview.IdCompetition);
           },
           leagueCalendar: function () {
-            return CompetitionService.getLeagueCalendar();
+            return CompetitionService.getLeagueCalendar(league.preview.IdCompetition);
           },
           // leaguePlayOff: function () {
           //   return CompetitionService.getLeaguePlayOff();

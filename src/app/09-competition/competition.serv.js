@@ -34,20 +34,20 @@ angular.module('app')
     };
 
     // League
-    vm.getLeagueSummary = function () {
-      return PostToJs('CompetitionLeague/Summary');
+    vm.getLeagueSummary = function (competitionId) {
+      return PostToJs('CompetitionLeague/Summary', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueRanking = function () {
-      return PostToJs('CompetitionLeague/Ranking');
+    vm.getLeagueRanking = function (competitionId) {
+      return PostToJs('CompetitionLeague/Ranking', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueMatchTable = function () {
-      return PostToJs('CompetitionLeague/MatchTable');
+    vm.getLeagueMatchTable = function (competitionId) {
+      return PostToJs('CompetitionLeague/MatchTable', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueCalendar = function () {
-      return PostToJs('CompetitionLeague/Calendar');
+    vm.getLeagueCalendar = function (competitionId) {
+      return PostToJs('CompetitionLeague/Calendar', {CompetitionId: competitionId});
     };
 
     // Cup
