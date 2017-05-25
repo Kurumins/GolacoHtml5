@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup) {
+  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup) {
 
     var vm = this;
 
@@ -150,7 +150,17 @@ angular.module('app')
           AlertPopup.open('Atenção', error.Message);
         });
     };
-
     // vm.sellPlayer();
+
+    $scope.$watch('$ctrl.currentPlayer.Salary', function(newValue, oldValue) {
+      // debugger;
+      ( newValue < oldValue
+        ? ConfirmPopup.open('salaryChangeDownConfirmTitle', 'salaryChangeDownConfirmMessage')
+        : ConfirmPopup.open('salaryChangeUpConfirmTitle', 'salaryChangeUpConfirmMessage')
+      )
+        .then(function () {
+
+        });
+    });
 
   });

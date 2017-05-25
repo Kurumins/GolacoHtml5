@@ -58,4 +58,11 @@ angular.module('app')
       });
     };
 
+    vm.changeSalary = function (teamPlayerId, salaryOption) {
+      return PostToJs('TeamPlayer/ChangeSalary', {
+        TeamPlayerId: teamPlayerId,
+        SalaryOption: salaryOption
+      });
+    };
+
   });
