@@ -83,11 +83,11 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
     var drag = angular.element('#' + dragEl);
 
     var player = vm.teamPlayers[drag.attr('data-player')];
-    var slot = drop.attr('data-slot');
+    var slot = parseInt(drop.attr('data-slot'));
 
     // debugger;
 
-    if ( slot === '0' || !vm.slots[slot] ) {
+    if ( slot === 0 || !vm.slots[slot] ) {
       vm.slots[player.IdTactic] = null;
       player.IdTactic = slot;
       vm.slots[slot] = player;
@@ -110,7 +110,7 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
     var d = [];
 
     for (var i = 0; i < vm.teamPlayers.length; i++) {
-      if (vm.teamPlayers[i].IdTactic) {
+      if (!!vm.teamPlayers[i].IdTactic) {
 
         var s = vm.teamPlayers[i].IdTactic + ',' + vm.teamPlayers[i].Id;
         s += (vm.teamPlayers[i].IdTactic >= 30) ? ',0' : ',1'
