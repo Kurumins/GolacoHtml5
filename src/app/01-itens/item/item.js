@@ -3,7 +3,9 @@ angular.module('app')
   .component('item', {
     templateUrl: 'item.html',
     bindings: {
-      item: '=value'
+      item: '=value',
+      equip: '=',
+      confirm: '=confirm'
     },
     controller: function ($rootScope, ItenPurchase, ConfirmPopup, ItensService, AlertPopup) {
       var vm = this;
@@ -38,6 +40,13 @@ angular.module('app')
               .catch(function (error) {
                 AlertPopup.open('Atenção', error.Message);
               });
+          });
+      };
+
+      vm.itemConfirm = function () {
+        ConfirmPopup.open('Atenção', 'Deseja equipar o item selecionado?')
+          .then(function () {
+            vm.confirm(vm.item);
           });
       };
 

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup) {
+  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, PlayerItemEquip) {
 
     var vm = this;
 
@@ -154,7 +154,6 @@ angular.module('app')
     };
     // vm.sellPlayer();
 
-    // $scope.$watch('$ctrl.currentPlayer.Salary', function(newValue, oldValue) {
     vm.salaryChanged = function (newSalary) {
 
       var confirmPopup;
@@ -178,6 +177,22 @@ angular.module('app')
         })
 
     }
-    // });
+
+    var slots = {
+      1: 'ShirtItem',
+      2: 'ShortItem',
+      3: 'CleatsItem'
+    };
+
+    vm.playerItemEquip = function (slot) {
+      PlayerItemEquip.open(slot)
+        .then(function (item) {
+          TeamPlayerService.setTeamPlayerItem(vm.currentPlayer.Id, slot, item.Id)
+            .then(function () {
+              vm.currentPlayer[slots[slot]] = item;
+            })
+        });
+    }
+
 
   });

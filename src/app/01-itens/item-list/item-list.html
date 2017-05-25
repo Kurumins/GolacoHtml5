@@ -4,7 +4,7 @@
   rows="{{$ctrl.rows}}"
   arrows="false"
   settings="$ctrl.slickConfig">
-  <item value="item" ng-repeat="item in $ctrl.itens"></item>
+  <item value="item" ng-repeat="item in $ctrl.itens" equip="$ctrl.equip" confirm="$ctrl.confirm"></item>
 </slick>
 
 <button type="button" class="slick-prev" ng-if="!!$ctrl.arrow" ng-click="$ctrl.slickConfig.method.slickPrev()" ng-disabled="$ctrl.currentSlide === 1">«</button>

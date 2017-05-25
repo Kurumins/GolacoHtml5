@@ -88,7 +88,6 @@ function teamPlayerController ($rootScope, $scope, teamPlayerList, ngDialog, Tea
       },
     });
   };
-
   // vm.playerManager(36092807);
 
 }

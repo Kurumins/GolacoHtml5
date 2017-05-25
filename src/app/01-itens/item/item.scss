@@ -70,7 +70,8 @@ item {
   }
 
   .discart-item,
-  .sell-item {
+  .sell-item,
+  .equip-item {
     line-height: 34px;
     margin-left: 50px;
     display: flex;
@@ -101,6 +102,12 @@ item {
     text-transform: uppercase;
   }
 
+  .equip-item {
+    background: #008dfb;
+    p {
+      margin: auto;
+    }
+  }
 }
 
 item .sale {

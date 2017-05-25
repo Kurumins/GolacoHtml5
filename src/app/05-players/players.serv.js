@@ -65,4 +65,12 @@ angular.module('app')
       });
     };
 
+    vm.setTeamPlayerItem = function (teamPlayerId, slot, itemId) {
+      return PostToJs('TeamPlayer/SetTeamPlayerItem', {
+        TeamPlayerId: teamPlayerId,
+        Slot: slot,
+        ItemId: itemId
+      });
+    };
+
   });
