@@ -40,6 +40,12 @@ angular.module('app')
       });
     };
 
+    vm.startAuction = function (teamPlayerId) {
+      return PostToJs('Auction/StartAuction', {
+        TeamPlayerId: teamPlayerId
+      });
+    };
+
     vm.buyProSpot = function (spot) {
       return PostToJs('Team/BuyProSpot', {
         Spot: spot

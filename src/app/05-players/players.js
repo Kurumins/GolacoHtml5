@@ -67,7 +67,7 @@ function teamPlayerController ($rootScope, $scope, teamPlayerList, ngDialog, Tea
       // },
     });
   };
-  vm.moraleRecovery();
+  // vm.moraleRecovery();
 
   vm.playerManager = function (playerId) {
     ngDialog.open({

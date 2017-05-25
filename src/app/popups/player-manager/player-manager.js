@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function ($scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService) {
+  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup) {
 
     var vm = this;
 
@@ -137,7 +137,17 @@ angular.module('app')
         scope: $scope
       })
         .then(function () {
+          return TeamPlayerService.startAuction(vm.currentPlayer.Id);
         }, function () {
+        })
+        .then(function () {
+          $scope.closeThisDialog();
+          AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
+          $rootScope.$emit('teamPlayerUpdate');
+          $rootScope.$emit('balanceUpdate');
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message);
         });
     };
 
