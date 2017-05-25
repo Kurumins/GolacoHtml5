@@ -38,19 +38,19 @@ angular.module('app')
             return tournament;
           },
           tournamentSummary: function () {
-            return CompetitionService.getTournamentSummary();
+            return CompetitionService.getTournamentSummary(tournament.preview.IdCompetition);
           },
           tournamentRanking: function () {
-            return CompetitionService.getTournamentRanking();
+            return CompetitionService.getTournamentRanking(tournament.preview.IdCompetition);
           },
           tournamentMatchTable: function () {
-            return CompetitionService.getTournamentMatchTable();
+            return CompetitionService.getTournamentMatchTable(tournament.preview.IdCompetition);
           },
           tournamentCalendar: function () {
-            return CompetitionService.getTournamentCalendar();
+            return CompetitionService.getTournamentCalendar(tournament.preview.IdCompetition);
           },
           tournamentPlayOff: function () {
-            return CompetitionService.getTournamentPlayOff();
+            return CompetitionService.getTournamentPlayOff(tournament.preview.IdCompetition);
           },
         },
       });
