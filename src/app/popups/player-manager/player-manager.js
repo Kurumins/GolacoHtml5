@@ -31,6 +31,8 @@ angular.module('app')
 
       vm.currentPlayer = player;
 
+      vm.newSalary = vm.currentPlayer.Salary;
+
     }
 
     vm.nextPlayer = function () {
