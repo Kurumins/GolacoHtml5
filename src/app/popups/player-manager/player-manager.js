@@ -152,15 +152,30 @@ angular.module('app')
     };
     // vm.sellPlayer();
 
-    $scope.$watch('$ctrl.currentPlayer.Salary', function(newValue, oldValue) {
-      // debugger;
-      ( newValue < oldValue
-        ? ConfirmPopup.open('salaryChangeDownConfirmTitle', 'salaryChangeDownConfirmMessage')
-        : ConfirmPopup.open('salaryChangeUpConfirmTitle', 'salaryChangeUpConfirmMessage')
-      )
-        .then(function () {
+    // $scope.$watch('$ctrl.currentPlayer.Salary', function(newValue, oldValue) {
+    vm.salaryChanged = function (newSalary) {
 
-        });
-    });
+      var confirmPopup;
+
+      if ( newSalary < vm.currentPlayer.Salary ) {
+        confirmPopup = ConfirmPopup.open('salaryChangeDownConfirmTitle', 'salaryChangeDownConfirmMessage');
+      } else if ( newSalary > vm.currentPlayer.Salary ) {
+        confirmPopup = ConfirmPopup.open('salaryChangeUpConfirmTitle', 'salaryChangeUpConfirmMessage');
+      } else {
+        return;
+      }
+
+      confirmPopup
+        .then(function () {
+          return TeamPlayerService.changeSalary(vm.currentPlayer.Id, newSalary);
+        }, function () {
+          vm.newSalary = vm.currentPlayer.Salary;
+        })
+        .then(function () {
+          vm.currentPlayer.Salary = vm.newSalary;
+        })
+
+    }
+    // });
 
   });

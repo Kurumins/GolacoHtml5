@@ -18,8 +18,6 @@ angular.module('app')
 
     vm.teamSpotPrices = teamSpotPrices.Prices;
 
-    AppService.user.MaxProPlayers = 18;
-
     for (var i = 0; i < vm.teamSpotPrices.length; i++) {
       var price = vm.teamSpotPrices[i];
 
