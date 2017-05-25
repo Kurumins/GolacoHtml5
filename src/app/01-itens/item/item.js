@@ -11,10 +11,7 @@ angular.module('app')
       vm.itenPurchase = ItenPurchase.open;
 
       vm.sellItem = function () {
-        ConfirmPopup.open({
-          title: 'Atenção',
-          content: 'Deseja realmente vender este item?'
-        })
+        ConfirmPopup.open('Atenção', 'Deseja realmente vender este item?')
           .then(function () {
             // debugger;
             ItensService.sellEquip(vm.item)
@@ -30,10 +27,7 @@ angular.module('app')
       };
 
       vm.discartItem = function () {
-        ConfirmPopup.open({
-          title: 'Atenção',
-          content: 'Deseja realmente descartar este item?'
-        })
+        ConfirmPopup.open('Atenção', 'Deseja realmente descartar este item?')
           .then(function () {
             ItensService.sellEquip(vm.item)
               .then(function () {

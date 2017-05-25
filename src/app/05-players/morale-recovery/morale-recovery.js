@@ -5,10 +5,7 @@ angular.module('app')
     var vm = this;
 
     vm.moraleBoost = function (idItem) {
-      ConfirmPopup.open({
-        title: 'Atenção',
-        content: 'Deseja recuperar a moral de seus jogadores?'
-      })
+      ConfirmPopup.open('Atenção', 'Deseja recuperar a moral de seus jogadores?')
         .then(function () {
           TeamPlayerService.moraleBoost(idItem)
             .then(function () {

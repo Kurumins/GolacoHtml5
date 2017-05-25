@@ -28,10 +28,7 @@ angular.module('app')
     }
 
     vm.buyProSpot = function (spot) {
-      ConfirmPopup.open({
-        title: 'Atenção',
-        content: 'Deseja mesmo adquirir esta vaga?'
-      })
+      ConfirmPopup.open('Atenção', 'Deseja mesmo adquirir esta vaga?')
         .then(function () {
           TeamPlayerService.buyProSpot(spot)
             .then(function () {

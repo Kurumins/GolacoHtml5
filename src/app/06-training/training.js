@@ -65,19 +65,13 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
   };
 
   vm.train = function () {
-    ConfirmPopup.open({
-      title: 'Treinamento',
-      content: 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.'
-    })
+    ConfirmPopup.open('Treinamento', 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.')
       .then(function () {
       })
   };
 
   vm.refreshTraining = function (player) {
-    ConfirmPopup.open({
-      title: 'Adiantar treinamento',
-      content: 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?'
-    })
+    ConfirmPopup.open('Adiantar treinamento', 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?')
       .then(function () {
       })
   };

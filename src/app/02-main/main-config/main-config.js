@@ -7,10 +7,7 @@ angular.module('app')
     vm.settings = settings;
 
     vm.changeCountry = function (idCountry) {
-      ConfirmPopup.open({
-        title: 'Atenção',
-        content: 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o nome de seu time?'
-      })
+      ConfirmPopup.open('Atenção', 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o nome de seu time?')
         .then(function () {
           MainService.teamChangeCountry(idCountry)
             .then(function () {
@@ -23,10 +20,7 @@ angular.module('app')
     };
 
     vm.changeTeamName = function (newName, newAcronym) {
-      ConfirmPopup.open({
-        title: 'Atenção',
-        content: 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o país de seu time? '
-      })
+      ConfirmPopup.open('Atenção', 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o país de seu time?')
         .then(function () {
           MainService.changeTeamName(newName, newAcronym)
             .then(function () {
@@ -39,10 +33,7 @@ angular.module('app')
     };
 
     vm.changeOptionMail = function (mailOptions) {
-      ConfirmPopup.open({
-        title: 'Atenção',
-        content: 'Confirmar alteração '
-      })
+      ConfirmPopup.open('Atenção', 'Confirmar alteração ')
         .then(function () {
           MainService.changeOptionMail(mailOptions.join(';'))
             .then(function () {
