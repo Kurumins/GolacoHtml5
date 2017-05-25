@@ -139,17 +139,17 @@ angular.module('app')
         scope: $scope
       })
         .then(function () {
-          return TeamPlayerService.startAuction(vm.currentPlayer.Id);
+          TeamPlayerService.startAuction(vm.currentPlayer.Id)
+            .then(function () {
+              $scope.closeThisDialog();
+              AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
+              $rootScope.$emit('teamPlayerUpdate');
+              $rootScope.$emit('balanceUpdate');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
+            });
         }, function () {
-        })
-        .then(function () {
-          $scope.closeThisDialog();
-          AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
-          $rootScope.$emit('teamPlayerUpdate');
-          $rootScope.$emit('balanceUpdate');
-        })
-        .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message);
         });
     };
     // vm.sellPlayer();
