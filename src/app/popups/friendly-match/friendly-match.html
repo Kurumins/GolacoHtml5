@@ -34,9 +34,10 @@
       <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
     </select>
   </label>
-  <button ng-click="$ctrl.findFriendlyMatches($ctrl.filter)" ng-disabled="!($ctrl.filter.League.D || $ctrl.filter.League.C || $ctrl.filter.League.B || $ctrl.filter.League.A)">Pesquisar</button> </div>
+  <button ng-click="$ctrl.findFriendlyMatches($ctrl.filter)" ng-disabled="!($ctrl.filter.League.D || $ctrl.filter.League.C || $ctrl.filter.League.B || $ctrl.filter.League.A)">Pesquisar</button>
+</div>
 
-<div>
+<div class="checkbox">
   <label><input type="checkbox" ng-model="$ctrl.useItens" ng-false-value="true" ng-true-value="false"> Não usar itens ao desafiar</label>
 </div>
 
@@ -46,7 +47,7 @@
     <table width="100%" class="friendly-teams">
       <tr ng-repeat="team in $ctrl.friendlyMatches" ng-click="$ctrl.currentMatch = team" ng-class="{active: $ctrl.currentMatch == team}">
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" height="14"></td>
-        <td>{{team.League}}</td>
+        <td class="league">{{team.League}}</td>
         <td>{{team.Name}}</td>
         <td align="right" class="small">{{team.UserName}}</td>
       </tr>
@@ -58,13 +59,14 @@
     <div class="current-match">
       <div>
         <img ng-src="{{$ctrl.me.BadgePicture}}" height="129" width="129">
-        <h4>{{$ctrl.me.Acronym}}</h4>
+        <h4 class="initials">{{$ctrl.me.Acronym}}</h4>
       </div>
       X
       <div>
         <img ng-src="{{$ctrl.currentMatch.BadgePicture}}" height="129" width="129">
-        <h4>{{$ctrl.currentMatch.Acronym}}</h4>
+        <h4 class="initials">{{$ctrl.currentMatch.Acronym}}</h4>
       </div>
+      <!-- <button ng-click="$ctrl.play(ngDialogId)">Jogar</button> -->
     </div>
     <button ng-click="$ctrl.play($ctrl.currentMatch)">Jogar</button>
   </div>
