@@ -1,20 +1,66 @@
 .competition {
   padding: 15px;
-
+  h2{
+    color: #4f5776;
+  }
   p {
     margin: 0;
   }
-
-  ul li {
-    margin-bottom: 15px;
+  ul{
+    display: flex;
+    padding:30px 0;
   }
-
-  .friendly-match {
-    float: right;
-
-    button {
-      font-size: 35px;
+  
+  ul li {
+    margin: 1%;
+    padding: 9px;
+    min-width: 18%;
+    list-style-type: none;
+    text-align: center;
+    background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
+    background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
+    background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+    background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
+    color: green;
+    font-size: 18px;
+    font-weight: 600;
+    p{
+      font-size: 14px;
     }
   }
-
+  .friendly-match {
+    float: right;
+    span{
+      color: #4f5776;
+      font-size: 18px;
+      font-weight: 600;
+        padding: 0 15px;
+    }
+    button {
+      font-size: 35px;
+       background: #ffffff;
+      border: 3px solid #0b62a9;
+      border-radius:5px;
+      &:before{
+        color: #0b62a9;
+        vertical-align: middle;
+        
+      }
+      &:hover{
+        border: 3px solid #3cc51c;
+        &:before{
+          color: #3cc51c;
+        }
+      }
+    }
+  }
+  
+  .icon-credit-card{
+    &:before {
+      color: #DAA520;
+    }
+  }
 }
