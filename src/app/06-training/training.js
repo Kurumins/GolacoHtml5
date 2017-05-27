@@ -34,7 +34,7 @@ angular.module('app')
     };
   });
 
-function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup) {
+function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup, TrainingService, TeamPlayerService) {
   var vm = this;
 
   vm.teamPlayers = teamPlayerList.TeamPlayers;
@@ -67,6 +67,51 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
   vm.train = function () {
     ConfirmPopup.open('Treinamento', 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.')
       .then(function () {
+
+        var playerIds = [];
+        var juniorIds = [];
+
+        for (var i = 0; i < vm.teamPlayers.length; i++) {
+          if (vm.teamPlayers[i].checked) {
+            if (vm.teamPlayers[i].TeamPlayerType === 1) {
+              playerIds.push(vm.teamPlayers[i].Id);
+            } else {
+              juniorIds.push(vm.teamPlayers[i].Id);
+            }
+          }
+        }
+
+        var tmpTrainPlan = '';
+
+        for (var k = 0; k < 4; k++) {
+          switch (vm["_btnType" + k]) {
+            case 2:
+              tmpTrainPlan += "A";
+              break;
+            case 3:
+              tmpTrainPlan += "B";
+              break;
+            case 4:
+              tmpTrainPlan += "C";
+              break;
+            default:
+              break;
+          }
+        }
+
+        TrainingService.playerTrain(
+          playerIds.join(','),
+          vm.trainingCenter.IdTeamTrainCenter,
+          tmpTrainPlan,
+          juniorIds.join(',')
+        )
+          .then(function () {
+            return TeamPlayerService.teamPlayerList();
+          })
+          .then(function (teamPlayerList) {
+            vm.teamPlayers = teamPlayerList.TeamPlayers;
+          })
+
       })
   };
 
@@ -78,10 +123,10 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
 
   //----------- calculo de atributos --------
 
-  vm._btnType0 = 1;
-  vm._btnType1 = 1;
-  vm._btnType2 = 1;
-  vm._btnType3 = 1;
+  vm._btnType0 = 2//1;
+  vm._btnType1 = 2//1;
+  vm._btnType2 = 3//1;
+  vm._btnType3 = 4//1;
 
   var playersList = vm.teamPlayers;
 
