@@ -55,17 +55,17 @@ angular.module('app')
       return PostToJs('CompetitionCup/Summary', {CompetitionId: competitionId});
     };
 
-    vm.getCupRanking = function (competitionId) {
-      return PostToJs('CompetitionCup/Ranking', {CompetitionId: competitionId});
-    };
+    // vm.getCupRanking = function (competitionId) {
+    //   return PostToJs('CompetitionCup/Ranking', {CompetitionId: competitionId});
+    // };
 
-    vm.getCupMatchTable = function (competitionId) {
-      return PostToJs('CompetitionCup/MatchTable', {CompetitionId: competitionId});
-    };
+    // vm.getCupMatchTable = function (competitionId) {
+    //   return PostToJs('CompetitionCup/MatchTable', {CompetitionId: competitionId});
+    // };
 
-    vm.getCupCalendar = function (competitionId) {
-      return PostToJs('CompetitionCup/Calendar', {CompetitionId: competitionId});
-    };
+    // vm.getCupCalendar = function (competitionId) {
+    //   return PostToJs('CompetitionCup/Calendar', {CompetitionId: competitionId});
+    // };
 
     vm.getCupPlayOff = function (competitionId) {
       return PostToJs('CompetitionCup/PlayOff', {CompetitionId: competitionId});
@@ -90,6 +90,27 @@ angular.module('app')
 
     vm.getTournamentLightPlayOff = function (competitionId) {
       return PostToJs('CompetitionTournamentLight/PlayOff', {CompetitionId: competitionId});
+    };
+
+    // Cup Light
+    vm.getCupLightSummary = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Summary', {CompetitionId: competitionId});
+    };
+
+    // vm.getCupLightRanking = function (competitionId) {
+    //   return PostToJs('CompetitionCupLight/Ranking', {CompetitionId: competitionId});
+    // };
+
+    // vm.getCupLightMatchTable = function (competitionId) {
+    //   return PostToJs('CompetitionCupLight/MatchTable', {CompetitionId: competitionId});
+    // };
+
+    // vm.getCupLightCalendar = function (competitionId) {
+    //   return PostToJs('CompetitionCupLight/Calendar', {CompetitionId: competitionId});
+    // };
+
+    vm.getCupLightPlayOff = function (competitionId) {
+      return PostToJs('CompetitionCupLight/PlayOff', {CompetitionId: competitionId});
     };
 
   });
