@@ -34,18 +34,21 @@ angular.module('app')
     };
   });
 
-function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup, TrainingService, TeamPlayerService) {
+function trainingController ($scope, $rootScope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup, TrainingService, TeamPlayerService) {
   var vm = this;
 
-  vm.teamPlayers = teamPlayerList.TeamPlayers;
+  vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
   vm.trainingCenter = trainingCenter.TrainingCenter;
 
-  angular.forEach(vm.teamPlayers, function (player) {
-    player.attributes = [];
-    angular.forEach(player.Attributes, function(attribute) {
-      attribute && player.attributes.push(attribute);
+  function playersWithAtributes(teamPlayers) {
+    angular.forEach(teamPlayers, function (player) {
+      player.attributes = [];
+      angular.forEach(player.Attributes, function(attribute) {
+        attribute && player.attributes.push(attribute);
+      });
     });
-  });
+    return teamPlayers;
+  }
 
   vm.toggleAll = function (toggleStatus) {
      angular.forEach(vm.teamPlayers, function (player) {
@@ -109,7 +112,8 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
             return TeamPlayerService.teamPlayerList();
           })
           .then(function (teamPlayerList) {
-            vm.teamPlayers = teamPlayerList.TeamPlayers;
+            vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
+            vm.updateplayersListAtt();
           })
 
       })
@@ -118,21 +122,30 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
   vm.refreshTraining = function (player) {
     ConfirmPopup.open('Adiantar treinamento', 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?')
       .then(function () {
+        TrainingService.refreshTraining(player)
+          .then(function (result) {
+            $rootScope.$emit('balanceUpdate');
+            return TeamPlayerService.teamPlayerList();
+          })
+          .then(function (teamPlayerList) {
+            vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
+            vm.updateplayersListAtt();
+          })
       })
   };
 
   //----------- calculo de atributos --------
 
-  vm._btnType0 = 2//1;
-  vm._btnType1 = 2//1;
-  vm._btnType2 = 3//1;
-  vm._btnType3 = 4//1;
-
-  var playersList = vm.teamPlayers;
+  vm._btnType0 = 1;
+  vm._btnType1 = 1;
+  vm._btnType2 = 1;
+  vm._btnType3 = 1;
 
   // vm.toggleAll(true);
 
   vm.updateplayersListAtt = function () {
+
+    var playersList = vm.teamPlayers;
 
     //base att level, primary or secondary habilits
     var MAX_TRAINNINGS = 4;
@@ -338,6 +351,8 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
       }
     }
   };
+
+  vm.toggleAll(vm.checkAll = true);
 
 }
 

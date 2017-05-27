@@ -40,7 +40,7 @@
           <th title="pas">pas</th>
           <th title="dri">dri</th>
           <th></th>
-          <th><input type="checkbox" ng-model="all" ng-change="$ctrl.toggleAll(all)"></th>
+          <th><input type="checkbox" ng-model="$ctrl.checkAll" ng-change="$ctrl.toggleAll($ctrl.checkAll)" ></th>
         </tr>
       </thead>
       <tr ng-repeat="player in $ctrl.teamPlayers | filter:{TeamPlayerType: $ctrl.teamPlayerType}" class="player">

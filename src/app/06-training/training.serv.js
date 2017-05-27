@@ -17,4 +17,11 @@ angular.module('app')
       });
     };
 
+    vm.refreshTraining = function (TeamPlayer) {
+      return PostToJs('TeamPlayer/RefreshTraining', {
+        TeamPlayerId: TeamPlayer.Id,
+        TeamPlayerType: TeamPlayer.TeamPlayerType,
+      });
+    };
+
   });
