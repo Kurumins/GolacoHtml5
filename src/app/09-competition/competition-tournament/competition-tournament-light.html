@@ -1,0 +1,24 @@
+<h2>Mini Torneio Golaço</h2>
+
+<div>
+  <label>
+    <input type="radio" ng-model="current" ng-value=""> Resumo
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'tournament-ranking'"> Classificação
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'tournament-match-table'"> Jogos
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'tournament-calendar'"> Rodadas
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'tournament-play-off'"> Oitavas de final
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'tournament-prize'"> Prêmios
+  </label>
+</div>
+
+<ng-include class="competition-{{(current || 'common-sumary')}}" src="'competition-'+ (current || 'common-sumary') +'.html'" />
