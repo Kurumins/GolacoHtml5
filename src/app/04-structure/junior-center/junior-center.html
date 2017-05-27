@@ -1,10 +1,14 @@
 <h2>Centro de Juniores</h2>
 <div class="junior-center">
-  <div class="structure-menu">
-    <button ng-click="$ctrl.juniorDraft()">Peneira</button>
-    <button ng-click="$ctrl.juniorReform()">Reformar</button>
+  <div class="clearfix">
+    <div class="structure-menu">
+      <button ng-click="$ctrl.juniorDraft()">Peneira</button>
+      <button ng-click="$ctrl.juniorReform()">Reformar</button>
+    </div>
+    <h4>
+      <button class="btn-link icon-pencil-square" ng-click="$ctrl.editName()"></button>{{$ctrl.juniorPreview.Name}}
+    </h4>
   </div>
-  <h4>{{$ctrl.juniorPreview.Name}}</h4>
   <div class="center-structure">
     <img ng-src="{{$ctrl.juniorPreview.Picture}}" class="center-picture">
     <div class="junior-players">
