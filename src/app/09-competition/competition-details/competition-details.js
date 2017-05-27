@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionDetailsController', function (competition) {
+  .controller('CompetitionDetailsController', function ($scope, competition, CompetitionService, ConfirmPopup, AlertPopup) {
 
     var vm = this;
 
@@ -12,5 +12,19 @@ angular.module('app')
       'lblCompetitionGroupsKnockout',
       'lblCompetitionKnockout',
     ];
+
+    vm.register = function () {
+      ConfirmPopup.open('Atenção', 'Deseja confirmar sua inscrição na competição ' + vm.competition.data.name)
+        .then(function () {
+          CompetitionService.competitionRegister(vm.competition.name)
+            .then(function (result) {
+              $scope.closeThisDialog();
+              AlertPopup.open('Atenção', 'Inscrição realizada com sucesso');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
+            })
+        });
+    };
 
   });

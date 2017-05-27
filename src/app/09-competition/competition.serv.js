@@ -12,6 +12,10 @@ angular.module('app')
       return $http.get('/data/Competition/CompetitionData');
     };
 
+    vm.competitionRegister = function (competitionType) {
+      return PostToJs(competitionType +'/Register');
+    };
+
     // Tournament
     vm.getTournamentSummary = function (competitionId) {
       return PostToJs('CompetitionTournament/Summary', {CompetitionId: competitionId});
