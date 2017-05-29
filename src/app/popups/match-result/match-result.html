@@ -14,11 +14,11 @@
 </div>
 
 <div class="result-tabs">
-  <div ng-init-="selection=3">
-    <label><input type="radio" ng-model="selection" checked>Estatísticas</label>
-    <label><input type="radio" ng-model="selection" value="1">Escalação</label>
-    <label><input type="radio" ng-model="selection" value="2">Reservas</label>
-    <label><input type="radio" ng-model="selection" value="3">Gols</label>
+  <div ng-init-="selection=3" class="radio-buttons">
+    <label><input type="radio" ng-model="selection" checked><span>Estatísticas</span></label>
+    <label><input type="radio" ng-model="selection" value="1"><span>Escalação</span></label>
+    <label><input type="radio" ng-model="selection" value="2"><span>Reservas</span></label>
+    <label><input type="radio" ng-model="selection" value="3"><span>Gols</span></label>
   </div>
 
   <div class="animate-switch-container" ng-switch on="selection">

@@ -1,5 +1,4 @@
 .ngdialog.ngdialog-morale-recovery {
-
   h2,
   h3,
   h4,
@@ -11,6 +10,7 @@
     // width: 750px;
     padding: 30px 50px;
     background-color: white;
+    border: 3px solid #0065b4;
   }
 
   .morale-itens {
@@ -36,6 +36,45 @@
     i {
       margin-right: 5px;
     }
-  }
+    p > .icon-up-thin{
+      background:#ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      padding: 5px 8px;
+      color: #4e5667;
+      &:hover{
+        background:#ffffff;
+        color: #5ca90b;
+      }
+    }
+    .icon-up-thin{
+      background:#0065b4;
+      border: 1px solid #0065b4;
+      border-radius: 3px;
+      padding: 5px 8px;
+      color: #ffffff;
+      &:hover{
+        background:#ffffff;
+        color: #0065b4;
+      }
+    }
 
+    .icon-credit-card{
+      &:before{
+        color: #DAA520;
+      }
+    }
+  }
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    &:before{
+      color: #0b62a9;
+    }
+    &:hover{
+      border: none;
+    }
+  }
 }

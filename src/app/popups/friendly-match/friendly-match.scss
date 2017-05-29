@@ -120,7 +120,7 @@
             font-weight: 700;
             font-size: 14px;
         }
-    }
+  }
 
   .half {
     float: left;
@@ -195,15 +195,15 @@
   }
 
   .ngdialog-close{
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    outline: none;
-    &:before{
-      color: #0b62a9;
-    }
-    &:hover{
       border: none;
-    }
+      box-shadow: none;
+      padding: 0;
+      outline: none;
+      &:before{
+          color: #df0000;
+      }
+      &:hover{
+          border: none;
+      }
   }
 }
