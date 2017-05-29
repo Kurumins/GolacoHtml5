@@ -64,10 +64,10 @@
   </div>
 </div>
 
-<div class="draft-players">
-  <span style="float: right;">{{$ctrl.juniorDraft.CurrentTeamPlayers}} / {{$ctrl.juniorDraft.TeamPlayerCapacity}} jogadores no CT</span>
+<div class="clearfix draft-players">
+  <span class="pull-right">{{$ctrl.juniorDraft.CurrentTeamPlayers}} / {{$ctrl.juniorDraft.TeamPlayerCapacity}} jogadores no CT</span>
   <h3>Jogadores encontrados</h3>
   <junior-table players="$ctrl.juniorDraft.Players" current-player="$ctrl.currentPlayer"></junior-table>
   <p ng-if="!$ctrl.juniorDraft.Players.length" class="no-players">Você não tem jogadores na peneira</p>
-  <button class="plyer-recruit" ng-if="$ctrl.juniorDraft.Players.length">Recrutar</button>
+  <button class="btn btn-primary pull-right player-recruit" ng-if="$ctrl.juniorDraft.Players.length" ng-click="$ctrl.draftToJunior()">Recrutar</button>
 </div>

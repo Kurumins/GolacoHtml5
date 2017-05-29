@@ -8,8 +8,8 @@
     <td width="1"><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></td>
     <td align="center" ng-repeat="(key, value) in player.Attributes">
       <!-- <p>skill_{{value[key]}}_acr</p> -->
-      <p>skill_{{value[key]}}</p>
-      <p>{{value.Value}}</p>
+      <p ng-if="value[key]">skill_{{value[key]}}</p>
+      <p>{{value.Value || '--'}}</p>
     </td>
   </tr>
 </table>

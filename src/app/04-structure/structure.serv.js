@@ -43,4 +43,10 @@ angular.module('app')
       return PostToJs('TeamPlayerJunior/InstantDraft');
     };
 
+    vm.draftToJunior = function (IdTeamPlayerJunior) {
+      return PostToJs('TeamPlayerJunior/TeamPlayerDraftToJunior', {
+        IdTeamPlayerJunior: IdTeamPlayerJunior
+      });
+    };
+
   });

@@ -1,10 +1,14 @@
 'use strict';
 angular.module('app')
   .controller('JuniorCenterController', function (juniorPreview, JuniorDraft, JuniorReform, InputPopup, StructureService) {
+
     var vm = this;
     vm.juniorPreview = juniorPreview;
 
-    vm.juniorDraft = JuniorDraft.open;
+    vm.juniorDraft = function () {
+      JuniorDraft.open()
+        .then(updateJuniorPreview, updateJuniorPreview)
+    };
     vm.juniorDraft();
 
     vm.juniorReform = JuniorReform.open;
@@ -17,10 +21,15 @@ angular.module('app')
       })
         .then(function (ctName) {
           StructureService.changingTrainCenterName(ctName)
-            .then(function () {
-              vm.juniorPreview.Name = ctName;
-            })
+            .then(updateJuniorPreview)
         })
     };
-    // vm.editName();
+
+    function updateJuniorPreview() {
+      return StructureService.juniorPreview()
+        .then(function () {
+          vm.juniorPreview = juniorPreview;
+        });
+    }
+
   });

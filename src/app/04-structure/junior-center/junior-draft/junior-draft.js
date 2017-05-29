@@ -24,7 +24,7 @@ angular.module('app')
         })
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message)
-        })
+        });
     }
 
     vm.instantDraft = function () {
@@ -40,6 +40,24 @@ angular.module('app')
             });
         })
         .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message);
+        });
+    }
+
+    vm.draftToJunior = function () {
+      ConfirmPopup.open('Atenção', 'lblConfirmPromote')
+        .then(function () {
+          return StructureService.draftToJunior(vm.currentPlayer.Id);
+          // return StructureService.draftToJunior(3242845);
+        })
+        .then(function (result) {
+          AlertPopup.open('Atenção', 'lblPromoteSuccess');
+          StructureService.juniorDraft()
+            .then(function (juniorDraft) {
+              vm.juniorDraft = juniorDraft;
+            });
+        })
+        .catch(function (error) {
           AlertPopup.open('Atenção', error.Message)
         })
     }
@@ -48,7 +66,7 @@ angular.module('app')
   .factory('JuniorDraft', function (StructureService, ngDialog) {
 
     this.open = function () {
-      ngDialog.open({
+      return ngDialog.openConfirm({
         template: 'junior-draft.html',
         appendClassName: 'ngdialog-junior-draft',
         controller: 'JuniorDraftController as $ctrl',
