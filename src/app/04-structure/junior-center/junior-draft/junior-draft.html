@@ -39,14 +39,19 @@
       <dd ng-if="$ctrl.juniorDraft.TimeToShowDraft">{{$ctrl.juniorDraft.TimeToShowDraft | date:'short'}}</dd>
       <dt ng-if="!$ctrl.juniorDraft.TimeToNewDraft">Posição</dt>
       <dd ng-if="!$ctrl.juniorDraft.TimeToNewDraft">
-        <select ng-disabled="$ctrl.juniorDraft.TimeToShowDraft">
-          <option>Todas</option>
+        <select ng-model="$ctrl.idPosition" ng-disabled="$ctrl.juniorDraft.TimeToShowDraft">
+          <option ng-value="">allF</option>
+          <option ng-value="1">TeamPlayerPosition_Goleiro</option>
+          <option ng-value="2">TeamPlayerPosition_Zagueiro</option>
+          <option ng-value="3">TeamPlayerPosition_Lateral</option>
+          <option ng-value="4">TeamPlayerPosition_MeioCampo</option>
+          <option ng-value="5">TeamPlayerPosition_Atacante</option>
         </select>
       </dd>
     </dl>
     <footer>
       <p ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-        <button>Realizar peneira</button> |
+        <button ng-click="$ctrl.makeADraft($ctrl.idPosition)">Realizar peneira</button> |
         <i class="icon-money"></i>
         {{$ctrl.juniorDraft.DraftCost | currency}}
       </p>

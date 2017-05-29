@@ -32,4 +32,11 @@ angular.module('app')
       });
     };
 
+    vm.makeADraft = function (IdPosition, IdScout) {
+      return PostToJs('TeamPlayerJunior/MakeADraft', {
+        IdPosition: IdPosition,
+        IdScout: IdScout
+      });
+    };
+
   });

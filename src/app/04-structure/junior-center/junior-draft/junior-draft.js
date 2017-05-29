@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('JuniorDraftController', function (juniorDraft, JuniorScouts) {
+  .controller('JuniorDraftController', function (juniorDraft, JuniorScouts, StructureService, ConfirmPopup, AlertPopup) {
 
     var vm = this;
 
@@ -14,6 +14,18 @@ angular.module('app')
     };
     // vm.juniorScouts();
     // vm.currentScout = vm.juniorDraft.Scouts[0];
+
+    vm.makeADraft = function (idPosition) {
+      ConfirmPopup.open('Atenção', 'lblConfirmDraft')
+        .then(function () {
+          return StructureService.makeADraft(idPosition || '',  vm.currentScout && vm.currentScout.Id || '');
+        })
+        .then(function (result) {
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        })
+    }
 
   })
   .factory('JuniorDraft', function (StructureService, ngDialog) {
