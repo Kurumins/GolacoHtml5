@@ -1,21 +1,26 @@
 <h2>Liga Golaço</h2>
 <span class="pull-right">Série {{teamPreview.Serie}}</span>
 
-<div ng-init-="current='league-prize'" class="pull-left">
+<div ng-init-="current='league-prize'" class="pull-left checkbox">
   <label>
-    <input type="radio" ng-model="current" ng-value=""> Resumo
+      <input type="radio" ng-model="current" ng-value=""> 
+      <span>Resumo</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'league-ranking'"> Classificação
+      <input type="radio" ng-model="current" ng-value="'league-ranking'"> 
+      <span>Classificação</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'league-match-table'"> Jogos
+      <input type="radio" ng-model="current" ng-value="'league-match-table'"> 
+      <span>Jogos</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'league-calendar'"> Rodadas
+      <input type="radio" ng-model="current" ng-value="'league-calendar'"> 
+      <span>Rodadas</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'league-prize'"> Prêmios
+      <input type="radio" ng-model="current" ng-value="'league-prize'"> 
+      <span>Prêmios</span>
   </label>
 </div>
 
