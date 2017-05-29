@@ -9,9 +9,12 @@ angular.module('app')
       JuniorDraft.open()
         .then(updateJuniorPreview, updateJuniorPreview)
     };
-    vm.juniorDraft();
+    // vm.juniorDraft();
 
-    vm.juniorReform = JuniorReform.open;
+    vm.juniorReform = function () {
+      JuniorReform.open()
+        .then(updateJuniorPreview, updateJuniorPreview)
+    };
     // vm.juniorReform();
 
     vm.editName = function () {

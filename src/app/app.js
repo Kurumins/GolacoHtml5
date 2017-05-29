@@ -7,7 +7,7 @@ angular.module('app')
     // debugger;
 
     vm.userData = userData;
-    vm.user = user;
+    $rootScope.user = vm.user = user;
     $rootScope.teamPreview = vm.teamPreview = teamPreview;
     vm.countryList = countryList.data;
 

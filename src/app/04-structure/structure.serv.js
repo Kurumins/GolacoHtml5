@@ -26,6 +26,12 @@ angular.module('app')
       return PostToJs('TeamPlayerJunior/GetJuniorTrainCenter');
     };
 
+    vm.updateJuniorTrainCenter = function (IdTrainCenterJunior) {
+      return PostToJs('TeamPlayerJunior/UpdateJuniorTrainCenter', {
+        IdTrainCenterJunior: IdTrainCenterJunior
+      });
+    };
+
     vm.changingTrainCenterName = function (NewName) {
       return PostToJs('TeamPlayerJunior/ChangingTrainCenterName', {
         NewName: NewName
