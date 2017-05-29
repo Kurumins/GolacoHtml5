@@ -103,25 +103,25 @@
         height: 12px;
     }
     input[type=checkbox]:checked + span:before {
-        // content: "\e82d";
-         content: '\2714';
-        color: #0265b3;
+      // content: "\e82d";
+      content: '\2714';
+      color: #0265b3;
     }
     input[type=checkbox] + span:before {
-         content: '\2714';
-        color: transparent;
-        display: inline-block;
-        margin-right: 15px;
-        width: 15px;
-        height: 15px;
-        visibility: visible;
-        background: transparent;
-        border: 1px solid #0265b3;
-        border-radius: 2px;
-        line-height: 15px;
-        text-align: center;
-        font-weight: 700;
-        font-size: 14px;
+      content: '\2714';
+      color: transparent;
+      display: inline-block;
+      margin-right: 15px;
+      width: 15px;
+      height: 15px;
+      visibility: visible;
+      background: transparent;
+      border: 1px solid #0265b3;
+      border-radius: 2px;
+      line-height: 15px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
     }
   }
 
@@ -192,15 +192,15 @@
   }
 
   .ngdialog-close{
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    outline: none;
-    &:before{
-      color: #0b62a9;
-    }
-    &:hover{
       border: none;
-    }
+      box-shadow: none;
+      padding: 0;
+      outline: none;
+      &:before{
+          color: #df0000;
+      }
+      &:hover{
+          border: none;
+      }
   }
 }
