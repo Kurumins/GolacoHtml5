@@ -56,7 +56,7 @@
         {{$ctrl.juniorDraft.DraftCost | currency}}
       </p>
       <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">
-        <button>Liberar resultados</button> |
+        <button ng-click="$ctrl.instantDraft()">Liberar resultados</button> |
         <i class="icon-credit-card"></i>
         {{$ctrl.juniorDraft.PriceToInstantDraft}}
       </p>

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('JuniorDraftController', function (juniorDraft, JuniorScouts, StructureService, ConfirmPopup, AlertPopup) {
+  .controller('JuniorDraftController', function ($rootScope, juniorDraft, JuniorScouts, StructureService, ConfirmPopup, AlertPopup) {
 
     var vm = this;
 
@@ -21,6 +21,23 @@ angular.module('app')
           return StructureService.makeADraft(idPosition || '',  vm.currentScout && vm.currentScout.Id || '');
         })
         .then(function (result) {
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        })
+    }
+
+    vm.instantDraft = function () {
+      ConfirmPopup.open('Atenção', 'lblConfirmDraftTimeSkip')
+        .then(function () {
+          return StructureService.instantDraft();
+        })
+        .then(function (result) {
+          $rootScope.$emit('balanceUpdate');
+          StructureService.juniorDraft()
+            .then(function (juniorDraft) {
+              vm.juniorDraft = juniorDraft;
+            });
         })
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message)

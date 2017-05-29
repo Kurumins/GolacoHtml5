@@ -39,4 +39,8 @@ angular.module('app')
       });
     };
 
+    vm.instantDraft = function () {
+      return PostToJs('TeamPlayerJunior/InstantDraft');
+    };
+
   });
