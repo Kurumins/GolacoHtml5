@@ -13,19 +13,19 @@ angular.module('app')
             return cup;
           },
           cupSummary: function () {
-            return CompetitionLiService.getCupSummary(cup.preview.IdCompetition);
+            return CompetitionService.getCupLightSummary(cup.preview.IdCompetition);
           },
           // cupRanking: function () {
-          //   return CompetitionService.getCupRanking();
+          //   return CompetitionService.getCupLightRanking();
           // },
           // cupMatchTable: function () {
-          //   return CompetitionService.getCupMatchTable();
+          //   return CompetitionService.getCupLightMatchTable();
           // },
           // cupCalendar: function () {
-          //   return CompetitionService.getCupCalendar();
+          //   return CompetitionService.getCupLightCalendar();
           // },
           cupPlayOff: function () {
-            return CompetitionLiService.getCupPlayOff(cup.preview.IdCompetition);
+            return CompetitionService.getCupLightPlayOff(cup.preview.IdCompetition);
           },
         },
       });

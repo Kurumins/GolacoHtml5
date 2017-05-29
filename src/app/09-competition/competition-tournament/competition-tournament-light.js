@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .factory('CompetitionTournament', function (CompetitionService, ngDialog) {
+  .factory('CompetitionTournamentLight', function (CompetitionService, ngDialog) {
 
     this.open = function (tournament) {
       ngDialog.open({
