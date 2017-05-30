@@ -9,7 +9,8 @@ angular
     'lvl.directives.dragdrop',
     'nsPopover',
     'angular.filter',
-    'darthwade.dwLoading'
+    'darthwade.dwLoading',
+    'angularMoment'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);

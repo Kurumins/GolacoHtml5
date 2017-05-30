@@ -1,0 +1,30 @@
+<div class="calendar">
+  <h2>Calendário</h2>
+  <table class="match-table" width="100%">
+    <tr>
+      <th>Tipo</th>
+      <th>Data</th>
+      <th colspan="4"></th>
+      <th class="text-center">Partida</th>
+      <th colspan="4" class="text-right">Itens</th>
+    </tr>
+    <tr ng-repeat="match in $ctrl.matches">
+      <td>{{match.Type}}</td>
+      <td>{{match.Date | date:'short'}}</td>
+      <td width="1" class="match-replay" title="CalendarDetail.lblReplay"><button class="btn btn-link icon-screen" ng-if="match.Status"></button></td>
+      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.HomeTeam.Flag}}.jpg"></td>
+      <td><img ng-src="{{match.HomeTeam.Badge}}"></td>
+      <td>{{match.HomeTeam.Acronym}}</td>
+      <td align="center">
+        {{match.Status ? match.HomeTeam.Goals : ''}}
+        X
+        {{match.Status ? match.VisitorTeam.Goals : ''}}
+      </td>
+      <td>{{match.VisitorTeam.Acronym}}</td>
+      <td><img ng-src="{{match.VisitorTeam.Badge}}"></td>
+      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.VisitorTeam.Flag}}.jpg"></td>
+    </tr>
+  </table>
+</div>
+
+<!-- <pre>{{$ctrl.matches|json}}</pre> -->

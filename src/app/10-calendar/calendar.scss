@@ -1,0 +1,22 @@
+.calendar {
+  padding: 15px;
+  background-color: #cbdaef;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  .match-table {
+    line-height: 30px;
+  }
+
+  .match-replay .btn {
+    font-size: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:before {
+      vertical-align: middle;
+    }
+  }
+}
+
