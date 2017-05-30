@@ -52,6 +52,11 @@
 
   .match-table {
     line-height: 30px;
+
+    input[type="checkbox"] {
+      margin: 0;
+      vertical-align: middle;
+    }
   }
 
   .match-replay .btn {

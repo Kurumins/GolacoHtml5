@@ -2,8 +2,17 @@
 angular.module('app')
   .config(calendarRoutesConfig);
 
-function calendarController (matchCalendar) {
+function calendarController (matchCalendar, CalendarService) {
   var vm = this;
+
+  vm.periods= [
+    { label:'periodCB1', daysBefore:1, daysAfter:2},
+    { label:'periodCB2', daysBefore:0, daysAfter:7},
+    { label:'periodCB3', daysBefore:3, daysAfter:0},
+    { label:'periodCB4', daysBefore:7, daysAfter:0},
+    { label:'periodCB5', daysBefore:21, daysAfter:0}
+  ];
+  vm.currentPeriod = vm.periods[0];
 
   vm.traversal = {
     1: 'league',
@@ -17,11 +26,45 @@ function calendarController (matchCalendar) {
     101: 'friendly',
   };
 
+  vm.types = {
+    1: true,
+    2: true,
+    3: true,
+    4: true,
+    5: true,
+    6: true,
+    7: true,
+    100: true,
+    101: true
+  };
+
   vm.matchCalendar = matchCalendar;
   vm.matches = matchCalendar.Matches;
 
   vm.startDate = moment().startOf('day').add(-1,'days').toDate();
   vm.endDate = moment().startOf('day').add(3,'days').toDate();
+
+  vm.setPeriod = function (period) {
+    vm.startDate = moment().utc().startOf('day').add(-period.daysBefore,'days').toDate();
+    vm.endDate = moment().utc().endOf('day').add(period.daysAfter,'days').toDate();
+  };
+
+  vm.searchGames = function () {
+
+    var types = [];
+
+    angular.forEach(vm.types, function (type, key) {
+      if (type) {
+        types.push(key)
+      }
+    });
+
+    CalendarService.matchCalendar(+vm.startDate, +vm.endDate, types.join(';'))
+      .then(function (matchCalendar) {
+        vm.matchCalendar = matchCalendar;
+        vm.matches = matchCalendar.Matches;
+      })
+  }
 
 }
 

@@ -8,25 +8,25 @@
         <th colspan="7"></th>
         <th colspan="2" class="text-center">GameTypes.friendly</th>
         <th width="20"></th>
-        <th width="1"><label class="radio-inline"><input type="radio" ng-model="filterType"><!-- Common. -->lblFixedRadio</label></th>
+        <th width="1"><label class="radio-inline"><input type="radio" ng-model="filterType" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"><!-- Common. -->lblFixedRadio</label></th>
         <th width="1"><label class="radio-inline"><input type="radio" ng-model="filterType" ng-value="1" ><!-- Common. -->lblCustomizedRadio</label></th>
       </tr>
       <tr>
         <td ng-repeat="(id, type) in $ctrl.traversal" class="text-center traversal" title="{{type}}">
           <label class="checkbox">
-            <input type="checkbox">
+            <input type="checkbox" ng-model="$ctrl.types[id]">
             <i class="icon-trophy"></i>
           </label>
         </td>
         <td></td>
         <td colspan="2" rowspan="2" ng-if="!filterType">
-          <select class="form-control input-sm">
-            <option>FinancialDetail.periodCB1</option>
-            <option>FinancialDetail.periodCB2</option>
-            <option>FinancialDetail.periodCB3</option>
-            <option>FinancialDetail.periodCB4</option>
-            <option>FinancialDetail.periodCB5</option>
-          </select>
+          <select
+            ng-options="period as period.label for period in $ctrl.periods"
+            ng-model="$ctrl.currentPeriod" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"
+            class="form-control input-sm"></select>
+          <!-- <select class="form-control input-sm">
+            <option ng-repeat="period in $ctrl.periods">{{period.label}}</option>
+          </select> -->
         </td>
         <td colspan="2" rowspan="2" width="1" class="form-inline text-right" ng-if="filterType">
           <div class="form-group">
@@ -43,7 +43,7 @@
         <td ng-repeat="(id, type) in $ctrl.traversal" valign="top" class="text-center">{{type}}</td>
       </tr>
     </table>
-    <button class="btn btn-primary pull-right">CalendarDetail.research</button>
+    <button class="btn btn-primary pull-right" ng-click="$ctrl.searchGames()">CalendarDetail.research</button>
   </div>
 
   <table class="match-table" width="100%">
@@ -69,7 +69,7 @@
       <td>{{match.VisitorTeam.Acronym}}</td>
       <td><img ng-src="{{match.VisitorTeam.Badge}}"></td>
       <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.VisitorTeam.Flag}}.jpg"></td>
-      <td><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
+      <td width="1"><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
     </tr>
   </table>
 </div>
