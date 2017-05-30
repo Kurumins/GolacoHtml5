@@ -58,9 +58,9 @@ angular.module('app')
           return matchResponse;
 
         })
-        .finally(function () {
-          // $loading.finish('match');
-        });
+        // .finally(function () {
+        //   // $loading.finish('match');
+        // });
     };
 
     // https://www.golacogame.com.br/Team/MatchWatched

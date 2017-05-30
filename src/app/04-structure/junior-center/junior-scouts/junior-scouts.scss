@@ -15,10 +15,14 @@
     font-size: 14px;
 
     tr:nth-child(even) td {
-      background: #ddd;
+      background: #eee;
     }
     tr:nth-child(odd) td {
       background: #fff;
+    }
+
+    tr:hover td {
+      background-color: #ddd;
     }
 
     th {
@@ -26,6 +30,7 @@
       line-height: 10px;
       font-weight: normal;
       padding: 5px 0;
+      text-align: center;
     }
 
     td {
@@ -33,6 +38,7 @@
       // min-width: 40px;
       padding: 0 10px;
       position: relative;
+      cursor: pointer;
 
       &:not(:last-child):after {
         content: "";

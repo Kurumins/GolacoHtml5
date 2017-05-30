@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-xs-6">
-    <h3>Última Partida</h3>
+    <h3>Resumo</h3>
     <h5>{{($ctrl.commonSummary.Match1).MatchDate | date:'short'}}</h5>
     <table width="100%">
       <tr>
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match1).HomeTeam.Flag}}.jpg" class="team-flag"></td>
         <td align="center"><img ng-src="{{($ctrl.commonSummary.Match1).HomeTeam.Badge}}" height="60"></td>
         <td align="center" width="30">{{($ctrl.commonSummary.Match1).HomeTeam.Acronym}}</td>
-        <td align="center" width="50%">
+        <td align="center" width="30%">
           {{($ctrl.commonSummary.Match1).HomeTeam.Goals}}
           x
           {{($ctrl.commonSummary.Match1).VisitorTeam.Goals}}
@@ -18,14 +18,13 @@
       </tr>
     </table>
 
-    <h3>Próxima Partida</h3>
     <h5>{{($ctrl.commonSummary.Match2).MatchDate | date:'short'}}</h5>
     <table width="100%">
       <tr>
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{($ctrl.commonSummary.Match2).HomeTeam.Flag}}.jpg" class="team-flag"></td>
         <td align="center"><img ng-src="{{($ctrl.commonSummary.Match2).HomeTeam.Badge}}" height="60"></td>
         <td align="center" width="30">{{($ctrl.commonSummary.Match2).HomeTeam.Acronym}}</td>
-        <td align="center" width="50%">
+        <td align="center" width="30%">
           x
         </td>
         <td align="center" width="30">{{($ctrl.commonSummary.Match2).VisitorTeam.Acronym}}</td>

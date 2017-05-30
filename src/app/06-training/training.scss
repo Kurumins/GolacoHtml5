@@ -10,31 +10,31 @@
   p {
     margin: 5px 0;
   }
-  
+
   h2{
     color: #4f5776;
     margin-bottom: 15px;
   }
 
   button{
-    padding: 5px 8px;
-    border-radius: 3px;
-    border:1px solid #4e5667;
-    background: #4e5667;
-    color: #ffffff;
-    font-weight: 600;
-    text-transform: uppercase;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-    &:hover{
-      border:1px solid #4e5667;
-      background: #ffffff;
-      color: #4e5667;
-      cursor: pointer;
-    }
+    // padding: 5px 8px;
+    // border-radius: 3px;
+    // border:1px solid #4e5667;
+    // background: #4e5667;
+    // color: #ffffff;
+    // font-weight: 600;
+    // text-transform: uppercase;
+    // -webkit-transition: all .5s ease;
+    // -moz-transition: all .5s ease;
+    // -ms-transition: all .5s ease;
+    // -o-transition: all .5s ease;
+    // transition: all .5s ease;
+    // &:hover{
+    //   border:1px solid #4e5667;
+    //   background: #ffffff;
+    //   color: #4e5667;
+    //   cursor: pointer;
+    // }
   }
   .training-levels{
     margin-bottom: 20px;
@@ -101,7 +101,7 @@
       text-align: center;
       // border-collapse:separate;
       border-spacing: 0 2px;
-     color: #4f5776; 
+     color: #4f5776;
 
       img {
         vertical-align: middle;
@@ -193,7 +193,7 @@
     padding: 0;
     line-height: 1;
   }
-  
+
   select{
     width: 21%;
     margin-top: 25px;
@@ -203,7 +203,7 @@
     -webkit-appearance: none;
     appearance:none;
     padding: 5px;
-    color:#4e5667; 
+    color:#4e5667;
   }
 }
 

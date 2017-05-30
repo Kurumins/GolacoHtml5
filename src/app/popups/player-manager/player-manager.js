@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerManagerController', function ($scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService) {
+  .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, PlayerItemEquip) {
 
     var vm = this;
 
@@ -30,6 +30,8 @@ angular.module('app')
         .concat(player.ShirtItem && player.ShirtItem.Effects || []);
 
       vm.currentPlayer = player;
+
+      vm.newSalary = vm.currentPlayer.Salary;
 
     }
 
@@ -137,10 +139,60 @@ angular.module('app')
         scope: $scope
       })
         .then(function () {
+          TeamPlayerService.startAuction(vm.currentPlayer.Id)
+            .then(function () {
+              $scope.closeThisDialog();
+              AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
+              $rootScope.$emit('teamPlayerUpdate');
+              $rootScope.$emit('balanceUpdate');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
+            });
         }, function () {
         });
     };
-
     // vm.sellPlayer();
+
+    vm.salaryChanged = function (newSalary) {
+
+      var confirmPopup;
+
+      if ( newSalary < vm.currentPlayer.Salary ) {
+        confirmPopup = ConfirmPopup.open('salaryChangeDownConfirmTitle', 'salaryChangeDownConfirmMessage');
+      } else if ( newSalary > vm.currentPlayer.Salary ) {
+        confirmPopup = ConfirmPopup.open('salaryChangeUpConfirmTitle', 'salaryChangeUpConfirmMessage');
+      } else {
+        return;
+      }
+
+      confirmPopup
+        .then(function () {
+          return TeamPlayerService.changeSalary(vm.currentPlayer.Id, newSalary);
+        }, function () {
+          vm.newSalary = vm.currentPlayer.Salary;
+        })
+        .then(function () {
+          vm.currentPlayer.Salary = vm.newSalary;
+        })
+
+    }
+
+    var slots = {
+      1: 'ShirtItem',
+      2: 'ShortItem',
+      3: 'CleatsItem'
+    };
+
+    vm.playerItemEquip = function (slot) {
+      PlayerItemEquip.open(slot)
+        .then(function (item) {
+          TeamPlayerService.setTeamPlayerItem(vm.currentPlayer.Id, slot, item.Id)
+            .then(function () {
+              vm.currentPlayer[slots[slot]] = item;
+            })
+        });
+    }
+
 
   });

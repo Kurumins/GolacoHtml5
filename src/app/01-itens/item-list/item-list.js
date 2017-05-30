@@ -6,7 +6,9 @@ angular.module('app')
       itens: '=data',
       rows: '=',
       cols: '=',
-      arrow: '='
+      arrow: '=',
+      equip: '=',
+      confirm: '='
     },
     controller: itemListController
   });

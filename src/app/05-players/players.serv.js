@@ -40,4 +40,37 @@ angular.module('app')
       });
     };
 
+    vm.startAuction = function (teamPlayerId) {
+      return PostToJs('Auction/StartAuction', {
+        TeamPlayerId: teamPlayerId
+      });
+    };
+
+    vm.buyProSpot = function (spot) {
+      return PostToJs('Team/BuyProSpot', {
+        Spot: spot
+      });
+    };
+
+    vm.moraleBoost = function (idItem) {
+      return PostToJs('TeamPlayer/MoraleBoost', {
+        IdItem: idItem
+      });
+    };
+
+    vm.changeSalary = function (teamPlayerId, salaryOption) {
+      return PostToJs('TeamPlayer/ChangeSalary', {
+        TeamPlayerId: teamPlayerId,
+        SalaryOption: salaryOption
+      });
+    };
+
+    vm.setTeamPlayerItem = function (teamPlayerId, slot, itemId) {
+      return PostToJs('TeamPlayer/SetTeamPlayerItem', {
+        TeamPlayerId: teamPlayerId,
+        Slot: slot,
+        ItemId: itemId
+      });
+    };
+
   });

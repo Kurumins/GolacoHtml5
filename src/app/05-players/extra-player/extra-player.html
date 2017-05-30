@@ -2,17 +2,20 @@
 <p>Você possui {{$appCtrl.user.MaxProPlayers}} de 40 vagas disponíveis.</p>
 
 <div class="spot-prices">
-  <div ng-repeat="price in $ctrl.teamSpotPrices.Prices" class="spot-price"
+  <div ng-repeat="price in $ctrl.teamSpotPrices" class="spot-price"
     ng-class="{
-      acquired: $index + 16 < $appCtrl.user.MaxProPlayers,
-      available: $index + 16 == $appCtrl.user.MaxProPlayers
-    }">
+      acquired: price.acquired,
+      available: price.available
+    }"
+    title="{{price.acquired ? 'acquired' : price.available ? 'available' : 'Bloqueado'}}"
+    ng-click="price.available && $ctrl.buyProSpot(price.Name)">
+
     <i class="icon-user"></i>
     <div class="add">
       <p class="icon-plus"></p>
       <p>{{$ctrl.getSerie($index)}}</p>
     </div>
-    <div class="price" ng-if="$index + 16 >= $appCtrl.user.MaxProPlayers">
+    <div class="price" ng-if="!price.acquired">
       <i class="icon icon-credit-card"></i>
       <p>De: {{price.CreditPrice}}</p>
       <p>Por: {{price.DiscountPrice}}</p>

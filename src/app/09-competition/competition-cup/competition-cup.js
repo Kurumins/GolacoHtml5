@@ -38,7 +38,7 @@ angular.module('app')
             return cup;
           },
           cupSummary: function () {
-            return CompetitionService.getCupSummary();
+            return CompetitionService.getCupSummary(cup.preview.IdCompetition);
           },
           // cupRanking: function () {
           //   return CompetitionService.getCupRanking();
@@ -50,7 +50,7 @@ angular.module('app')
           //   return CompetitionService.getCupCalendar();
           // },
           cupPlayOff: function () {
-            return CompetitionService.getCupPlayOff();
+            return CompetitionService.getCupPlayOff(cup.preview.IdCompetition);
           },
         },
       });

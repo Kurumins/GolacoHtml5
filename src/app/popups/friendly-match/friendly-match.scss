@@ -2,7 +2,11 @@
 
   .ngdialog-content {
     width: 750px;
-    padding: 30px 25px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
   }
 
   h2,
@@ -17,7 +21,7 @@
   }
 
   h3{
-    color:#3cc51c;
+    // color:#3cc51c;
     font-weight: 600;
   }
 
@@ -47,21 +51,21 @@
           -moz-appearance:none;
           -webkit-appearance: none;
           appearance:none;
-          color:#4e5667; 
+          color:#4e5667;
         }
-        
+
         input[type=checkbox] {
           width: 20px;
           height: 20px;
 
         }
-        
+
     }
 
     > button{
       position: absolute;
       right: 0;
-      bottom: 10px;
+      bottom: 16px;
       padding: 2px 8px;
       border-radius: 3px;
       border:1px solid #0b62a9;
@@ -82,44 +86,43 @@
       }
     }
   }
-  
- .checkbox{
-      margin:0;
-        label{
-            color:#9a9a9a;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        input[type=checkbox] {
-            opacity: 0;
-            margin-right: -12px;
-            cursor: pointer;
-            width: 12px;
-            height: 12px;
 
-        }
-        input[type=checkbox]:checked + span:before {
-            // content: "\e82d";
-             content: '\2714';
-            color: #0265b3;
-        }
-        input[type=checkbox] + span:before {
-             content: '\2714';
-            color: transparent;
-            display: inline-block;
-            margin-right: 15px;
-            width: 15px;
-            height: 15px;
-            visibility: visible;
-            background: transparent;
-            border: 1px solid #0265b3;
-            border-radius: 2px;
-            line-height: 15px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-        }
+  .checkbox {
+    margin:0;
+    label{
+        color:#9a9a9a;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    input[type=checkbox] {
+        opacity: 0;
+        margin-right: -12px;
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+    }
+    input[type=checkbox]:checked + span:before {
+      // content: "\e82d";
+      content: '\2714';
+      color: #0265b3;
+    }
+    input[type=checkbox] + span:before {
+      content: '\2714';
+      color: transparent;
+      display: inline-block;
+      margin-right: 15px;
+      width: 15px;
+      height: 15px;
+      visibility: visible;
+      background: transparent;
+      border: 1px solid #0265b3;
+      border-radius: 2px;
+      line-height: 15px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
   }
 
   .half {
@@ -133,31 +136,25 @@
   }
 
   .friendly-teams {
-    font-size: 12px;
-    white-space: nowrap;
-    margin: 10px 0;
-    border-collapse: collapse;
-      tr:nth-child(odd) {
-        background-color:#F3F3F3;
-      }
+    font-size: 11px;
+    // white-space: nowrap;
+    cursor: pointer;
 
-      tr:nth-child(even) {
-        background-color:#FFF;
-      }
+    tr:hover {
+      background: #feffbd;
+    }
 
-      tr, td {
-        height:26px;
-        padding-left:4px;
-        padding-right:2px;
-        font-size:12px;
-        white-space:nowrap;
-        border:solid 1px #E1E1E1;
+    tr.active {
+      background: #ddd;
+    }
+
+    td {
+      padding: 4px 2px;
+      line-height: 1;
+      &.league{
+        font-weight: 600;
       }
-      td{
-        &.league{
-          font-weight: 600;
-        }
-      }
+    }
   }
 
   .current-match {
@@ -172,7 +169,7 @@
       display: block;
     }
   }
-  
+
   button{
     padding: 5px 8px;
     border-radius: 3px;

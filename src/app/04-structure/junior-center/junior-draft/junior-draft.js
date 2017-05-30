@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('JuniorDraftController', function (juniorDraft, JuniorScouts) {
+  .controller('JuniorDraftController', function ($rootScope, juniorDraft, JuniorScouts, StructureService, ConfirmPopup, AlertPopup) {
 
     var vm = this;
 
@@ -15,11 +15,58 @@ angular.module('app')
     // vm.juniorScouts();
     // vm.currentScout = vm.juniorDraft.Scouts[0];
 
+    vm.makeADraft = function (idPosition) {
+      ConfirmPopup.open('Atenção', 'lblConfirmDraft')
+        .then(function () {
+          return StructureService.makeADraft(idPosition || '',  vm.currentScout && vm.currentScout.Id || '');
+        })
+        .then(function (result) {
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        });
+    }
+
+    vm.instantDraft = function () {
+      ConfirmPopup.open('Atenção', 'lblConfirmDraftTimeSkip')
+        .then(function () {
+          return StructureService.instantDraft();
+        })
+        .then(function (result) {
+          $rootScope.$emit('balanceUpdate');
+          StructureService.juniorDraft()
+            .then(function (juniorDraft) {
+              vm.juniorDraft = juniorDraft;
+            });
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message);
+        });
+    }
+
+    vm.draftToJunior = function () {
+      ConfirmPopup.open('Atenção', 'lblConfirmPromote')
+        .then(function () {
+          return StructureService.draftToJunior(vm.currentPlayer.Id);
+          // return StructureService.draftToJunior(3242845);
+        })
+        .then(function (result) {
+          AlertPopup.open('Atenção', 'lblPromoteSuccess');
+          StructureService.juniorDraft()
+            .then(function (juniorDraft) {
+              vm.juniorDraft = juniorDraft;
+            });
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        })
+    }
+
   })
   .factory('JuniorDraft', function (StructureService, ngDialog) {
 
     this.open = function () {
-      ngDialog.open({
+      return ngDialog.openConfirm({
         template: 'junior-draft.html',
         appendClassName: 'ngdialog-junior-draft',
         controller: 'JuniorDraftController as $ctrl',

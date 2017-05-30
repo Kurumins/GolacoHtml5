@@ -37,6 +37,8 @@
     }
 
     &.available {
+      cursor: pointer;
+
       .icon-user {
         background-color: #088705;
       }

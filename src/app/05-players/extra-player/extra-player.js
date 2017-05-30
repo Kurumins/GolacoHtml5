@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('ExtraPlayerController', function (teamSpotPrices) {
+  .controller('ExtraPlayerController', function ($rootScope, teamSpotPrices, AppService, TeamPlayerService, ConfirmPopup, AlertPopup) {
 
     var vm = this;
 
@@ -16,6 +16,27 @@ angular.module('app')
         'A';
     };
 
-    vm.teamSpotPrices = teamSpotPrices;
+    vm.teamSpotPrices = teamSpotPrices.Prices;
+
+    for (var i = 0; i < vm.teamSpotPrices.length; i++) {
+      var price = vm.teamSpotPrices[i];
+
+      price.acquired =  i + 16 < AppService.user.MaxProPlayers;
+      price.available =  i + 16 == AppService.user.MaxProPlayers && i < vm[AppService.user.Serie + '_INDEX'];
+    }
+
+    vm.buyProSpot = function (spot) {
+      ConfirmPopup.open('Atenção', 'Deseja mesmo adquirir esta vaga?')
+        .then(function () {
+          TeamPlayerService.buyProSpot(spot)
+            .then(function () {
+              AlertPopup.open('Atenção', 'Vaga adquirida com sucesso.');
+              $rootScope.$emit('balanceUpdate');
+            })
+            .catch(function (error) {
+              AlertPopup.open('Atenção', error.Message);
+            });
+        });
+    };
 
   });
