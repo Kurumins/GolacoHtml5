@@ -55,4 +55,10 @@ angular.module('app')
       });
     };
 
+    vm.releaseTeamPlayer = function (IdTeamPlayerJunior) {
+      return PostToJs('TeamPlayerJunior/ReleaseTeamPlayer', {
+        IdTeamPlayerJunior: IdTeamPlayerJunior
+      });
+    };
+
   });

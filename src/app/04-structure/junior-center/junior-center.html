@@ -12,7 +12,7 @@
   <div class="center-structure">
     <img ng-src="{{$ctrl.juniorPreview.Picture}}" class="center-picture">
     <div class="junior-players">
-      <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" class="small"></junior-table>
+      <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" small=true></junior-table>
       <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length">Você não tem jogadores no seu Centro de Juniores. Clique no botão "Peneira" e recrute!</span>
     </div>
   </div>
@@ -38,15 +38,15 @@
         <div>{{$ctrl.currentPlayer.CreditsCost}} <i class="icon-credit-card"></i></div>
       </dd>
     </dl>
-    <footer>
-      <div style="float: right;">
-        <button>X</button>
-        <button class="icon-star"></button>
-      </div>
-      <label>
+    <footer class="clearfix">
+      <label class="pull-left checkbox">
         <input type="checkbox" name=""> Contratar despachante
-        <i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
+        <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
       </label>
+      <div class="pull-right">
+        <button class="btn btn-danger icon-times" title="JuniorCenterPreview.lblRelease" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"></button>
+        <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire"></button>
+      </div>
     </footer>
     <!-- {{$ctrl.currentPlayer}} -->
   </div>

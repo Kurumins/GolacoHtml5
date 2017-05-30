@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('JuniorCenterController', function (juniorPreview, JuniorDraft, JuniorReform, InputPopup, StructureService) {
+  .controller('JuniorCenterController', function ($rootScope, juniorPreview, JuniorDraft, JuniorReform, InputPopup, StructureService, AlertPopup, ConfirmPopup) {
 
     var vm = this;
     vm.juniorPreview = juniorPreview;
@@ -27,6 +27,21 @@ angular.module('app')
             .then(updateJuniorPreview)
         })
     };
+
+    vm.releaseTeamPlayer = function (idTeamPlayerJunior) {
+      ConfirmPopup.open('Atenção', 'JuniorCenterPreview.lblConfirmPlayerRelease')
+        .then(function () {
+          return StructureService.releaseTeamPlayer(idTeamPlayerJunior);
+        })
+        .then(function (result) {
+          $rootScope.$emit('balanceUpdate');
+          AlertPopup.open('Atenção', 'JuniorCenterPreview.lblPlayerReleased');
+          updateJuniorPreview();
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        });
+    }
 
     function updateJuniorPreview() {
       return StructureService.juniorPreview()
