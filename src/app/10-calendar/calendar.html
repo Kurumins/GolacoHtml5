@@ -9,7 +9,7 @@
       <th colspan="4" class="text-right">Itens</th>
     </tr>
     <tr ng-repeat="match in $ctrl.matches">
-      <td>{{match.Type}}</td>
+      <td>{{$ctrl.traversal[match.Type]}}</td>
       <td>{{match.Date | date:'short'}}</td>
       <td width="1" class="match-replay" title="CalendarDetail.lblReplay"><button class="btn btn-link icon-screen" ng-if="match.Status"></button></td>
       <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.HomeTeam.Flag}}.jpg"></td>
@@ -23,6 +23,7 @@
       <td>{{match.VisitorTeam.Acronym}}</td>
       <td><img ng-src="{{match.VisitorTeam.Badge}}"></td>
       <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.VisitorTeam.Flag}}.jpg"></td>
+      <td><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
     </tr>
   </table>
 </div>
