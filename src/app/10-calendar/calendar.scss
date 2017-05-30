@@ -6,6 +6,50 @@
     margin-top: 0;
   }
 
+  .calendar-filter {
+    margin-bottom: 20px;
+  }
+
+  .filter-table {
+    font-size: 10px;
+
+    th,
+    td {
+      // border: 1px solid;
+      padding: 2px 0;
+    }
+
+    .icon-trophy {
+      font-size: 35px;
+    }
+
+    .traversal {
+      width: 60px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-top: 0;
+    }
+
+    .checkbox {
+      cursor: pointer;
+      input[type="checkbox"] {
+        appearance: none;
+
+        + i {
+          color: gold;
+          text-shadow: 0px 0px 2px black;
+        }
+        &:checked + i {
+        }
+        &:not(:checked) + i {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
   .match-table {
     line-height: 30px;
   }

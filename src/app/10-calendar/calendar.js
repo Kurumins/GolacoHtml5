@@ -15,10 +15,14 @@ function calendarController (matchCalendar) {
     7: 'tournament beta',
     100: 'friendly',
     101: 'friendly',
-  }
+  };
 
   vm.matchCalendar = matchCalendar;
   vm.matches = matchCalendar.Matches;
+
+  vm.startDate = moment().startOf('day').add(-1,'days').toDate();
+  vm.endDate = moment().startOf('day').add(3,'days').toDate();
+
 }
 
 function calendarRoutesConfig ($stateProvider) {
@@ -29,8 +33,8 @@ function calendarRoutesConfig ($stateProvider) {
       resolve: {
         matchCalendar: function (CalendarService) {
           return CalendarService.matchCalendar(
-            +moment().hour(0).minute(0).second(0).millisecond(0).add(-1,'days'),
-            +moment().hour(0).minute(0).second(0).millisecond(0).add(3,'days'),
+            +moment().startOf('day').add(-1,'days'),
+            +moment().startOf('day').add(3,'days'),
             '1;2;3;4;5;7;100;101'
           );
         }
