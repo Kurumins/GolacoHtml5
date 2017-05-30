@@ -57,7 +57,9 @@
     <tr ng-repeat="match in $ctrl.matches">
       <td>{{$ctrl.traversal[match.Type]}}</td>
       <td>{{match.Date | date:'short'}}</td>
-      <td width="1" class="match-replay" title="CalendarDetail.lblReplay"><button class="btn btn-link icon-screen" ng-if="match.Status"></button></td>
+      <td width="1" class="match-replay" title="CalendarDetail.lblReplay">
+        <button class="btn btn-link icon-screen" ng-if="match.Status" ng-click="$ctrl.matchResult(match.Id)"></button>
+      </td>
       <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.HomeTeam.Flag}}.jpg"></td>
       <td><img ng-src="{{match.HomeTeam.Badge}}"></td>
       <td>{{match.HomeTeam.Acronym}}</td>

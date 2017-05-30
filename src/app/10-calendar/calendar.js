@@ -2,7 +2,7 @@
 angular.module('app')
   .config(calendarRoutesConfig);
 
-function calendarController (matchCalendar, CalendarService) {
+function calendarController (matchCalendar, CalendarService, MatchResult) {
   var vm = this;
 
   vm.periods= [
@@ -64,7 +64,9 @@ function calendarController (matchCalendar, CalendarService) {
         vm.matchCalendar = matchCalendar;
         vm.matches = matchCalendar.Matches;
       })
-  }
+  };
+
+  vm.matchResult = MatchResult.open;
 
 }
 
