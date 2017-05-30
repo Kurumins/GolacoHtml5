@@ -61,4 +61,11 @@ angular.module('app')
       });
     };
 
+    vm.upgradeJuniorToProfessional = function (IdTeamPlayerJunior, UseAgent) {
+      return PostToJs('TeamPlayerJunior/UpgradeJuniorToProfessional', {
+        IdTeamPlayerJunior: IdTeamPlayerJunior,
+        UseAgent: UseAgent
+      });
+    };
+
   });

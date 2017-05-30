@@ -26,7 +26,7 @@
     <dt>Nova peneira em</dt>
     <dd>{{$ctrl.juniorPreview.TimeToNewDraft | date:'short'}}</dd>
   </dl>
-  <div class="player-info">
+  <div class="player-info" ng-if="$ctrl.currentPlayer">
     <dl>
       <dt>Jogador</dt>
       <dd>{{$ctrl.currentPlayer.Name}}</dd>
@@ -40,12 +40,12 @@
     </dl>
     <footer class="clearfix">
       <label class="pull-left checkbox">
-        <input type="checkbox" name=""> Contratar despachante
+        <input type="checkbox" ng-model="$ctrl.useAgent"> Contratar despachante
         <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
       </label>
       <div class="pull-right">
         <button class="btn btn-danger icon-times" title="JuniorCenterPreview.lblRelease" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"></button>
-        <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire"></button>
+        <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire" ng-click="$ctrl.upgradeJuniorToProfessional($ctrl.currentPlayer.Id, !!$ctrl.useAgent)"></button>
       </div>
     </footer>
     <!-- {{$ctrl.currentPlayer}} -->

@@ -41,11 +41,26 @@ angular.module('app')
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message)
         });
-    }
+    };
+
+    vm.upgradeJuniorToProfessional = function (idTeamPlayerJunior, useAgent) {
+      ConfirmPopup.open('Atenção', 'JuniorCenterPreview.lblConfirmPlayerHire')
+        .then(function () {
+          return StructureService.upgradeJuniorToProfessional(idTeamPlayerJunior, useAgent);
+        })
+        .then(function (result) {
+          $rootScope.$emit('balanceUpdate');
+          AlertPopup.open('Atenção', 'JuniorCenterPreview.lblPlayerHired');
+          updateJuniorPreview();
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message)
+        });
+    };
 
     function updateJuniorPreview() {
       return StructureService.juniorPreview()
-        .then(function () {
+        .then(function (juniorPreview) {
           vm.juniorPreview = juniorPreview;
         });
     }
