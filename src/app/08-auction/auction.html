@@ -1,0 +1,28 @@
+<div class="auction">
+  <div class="pull-right auction-menu">
+    <button class="btn btn-xs"><i class="icon-player-bid"></i></button>
+  </div>
+  <h2>AuctionScreen.lblTitle</h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>AuctionScreen.lblPlayerForSalle</h4>
+      <div class="text-center no-auction" ng-if="!$ctrl.myPlayersSold.length">
+        <h4>AuctionScreen.lblNoSaleTitle</h4>
+        <i class="icon-player-sale"></i>
+        <p>AuctionScreen.lblNoSaleDesc</p>
+      </div>
+      <auction-player player="player" ng-repeat="player in $ctrl.myPlayersSold" />
+      <!-- <pre>{{$ctrl.myPlayersSold|json}}</pre> -->
+    </div>
+    <div class="col-xs-6">
+      <h4>AuctionScreen.lblMyBids</h4>
+      <div class="text-center no-auction" ng-if="!$ctrl.allBids.length">
+        <h4>AuctionScreen.lblNoPurchaseTitle</h4>
+        <i class="icon-player-bid"></i>
+        <p>AuctionScreen.lblNoPurchaseDesc</p>
+      </div>
+      <auction-player player="player" ng-repeat="player in $ctrl.allBids" />
+      <!-- <pre>{{$ctrl.allBids|json}}</pre> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.auction {
+  padding: 15px;
+  .auction-menu {
+    i {
+      font-size: 20px;
+    }
+  }
+  h2 {
+    margin: 0;
+  }
+
+  .no-auction {
+    margin: 30px 0;
+    i {
+      font-size: 100px;
+      // line-height: 50px;
+    }
+  }
+
+  auction-player {
+    margin-bottom: 10px;
+  }
+}
