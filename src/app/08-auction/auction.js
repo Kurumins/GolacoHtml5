@@ -2,12 +2,15 @@
 angular.module('app')
   .config(auctionRoutesConfig);
 
-function auctionController (allBids, myPlayersSold, $interval) {
+function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSearch) {
 
   var vm = this;
 
   vm.myPlayersSold = myPlayersSold.PlayersSelling;
   vm.allBids = allBids.Bids;
+
+  vm.auctionSearch = AuctionSearch.open;
+  vm.auctionSearch($scope);
 
 }
 

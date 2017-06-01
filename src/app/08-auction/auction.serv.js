@@ -16,4 +16,8 @@ angular.module('app')
       return PostToJs('Auction/GetMyPlayersSold');
     };
 
+    vm.search = function (filters) {
+      return PostToJs('Auction/Search', filters);
+    };
+
   });

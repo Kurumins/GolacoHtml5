@@ -1,0 +1,70 @@
+.ngdialog.ngdialog-auction-search {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  .auction-filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 -5px;
+    > * {
+      margin: 0 5px;
+    }
+
+    .btn {
+      align-self: stretch;
+    }
+
+    .form-control {
+      max-width: 110px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+
+    select {
+      width: 100px;
+    }
+
+    .price,
+    .name {
+      width: 60px;
+    }
+    .age {
+      width: 30px;
+    }
+    .price,
+    .age {
+      + label {
+        position: relative;
+        width: 15px;
+        font-size: 10px;
+        margin-left: -5px;
+        padding-left: 6px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 5px;
+          border-top: 1px solid #aaa;
+          left: 0;
+          top: 50%;
+        }
+      }
+    }
+  }
+
+}
