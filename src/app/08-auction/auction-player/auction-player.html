@@ -1,4 +1,35 @@
-<div>
-  <img ng-src="{{$ctrl.player.Picture}}" height="33">
-  <span class="-position-{{$ctrl.player.IdPosition}}">{{$ctrl.player.ShirtNumber}}{{status}}</span>
-</div>
+<!-- <div class="row-"> -->
+  <div class="player-picture">
+    <img ng-src="{{$ctrl.player.Picture}}" class="img-responsive-">
+  </div>
+  <div class="player-badges">
+    <div ng-if="$ctrl.isBid">
+      <img ng-src="{{$ctrl.player.Badge}}" height="25">
+      <p>{{$ctrl.player.Acronym}}</p>
+      <img ng-src="{{$ctrl.player.FinancialHist[0].Badge}}" height="25">
+      <p>{{$ctrl.player.FinancialHist[0].Acronym}}</p>
+    </div>
+    <div ng-if="!$ctrl.isBid">
+      <img ng-src="{{$ctrl.user['Badge90x90']}}" height="25">
+      <p>{{$ctrl.user.Acronym}}</p>
+      <i class="icon-ban"></i>
+    </div>
+  </div>
+  <div class="player-details">
+    <p ng-if="$ctrl.isBid"><i class="icon-clock"></i> {{$ctrl.getMoment($ctrl.player.LimitDate)}}</p>
+    <p ng-if="!$ctrl.isBid"><i class="icon-forward"></i> {{$ctrl.player.LimitDate | date:'shortDate'}}</p>
+    <p><i class="icon-user"></i> {{$ctrl.player.Name}}</p>
+    <p class="-position-{{$ctrl.player.IdPosition}}">
+      <span><i class="icon-t-shirt"></i> {{$ctrl.player.ShirtNumber}}</span>
+      <span>{{$ctrl.positions[$ctrl.player.IdPosition]}}</span>
+    </p>
+    <p><i class="icon-money"></i> {{$ctrl.player.CurrentValue | currency}}</p>
+  </div>
+<!-- </div> -->
+<span class="status">
+  <span ng-if="!$ctrl.isBid">Vendido</span>
+  <span ng-if="$ctrl.isBid">
+    <span ng-if="$ctrl.isCovered">Coberto</span>
+    <span ng-if="!$ctrl.isCovered">Ganhando</span>
+  </span>
+</span>

@@ -19,9 +19,12 @@
   },
   "overrides": {
     "bootstrap": {
-      "main": [
+      "main-": [
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
+      ],
+      "main": [
+        "dist/css/bootstrap.css"
       ]
     },
     "angular-loading": {
