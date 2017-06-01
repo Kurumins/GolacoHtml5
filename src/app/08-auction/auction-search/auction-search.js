@@ -1,18 +1,13 @@
 'use strict';
 angular.module('app')
-  .controller('AuctionSearchController', function () {
+  .controller('AuctionSearchController', function (AuctionService) {
 
     var vm = this;
 
-    vm.positions = [
-      '',
-      /*'Common.TeamPlayerPosition_*/ 'Goleiro',
-      /*'Common.TeamPlayerPosition_*/ 'Zagueiro',
-      /*'Common.TeamPlayerPosition_*/ 'Lateral',
-      /*'Common.TeamPlayerPosition_*/ 'MeioCampo',
-      /*'Common.TeamPlayerPosition_*/ 'Atacante',
-    ];
-
+    AuctionService.search()
+      .then(function (players) {
+        vm.players = players.Players;
+      });
 
   })
   .factory('AuctionSearch', function (ngDialog) {

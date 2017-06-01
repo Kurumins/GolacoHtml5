@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .service('AuctionService', function (PostToJs, $http) {
+  .service('AuctionService', function (PostToJs/*, $http*/) {
 
     var vm = this;
 

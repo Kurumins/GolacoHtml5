@@ -68,3 +68,27 @@
   </div>
   <button type="submit" class="btn btn-sm btn-primary"><!-- Common. -->search</button>
 </div>
+
+<slick
+  infinite=false
+  dots=true
+  slides-to-show="4" slides-to-scroll="4"
+  prev-arrow=".auction-slick-nav .slick-prev"
+  next-arrow=".auction-slick-nav .slick-next"
+  settings="{appendDots:'.auction-slick-nav .dots', dotsClass: 'list-inline'}"
+  ng-if="$ctrl.players" class="auction-players"
+  >
+  <div ng-repeat="player in $ctrl.players" class="auction-player">
+    <!-- <div class="auction-player"> -->
+      {{player.Name}}
+    <!-- </div> -->
+  </div>
+</slick>
+
+<div class="auction-slick-nav">
+  <button type="button" class="btn btn-link slick-prev">«</button>
+  <span class="dots"></span>
+  <button type="button" class="btn btn-link slick-next">»</button>
+</div>
+
+<!-- <pre>{{$ctrl.players[0]|json}}</pre> -->
