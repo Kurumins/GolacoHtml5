@@ -1,12 +1,13 @@
 'use strict';
 angular.module('app')
-  .controller('AuctionSearchController', function (AuctionService, $interval, moment) {
+  .controller('AuctionSearchController', function (AuctionService, $interval, moment, PlayerAuction) {
 
     var vm = this;
 
     AuctionService.search()
       .then(function (players) {
         vm.players = players.Players;
+        PlayerAuction.open(vm.players[0]);
       });
 
     $interval(function () {}, 1000);

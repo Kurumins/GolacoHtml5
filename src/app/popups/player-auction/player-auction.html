@@ -1,0 +1,70 @@
+<h2>Gerenciar Jogador</h2>
+
+<h3>{{$ctrl.player.Name}}</h3>
+
+<div class="pull-left left-content">
+
+  <div class="player-picture">
+    <img ng-src="{{$ctrl.player.Picture}}">
+    <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.player.Flag}}.jpg" class="player-flag">
+    <span class="player-shirt-number">{{$ctrl.player.ShirtNumber}}</span>
+  </div>
+
+  <div class="manager-menu">
+    <label ng-click="$ctrl.statistics($ctrl.player.Id)">
+      <span>Estatítsticas</span>
+    </label>
+    <label ng-click="$ctrl.healthHistory($ctrl.player.Id)">
+      <span>Histórico de Lesões</span>
+    </label>
+    <label>
+    <label ng-click="$ctrl.history($ctrl.player.Id)">
+      <span>Transações</span>
+    </label>
+  </div>
+
+</div>
+
+<div class="pull-left manager-content player-manager-general" >
+  <dl class="clearfix player-datails">
+    <dt>Posição</dt>
+    <dd>{{$ctrl.player.Position.replace('TeamPlayerPosition_', '')}}</dd>
+
+    <dt>Potencial</dt>
+    <dd>
+      <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.player.Potential<star?'-o':''}}"></span>
+    </dd>
+
+    <dt>Idade</dt>
+    <dd>{{$ctrl.player.Age}}</dd>
+
+    <dt>Saúde</dt>
+    <dd>{{$ctrl.player.hasSeriousInjury ? 'Player_Health_SeriouslyInjured' : $ctrl.player.hasInjury ? 'Player_Health_Injured' : 'Player_Health_Healthy'}}</dd>
+
+    <dt>Moral</dt>
+    <dd class="player-moral">
+      <span ng-class="{
+        low: $ctrl.player.Moral <= 33,
+        medium: $ctrl.player.Moral > 33 && $ctrl.player.Moral <= 66,
+        hight: $ctrl.player.Moral > 66
+      }" ng-style="{width: $ctrl.player.Moral+'%'}"></span>
+    </dd>
+
+    <dt>Salário</dt>
+    <dd>{{$ctrl.player.Salary}}</dd>
+  </dl>
+
+  <h4>Atributos</h4>
+  <div class="player-attributes">
+    <div ng-repeat="attribute in $ctrl.player.Attributes" class="player-attribute">
+      <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
+      <hr>
+      <div class="att-bar">
+        <div class="att-value" style="height: {{attribute.Value}}%"></div>
+      </div>
+      <hr>
+      {{attribute.Value}}
+    </div>
+  </div>
+
+</div>
