@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('AuctionSearchController', function (AuctionService) {
+  .controller('AuctionSearchController', function (AuctionService, $interval, moment) {
 
     var vm = this;
 
@@ -8,6 +8,13 @@ angular.module('app')
       .then(function (players) {
         vm.players = players.Players;
       });
+
+    $interval(function () {}, 1000);
+
+    vm.getMoment = function (date) {
+      var diff = moment(date).diff();
+      return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
+    }
 
   })
   .factory('AuctionSearch', function (ngDialog) {

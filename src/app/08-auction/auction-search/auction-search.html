@@ -80,7 +80,36 @@
   >
   <div ng-repeat="player in $ctrl.players" class="auction-player">
     <!-- <div class="auction-player"> -->
-      {{player.Name}}
+      <header>
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{player.Flag}}.jpg" class="pull-right player-flag">
+        <i class="icon-clock"></i> {{$ctrl.getMoment(player.LimitDate)}}
+      </header>
+      <p class="player-name">{{player.Name}}</p>
+      <dl class="clearfix player-dl">
+        <dt>Time</dt>
+        <dd>
+          <img ng-src="{{player.Badge}}"> {{player.Acronym}}
+        </dd>
+        <dt>Pos/Idade</dt>
+        <dd>{{player.Position.replace('TeamPlayerPosition_','')}}/{{player.Age}}</dd>
+        <dt>Potencial</dt>
+        <dd><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></dd>
+        <dt>Valor</dt>
+        <dd>{{player.CurrentValue | currency}}</dd>
+      </dl>
+      <div class="player-attributes">
+        <div ng-repeat="attribute in player.Attributes" class="player-attribute">
+          <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
+          <hr>
+          <div class="att-bar">
+            <div class="att-value-bar" style="height: {{attribute.Value}}%"></div>
+            <div class="att-modifier" style="height: {{$ctrl.getEffectModifier(attribute.Id)}}%"></div>
+          </div>
+          <hr>
+          <span class="att-value">{{attribute.Value}}</span>
+        </div>
+      </div>
+      <button class="btn btn-block btn-sm btn-primary">Ver Leilão</button>
     <!-- </div> -->
   </div>
 </slick>
@@ -91,4 +120,4 @@
   <button type="button" class="btn btn-link slick-next">»</button>
 </div>
 
-<!-- <pre>{{$ctrl.players[0]|json}}</pre> -->
+<pre>{{$ctrl.players[0]|json}}</pre>
