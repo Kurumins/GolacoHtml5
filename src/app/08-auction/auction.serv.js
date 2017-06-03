@@ -20,4 +20,10 @@ angular.module('app')
       return PostToJs('Auction/Search', filters);
     };
 
+    vm.playerAuction = function (teamPlayerAuctionId) {
+      return PostToJs('Auction/AuctionTeamPlayerScreen', {
+        TeamPlayerAuctionId: teamPlayerAuctionId
+      });
+    };
+
   });

@@ -1,11 +1,18 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerAuctionController', function ($rootScope, $scope, player, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, PlayerItemEquip) {
+  .controller('PlayerAuctionController', function ($scope, player, playerAuction, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, $interval) {
 
     var vm = this;
 
-    vm.player = player;
-    vm.currentPlayer = player;
+    vm.currentPlayer = vm.player = player;;
+    vm.playerAuction = playerAuction;
+
+    vm.bids = [
+      {label:'5', value:5},
+      {label:'10', value:10},
+      {label:'15', value:15},
+      {label:'20', value:20}
+    ];
 
     vm.healthHistory = function () {
       ngDialog.open({
@@ -58,9 +65,16 @@ angular.module('app')
       });
     };
 
+    $interval(function () {}, 1000);
+
+    vm.getMoment = function () {
+      var diff = moment(vm.player.LimitDate).diff();
+      return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
+    };
+
 
   })
-  .factory('PlayerAuction', function (ngDialog, TeamPlayerService) {
+  .factory('PlayerAuction', function (ngDialog, AuctionService) {
 
     this.open = function (player) {
 
@@ -78,6 +92,9 @@ angular.module('app')
           // },
           player: function () {
             return player;
+          },
+          playerAuction: function () {
+            return AuctionService.playerAuction(player.TeamPlayerAuctionId);
           }
         },
       });
