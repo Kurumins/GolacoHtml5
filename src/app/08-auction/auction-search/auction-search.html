@@ -1,10 +1,10 @@
 <h2>Busca de jogadores</h2>
 
-<div class="auction-filter form-inline">
+<form class="auction-filter form-inline" ng-submit="$ctrl.search(filter)" novalidate>
   <div class="form-group-sm">
     <label class="small"><!-- Common. -->PlayerPosition</label>
-    <select class="form-control">
-      <option ng-value="-1"><!-- Common. -->allF</option>
+    <select class="form-control" ng-model="filter.InitialPosition">
+      <option ng-value=""><!-- Common. -->allF</option>
       <option ng-value="1"><!-- Common. -->TeamPlayerPosition_Goleiro</option>
       <option ng-value="2"><!-- Common. -->TeamPlayerPosition_Zagueiro</option>
       <option ng-value="3"><!-- Common. -->TeamPlayerPosition_Lateral</option>
@@ -14,8 +14,8 @@
   </div>
   <div class="form-group-sm">
     <label class="small"><!-- Common. -->PlayerPotential</label>
-    <select class="form-control">
-      <option ng-value="-1"><!-- Common. -->all</option>
+    <select class="form-control" ng-model="filter.Potential">
+      <option ng-value=""><!-- Common. -->all</option>
       <option ng-value="1">1</option>
       <option ng-value="2">2</option>
       <option ng-value="3">3</option>
@@ -25,49 +25,49 @@
   </div>
   <div class="form-group-sm">
     <label class="small"><!-- Common. -->Quality</label>
-    <select class="form-control">
-      <option ng-value="-1"><!-- Common. -->allF</option>
+    <select class="form-control" ng-model="filter.LevelQuality">
+      <option ng-value=""><!-- Common. -->allF</option>
       <option ng-value="1"><!-- Common. -->beginner</option>
       <option ng-value="2"><!-- Common. -->discovery</option>
       <option ng-value="3"><!-- Common. -->star</option>
       <option ng-value="4"><!-- Common. -->phenomenon</option>
       <option ng-value="5"><!-- Common. -->worldclass</option>
-      <option ng-value="5"><!-- Common. -->legendary</option>
+      <option ng-value="6"><!-- Common. -->legendary</option>
     </select>
   </div>
   <div class="form-group-sm">
-    <label class="small"><!-- Common. -->country</label>
-    <select class="form-control">
-      <option ng-value="-1" selected="selected"><!-- Common. -->all</option>
+    <label class="small"><!-- Common. -->country {{filter.Country}}</label>
+    <select class="form-control" ng-model="filter.Country" required>
+      <option value="" selected><!-- Common. -->all</option>
       <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
     </select>
   </div>
   <div class="form-group-sm">
-    <label class="small" for="exampleInputName2"><!-- Common. -->Priece</label>
-    <input type="text" class="form-control price" id="exampleInputName2" placeholder="">
+    <label class="small"><!-- Common. -->Priece </label>
+    <input type="text" class="form-control price" ng-model="filter.PriceMin" required>
     <label><!-- Common. -->from</label>
   </div>
   <div class="form-group-sm">
-    <!-- <label class="small" for="exampleInputEmail2">Email</label> -->
-    <input type="email" class="form-control price" id="exampleInputEmail2" placeholder="">
+    <!-- <label class="small">Email</label> -->
+    <input type="text" class="form-control price" ng-model="filter.PriceMax" required>
     <label><!-- Common. -->to</label>
   </div>
   <div class="form-group-sm">
-    <label class="small" for="exampleInputEmail2"><!-- PlayerData. -->age</label>
-    <input type="email" class="form-control age" id="exampleInputEmail2" placeholder="" maxlength="2">
+    <label class="small"><!-- PlayerData. -->age</label>
+    <input type="text" class="form-control age" ng-model="filter.YearsOldMin" required maxlength="2">
     <label><!-- Common. -->from</label>
   </div>
   <div class="form-group-sm">
-    <label class="small" for="exampleInputEmail2"></label>
-    <input type="email" class="form-control age" id="exampleInputEmail2" placeholder="" maxlength="2">
+    <label class="small"></label>
+    <input type="text" class="form-control age" ng-model="filter.YearsOldMax" required maxlength="2">
     <label><!-- Common. -->to</label>
   </div>
   <div class="form-group-sm">
-    <label class="small" for="exampleInputEmail2"><!-- Common. -->name</label>
-    <input type="email" class="form-control name" id="exampleInputEmail2" placeholder="">
+    <label class="small"><!-- Common. -->name</label>
+    <input type="text" class="form-control name" ng-model="filter.PlayerName" required placeholder="">
   </div>
   <button type="submit" class="btn btn-sm btn-primary"><!-- Common. -->search</button>
-</div>
+</form>
 
 <slick
   infinite=false
@@ -91,7 +91,7 @@
           <img ng-src="{{player.Badge}}"> {{player.Acronym}}
         </dd>
         <dt>Pos/Idade</dt>
-        <dd>{{player.Position.replace('TeamPlayerPosition_','')}}/{{player.Age}}</dd>
+        <dd>{{player.Position.replace('TeamPlayerPosition_','')}} / {{player.Age}}</dd>
         <dt>Potencial</dt>
         <dd><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></dd>
         <dt>Valor</dt>

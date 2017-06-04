@@ -4,11 +4,16 @@ angular.module('app')
 
     var vm = this;
 
-    AuctionService.search()
-      .then(function (players) {
-        vm.players = players.Players;
-        vm.playerAuction(vm.players[0]);
-      });
+
+    vm.search = function (filter) {
+      vm.players = null;
+      AuctionService.search(filter)
+        .then(function (players) {
+          vm.players = players.Players;
+          // vm.playerAuction(vm.players[0]);
+        });
+    }
+    // vm.search();
 
     $interval(function () {}, 1000);
 
