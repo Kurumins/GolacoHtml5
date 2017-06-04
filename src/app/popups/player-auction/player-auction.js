@@ -69,6 +69,9 @@ angular.module('app')
 
     vm.getMoment = function () {
       var diff = moment(vm.player.LimitDate).diff();
+      if (diff < 0) {
+        vm.closed = true;
+      }
       return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
     };
 

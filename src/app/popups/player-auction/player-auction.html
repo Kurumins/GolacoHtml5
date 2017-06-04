@@ -71,13 +71,13 @@
 
 <div class="pull-left player-auction">
   <div class="total-bids">
-    <b>Seu limite</b>
+    <h4>Seu limite</h4>
     <p><i class="icon-money"></i> {{$ctrl.playerAuction.TotalBids | currency}}</p>
   </div>
   <div class="time-left"><span>{{$ctrl.getMoment()}}</span></div>
   <div class="current-value">
     <button class="pull-right btn btn-xs btn-warning btn-refresh"><i class="icon-refresh"></i></button>
-    <b>Valor Atual</b>
+    <h4>Valor Atual</h4>
     <p><i class="icon-money"></i> {{($ctrl.playerAuction.FinancialHist[0].Money || $ctrl.playerAuction.InitialValue) | currency}}</p>
   </div>
   <div class="new-bid" ng-init="$ctrl.bid = $ctrl.bids[0]">
@@ -88,5 +88,21 @@
       </label>
     </div>
     <button class="btn btn-block btn-sm btn-warning">dar lance!</button>
+  </div>
+</div>
+
+<div class="pull-left player-auction player-bids">
+  <div class="no-bids" ng-if="!$ctrl.playerAuction.FinancialHist.length">
+    Nenhum lance realizado
+  </div>
+  <div ng-if="$ctrl.playerAuction.FinancialHist.length">
+    <h4>Últimos lances</h4>
+    <div class="player-bid" ng-class="{won: $ctrl.closed && $index==0}" ng-repeat="bid in $ctrl.playerAuction.FinancialHist">
+      <i class="icon-star" ng-if="$index==0"></i>
+      <img ng-src="{{bid.Badge}}">
+      <p class="team-name">{{bid.TeamName}}</p>
+      <p class="manager-name">{{bid.ManagerName}}</p>
+      <p class="money">{{bid.Money | currency}}</p>
+    </div>
   </div>
 </div>
