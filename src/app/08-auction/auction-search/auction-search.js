@@ -4,6 +4,7 @@ angular.module('app')
 
     var vm = this;
 
+    vm.playerAuction = PlayerAuction.open;
 
     vm.search = function (filter) {
       vm.players = null;
@@ -21,8 +22,6 @@ angular.module('app')
       var diff = moment(date).diff();
       return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
     }
-
-    vm.playerAuction = PlayerAuction.open;
 
   })
   .factory('AuctionSearch', function (ngDialog) {

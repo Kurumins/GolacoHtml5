@@ -1,4 +1,4 @@
-<!-- <div class="row-"> -->
+<div class="auction-player" ng-click="$ctrl.isBid && $ctrl.playerAuction()">
   <div class="player-picture">
     <img ng-src="{{$ctrl.player.Picture}}" class="img-responsive-">
   </div>
@@ -25,7 +25,7 @@
     </p>
     <p><i class="icon-money"></i> {{$ctrl.player.CurrentValue | currency}}</p>
   </div>
-<!-- </div> -->
+</div>
 <span class="status">
   <span ng-if="!$ctrl.isBid">Vendido</span>
   <span ng-if="$ctrl.isBid">

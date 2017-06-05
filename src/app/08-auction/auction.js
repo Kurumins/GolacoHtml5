@@ -10,7 +10,7 @@ function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSe
   vm.allBids = allBids.Bids;
 
   vm.auctionSearch = AuctionSearch.open;
-  vm.auctionSearch($scope);
+  // vm.auctionSearch($scope);
 
 }
 

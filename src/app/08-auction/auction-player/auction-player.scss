@@ -12,8 +12,10 @@ auction-player {
   border: 1px solid #999;
   overflow: hidden;
 
-  display: flex;
-  justify-content: space-between;
+  .auction-player {
+    display: flex;
+    justify-content: space-between;
+  }
 
   // .row {
   //   // @include make-row();
@@ -80,6 +82,8 @@ auction-player {
   }
 
   &.is-bid {
+    cursor: pointer;
+
     .status {
       background: #0071d1;
     }

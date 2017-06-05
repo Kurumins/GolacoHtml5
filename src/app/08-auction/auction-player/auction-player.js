@@ -7,9 +7,12 @@ angular.module('app')
       me: '=',
       type: '@'
     },
-    controller: function (moment, $interval, $element, AppService) {
+    controller: function (moment, $interval, $element, AppService, PlayerAuction) {
       var vm = this;
 
+      vm.playerAuction = function () {
+        PlayerAuction.open(vm.player);
+      };
 
       vm.user = AppService.user;
       vm.userData = AppService.userData;
