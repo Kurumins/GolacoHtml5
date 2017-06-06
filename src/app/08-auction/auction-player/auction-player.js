@@ -49,7 +49,10 @@ angular.module('app')
       // }
 
       vm.getMoment = function (date) {
-        return moment(moment(date).diff()).utc().format('H:mm:ss');
+        // return moment(moment(date).diff()).utc().format('H:mm:ss');
+        var diff = moment(date).diff();
+        return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
       }
+
     }
   });

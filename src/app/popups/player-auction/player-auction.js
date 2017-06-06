@@ -4,15 +4,10 @@ angular.module('app')
 
     var vm = this;
 
-    vm.currentPlayer = vm.player = player;;
+    vm.currentPlayer = vm.player = player;
     vm.playerAuction = playerAuction;
 
-    vm.bids = [
-      {label:'5', value:5},
-      {label:'10', value:10},
-      {label:'15', value:15},
-      {label:'20', value:20}
-    ];
+    vm.bids = [5, 10, 15, 20];
 
     vm.healthHistory = function () {
       ngDialog.open({
@@ -69,6 +64,7 @@ angular.module('app')
       AuctionService.playerAuction(vm.player.TeamPlayerAuctionId)
         .then(function (playerAuction) {
           vm.playerAuction = playerAuction;
+          vm.player.LimitDate = playerAuction.LimitDate;
         })
     }
 
@@ -80,6 +76,21 @@ angular.module('app')
         vm.closed = true;
       }
       return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
+    };
+
+    vm.bidAuction = function () {
+
+      ConfirmPopup.open('AuctionScreen.lblTitle', 'AuctionScreen.' + (vm.playerAuction.IsFirstBid ? 'msgFirstBid;t' + vm.playerAuction.FirstBidCost : 'msgPlayerDoABidConfirm') )
+        .then(function () {
+          var currentValue = vm.playerAuction.FinancialHist[0] && vm.playerAuction.FinancialHist[0].Money || vm.playerAuction.InitialValue;
+          return AuctionService.bidAuction(vm.player.TeamPlayerAuctionId, currentValue, vm.bid);
+        })
+        .catch(function (error) {
+          AlertPopup.open('Common.error', 'Error.' + error.Message);
+        })
+        .finally(function () {
+          vm.refresh();
+        })
     };
 
 

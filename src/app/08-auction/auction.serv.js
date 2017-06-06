@@ -26,4 +26,12 @@ angular.module('app')
       });
     };
 
+    vm.bidAuction = function (teamPlayerAuctionId, currentValue, bidValue) {
+      return PostToJs('Auction/BidAuction', {
+        TeamPlayerAuctionId: teamPlayerAuctionId,
+        CurrentValue: currentValue,
+        BidValue: bidValue
+      });
+    };
+
   });

@@ -80,14 +80,14 @@
     <h4>Valor Atual</h4>
     <p><i class="icon-money"></i> {{($ctrl.playerAuction.FinancialHist[0].Money || $ctrl.playerAuction.InitialValue) | currency}}</p>
   </div>
-  <div class="new-bid" ng-init="$ctrl.bid = $ctrl.bids[0]">
+  <div class="new-bid" ng-init="$ctrl.bid = 1">
     <div class="bid-values">
       <label ng-repeat="bid in $ctrl.bids" class="bid-value">
-        <input type="radio" name="bid" ng-model="$ctrl.bid" ng-value="bid">
-        <span>{{bid.label}}<small>%</small></span>
+        <input type="radio" name="bid" ng-model="$ctrl.bid" ng-value="$index+1">
+        <span>{{bid}}<small>%</small></span>
       </label>
     </div>
-    <button class="btn btn-block btn-sm btn-warning">dar lance!</button>
+    <button class="btn btn-block btn-sm btn-warning" ng-click="$ctrl.bidAuction()">dar lance!</button>
   </div>
 </div>
 

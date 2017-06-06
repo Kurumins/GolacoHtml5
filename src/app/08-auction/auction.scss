@@ -29,9 +29,11 @@
       // padding: 10px;
     }
 
-    auction-player {
-      margin-bottom: 10px;
-    }
-
   }
+
+  auction-player {
+    margin-bottom: 10px;
+    display: block !important;
+  }
+
 }
