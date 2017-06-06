@@ -76,7 +76,7 @@
   </div>
   <div class="time-left"><span>{{$ctrl.getMoment()}}</span></div>
   <div class="current-value">
-    <button class="pull-right btn btn-xs btn-warning btn-refresh"><i class="icon-refresh"></i></button>
+    <button class="pull-right btn btn-xs btn-warning btn-refresh" ng-click="$ctrl.refresh();"><i class="icon-refresh"></i></button>
     <h4>Valor Atual</h4>
     <p><i class="icon-money"></i> {{($ctrl.playerAuction.FinancialHist[0].Money || $ctrl.playerAuction.InitialValue) | currency}}</p>
   </div>

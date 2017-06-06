@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('PlayerAuctionController', function ($scope, player, playerAuction, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, $interval) {
+  .controller('PlayerAuctionController', function ($scope, player, playerAuction, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, $interval, AuctionService) {
 
     var vm = this;
 
@@ -64,6 +64,13 @@ angular.module('app')
         },
       });
     };
+
+    vm.refresh = function () {
+      AuctionService.playerAuction(vm.player.TeamPlayerAuctionId)
+        .then(function (playerAuction) {
+          vm.playerAuction = playerAuction;
+        })
+    }
 
     $interval(function () {}, 1000);
 
