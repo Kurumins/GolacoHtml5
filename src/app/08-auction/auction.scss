@@ -17,7 +17,21 @@
     }
   }
 
-  auction-player {
-    margin-bottom: 10px;
+  .my-players {
+    margin: 0 -10px;
+
+    * {
+      outline: none;
+    }
+
+    .slick-slide {
+      margin: 0px 10px 0px;
+      // padding: 10px;
+    }
+
+    auction-player {
+      margin-bottom: 10px;
+    }
+
   }
 }

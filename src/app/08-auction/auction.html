@@ -11,8 +11,23 @@
         <i class="icon-player-sale"></i>
         <p>AuctionScreen.lblNoSaleDesc</p>
       </div>
-      <auction-player player="player" ng-repeat="player in $ctrl.myPlayersSold" />
-      <!-- <pre>{{$ctrl.myPlayersSold|json}}</pre> -->
+      <div ng-if="$ctrl.myPlayersSold.length">
+        <slick
+          infinite="false"
+          dots="true"
+          slides-to-show="1" slides-to-scroll="1" rows="3"
+          prev-arrow=".auction-my-players-nav .slick-prev"
+          next-arrow=".auction-my-players-nav .slick-next"
+          settings="{appendDots:'.auction-my-players-nav .dots', dotsClass: 'list-inline'}"
+          class="my-players">
+          <auction-player player="player" ng-repeat="player in $ctrl.myPlayersSold" />
+        </slick>
+        <div class="slick-nav auction-my-players-nav">
+          <button type="button" class="btn btn-link slick-prev">«</button>
+          <span class="dots"></span>
+          <button type="button" class="btn btn-link slick-next">»</button>
+        </div>
+      </div>
     </div>
     <div class="col-xs-6">
       <h4>AuctionScreen.lblMyBids</h4>
@@ -22,7 +37,6 @@
         <p>AuctionScreen.lblNoPurchaseDesc</p>
       </div>
       <auction-player player="player" type="bid" ng-repeat="player in $ctrl.allBids" />
-      <!-- <pre>{{$ctrl.allBids|json}}</pre> -->
     </div>
   </div>
 </div>

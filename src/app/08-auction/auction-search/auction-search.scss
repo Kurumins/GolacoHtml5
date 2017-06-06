@@ -175,31 +175,4 @@
     }
   }
 
-  .auction-slick-nav {
-    text-align: center;
-    margin: 20px 0 0;
-
-    .btn {
-      outline: none;
-    }
-
-    .dots {
-      display: inline-block;
-      margin: 0 5px;
-      button {
-        // appearance: none;
-        border: 0;
-        line-height: 30px;
-        width: 30px;
-        background: white;
-        outline: none;
-      }
-      .slick-active button {
-        background: #ddd;
-        font-weight: bold;
-      }
-    }
-
-  }
-
 }
