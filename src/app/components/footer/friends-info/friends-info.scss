@@ -17,11 +17,11 @@ friends-info {
     position: relative;
     width: 570px;
     margin: 0 25px;
-    pointer-events: none;
 
     .slick-list {
       margin-top: -60px;
       padding-top: 60px;
+      pointer-events: none;
     }
     .slick-slide {
       pointer-events: auto;
