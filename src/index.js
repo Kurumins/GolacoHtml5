@@ -46,7 +46,7 @@ angular
         if ( result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
         } else {
-          if (result.Message == 'LabelNotEnoughCredit' || result.Message == 'LabelNotEnoughMoney') {
+          if (result.Message === 'LabelNotEnoughCredit' || result.Message === 'LabelNotEnoughMoney') {
             AlertPopup.open('Atenção', 'Popup a ser criado: ' + result.Message);
           } else {
             deferred.reject(result);
@@ -77,10 +77,12 @@ angular
     };
   });
 
-Object.size = function(obj) {
+Object.size = function (obj) {
   var size = 0, key;
   for (key in obj) {
-    if (obj.hasOwnProperty(key)) size++;
+    if (obj.hasOwnProperty(key)) {
+      size++;
+    }
   }
   return size;
 };

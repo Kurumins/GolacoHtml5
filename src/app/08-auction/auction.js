@@ -10,7 +10,7 @@ function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSe
   vm.allBids = allBids.Bids;
 
   vm.auctionSearch = function () {
-    AuctionSearch.open($scope)
+    AuctionSearch.open($scope);
   };
   // vm.auctionSearch();
 
@@ -32,6 +32,6 @@ function auctionRoutesConfig ($stateProvider) {
       templateUrl: 'auction.html',
       controller: auctionController,
       controllerAs: '$ctrl'
-    })
+    });
 
 }

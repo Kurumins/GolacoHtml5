@@ -13,7 +13,7 @@ angular.module('app')
     };
 
     vm.competitionRegister = function (competitionType) {
-      return PostToJs(competitionType +'/Register');
+      return PostToJs(competitionType + '/Register');
     };
 
     // Tournament

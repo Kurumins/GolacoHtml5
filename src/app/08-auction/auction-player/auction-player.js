@@ -27,7 +27,7 @@ angular.module('app')
         /*'Common.TeamPlayerPosition_*/ 'Atacante',
       ];
 
-      vm.$onInit = function() {
+      vm.$onInit = function () {
 
         if ( vm.type === 'bid' ) {
 
@@ -52,7 +52,7 @@ angular.module('app')
         // return moment(moment(date).diff()).utc().format('H:mm:ss');
         var diff = moment(date).diff();
         return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
-      }
+      };
 
     }
   });

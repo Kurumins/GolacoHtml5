@@ -15,8 +15,8 @@ angular.module('app')
             })
             .catch(function (error) {
               AlertPopup.open('Atenção', error.Message);
-            })
-        })
+            });
+        });
     };
 
     vm.changeTeamName = function (newName, newAcronym) {
@@ -28,12 +28,12 @@ angular.module('app')
             })
             .catch(function (error) {
               AlertPopup.open('Atenção', error.Message);
-            })
-        })
+            });
+        });
     };
 
     vm.changeOptionMail = function (mailOptions) {
-      ConfirmPopup.open('Atenção', 'Confirmar alteração ')
+      ConfirmPopup.open('Atenção', 'Confirmar alteração')
         .then(function () {
           MainService.changeOptionMail(mailOptions.join(';'))
             .then(function () {
@@ -41,8 +41,8 @@ angular.module('app')
             })
             .catch(function (error) {
               AlertPopup.open('Atenção', error.Message);
-            })
-        })
+            });
+        });
     };
 
 

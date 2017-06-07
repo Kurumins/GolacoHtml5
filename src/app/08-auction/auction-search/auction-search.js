@@ -13,7 +13,7 @@ angular.module('app')
           vm.players = players.Players;
           // vm.playerAuction(vm.players[0]);
         });
-    }
+    };
     // vm.search();
 
     $interval(function () {}, 1000);
@@ -21,7 +21,7 @@ angular.module('app')
     vm.getMoment = function (date) {
       var diff = moment(date).diff();
       return diff < 0 ? '0:00:00' : moment(diff).utc().format('H:mm:ss');
-    }
+    };
 
   })
   .factory('AuctionSearch', function (ngDialog) {

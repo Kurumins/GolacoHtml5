@@ -6,6 +6,7 @@ angular.module('app')
 
     vm.trainCenters = juniorReform.TrainCenters;
     vm.myTrainCenter = juniorReform.MyTrainCenter;
+    vm.scope = $scope;
 
     vm.current = vm.trainCenters[0];
 
@@ -14,14 +15,14 @@ angular.module('app')
         .then(function () {
           return StructureService.updateJuniorTrainCenter(vm.current.Id);
         })
-        .then(function (result) {
+        .then(function () {
           $rootScope.$emit('balanceUpdate');
-          $scope.closeThisDialog();
+          vm.scope.closeThisDialog();
         })
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message);
         });
-    }
+    };
 
   })
   .factory('JuniorReform', function (StructureService, ngDialog) {

@@ -3,6 +3,7 @@ angular.module('app')
   .controller('PlayerManagerController', function ($rootScope, $scope, teamPlayerManage, currentPlayer, ngDialog, TeamPlayerService, AlertPopup, ConfirmPopup, PlayerItemEquip) {
 
     var vm = this;
+    vm.scope = $scope;
 
     var players = teamPlayerManage.TeamPlayers.filter(function (player) {
       return player.TeamPlayerType === 1;
@@ -141,7 +142,7 @@ angular.module('app')
         .then(function () {
           TeamPlayerService.startAuction(vm.currentPlayer.Id)
             .then(function () {
-              $scope.closeThisDialog();
+              vm.scope.closeThisDialog();
               AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
               $rootScope.$emit('teamPlayerUpdate');
               $rootScope.$emit('balanceUpdate');
@@ -174,9 +175,9 @@ angular.module('app')
         })
         .then(function () {
           vm.currentPlayer.Salary = vm.newSalary;
-        })
+        });
 
-    }
+    };
 
     var slots = {
       1: 'ShirtItem',
@@ -190,9 +191,9 @@ angular.module('app')
           TeamPlayerService.setTeamPlayerItem(vm.currentPlayer.Id, slot, item.Id)
             .then(function () {
               vm.currentPlayer[slots[slot]] = item;
-            })
+            });
         });
-    }
+    };
 
 
   });

@@ -7,10 +7,10 @@ angular.module('app')
       .then(function (friends) {
         return PostToJs('User/FriendsInfo', {
           ids: friends.friends.map(function (friend) {
-            return friend[0]
+            return friend[0];
           })
         });
-      })
+      });
   };
 
 });

@@ -11,11 +11,12 @@ angular
 
       balanceUpdate();
 
-      $rootScope.$on('balanceUpdate', function (event) {
+      var onBalanceUpdate = $rootScope.$on('balanceUpdate', function () {
         balanceUpdate();
       });
+      $rootScope.$on('$destroy', onBalanceUpdate);
 
-      function balanceUpdate() {
+      function balanceUpdate () {
         BalanceService.headerUserData()
           .then(function (result) {
             vm.HeaderData = result.HeaderData;

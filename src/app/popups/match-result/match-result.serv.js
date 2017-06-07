@@ -13,12 +13,12 @@ angular.module('app')
       var filePath = 'matches/';
 
       filePath +=
-        Math.floor(matchId / 1000000).toString() + "/" +
-        Math.floor(matchId / 10000).toString() + "/" +
-        Math.floor(matchId / 100).toString() + "/";
+        Math.floor(matchId / 1000000).toString() + '/' +
+        Math.floor(matchId / 10000).toString() + '/' +
+        Math.floor(matchId / 100).toString() + '/';
 
       //fill file path with match id
-      filePath += matchId.toString() + ".gol";
+      filePath += matchId.toString() + '.gol';
 
       return $http.get(filePath, {responseType: 'arraybuffer'})
         .then(function (data) {
@@ -57,7 +57,7 @@ angular.module('app')
 
           return matchResponse;
 
-        })
+        });
         // .finally(function () {
         //   // $loading.finish('match');
         // });

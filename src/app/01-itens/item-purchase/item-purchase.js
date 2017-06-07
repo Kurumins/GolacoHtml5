@@ -5,11 +5,12 @@ angular.module('app')
     var vm = this;
 
     vm.item = item;
+    vm.scope = $scope;
 
     vm.confirm = function (qty) {
       ItensService.itemPurchase(item, qty)
         .then(function () {
-          $scope.confirm();
+          vm.scope.confirm();
           AlertPopup.open('Aviso', 'Item adquirido com sucesso.');
           $rootScope.$emit('inventoryUpdate');
           $rootScope.$emit('balanceUpdate');

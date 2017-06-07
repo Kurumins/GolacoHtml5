@@ -50,7 +50,7 @@ angular.module('app')
 
     };
 
-    function confirmPlay(matchId) {
+    function confirmPlay (matchId) {
       if ( AppService.user.FriendlyMatchesToday < 3 ) {
         return ConfirmPopup.open('lblScheduleConfirmTitle', 'msgScheduleConfirmTitle')
           .then(function () {

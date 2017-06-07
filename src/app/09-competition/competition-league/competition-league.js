@@ -22,7 +22,7 @@ angular.module('app')
           vm.currentSlide = currentSlide + 1;
         },
         init: function (event, slick) {
-           slick.slickGoTo(vm.currentSlide - 1);
+          slick.slickGoTo(vm.currentSlide - 1);
         }
       }
     };

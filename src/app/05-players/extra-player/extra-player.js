@@ -22,7 +22,7 @@ angular.module('app')
       var price = vm.teamSpotPrices[i];
 
       price.acquired =  i + 16 < AppService.user.MaxProPlayers;
-      price.available =  i + 16 == AppService.user.MaxProPlayers && i < vm[AppService.user.Serie + '_INDEX'];
+      price.available =  i + 16 === AppService.user.MaxProPlayers && i < vm[AppService.user.Serie + '_INDEX'];
     }
 
     vm.buyProSpot = function (spot) {

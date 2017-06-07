@@ -19,17 +19,13 @@ function mainRoutesConfig ($stateProvider) {
     });
 }
 
-function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService) {
+function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService, AlertPopup) {
   var vm = this;
 
-  // if ( missionList ) {
-  //   vm.missionList = missionList;
-  // } else {
-    AppService.missionList().noLoading()
-      .then(function (missionList) {
-        vm.missionList = missionList;
-      });
-  // }
+  AppService.missionList().noLoading()
+    .then(function (missionList) {
+      vm.missionList = missionList;
+    });
 
   vm.config = function () {
     ngDialog.open({

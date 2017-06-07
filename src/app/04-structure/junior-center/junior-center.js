@@ -7,13 +7,13 @@ angular.module('app')
 
     vm.juniorDraft = function () {
       JuniorDraft.open()
-        .then(updateJuniorPreview, updateJuniorPreview)
+        .then(updateJuniorPreview, updateJuniorPreview);
     };
     // vm.juniorDraft();
 
     vm.juniorReform = function () {
       JuniorReform.open()
-        .then(updateJuniorPreview, updateJuniorPreview)
+        .then(updateJuniorPreview, updateJuniorPreview);
     };
     // vm.juniorReform();
 
@@ -24,8 +24,8 @@ angular.module('app')
       })
         .then(function (ctName) {
           StructureService.changingTrainCenterName(ctName)
-            .then(updateJuniorPreview)
-        })
+            .then(updateJuniorPreview);
+        });
     };
 
     vm.releaseTeamPlayer = function (idTeamPlayerJunior) {
@@ -33,13 +33,13 @@ angular.module('app')
         .then(function () {
           return StructureService.releaseTeamPlayer(idTeamPlayerJunior);
         })
-        .then(function (result) {
+        .then(function () {
           $rootScope.$emit('balanceUpdate');
           AlertPopup.open('Atenção', 'JuniorCenterPreview.lblPlayerReleased');
           updateJuniorPreview();
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message)
+          AlertPopup.open('Atenção', error.Message);
         });
     };
 
@@ -48,17 +48,17 @@ angular.module('app')
         .then(function () {
           return StructureService.upgradeJuniorToProfessional(idTeamPlayerJunior, useAgent);
         })
-        .then(function (result) {
+        .then(function () {
           $rootScope.$emit('balanceUpdate');
           AlertPopup.open('Atenção', 'JuniorCenterPreview.lblPlayerHired');
           updateJuniorPreview();
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message)
+          AlertPopup.open('Atenção', error.Message);
         });
     };
 
-    function updateJuniorPreview() {
+    function updateJuniorPreview () {
       return StructureService.juniorPreview()
         .then(function (juniorPreview) {
           vm.juniorPreview = juniorPreview;

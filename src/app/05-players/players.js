@@ -24,12 +24,13 @@ function teamPlayerController ($rootScope, $scope, teamPlayerList, ngDialog, Tea
 
   vm.teamPlayers = teamPlayerList;
 
-  $rootScope.$on('teamPlayerUpdate', function (event) {
+  var teamPlayerUpdate = $rootScope.$on('teamPlayerUpdate', function () {
     TeamPlayerService.teamPlayerList()
       .then(function (teamPlayerList) {
         vm.teamPlayers = teamPlayerList;
-      })
+      });
   });
+  $rootScope.$on('$destroy', teamPlayerUpdate);
 
   vm.teamPlayerType = 1;
 

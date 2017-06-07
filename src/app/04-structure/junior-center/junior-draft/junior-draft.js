@@ -20,19 +20,19 @@ angular.module('app')
         .then(function () {
           return StructureService.makeADraft(idPosition || '',  vm.currentScout && vm.currentScout.Id || '');
         })
-        .then(function (result) {
+        .then(function () {
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message)
+          AlertPopup.open('Atenção', error.Message);
         });
-    }
+    };
 
     vm.instantDraft = function () {
       ConfirmPopup.open('Atenção', 'lblConfirmDraftTimeSkip')
         .then(function () {
           return StructureService.instantDraft();
         })
-        .then(function (result) {
+        .then(function () {
           $rootScope.$emit('balanceUpdate');
           StructureService.juniorDraft()
             .then(function (juniorDraft) {
@@ -42,7 +42,7 @@ angular.module('app')
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message);
         });
-    }
+    };
 
     vm.draftToJunior = function () {
       ConfirmPopup.open('Atenção', 'lblConfirmPromote')
@@ -50,7 +50,7 @@ angular.module('app')
           return StructureService.draftToJunior(vm.currentPlayer.Id);
           // return StructureService.draftToJunior(3242845);
         })
-        .then(function (result) {
+        .then(function () {
           AlertPopup.open('Atenção', 'lblPromoteSuccess');
           StructureService.juniorDraft()
             .then(function (juniorDraft) {
@@ -58,9 +58,9 @@ angular.module('app')
             });
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message)
-        })
-    }
+          AlertPopup.open('Atenção', error.Message);
+        });
+    };
 
   })
   .factory('JuniorDraft', function (StructureService, ngDialog) {

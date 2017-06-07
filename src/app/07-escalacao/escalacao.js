@@ -64,9 +64,9 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
   vm.cbMarkingType = teamTactic.TeamTactic.MarkingType;
   vm.cbPassingType = teamTactic.TeamTactic.PassType;
   vm.cbFieldPosture = teamTactic.TeamTactic.MatchStyle;
-  vm.cbOffsideLine = teamTactic.TeamTactic.Offside?1:0;
-  vm.cbPressure = teamTactic.TeamTactic.MarkingPressure?1:0;
-  vm.cbWingPlay = teamTactic.TeamTactic.UsingWings?1:0;
+  vm.cbOffsideLine = teamTactic.TeamTactic.Offside ? 1 : 0;
+  vm.cbPressure = teamTactic.TeamTactic.MarkingPressure ? 1 : 0;
+  vm.cbWingPlay = teamTactic.TeamTactic.UsingWings ? 1 : 0;
 
   vm.slots = [];
 
@@ -110,10 +110,10 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
     var d = [];
 
     for (var i = 0; i < vm.teamPlayers.length; i++) {
-      if (!!vm.teamPlayers[i].IdTactic) {
+      if (vm.teamPlayers[i].IdTactic > 0) {
 
         var s = vm.teamPlayers[i].IdTactic + ',' + vm.teamPlayers[i].Id;
-        s += (vm.teamPlayers[i].IdTactic >= 30) ? ',0' : ',1'
+        s += (vm.teamPlayers[i].IdTactic >= 30) ? ',0' : ',1';
 
         d.push(s);
       }
@@ -127,7 +127,7 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
     // controller.setFormationData(saveStr);
   };
 
-  function testSave() {
+  function testSave () {
     var players = 0;
     var keepers = 0;
     var defenders = 0;
@@ -139,7 +139,7 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
     for (var i = 1; i < 30 ; i++) {
       if (vm.slots[i] && vm.slots[i].IdTactic) {
         players++;
-        switch(vm.slots[i].IdPosition) {
+        switch (vm.slots[i].IdPosition) {
           case 1:
             keepers++;
             break;
@@ -165,14 +165,15 @@ function escalacaoController (teamPlayers, teamTactic, EscalacaoService, AlertPo
 
     for (i = 0; i < vm.teamPlayers.length; i++)
     {
-      if (vm.teamPlayers[i].IdTactic != 0) {
-        if (vm.teamPlayers[i].HasSeriousInjury)
+      if (vm.teamPlayers[i].IdTactic !== 0) {
+        if (vm.teamPlayers[i].HasSeriousInjury) {
           sInj = true;
+        }
       }
     }
 
-    if ( players == 11) {
-      if (keepers == 1) {
+    if ( players === 11) {
+      if (keepers === 1) {
         if (defenders + wingers >= 3) {
           if (midfielders >= 2) {
             if (strikers >= 1) {

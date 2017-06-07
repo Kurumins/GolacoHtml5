@@ -7,10 +7,10 @@ angular.module('app')
       currentPlayer: '=',
       small: '=?'
     },
-    controller: function() {
+    controller: function () {
       var ctrl = this;
 
-      ctrl.$postLink = function() {
+      ctrl.$postLink = function () {
         ctrl.small = ctrl.small || false;
       };
     }

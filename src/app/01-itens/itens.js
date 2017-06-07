@@ -20,9 +20,11 @@ function itensController ($rootScope, $state, ItensService, inventory, storeList
       return item.SalePrice !== 0;
     });
 
-  $rootScope.$on('inventoryUpdate', function (event) {
+  var inventoryUpdate = $rootScope.$on('inventoryUpdate', function () {
     $state.reload('app.itens');
   });
+
+  $rootScope.$on('$destroy', inventoryUpdate);
 
 }
 

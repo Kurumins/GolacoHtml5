@@ -5,26 +5,27 @@ angular.module('app')
     var vm = this;
 
     vm.matches = matches;
+    vm.scope = $scope;
 
     vm.matchResult = function (match) {
 
       MatchResult.open(match.Id)
         .then(setMatchWatched, setMatchWatched);
 
-      function setMatchWatched() {
+      function setMatchWatched () {
         MatchResultService.setMatchWatched(match.Id);
         vm.matches.splice(vm.matches.indexOf(match), 1);
 
         if ( vm.matches.length === 0 ) {
-          $scope.closeThisDialog();
+          vm.scope.closeThisDialog();
         }
       }
-    }
+    };
 
     vm.ignoreAllMatches = function () {
       MatchResultService.ignoreAllMatches();
-      $scope.closeThisDialog();
-    }
+      vm.scope.closeThisDialog();
+    };
 
   })
   .factory('MatchAlert', function (ngDialog) {

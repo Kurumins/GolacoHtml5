@@ -6,17 +6,13 @@ angular.module('app')
 
     var data, itens;
 
-    // if ( $stateParams.inventario === 'inventario' ) {
-      data = inventory;
-    // } else {
-    //   data = storeList;
-    // }
+    data = inventory;
 
     itens = data.TeamPlayerItems.filter(function (item) {
       return item.Category === category;
     });
 
-    vm.itens = itens
+    vm.itens = itens;
 
   })
   .factory('PlayerItemEquip', function (ngDialog, ItensService) {
@@ -32,7 +28,7 @@ angular.module('app')
             return ItensService.inventory();
           },
           category: function () {
-            return [13, 14, 15][slot-1];
+            return [13, 14, 15][slot - 1];
           }
           // storeList: function (ItensService) {
           //   return ItensService.storeList();
