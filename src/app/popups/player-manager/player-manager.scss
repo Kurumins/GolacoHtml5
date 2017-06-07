@@ -3,6 +3,7 @@
   .ngdialog-content {
     width: 750px;
     // height: 500px;
+    overflow: auto;
   }
 
   h3,
@@ -27,6 +28,7 @@
     float: left;
     text-align: center;
     background: #ffc400;
+    padding: 8px;
   }
 
   .player-picture {
@@ -98,15 +100,17 @@
   }
 
   .manager-menu {
-    padding: 0 5px;
+    // padding: 0 5px;
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-top: 5px;
+      margin-bottom: 0;
+
       input {
         display: none;
 
         &:checked + span {
-          background-color: #ccc;
+          // background-color: #ccc;
         }
       }
 
@@ -114,14 +118,19 @@
         display: block;
         background-color: white;
         border-radius: 5px;
-        color: #7a7f8b;
+        color: #333;
         font-weight: 600;
+        font-size: 12px;
+        // line-height: 1;
+        // padding: 5px 0;
+        cursor: pointer;
+
         &:hover {
-          background-color: #ff6500;
-          color: #ffffff; -webkit-transition: 0.6s ease;
-          -moz-transition: 0.6s ease;
-          -o-transition: 0.6s ease;
-          transition: 0.6s ease;
+          background-color: #ddd;
+          // color: #ffffff; -webkit-transition: 0.6s ease;
+          // -moz-transition: 0.6s ease;
+          // -o-transition: 0.6s ease;
+          // transition: 0.6s ease;
         }
       }
     }
@@ -130,7 +139,9 @@
   }
 
   .manager-content {
-    margin-left: 170px;
+    // margin-left: 170px;
+    float: left;
+    width: calc(100% - 170px);
   }
 
 }
@@ -144,9 +155,10 @@
     width: 50%;
     float: left;
     padding: 20px;
-    h4{
-      color: #f7f7e1;
-    }
+  }
+
+  h4{
+    color: #f7f7e1;
   }
 
   .player-attributes {
@@ -154,7 +166,8 @@
     justify-content: space-around;
     background: #e6e6e6;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 10px 0;
+    padding: 0 10px;
   }
 
   .player-attribute {
@@ -172,6 +185,7 @@
 
     hr {
       margin: 5px 0;
+      border-color: #333;
     }
 
     .att-bar {
@@ -223,11 +237,17 @@
   }
 
   .player-datails {
-    margin: 0;
+    margin: 0 0 20px;
+    dt {
+      float: left;
+      clear: both;
+    }
     dd {
+      float: right;
       font-size: 14px;
       color: #d48c06;
       font-weight: 600;
+
       .icon-star{
         &:before{
           color: #ffb600;
@@ -290,11 +310,14 @@
   .player-moral {
     background-color: #666;
     border-radius: 3px;
+    width: 150px;
+    height: 6px;
+    margin-top: 10px;
+    overflow: hidden;
 
     span {
       display: block;
-      margin-top: 10px;
-      height: 5px;
+      height: 6px;
       transition: width .4s, background-color .4s;
 
       // if (_moralValue <= 33

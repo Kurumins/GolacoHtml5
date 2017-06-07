@@ -1,0 +1,123 @@
+<h2>Busca de jogadores</h2>
+
+<form class="auction-filter form-inline" ng-submit="$ctrl.search(filter)" novalidate>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->PlayerPosition</label>
+    <select class="form-control" ng-model="filter.InitialPosition">
+      <option ng-value=""><!-- Common. -->allF</option>
+      <option ng-value="1"><!-- Common. -->TeamPlayerPosition_Goleiro</option>
+      <option ng-value="2"><!-- Common. -->TeamPlayerPosition_Zagueiro</option>
+      <option ng-value="3"><!-- Common. -->TeamPlayerPosition_Lateral</option>
+      <option ng-value="4"><!-- Common. -->TeamPlayerPosition_MeioCampo</option>
+      <option ng-value="5"><!-- Common. -->TeamPlayerPosition_Atacante</option>
+    </select>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->PlayerPotential</label>
+    <select class="form-control" ng-model="filter.Potential">
+      <option ng-value=""><!-- Common. -->all</option>
+      <option ng-value="1">1</option>
+      <option ng-value="2">2</option>
+      <option ng-value="3">3</option>
+      <option ng-value="4">4</option>
+      <option ng-value="5">5</option>
+    </select>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->Quality</label>
+    <select class="form-control" ng-model="filter.LevelQuality">
+      <option ng-value=""><!-- Common. -->allF</option>
+      <option ng-value="1"><!-- Common. -->beginner</option>
+      <option ng-value="2"><!-- Common. -->discovery</option>
+      <option ng-value="3"><!-- Common. -->star</option>
+      <option ng-value="4"><!-- Common. -->phenomenon</option>
+      <option ng-value="5"><!-- Common. -->worldclass</option>
+      <option ng-value="6"><!-- Common. -->legendary</option>
+    </select>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->country {{filter.Country}}</label>
+    <select class="form-control" ng-model="filter.Country" required>
+      <option value="" selected><!-- Common. -->all</option>
+      <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
+    </select>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->Priece </label>
+    <input type="text" class="form-control price" ng-model="filter.PriceMin" required>
+    <label><!-- Common. -->from</label>
+  </div>
+  <div class="form-group-sm">
+    <!-- <label class="small">Email</label> -->
+    <input type="text" class="form-control price" ng-model="filter.PriceMax" required>
+    <label><!-- Common. -->to</label>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- PlayerData. -->age</label>
+    <input type="text" class="form-control age" ng-model="filter.YearsOldMin" required maxlength="2">
+    <label><!-- Common. -->from</label>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"></label>
+    <input type="text" class="form-control age" ng-model="filter.YearsOldMax" required maxlength="2">
+    <label><!-- Common. -->to</label>
+  </div>
+  <div class="form-group-sm">
+    <label class="small"><!-- Common. -->name</label>
+    <input type="text" class="form-control name" ng-model="filter.PlayerName" required placeholder="">
+  </div>
+  <button type="submit" class="btn btn-sm btn-primary"><!-- Common. -->search</button>
+</form>
+
+<slick
+  infinite=false
+  dots=true
+  slides-to-show="4" slides-to-scroll="4"
+  prev-arrow=".auction-slick-nav .slick-prev"
+  next-arrow=".auction-slick-nav .slick-next"
+  settings="{appendDots:'.auction-slick-nav .dots', dotsClass: 'list-inline'}"
+  ng-if="$ctrl.players" class="auction-players"
+  >
+  <div ng-repeat="player in $ctrl.players" class="auction-player">
+    <!-- <div class="auction-player"> -->
+      <header>
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{player.Flag}}.jpg" class="pull-right player-flag">
+        <i class="icon-clock"></i> {{$ctrl.getMoment(player.LimitDate)}}
+      </header>
+      <p class="player-name">{{player.Name}}</p>
+      <dl class="clearfix player-dl">
+        <dt>Time</dt>
+        <dd>
+          <img ng-src="{{player.Badge}}"> {{player.Acronym}}
+        </dd>
+        <dt>Pos/Idade</dt>
+        <dd>{{player.Position.replace('TeamPlayerPosition_','')}} / {{player.Age}}</dd>
+        <dt>Potencial</dt>
+        <dd><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></dd>
+        <dt>Valor</dt>
+        <dd>{{player.CurrentValue | currency}}</dd>
+      </dl>
+      <div class="player-attributes">
+        <div ng-repeat="attribute in player.Attributes" class="player-attribute">
+          <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
+          <hr>
+          <div class="att-bar">
+            <div class="att-value-bar" style="height: {{attribute.Value}}%"></div>
+            <div class="att-modifier" style="height: {{$ctrl.getEffectModifier(attribute.Id)}}%"></div>
+          </div>
+          <hr>
+          <span class="att-value">{{attribute.Value}}</span>
+        </div>
+      </div>
+      <button class="btn btn-block btn-sm btn-primary" ng-click="$ctrl.playerAuction(player)">Ver Leilão</button>
+    <!-- </div> -->
+  </div>
+</slick>
+
+<div class="slick-nav auction-slick-nav" ng-if="$ctrl.players">
+  <button type="button" class="btn btn-link slick-prev">«</button>
+  <span class="dots"></span>
+  <button type="button" class="btn btn-link slick-next">»</button>
+</div>
+
+<!-- <pre>{{$ctrl.players[0]|json}}</pre> -->

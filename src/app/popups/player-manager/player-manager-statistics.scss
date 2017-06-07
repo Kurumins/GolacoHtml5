@@ -1,5 +1,5 @@
 .ngdialog.ngdialog-player-manager-statistics {
-  
+
   .ngdialog-content {
     width: 800px;
     height: 400px;
@@ -13,47 +13,48 @@
     padding: 0;
      outline: none;
     &:before{
-     
+
       color: #df0000;
     }
     &:hover{
       border: none;
     }
   }
-   h2{
-      color: #4e5667;
+
+  h2 {
+    color: #4e5667;
+  }
+
+  h4 {
+    border-radius: 4px 4px 0 0;
+    padding: 5px 10px 3px;
+    margin-bottom: 0;
+    background: #ffc300;
+    color: #2c2c2a;
   }
 
   .half {
     width: 50%;
     float: left;
     padding: 0 10px;
-    h3{
-      border-radius: 10px 10px 0 0;
-      padding: 3px 10px;
-      margin-bottom: 0;
-      background: #ffc300;
-      color: #2c2c2a;
-    }
   }
 
-  dl{
-    float:left;
-    width:359px;
+  dl {
+    // float:left;
+    // width:359px;
     margin: 0;
     padding: 0;
     dd, dt{
-      background: #d6d4d7;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=0, Color=#646464)";/*IE 8*/
-      -moz-box-shadow: 0 0 2px 1px rgba(255,255,255,0.7) inset;/*FF 3.5+*/
-      -webkit-box-shadow: 0 0 2px 1px rgba(255,255,255,0.7) inset;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-      box-shadow: 0 0 2px 1px rgba(255,255,255,0.7) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#646464); /*IE 5.5-7*/
-      float:left;
-      width:50%;
-      padding: 0 8px;
+      // float:left;
+      // width:50%;
+      padding: 5px 10px;
+    }
+    dt {
+      float: left;
+      clear: both;
     }
     dd{
+      background: linear-gradient(#ddd, #d0d0d0);
       margin: 0;
       text-align: right;
       font-weight: 700;
