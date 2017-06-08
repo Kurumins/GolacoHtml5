@@ -2,7 +2,7 @@
 angular.module('app')
   .config(hillRoutesConfig);
 
-function hillController (preview, HillService, $timeout) {
+function hillController (preview, HillService, $timeout, ConfirmPopup ) {
   var vm = this;
 
   vm.preview = preview;
@@ -15,6 +15,23 @@ function hillController (preview, HillService, $timeout) {
           vm.preview = preview;
         })
       });
+  };
+
+  vm.challenge = function (idHill, useItems) {
+
+    var message;
+
+    if ( vm.preview.FreeChallenger ) {
+      message = 'KingOfTheHill.lblConfirmChallenge';
+    } else {
+      message = 'KingOfTheHill.lblChallengeWithCredits;n3';
+    }
+
+    ConfirmPopup.open('Error.errorTitle', message)
+      .then(function () {
+        // HillService.challenge(idHill, useItems);
+        console.log(idHill, useItems);
+      })
   };
 
 }

@@ -5,6 +5,9 @@
     </div>
     <h3>HillScreen.lblTitle</h3>
   </div>
+  <label class="checkbox-inline" ng-init="useItems = true">
+    <input type="checkbox" ng-model="useItems" ng-false-value="true" ng-true-value="false" > KingOfTheHill.lblNoItems
+  </label>
   <slick
     infinite="false"
     dots="true"
@@ -21,7 +24,7 @@
       <div class="team-details">
         <img ng-src="{{hill.Badge}}">
         <img ng-src="{{hill.Picture}}">
-        <button class="btn"><i class="icon-futbol-o"></i></button>
+        <button class="btn" ng-click="$ctrl.challenge(hill.IdHill, useItems)"><i class="icon-futbol-o"></i></button>
         <button class="btn"><i class="icon-search-plus"></i></button>
         <button class="btn"><i class="icon-share"></i></button>
       </div>

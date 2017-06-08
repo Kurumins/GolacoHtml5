@@ -8,4 +8,11 @@ angular.module('app')
       return PostToJs('Hill/Preview');
     };
 
+    vm.challenge = function (idHill, useItems) {
+      return PostToJs('Hill/Challenge', {
+        IdHill: idHill,
+        UseItems: useItems
+      });
+    };
+
   });
