@@ -1,0 +1,42 @@
+.ngdialog.ngdialog-hill-details {
+
+  .ngdialog-content {
+    width: 750px;
+    // height: 550px;
+    padding: 10px 25px;
+  }
+
+  h5,
+  h4 {
+    // margin: 0;
+  }
+
+  h3 {
+    // margin-bottom: 0;
+  }
+
+  .hill-details-menu {
+    float: left;
+
+    + ng-include > :first-child{
+      &:not(.pull-right),
+      &.pull-right + * {
+        clear: both;
+      }
+    }
+  }
+
+  .table {
+    font-size: 12px;
+
+    td {
+      vertical-align: middle;
+    }
+  }
+
+  .icon-crown {
+    font-size: 18px;
+    padding-right: 20px;
+  }
+
+}

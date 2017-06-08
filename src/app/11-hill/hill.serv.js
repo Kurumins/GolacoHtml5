@@ -15,4 +15,18 @@ angular.module('app')
       });
     };
 
+    vm.topTeams = function (idHill) {
+      return PostToJs('Hill/TopTeams', {
+        IdHill: idHill
+      });
+    };
+
+    vm.bestsMonthly = function (idHill, month, year) {
+      return PostToJs('Hill/BestsMonthly', {
+        IdHill: idHill,
+        Month: month,
+        Year: year
+      });
+    };
+
   });

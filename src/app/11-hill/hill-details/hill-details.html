@@ -1,0 +1,19 @@
+<h2>KingOfTheHill.{{$ctrl.hill.NameHill}}</h2>
+
+<div ng-init-="current='cup-play-off'" class="hill-details-menu">
+  <label>
+    <input type="radio" ng-model="current" ng-value=""> <!-- KingOfTheHill. -->lblTop5
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'last-10'"> <!-- KingOfTheHill. -->lblLast10
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-prize'"> <!-- KingOfTheHill. -->lblMyLast10
+  </label>
+</div>
+
+<ng-include class="hill-details-{{(current || 'top-teams')}}" src="'hill-details-'+ (current || 'top-teams') +'.html'" />
+
+
+
+

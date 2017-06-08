@@ -1,0 +1,78 @@
+<!-- <div class="pull-right">
+  <select></select>
+  <select></select>
+  <button class="btn" ng-click="$ctrl.bestsMonthly()">bestsMonthly</button>
+</div> -->
+
+<form name="bestsMonthly" class="pull-right form-inline" ng-submit="$ctrl.bestsMonthly(month, year)">
+  <div class="form-group form-group-sm">
+    <select ng-model="month" required class="form-control">
+      <option ng-value=""><!-- Common. -->month</option>
+      <option ng-value="1"><!-- Common. -->january</option>
+      <option ng-value="2"><!-- Common. -->february</option>
+      <option ng-value="3"><!-- Common. -->march</option>
+      <option ng-value="4"><!-- Common. -->april</option>
+      <option ng-value="5"><!-- Common. -->may</option>
+      <option ng-value="6"><!-- Common. -->june</option>
+      <option ng-value="7"><!-- Common. -->july</option>
+      <option ng-value="8"><!-- Common. -->august</option>
+      <option ng-value="9"><!-- Common. -->september</option>
+      <option ng-value="10"><!-- Common. -->october</option>
+      <option ng-value="11"><!-- Common. -->november</option>
+      <option ng-value="12"><!-- Common. -->december</option>
+    </select>
+  </div>
+  <div class="form-group form-group-sm">
+    <select ng-model="year" required class="form-control">
+      <option ng-value=""><!-- Common. -->year</option>
+      <option ng-value="2017">2017</option>
+      <option ng-value="2016">2016</option>
+      <option ng-value="2015">2015</option>
+      <option ng-value="2014">2014</option>
+      <option ng-value="2013">2013</option>
+      <option ng-value="2012">2012</option>
+      <option ng-value="2011">2011</option>
+      <!-- <option ng-value="_year" ng-repeat="_year in [] | range:($ctrl.currentYear - $ctrl.firstYear + 1):$ctrl.firstYear | reverse">{{_year}}</option> -->
+    </select>
+  </div>
+  <button type="submit" class="btn btn-sm btn-primary" ng-disabled="bestsMonthly.$invalid"><i class="icon-search"></i></button>
+</form>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h4>KingOfTheHill.lblGeneral</h4>
+    <table class="table table-striped table-condensed">
+      <tr ng-repeat="team in $ctrl.topTeams.TopTeams">
+        <td><strong>{{$index+1}}</strong></td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg"></td>
+        <td><img ng-src="{{team.Badge}}"></td>
+        <td>{{team.Name}}</td>
+        <td><strong>{{team.MaxVictories}}</strong></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-xs-6">
+    <h4>KingOfTheHill.lblMonthly</h4>
+    <table class="table table-striped table-condensed">
+      <tr ng-repeat="team in $ctrl.topTeamsMonthly">
+        <td><strong>{{$index+1}}</strong></td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg"></td>
+        <td><img ng-src="{{team.Badge}}"></td>
+        <td>{{team.Name}}</td>
+        <td align="center"><strong>{{team.MaxVictories}}</strong></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<h4>KingOfTheHill.lblMyInfo</h4>
+<table class="table table-striped">
+  <tr>
+    <td width="1"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.topTeams.MyTeam.Flag}}.jpg"></td>
+    <td width="1"><img ng-src="{{$ctrl.topTeams.MyTeam.Badge}}"></td>
+    <td>{{$ctrl.topTeams.MyTeam.Name}}</td>
+    <td align="right"><strong><i class="icon-crown"></i> {{$ctrl.topTeams.MyTeam.MaxVictories}} Common.lblMatches</strong></td>
+  </tr>
+</table>
+
+<!-- <pre>{{$ctrl.topTeams.TopTeams[0] | json}}</pre> -->

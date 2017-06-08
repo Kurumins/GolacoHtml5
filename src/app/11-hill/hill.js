@@ -2,7 +2,7 @@
 angular.module('app')
   .config(hillRoutesConfig);
 
-function hillController (preview, HillService, $timeout, ConfirmPopup ) {
+function hillController (preview, HillService, ConfirmPopup, HillDetails) {
   var vm = this;
 
   vm.preview = preview;
@@ -33,6 +33,11 @@ function hillController (preview, HillService, $timeout, ConfirmPopup ) {
         console.log(idHill, useItems);
       })
   };
+
+  vm.hillDetails = function (idHill) {
+    HillDetails.open(idHill);
+  };
+  vm.hillDetails(preview.Hills[0]);
 
 }
 
