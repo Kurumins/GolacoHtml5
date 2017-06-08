@@ -1,1 +1,55 @@
-<pre>{{$ctrl.preview|json}}</pre>
+<div class="hill">
+  <div class="clearfix hill-header">
+    <div class="pull-right hill-menu">
+      <button class="btn btn-xs btn-info" ng-click="$ctrl.refresh()"><i class="icon-refresh"></i></button>
+    </div>
+    <h3>HillScreen.lblTitle</h3>
+  </div>
+  <slick
+    infinite="false"
+    dots="true"
+    slides-to-show="2" slides-to-scroll="2"
+    prev-arrow=".hill-nav .slick-prev"
+    next-arrow=".hill-nav .slick-next"
+    settings="{appendDots:'.hill-nav .dots', dotsClass: 'list-inline'}"
+    class="current-hills" ng-if="$ctrl.preview">
+    <div class="current-hill" ng-repeat="hill in $ctrl.preview.Hills">
+      <div class="current-hill-header -style-{{hill.Image}}">
+        <!-- <span class="hill-league-letter">{{['','A','B','C','D'][hill.IdTeamLeague]}}</span> -->
+        <h4 class="hill-league">KingOfTheHill.{{hill.NameHill}}</h4>
+      </div>
+      <div class="team-details">
+        <img ng-src="{{hill.Badge}}">
+        <img ng-src="{{hill.Picture}}">
+        <button class="btn"><i class="icon-futbol-o"></i></button>
+        <button class="btn"><i class="icon-search-plus"></i></button>
+        <button class="btn"><i class="icon-share"></i></button>
+      </div>
+      <div class="hill-status">
+        <p><i class="icon-crown"></i> {{hill.NameTeam}}</p>
+        <p><i>{{['','A','B','C','D'][hill.IdTeamLeague]}}</i> <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{hill.FlagTeam}}.jpg"> {{hill.NameUser}}</p>
+        <p><i class="icon-futbol-o"></i> {{hill.CurrentVictories}} Partidas</p>
+      </div>
+      <div class="last-match">
+        <h4>Última partida</h4>
+        <div class="match-detail">
+          <img ng-src="{{hill.LastMatch.HomeTeam.Badge}}">
+          <span>{{hill.LastMatch.HomeTeam.Acronym}}</span>
+          <span class="match-result">
+            <span class="team-goals">{{hill.LastMatch.HomeTeam.Goals}}</span>
+            x
+            <span class="team-goals">{{hill.LastMatch.VisitorTeam.Goals}}</span>
+          </span>
+          <span>{{hill.LastMatch.VisitorTeam.Acronym}}</span>
+          <img ng-src="{{hill.LastMatch.VisitorTeam.Badge}}">
+        </div>
+      </div>
+    </div>
+  </slick>
+  <div class="slick-nav hill-nav">
+    <button type="button" class="btn btn-link slick-prev">«</button>
+    <span class="dots"></span>
+    <button type="button" class="btn btn-link slick-next">»</button>
+  </div>
+</div>
+<pre>{{$ctrl.preview.Hills[0]|json}}</pre>
