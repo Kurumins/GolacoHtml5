@@ -37,7 +37,7 @@ function hillController (preview, HillService, ConfirmPopup, HillDetails, $timeo
   vm.hillDetails = function (idHill) {
     HillDetails.open(idHill);
   };
-  vm.hillDetails(preview.Hills[0]);
+  // vm.hillDetails(preview.Hills[0]);
 
 }
 

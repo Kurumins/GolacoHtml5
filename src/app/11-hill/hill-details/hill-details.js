@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('HillDetailsController', function (hill, topTeams, lastMatchs, HillService, moment) {
+  .controller('HillDetailsController', function (hill, topTeams, lastMatchs, myLastMatchs, HillService, moment) {
 
     var vm = this;
 
@@ -8,6 +8,7 @@ angular.module('app')
     vm.topTeams = topTeams;
     vm.topTeamsMonthly = topTeams.TopTeamsMonthly;
     vm.lastMatchs = lastMatchs.LastMatchs;
+    vm.myLastMatchs = myLastMatchs.LastMatchs;
 
     vm.firstYear = 2011;
     vm.currentYear = moment().year();
@@ -38,6 +39,9 @@ angular.module('app')
           },
           lastMatchs: function () {
             return HillService.lastMatchs(hill.IdHill);
+          },
+          myLastMatchs: function () {
+            return HillService.myLastMatchs(hill.IdHill);
           },
         },
       });

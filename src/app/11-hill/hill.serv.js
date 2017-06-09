@@ -35,4 +35,10 @@ angular.module('app')
       });
     };
 
+    vm.myLastMatchs = function (idHill) {
+      return PostToJs('Hill/MyLastMatchs', {
+        IdHill: idHill
+      });
+    };
+
   });
