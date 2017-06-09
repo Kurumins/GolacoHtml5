@@ -1,0 +1,9 @@
+<button ng-click="$ctrl.select()" ng-disabled="$ctrl.lock">
+  <img ng-if="$ctrl.item" ng-src="{{$ctrl.item.Picture}}">
+  <span ng-if="!$ctrl.item">
+    <span ng-if="$ctrl.stadium[list+'Slots'] > i" class="item-equip">
+      Clique para equipar
+    </span>
+    <i class="icon-lock" ng-if="$ctrl.lock"></i>
+  </span>
+</button>

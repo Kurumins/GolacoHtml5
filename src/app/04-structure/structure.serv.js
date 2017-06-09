@@ -4,12 +4,21 @@ angular.module('app')
 
     var vm = this;
 
+    //Stadium
+
     vm.stadiumManage = function () {
       return PostToJs('Stadium/Manage');
     };
 
     vm.storeList = function () {
       return PostToJs('Store/List');
+    };
+
+
+    vm.stadiumRename = function (stadiumName) {
+      return PostToJs('Stadium/Rename', {
+        StadiumName: stadiumName
+      });
     };
 
     //TeamPlayerJunior

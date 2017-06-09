@@ -1,0 +1,31 @@
+structure-item-list {
+  background: #017fe5;
+  display: block;
+  // width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  // border: 1px solid;
+  padding: 2px 1px 2px;
+
+  > i {
+    width: 50px;
+    text-align: center;
+    color: #fff;
+  }
+
+  ng-transclude {
+    // display: flex;
+    width: 100%;
+    // flex-wrap: wrap;
+  }
+
+  structure-item {
+    display: block;
+    float: left;
+    width: calc(33.33% - 2px);
+    // border: 1px solid;
+    margin: 1px;
+  }
+}

@@ -1,9 +1,31 @@
-// 'use strict';
-// angular.module('app')
-//   .controller('MainConfigController', function (settings) {
+'use strict';
+angular.module('app')
+  .controller('StructureStadiumController', function (stadiumManage, InputPopup, StructureService, StadiumReform) {
 
-//     var vm = this;
+    var vm = this;
+    vm.stadium = stadiumManage.Stadium;
 
-//     vm.settings = settings;
+    vm.editName = function () {
+      InputPopup.open('Nome do Estádio', {
+        confirmText: 'Salvar',
+        initialText: vm.stadium.Name
+      })
+        .then(function (stadiumName) {
+          StructureService.stadiumRename(stadiumName)
+            .then(function () {
+              vm.stadium.Name = stadiumName;
+            });
+        });
+    };
 
-//   });
+    vm.stadiumReform = StadiumReform.open;
+    vm.stadiumReform = console.log;
+
+    // function updateStructureStadium () {
+    //   return StructureService.juniorPreview()
+    //     .then(function (juniorPreview) {
+    //       vm.juniorPreview = juniorPreview;
+    //     });
+    // }
+
+  });

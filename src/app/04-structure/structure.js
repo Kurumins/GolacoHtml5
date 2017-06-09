@@ -42,10 +42,11 @@ function structureRoutesConfig ($stateProvider) {
             });
         }
       },
-      controller: function (stadiumManage) {
-        this.stadium = stadiumManage.Stadium;
-      },
-      controllerAs: '$ctrl'
+      controller: 'StructureStadiumController as $ctrl'
+      // controller: function (stadiumManage) {
+      //   this.stadium = stadiumManage.Stadium;
+      // },
+      // controllerAs: '$ctrl'
     })
 
     .state('app.structure.training-center', {
