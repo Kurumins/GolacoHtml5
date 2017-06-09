@@ -1,12 +1,13 @@
 'use strict';
 angular.module('app')
-  .controller('HillDetailsController', function (hill, topTeams, HillService, moment) {
+  .controller('HillDetailsController', function (hill, topTeams, lastMatchs, HillService, moment) {
 
     var vm = this;
 
     vm.hill = hill;
     vm.topTeams = topTeams;
     vm.topTeamsMonthly = topTeams.TopTeamsMonthly;
+    vm.lastMatchs = lastMatchs.LastMatchs;
 
     vm.firstYear = 2011;
     vm.currentYear = moment().year();
@@ -26,6 +27,7 @@ angular.module('app')
         template: 'hill-details.html',
         appendClassName: 'ngdialog-hill-details',
         controller: 'HillDetailsController as $ctrl',
+        showClose: true,
         // scope: $scope,
         resolve: {
           hill: function () {
@@ -33,6 +35,9 @@ angular.module('app')
           },
           topTeams: function () {
             return HillService.topTeams(hill.IdHill);
+          },
+          lastMatchs: function () {
+            return HillService.lastMatchs(hill.IdHill);
           },
         },
       });

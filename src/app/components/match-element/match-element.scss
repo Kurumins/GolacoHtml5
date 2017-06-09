@@ -1,0 +1,33 @@
+match-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ddd;
+  padding: 5px 10px;
+
+  > * {
+    // flex: 1;
+  }
+
+  .team-acronym {
+    width: 50px;
+  }
+
+  .match-result {
+    text-align: center;
+
+    background-color: #333;
+    color: white;
+    padding: 3px 5px 1px;
+    font-size: 16px;
+
+    .team-goals {
+      width: 20px;
+      display: inline-block;
+    }
+  }
+
+  &.is-me {
+    background: #ccf;
+  }
+}

@@ -102,26 +102,26 @@
         margin-top: 0;
       }
 
-      .match-detail {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+      // .match-detail {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   align-items: center;
+      // }
 
-      .match-result {
-        background-color: #333;
-        color: white;
-        padding: 5px 5px 3px;
-        font-size: 16px;
-        margin: 0 70px;
+      // .match-result {
+      //   background-color: #333;
+      //   color: white;
+      //   padding: 5px 5px 3px;
+      //   font-size: 16px;
+      //   margin: 0 70px;
 
-        .team-goals {
-          font-weight: bold;
-          width: 25px;
-          display: inline-block;
-          text-align: center;
-        }
-      }
+      //   .team-goals {
+      //     font-weight: bold;
+      //     width: 25px;
+      //     display: inline-block;
+      //     text-align: center;
+      //   }
+      // }
     }
   }
 
