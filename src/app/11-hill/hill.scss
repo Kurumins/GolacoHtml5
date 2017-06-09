@@ -1,0 +1,129 @@
+.hill {
+  padding: 15px;
+  background-color: #cbdaef;
+
+  .hill-menu {
+    i {
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .current-hills {
+    margin: 10px -15px;
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  .current-hill {
+    margin: 0 15px;
+    background: white;
+    // padding: 10px 0;
+
+    .current-hill-header {
+      border-bottom: 1px solid #ccc;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        border-right: 1px solid;
+        // padding: 0 10px;
+        margin-right: 15px;
+      }
+      &.-style-1:before {
+        content: "A";
+      }
+      &.-style-2:before {
+        content: "B";
+      }
+      &.-style-3:before {
+        content: "C";
+      }
+      &.-style-4:before {
+        content: "D";
+      }
+      &.-style-6:before {
+        content: "O2";
+      }
+
+      h4 {
+        display: inline-block;
+      }
+    }
+
+    .team-details {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+
+      img {
+        height: 90px;
+        width: 90px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .btn {
+        // padding: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+      }
+
+      i {
+        font-size: 22px;
+      }
+    }
+
+    .hill-status {
+      padding: 20px 10px;
+      border-bottom: 1px solid #ccc;
+
+      i {
+        width: 30px;
+        display: inline-block;
+        text-align: center;
+        border-right: 1px solid #ccc;
+        font-size: 18px;
+        font-style: normal;
+      }
+    }
+
+    .last-match {
+      padding: 20px;
+
+      h4 {
+        margin-top: 0;
+      }
+
+      // .match-detail {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   align-items: center;
+      // }
+
+      // .match-result {
+      //   background-color: #333;
+      //   color: white;
+      //   padding: 5px 5px 3px;
+      //   font-size: 16px;
+      //   margin: 0 70px;
+
+      //   .team-goals {
+      //     font-weight: bold;
+      //     width: 25px;
+      //     display: inline-block;
+      //     text-align: center;
+      //   }
+      // }
+    }
+  }
+
+}
+
