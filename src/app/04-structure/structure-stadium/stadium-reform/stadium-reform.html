@@ -1,2 +1,94 @@
-<h2>Reforma Estádio</h2>
+<h2>Reformar Estádio</h2>
+<h3>{{$ctrl.selectedStadium.Name}}</h3>
 
+<div class="row">
+  <div class="col-xs-5">
+    <img ng-src="{{$ctrl.selectedStadium.BigPicture}}" class="img-responsive">
+    <table class="table table-condensed table-striped stadium-characteristics">
+      <thead>
+        <tr>
+          <th>Características</th>
+          <th>Estádio</th>
+          <th>Diferença</th>
+        </tr>
+      </thead>
+      <tr>
+        <th>Capacidade</th>
+        <td align="center">{{$ctrl.selectedStadium.Capacity}}</td>
+        <td align="center" ng-class="{
+          better: $ctrl.selectedStadium.DiferenceCapacity > 0,
+          worst: $ctrl.selectedStadium.DiferenceCapacity < 0
+        }">{{$ctrl.selectedStadium.DiferenceCapacity}}</td>
+      </tr>
+      <tr>
+        <th>Atratividade</th>
+        <td align="center">{{$ctrl.selectedStadium.Atractivity*100}}%</td>
+        <td align="center" ng-class="{
+          better: $ctrl.selectedStadium.DiferenceAtractivity > 0,
+          worst: $ctrl.selectedStadium.DiferenceAtractivity < 0
+        }">{{$ctrl.selectedStadium.DiferenceAtractivity*100}}%</td>
+      </tr>
+      <tr>
+        <th>Rentabilidade</th>
+        <td align="center">{{$ctrl.selectedStadium.Rentability*100}}%</td>
+        <td align="center" ng-class="{
+          better: $ctrl.selectedStadium.DiferenceRentability > 0,
+          worst: $ctrl.selectedStadium.DiferenceRentability < 0
+        }">{{$ctrl.selectedStadium.DiferenceRentability*100}}%</td>
+      </tr>
+    </table>
+    <button class="btn btn-block btn-primary">Reformar estádio</button>
+  </div>
+  <div class="col-xs-5">
+    <h4>Melhorias do estádio</h4>
+    <div class="stadium-improvements">
+      <div ng-repeat="list in ['Capacity', 'Atractivity', 'Rentability']" class="clearfix stadium-slots">
+        <p>{{list}}</p>
+        <span ng-repeat="i in [0,1,2]" ng-switch="$ctrl.selectedStadium[list+'Slots'] <= i">
+          <span ng-switch-when="false" ng-class="{
+            won: i >= $ctrl.current[list+'Slots']
+          }" class="stadium-slot">
+            <i class="icon-unlock"></i>
+          </span>
+          <span ng-switch-when="true" ng-class="{
+            lose: $ctrl.selectedStadium[list+'Slots'] < $ctrl.current[list+'Slots']
+          }" class="stadium-slot">
+            <i class="icon-lock"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+    <dl>
+      <dt>Custo da obra</dt>
+      <dd ng-if="$ctrl.selectedStadium.CreditPrice">{{$ctrl.selectedStadium.CreditPrice}} <i class="icon-credit-card"></i></dd>
+      <dd ng-if="$ctrl.selectedStadium.MoneyPrice">{{$ctrl.selectedStadium.MoneyPrice | currency}} <i class="icon-money"></i></dd>
+      <dt ng-if="!$ctrl.selectedStadium.CreditPrice">Reaproveitamento de materiais</dt>
+      <dd ng-if="!$ctrl.selectedStadium.CreditPrice" class="doble-line">{{$ctrl.selectedStadium.RecycledMaterialMoney | currency}} <i class="icon-money"></i></dd>
+      <dt ng-if="!$ctrl.selectedStadium.CreditPrice">Total</dt>
+      <!-- <dd ng-if="$ctrl.selectedStadium.CreditPrice">i> {{$ctrl.selectedStadium.CreditPrice}} <i class="icon-credit-card"><</dd> -->
+      <dd ng-if="!$ctrl.selectedStadium.CreditPrice">{{$ctrl.selectedStadium.TotalMoneyPrice | currency}} <i class="icon-money"></i></dd>
+    </dl>
+  </div>
+  <div class="col-xs-2 stadium-list">
+    <!-- <button ng-repeat="stadium in $ctrl.stadiumList" ng-click="$ctrl.setSelectedStadium(stadium)">
+      {{stadium.Name}}
+    </button> -->
+    <!-- MiniPicture -->
+    <button type="button" class="btn btn-link slick-prev icon-up-open"></button>
+    <slick
+      infinite=false
+      slides-to-show="4" slides-to-scroll="1"
+      rows="1" vertical=true vertical-swiping=true
+      prev-arrow=".stadium-list .slick-prev"
+      next-arrow=".stadium-list .slick-next"
+      arrows-="false"
+      settings="$ctrl.slickConfig">
+        <div ng-repeat="stadium in $ctrl.stadiumList" ng-click="$ctrl.setSelectedStadium(stadium)" ng-class="{'is-current': $ctrl.selectedStadium == stadium }">
+          <img ng-src="{{stadium.MiniPicture}}">
+        </div>
+    </slick>
+    <button type="button" class="btn btn-link slick-next icon-down-open" ></button>
+  </div>
+</div>
+
+<!-- <pre>{{$ctrl.selectedStadium|json}}</pre> -->

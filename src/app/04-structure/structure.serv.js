@@ -14,11 +14,14 @@ angular.module('app')
       return PostToJs('Store/List');
     };
 
-
     vm.stadiumRename = function (stadiumName) {
       return PostToJs('Stadium/Rename', {
         StadiumName: stadiumName
       });
+    };
+
+    vm.stadiumList = function () {
+      return PostToJs('Stadium/List');
     };
 
     //TeamPlayerJunior

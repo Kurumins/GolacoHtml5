@@ -18,7 +18,11 @@ angular.module('app')
         });
     };
 
-    vm.stadiumReform = StadiumReform.open;
+    vm.stadiumChange = function () {
+      StadiumReform.open(vm.stadium);
+    }
+    vm.stadiumChange();
+
     vm.stadiumReform = console.log;
 
     // function updateStructureStadium () {
