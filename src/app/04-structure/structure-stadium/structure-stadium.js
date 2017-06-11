@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('StructureStadiumController', function (stadiumManage, InputPopup, StructureService, StadiumReform) {
+  .controller('StructureStadiumController', function (stadiumManage, InputPopup, StructureService, StadiumRecycle) {
 
     var vm = this;
     vm.stadium = stadiumManage.Stadium;
@@ -18,10 +18,17 @@ angular.module('app')
         });
     };
 
-    vm.stadiumChange = function () {
-      StadiumReform.open(vm.stadium);
+    vm.stadiumRecycle = function () {
+      StadiumRecycle.open(vm.stadium)
+        .then(function () {
+          return StructureService.stadiumManage();
+        })
+        .then( function (stadiumManage) {
+          stadiumManage.Stadium.CapacitySlots = stadiumManage.Stadium.CampacitySlots;
+          vm.stadium = stadiumManage.Stadium;
+        });
     }
-    vm.stadiumChange();
+    // vm.stadiumRecycle();
 
     vm.stadiumReform = console.log;
 

@@ -24,6 +24,12 @@ angular.module('app')
       return PostToJs('Stadium/List');
     };
 
+    vm.stadiumRecycle = function (stadiumId) {
+      return PostToJs('Stadium/Recycle', {
+        StadiumId: stadiumId
+      });
+    };
+
     //TeamPlayerJunior
 
     vm.juniorPreview = function () {
