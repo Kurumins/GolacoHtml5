@@ -30,6 +30,17 @@ angular.module('app')
       });
     };
 
+    vm.stadiumGetItemList = function (type) {
+      return PostToJs('StadiumItem/' + type + 'List');
+    };
+
+    vm.stadiumSetStadiumItem = function (type, slot, stadiumItemId) {
+      return PostToJs('Stadium/Set' + type + 'StadiumItem', {
+        Slot: slot,
+        StadiumItemId: stadiumItemId
+      });
+    };
+
     //TeamPlayerJunior
 
     vm.juniorPreview = function () {

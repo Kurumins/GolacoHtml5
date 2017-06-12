@@ -1,0 +1,41 @@
+<h2>Reformar Estádio</h2>
+<h3>{{$ctrl.type}}</h3>
+
+<div class="item-list">
+  <slick
+    infinite=false
+    slides-to-show="3" slides-to-scroll="3"
+    prev-arrow=".item-list .slick-prev"
+    next-arrow=".item-list .slick-next"
+    arrows-="false"
+    settings="$ctrl.slickConfig">
+      <div ng-repeat="item in $ctrl.itemList">
+        <h4>{{item.Name.replace('Label_', '')}}</h4>
+        <img ng-src="{{item.Picture}}">
+        <dl class="item-effects clearfix">
+          <dt ng-repeat-start="effect in item.Effects">{{effect.Description.replace('Effect_Stadium', '')}}</dt>
+          <dd ng-repeat-end ng-class="{
+            won: effect.Effect > 0,
+            lose: effect.Effect < 0
+          }">{{effect.Effect || '-'}}</dd>
+        </dl>
+        <hr>
+        <dl class="item-cost clearfix">
+          <dt><!-- StadiumImprovements. -->lbCost</dt>
+          <dd ng-if="item.MoneyPrice">{{item.MoneyPrice | currency}} <i class="icon-money"></dd>
+          <dd ng-if="item.CreditPrice">{{item.CreditPrice}} <i class="icon-credit-card"></dd>
+          <dt><!-- StadiumImprovements. -->lbMaterialReuse</dt>
+          <dd>{{0 | currency}} <i class="icon-money"></dd>
+          <dt><!-- StadiumImprovements. -->lbTotal</dt>
+          <dd ng-if="item.MoneyPrice">{{item.MoneyPrice | currency}} <i class="icon-money"></dd>
+          <dd ng-if="item.CreditPrice">{{item.CreditPrice}} <i class="icon-credit-card"></dd>
+        </dl>
+        <button class="btn btn-block btn-primary text-uppercase" ng-click="$ctrl.stadiumSetStadiumItem(item)"><!-- StadiumImprovements. -->lblReform</button>
+      </div>
+  </slick>
+  <button type="button" class="btn btn-link slick-prev icon-chevron-left"></button>
+  <button type="button" class="btn btn-link slick-next icon-chevron-right" ></button>
+</div>
+
+<!-- <pre>{{$ctrl.itemList[0]|json}}</pre> -->
+

@@ -25,6 +25,7 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure', {
       url: '/structure',
       abstract: '.stadium',
+      sticky: true,
       templateUrl: 'structure.html',
       // controller: structureController,
       // controllerAs: '$structureCtrl'
@@ -33,6 +34,7 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure.stadium', {
       url: '/stadium',
       templateUrl: 'structure-stadium.html',
+      sticky: true,
       resolve: {
         stadiumManage: function (StructureService) {
           return StructureService.stadiumManage()
@@ -62,6 +64,7 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure.junior-center', {
       url: '/junior-center',
       templateUrl: 'junior-center.html',
+      sticky: true,
       resolve: {
         juniorPreview: function (StructureService) {
           return StructureService.juniorPreview();
