@@ -57,6 +57,13 @@ angular.module('app')
       return PostToJs('TrainingCenter/List');
     };
 
+    vm.trainingCenterRecycle = function (idTeamTrainCenter, idTrainingCenter) {
+      return PostToJs('TrainingCenter/Recycle', {
+        IdTeamTrainCenter: idTeamTrainCenter,
+        IdTrainingCenter: idTrainingCenter,
+      });
+    };
+
     // TeamPlayerJunior
     vm.juniorPreview = function () {
       return PostToJs('TeamPlayerJunior/Preview');

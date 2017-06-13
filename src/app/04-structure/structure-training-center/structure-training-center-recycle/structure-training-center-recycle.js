@@ -8,16 +8,15 @@ angular.module('app')
     vm.current = current;
     vm.scope = $scope;
 
-    vm.setSelectedTrainingCenter = function (stadium) {
-      stadium.CapacitySlots = stadium.CampacitySlots;
-      vm.selectedTrainingCenter = stadium;
+    vm.setSelectedTrainingCenter = function (trainingCenter) {
+      vm.selectedTrainingCenter = trainingCenter;
     };
     vm.setSelectedTrainingCenter(trainingCenterList.TrainCenters[0]);
 
-    vm.stadiumRecycle = function () {
-      ConfirmPopup.open('Atenção', 'StadiumRecycleDetail.msgRecycleConfirmTitle')
+    vm.trainingCenterRecycle = function () {
+      ConfirmPopup.open('TrainingCenterReformDetail.lblRecycleConfirmTitle', 'TrainingCenterReformDetail.msgRecycleConfirmTitle')
         .then(function () {
-          return StructureService.stadiumRecycle(vm.selectedTrainingCenter.Id);
+          return StructureService.trainingCenterRecycle(vm.current.IdTeamTrainCenter, vm.selectedTrainingCenter.Id);
         })
         .catch(function (error) {
           AlertPopup.open('Atenção', error.Message);

@@ -8,12 +8,11 @@ angular.module('app')
     vm.trainingCenterRecycle = function () {
       TrainingCenterRecycle.open(vm.trainingCenter)
         .then(updateStructureStadium);
-
     }
-    vm.trainingCenterRecycle();
+    // vm.trainingCenterRecycle();
 
     vm.trainingCenterReform = function (slot) {
-      // delete vm.trainingCenter.TrainingCenterItems;
+
       var categories = {
         4: [1, 3],
         3: [4, 5],

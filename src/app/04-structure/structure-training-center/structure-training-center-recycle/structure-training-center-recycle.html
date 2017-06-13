@@ -8,9 +8,9 @@
       <h4><!-- TrainingCenterReformDetail. -->lblTrainingLevel</h4>
       <strong>{{$ctrl.selectedTrainingCenter.MinLevel+1}}</strong>
       <button class="btn btn-block btn-primary"
-        ng-click="$ctrl.stadiumRecycle()"
+        ng-click="$ctrl.trainingCenterRecycle()"
         ng-disabled="'C'.charCodeAt(0) > $ctrl.selectedTrainingCenter.IdLeague.charCodeAt(0)">
-          Reformar estádio
+          <!-- TrainingCenterReformDetail. -->txtReformCenter
       </button>
     </div>
   </div>
@@ -46,7 +46,7 @@
     <button type="button" class="btn btn-link slick-prev icon-chevron-up"></button>
     <slick
       infinite=false
-      slides-to-show="4" slides-to-scroll="1"
+      slides-to-show="4" slides-to-scroll="4"
       rows="1" vertical=true vertical-swiping=true
       prev-arrow=".stadium-list .slick-prev"
       next-arrow=".stadium-list .slick-next"
@@ -57,7 +57,7 @@
           <span class="id-league">{{trainingCenter.IdLeague}}</span>
         </div>
     </slick>
-    <button type="button" class="btn btn-link slick-next icon-chevron-down" ></button>
+    <button type="button" class="btn btn-link slick-next icon-chevron-down"></button>
   </div>
 </div>
 
