@@ -1,16 +1,16 @@
 'use strict';
 angular.module('app')
-  .controller('StructureTrainingCenterController', function (trainingCenterManage, StructureService, StadiumRecycle, PlayerItemEquip, AlertPopup) {
+  .controller('StructureTrainingCenterController', function (trainingCenterManage, StructureService, TrainingCenterRecycle, PlayerItemEquip, AlertPopup) {
 
     var vm = this;
     vm.trainingCenter = trainingCenterManage.TrainingCenter;
 
-    // vm.stadiumRecycle = function () {
-    //   StadiumRecycle.open(vm.stadium)
-    //     .then(updateStructureStadium);
+    vm.trainingCenterRecycle = function () {
+      TrainingCenterRecycle.open(vm.trainingCenter)
+        .then(updateStructureStadium);
 
-    // }
-    // // vm.stadiumRecycle();
+    }
+    vm.trainingCenterRecycle();
 
     vm.trainingCenterReform = function (slot) {
       // delete vm.trainingCenter.TrainingCenterItems;
@@ -30,12 +30,6 @@ angular.module('app')
         })
         .finally(updateStructureStadium);
     };
-
-    // vm.stadiumReform = function (type, slot) {
-    //   StadiumItens.open(type, slot)
-    //     .then(updateStructureStadium);
-    // };
-    // // vm.stadiumReform('Capacity', 1);
 
     function updateStructureStadium () {
       return StructureService.trainingCenterManage()

@@ -1,0 +1,65 @@
+<h2>TrainingCenterReformDetail.lblTitle</h2>
+<h3>{{$ctrl.selectedTrainingCenter.Name}}</h3>
+
+<div class="row">
+  <div class="col-xs-5">
+    <img ng-src="{{$ctrl.selectedTrainingCenter.BigPicture}}" class="img-responsive">
+    <div class="training-center-recycle">
+      <h4><!-- TrainingCenterReformDetail. -->lblTrainingLevel</h4>
+      <strong>{{$ctrl.selectedTrainingCenter.MinLevel+1}}</strong>
+      <button class="btn btn-block btn-primary"
+        ng-click="$ctrl.stadiumRecycle()"
+        ng-disabled="'C'.charCodeAt(0) > $ctrl.selectedTrainingCenter.IdLeague.charCodeAt(0)">
+          Reformar estádio
+      </button>
+    </div>
+  </div>
+  <div class="col-xs-5">
+    <h4><!-- TrainingCenterReformDetail. -->lblEquipaments</h4>
+    <div class="stadium-improvements">
+      <div class="clearfix stadium-slots">
+        <span ng-repeat="i in [1,2,3,4,5,6,7,8,9]" ng-switch="$ctrl.selectedTrainingCenter.MaxItemSlot < i">
+          <span ng-switch-when="false" ng-class="{
+            won: i > $ctrl.current.MaxItemSlot
+          }" class="stadium-slot">
+            <i class="icon-unlock"></i>
+          </span>
+          <span ng-switch-when="true" ng-class="{
+            lose: i <= $ctrl.current.MaxItemSlot
+          }" class="stadium-slot">
+            <i class="icon-lock"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+    <dl>
+      <dt>Custo da obra</dt>
+      <dd ng-if="$ctrl.selectedTrainingCenter.CreditPrice">{{$ctrl.selectedTrainingCenter.CreditPrice}} <i class="icon-credit-card"></i></dd>
+      <dd ng-if="$ctrl.selectedTrainingCenter.MoneyPrice">{{$ctrl.selectedTrainingCenter.MoneyPrice | currency}} <i class="icon-money"></i></dd>
+    </dl>
+  </div>
+  <div class="col-xs-2 stadium-list">
+    <!-- <button ng-repeat="stadium in $ctrl.stadiumList" ng-click="$ctrl.setSelectedTrainingCenter(stadium)">
+      {{stadium.Name}}
+    </button> -->
+    <!-- MiniPicture -->
+    <button type="button" class="btn btn-link slick-prev icon-chevron-up"></button>
+    <slick
+      infinite=false
+      slides-to-show="4" slides-to-scroll="1"
+      rows="1" vertical=true vertical-swiping=true
+      prev-arrow=".stadium-list .slick-prev"
+      next-arrow=".stadium-list .slick-next"
+      arrows-="false"
+      settings="$ctrl.slickConfig">
+        <div ng-repeat="trainingCenter in $ctrl.trainingCenterList" ng-click="$ctrl.setSelectedTrainingCenter(trainingCenter)" ng-class="{'is-current': $ctrl.selectedTrainingCenter == trainingCenter }">
+          <img ng-src="{{trainingCenter.MiniPicture}}">
+          <span class="id-league">{{trainingCenter.IdLeague}}</span>
+        </div>
+    </slick>
+    <button type="button" class="btn btn-link slick-next icon-chevron-down" ></button>
+  </div>
+</div>
+
+<!-- <pre>{{$ctrl.selectedTrainingCenter|json}}</pre> -->
+<!-- <pre>{{$ctrl.current|json}}</pre> -->

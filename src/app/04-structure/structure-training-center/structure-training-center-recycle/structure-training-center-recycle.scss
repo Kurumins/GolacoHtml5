@@ -1,4 +1,4 @@
-.ngdialog.ngdialog-stadium-recycle {
+.ngdialog.ngdialog-structure-training-center-recycle {
 
   .ngdialog-content {
     width: 750px;
@@ -11,26 +11,22 @@
 
   h4,
   h3 {
-    margin-top: 0;
+    // margin-top: 0;
   }
 
-  .stadium-characteristics {
-
-    .better {
-      color: green;
-      &:before {
-        content: '+';
-      }
+  .training-center-recycle {
+    text-align: center;
+    h4 {
     }
-    .worst {
-      color: red;
-    }
-  }
-
-  .stadium-improvements {
-    p {
-      margin-bottom: 0;
+    strong {
+      display: block;
+      font-size: 24px;
+      line-height: 50px;
       text-align: center;
+      margin: 15px auto;
+      border: 1px solid;
+      width: 40px;
+
     }
   }
 
@@ -42,11 +38,11 @@
     display: block;
     float: left;
     width: 32.333%;
-    line-height: 50px;
-    height: 50px;
+    line-height: 60px;
+    height: 60px;
     text-align: center;
     border: 1px solid;
-    margin: 0 .5%;
+    margin: 0 .5% 1%;
     position: relative;
 
     &.won,
@@ -96,22 +92,32 @@
 
   .stadium-list {
     text-align: center;
+    margin-top: -50px;
 
     * {
       outline: none;
     }
 
     .slick-slide {
-      line-height: 60px;
+      // line-height: 60px;
       height: 60px;
       border-color: #ccc;
       background: white;
       margin: 5px;
       padding: 5px;
       cursor: pointer;
+      position: relative;
 
       &.is-current {
         background: gold;
+      }
+
+      .id-league {
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        background: white;
+        width: 20px;
       }
     }
 

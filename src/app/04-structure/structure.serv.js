@@ -53,6 +53,10 @@ angular.module('app')
       });
     };
 
+    vm.trainingCenterList = function () {
+      return PostToJs('TrainingCenter/List');
+    };
+
     // TeamPlayerJunior
     vm.juniorPreview = function () {
       return PostToJs('TeamPlayerJunior/Preview');
