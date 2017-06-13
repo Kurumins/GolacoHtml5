@@ -1,12 +1,16 @@
 .structure-stadium {
+  margin: auto;
+  width: 710px;
+
   .stadium-picture {
     float: left;
-    margin: 0 10px;
+    margin-right: 9px;
   }
+
   .stadium-itens {
     float: left;
     width: 400px;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
 
     .stadium-item {
       // float: left;
@@ -18,17 +22,48 @@
       height: 62px;
       width: 100%;
     }
+  }
 
+  hr {
+    margin: 10px 0;
+    border-color: #333;
+  }
 
+  .structure-stadium-details {
+    dt {
+      // width: 50%;
+      float: left;
+      clear: left;
 
-    // .item-equip {
-    //   line-height: 16px;
-    //   display: block;
-    //   font-size: 14px;
-    //   padding: 14px 0;
-    //   box-sizing: border-box;
-    //   height: 62px;
-    //   cursor: pointer;
-    // }
+      i {
+        border-right: 1px solid;
+        padding-right: 5px;
+        margin-right: 2px;
+      }
+    }
+    dd {
+      float: right;
+      // text-align: right;
+    }
+
+    .stadium-levels {
+      border-left: 1px solid;
+      margin: 8px 0;
+    }
+
+    .stadium-level {
+      background: #ccc;
+      width: 80px;
+      height: 4px;
+      margin: 5px 0;
+      border-radius: 3px;
+      overflow: hidden;
+
+      > span {
+        display: block;
+        height: 4px;
+        background: green;
+      }
+    }
   }
 }
