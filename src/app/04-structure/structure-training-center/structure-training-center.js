@@ -14,7 +14,14 @@ angular.module('app')
 
     vm.trainingCenterReform = function (slot) {
       // delete vm.trainingCenter.TrainingCenterItems;
-      PlayerItemEquip.openCategory([1, 3])
+      var categories = {
+        4: [1, 3],
+        3: [4, 5],
+        2: [6, 7],
+        1: [8, 9]
+      };
+
+      PlayerItemEquip.openCategory( categories[vm.trainingCenter.Requirement_IdLeague] )
         .then(function (item) {
           return StructureService.trainingCenterSetItem(slot, item.Id, vm.trainingCenter.IdTeamTrainCenter)
             .catch(function (error) {
