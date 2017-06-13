@@ -4,8 +4,7 @@ angular.module('app')
 
     var vm = this;
 
-    //Stadium
-
+    // Stadium
     vm.stadiumManage = function () {
       return PostToJs('Stadium/Manage');
     };
@@ -41,8 +40,20 @@ angular.module('app')
       });
     };
 
-    //TeamPlayerJunior
+    // TrainingCenter
+    vm.trainingCenterManage = function () {
+      return PostToJs('TrainingCenter/Manage');
+    };
 
+    vm.trainingCenterSetItem = function (slot, itemId, idTeamTrainCenter) {
+      return PostToJs('TrainingCenter/SetTrainingCenterItem', {
+        Slot: slot,
+        ItemId: itemId,
+        IdTeamTrainCenter: idTeamTrainCenter,
+      });
+    };
+
+    // TeamPlayerJunior
     vm.juniorPreview = function () {
       return PostToJs('TeamPlayerJunior/Preview');
     };

@@ -1,0 +1,126 @@
+.ngdialog.ngdialog-stadium-recycle {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  h4,
+  h3 {
+    margin-top: 0;
+  }
+
+  .stadium-characteristics {
+
+    .better {
+      color: green;
+      &:before {
+        content: '+';
+      }
+    }
+    .worst {
+      color: red;
+    }
+  }
+
+  .stadium-improvements {
+    p {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  .stadium-slots {
+    margin: 0 -.5% 5px;
+  }
+
+  .stadium-slot {
+    display: block;
+    float: left;
+    width: 32.333%;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid;
+    margin: 0 .5%;
+    position: relative;
+
+    &.won,
+    &.lose {
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 1;
+        width: 20px;
+        border-radius: 0 0 0 5px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    &.won:before {
+      content: "+";
+      background: green;
+    }
+    &.lose:before {
+      content: "\2212";
+      background: red;
+    }
+
+    .icon-lock,
+    .icon-unlock {
+      font-size: 26px;
+      color: #666;
+    }
+  }
+
+  dt {
+    width: 50%;
+    float: left;
+    clear: both;
+  }
+  dd {
+    width: 50%;
+    float: left;
+    text-align: right;
+  }
+  .doble-line {
+    line-height: 1.42857143 * 2;
+  }
+
+  .stadium-list {
+    text-align: center;
+
+    * {
+      outline: none;
+    }
+
+    .slick-slide {
+      line-height: 60px;
+      height: 60px;
+      border-color: #ccc;
+      background: white;
+      margin: 5px;
+      padding: 5px;
+      cursor: pointer;
+
+      &.is-current {
+        background: gold;
+      }
+    }
+
+    img {
+      // display: inline;
+    }
+    .btn {
+      font-size: 24px;
+    }
+  }
+
+}

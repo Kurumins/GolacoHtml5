@@ -1,0 +1,33 @@
+.structure-training-center {
+  margin: auto;
+  width: 710px;
+
+  .training-center-picture {
+    float: left;
+    margin-right: 9px;
+  }
+
+  structure-item button {
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .skill-levels {
+    display: flex;
+    margin: 0 -5px;
+    li {
+      margin: 0 5px;
+      border: 1px solid;
+      flex: 1;
+    }
+    h5 {
+      font-size: 18px;
+      margin: 5px 0 0;
+      border-bottom: 1px solid;
+    }
+    strong {
+      font-size: 24px;
+    }
+  }
+
+}
