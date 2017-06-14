@@ -25,6 +25,7 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure', {
       url: '/structure',
       abstract: '.stadium',
+      sticky: true,
       templateUrl: 'structure.html',
       // controller: structureController,
       // controllerAs: '$structureCtrl'
@@ -33,6 +34,7 @@ function structureRoutesConfig ($stateProvider) {
     .state('app.structure.stadium', {
       url: '/stadium',
       templateUrl: 'structure-stadium.html',
+      sticky: true,
       resolve: {
         stadiumManage: function (StructureService) {
           return StructureService.stadiumManage()
@@ -42,25 +44,41 @@ function structureRoutesConfig ($stateProvider) {
             });
         }
       },
-      controller: function (stadiumManage) {
-        this.stadium = stadiumManage.Stadium;
-      },
-      controllerAs: '$ctrl'
+      controller: 'StructureStadiumController as $ctrl'
+      // controller: function (stadiumManage) {
+      //   this.stadium = stadiumManage.Stadium;
+      // },
+      // controllerAs: '$ctrl'
     })
 
     .state('app.structure.training-center', {
       url: '/training-center',
-      template: 'structure-training-center.html',
+      templateUrl: 'structure-training-center.html',
+      sticky: true,
+      resolve: {
+        trainingCenterManage: function (StructureService) {
+          return StructureService.trainingCenterManage();
+        }
+      },
+      controller: 'StructureTrainingCenterController as $ctrl'
     })
 
     .state('app.structure.medical-center', {
       url: '/medical-center',
-      template: 'structure-medical-center.html',
+      templateUrl: 'structure-medical-center.html',
+      sticky: true,
+      resolve: {
+        medicCenterManage: function (StructureService) {
+          return StructureService.medicCenterManage();
+        }
+      },
+      controller: 'StructureMedicalCenterController as $ctrl'
     })
 
     .state('app.structure.junior-center', {
       url: '/junior-center',
       templateUrl: 'junior-center.html',
+      sticky: true,
       resolve: {
         juniorPreview: function (StructureService) {
           return StructureService.juniorPreview();

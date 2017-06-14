@@ -10,7 +10,8 @@ angular
     'nsPopover',
     'angular.filter',
     'darthwade.dwLoading',
-    'angularMoment'
+    'angularMoment',
+    'ngSanitize'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);

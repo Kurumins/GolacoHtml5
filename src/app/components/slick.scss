@@ -1,0 +1,11 @@
+.slick-slider * {
+  outline: none;
+}
+.slick-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.slick-arrow {
+  outline: none !important;
+  text-decoration: none !important;
+}

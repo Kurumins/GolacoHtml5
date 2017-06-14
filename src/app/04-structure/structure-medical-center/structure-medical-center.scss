@@ -1,0 +1,43 @@
+.structure-medical-center {
+  margin: auto;
+  width: 710px;
+
+  .training-center-picture {
+    float: left;
+    margin-right: 9px;
+  }
+
+  .icon-plus {
+    font-size: 22px;
+  }
+
+  structure-item {
+    width: calc(25% - 2px);
+
+    button {
+      height: 62px;
+      line-height: 62px;
+      pointer-events: none;
+    }
+
+    .icon-user {
+      font-size: 38px;
+      color: #666;
+    }
+  }
+
+  .skill-level {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h5 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+    strong {
+      font-size: 24px;
+      border: 1px solid;
+      padding: 5px 15px;
+    }
+  }
+
+}

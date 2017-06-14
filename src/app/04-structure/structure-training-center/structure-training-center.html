@@ -1,0 +1,25 @@
+<h2>TrainingCenterPreview.lblTitle</h2>
+<button class="pull-right btn btn-sm" ng-click="$ctrl.trainingCenterRecycle()">Reformar</button>
+<div class="structure-training-center clearfix">
+  <h4>{{$ctrl.trainingCenter.Name}}</h4>
+  <div class="clearfix">
+    <img ng-src="{{$ctrl.trainingCenter.Picture}}" class="training-center-picture">
+    <div class="training-center-itens">
+      <structure-item-list icon="icon-traffic-cone" >
+        <structure-item ng-repeat="i in [1,2,3,4,5,6,7,8,9]"
+          item="$ctrl.trainingCenter.TrainingCenterItems | first:'Slot=='+i | first"
+          lock="$ctrl.trainingCenter.MaxItemSlot < i"
+          on-select="$ctrl.trainingCenterReform(i)" />
+      </structure-item-list>
+    </div>
+  </div>
+
+  <h3>TrainingCenterPreview.lblTrainingLevel</h3>
+
+  <ul class="list-inline text-center skill-levels">
+    <li ng-repeat="skill in ['Cruzamento', 'Velocidade', 'Resistencia', 'Finalizacao', 'Drible', 'Passe', 'Tecnica', 'Marcacao', 'Desarme', 'Defesa', 'Reflexos', 'Cabeceio']">
+      <h5><!-- Common.TeamPlayerSkill_{{skill}}_Acr -->{{skill.substr(0,3)}}</h5>
+      <strong>{{$ctrl.trainingCenter['TeamPlayerSkill'+($index+1)+'Level']}}</strong>
+    </li>
+  </ul>
+</div>

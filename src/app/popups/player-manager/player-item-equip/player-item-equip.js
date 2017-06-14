@@ -8,8 +8,8 @@ angular.module('app')
 
     data = inventory;
 
-    itens = data.TeamPlayerItems.filter(function (item) {
-      return item.Category === category;
+    itens = data.TeamPlayerItems.concat(data.TrainingCenterItems).filter(function (item) {
+      return category.indexOf(item.Category) !== -1;
     });
 
     vm.itens = itens;
@@ -17,7 +17,7 @@ angular.module('app')
   })
   .factory('PlayerItemEquip', function (ngDialog, ItensService) {
 
-    this.open = function (slot) {
+    this.openCategory = function (category) {
       return ngDialog.openConfirm({
         template: 'player-item-equip.html',
         appendClassName: 'ngdialog-player-item-equip',
@@ -28,30 +28,14 @@ angular.module('app')
             return ItensService.inventory();
           },
           category: function () {
-            return [13, 14, 15][slot - 1];
+            return category;
           }
-          // storeList: function (ItensService) {
-          //   return ItensService.storeList();
-          // },
-          // itens: function (inventory/*, storeList*/) {
-          //   debugger;
-          //   var data, itens;
-
-          //   // if ( $stateParams.inventario === 'inventario' ) {
-          //     data = inventory;
-          //   // } else {
-          //   //   data = storeList;
-          //   // }
-
-          //   itens = data.TeamPlayerItems/*.filter(function (item) {
-          //     return item.Category === parseInt($stateParams.category);
-          //   });*/
-
-          //   return itens;
-
-          // }
         },
       });
+    };
+
+    this.open = function (slot) {
+      return this.openCategory([[13, 14, 15][slot - 1]]);
     };
 
     return this;

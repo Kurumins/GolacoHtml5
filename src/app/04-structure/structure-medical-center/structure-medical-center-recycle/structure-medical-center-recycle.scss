@@ -1,0 +1,132 @@
+.ngdialog.ngdialog-structure-training-center-recycle {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  h4,
+  h3 {
+    // margin-top: 0;
+  }
+
+  .training-center-recycle {
+    text-align: center;
+    h4 {
+    }
+    strong {
+      display: block;
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      margin: 15px auto;
+      border: 1px solid;
+      width: 40px;
+
+    }
+  }
+
+  .stadium-slots {
+    margin: 0 -.5% 5px;
+  }
+
+  .stadium-slot {
+    display: block;
+    float: left;
+    width: 32.333%;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid;
+    margin: 0 .5% 1%;
+    position: relative;
+
+    &.won,
+    &.lose {
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 1;
+        width: 20px;
+        border-radius: 0 0 0 5px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    &.won:before {
+      content: "+";
+      background: green;
+    }
+    &.lose:before {
+      content: "\2212";
+      background: red;
+    }
+
+    .icon-lock,
+    .icon-unlock {
+      font-size: 26px;
+      color: #666;
+    }
+  }
+
+  dt {
+    width: 50%;
+    float: left;
+    clear: both;
+  }
+  dd {
+    width: 50%;
+    float: left;
+    text-align: right;
+  }
+  .doble-line {
+    line-height: 1.42857143 * 2;
+  }
+
+  .stadium-list {
+    text-align: center;
+    margin-top: -50px;
+
+    * {
+      outline: none;
+    }
+
+    .slick-slide {
+      // line-height: 60px;
+      height: 60px;
+      border-color: #ccc;
+      background: white;
+      margin: 5px;
+      padding: 5px;
+      cursor: pointer;
+      position: relative;
+
+      &.is-current {
+        background: gold;
+      }
+
+      .id-league {
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        background: white;
+        width: 20px;
+      }
+    }
+
+    img {
+      // display: inline;
+    }
+    .btn {
+      font-size: 24px;
+    }
+  }
+
+}
