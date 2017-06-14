@@ -8,9 +8,8 @@ angular.module('app')
       select: '&onSelect',
       activeValue: '@activeValue'
     },
-    controller: function () {
-      var vm = this;
-      // vm.itenPurchase = ItenPurchase.open;
-    },
-    controllerAs: '$ctrl'
+    // controller: function () {
+    //   // var vm = this;
+    // },
+    // controllerAs: '$ctrl'
   });

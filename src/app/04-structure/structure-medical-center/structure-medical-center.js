@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('StructureMedicalCenterController', function (medicCenterManage, StructureService, MedicCenterRecycle, PlayerItemEquip, AlertPopup) {
+  .controller('StructureMedicalCenterController', function (medicCenterManage/*, StructureService, MedicCenterRecycle, PlayerItemEquip, AlertPopup*/) {
 
     var vm = this;
     vm.medicCenterManage = medicCenterManage.MedicCenter;

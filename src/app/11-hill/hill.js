@@ -29,9 +29,9 @@ function hillController (preview, HillService, ConfirmPopup, HillDetails, $timeo
 
     ConfirmPopup.open('Error.errorTitle', message)
       .then(function () {
-        // HillService.challenge(idHill, useItems);
-        console.log(idHill, useItems);
-      })
+        HillService.challenge(idHill, useItems);
+        // console.log(idHill, useItems);
+      });
   };
 
   vm.hillDetails = function (idHill) {

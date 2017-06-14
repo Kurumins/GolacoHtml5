@@ -8,7 +8,7 @@ angular.module('app')
     vm.trainingCenterRecycle = function () {
       TrainingCenterRecycle.open(vm.trainingCenter)
         .then(updateStructureStadium);
-    }
+    };
     // vm.trainingCenterRecycle();
 
     vm.trainingCenterReform = function (slot) {
@@ -25,7 +25,7 @@ angular.module('app')
           return StructureService.trainingCenterSetItem(slot, item.Id, vm.trainingCenter.IdTeamTrainCenter)
             .catch(function (error) {
               AlertPopup.open('Atenção', error.Message);
-            })
+            });
         })
         .finally(updateStructureStadium);
     };

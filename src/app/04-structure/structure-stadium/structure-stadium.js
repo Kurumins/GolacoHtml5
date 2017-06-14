@@ -22,7 +22,7 @@ angular.module('app')
       StadiumRecycle.open(vm.stadium)
         .then(updateStructureStadium);
 
-    }
+    };
     // vm.stadiumRecycle();
 
     vm.stadiumReform = function (type, slot) {

@@ -6,9 +6,8 @@ angular.module('app')
     bindings: {
       icon: '@icon'
     },
-    controller: function () {
-      var vm = this;
-      // vm.itenPurchase = ItenPurchase.open;
-    },
-    controllerAs: '$ctrl'
+    // controller: function () {
+    //   var vm = this;
+    // },
+    // controllerAs: '$ctrl'
   });

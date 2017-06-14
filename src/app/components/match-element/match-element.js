@@ -10,7 +10,7 @@ angular.module('app')
 
       vm.$onInit = function () { //debugger;
 
-        if (vm.match.HomeTeam.Id == AppService.user.TeamId || vm.match.VisitorTeam.Id == AppService.user.TeamId) {
+        if (vm.match.HomeTeam.Id === AppService.user.TeamId || vm.match.VisitorTeam.Id === AppService.user.TeamId) {
           $element.addClass('is-me');
         }
 
