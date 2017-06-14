@@ -7,6 +7,7 @@ angular.module('app')
     vm.tournament = tournament;
 
     vm.commonSummary = tournamentSummary;
+    vm.competitionSeries = ' ABCD'.charAt(vm.commonSummary.CompetitionSeries);
 
     vm.tournamentRanking = tournamentRanking;
     vm.tournamentRankingCurrentGroup = tournamentRanking.Ranking[0];

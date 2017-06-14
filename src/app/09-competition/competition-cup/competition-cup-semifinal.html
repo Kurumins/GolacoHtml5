@@ -1,0 +1,20 @@
+<h3>Semifinais</h3>
+
+<div ng-repeat="blocks in ($ctrl.cupSemifinal.Matches | flatten:true) | chunkBy: 2" class="match-table">
+  <table width="100%" class="table table-striped">
+    <tr ng-repeat-start="block in blocks">
+      <th colspan="9">Jogo de {{['ida','volta'][$index]}}: {{ block.MatchDate | date:'short' }}</th>
+    </tr>
+    <tr ng-repeat-end>
+      <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block.HomeTeam.Flag}}.jpg" class="team-flag"></td>
+      <td align="center"><img ng-src="{{block.HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+      <td width="30%">{{block.HomeTeam.Acronym}}</td>
+      <td align="right">{{block.HomeTeam.Goals}}</td>
+      <td align="center">x</td>
+      <td>{{block.VisitorTeam.Goals}}</td>
+      <td width="30%" align="right">{{block.VisitorTeam.Acronym}}</td>
+      <td align="center"><img ng-src="{{block.VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
+      <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{block.VisitorTeam.Flag}}.jpg" class="team-flag"></td>
+    </tr>
+  </table>
+</div>

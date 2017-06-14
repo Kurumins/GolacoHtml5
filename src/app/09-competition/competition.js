@@ -135,10 +135,12 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
   // CompetitionCup.open(competitions[2]);
 
   vm.CompetitionTournament = CompetitionTournament.open;
-  vm.CompetitionTournamentLight = CompetitionTournament.open;
+  vm.CompetitionTournamentLight = CompetitionTournamentLight.open;
   vm.CompetitionLeague = CompetitionLeague.open;
   vm.CompetitionCup = CompetitionCup.open;
   vm.CompetitionCupLight = CompetitionCupLight.open;
+
+  vm.CompetitionCupLight(competitions[4]);
 
   // vm.friendlyMatch();
 

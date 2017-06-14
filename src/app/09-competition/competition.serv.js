@@ -59,6 +59,14 @@ angular.module('app')
       return PostToJs('CompetitionCup/Summary', {CompetitionId: competitionId});
     };
 
+    vm.getCupLightSemifinal = function (competitionId) {
+      return PostToJs('CompetitionCup/Semifinal', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightFinals = function (competitionId) {
+      return PostToJs('CompetitionCup/Finals', {CompetitionId: competitionId});
+    };
+
     // vm.getCupRanking = function (competitionId) {
     //   return PostToJs('CompetitionCup/Ranking', {CompetitionId: competitionId});
     // };
@@ -109,12 +117,16 @@ angular.module('app')
     //   return PostToJs('CompetitionCupLight/MatchTable', {CompetitionId: competitionId});
     // };
 
-    // vm.getCupLightCalendar = function (competitionId) {
-    //   return PostToJs('CompetitionCupLight/Calendar', {CompetitionId: competitionId});
-    // };
-
     vm.getCupLightPlayOff = function (competitionId) {
       return PostToJs('CompetitionCupLight/PlayOff', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightSemifinal = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Semifinal', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightFinals = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Finals', {CompetitionId: competitionId});
     };
 
   });

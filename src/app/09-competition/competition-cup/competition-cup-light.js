@@ -27,6 +27,12 @@ angular.module('app')
           cupPlayOff: function () {
             return CompetitionService.getCupLightPlayOff(cup.preview.IdCompetition);
           },
+          cupSemifinal: function () {
+            return CompetitionService.getCupLightSemifinal(cup.preview.IdCompetition);
+          },
+          cupFinals: function () {
+            return CompetitionService.getCupLightFinals(cup.preview.IdCompetition);
+          },
         },
       });
     };
