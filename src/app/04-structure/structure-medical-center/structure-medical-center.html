@@ -1,0 +1,37 @@
+<h2>MedicalCenterPreview.lblTitle</h2>
+<button class="pull-right btn btn-sm" ng-click="$ctrl.medicCenterManageRecycle()">Reformar</button>
+<div class="structure-medical-center clearfix">
+  <h4>{{$ctrl.medicCenterManage.Name}}</h4>
+  <div class="clearfix">
+    <img ng-src="{{$ctrl.medicCenterManage.Picture}}" class="training-center-picture">
+    <div class="training-center-itens">
+      <structure-item-list icon="icon-user-add" >
+        <structure-item ng-repeat="i in [1,2,3,4,5,6,7,8]"
+          item="$ctrl.medicCenterManage.TrainingCenterItems | first:'Slot=='+i | first"
+          lock="$ctrl.medicCenterManage.MaxTeamPlayer < i"
+          active-value="<i class='icon-user'></i>"
+          on-select="$ctrl.medicCenterManageReform(i)" />
+      </structure-item-list>
+      <structure-item-list icon="icon-plus" >
+        <structure-item ng-repeat="i in [1,2,3,4]"
+          item="$ctrl.medicCenterManage.TrainingCenterItems | first:'Slot=='+i | first"
+          lock="$ctrl.medicCenterManage.MaxItemSlot < i"
+          active-value="<i class='icon-user'></i>"
+          on-select="$ctrl.medicCenterManageReform(i)" />
+      </structure-item-list>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 text-center skill-level">
+      <h5><!-- MedicalCenterPreview. -->lblMCCapacity</h5>
+      <strong>{{$ctrl.medicCenterManage.MaxTeamPlayer}}</strong>
+    </div>
+    <div class="col-xs-6 text-center skill-level">
+      <h5><!-- MedicalCenterPreview. -->lblMCLevel</h5>
+      <strong>{{$ctrl.medicCenterManage.Level}}</strong>
+    </div>
+  </div>
+</div>
+
+<pre>{{$ctrl.medicCenterManage|json}}</pre>

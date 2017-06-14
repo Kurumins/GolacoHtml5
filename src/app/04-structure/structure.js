@@ -65,7 +65,14 @@ function structureRoutesConfig ($stateProvider) {
 
     .state('app.structure.medical-center', {
       url: '/medical-center',
-      template: 'structure-medical-center.html',
+      templateUrl: 'structure-medical-center.html',
+      sticky: true,
+      resolve: {
+        medicCenterManage: function (StructureService) {
+          return StructureService.medicCenterManage();
+        }
+      },
+      controller: 'StructureMedicalCenterController as $ctrl'
     })
 
     .state('app.structure.junior-center', {

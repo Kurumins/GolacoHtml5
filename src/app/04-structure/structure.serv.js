@@ -64,6 +64,11 @@ angular.module('app')
       });
     };
 
+    // MedicCenter
+    vm.medicCenterManage = function () {
+      return PostToJs('MedicCenter/Manage');
+    };
+
     // TeamPlayerJunior
     vm.juniorPreview = function () {
       return PostToJs('TeamPlayerJunior/Preview');

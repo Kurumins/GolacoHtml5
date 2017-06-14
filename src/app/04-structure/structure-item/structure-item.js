@@ -5,7 +5,8 @@ angular.module('app')
     bindings: {
       item: '=item',
       lock: '=lock',
-      select: '&onSelect'
+      select: '&onSelect',
+      activeValue: '@activeValue'
     },
     controller: function () {
       var vm = this;

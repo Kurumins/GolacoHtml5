@@ -15,7 +15,8 @@
     "angular-filter": "^0.5.16",
     "angular-loading": "^0.1.4",
     "ui-router-extras": "^0.1.3",
-    "angular-moment": "^1.0.1"
+    "angular-moment": "^1.0.1",
+    "angular-sanitize": "^1.6.4"
   },
   "overrides": {
     "bootstrap": {
