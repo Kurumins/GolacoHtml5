@@ -1,0 +1,73 @@
+<div class="ranking">
+  <header class="clearfix">
+    <h2 class="pull-left">RankingsScr.Rankings</h2>
+    <div class="pull-right">
+      <button class="btn" ng-repeat="filter in $ctrl.filters">{{filter.label}}</button>
+    </div>
+  </header>
+  <h3>RankingsScr.lblSearchBy</h3>
+  <form class="form-inline ranking-search" ng-submit="$ctrl.filter(general ? filter : {})">
+    <div class="checkbox-inline">
+      <label>
+        <input type="checkbox" ng-model="general" ng-true-value="" ng-false-value="true"> <!-- RankingsScr. -->lblGeneral
+      </label>
+    </div>
+    <hr>
+    <div class="form-group form-group-sm">
+      <label for="month"><!-- Common. -->month</label>
+      <select class="form-control" id="month" ng-model="filter.month" ng-disabled="!general">
+        <option ng-value=""><!-- Common. -->all</option>
+        <option ng-value="1"><!-- Common. -->january</option>
+        <option ng-value="2"><!-- Common. -->february</option>
+        <option ng-value="3"><!-- Common. -->march</option>
+        <option ng-value="4"><!-- Common. -->april</option>
+        <option ng-value="5"><!-- Common. -->may</option>
+        <option ng-value="6"><!-- Common. -->june</option>
+        <option ng-value="7"><!-- Common. -->july</option>
+        <option ng-value="8"><!-- Common. -->august</option>
+        <option ng-value="9"><!-- Common. -->september</option>
+        <option ng-value="10"><!-- Common. -->october</option>
+        <option ng-value="11"><!-- Common. -->november</option>
+        <option ng-value="12"><!-- Common. -->december</option>
+      </select>
+    </div>
+    <div class="form-group form-group-sm">
+      <label for="year"><!-- Common. -->year</label>
+      <select class="form-control" id="year" ng-model="filter.year" ng-disabled="!general">
+        <option ng-value=""><!-- Common. -->all</option>
+        <option ng-value="2017">2017</option>
+        <option ng-value="2016">2016</option>
+        <option ng-value="2015">2015</option>
+        <option ng-value="2014">2014</option>
+        <option ng-value="2013">2013</option>
+        <option ng-value="2012">2012</option>
+        <option ng-value="2011">2011</option>
+      </select>
+    </div>
+    <hr>
+    <div class="form-group form-group-sm">
+      <label for="leagues"><!-- Common. -->leagues</label>
+      <select class="form-control" id="leagues" ng-disabled="!general">
+        <option ng-value=""><!-- Common. -->allF</option>
+        <option ng-value="A">A</option>
+        <option ng-value="B">B</option>
+        <option ng-value="C">C</option>
+        <option ng-value="D">D</option>
+      </select>
+    </div>
+    <hr>
+    <div class="form-group form-group-sm">
+      <label for="country"><!-- Common. -->country</label>
+      <select class="form-control" id="country"
+        ng-model="filter.idCountry" ng-init="filter.idCountry=$appCtrl.teamPreview.IdCountry" ng-disabled="true">
+        <option ng-value=""><!-- Common. -->all</option>
+        <option ng-repeat="country in $appCtrl.countryList" ng-value="{{country.id}}">{{country.name}}</option>
+      </select>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary"><i class="icon-search"></i></button>
+  </form>
+
+</div>
+
+<pre>{{filter|json}}</pre>
