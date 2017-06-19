@@ -24,6 +24,10 @@ junior-table {
     tr.active {
       background-color: #bbb;
     }
+
+    tr:hover {
+      cursor: pointer;
+    }
   }
 
   .icon-star,
@@ -31,9 +35,7 @@ junior-table {
     font-size: 8px;
   }
 
-  &.small {
-    .players-table {
-      font-size: 10px;
-    }
+  .small.players-table {
+    font-size: 10px;
   }
 }

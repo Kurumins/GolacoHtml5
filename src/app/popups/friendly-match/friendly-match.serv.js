@@ -8,4 +8,12 @@ angular.module('app')
       return PostToJs('Match/FindFriendlyMatches', filter);
     };
 
+    vm.scheduleMatch = function (credit, teamId, useItems) {
+      return PostToJs('Match/ScheduleMatch', {
+        Credit: credit,
+        TeamId: teamId,
+        UseItems: useItems,
+      });
+    };
+
   });

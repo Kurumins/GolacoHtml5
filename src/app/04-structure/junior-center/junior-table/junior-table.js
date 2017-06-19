@@ -4,6 +4,14 @@ angular.module('app')
     templateUrl: 'junior-table.html',
     bindings: {
       players: '=',
-      currentPlayer: '='
+      currentPlayer: '=',
+      small: '=?'
+    },
+    controller: function () {
+      var ctrl = this;
+
+      ctrl.$postLink = function () {
+        ctrl.small = ctrl.small || false;
+      };
     }
   });

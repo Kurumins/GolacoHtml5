@@ -1,8 +1,10 @@
 'use strict';
 angular.module('app')
-  .controller('FriendlyMatchController', function ($rootScope, FriendlyMatchService, AppService, MatchResult, ngDialog) {
+  .controller('FriendlyMatchController', function ($rootScope, FriendlyMatchService, AppService, MatchResult, ngDialog, ConfirmPopup, $timeout, $loading) {
 
     var vm = this;
+
+    vm.useItens = true;
 
     vm.findFriendlyMatches = function (filter) {
 
@@ -36,17 +38,49 @@ angular.module('app')
 
     vm.findFriendlyMatches(vm.filter);
 
-    vm.play = function (ngDialogId) {
+    vm.play = function (match) {
 
-      // ngdialog && ngDialog.close(ngdialog);
-
-      var deregisterListener = $rootScope.$on('ngDialog.opened', function (/*e, $dialog*/) {
-        deregisterListener();
-        ngDialogId && ngDialog.close(ngDialogId);
-      });
-
-      MatchResult.open(72014544);
+      confirmPlay(match.Id)
+        .then(function (result) {
+          $loading.start('PostToJs');
+          $timeout(function () {
+            MatchResult.open(result.MatchId);
+          }, 15000);
+        });
 
     };
+
+    function confirmPlay (matchId) {
+      if ( AppService.user.FriendlyMatchesToday < 3 ) {
+        return ConfirmPopup.open('lblScheduleConfirmTitle', 'msgScheduleConfirmTitle')
+          .then(function () {
+            return FriendlyMatchService.scheduleMatch(0, matchId, vm.useItens);
+          });
+      } else {
+        return ConfirmPopup.open('lblScheduleWithCreditConfirmTitle', 'msgScheduleWithCreditConfirmTitle')
+          .then(function () {
+            return FriendlyMatchService.scheduleMatch(1, matchId, vm.useItens);
+          });
+      }
+    }
+
+    // MatchResult.open(321612312312312354);
+
+    // function getMatchResult(matchId) {
+    //   $timeout(function () {
+    //     // $loading.finish('PostToJs');
+    //     MatchResult.open(matchId)
+    //       .then(function (r) {
+    //         console.log(r);
+    //       }, function (r) {
+    //         console.log(r);
+    //         getMatchResult(matchId);
+    //       })
+    //       .catch(function (r) {
+    //         console.log(r);
+    //       });
+
+    //   }, 1000);
+    // }
 
   });

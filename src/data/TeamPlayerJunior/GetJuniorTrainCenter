@@ -15,6 +15,22 @@
     },
     "TrainCenters": [
       {
+        "Id": 2,
+        "MoneyPrice": 750000.0000,
+        "CreditPrice": 40,
+        "TeamPlayerCapacity": 5,
+        "StructureLevel": 2,
+        "ReleaseTimeDraft": 11,
+        "DraftCost": 35000.00,
+        "TimeToNewDraft": 5,
+        "TeamPlayersPerDraft": 2,
+        "TeamPlayerCostPerWeek": 7380.00,
+        "Requirement_IdLeague": 4,
+        "BigPicture": "https://www.golacogame.com.br/Content/structures/47.png",
+        "MiniPicture": "https://www.golacogame.com.br/Content/structures/47m.png",
+        "ZoomPicture": "https://www.golacogame.com.br/Content/structures/47b.png"
+      },
+      {
         "Id": 3,
         "MoneyPrice": 750000.0000,
         "CreditPrice": 40,

@@ -1,0 +1,56 @@
+
+.ngdialog.ngdialog-player-manager-sell-player {
+	
+	.ngdialog-content{
+
+		border-radius: 10px;
+		border:3px solid #0078e0;
+		
+		.ngdialog-buttons{
+	      
+		  	.ngdialog-button-primary{
+		      	color: #fff;
+			    background-color: #1da926;
+			    border:2px solid #1da926;
+			    &:hover{
+					color: #1da926;
+					background-color: #fff;
+					border: 2px solid #1da926;
+					transition: 0.6s easy;
+			    }
+		    }
+
+		    .ngdialog-button-secondary{
+		        color: #fff;
+				background-color: #b22c2a;
+				border: 2px solid #b22c2a;
+			    &:hover{
+					color: #b22c2a;
+					background-color: #fff;
+					border: 2px solid #b22c2a;
+					transition: 0.6s easy;
+			    }
+		    }
+	    }   
+
+	   	h2{
+	    	color: #0078e0;
+	  	}
+	  	p{
+	  		font-weight: 600;
+	  	}
+  	}
+
+  	.ngdialog-close{
+    	border: none;
+    	box-shadow: none;
+    	padding: 0;
+    	outline: none;
+	    &:before{
+	      	color: #df0000;
+	    }
+	    &:hover{
+	      	border: none;
+	    }
+  	}
+}

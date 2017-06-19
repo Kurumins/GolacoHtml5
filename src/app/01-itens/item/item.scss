@@ -3,6 +3,7 @@ item {
   padding: 5px;
   background: #fff;
   box-sizing: border-box;
+  position: relative;
   // border: 1px solid;
 
   .item-name {
@@ -44,6 +45,7 @@ item {
       font-size: 10px;
       line-height: 15px;
       color: #fff;
+      margin: 0;
     }
   }
 
@@ -68,7 +70,8 @@ item {
   }
 
   .discart-item,
-  .sell-item {
+  .sell-item,
+  .equip-item {
     line-height: 34px;
     margin-left: 50px;
     display: flex;
@@ -99,4 +102,41 @@ item {
     text-transform: uppercase;
   }
 
+  .equip-item {
+    background: #008dfb;
+    p {
+      margin: auto;
+    }
+  }
+}
+
+item .sale {
+  &:after {
+    content: "";
+    border: 2px solid #d63d40;
+    border-radius: 3px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  .icon-star {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #d63d40;
+    color: gold;
+    border-radius: 0 0 3px 0;
+  }
+  .item-price {
+    background: #d63d40;
+    p {
+      color: white;
+    }
+  }
 }

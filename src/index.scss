@@ -1,3 +1,9 @@
+html,
+body {
+  min-height: 700px;
+  height: 100%;
+}
+
 body {
   font-family: arial, verdana;
 }
@@ -29,7 +35,39 @@ a {
 }
 
 .ngdialog.ngdialog-theme-default {
+  overflow: auto;
   // padding: 0;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
+}
+
+.dw-loading.dw-loading-overlay {
+  z-index: 10001;
+}
+
+.slick-nav {
+  text-align: center;
+  margin: 20px 0 0;
+
+  .btn {
+    outline: none;
+  }
+
+  .dots {
+    display: inline-block;
+    margin: 0 5px;
+    button {
+      // appearance: none;
+      border: 0;
+      line-height: 30px;
+      width: 30px;
+      background: white;
+      outline: none;
+    }
+    .slick-active button {
+      background: #ddd;
+      font-weight: bold;
+    }
+  }
+
 }

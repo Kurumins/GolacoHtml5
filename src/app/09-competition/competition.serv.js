@@ -12,46 +12,121 @@ angular.module('app')
       return $http.get('/data/Competition/CompetitionData');
     };
 
+    vm.competitionRegister = function (competitionType) {
+      return PostToJs(competitionType + '/Register');
+    };
+
     // Tournament
-    vm.getTournamentSummary = function () {
-      return PostToJs('CompetitionTournament/Summary');
+    vm.getTournamentSummary = function (competitionId) {
+      return PostToJs('CompetitionTournament/Summary', {CompetitionId: competitionId});
     };
 
-    vm.getTournamentRanking = function () {
-      return PostToJs('CompetitionTournament/Ranking');
+    vm.getTournamentRanking = function (competitionId) {
+      return PostToJs('CompetitionTournament/Ranking', {CompetitionId: competitionId});
     };
 
-    vm.getTournamentMatchTable = function () {
-      return PostToJs('CompetitionTournament/MatchTable');
+    vm.getTournamentMatchTable = function (competitionId) {
+      return PostToJs('CompetitionTournament/MatchTable', {CompetitionId: competitionId});
     };
 
-    vm.getTournamentCalendar = function () {
-      return PostToJs('CompetitionTournament/Calendar');
+    vm.getTournamentCalendar = function (competitionId) {
+      return PostToJs('CompetitionTournament/Calendar', {CompetitionId: competitionId});
     };
 
-    vm.getTournamentPlayOff = function () {
-      return PostToJs('CompetitionTournament/PlayOff');
+    vm.getTournamentPlayOff = function (competitionId) {
+      return PostToJs('CompetitionTournament/PlayOff', {CompetitionId: competitionId});
     };
 
     // League
-    vm.getLeagueSummary = function () {
-      return PostToJs('CompetitionLeague/Summary');
+    vm.getLeagueSummary = function (competitionId) {
+      return PostToJs('CompetitionLeague/Summary', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueRanking = function () {
-      return PostToJs('CompetitionLeague/Ranking');
+    vm.getLeagueRanking = function (competitionId) {
+      return PostToJs('CompetitionLeague/Ranking', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueMatchTable = function () {
-      return PostToJs('CompetitionLeague/MatchTable');
+    vm.getLeagueMatchTable = function (competitionId) {
+      return PostToJs('CompetitionLeague/MatchTable', {CompetitionId: competitionId});
     };
 
-    vm.getLeagueCalendar = function () {
-      return PostToJs('CompetitionLeague/Calendar');
+    vm.getLeagueCalendar = function (competitionId) {
+      return PostToJs('CompetitionLeague/Calendar', {CompetitionId: competitionId});
     };
 
-    // vm.getLeaguePlayOff = function () {
-    //   return PostToJs('CompetitionLeague/PlayOff');
+    // Cup
+    vm.getCupSummary = function (competitionId) {
+      return PostToJs('CompetitionCup/Summary', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightSemifinal = function (competitionId) {
+      return PostToJs('CompetitionCup/Semifinal', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightFinals = function (competitionId) {
+      return PostToJs('CompetitionCup/Finals', {CompetitionId: competitionId});
+    };
+
+    // vm.getCupRanking = function (competitionId) {
+    //   return PostToJs('CompetitionCup/Ranking', {CompetitionId: competitionId});
     // };
+
+    // vm.getCupMatchTable = function (competitionId) {
+    //   return PostToJs('CompetitionCup/MatchTable', {CompetitionId: competitionId});
+    // };
+
+    // vm.getCupCalendar = function (competitionId) {
+    //   return PostToJs('CompetitionCup/Calendar', {CompetitionId: competitionId});
+    // };
+
+    vm.getCupPlayOff = function (competitionId) {
+      return PostToJs('CompetitionCup/PlayOff', {CompetitionId: competitionId});
+    };
+
+    // Tournament light
+    vm.getTournamentLightSummary = function (competitionId) {
+      return PostToJs('CompetitionTournamentLight/Summary', {CompetitionId: competitionId});
+    };
+
+    vm.getTournamentLightRanking = function (competitionId) {
+      return PostToJs('CompetitionTournamentLight/Ranking', {CompetitionId: competitionId});
+    };
+
+    vm.getTournamentLightMatchTable = function (competitionId) {
+      return PostToJs('CompetitionTournamentLight/MatchTable', {CompetitionId: competitionId});
+    };
+
+    vm.getTournamentLightCalendar = function (competitionId) {
+      return PostToJs('CompetitionTournamentLight/Calendar', {CompetitionId: competitionId});
+    };
+
+    vm.getTournamentLightPlayOff = function (competitionId) {
+      return PostToJs('CompetitionTournamentLight/PlayOff', {CompetitionId: competitionId});
+    };
+
+    // Cup Light
+    vm.getCupLightSummary = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Summary', {CompetitionId: competitionId});
+    };
+
+    // vm.getCupLightRanking = function (competitionId) {
+    //   return PostToJs('CompetitionCupLight/Ranking', {CompetitionId: competitionId});
+    // };
+
+    // vm.getCupLightMatchTable = function (competitionId) {
+    //   return PostToJs('CompetitionCupLight/MatchTable', {CompetitionId: competitionId});
+    // };
+
+    vm.getCupLightPlayOff = function (competitionId) {
+      return PostToJs('CompetitionCupLight/PlayOff', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightSemifinal = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Semifinal', {CompetitionId: competitionId});
+    };
+
+    vm.getCupLightFinals = function (competitionId) {
+      return PostToJs('CompetitionCupLight/Finals', {CompetitionId: competitionId});
+    };
 
   });

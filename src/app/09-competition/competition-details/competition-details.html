@@ -15,4 +15,14 @@
   </tr>
 </table>
 
-{{$ctrl.competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i>
+<footer class="clearfix register">
+  <div class="text-right">
+    <button class="btn btn-primary pull-right" ng-click="$ctrl.register();">ok</button>
+    <p>Inscreva-se agora</p>
+    <p>{{$ctrl.competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i></p>
+  </div>
+</footer>
+
+<!-- <pre>
+  {{$ctrl.competition|json}}
+</pre> -->

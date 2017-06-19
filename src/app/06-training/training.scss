@@ -11,15 +11,41 @@
     margin: 5px 0;
   }
 
+  h2{
+    color: #4f5776;
+    margin-bottom: 15px;
+  }
+
+  button{
+    // padding: 5px 8px;
+    // border-radius: 3px;
+    // border:1px solid #4e5667;
+    // background: #4e5667;
+    // color: #ffffff;
+    // font-weight: 600;
+    // text-transform: uppercase;
+    // -webkit-transition: all .5s ease;
+    // -moz-transition: all .5s ease;
+    // -ms-transition: all .5s ease;
+    // -o-transition: all .5s ease;
+    // transition: all .5s ease;
+    // &:hover{
+    //   border:1px solid #4e5667;
+    //   background: #ffffff;
+    //   color: #4e5667;
+    //   cursor: pointer;
+    // }
+  }
   .training-levels{
     margin-bottom: 20px;
 
     th {
       text-align: center;
+      color: #4e5667;
     }
     td {
       font-size: 16px;
-      color: blue;
+      color: #0078e0;
       font-weight: bold;
     }
   }
@@ -29,6 +55,45 @@
     // overflow-y: auto;
     // overflow-x: hidden;
 
+    .checkbox{
+      margin:0;
+        label{
+            color:#9a9a9a;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        input[type=checkbox] {
+            opacity: 0;
+            margin-right: -12px;
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+
+        }
+        input[type=checkbox]:checked + span:before {
+            // content: "\e82d";
+             content: '\2714';
+            color: #0265b3;
+        }
+        input[type=checkbox] + span:before {
+             content: '\2714';
+            color: transparent;
+            display: inline-block;
+            margin-right: 15px;
+            width: 15px;
+            height: 15px;
+            visibility: visible;
+            background: transparent;
+            border: 1px solid #0265b3;
+            border-radius: 2px;
+            line-height: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+
     table {
       // max-width: 100%;
       white-space: nowrap;
@@ -36,13 +101,14 @@
       text-align: center;
       // border-collapse:separate;
       border-spacing: 0 2px;
-
-      th {
-        text-align: center;
-      }
+     color: #4f5776;
 
       img {
         vertical-align: middle;
+      }
+      button{
+        border:none;
+        border-radius: 3px;
       }
     }
 
@@ -128,5 +194,16 @@
     line-height: 1;
   }
 
+  select{
+    width: 21%;
+    margin-top: 25px;
+    margin-right: 1.2%;
+    background: url('../app/images/arrow.png') no-repeat 95% 50% #ffffff;
+    -moz-appearance:none;
+    -webkit-appearance: none;
+    appearance:none;
+    padding: 5px;
+    color:#4e5667;
+  }
 }
 

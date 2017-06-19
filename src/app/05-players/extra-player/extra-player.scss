@@ -7,10 +7,15 @@
     margin: 0;
   }
 
+  h2{
+    color: #4f5776;
+  }
+
   .ngdialog-content {
     width: 750px;
     padding: 30px 50px;
     background-color: white;
+    border: 3px solid #0065b4;
   }
 
   .spot-prices {
@@ -32,6 +37,8 @@
     }
 
     &.available {
+      cursor: pointer;
+
       .icon-user {
         background-color: #088705;
       }
@@ -68,6 +75,9 @@
       i {
         float: left;
         margin-right: 5px;
+        &:before{
+          color: #ff7900;
+        }
       }
 
       p {
@@ -78,6 +88,19 @@
       }
     }
 
+  }
+
+  .ngdialog-close{
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    &:before{
+      color: #df0000;
+    }
+    &:hover{
+      border: none;
+    }
   }
 
   footer {

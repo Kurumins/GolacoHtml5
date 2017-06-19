@@ -7,6 +7,7 @@ function playersRoutesConfig ($stateProvider) {
   $stateProvider
     .state('app.players', {
       url: '/players',
+      sticky: true,
       resolve: {
         teamPlayerList: function (TeamPlayerService) {
           return TeamPlayerService.teamPlayerList();
@@ -18,10 +19,18 @@ function playersRoutesConfig ($stateProvider) {
     });
 }
 
-function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerService) {
+function teamPlayerController ($rootScope, $scope, teamPlayerList, ngDialog, TeamPlayerService) {
   var vm = this;
 
   vm.teamPlayers = teamPlayerList;
+
+  var teamPlayerUpdate = $rootScope.$on('teamPlayerUpdate', function () {
+    TeamPlayerService.teamPlayerList()
+      .then(function (teamPlayerList) {
+        vm.teamPlayers = teamPlayerList;
+      });
+  });
+  $rootScope.$on('$destroy', teamPlayerUpdate);
 
   vm.teamPlayerType = 1;
 
@@ -41,6 +50,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       },
     });
   };
+  // vm.extraPlayer();
 
   vm.moraleRecovery = function () {
     ngDialog.open({
@@ -58,6 +68,7 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       // },
     });
   };
+  // vm.moraleRecovery();
 
   vm.playerManager = function (playerId) {
     ngDialog.open({
@@ -78,7 +89,6 @@ function teamPlayerController ($scope, teamPlayerList, ngDialog, TeamPlayerServi
       },
     });
   };
-
   // vm.playerManager(36092807);
 
 }

@@ -1,21 +1,24 @@
 'use strict';
 angular.module('app')
-  .controller('ItenPurchaseController', function (item) {
+  .controller('ItenPurchaseController', function ($rootScope, $scope, item, ItensService, AlertPopup) {
 
     var vm = this;
 
     vm.item = item;
+    vm.scope = $scope;
 
-    // vm.ItenPurchase = ItenPurchase;
-
-    // vm.juniorScouts = function () {
-    //   JuniorScouts.open(vm.ItenPurchase.Scouts)
-    //     .then(function (scout) {
-    //       vm.currentScout = scout;
-    //     });
-    // };
-    // vm.juniorScouts();
-    // vm.currentScout = vm.ItenPurchase.Scouts[0];
+    vm.confirm = function (qty) {
+      ItensService.itemPurchase(item, qty)
+        .then(function () {
+          vm.scope.confirm();
+          AlertPopup.open('Aviso', 'Item adquirido com sucesso.');
+          $rootScope.$emit('inventoryUpdate');
+          $rootScope.$emit('balanceUpdate');
+        })
+        .catch(function (error) {
+          AlertPopup.open('Atenção', error.Message);
+        });
+    };
 
   })
   .factory('ItenPurchase', function (StructureService, ngDialog) {

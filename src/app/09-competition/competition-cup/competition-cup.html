@@ -1,0 +1,27 @@
+<h2>Copa Golaço</h2>
+
+<div ng-init-="current='cup-play-off'">
+  <label>
+    <input type="radio" ng-model="current" ng-value=""> Resumo
+  </label>
+  <!-- <label>
+    <input type="radio" ng-model="current" ng-value="'cup-ranking'"> Classificação
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-match-table'"> Jogos
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-calendar'"> Rodadas
+  </label> -->
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-play-off'"> Playoffs
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-semifinal'"> Semi-final
+  </label>
+  <label>
+    <input type="radio" ng-model="current" ng-value="'cup-prize'"> Prêmios
+  </label>
+</div>
+
+<ng-include class="competition-{{(current || 'cup-sumary')}}" src="'competition-'+ (current || 'cup-sumary') +'.html'" />

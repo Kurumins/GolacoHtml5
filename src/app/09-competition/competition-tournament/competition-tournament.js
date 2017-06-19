@@ -7,6 +7,7 @@ angular.module('app')
     vm.tournament = tournament;
 
     vm.commonSummary = tournamentSummary;
+    vm.competitionSeries = ' ABCD'.charAt(vm.commonSummary.CompetitionSeries);
 
     vm.tournamentRanking = tournamentRanking;
     vm.tournamentRankingCurrentGroup = tournamentRanking.Ranking[0];
@@ -38,19 +39,19 @@ angular.module('app')
             return tournament;
           },
           tournamentSummary: function () {
-            return CompetitionService.getTournamentSummary();
+            return CompetitionService.getTournamentSummary(tournament.preview.IdCompetition);
           },
           tournamentRanking: function () {
-            return CompetitionService.getTournamentRanking();
+            return CompetitionService.getTournamentRanking(tournament.preview.IdCompetition);
           },
           tournamentMatchTable: function () {
-            return CompetitionService.getTournamentMatchTable();
+            return CompetitionService.getTournamentMatchTable(tournament.preview.IdCompetition);
           },
           tournamentCalendar: function () {
-            return CompetitionService.getTournamentCalendar();
+            return CompetitionService.getTournamentCalendar(tournament.preview.IdCompetition);
           },
           tournamentPlayOff: function () {
-            return CompetitionService.getTournamentPlayOff();
+            return CompetitionService.getTournamentPlayOff(tournament.preview.IdCompetition);
           },
         },
       });

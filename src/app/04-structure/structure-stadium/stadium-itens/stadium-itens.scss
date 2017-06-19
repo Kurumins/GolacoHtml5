@@ -1,0 +1,95 @@
+.ngdialog.ngdialog-stadium-itens {
+
+  .ngdialog-content {
+    width: 750px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+
+  .item-list {
+    position: relative;
+
+    slick {
+      margin: 10px 50px;
+    }
+
+    h4 {
+      font-size: 16px;
+      height: 34px;
+      text-align: center;
+    }
+
+    .slick-slide {
+      background: #333;
+      color: white;
+      margin: 0 10px;
+      padding: 10px;
+
+      img {
+        margin: auto;
+      }
+
+
+      .item-effects {
+        dl {
+          margin: 10px 0;
+        }
+
+        dt, dd {
+          width: 50%;
+          float: left;
+          font-size: 14px;
+        }
+        dt {
+          font-weight: normal;
+        }
+        dd {
+          text-align: right;
+          font-weight: bold;
+          &.won {
+            color: #3cc51c;
+            &:before {
+              content: '+';
+            }
+          }
+          &.lose {
+            color: red;
+          }
+        }
+      }
+
+      .item-cost {
+        dt {
+          // float: left;
+          // clear: right;
+          color: #ccc;
+        }
+        dd {
+          // float: right;
+          text-align: right;
+        }
+        .icon-money:before{
+            color:#00b100;
+        }
+        .icon-credit-card:before{
+            color:#DAA520;
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -17px;
+    }
+
+    .slick-next {
+      right: 0;
+    }
+  }
+
+}

@@ -1,0 +1,42 @@
+<div class="auction">
+  <div class="pull-right auction-menu">
+    <button class="btn btn-xs" ng-click="$ctrl.auctionSearch()"><i class="icon-player-bid"></i></button>
+  </div>
+  <h2>AuctionScreen.lblTitle</h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>AuctionScreen.lblPlayerForSalle</h4>
+      <div class="text-center no-auction" ng-if="!$ctrl.myPlayersSold.length">
+        <h4>AuctionScreen.lblNoSaleTitle</h4>
+        <i class="icon-player-sale"></i>
+        <p>AuctionScreen.lblNoSaleDesc</p>
+      </div>
+      <div ng-if="$ctrl.myPlayersSold.length">
+        <slick
+          infinite="false"
+          dots="true"
+          slides-to-show="1" slides-to-scroll="1" rows="3"
+          prev-arrow=".auction-my-players-nav .slick-prev"
+          next-arrow=".auction-my-players-nav .slick-next"
+          settings="{appendDots:'.auction-my-players-nav .dots', dotsClass: 'list-inline'}"
+          class="my-players">
+          <auction-player player="player" ng-repeat="player in $ctrl.myPlayersSold" />
+        </slick>
+        <div class="slick-nav auction-my-players-nav">
+          <button type="button" class="btn btn-link slick-prev">«</button>
+          <span class="dots"></span>
+          <button type="button" class="btn btn-link slick-next">»</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>AuctionScreen.lblMyBids</h4>
+      <div class="text-center no-auction" ng-if="!$ctrl.allBids.length">
+        <h4>AuctionScreen.lblNoPurchaseTitle</h4>
+        <i class="icon-player-bid"></i>
+        <p>AuctionScreen.lblNoPurchaseDesc</p>
+      </div>
+      <auction-player player="player" type="bid" ng-repeat="player in $ctrl.allBids" />
+    </div>
+  </div>
+</div>

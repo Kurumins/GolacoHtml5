@@ -15,9 +15,33 @@
   <div class="manager-itens">
     <h6>Equipe os itens abaixo</h6>
 
-    <button class="icon-t-shirt"></button>
-    <button class="icon-shorts"></button>
-    <button class="icon-shoes-snickers-streamline"></button>
+    <button
+      ng-if="!$ctrl.currentPlayer.ShirtItem"
+      ng-click="$ctrl.playerItemEquip(1)"
+      class="icon-t-shirt"
+    ></button>
+    <button ng-if="$ctrl.currentPlayer.ShirtItem">
+      <img ng-src="{{$ctrl.currentPlayer.ShirtItem.Picture}}">
+    </button>
+
+    <button
+      ng-if="!$ctrl.currentPlayer.ShortItem"
+      ng-click="$ctrl.playerItemEquip(2)"
+      class="icon-shorts"
+    ></button>
+    <button ng-if="$ctrl.currentPlayer.ShortItem">
+      <img ng-src="{{$ctrl.currentPlayer.ShortItem.Picture}}">
+    </button>
+
+    <button
+      ng-if="!$ctrl.currentPlayer.CleatsItem"
+      ng-click="$ctrl.playerItemEquip(3)"
+      class="icon-shoes-snickers-streamline"
+    ></button>
+    <button ng-if="$ctrl.currentPlayer.CleatsItem">
+      <img ng-src="{{$ctrl.currentPlayer.CleatsItem.Picture}}">
+    </button>
+
   </div>
 
   <div class="manager-menu">

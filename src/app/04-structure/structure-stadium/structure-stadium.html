@@ -1,22 +1,42 @@
 <h2>Estádio</h2>
-<div class="structure-stadium">
-  <h4>{{$ctrl.stadium.Name}}</h4>
-  <div style="margin: auto; width: 730px;">
+<button class="pull-right btn btn-sm" ng-click="$ctrl.stadiumRecycle()">Reformar</button>
+<div class="structure-stadium clearfix">
+  <h4><button class="btn-link icon-pencil-square" ng-click="$ctrl.editName()"></button>{{$ctrl.stadium.Name}}</h4>
+  <div class="clearfix">
     <img ng-src="{{$ctrl.stadium.Picture}}" class="stadium-picture">
     <div class="stadium-itens">
-      <div class="stadium-itens-row" ng-repeat="list in ['Capacity','Atractivity','Rentability']">
-        <i class="{{['icon-user','icon-star','icon-usd'][$index]}}"></i>
-        <div ng-repeat="i in [0,1,2]" class="stadium-item">
-          <img ng-if="$ctrl.stadium[list+'Items'][i]" ng-src="{{$ctrl.stadium[list+'Items'][i].Picture}}" height="55" >
-          <span ng-if="!$ctrl.stadium[list+'Items'][i]">
-            <span ng-if="$ctrl.stadium[list+'Slots'] > i" class="item-equip">
-              Clique para equipar
-            </span>
-            <i class="icon-lock" ng-if="$ctrl.stadium[list+'Slots'] <= i"></i>
-          </span>
-        </div>
-      </div>
+      <structure-item-list ng-repeat="list in ['Capacity', 'Atractivity', 'Rentability']" icon="{{['icon-user','icon-star','icon-usd'][$index]}}" >
+        <structure-item ng-repeat="i in [0,1,2]"
+          item="$ctrl.stadium[list+'Items'][i]"
+          lock="$ctrl.stadium[list+'Slots'] <= i"
+          on-select="$ctrl.stadiumReform(list, $index+1)" />
+      </structure-item-list>
     </div>
   </div>
+
+  <hr>
+
+  <div class="row structure-stadium-details">
+    <dl class="col-xs-6">
+      <dt><!-- StadiumPreview. -->lblConstructionDate</dt>
+      <dd>{{$ctrl.stadium.ConstructionDate | date:'shortDate'}}</dd>
+      <dt><!-- StadiumPreview. -->lblGames</dt>
+      <dd>{{$ctrl.stadium.TotalMatches}}</dd>
+      <dt><!-- StadiumPreview. -->lblPublicRecord</dt>
+      <dd>{{$ctrl.stadium.AttendanceRecord}}</dd>
+      <dt><!-- StadiumPreview. -->lblProfitRecord</dt>
+      <dd>{{$ctrl.stadium.RentabilityRecord | currency}}</dd>
+    </dl>
+    <dl class="col-xs-6 stadium-levels">
+    <dt><i class="icon-user"></i> <!-- StadiumPreview. -->lblCapacity</dt>
+    <dd>{{$ctrl.stadium.Capacity}}</dd>
+    <dt><i class="icon-star"></i> <!-- StadiumPreview. -->lblAtractiveness</dt>
+    <dd class="stadium-level"><span style="width: {{$ctrl.stadium.Atractivity}}%"></span></dd>
+    <dt><i class="icon-usd"></i> <!-- StadiumPreview. -->lblProfitability</dt>
+    <dd class="stadium-level"><span style="width: {{$ctrl.stadium.Rentability}}%"></span></dd>
+    </dl>
+  </div>
 </div>
+
+
 <!-- <pre>{{$ctrl.stadium | json}}</pre> -->

@@ -2,7 +2,23 @@
 
   .ngdialog-content {
     width: 650px;
-    padding: 30px 50px;
+    padding: 30px 30px;
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+
+  .register {
+    margin-top: 20px;
+    p {
+      // margin: 2px 0;
+      margin-bottom: 5px;
+      line-height: 12px;
+    }
+    button {
+      margin-left: 10px;
+    }
   }
 
 }

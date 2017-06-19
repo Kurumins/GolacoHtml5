@@ -33,7 +33,7 @@
      outline: none;
     &:before{
      
-      color: #0b62a9;
+      color: #df0000;
     }
     &:hover{
       border: none;
@@ -84,15 +84,19 @@
     -webkit-box-shadow: 24px 0 0 -23px rgba(0,0,0,0.4) inset;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
     box-shadow: 24px 0 0 -23px rgba(11,98,169,0.4) inset;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color=#0b62a9); /*IE 5.5-7*/
-    .team-country select {
-      width: 100%;
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      background: url('../app/images/arrow.png') no-repeat 95% 50% #ffffff;
-      color:#4e5667;
-      padding: 8px;
-      margin-top: 2px;
+    .team-country {
+      display: block;
+
+      select {
+        width: 100%;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: url('../app/images/arrow.png') no-repeat 95% 50% #ffffff;
+        color:#4e5667;
+        padding: 8px;
+        margin-top: 2px;
+      }
     }
   }
 

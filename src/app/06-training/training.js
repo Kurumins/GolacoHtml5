@@ -1,7 +1,7 @@
 'use strict';
 angular.module('app')
   .config(trainingRoutesConfig)
-  .directive('skillValue', function() {
+  .directive('skillValue', function () {
     return {
       scope: {
         skillValue: '='
@@ -9,13 +9,13 @@ angular.module('app')
       template: '{{skillValue.Value || \'--\'}} <span ng-if="skillValue.addValue!==0" class="-{{skillValue.addValue > 0 ? \'add\' : \'dec\'}}">{{skillValue.addValue}}</span>'
     };
   })
-  .directive('trainingLimit', function() {
+  .directive('trainingLimit', function () {
     return {
       scope: {
         player: '=trainingLimit'
       },
       template: '<div title="Tempo restante: {{::time}}" ng-if="trainingStatus"><span style="width: {{::trainingStatus}}%"></span></div>',
-      link: function link(scope, element, attrs) {
+      link: function (scope/*, element, attrs*/) {
         var now = +new Date;
 
         scope.trainingStatus = getTrainingStatus();
@@ -24,40 +24,41 @@ angular.module('app')
         function getTrainingStatus () {
           var trainingLimit = (scope.player.TrainingLimitDate - now) / 1000;
           return trainingLimit > 0 ? 100 - trainingLimit / (24 * 60 * 60) * 100 : 0;
-        };
+        }
 
         function getTime () {
-          return new Date(1970,0,1,0,0,0,scope.player.TrainingLimitDate - now).toTimeString().substring(0,5);
+          return new Date(1970, 0, 1, 0, 0, 0, scope.player.TrainingLimitDate - now).toTimeString().substring(0, 5);
         }
 
       }
     };
   });
 
-function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup) {
+function trainingController ($scope, $rootScope, teamPlayerList, trainingCenter, ngDialog, ConfirmPopup, TrainingService, TeamPlayerService) {
   var vm = this;
 
-  vm.teamPlayers = teamPlayerList.TeamPlayers;
+  vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
   vm.trainingCenter = trainingCenter.TrainingCenter;
 
-  angular.forEach(vm.teamPlayers, function (player) {
-    player.attributes = [];
-    angular.forEach(player.Attributes, function(attribute) {
-      attribute && player.attributes.push(attribute);
+  function playersWithAtributes (teamPlayers) {
+    angular.forEach(teamPlayers, function (player) {
+      player.attributes = [];
+      angular.forEach(player.Attributes, function (attribute) {
+        attribute && player.attributes.push(attribute);
+      });
     });
-  });
+    return teamPlayers;
+  }
 
   vm.toggleAll = function (toggleStatus) {
-     angular.forEach(vm.teamPlayers, function (player) {
+    angular.forEach(vm.teamPlayers, function (player) {
       if (!player.HasTrainingPlan) {
         player.checked = toggleStatus;
       }
     });
 
-     vm.updateplayersListAtt();
+    vm.updateplayersListAtt();
   };
-
-  var now = new Date;
 
   vm.getTrainingLimit = function (player) {
     var trainingLimit = (player.TrainingLimitDate - new Date) / 1000;
@@ -65,21 +66,70 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
   };
 
   vm.train = function () {
-    ConfirmPopup.open({
-      title: 'Treinamento',
-      content: 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.'
-    })
+    ConfirmPopup.open('Treinamento', 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.')
       .then(function () {
-      })
+
+        var playerIds = [];
+        var juniorIds = [];
+
+        for (var i = 0; i < vm.teamPlayers.length; i++) {
+          if (vm.teamPlayers[i].checked) {
+            if (vm.teamPlayers[i].TeamPlayerType === 1) {
+              playerIds.push(vm.teamPlayers[i].Id);
+            } else {
+              juniorIds.push(vm.teamPlayers[i].Id);
+            }
+          }
+        }
+
+        var tmpTrainPlan = '';
+
+        for (var k = 0; k < 4; k++) {
+          switch (vm['_btnType' + k]) {
+            case 2:
+              tmpTrainPlan += 'A';
+              break;
+            case 3:
+              tmpTrainPlan += 'B';
+              break;
+            case 4:
+              tmpTrainPlan += 'C';
+              break;
+            default:
+              break;
+          }
+        }
+
+        TrainingService.playerTrain(
+          playerIds.join(','),
+          vm.trainingCenter.IdTeamTrainCenter,
+          tmpTrainPlan,
+          juniorIds.join(',')
+        )
+          .then(function () {
+            return TeamPlayerService.teamPlayerList();
+          })
+          .then(function (teamPlayerList) {
+            vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
+            vm.updateplayersListAtt();
+          });
+
+      });
   };
 
   vm.refreshTraining = function (player) {
-    ConfirmPopup.open({
-      title: 'Adiantar treinamento',
-      content: 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?'
-    })
+    ConfirmPopup.open('Adiantar treinamento', 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?')
       .then(function () {
-      })
+        TrainingService.refreshTraining(player)
+          .then(function () {
+            $rootScope.$emit('balanceUpdate');
+            return TeamPlayerService.teamPlayerList();
+          })
+          .then(function (teamPlayerList) {
+            vm.teamPlayers = playersWithAtributes(teamPlayerList.TeamPlayers);
+            vm.updateplayersListAtt();
+          });
+      });
   };
 
   //----------- calculo de atributos --------
@@ -89,16 +139,16 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
   vm._btnType2 = 1;
   vm._btnType3 = 1;
 
-  var playersList = vm.teamPlayers;
-
   // vm.toggleAll(true);
 
   vm.updateplayersListAtt = function () {
 
+    var playersList = vm.teamPlayers;
+
     //base att level, primary or secondary habilits
-    var MAX_TRAINNINGS = 4;
-    var PRIMARY = "pri";
-    var SECONDARY = "sec";
+    // var MAX_TRAINNINGS = 4;
+    var PRIMARY = 'pri';
+    var SECONDARY = 'sec';
     var baseAttLvl = {};
     baseAttLvl[PRIMARY] = 1;
     baseAttLvl[SECONDARY] = 1;//0.85;
@@ -163,11 +213,12 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
     //check if there is training plan
     var trainingPlanExist = false;
     var countNumTrainer = 0;
-    for (var i = 0; i < 4; i++)
-      if (vm["_btnType" + i] != 1) {
+    for (var i = 0; i < 4; i++) {
+      if (vm['_btnType' + i] !== 1) {
         trainingPlanExist = true;
         countNumTrainer++;
       }
+    }
 
     //number of playersList
     var baseNumplayersList = 1.32; //base 30% more if trainning 1 player, 2% less for each player added
@@ -203,7 +254,7 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
         baseDecAtt[5] = 0;  //5 = Pas
         baseDecAtt[6] = 0;  //6 = Dri
         for (var k = 0; k < 4; k++) {
-          switch (vm["_btnType" + k]) {
+          switch (vm['_btnType' + k]) {
             case 2:
               baseIncAtt[0] += baseAdd;
               baseIncAtt[1] += baseAdd;
@@ -215,7 +266,7 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
               baseDecAtt[2] += baseDec;
               break;
             case 4:
-              if (playersList[i].idPosition != 1) { //if hes is not goalkeeper
+              if (playersList[i].idPosition !== 1) { //if hes is not goalkeeper
                 baseIncAtt[2] += baseAdd;
                 baseIncAtt[5] += baseAdd;
                 baseIncAtt[6] += baseAdd;
@@ -235,11 +286,12 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
           var points = 0;
           if (baseIncAtt[j] > 0) {  //if add points
             var tmpBaseAttLvl = baseAttLvl[PRIMARY];
-            if (j > 1)  //if tranning secondary habilits
+            if (j > 1) { //if tranning secondary habilits
               tmpBaseAttLvl = baseAttLvl[SECONDARY];
+            }
             //calc top trainning level
             var trainLvl;
-            var tmpTrainLvl = vm.trainingCenter['TeamPlayerSkill'+playersList[i].attributes[j].Id+'Level'];
+            var tmpTrainLvl = vm.trainingCenter['TeamPlayerSkill' + playersList[i].attributes[j].Id + 'Level'];
             // switch (j) {
             //   case 0:
             //     tmpTrainLvl = uint(this["_skill_value_" + playersList[i].attributesHab1Id].text);
@@ -266,11 +318,12 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
             //     tmpTrainLvl = 1;
             //     break;
             // }
-            trainLvl = baseTrainLvl[tmpTrainLvl]
+            trainLvl = baseTrainLvl[tmpTrainLvl];
 
             //if player att value > top trainning lvl value
-            if (Number(playersList[i].attributes[j]) > baseTopTrainLvl[tmpTrainLvl])
+            if (Number(playersList[i].attributes[j]) > baseTopTrainLvl[tmpTrainLvl]) {
               trainLvl = trainLvl * 0.3;  //goes back to trainning lvl 1
+            }
             //calc points
             points = baseIncAtt[j] *  //base to calc
                   tmpBaseAttLvl * //base att lvl(primary or secondary
@@ -284,21 +337,23 @@ function trainingController ($scope, teamPlayerList, trainingCenter, ngDialog, C
             points -= baseDecAtt[j];
           }
 
-          if (points == 0) {
+          if (points === 0) {
             playersList[i].attributes[j].addValue = 0;
           } else {
-            playersList[i].attributes[j].addValue = parseInt(points*10)/10;
+            playersList[i].attributes[j].addValue = parseInt(points * 10) / 10;
           }
 
         }
 
       } else {
-        for (var j = 0; j < playersList[i].attributes.length; j++) { //calc for each att
-          playersList[i].attributes[j].addValue = 0;
+        for (var j2 = 0; j2 < playersList[i].attributes.length; j2++) { //calc for each att
+          playersList[i].attributes[j2].addValue = 0;
         }
       }
     }
   };
+
+  vm.toggleAll(vm.checkAll = true);
 
 }
 

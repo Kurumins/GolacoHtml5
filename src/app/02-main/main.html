@@ -1,21 +1,20 @@
 <div class="main">
 
     <div class="main-header">
-   
+
         <div class="header-item">
           <h2>Minha equipe</h2>
         </div>
 
         <div class="header-item">
             <div>
-                <!-- <button class="glyphicon-wrench" ng-click="$ctrl.config()">Config</button> -->
-                <button class="glyphicon-wrench" ng-click="$ctrl.config()"><img src="app/images/config.png" alt="Configurações" title="Configurações"></button>
-                <button class="" ng-click="$ctrl.teamTrophyRoom()"><!-- Trofs --><img src="app/images/trofs.png" alt="Troféus" title="Troféus"></button>
-                <button class="" ng-click="$ctrl.stats()"><!-- Estats --><img src="app/images/statistics.png" alt="Estatisticas" title="Estatisticass"></button>
-                <button class="" ng-click="$ctrl.dailyBonus()"><!-- Bonus --><img src="app/images/bonus.png" alt="Bônus" title="Bônus"></button>
+                <button class="" ng-click="$ctrl.config()"><img src="app/images/config.png" alt="Configurações" title="Configurações"></button>
+                <button class="" ng-click="$ctrl.teamTrophyRoom()"><img src="app/images/trofs.png" alt="Troféus" title="Troféus"></button>
+                <button class="" ng-click="$ctrl.stats()"><img src="app/images/statistics.png" alt="Estatisticas" title="Estatisticass"></button>
+                <button class="" ng-click="$ctrl.dailyBonus()"><img src="app/images/bonus.png" alt="Bônus" title="Bônus"></button>
                 <button
                 ng-dialog="bug-report.html"
-                ng-dialog-append-class="ngdialog-bug-report"><!-- Bugs --><img src="app/images/bugs.png" alt="Bugs" title="Bugs"></button>
+                ng-dialog-append-class="ngdialog-bug-report"><img src="app/images/bugs.png" alt="Bugs" title="Bugs"></button>
             </div>
         </div>
 
@@ -35,14 +34,14 @@
 
                 <div class="manager">
                     <h4>Detalhes do Manager</h4>
-                    <img ng-src="{{$windowUser.picture}}" style="float: left; margin-right: 5px;" height="30">
-                    <h5 style="margin-bottom: 0; ">{{$windowUser.userName}}</h5>
+                    <img ng-src="{{$appCtrl.userData.picture}}" style="float: left; margin-right: 5px;" height="30">
+                    <h5 style="margin-bottom: 0; ">{{$appCtrl.userData.userName}}</h5>
                     <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
                 </div>
 
             </div>
 
-            <div class="detail-team"style="float: left;">
+            <div class="detail-team">
                 <h4>Detalhes do Time</h4>
                 <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
                 <p>Fundado em {{$appCtrl.teamPreview.FoundationDate | date:'shortDate'}}</p>
@@ -53,12 +52,17 @@
             <div class="detail-uniform">
                 <h3>Uniforme</h3>
 
-                <div class="main-uniformes">
+                <div class="clearfix main-uniformes">
                     <div class="main-uniforme">uniforme</div>
                     <div class="main-uniforme">uniforme</div>
                 </div>
 
-                <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor">
+                <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor" ng-if="$appCtrl.teamPreview.SponsorName">
+
+                <div ng-if="!$appCtrl.teamPreview.SponsorName">
+                    Clique aqui para contratar um patrocinador!
+                </div>
+
             </div>
 
 
@@ -75,8 +79,8 @@
                     ng-dialog-controller="MissionPopupController"
                     ng-dialog-show-close="false"
                     ng-dialog-data="{{mission}}"
-                    ng-dialog-close-previous 
-                    alt="{{mission.Mission.Name}}" 
+                    ng-dialog-close-previous
+                    alt="{{mission.Mission.Name}}"
                     title="{{mission.Mission.Name}}">
                 </li>
             </ul>
@@ -84,22 +88,26 @@
             <h3>Avisos</h3>
 
             <div class="main-warnings">
-                <div ng-repeat="warning in $appCtrl.teamPreview.Warnings">
-                    <span class="close">X</span>
+                <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
+                    <span class="close" ng-click="$ctrl.deleteWarning(warning)">X</span>
                     <span class="icon-exclamation-triangle"></span>
                     <span>{{warning.Message}}</span>
                 </div>
+                <div class="no-warning">lblNoMessages</div>
             </div>
 
-            <div class="checkbox" style="padding: 0;">
-                <label style="float: left" class="main-share">
+            <!-- <div class="pull-left checkbox">
+                <label>
                     <input type="checkbox" name="" checked>
                     <span>Compartilhar</span>
                 </label>
-            </div>
+            </div> -->
 
-            <h3>Nota à imprensa</h3>
-            <textarea width="100%" class="main-note"></textarea>
+            <h3>
+                Nota à imprensa
+                <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
+            </h3>
+            <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
 
         </div>
 

@@ -2,15 +2,15 @@
   <div class="financial-balance" title="Dinheiro Virtual">
     <i class="icon icon-money"></i>
     <button title="Mais Dinheiro Virtual" ng-click="$ctrl.buyMoney()">+</button>
-    <span>{{HeaderData.FinancialBalance | currency}}</span>
+    <span>{{$ctrl.HeaderData.FinancialBalance | currency}}</span>
   </div>
   <div class="credit-balance" title="Créditos">
     <i class="icon icon-credit-card"></i>
     <button title="Mais Créditos">+</button>
-    <span>{{HeaderData.CreditBalance}}</span>
+    <span>{{$ctrl.HeaderData.CreditBalance}}</span>
   </div>
   <div class="suportters">
     <i class="icon icon-users"></i>
-    <span>{{HeaderData.Suportters}}</span>
+    <span>{{$ctrl.HeaderData.Suportters}}</span>
   </div>
 </div>

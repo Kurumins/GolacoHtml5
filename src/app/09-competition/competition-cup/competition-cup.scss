@@ -1,0 +1,128 @@
+.ngdialog.ngdialog-competition-cup {
+
+  .ngdialog-content {
+    width: 750px;
+    height: 550px;
+    padding: 10px 25px;
+  }
+
+  h5,
+  h4 {
+    // margin: 0;
+  }
+
+  h3 {
+    // margin-bottom: 0;
+  }
+
+}
+
+.competition-cup-match-table {
+
+  .slick-slider {
+    margin: 0 -10px 0px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .match-table {
+    box-sizing: box-sizing;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+}
+
+.competition-cup-calendar {
+
+}
+
+.competition-cup-play-off {
+  .slick-slider {
+    margin: 0 -10px 0px;
+  }
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .match-table {
+    box-sizing: box-sizing;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .slick-nav {
+    text-align: center;
+  }
+
+  .slick-dots {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+    }
+    button {
+      border: 0;
+      padding: 0;
+      margin-left: 2px;
+      font-size: 12px;
+      width: 20px;
+      line-height: 20px;
+    }
+    .slick-active button {
+      background: orange;
+    }
+  }
+}
+
+.competition-cup-semifinal {
+  .match-table {
+    width: 50%;
+    margin: 0 auto 30px;
+  }
+}
+
+.competition-cup-finals {
+  .match-table {
+    width: 50%;
+    margin: 0 auto 30px;
+  }
+}
+
+.competition-cup-prize {
+  h1 {
+    font-size: 120px;
+    line-height: 330px;
+    text-align: center;
+  }
+  .cup-prizes {
+  }
+  .cup-prize {
+    padding: 10px;
+    border: 1px solid;
+    margin: 5px;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.button-bar {
+  button {
+    outline: none;
+    border: 0;
+    padding: 5px 10px;
+  }
+  .active {
+    background: #ccc;
+  }
+}
