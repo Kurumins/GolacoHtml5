@@ -140,7 +140,7 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
   vm.CompetitionCup = CompetitionCup.open;
   vm.CompetitionCupLight = CompetitionCupLight.open;
 
-  vm.CompetitionCupLight(competitions[4]);
+  // vm.CompetitionCupLight(competitions[4]);
 
   // vm.friendlyMatch();
 

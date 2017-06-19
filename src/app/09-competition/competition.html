@@ -1,25 +1,35 @@
  <div class="competition">
   <div class="friendly-match">
-    Joque um amistoso <button class="icon-futbol-o" ng-click="$ctrl.friendlyMatch()"></button>
+    <label>Joque um amistoso</label> <button ng-click="$ctrl.friendlyMatch()"><i class="icon-futbol-o"></i></button>
   </div>
   <h2>Competições</h2>
 
   <ul>
-    <li ng-repeat="competition in $ctrl.competitions">
-      {{competition.data.name}}
+    <li ng-repeat="competition in $ctrl.competitions" class="{{competition.data.name}}"
+      ng-class="{
+         'is-registered': competition.preview.IsRegistered,
+         'not-registered': !competition.preview.IsRegistered,
+         'is-started': competition.preview.IsStarted
+      }"
+      ng-click="
+        competition.preview.IsStarted ? $ctrl[competition.name](competition) :
+        !competition.preview.IsRegistered ? $ctrl.competitionDetails(competition) : null">
+      <h3>{{competition.data.name}}</h3>
       <div ng-if="competition.preview.IsStarted">
-        <p>Posição: {{competition.preview.Position}}º</p>
+      <p></p>
+        <p ng-if="competition.preview.Position">Posição: {{competition.preview.Position}}º</p>
         <p>Rodada: {{competition.preview.Round}}</p>
-        <p><button ng-click="$ctrl[competition.name](competition)">Ver Competição</button></p>
+        <p>Ver Competição</p>
       </div>
       <div ng-if="!competition.preview.IsStarted">
         <p>{{competition.registrations}} / {{competition.data.teamsQty}} inscritos</p>
         <div ng-if="competition.preview.IsRegistered">
-          <p>aguarde</p>
+          <p>Instrito</p>
+          <p>Aguardando início da temporada.</p>
         </div>
         <div ng-if="!competition.preview.IsRegistered">
+          <p>Increva-se agora</p>
           <p>{{competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i></p>
-          <p><button ng-click="$ctrl.competitionDetails(competition);">Increva-se agora</button></p>
         </div>
       </div>
     </li>

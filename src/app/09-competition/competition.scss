@@ -1,68 +1,111 @@
 .competition {
   padding: 15px;
-  h2{
+  background-color: #cbdaef;
+  font-family: 'Montserrat', sans-serif;
+
+  h2 {
     color: #4f5776;
+    // margin-top: 0;
+    text-transform: uppercase;
   }
   p {
     margin: 0;
   }
-  ul{
-    display: flex;
-    padding:30px 0;
+
+  ul {
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+    padding: 0;
+    column-count: 2;
+    // text-align: center;
   }
-  
+
   ul li {
-    margin: 1%;
-    padding: 9px;
-    min-width: 18%;
+    break-inside: avoid-column;
+    // min-height: 100px;
     list-style-type: none;
-    text-align: center;
-    background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
-    background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
-    background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-    background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
-    color: green;
-    font-size: 18px;
-    font-weight: 600;
-    p{
+
+    // margin: 1%;
+    padding: 10px 15px;
+    text-align: right;
+    // border: 1px solid;
+    margin-bottom: 15px;
+
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+
+    h3 {
+      margin-top: 0;
+    }
+    p {
       font-size: 14px;
     }
+
+    &.not-registered,
+    &.is-started {
+      cursor: pointer;
+    }
+
+    &.lblLeague {
+      background-color: #ffbf49;
+      h3 {
+        margin-bottom: 30px;
+      }
+    }
+
+    &.lblChampionship {
+      background-color: #e25a5a;
+    }
+
+    &.lblCup {
+      background-color: #00b7f4;
+    }
+
+    &.lblMiniChampionship {
+      background-color: #01a547;
+    }
+
+    &.lblMiniCup {
+      background-color: #666;
+    }
   }
+
   .friendly-match {
     float: right;
-    span{
-      color: #4f5776;
-      font-size: 18px;
-      font-weight: 600;
-        padding: 0 15px;
+
+    // span {
+    //   color: #4f5776;
+    //   font-size: 18px;
+    //   font-weight: 600;
+    //   padding: 0 15px;
+    // }
+    // line-height: 35px;
+    label {
+      vertical-align: super;
     }
+
     button {
       font-size: 35px;
-       background: #ffffff;
+      line-height: 1;
+      background: #ffffff;
       border: 3px solid #0b62a9;
       border-radius:5px;
-      &:before{
-        color: #0b62a9;
-        vertical-align: middle;
-        
-      }
-      &:hover{
-        border: 3px solid #3cc51c;
-        &:before{
-          color: #3cc51c;
-        }
+      padding-top: 5px;
+
+      color: #0b62a9;
+      &:hover {
+        border-color: #3cc51c;
+        color: #3cc51c;
       }
     }
   }
-  
-  .icon-credit-card{
-    &:before {
-      color: #DAA520;
-    }
-  }
+
+  // .icon-credit-card{
+  //   &:before {
+  //     color: #DAA520;
+  //   }
+  // }
 
   .checkbox{
       margin:0;
@@ -142,7 +185,7 @@
     }
     tr:hover {
       // background-color:#00D8CC;
-      // cursor:pointer; 
+      // cursor:pointer;
       // color:#FFF;
     }
   }
