@@ -2,24 +2,112 @@
 angular.module('app')
   .config(calendarRoutesConfig);
 
-function rankingController (rankingClear, RankingService) {
+function rankingController (RankingService) {
   var vm = this;
 
-  vm.ranking = rankingClear.Ranking;
-  vm.me = rankingClear.Me;
-
-  vm.filters = [
+  vm.rankings = [
     {
       icon: '',
-      label: 'Geral',
-      service: 'rankingClear'
-    }
+      label: 'rankingByCompetitions',
+      service: 'RankingClear',
+    },
+    {
+      icon: '',
+      label: 'rankingBySupporters',
+      service: 'Supporters',
+      exclusion: {
+        date: true
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByAttendance',
+      service: 'Attendence'
+    },
+    {
+      icon: '',
+      label: 'rankingByGeneralTitles',
+      service: 'Titles',
+      // filter: {
+      //   IdCompetitionType: 0
+      // }
+    },
+    {
+      icon: '',
+      label: 'rankingByLeagueTitles',
+      service: 'Titles',
+      filter: {
+        IdCompetitionType: 1
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByTournamentTitles',
+      service: 'Titles',
+      filter: {
+        IdCompetitionType: 2
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByCupTitles',
+      service: 'Titles',
+      filter: {
+        IdCompetitionType: 3
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByMiniTournamentTitles',
+      service: 'Titles',
+      filter: {
+        IdCompetitionType: 4
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByMiniCupTitles',
+      service: 'Titles',
+      filter: {
+        IdCompetitionType: 5
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByNegotiations',
+      service: 'Negotiations',
+      exclusion: {
+        leagues: true
+      }
+    },
+    {
+      icon: '',
+      label: 'rankingByWinningStreak',
+      service: 'Invencibility',
+      exclusion: {
+        date: true
+      }
+    },
   ];
 
-  vm.filter = function (filters) {
-    console.log(filters);
-    // RankingService.rankingClear(filters);
+  vm.currentFilter = {};
+
+  vm.setCurrentRanking = function (ranking) {
+    vm.currentRanking = ranking;
+    vm.filter(vm.currentFilter);
   };
+
+  vm.filter = function (filters) {
+    // console.log(filters);
+    RankingService.getRanking(vm.currentRanking.service, vm.general ? vm.currentFilter : {}, vm.currentRanking.filter)
+      .then(function (ranking) {
+        vm.ranking = ranking.Ranking;
+        vm.me = ranking.Me;
+        vm.lastUpdate = ranking.LastUpdate;
+      });
+  };
+
+  vm.setCurrentRanking(vm.rankings[0]);
 
 }
 
@@ -29,11 +117,11 @@ function calendarRoutesConfig ($stateProvider) {
     .state('app.ranking', {
       url: '/ranking',
       sticky: true,
-      resolve: {
-        rankingClear: function (RankingService) {
-          return RankingService.rankingClear();
-        }
-      },
+      // resolve: {
+      //   rankingClear: function (RankingService) {
+      //     return RankingService.rankingClear();
+      //   }
+      // },
       templateUrl: 'ranking.html',
       controller: rankingController,
       controllerAs: '$ctrl'

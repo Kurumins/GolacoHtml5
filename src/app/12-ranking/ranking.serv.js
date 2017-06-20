@@ -4,23 +4,14 @@ angular.module('app')
 
     var vm = this;
 
-    vm.rankingClear = function (filter) {
+    vm.getRanking = function (rankingType, filter, rankingFilters) {
 
-      filter = angular.copy(filter || {});
+      filter = angular.merge(angular.copy(filter || {}), rankingFilters || {});
       filter.page = 1;
       filter.qty = 10;
       filter.idCountry = filter.idCountry || 0;
 
-      return PostToJs('Ranking/RankingClear', filter);
-    };
-
-    vm.rankingSupporters = function (idCountry, idLeague) {
-      return PostToJs('Ranking/Supporters', {
-        idCountry: idCountry,
-        idLeague: idLeague,
-        page: 1,
-        qty: 10,
-      });
+      return PostToJs('Ranking/' + rankingType, filter);
     };
 
   });
