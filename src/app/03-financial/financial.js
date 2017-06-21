@@ -17,7 +17,7 @@ function financialController (summary, FinancialDetails) {
     lblFinOther: 'OtherSpending'
   };
 
-  FinancialDetails.open();
+  vm.financialDetails = FinancialDetails.open;
 
 }
 
