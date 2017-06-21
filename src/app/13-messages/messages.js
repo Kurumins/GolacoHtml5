@@ -2,7 +2,7 @@
 angular.module('app')
   .config(messagesRoutesConfig);
 
-function messagesController (messageList, MessagesService, ConfirmPopup) {
+function messagesController (messageList, MessagesService, ConfirmPopup, MessagePopup) {
   var vm = this;
 
   vm.messageList = messageList.MessageList;
@@ -46,6 +46,14 @@ function messagesController (messageList, MessagesService, ConfirmPopup) {
           }
         });
       });
+  };
+
+  vm.readMessage = function (message) {
+    MessagesService.setReadMessages(message.MessageId).noLoading()
+      .then(function () {
+        message.IsRead = true;
+      });
+    MessagePopup.open(message);
   };
 
   function getCheckedMessages() {

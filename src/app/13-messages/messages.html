@@ -14,8 +14,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="message in $ctrl.messageList" ng-class="{'is-unread': !message.IsRead}">
-        <td><input type="checkbox" ng-model="message.checked"></td>
+      <tr
+        ng-repeat="message in $ctrl.messageList"
+        ng-class="{'is-unread': !message.IsRead}"
+        ng-click="$ctrl.readMessage(message)">
+        <td><input type="checkbox" ng-model="message.checked" ng-click="$event.stopPropagation();"></td>
         <td><!-- Messages. -->{{message.From}}</td>
         <td><!-- Messages. -->{{message.Title}}</td>
         <td align="right">{{message.SendDate | date:'short'}}</td>
