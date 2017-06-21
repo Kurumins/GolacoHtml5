@@ -1,11 +1,23 @@
 'use strict';
 angular.module('app')
-  .service('FinancialService', function (PostToJs/*, $http*/) {
+  .service('FinancialService', function (PostToJs, moment) {
 
     var vm = this;
 
     vm.summary = function () {
       return PostToJs('Finance/FinancialSummary');
+    };
+
+    vm.transactionTypes = function () {
+      return PostToJs('Finance/TransactionTypes');
+    };
+
+    vm.detail = function (typeId, beginDate, endDate) {
+      return PostToJs('Finance/Detail', {
+        TypeId: typeId || -1,
+        BeginDate: beginDate || +moment().utc().add(-1,'day').startOf('day'),
+        EndDate: endDate || +moment().utc().endOf('day'),
+      });
     };
 
   });

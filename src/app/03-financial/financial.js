@@ -2,7 +2,7 @@
 angular.module('app')
   .config(financialRoutesConfig);
 
-function financialController (summary) {
+function financialController (summary, FinancialDetails) {
 
   var vm = this;
 
@@ -15,7 +15,9 @@ function financialController (summary) {
     lblFinSalary: 'TeamPlayerSalarySpending',
     lblFinStructure: 'StructuresSpending',
     lblFinOther: 'OtherSpending'
-  }
+  };
+
+  FinancialDetails.open();
 
 }
 
