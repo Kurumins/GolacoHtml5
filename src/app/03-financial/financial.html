@@ -1,0 +1,34 @@
+<div class="financial">
+  <div class="pull-right financial-menu">
+    <button class="btn btn-xs" ng-click="$ctrl.auctionSearch()"><i class="icon-usd"></i><i class="icon-plus"></i></button>
+    <button class="btn btn-xs" ng-click="$ctrl.auctionSearch()"><i class="icon-comment"></i></button>
+  </div>
+  <h2>FinancialView.lblTitle</h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>FinancialView.lblFinSummary</h3>
+
+      <div ng-repeat="(key, value) in $ctrl.financeFields">
+        <h4><!-- FinancialView. -->{{key}}</h4>
+        <p><i ng-class="{'icon-arrow-up': $ctrl.financeSummary[value] > 0, 'icon-arrow-down': $ctrl.financeSummary[value] < 0}"></i>{{$ctrl.financeSummary[value] | currency}}</p>
+      </div>
+
+      <h2><!-- FinancialView. -->lblFinBalance</h2>
+      <p><i ng-class="{'icon-arrow-up': $ctrl.financeSummary.WeekBalance > 0, 'icon-arrow-down': $ctrl.financeSummary.WeekBalance < 0}"></i>{{$ctrl.financeSummary.WeekBalance | currency}}</p>
+
+    </div>
+    <div class="col-xs-6">
+      <h3>FinancialView.lblMyBids</h3>
+      <h4>{{$ctrl.sponsorSummary.SponsorName}}</h4>
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorSummary.SponsorName}}/finance.png" class="img-thumbnail">
+      <p>FinancialView.{{$ctrl.sponsorSummary.SponsorDescription}}</p>
+      <h4>FinancialView.lblSpGoal</h4>
+      <ul>
+        <li ng-repeat="goal in $ctrl.sponsorSummary.SponsorGoals">FinancialView.{{goal.Description}}</li>
+      </ul>
+      <h4>FinancialView.lblSpContract</h4>
+      <p>FinancialView.lblSpContractDescription</p>
+      <p>{{$ctrl.sponsorSummary.ValidDate | date:'shortDate'}}</p>
+    </div>
+  </div>
+</div>
