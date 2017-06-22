@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .config(calendarRoutesConfig);
+  .config(rankingRoutesConfig);
 
 function rankingController (RankingService) {
   var vm = this;
@@ -110,7 +110,7 @@ function rankingController (RankingService) {
 
 }
 
-function calendarRoutesConfig ($stateProvider) {
+function rankingRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.ranking', {
