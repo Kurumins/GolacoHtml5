@@ -97,8 +97,7 @@ function rankingController (RankingService) {
     vm.filter(vm.currentFilter);
   };
 
-  vm.filter = function (filters) {
-    // console.log(filters);
+  vm.filter = function () {
     RankingService.getRanking(vm.currentRanking.service, vm.general ? vm.currentFilter : {}, vm.currentRanking.filter)
       .then(function (ranking) {
         vm.ranking = ranking.Ranking;
