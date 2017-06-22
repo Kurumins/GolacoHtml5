@@ -12,3 +12,17 @@
     flex: 1;
   }
 }
+
+.submenu {
+  .btn {
+    width: 35px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  i {
+    font-size: 20px;
+    &:before {
+      line-height: 1.25;
+    }
+  }
+}
