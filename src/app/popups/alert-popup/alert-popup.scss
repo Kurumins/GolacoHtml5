@@ -3,6 +3,10 @@
   .ngdialog-content {
     // width: 750px;
     padding: 30px 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
   }
 
 }

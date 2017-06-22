@@ -1,0 +1,126 @@
+.ngdialog.ngdialog-sponsor-proposals {
+
+  .ngdialog-content {
+    font-family: 'Montserrat', sans-serif;
+    width: 750px;
+    // height: 550px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    .sponsor-detail {
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .sponsor-name {
+      margin-top: 0;
+    }
+
+    .sponsor-bonus {
+      font-size: 13px;
+    }
+
+    .sponsor-status {
+      // margin-top: 20px;
+      line-height: 30px;
+      height: 36px;
+      background: #333;
+      color: #fff;
+      padding: 3px 10px 3px 3px;
+      border-radius: 18px;
+      display: inline-block;
+
+      span {
+        vertical-align: middle;
+        margin-left: 5px;
+        // font-size: 18px;
+      }
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        // margin: 3px;
+        vertical-align: top;
+        // background: blue;
+        border-radius: 18px;
+      }
+
+      &.-hired:before {
+        background-color: gold;
+      }
+      &.-unhirable:before {
+        background-color: red;
+      }
+      &.-hire {
+        cursor: pointer;
+        &:before {
+          background-color: green;
+        }
+      }
+    }
+
+    .sponsor-list {
+      position: relative;
+      padding: 0 30px;
+      margin-top: 20px;
+
+      .slick-prev,
+      .slick-next {
+        position: absolute;
+        top: 50%;
+      }
+      .slick-prev {
+        left: 0;
+      }
+      .slick-next {
+        right: 0;
+      }
+
+      .sponsor-detail {
+        margin: 10px;
+        padding: 10px;
+        background: white;
+        box-shadow: 1px 1px 15px -4px #333;
+        position: relative;
+
+        header {
+          margin-bottom: 15px;
+        }
+
+        .sponsor-blocked {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          background: rgba(0,0,0, .8);
+          color: white;
+          text-align: center;
+
+          > span {
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            left: 0;
+            width: 100%;
+          }
+          .sponsor-league {
+            font-size: 36px;
+            line-height: 50px;
+          }
+        }
+      }
+
+      .sponsor-name {
+        margin: 5px 0;
+      }
+    }
+  }
+
+}
