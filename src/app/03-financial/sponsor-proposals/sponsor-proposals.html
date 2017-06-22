@@ -1,0 +1,55 @@
+<h2>SponsorDetail.lblTitle</h2>
+
+<div class="row sponsor-detail">
+  <div class="col-xs-2">
+    <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorTeam.Name}}/proposal.png" class="sponsor-img">
+  </div>
+  <div class="col-xs-5">
+    <h4 class="sponsor-name">{{$ctrl.sponsorTeam.Name}}</h4>
+    <p><i class="icon-money"></i> {{$ctrl.sponsorTeam.Income | currency}} Common.weekly</p>
+    <p><i class="icon-credit-card"></i> {{$ctrl.sponsorTeam.Credits}} Common.perLeagueVictory</p>
+    <p><i class="icon-clock "></i> {{$ctrl.sponsorTeam.Duration}} Common.days</p>
+    <h5>Bônus</h5>
+    <p ng-repeat="goal in $ctrl.sponsorTeam.Goals" class="sponsor-bonus">SponsorDetail.{{goal.Description}}</p>
+  </div>
+  <div class="col-xs-4">
+    <div class="sponsor-status -hired"><span><!-- SponsorDetail. -->lblSpOfferHired</span></div>
+  </div>
+</div>
+<div class="sponsor-list">
+  <slick
+      infinite="false"
+      slides-to-show="2" slides-to-scroll="2"
+      prev-arrow=".sponsor-list .slick-prev"
+      next-arrow=".sponsor-list .slick-next" >
+      <div ng-repeat="sponsor in $ctrl.sponsors" class="sponsor-detail">
+        <header class="clearfix">
+          <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{sponsor.Name}}/proposal.png" class="sponsor-img pull-left">
+          <h4 class="sponsor-name pull-left">{{sponsor.Name}}</h4>
+          <div class="sponsor-status pull-left" ng-class="{
+            '-unhirable': $ctrl.sponsorTeam,
+            '-hire': !$ctrl.sponsorTeam,
+          }" ng-click="!$ctrl.sponsorTeam && $ctrl.hire(sponsor)">
+            <span ng-if="$ctrl.sponsorTeam"><!-- SponsorDetail. -->lblSpOfferUnhirable</span>
+            <span ng-if="!$ctrl.sponsorTeam"><!-- SponsorDetail. -->lblSpOfferHire</span>
+          </div>
+        </header>
+        <p><i class="icon-money"></i> {{sponsor.Income | currency}} Common.weekly</p>
+        <p><i class="icon-credit-card"></i> {{sponsor.Credits}} Common.perLeagueVictory</p>
+        <p><i class="icon-clock "></i> {{sponsor.Duration}} Common.days</p>
+        <h5>Bônus</h5>
+        <p ng-repeat="goal in sponsor.Goals" class="sponsor-bonus">SponsorDetail.{{goal.Description}}</p>
+        <div class="sponsor-blocked" ng-if="$ctrl.myLeague > sponsor.League">
+          <span>
+            <p class="sponsor-league">{{sponsor.League}}</p>
+            SponsorDetail.lblSponsorBlocked
+          </span>
+        </div>
+      </div>
+  </slick>
+  <button type="button" class="btn slick-prev">«</button>
+  <button type="button" class="btn slick-next">»</button>
+</div>
+
+<!-- <pre>{{$ctrl.sponsorTeam|json}}</pre>
+<pre>{{$ctrl.sponsors[0]|json}}</pre> -->

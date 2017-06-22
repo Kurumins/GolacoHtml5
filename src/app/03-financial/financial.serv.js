@@ -15,8 +15,18 @@ angular.module('app')
     vm.detail = function (typeId, beginDate, endDate) {
       return PostToJs('Finance/Detail', {
         TypeId: typeId || -1,
-        BeginDate: beginDate || +moment().utc().add(-1,'day').startOf('day'),
+        BeginDate: beginDate || +moment().utc().add(-1, 'day').startOf('day'),
         EndDate: endDate || +moment().utc().endOf('day'),
+      });
+    };
+
+    vm.sponsorProposals = function () {
+      return PostToJs('Sponsor/SponsorProposals');
+    };
+
+    vm.sponsorChange = function (sponsor) {
+      return PostToJs('Sponsor/Change', {
+        SponsorId: sponsor.Id
       });
     };
 
