@@ -11,19 +11,73 @@ angular
     'angular.filter',
     'darthwade.dwLoading',
     'angularMoment',
-    'ngSanitize'
+    'ngSanitize',
+    'pascalprecht.translate',
+    'xml'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
   })
 
-  .run(function ($window) {
+  .factory('xmlTranslateInterceptor', function (x2js) {
+    function responseHandler(response) {
+      if (response && response.config.isTranslate) {
+
+        var data = x2js.xml_str2json(response.data);
+
+        response.data = data.i18n.section.reduce(function (data, section) {
+          if ( section.key instanceof Array) {
+            data[section._id] = section.key.reduce(function (data, key) {
+              data[key._key] = key.toString();
+              return data;
+            }, {})
+          } else if (section.key) {
+            data[section._id] = {};
+            data[section._id][section.key._key] = section.key.toString();
+          }
+          return data;
+        }, {});
+
+        return response;
+      } else {
+        return response;
+      }
+    }
+    function responseErrorHandler(response) {
+      if (response && responseIsXml(response)) {
+        response.data = x2js.xml_str2json(response.data);
+      }
+      return response;
+    }
+    return {
+      response: responseHandler,
+      responseError: responseErrorHandler
+    };
+  })
+
+  .config(function($translateProvider, $httpProvider) {
+
+    $httpProvider.interceptors.push('xmlTranslateInterceptor');
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'i18n/',
+        suffix: '.xml',
+        $http: {
+          isTranslate: true
+        }
+      });
+
+  })
+
+  .run(function ($window, $translate) {
 
     $window._gaq = [];
     $window.fbq = null;
 
     $window.baseUrl = '/golaco/';
     // $window.baseUrl = '/data/';
+
+    $translate.use($window.navigator.language || $window.navigator.userLanguage)
 
   })
 

@@ -3,10 +3,10 @@
     <div class="pull-right hill-menu">
       <button class="btn btn-xs btn-info" ng-click="$ctrl.refresh()"><i class="icon-refresh"></i></button>
     </div>
-    <h3>HillScreen.lblTitle</h3>
+    <h3 translate>KingOfTheHill.lblTitle</h3>
   </div>
   <label class="checkbox-inline" ng-init="useItems = true">
-    <input type="checkbox" ng-model="useItems" ng-false-value="true" ng-true-value="false" > KingOfTheHill.lblNoItems
+    <input type="checkbox" ng-model="useItems" ng-false-value="true" ng-true-value="false" > {{'KingOfTheHill.lblNoItems' | translate}}
   </label>
   <slick
     infinite="false"
@@ -19,7 +19,7 @@
     <div class="current-hill" ng-repeat="hill in $ctrl.preview.Hills">
       <div class="current-hill-header -style-{{hill.Image}}">
         <!-- <span class="hill-league-letter">{{['','A','B','C','D'][hill.IdTeamLeague]}}</span> -->
-        <h4 class="hill-league">KingOfTheHill.{{hill.NameHill}}</h4>
+        <h4 class="hill-league">{{'KingOfTheHill.'+hill.NameHill | translate}}</h4>
       </div>
       <div class="team-details">
         <img ng-src="{{hill.Badge}}">
