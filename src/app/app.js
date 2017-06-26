@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList, MatchAlert) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList, MatchAlert, $translate, tmhDynamicLocale) {
 
     var vm = this;
 
@@ -42,5 +42,12 @@ angular.module('app')
     //   // controller: 'DailyBonusController as $ctrl',
     //   scope: $scope
     // });
+
+    $scope.changeLanguage = function (key) {
+      $translate.use(key);
+      tmhDynamicLocale.set(key);
+    };
+    // $scope.changeLanguage($window.navigator.language || $window.navigator.userLanguage);
+    $scope.changeLanguage('en-Us');
 
   });

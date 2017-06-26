@@ -13,14 +13,15 @@ angular
     'angularMoment',
     'ngSanitize',
     'pascalprecht.translate',
-    'xml'
+    'xml',
+    'tmh.dynamicLocale'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
   })
 
   .factory('xmlTranslateInterceptor', function (x2js) {
-    function responseHandler(response) {
+    function responseHandler (response) {
       if (response && response.config.isTranslate) {
 
         var data = x2js.xml_str2json(response.data);
@@ -30,7 +31,7 @@ angular
             data[section._id] = section.key.reduce(function (data, key) {
               data[key._key] = key.toString();
               return data;
-            }, {})
+            }, {});
           } else if (section.key) {
             data[section._id] = {};
             data[section._id][section.key._key] = section.key.toString();
@@ -69,6 +70,10 @@ angular
 
   })
 
+  .config(function(tmhDynamicLocaleProvider) {
+    tmhDynamicLocaleProvider.localeLocationPattern('i18n/angular-locale_{{locale}}.js');
+  })
+
   .run(function ($window, $translate) {
 
     $window._gaq = [];
@@ -77,7 +82,7 @@ angular
     $window.baseUrl = '/golaco/';
     // $window.baseUrl = '/data/';
 
-    $translate.use($window.navigator.language || $window.navigator.userLanguage)
+    // $translate.use($window.navigator.language || $window.navigator.userLanguage);
 
   })
 
