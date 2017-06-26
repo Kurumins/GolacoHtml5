@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .config(calendarRoutesConfig);
+  .config(rankingRoutesConfig);
 
 function rankingController (RankingService) {
   var vm = this;
@@ -97,8 +97,7 @@ function rankingController (RankingService) {
     vm.filter(vm.currentFilter);
   };
 
-  vm.filter = function (filters) {
-    // console.log(filters);
+  vm.filter = function () {
     RankingService.getRanking(vm.currentRanking.service, vm.general ? vm.currentFilter : {}, vm.currentRanking.filter)
       .then(function (ranking) {
         vm.ranking = ranking.Ranking;
@@ -111,7 +110,7 @@ function rankingController (RankingService) {
 
 }
 
-function calendarRoutesConfig ($stateProvider) {
+function rankingRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.ranking', {

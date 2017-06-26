@@ -22,7 +22,7 @@ function messagesController (messageList, MessagesService, ConfirmPopup, Message
         return MessagesService.list();
       })
       .then(function (messageList) {
-         vm.messageList = messageList.MessageList;
+        vm.messageList = messageList.MessageList;
       });
   };
 
@@ -56,7 +56,7 @@ function messagesController (messageList, MessagesService, ConfirmPopup, Message
     MessagePopup.open(message);
   };
 
-  function getCheckedMessages() {
+  function getCheckedMessages () {
     return vm.messageList
       .reduce(function (memo, message) {
         if ( message.checked ) {
@@ -68,7 +68,7 @@ function messagesController (messageList, MessagesService, ConfirmPopup, Message
 
 }
 
-function messagesRoutesConfig ($stateProvider, moment) {
+function messagesRoutesConfig ($stateProvider) {
 
   $stateProvider
     .state('app.messages', {

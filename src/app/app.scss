@@ -18,6 +18,15 @@
     width: 35px;
     padding-left: 0;
     padding-right: 0;
+
+    &.active {
+      background-color: #ec971f;
+      border-color: #d58512;
+      box-shadow: none;
+    }
+    &:focus {
+      outline: none;
+    }
   }
   i {
     font-size: 20px;

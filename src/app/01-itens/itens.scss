@@ -1,33 +1,36 @@
-.itens-header {
-  margin: 10px;
-  h3 {
-    margin: 0;
-  }
-}
+.itens {
+  padding: 15px;
+  background-color: #cbdaef;
 
-.itens-menu {
-  padding: 10px;
-  div{
-  	display: flex;
-  	a{
-      -webkit-box-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
+  .itens-header {
+    // margin: 10px;
+    h2 {
+      margin-top: 5px;
+    }
+  }
+
+  .itens-menu {
+    // padding: 10px;
+    // div {
+    	// display: flex;
+    	a {
+        // -webkit-box-flex: 1;
+        // -ms-flex: 1;
+        // flex: 1;
         font-weight:400;
-        text-transform:Capitalize;
-        transition: .4s cubic-bezier(1,-0.19, 0, 1.2);
-        text-decoration:none;
-        text-align: center;
-        color:#0078e0;
-        font-family: 'Montserrat', sans-serif;
-        &:hover{
-            // box-shadow: inset 0 -5px 0 #3cc51c;
-            color: #3cc51c;
-        }
+        text-transform: Capitalize;
+        // transition: .4s cubic-bezier(1,-0.19, 0, 1.2);
+        text-decoration: none;
+        // text-align: center;
+        // color:#0078e0;
+        // font-family: 'Montserrat', sans-serif;
+        &:hover,
         &.active{
-            // box-shadow: inset 0 -5px 0 #3cc51c;
-            color: #3cc51c;
+          // box-shadow: inset 0 -5px 0 #3cc51c;
+          color: #fff;
+          background: #2e6da4;
         }
-  	}
+      }
+    // }
   }
 }

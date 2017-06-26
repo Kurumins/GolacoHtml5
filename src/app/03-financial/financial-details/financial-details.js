@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('FinancialDetailsController', function (transactionTypes, detail, FinancialService) {
+  .controller('FinancialDetailsController', function (transactionTypes, detail, FinancialService, moment) {
 
     var vm = this;
     vm.transactionTypes = [{
@@ -33,7 +33,7 @@ angular.module('app')
       FinancialService.detail(vm.transactionType, +moment(vm.startDate).startOf('day'), +moment(vm.endDate).endOf('day'))
         .then(function (detail) {
           vm.detail = detail;
-        })
+        });
     };
 
   })
