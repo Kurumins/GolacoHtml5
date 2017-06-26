@@ -1,0 +1,29 @@
+.messages {
+  padding: 15px;
+  background-color: #cbdaef;
+  min-height: 500px;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  .messages-table {
+    margin-top: 15px;
+
+    > thead > tr {
+      background: gold;
+    }
+    > tbody > tr {
+      cursor: pointer;
+
+      &:nth-of-type(even) {
+        background: #eee;
+      }
+    }
+
+    .is-unread {
+      font-weight: bold;
+    }
+  }
+}
+

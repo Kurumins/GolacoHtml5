@@ -5,7 +5,8 @@ body {
 }
 
 body {
-  font-family: arial, verdana;
+  // font-family: arial, verdana;
+  font-family: 'Montserrat', sans-serif;
 }
 ::-webkit-scrollbar-track {
     background-color: #FFFFFF;
@@ -70,4 +71,8 @@ a {
     }
   }
 
+}
+
+label {
+  font-weight: 500;
 }

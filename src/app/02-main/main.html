@@ -1,119 +1,110 @@
 <div class="main">
 
-    <div class="main-header">
+  <div class="clearfix main-header">
+    <div class="pull-right submenu">
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.config()"><i class="icon-wrench"></i></button>
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.teamTrophyRoom()"><i class="icon-trophy"></i></button>
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.stats()"><i class="icon-graph-bar"></i></button>
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.dailyBonus()"><i class="icon-star-circled"></i></button>
+      <button
+        ng-dialog="bug-report.html"
+        ng-dialog-append-class="ngdialog-bug-report"
+        class="btn btn-xs btn-primary"><i class="icon-bug"></i></button>
+    </div>
+    <h2>Minha equipe</h2>
+  </div>
 
-        <div class="header-item">
-          <h2>Minha equipe</h2>
+  <div class="row main-body">
+
+    <div class="col-xs-6 body-item">
+
+      <div class="detail-manager">
+
+        <h3>{{$appCtrl.user.TeamName}}</h3>
+
+        <div class="shield">
+          <img ng-src="{{$appCtrl.teamPreview.Badge}}" style="float: left;">
         </div>
 
-        <div class="header-item">
-            <div>
-                <button class="" ng-click="$ctrl.config()"><img src="app/images/config.png" alt="Configurações" title="Configurações"></button>
-                <button class="" ng-click="$ctrl.teamTrophyRoom()"><img src="app/images/trofs.png" alt="Troféus" title="Troféus"></button>
-                <button class="" ng-click="$ctrl.stats()"><img src="app/images/statistics.png" alt="Estatisticas" title="Estatisticass"></button>
-                <button class="" ng-click="$ctrl.dailyBonus()"><img src="app/images/bonus.png" alt="Bônus" title="Bônus"></button>
-                <button
-                ng-dialog="bug-report.html"
-                ng-dialog-append-class="ngdialog-bug-report"><img src="app/images/bugs.png" alt="Bugs" title="Bugs"></button>
-            </div>
+        <div class="manager">
+          <h4>Detalhes do Manager</h4>
+          <img ng-src="{{$appCtrl.userData.picture}}" style="float: left; margin-right: 5px;" height="30">
+          <h5 style="margin-bottom: 0; ">{{$appCtrl.userData.userName}}</h5>
+          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
         </div>
+
+      </div>
+
+      <div class="detail-team">
+        <h4>Detalhes do Time</h4>
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
+        <p>Fundado em {{$appCtrl.teamPreview.FoundationDate | date:'shortDate'}}</p>
+      </div>
+
+      <div style="clear: both;"></div>
+
+      <div class="detail-uniform">
+        <h3>Uniforme</h3>
+
+        <div class="clearfix main-uniformes">
+          <div class="main-uniforme">uniforme</div>
+          <div class="main-uniforme">uniforme</div>
+        </div>
+
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor" ng-if="$appCtrl.teamPreview.SponsorName">
+
+        <div ng-if="!$appCtrl.teamPreview.SponsorName">
+          Clique aqui para contratar um patrocinador!
+        </div>
+
+      </div>
+
 
     </div>
 
-    <div class="main-body">
+    <div class="col-xs-6 body-item">
+      <h3>Missões</h3>
 
-        <div class="body-item">
+      <ul class="main-missions">
+        <li ng-repeat="mission in $ctrl.missionList.Missions">
+          <img ng-src="{{mission.Mission.urls.icon_up}}"
+          ng-dialog="mission-popup.html"
+          ng-dialog-append-class="ngdialog-mission-popup"
+          ng-dialog-controller="MissionPopupController"
+          ng-dialog-show-close="false"
+          ng-dialog-data="{{mission}}"
+          ng-dialog-close-previous
+          alt="{{mission.Mission.Name}}"
+          title="{{mission.Mission.Name}}">
+        </li>
+      </ul>
 
-            <div class="detail-manager">
+      <h3>Avisos</h3>
 
-                <h3>{{$appCtrl.user.TeamName}}</h3>
-
-                <div class="shield">
-                    <img ng-src="{{$appCtrl.teamPreview.Badge}}" style="float: left;">
-                </div>
-
-                <div class="manager">
-                    <h4>Detalhes do Manager</h4>
-                    <img ng-src="{{$appCtrl.userData.picture}}" style="float: left; margin-right: 5px;" height="30">
-                    <h5 style="margin-bottom: 0; ">{{$appCtrl.userData.userName}}</h5>
-                    <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
-                </div>
-
-            </div>
-
-            <div class="detail-team">
-                <h4>Detalhes do Time</h4>
-                <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
-                <p>Fundado em {{$appCtrl.teamPreview.FoundationDate | date:'shortDate'}}</p>
-            </div>
-
-            <div style="clear: both;"></div>
-
-            <div class="detail-uniform">
-                <h3>Uniforme</h3>
-
-                <div class="clearfix main-uniformes">
-                    <div class="main-uniforme">uniforme</div>
-                    <div class="main-uniforme">uniforme</div>
-                </div>
-
-                <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$appCtrl.teamPreview.SponsorName}}/preview.png" class="main-sponsor" ng-if="$appCtrl.teamPreview.SponsorName">
-
-                <div ng-if="!$appCtrl.teamPreview.SponsorName">
-                    Clique aqui para contratar um patrocinador!
-                </div>
-
-            </div>
-
-
+      <div class="main-warnings">
+        <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
+          <span class="close" ng-click="$ctrl.deleteWarning(warning)">X</span>
+          <span class="icon-exclamation-triangle"></span>
+          <span>{{warning.Message}}</span>
         </div>
+        <div class="no-warning">lblNoMessages</div>
+      </div>
 
-        <div class="body-item">
-            <h3>Missões</h3>
+      <!-- <div class="pull-left checkbox">
+        <label>
+          <input type="checkbox" name="" checked>
+          <span>Compartilhar</span>
+        </label>
+      </div> -->
 
-            <ul class="main-missions">
-                <li ng-repeat="mission in $ctrl.missionList.Missions">
-                    <img ng-src="{{mission.Mission.urls.icon_up}}"
-                    ng-dialog="mission-popup.html"
-                    ng-dialog-append-class="ngdialog-mission-popup"
-                    ng-dialog-controller="MissionPopupController"
-                    ng-dialog-show-close="false"
-                    ng-dialog-data="{{mission}}"
-                    ng-dialog-close-previous
-                    alt="{{mission.Mission.Name}}"
-                    title="{{mission.Mission.Name}}">
-                </li>
-            </ul>
-
-            <h3>Avisos</h3>
-
-            <div class="main-warnings">
-                <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
-                    <span class="close" ng-click="$ctrl.deleteWarning(warning)">X</span>
-                    <span class="icon-exclamation-triangle"></span>
-                    <span>{{warning.Message}}</span>
-                </div>
-                <div class="no-warning">lblNoMessages</div>
-            </div>
-
-            <!-- <div class="pull-left checkbox">
-                <label>
-                    <input type="checkbox" name="" checked>
-                    <span>Compartilhar</span>
-                </label>
-            </div> -->
-
-            <h3>
-                Nota à imprensa
-                <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
-            </h3>
-            <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
-
-        </div>
+      <h3>
+        Nota à imprensa
+        <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
+      </h3>
+      <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
 
     </div>
 
-    <div style="clear: both;"></div>
-
-    <!-- <pre>{{$appCtrl | json}}</pre> -->
+  </div>
 </div>
+<!-- <pre>{{$appCtrl | json}}</pre> -->

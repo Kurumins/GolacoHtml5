@@ -1,0 +1,32 @@
+.financial {
+  padding: 15px;
+  background-color: #cbdaef;
+  min-height: 500px;
+
+  > h2 {
+    margin-top: 0;
+  }
+
+  .financial-menu {
+    .btn {
+      width: 35px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    i {
+      font-size: 20px;
+    }
+    .icon-plus {
+      font-size: 12px;
+      margin-left: -5px;
+    }
+  }
+
+  .icon-arrow-up {
+    color: green;
+  }
+  .icon-arrow-down {
+    color: red;
+  }
+}
