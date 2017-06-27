@@ -50,4 +50,16 @@ angular.module('app')
     // $scope.changeLanguage($window.navigator.language || $window.navigator.userLanguage);
     $scope.changeLanguage('en-US');
 
+    // var onMainUpdate = $rootScope.$on('mainUpdate', function () {
+    //   mainUpdate();
+    // });
+    // $rootScope.$on('$destroy', onMainUpdate);
+
+    // function mainUpdate () {
+    //   BalanceService.headerUserData()
+    //     .then(function (result) {
+    //       vm.HeaderData = result.HeaderData;
+    //     });
+    // }
+
   });

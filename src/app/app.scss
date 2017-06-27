@@ -42,3 +42,16 @@
 .icon-money:before{
   color: #00b100;
 }
+
+.ngdialog.ngdialog-theme-default {
+  .ngdialog-content {
+    font-family: 'Montserrat', sans-serif;
+    // width: 750px;
+    // height: 550px;
+    padding: 25px;
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+}
