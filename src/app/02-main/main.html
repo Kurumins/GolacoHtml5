@@ -85,9 +85,9 @@
         <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
           <span class="close" ng-click="$ctrl.deleteWarning(warning)">X</span>
           <span class="icon-exclamation-triangle"></span>
-          <span>{{warning.Message}}</span>
+          <span>{{'Warnings.' + warning.Message | translate}}</span>
         </div>
-        <div class="no-warning">lblNoMessages</div>
+        <div class="no-warning" translate>TeamPreview.lblNoMessages</div>
       </div>
 
       <!-- <div class="pull-left checkbox">

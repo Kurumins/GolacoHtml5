@@ -48,6 +48,6 @@ angular.module('app')
       tmhDynamicLocale.set(key);
     };
     // $scope.changeLanguage($window.navigator.language || $window.navigator.userLanguage);
-    $scope.changeLanguage('en-Us');
+    $scope.changeLanguage('en-US');
 
   });

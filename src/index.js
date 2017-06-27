@@ -56,6 +56,53 @@ angular
     };
   })
 
+  .factory('missingTranslationHandler', function ($translate, $filter) {
+    function getLocalizedString(result, strParts, translationTable) {
+      if ((strParts.length > 1)) {
+
+        for (var i = 1; i < strParts.length; i++) {
+
+          var tmpStr = strParts[i].slice(1);
+          switch(strParts[i].charAt()) {
+
+            case "d":
+              result = result.replace("@" + i.toString(), $filter('date')(tmpStr, 'shortDate'));
+              break;
+            case "$":
+              result = result.replace("@" + i.toString(), $filter('currency')(tmpStr));
+              break;
+            case "n":
+              result = result.replace("@" + i.toString(), $filter('number')(tmpStr));
+              break;
+            case "t":
+              result = result.replace("@" + i.toString(), tmpStr);
+              break;
+            case "p":
+              result = result.replace("@" + i.toString(), translationTable["Ordinals." + tmpStr]);
+              break;
+            case "c":
+              result = result.replace("@" + i.toString(), $filter('number')(tmpStr));
+              break;
+            case "s":
+              result = result.replace("@" + i.toString(), tmpStr);
+              break;
+            // case "l":
+            //   result = result.replace("@" + i.toString(), getLocalizedString('*', tmpStr));
+            //   break;
+          }
+        }
+      }
+
+      return result;
+    }
+
+    return function (translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy) {
+      var strParts = translationId.split(';'),
+        translationTable = $translate.getTranslationTable($uses);
+      return getLocalizedString(translationTable[strParts[0]], strParts, translationTable);
+    }
+  })
+
   .config(function($translateProvider, $httpProvider) {
 
     $httpProvider.interceptors.push('xmlTranslateInterceptor');
@@ -67,6 +114,8 @@ angular
           isTranslate: true
         }
       });
+
+    $translateProvider.useMissingTranslationHandler('missingTranslationHandler');
 
   })
 
