@@ -1,19 +1,22 @@
 <div ng-class="{sale: $ctrl.item.SalePrice}">
   <i class="icon-star" ng-class="{hidden: !$ctrl.item.SalePrice}"></i>
-  <h4 class="item-name">{{$ctrl.item.Name}}{{$ctrl.item.TypeId}}</h4>
+  <h4 class="item-name">
+    {{'Items.'+$ctrl.item.Name|translate}}
+    <span ng-if="$ctrl.item.Quantity">(x{{$ctrl.item.Quantity}})</span>
+  </h4>
   <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
 
   <div class="item-effects">
-    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
-      <!-- <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label> -->
-      <label>skill_{{effect.IdTeamPlayerSkill}}</label>
+    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect" title="{{'Skills.skill_'+effect.IdTeamPlayerSkill|translate}}">
+      <!-- <label>{{'Skills.'+effect.Description|translate}}</label> -->
+      <label>{{'Skills.skill_'+effect.IdTeamPlayerSkill+'_acr'|translate}}</label>
       +{{effect.Effect}}
     </div>
     <div class="item-effect">
       <label>--</label>
       --
     </div>
-    <div class="item-effect">
+    <div class="item-effect -duration" title="{{$ctrl.item.Duration || $ctrl.item.Durability}} {{'ItemsScreen.'+($ctrl.item.Durability?'trains':'games')|translate}}">
       <label><i class="icon icon-clock"></i></label>
       {{$ctrl.item.Duration || $ctrl.item.Durability}}
     </div>
@@ -27,8 +30,8 @@
       <div ng-if="$ctrl.item.CreditPrice" class="item-price">
         <i class="icon icon-credit-card"></i>
         <div ng-if="$ctrl.item.SalePrice">
-          <p>De: {{$ctrl.item.CreditPrice}}</p>
-          <p>Por: {{$ctrl.item.SalePrice}}</p>
+          <p class="-was">{{'ItemsScreen.lblOldPrice'|translate}} {{$ctrl.item.CreditPrice}}</p>
+          <p>{{'ItemsScreen.lblNewPrice'|translate}} {{$ctrl.item.SalePrice}}</p>
         </div>
         <div ng-if="!$ctrl.item.SalePrice">
           <p>{{$ctrl.item.CreditPrice}}</p>

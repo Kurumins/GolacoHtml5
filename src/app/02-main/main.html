@@ -26,17 +26,17 @@
           <img ng-src="{{$appCtrl.teamPreview.Badge}}" class="pull-left">
         </div>
 
+        <h4 translate>TeamPreview.lblTeamOwner</h4>
         <div class="manager">
-          <h4 translate>TeamPreview.lblTeamOwner</h4>
-          <img ng-src="{{$appCtrl.userData.picture}}" style="float: left; margin-right: 5px;" height="30">
-          <h5 style="margin-bottom: 0; ">{{$appCtrl.userData.userName}}</h5>
+          <img ng-src="{{$appCtrl.userData.picture}}" class="pull-left" style="margin-right: 5px;" height="30">
+          <h5>{{$appCtrl.userData.userName}}</h5>
           <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
         </div>
 
       </div>
 
+      <h4 translate>TeamPreview.lblTeamDetails</h4>
       <div class="detail-team">
-        <h4 translate>TeamPreview.lblTeamDetails</h4>
         <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
         <p>{{'TeamPreview.lblFoundation;d' + $appCtrl.teamPreview.FoundationDate|translate}}</p>
       </div>
