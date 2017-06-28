@@ -2,43 +2,56 @@
 
   .ngdialog-content {
     width: 750px;
-    padding: 30px 50px;
-     h2{
-      color: #4e5667;
-    }
-  }
-  .ngdialog-close{
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    outline: none;
-    &:before{
-      color: #0b62a9;
-    }
-    &:hover{
-      border: none;
-    }
   }
 
   .trophy {
     // line-height: 150px;
-    padding: 20px 50px;
+    padding: 20px 20px;
     text-align: center;
+    height: 240px;
+    display: block !important; // fix: slick inline display
 
     > div {
       background: white;
       padding: 20px 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=20, Direction=0, Color=#000000)";/*IE 8*/
-      -moz-box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/*FF 3.5+*/
-      -webkit-box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-      box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=20, Direction=135, Color=#000000); /*IE 5.5-7*/
+      box-shadow: 0 12px 20px -11px rgba(0,0,0,0.4);
+      height: 100%;
+    }
+
+    h4 {
+      margin-top: 20px;
+    }
+
+    .list-inline {
+      display: inline-block;
+    }
+
+    .dots {
+      pointer-events: none;
+      li {
+        padding: 0;
+      }
+      li button {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+      li:not(.slick-active) {
+        display: none;
+      }
+    }
+
+    .no-trophies {
+      // height: 100%;
+      padding: 70px 40px;
     }
   }
 
-  .slide-control {
-    text-align: center;
-  }
+  // .main-trophy-nav {
+  //   li:not(.slick-active) {
+  //     display: none;
+  //   }
+  // }
 
   footer {
   }

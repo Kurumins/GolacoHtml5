@@ -43,7 +43,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
-  vm.config();
+  // vm.config();
 
   vm.teamTrophyRoom = function () {
     ngDialog.open({
@@ -61,6 +61,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
+  vm.teamTrophyRoom();
 
   vm.stats = function () {
     ngDialog.open({
