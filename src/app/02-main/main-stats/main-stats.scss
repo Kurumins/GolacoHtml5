@@ -2,27 +2,30 @@
 
   .ngdialog-content {
     width: 750px;
-    height: 500px;
   }
 
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin: 0;
-    line-height: 1.1;
-  }
-  h2{
-   color: rgb(78, 86, 103);
-  }
-  p {
-    font-size: 14px;
-  }
+  // h3,
+  // h4,
+  // h5,
+  // h6,
+  // p {
+  //   margin: 0;
+  //   line-height: 1.1;
+  // }
+  // h2{
+  //  color: rgb(78, 86, 103);
+  // }
+  // p {
+  //   font-size: 14px;
+  // }
 
   .stats-badge {
     float: left;
     position: relative;
+
+    img {
+      vertical-align: top;
+    }
 
     .badge-serie {
       position: absolute;
@@ -32,21 +35,66 @@
       width: 20px;
       text-align: center;
       border-radius: 3px;
+      margin: 0;
+    }
+  }
+
+  .team-info {
+    float: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding-left: 30px;
+
+    border-left: 1px solid;
+
+    h5,
+    h3 {
+      margin: 0;
+    }
+
+    h5 {
+      color: #0b62a9;
     }
   }
 
   .stats-menu {
     // float: right;
     text-align: right;
-    margin-bottom: 25px;
+    line-height: 40px;
+    // margin-bottom: 25px;
+    label {
+      margin: 0;
+    }
+
+    input[type="radio"] {
+      display: none;
+      + span {
+        background: #aaa;
+        padding: 0 15px;
+        display: inline-block;
+        font-weight: 500;
+      }
+      &:checked + span {
+        background: #ddd;
+      }
+    }
+  }
+
+  ng-include {
+    background: #ddd;
+    display: block;
+    padding: 30px;
+    min-height: 320px;
   }
 
   .overview-lasts {
     display: flex;
-    margin: 30px;
+    // margin: 30px;
     background: white;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 15px;
+    align-items: center;
+
     > * {
       flex: 1;
     }
@@ -54,12 +102,18 @@
     > div {
       text-align: center;
     }
-    h5{
-      padding-top: 10px;
+
+    h5 {
+      // padding-top: 10px;
       color: #0b62a9;
+      // margin: 0;
     }
     .icon-trophy:before {
         color: #f6c325;
+    }
+
+    strong {
+      font-size: 24px;
     }
   }
 
@@ -67,19 +121,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px;
+    margin-top: 30px;
     background: white;
     border-radius: 10px;
-    padding: 10px 15px;
+    // padding: 10px 15px;
+
     > * {
       // flex: 1;
     }
 
-    h5{
+    h5 {
       color: #0b62a9;
     }
-    p{
-      
+    p {
+      line-height: 1;
+      margin: 0;
     }
     .attributes{
       color: #0b62a9;
@@ -87,17 +143,11 @@
         color: #444;
       }
     }
-    .ranking{
-      background: -moz-linear-gradient(356deg, #313131 0, #565656 50%);/* FF3.6+ */
-      background: -webkit-gradient(linear, 356deg, color-stop(0, 313131), color-stop(50%, 565656));/* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(356deg, #313131 0, #565656 50%);/* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(356deg, #313131 0, #565656 50%);/* Opera 11.10+ */
-      background: -ms-linear-gradient(356deg, #313131 0, #565656 50%);/* IE10+ */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+    .ranking {
       background: linear-gradient(356deg, #313131 0, #565656 50%);/* W3C */
       align-self: stretch;
       color: #fff;
-      padding: 25px 15px;
+      // padding: 25px 15px;
       text-align: center;
     }
   }
@@ -113,7 +163,7 @@
     padding: 0;
     outline: none;
     &:before{
-      
+
       color: #0b62a9;
     }
     &:hover{

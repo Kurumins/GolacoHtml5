@@ -61,7 +61,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
-  vm.teamTrophyRoom();
+  // vm.teamTrophyRoom();
 
   vm.stats = function () {
     ngDialog.open({
@@ -79,6 +79,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
+  vm.stats();
 
   vm.dailyBonus = function () {
     ngDialog.open({

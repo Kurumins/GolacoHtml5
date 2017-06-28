@@ -1,39 +1,39 @@
 <div class="overview-lasts">
 
-  <h5>Últimas colocações em competição</h5>
+  <h5 translate>MyStatisticsDetail.lblLastPositions</h5>
 
   <div>
     <i class="icon-trophy"></i>
-    <h5>Liga Golaço</h5>
+    <h5 translate>Common.lblLeague</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastLeague">
-      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastLeague.Phase}}</span>
+      <strong ng-switch-when="true">{{'Ordinals.'+$ctrl.teamStats.Overview.LastLeague.Position|translate}}</strong>
       <span ng-switch-when="false">--</span>
     </ng-switch>
   </div>
 
   <div>
     <i class="icon-trophy"></i>
-    <h5>Torneio Golaço</h5>
+    <h5 translate>Common.lblChampionship</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastTournment">
-      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastTournment.Phase}}</span>
+      <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastTournment.Phase}}</strong></span>
       <span ng-switch-when="false">--</span>
     </ng-switch>
   </div>
 
   <div>
     <i class="icon-trophy"></i>
-    <h5>Copa Golaço</h5>
+    <h5 translate>Common.lblCup</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastCup">
-      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastCup.Phase}}</span>
+      <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastCup.Phase}}</strong></span>
       <span ng-switch-when="false">--</span>
     </ng-switch>
   </div>
 
   <div>
     <i class="icon-trophy"></i>
-    <h5>Liga de Amigos</h5>
+    <h5 translate>Common.lblFriendlyLeague</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastFriendlyLeague">
-      <span ng-switch-when="true">Rodada {{$ctrl.teamStats.Overview.LastFriendlyLeague.Phase}}</span>
+      <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastFriendlyLeague.Phase}}</strong></span>
       <span ng-switch-when="false">--</span>
     </ng-switch>
   </div>
