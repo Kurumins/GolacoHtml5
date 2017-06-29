@@ -1,65 +1,67 @@
-<table border="1" width="100%">
-  <tr>
-    <th colspan="2">Estatísticas Gerais</th>
-    <th>J</th>
-    <th>V</th>
-    <th>E</th>
-    <th>D</th>
-    <th>GM</th>
-    <th>GS</th>
-    <th>SG</th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="2" translate>MyStatisticsDetail.lblGeneralStatistics</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGames'|translate}}" translate>LeagueRanking.lblGamesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblVictories'|translate}}" translate>LeagueRanking.lblVictoriesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblTies'|translate}}" translate>LeagueRanking.lblTiesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblDefeats'|translate}}" translate>LeagueRanking.lblDefeatsAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsScored'|translate}}" translate>LeagueRanking.lblGoalsScoredAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsSuffered'|translate}}" translate>LeagueRanking.lblGoalsSufferedAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsBalance'|translate}}" translate>LeagueRanking.lblGoalsBalanceAcronym</th>
+    </tr>
+  </thead>
   <tr>
     <td>{{$appCtrl.user.TeamName}}</td>
-    <td>
+    <td align="center">
       <img ng-src="{{$ctrl.teamStats.Statistics.Team.Badge}}">
-      {{$appCtrl.user.Acronym}}
+      <p>{{$appCtrl.user.Acronym}}</p>
     </td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.MatchCount}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.Victory}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.Draws}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.Lost}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.ScoredGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.SufferedGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Team.Statistics.GoalBalance}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.MatchCount}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.Victory}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.Draws}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.Lost}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.ScoredGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.SufferedGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Team.Statistics.GoalBalance}}</td>
   </tr>
 
   <tr>
-    <th colspan="2">Carrasco</th>
+    <th colspan="2" translate>MyStatisticsDetail.lblNemesis</th>
   </tr>
 
   <tr>
     <td>{{$ctrl.teamStats.Statistics.Executioner.Name}}</td>
-    <td>
+    <td align="center">
       <img ng-src="{{$ctrl.teamStats.Statistics.Executioner.Badge}}">
-      {{$ctrl.teamStats.Statistics.Executioner.Acronym}}
+      <p>{{$ctrl.teamStats.Statistics.Executioner.Acronym}}</p>
     </td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.MatchCount}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.Victory}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.Draws}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.Lost}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.ScoredGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.SufferedGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Executioner.Statistics.GoalBalance}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.MatchCount}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.Victory}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.Draws}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.Lost}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.ScoredGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.SufferedGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Executioner.Statistics.GoalBalance}}</td>
   </tr>
 
   <tr>
-    <th colspan="2">Carrasco</th>
+    <th colspan="2" translate>MyStatisticsDetail.lblPushover</th>
   </tr>
 
   <tr>
     <td>{{$ctrl.teamStats.Statistics.Customer.Name}}</td>
-    <td>
+    <td align="center">
       <img ng-src="{{$ctrl.teamStats.Statistics.Customer.Badge}}">
-      {{$ctrl.teamStats.Statistics.Customer.Acronym}}
+      <p>{{$ctrl.teamStats.Statistics.Customer.Acronym}}</p>
     </td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.MatchCount}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.Victory}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.Draws}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.Lost}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.ScoredGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.SufferedGoals}}</td>
-    <td>{{$ctrl.teamStats.Statistics.Customer.Statistics.GoalBalance}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.MatchCount}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.Victory}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.Draws}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.Lost}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.ScoredGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.SufferedGoals}}</td>
+    <td align="center">{{$ctrl.teamStats.Statistics.Customer.Statistics.GoalBalance}}</td>
   </tr>
 
 </table>

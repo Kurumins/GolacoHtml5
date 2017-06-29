@@ -42,33 +42,41 @@
 
 <div class="dangerous-player">
 
-  <h5>Jogador <br>perigoso</h5>
+  <h5 translate>MyStatisticsDetail.lblTopPlayer</h5>
 
   <img ng-src="{{$ctrl.teamStats.Overview.DangerousPlayer.Picture}}" height="80px">
 
   <div>
-    <p>{{$ctrl.teamStats.Overview.DangerousPlayer.Name}}</p>
+    <h6>{{$ctrl.teamStats.Overview.DangerousPlayer.Name}}</h6>
     <p class="attributes">
       <span>{{$ctrl.teamStats.Overview.DangerousPlayer.ShirtNumber}}</span>
-      {{$ctrl.teamStats.Overview.DangerousPlayer.Position}}
+      {{'Common.'+$ctrl.teamStats.Overview.DangerousPlayer.Position|translate}}
     </p>
     <p class="attributes">
       <span>{{$ctrl.teamStats.Overview.DangerousPlayer.Goals}}</span>
       Gols
     </p>
-
   </div>
 
   <div class="ranking">
-    <h6>Ranking Geral</h6>
-    <h3>Em Breve</h3>
+    <i class="icon-star"></i>
+    <h6 translate>MyStatisticsDetail.lblGeneralRanking</h6>
+    <h3 translate>Common.ComingSoon</h3>
   </div>
 
-  <div class="overview">
-    <ng-switch on="!!$ctrl.teamStats.Overview.LastRecruitment">
-      <span ng-switch-when="true">Negociações</span>
-      <p ng-switch-when="false">Seu Time nunca fez <br>negociações</p>
-    </ng-switch>
+  <img ng-src="{{$ctrl.teamStats.Overview.LastRecruitment.Picture}}" height="80px" ng-if="$ctrl.teamStats.Overview.LastRecruitment">
+  <div ng-if="$ctrl.teamStats.Overview.LastRecruitment">
+    <h6>{{$ctrl.teamStats.Overview.LastRecruitment.Name}}</h6>
+    <p class="attributes">
+      <span>{{$ctrl.teamStats.Overview.LastRecruitment.ShirtNumber}}</span>
+      {{'Common.'+$ctrl.teamStats.Overview.LastRecruitment.Position|translate}}
+    </p>
+    <p class="attributes">
+      <br>{{'MyStatisticsDetail.lblContractValue'|translate}}
+      <br><span>{{$ctrl.teamStats.Overview.LastRecruitment.Value || 0 | currency}}</span>
+    </p>
   </div>
+
+  <p ng-if="!$ctrl.teamStats.Overview.LastRecruitment">Seu Time nunca fez <br>negociações</p>
 
 </div>
