@@ -15,19 +15,34 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
       url: '',
       abstract: true,
       resolve: {
-        userData: function (AppService) {
-          return AppService.getUserData();
+        userData: function (AppService, ezfb, $q, $loading) {
+          $loading.start('PostToJs');
+          return ezfb.login()
+            // .then(function (response) {
+            //   return $q(function(resolve, reject) {
+            //       setTimeout(function() {
+            //         resolve(response);
+            //       }, 5000);
+            //     });
+            // })
+            .then(function (response) {
+              // console.log(response.authResponse.userID);
+              return AppService.getUserData();
+              // return {
+              //   idSocialNetwork: response.authResponse.userID
+              // };
+            })
         },
         user: function (AppService, userData) {
           return AppService.userVerify(userData);
         },
-        teamPreview: function (AppService) {
+        teamPreview: function (AppService, userData) {
           return AppService.getTeamPreview();
         },
-        teamMatchesAlert: function (AppService) {
+        teamMatchesAlert: function (AppService, userData) {
           return AppService.teamMatchesAlertView();
         },
-        countryList: function (AppService) {
+        countryList: function (AppService, userData) {
           return AppService.countryList();
         }
       },

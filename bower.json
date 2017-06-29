@@ -21,7 +21,8 @@
     "angular-translate-loader-static-files": "^2.15.2",
     "angular-xml": "^2.2.2",
     "angular-dynamic-locale": "^0.1.32",
-    "angular-i18n": "^1.6.4"
+    "angular-i18n": "^1.6.4",
+    "angular-easyfb": "^1.5.1"
   },
   "overrides": {
     "bootstrap": {

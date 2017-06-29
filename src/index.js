@@ -14,10 +14,18 @@ angular
     'ngSanitize',
     'pascalprecht.translate',
     'xml',
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'ezfb'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
+  })
+
+  .config(function (ezfbProvider) {
+    ezfbProvider.setInitParams({
+      // This is my FB app id for plunker demo app
+      appId: '267503003269296'
+    });
   })
 
   .factory('xmlTranslateInterceptor', function (x2js) {
