@@ -1,10 +1,11 @@
-<h4>Atenção</h4>
+<h4 translate>Error.errorTitle</h4>
 
-<p>HelpDesk Golaço:</p>
-<p>Nosso sistema de atendimento está sempre online, mas o horário dos nossos atendentes é de 09:00 às 18:00, de segunda a sexta-feira.Pedimos um prazo de 3 dias úteis para responder seu ticket.</p>
-<p>Para agilizar seu atendimento descreva seu problema da melhor forma possível, e evite enviar mais de um ticket para o mesmo problema.</p>
-<p>Prosseguir para o HelpDesk?</p>
+<div translate>Common.helpDeskAlert</div>
 
-<footer>
+<!-- <footer>
   <button ng-click="closeThisDialog('Some value')">ok</button>
-</footer>
+</footer> -->
+<div class="ngdialog-buttons">
+  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()" translate>Common.yes</button>
+  <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()" translate>Common.no</button>
+</div>
