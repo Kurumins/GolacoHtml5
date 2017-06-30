@@ -1,9 +1,9 @@
-<h2>Centro de Juniores</h2>
+<h2 translate>JuniorCenterPreview.lblTitle</h2>
 <div class="junior-center">
   <div class="clearfix">
-    <div class="structure-menu">
-      <button ng-click="$ctrl.juniorDraft()">Peneira</button>
-      <button ng-click="$ctrl.juniorReform()">Reformar</button>
+    <div class="structure-menu submenu pull-right">
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.juniorDraft()" title="{{'JuniorCenterPreview.btnDraft'|translate}}"><i class="icon-world"></i></button>
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.juniorReform()" title="{{'StadiumPreview.lblReform'|translate}}"><i class="icon-wrench"></i></button>
     </div>
     <h4>
       <button class="btn-link icon-pencil-square" ng-click="$ctrl.editName()"></button>{{$ctrl.juniorPreview.Name}}
@@ -16,40 +16,41 @@
       <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length">Você não tem jogadores no seu Centro de Juniores. Clique no botão "Peneira" e recrute!</span>
     </div>
   </div>
-  <dl class="center-info">
-    <dt>Data de construção</dt>
-    <dd>{{$ctrl.juniorPreview.ConstructionDate | date:'short'}}</dd>
-    <dt>Nível</dt>
-    <dd>{{$ctrl.juniorPreview.StructureLevel}}</dd>
-    <dt>Capacidade</dt>
-    <dd>{{$ctrl.juniorPreview.Capacity}}</dd>
-    <dt>Nova peneira em</dt>
-    <dd>{{$ctrl.juniorPreview.TimeToNewDraft | date:'short'}}</dd>
-  </dl>
-  <div class="player-info" ng-if="$ctrl.currentPlayer">
-    <dl>
-      <dt>Jogador</dt>
-      <dd>{{$ctrl.currentPlayer.Name}}</dd>
-      <dt>Data da liberação</dt>
-      <dd>{{$ctrl.currentPlayer.ReleaseDate | date:'short'}}</dd>
-      <dt>Custo de liberação</dt>
-      <dd>
-        <div>{{$ctrl.currentPlayer.MoneyCost | currency}} <i class="icon-money"></i></div>
-        <div>{{$ctrl.currentPlayer.CreditsCost}} <i class="icon-credit-card"></i></div>
-      </dd>
+  <div class="row center-details">
+    <dl class="col-xs-6 center-info">
+      <dt translate>JuniorCenterPreview.lblConstructionDate</dt>
+      <dd>{{$ctrl.juniorPreview.ConstructionDate | date:'short'}}</dd>
+      <dt translate>JuniorCenterPreview.lblLevel</dt>
+      <dd>{{$ctrl.juniorPreview.StructureLevel}}</dd>
+      <dt translate>JuniorCenterPreview.lblCapacity</dt>
+      <dd>{{$ctrl.juniorPreview.Capacity}}</dd>
+      <dt translate>JuniorCenterPreview.lblNewDraft</dt>
+      <dd ng-if="!($ctrl.juniorPreview.TimeToNewDraft<$ctrl.now)">{{$ctrl.juniorPreview.TimeToNewDraft | date:'short'}}</dd>
+      <dd ng-if="$ctrl.juniorPreview.TimeToNewDraft<$ctrl.now" class="text-uppercase" translate>Common.available</dd>
     </dl>
-    <footer class="clearfix">
-      <label class="pull-left checkbox">
-        <input type="checkbox" ng-model="$ctrl.useAgent"> Contratar despachante
-        <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
-      </label>
-      <div class="pull-right">
-        <button class="btn btn-danger icon-times" title="JuniorCenterPreview.lblRelease" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"></button>
-        <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire" ng-click="$ctrl.upgradeJuniorToProfessional($ctrl.currentPlayer.Id, !!$ctrl.useAgent)"></button>
-      </div>
-    </footer>
-    <!-- {{$ctrl.currentPlayer}} -->
+    <div class="col-xs-6 player-info" ng-if="$ctrl.currentPlayer">
+      <dl class="clearfix">
+        <dt>Jogador</dt>
+        <dd>{{$ctrl.currentPlayer.Name}}</dd>
+        <dt>Data da liberação</dt>
+        <dd>{{$ctrl.currentPlayer.ReleaseDate | date:'short'}}</dd>
+        <dt>Custo de liberação</dt>
+        <dd>
+          <div>{{$ctrl.currentPlayer.MoneyCost | currency}} <i class="icon-money"></i></div>
+          <div>{{$ctrl.currentPlayer.CreditsCost}} <i class="icon-credit-card"></i></div>
+        </dd>
+      </dl>
+      <footer class="clearfix">
+        <label class="pull-left checkbox">
+          <input type="checkbox" ng-model="$ctrl.useAgent"> Contratar despachante
+          <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
+        </label>
+        <div class="pull-right">
+          <button class="btn btn-danger icon-times" title="JuniorCenterPreview.lblRelease" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"></button>
+          <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire" ng-click="$ctrl.upgradeJuniorToProfessional($ctrl.currentPlayer.Id, !!$ctrl.useAgent)"></button>
+        </div>
+      </footer>
+      <!-- {{$ctrl.currentPlayer}} -->
+    </div>
   </div>
-
-
 </div>

@@ -1,14 +1,14 @@
 <table class="players-table" width="100%" cellspacing="0"
-  ng-init="$ctrl.currentPlayer = $ctrl.players[0]" ng-class="{small: $ctrl.small}">
+  ng-init-="$ctrl.currentPlayer = $ctrl.players[0]" ng-class="{small: $ctrl.small}">
   <tr ng-repeat="player in $ctrl.players" ng-class="{active: $ctrl.currentPlayer == player}" ng-click="$ctrl.currentPlayer = player">
     <td><img ng-src="{{player.Picture}}" height="25"></td>
     <td>{{player.Name}}</td>
     <td>{{player.Age}}</td>
     <td ng-if="!$ctrl.small">{{player.Birthday}}</td>
     <td width="1"><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></td>
-    <td align="center" ng-repeat="(key, value) in player.Attributes">
+    <td align="center" ng-repeat="(key, value) in player.Attributes" title="{{'Skills.skill_'+value[key]|translate}}">
       <!-- <p>skill_{{value[key]}}_acr</p> -->
-      <p ng-if="value[key]">skill_{{value[key]}}</p>
+      <p ng-if="value[key]">{{'Skills.skill_'+value[key]+'_acr'|translate}}</p>
       <p>{{value.Value || '--'}}</p>
     </td>
   </tr>
