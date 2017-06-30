@@ -94,7 +94,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
   vm.updateHistory = function (history) {
     MainService.updateHistory(history)
       .then(function () {
-        AlertPopup.open('Atenção', 'Nota à imprensa atualizada com sucesso.');
+        AlertPopup.open('Error.errorTitle', 'TeamPreview.pressReleaseOk');
       });
   };
 
