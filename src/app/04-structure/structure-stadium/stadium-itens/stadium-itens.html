@@ -1,5 +1,5 @@
-<h2>Reformar Estádio</h2>
-<h3>{{$ctrl.type}}</h3>
+<h2 translate>StadiumImprovements.lblTitle</h2>
+<h3 class="text-center">{{'StadiumItems.Effect_Stadium'+$ctrl.type|translate}}</h3>
 
 <div class="item-list">
   <slick
@@ -10,27 +10,27 @@
     arrows-="false"
     settings="$ctrl.slickConfig">
       <div ng-repeat="item in $ctrl.itemList">
-        <h4>{{item.Name.replace('Label_', '')}}</h4>
+        <h4>{{'StadiumItems.'+item.Name|translate}}</h4>
         <img ng-src="{{item.Picture}}">
         <dl class="item-effects clearfix">
-          <dt ng-repeat-start="effect in item.Effects">{{effect.Description.replace('Effect_Stadium', '')}}</dt>
+          <dt ng-repeat-start="effect in item.Effects">{{'StadiumItems.'+effect.Description|translate}}</dt>
           <dd ng-repeat-end ng-class="{
             won: effect.Effect > 0,
             lose: effect.Effect < 0
-          }">{{effect.Effect || '-'}}</dd>
+          }">{{effect.Effect && (effect.Effect|number) || '-'}}</dd>
         </dl>
         <hr>
         <dl class="item-cost clearfix">
-          <dt><!-- StadiumImprovements. -->lbCost</dt>
+          <dt translate>StadiumReformDetail.lbCost</dt>
           <dd ng-if="item.MoneyPrice">{{item.MoneyPrice | currency}} <i class="icon-money"></dd>
           <dd ng-if="item.CreditPrice">{{item.CreditPrice}} <i class="icon-credit-card"></dd>
-          <dt><!-- StadiumImprovements. -->lbMaterialReuse</dt>
+          <dt translate>StadiumReformDetail.lbMaterialReuse</dt>
           <dd>{{0 | currency}} <i class="icon-money"></dd>
-          <dt><!-- StadiumImprovements. -->lbTotal</dt>
+          <dt translate>StadiumReformDetail.lbTotal</dt>
           <dd ng-if="item.MoneyPrice">{{item.MoneyPrice | currency}} <i class="icon-money"></dd>
           <dd ng-if="item.CreditPrice">{{item.CreditPrice}} <i class="icon-credit-card"></dd>
         </dl>
-        <button class="btn btn-block btn-primary text-uppercase" ng-click="$ctrl.stadiumSetStadiumItem(item)"><!-- StadiumImprovements. -->lblReform</button>
+        <button class="btn btn-block btn-primary text-uppercase" ng-click="$ctrl.stadiumSetStadiumItem(item)" translate>StadiumImprovements.lblReform</button>
       </div>
   </slick>
   <button type="button" class="btn btn-link slick-prev icon-chevron-left"></button>
