@@ -79,7 +79,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
-  vm.stats();
+  // vm.stats();
 
   vm.dailyBonus = function () {
     ngDialog.open({
@@ -89,6 +89,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       scope: $scope
     });
   };
+  // vm.dailyBonus();
 
   vm.updateHistory = function (history) {
     MainService.updateHistory(history)
