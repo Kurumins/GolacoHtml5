@@ -1,27 +1,27 @@
-<h2>FinancialDetail.lblTitle</h2>
-<h3>FinancialDetail.lblFilter</h3>
+<h2 translate>FinancialDetail.lblTitle</h2>
+<h3 translate>FinancialDetail.lblFilter</h3>
 <form ng-submit="$ctrl.search();" class="row">
   <div class="col-xs-8">
     <div class="form-group row">
-      <label class="col-xs-2 control-label"><!-- FinancialDetail.lblFilter -->Period</label>
+      <label class="col-xs-2 control-label" translate>FinancialDetail.lblFilterPeriod</label>
       <div class="col-xs-10">
         <div>
-          <label class="radio-inline"><input type="radio" ng-model="filterType" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"><!-- Common. -->lblFixedRadio</label>
-          <label class="radio-inline"><input type="radio" ng-model="filterType" ng-value="1" ><!-- Common. -->lblCustomizedRadio</label>
+          <label class="radio-inline"><input type="radio" ng-model="filterType" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)">{{'Common.lblFixedRadio'|translate}}</label>
+          <label class="radio-inline"><input type="radio" ng-model="filterType" ng-value="1" >{{'Common.lblCustomizedRadio'|translate}}</label>
 
           <div class-="form-inline" ng-if="!filterType">
             <select
-              ng-options="period as period.label for period in $ctrl.periods"
+              ng-options="period as ('FinancialDetail.'+period.label|translate) for period in $ctrl.periods"
               ng-model="$ctrl.currentPeriod" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"
               class="form-control input-sm" style="width: 200px"></select>
           </div>
           <div class="form-inline" ng-if="filterType">
             <div class="form-group">
-              <label class="control-label"><!-- Common. -->from</label>
+              <label class="control-label">{{'Common.from'|translate}}</label>
               <input type="date" class="form-control input-sm" ng-model="$ctrl.startDate">
             </div>
             <div class="form-group">
-              <label class="control-label"><!-- Common. -->to</label>
+              <label class="control-label">{{'Common.to'|translate}}</label>
               <input type="date" class="form-control input-sm" ng-model="$ctrl.endDate">
             </div>
           </div>
@@ -32,32 +32,32 @@
   <div class="col-xs-4 text-right">
     <div class="form-inline">
       <div class="form-group">
-        <label><!-- FinancialDetail.lblFilter -->Type</label>
+        <label translate>FinancialDetail.lblFilterType</label>
         <select
-          ng-options="transactionType.Id as transactionType.Name for transactionType in $ctrl.transactionTypes"
+          ng-options="transactionType.Id as ('FinancialDetail.'+transactionType.Name|translate) for transactionType in $ctrl.transactionTypes"
           ng-model="$ctrl.transactionType"
           class="form-control input-sm" style="width: 150px"></select>
       </div>
     </div>
     <!-- <div class="text-right"> -->
-      <button class="btn btn-sm0 btn-primary search-btn"><!-- FinancialDetail. -->lblDateBtn</button>
+      <button class="btn btn-sm0 btn-primary search-btn" translate>FinancialDetail.lblDateBtn</button>
     <!-- </div> -->
   </div>
 </form>
 <div class="">
   <div class="row financial-table-header">
-    <span class="col-xs-3"><!-- Common. -->date</span>
-    <span class="col-xs-6 text-center"><!-- Common. -->type</span>
-    <span class="col-xs-3 text-right"><!-- Common. -->value</span>
+    <span class="col-xs-3 text-uppercase" translate>Common.date</span>
+    <span class="col-xs-6 text-center text-uppercase" translate>Common.type</span>
+    <span class="col-xs-3 text-right text-uppercase" translate>Common.value</span>
   </div>
   <div class="financial-table">
     <table class="table table-condensed table-striped">
       <tbody>
         <tr ng-repeat="finance in $ctrl.detail.FinanceHistory">
-          <td width-="25%">{{finance.Date | date:'short'}}</td>
-          <td width-="50%" class="text-center">
-            {{finance.Category}}
-            <span ng-if="finance.Description">: {{finance.Description}}</span>
+          <td width-="25%" nowrap>{{finance.Date | date:'short'}}</td>
+          <td width-="50%" class="text-justify-">
+            {{'FinancialDetail.'+finance.Category|translate}}
+            <span ng-if="finance.Description">: {{'SponsorDetail.'+finance.Description|translate}}</span>
           </td>
           <td width-="25%" align="right" ng-class="{negative: finance.Money < 0}">{{finance.Money | currency}}</td>
         </tr>
