@@ -1,56 +1,55 @@
-<h2>Estatísticas</h2>
+<h2 translate>PlayerDetail.lblStatsTitle</h2>
+<div class="row">
+  <div class="col-xs-6">
+    <h4 translate>PlayerDetail.lblGlobalData</h4>
+    <dl class="player-datails">
 
-<div class="half">
-  <h4>Dados Globais</h4>
-  <dl class="player-datails">
+      <dt translate>Common.lblGoals</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Goals}}</dd>
 
-    <dt>Gols</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Goals}}</dd>
+      <dt translate>Common.lblFouls</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Fouls}}</dd>
 
-    <dt>Faltas</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Fouls}}</dd>
+      <dt translate>Common.lblYellowCards Amarelos</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.YellowCards}}</dd>
 
-    <dt>Cartões Amarelos</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.YellowCards}}</dd>
+      <dt translate>Common.lblRedCards Vermelhos</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.RedCards}}</dd>
 
-    <dt>Cartões Vermelhos</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.RedCards}}</dd>
+      <dt translate>Common.lblAssistances</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Assistances}}</dd>
 
-    <dt>Assistencias</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Assistances}}</dd>
+      <dt translate>Common.lblInjuries</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Injuries}}</dd>
 
-    <dt>Lesões</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.GlobalStatistics.Injuries}}</dd>
+    </dl>
+  </div>
 
-  </dl>
+  <div class="col-xs-6">
+    <h4 translate>PlayerDetail.lblProfessionalHistory</h4>
+    <dl class="player-datails">
+
+      <dt translate>Common.lblMatches</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Matches}}</dd>
+
+      <dt translate>Common.lblGoodPasses</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.GoodPasses}}</dd>
+
+      <dt translate>Common.lblBadPasses</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.BadPasses}}</dd>
+
+      <dt translate>Common.lblDisarm</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Disarms}}</dd>
+
+      <dt translate>Common.lblGoalAttempts</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.GoalAttempts}}</dd>
+
+      <dt translate>Common.lblDefendedGoals</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Saves}}</dd>
+
+      <dt translate>Common.lblSufferedGoals</dt>
+      <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.SufferedGoals}}</dd>
+
+    </dl>
+  </div>
 </div>
-
-<div class="half">
-  <h4>Histórico Profissional</h4>
-  <dl class="player-datails">
-
-    <dt>Partidas</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Matches}}</dd>
-
-    <dt>Passes Certos</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.GoodPasses}}</dd>
-
-    <dt>Passes Errados</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.BadPasses}}</dd>
-
-    <dt>Desarmes</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Disarms}}</dd>
-
-    <dt>Chutes a Gol</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.GoalAttempts}}</dd>
-
-    <dt>Defesas</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.Saves}}</dd>
-
-    <dt>Gols Sofridos</dt>
-    <dd>{{$ctrl.currentPlayer.statistics.CurrentTeamStatistics.SufferedGoals}}</dd>
-
-  </dl>
-</div>
-
-<div style="clear: both"></div>
