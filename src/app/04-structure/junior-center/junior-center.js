@@ -16,7 +16,7 @@ angular.module('app')
       JuniorReform.open()
         .then(updateJuniorPreview, updateJuniorPreview);
     };
-    // vm.juniorReform();
+    vm.juniorReform();
 
     vm.editName = function () {
       InputPopup.open('Nome do CT', {

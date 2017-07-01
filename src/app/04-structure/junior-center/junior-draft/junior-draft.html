@@ -1,62 +1,68 @@
-<h2>Peneira</h2>
+<h2 translate>DraftCenter.lblTitle</h2>
 
-<div style="overflow: auto;">
-  <div class="draft-scouts">
-    <p ng-if="$ctrl.juniorDraft.TimeToNewDraft">Você não pode realizar uma nova peneira ainda</p>
-    <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">Aguarde o liberação da peneira em curso</p>
-    <div ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-      <div ng-if="$ctrl.currentScout" class="scout-detail">
-        <div class="scout-picture">
-          <img ng-src="{{$ctrl.currentScout.Picture}}" height="80">
-          <button ng-click="$ctrl.currentScout=null" class="scout-remove">Remover<br>Olheiro</button>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="draft-scouts">
+      <p ng-if="$ctrl.juniorDraft.TimeToNewDraft && !$ctrl.juniorDraft.TimeToShowDraft" translate>DraftCenter.lblWaitNewDraft</p>
+      <p ng-if="!$ctrl.currentScout && $ctrl.juniorDraft.TimeToShowDraft" translate>DraftCenter.lblWaitForRelease</p>
+      <div ng-if="$ctrl.currentScout || !$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
+        <div ng-if="$ctrl.currentScout" class="scout-detail">
+          <div class="scout-picture">
+            <img ng-src="{{$ctrl.currentScout.Picture}}" width="90">
+            <!-- <button ng-click="$ctrl.currentScout=null" class="scout-remove">Remover<br>Olheiro</button> -->
+            <div class="scout-change" ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
+              <button class="btn btn-icon btn-primary" ng-click="$ctrl.juniorScouts()"><i class="icon-refresh"></i></button>
+            </div>
+          </div>
+          <dl>
+            <dt translate>DraftCenter.lblScout</dt>
+            <dd>{{$ctrl.currentScout.Name}}</dd>
+            <dt translate>DraftCenter.lblTechnicalSkills</dt>
+            <dd>{{$ctrl.currentScout.MeansScoutBonus*10}}</dd>
+            <dt translate>DraftCenter.lblNewTalents</dt>
+            <dd>{{$ctrl.currentScout.TeamPlayerBonus}}</dd>
+            <dt translate>DraftCenter.lblScoutingTime</dt>
+            <dd>{{$ctrl.currentScout.ReleaseTimeBonus}}%</dd>
+            <dt><i class="icon-credit-card"></i> {{$ctrl.currentScout.CreditCost}}</dt>
+            <dt><i class="icon-money"></i> {{$ctrl.currentScout.MoneyCost | currency}}</dt>
+          </dl>
+          <button ng-click="$ctrl.currentScout=null" class="btn-danger scout-remove" ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft"><i class="icon-times"></i></button>
         </div>
-        <dl>
-          <dt>Olheiro</dt>
-          <dd>{{$ctrl.currentScout.Name}}</dd>
-          <dt>Olhar técnico</dt>
-          <dd>{{$ctrl.currentScout.MeansScoutBonus*10}}</dd>
-          <dt>Jogadores extras</dt>
-          <dd>{{$ctrl.currentScout.TeamPlayerBonus}}</dd>
-          <dt>Tempo de pesquisa</dt>
-          <dd>{{$ctrl.currentScout.ReleaseTimeBonus}}%</dd>
-          <dt><i class="icon-credit-card"></i> {{$ctrl.currentScout.CreditCost}}</dt>
-          <dt><i class="icon-money"></i> {{$ctrl.currentScout.MoneyCost | currency}}</dt>
-        </dl>
+        <p ng-if="!$ctrl.currentScout" class="select-scouts" ng-click="$ctrl.juniorScouts()">
+          <span translate>DraftCenter.lblNoScout</span>
+        </p>
       </div>
-      <p ng-if="!$ctrl.currentScout" class="select-scouts" ng-click="$ctrl.juniorScouts()">
-        Melhore sua peneira contratando um olheiro!
-      </p>
     </div>
   </div>
 
-  <div class="new-draft">
-    <h3>Peneira de jogadores</h3>
+  <div class="col-xs-6 new-draft">
+    <h3 translate>DraftCenter.lblPlayerDraft</h3>
     <dl>
-      <dt ng-if="$ctrl.juniorDraft.TimeToNewDraft">Nova peneira em</dt>
+      <dt ng-if="$ctrl.juniorDraft.TimeToNewDraft" translate>DraftCenter.lblNewDraftDate</dt>
       <dd ng-if="$ctrl.juniorDraft.TimeToNewDraft">{{$ctrl.juniorDraft.TimeToNewDraft | date:'short'}}</dd>
-    <dl>
-      <dt ng-if="$ctrl.juniorDraft.TimeToShowDraft">Resultado em</dt>
+      <dt ng-if="$ctrl.juniorDraft.TimeToShowDraft" translate>DraftCenter.lblReleaseDate</dt>
       <dd ng-if="$ctrl.juniorDraft.TimeToShowDraft">{{$ctrl.juniorDraft.TimeToShowDraft | date:'short'}}</dd>
-      <dt ng-if="!$ctrl.juniorDraft.TimeToNewDraft">Posição</dt>
+      <dt ng-if="!$ctrl.juniorDraft.TimeToNewDraft" translate>DraftCenter.lblPosition</dt>
       <dd ng-if="!$ctrl.juniorDraft.TimeToNewDraft">
         <select ng-model="$ctrl.idPosition" ng-disabled="$ctrl.juniorDraft.TimeToShowDraft">
-          <option ng-value="">allF</option>
-          <option ng-value="1">TeamPlayerPosition_Goleiro</option>
-          <option ng-value="2">TeamPlayerPosition_Zagueiro</option>
-          <option ng-value="3">TeamPlayerPosition_Lateral</option>
-          <option ng-value="4">TeamPlayerPosition_MeioCampo</option>
-          <option ng-value="5">TeamPlayerPosition_Atacante</option>
+          <option ng-value="" translate>Common.allF</option>
+          <option ng-value="1" translate>Common.TeamPlayerPosition_Goleiro</option>
+          <option ng-value="2" translate>Common.TeamPlayerPosition_Zagueiro</option>
+          <option ng-value="3" translate>Common.TeamPlayerPosition_Lateral</option>
+          <option ng-value="4" translate>Common.TeamPlayerPosition_MeioCampo</option>
+          <option ng-value="5" translate>Common.TeamPlayerPosition_Atacante</option>
         </select>
       </dd>
     </dl>
     <footer>
       <p ng-if="!$ctrl.juniorDraft.TimeToShowDraft && !$ctrl.juniorDraft.TimeToNewDraft">
-        <button ng-click="$ctrl.makeADraft($ctrl.idPosition)">Realizar peneira</button> |
+        <button class="btn btn-icon btn-primary" ng-click="$ctrl.makeADraft($ctrl.idPosition)" title="{{'DraftCenter.lblMakeDraft'|translate}}"><i class="icon-world"></i></button> |
         <i class="icon-money"></i>
         {{$ctrl.juniorDraft.DraftCost | currency}}
       </p>
       <p ng-if="$ctrl.juniorDraft.TimeToShowDraft">
-        <button ng-click="$ctrl.instantDraft()">Liberar resultados</button> |
+        <!-- <button ng-click="$ctrl.instantDraft()">Liberar resultados</button> -->
+        <button class="btn btn-icon btn-primary" ng-click="$ctrl.instantDraft()" title="{{'DraftCenter.lblMakeDraft'|translate}}"><i class="icon-world"></i></button> |
         <i class="icon-credit-card"></i>
         {{$ctrl.juniorDraft.PriceToInstantDraft}}
       </p>
@@ -65,9 +71,9 @@
 </div>
 
 <div class="clearfix draft-players">
-  <span class="pull-right">{{$ctrl.juniorDraft.CurrentTeamPlayers}} / {{$ctrl.juniorDraft.TeamPlayerCapacity}} jogadores no CT</span>
-  <h3>Jogadores encontrados</h3>
+  <span class="pull-right">{{$ctrl.juniorDraft.CurrentTeamPlayers}} / {{$ctrl.juniorDraft.TeamPlayerCapacity}} <span translate>DraftCenter.lblPlayersInTC</span></span>
+  <h4 translate>DraftCenter.lblPlayersFound</h4>
   <junior-table players="$ctrl.juniorDraft.Players" current-player="$ctrl.currentPlayer"></junior-table>
-  <p ng-if="!$ctrl.juniorDraft.Players.length" class="no-players">Você não tem jogadores na peneira</p>
-  <button class="btn btn-primary pull-right player-recruit" ng-if="$ctrl.juniorDraft.Players.length" ng-click="$ctrl.draftToJunior()">Recrutar</button>
+  <p ng-if="!$ctrl.juniorDraft.Players.length" class="no-players" translate>DraftCenter.lblEmptyList</p>
+  <button class="btn btn-primary pull-right player-recruit" ng-if="$ctrl.juniorDraft.Players.length" ng-click="$ctrl.draftToJunior()" ng-disabled="!$ctrl.currentPlayer" translate>DraftCenter.lblRecruitPlayer</button>
 </div>

@@ -13,7 +13,7 @@
     <img ng-src="{{$ctrl.juniorPreview.Picture}}" class="center-picture">
     <div class="junior-players">
       <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" small=true></junior-table>
-      <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length">Você não tem jogadores no seu Centro de Juniores. Clique no botão "Peneira" e recrute!</span>
+      <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length" translate>DraftCenter.lblEmptyList</span>
     </div>
   </div>
   <div class="row center-details">
@@ -30,11 +30,11 @@
     </dl>
     <div class="col-xs-6 player-info" ng-if="$ctrl.currentPlayer">
       <dl class="clearfix">
-        <dt>Jogador</dt>
+        <dt translate>JuniorCenterPreview.lblJunior</dt>
         <dd>{{$ctrl.currentPlayer.Name}}</dd>
-        <dt>Data da liberação</dt>
+        <dt translate>JuniorCenterPreview.lblLiberationTime</dt>
         <dd>{{$ctrl.currentPlayer.ReleaseDate | date:'short'}}</dd>
-        <dt>Custo de liberação</dt>
+        <dt translate>JuniorCenterPreview.lblLiberationCost</dt>
         <dd>
           <div>{{$ctrl.currentPlayer.MoneyCost | currency}} <i class="icon-money"></i></div>
           <div>{{$ctrl.currentPlayer.CreditsCost}} <i class="icon-credit-card"></i></div>
@@ -42,12 +42,12 @@
       </dl>
       <footer class="clearfix">
         <label class="pull-left checkbox">
-          <input type="checkbox" ng-model="$ctrl.useAgent"> Contratar despachante
+          <input type="checkbox" ng-model="$ctrl.useAgent"> <span translate>JuniorCenterPreview.lblForwardingAgent</span>
           <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
         </label>
         <div class="pull-right">
-          <button class="btn btn-danger icon-times" title="JuniorCenterPreview.lblRelease" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"></button>
-          <button class="btn btn-primary icon-star" title="JuniorCenterPreview.lblHire" ng-click="$ctrl.upgradeJuniorToProfessional($ctrl.currentPlayer.Id, !!$ctrl.useAgent)"></button>
+          <button class="btn btn-danger btn-icon" title="{{'JuniorCenterPreview.lblRelease'|translate}}" ng-click="$ctrl.releaseTeamPlayer($ctrl.currentPlayer.Id)"><i class="icon-times"></i></button>
+          <button class="btn btn-primary btn-icon" title="{{'JuniorCenterPreview.lblHire'|translate}}" ng-click="$ctrl.upgradeJuniorToProfessional($ctrl.currentPlayer.Id, !!$ctrl.useAgent)"><i class="icon-star"></i></button>
         </div>
       </footer>
       <!-- {{$ctrl.currentPlayer}} -->

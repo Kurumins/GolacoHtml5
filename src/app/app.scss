@@ -36,6 +36,22 @@
   }
 }
 
+.btn {
+  // padding-left: 0;
+  // padding-right: 0;
+  i {
+    &:before {
+      line-height: 1.25;
+    }
+  }
+
+  &.btn-icon {
+    font-size: 20px;
+    line-height: 1;
+    padding: 2px 5px;
+  }
+}
+
 .icon-credit-card {
   color: #DAA520;
 }

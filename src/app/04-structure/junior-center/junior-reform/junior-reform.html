@@ -1,23 +1,23 @@
-<h2>Reforma centro de juniores</h2>
+<h2 translate>JuniorCenterReform.lblTitle</h2>
 <div class="clearfix">
   <div class="junior-center">
     <img ng-src="{{$ctrl.current.BigPicture}}" height="190">
-    <p class="text-center">Nível do centro de juniores</p>
+    <p class="text-center" translate>JuniorCenterReform.lblLevel</p>
     <h1 class="text-center">{{$ctrl.current.StructureLevel}}</h1>
     <footer>
       <p><i class="icon-money"></i> {{$ctrl.current.MoneyPrice | currency}}</p>
       <p><i class="icon-credit-card"></i> {{$ctrl.current.CreditPrice}}</p>
       <button
         class="btn btn-primary"
-        ng-click="$ctrl.updateJuniorTrainCenter();" ng-disabled="user.Serie > ['','A','B','C','D'][$ctrl.current.Requirement_IdLeague]">Reformar CJ</button>
+        ng-click="$ctrl.updateJuniorTrainCenter();" ng-disabled="user.Serie > ['','A','B','C','D'][$ctrl.current.Requirement_IdLeague]" translate>JuniorCenterReform.lblReformCenter</button>
     </footer>
   </div>
 
   <div class="junior-compare">
-    <h3>Atributos</h3>
+    <h3 translate>JuniorCenterReform.lblAttributes</h3>
     <table width="100%" cellspacing="0" cellpadding="5">
       <tr>
-        <td>Capacidade</td>
+        <td translate>JuniorCenterReform.lblCapacity</td>
         <td align="right">{{$ctrl.myTrainCenter.TeamPlayerCapacity}}</td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.TeamPlayerCapacity < $ctrl.current.TeamPlayerCapacity,
@@ -25,7 +25,7 @@
         }">{{$ctrl.current.TeamPlayerCapacity}}</td>
       </tr>
       <tr>
-        <td>Jogadores na peneira</td>
+        <td translate>JuniorCenterReform.lblDraftCapacity</td>
         <td align="right">{{$ctrl.myTrainCenter.TeamPlayersPerDraft}}</td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.TeamPlayersPerDraft < $ctrl.current.TeamPlayersPerDraft,
@@ -33,31 +33,31 @@
         }">{{$ctrl.current.TeamPlayersPerDraft}}</td>
       </tr>
       <tr>
-        <td>Nível da peneira</td>
-        <td align="right">{{$ctrl.myTrainCenter.StructureLevel}}</td>
+        <td translate>JuniorCenterReform.lblDraftLevel</td>
+        <td align="right">{{'JuniorCenterReform.lblDraftLevel'+$ctrl.myTrainCenter.StructureLevel|translate}}</td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.StructureLevel < $ctrl.current.StructureLevel,
           worst: $ctrl.myTrainCenter.StructureLevel > $ctrl.current.StructureLevel,
-        }">{{$ctrl.current.StructureLevel}}</td>
+        }">{{'JuniorCenterReform.lblDraftLevel'+$ctrl.current.StructureLevel|translate}}</td>
       </tr>
       <tr>
-        <td>Tempo da peneira</td>
-        <td align="right">{{$ctrl.myTrainCenter.ReleaseTimeDraft}}</td>
+        <td translate>JuniorCenterReform.lblDraftTime</td>
+        <td align="right">{{$ctrl.myTrainCenter.ReleaseTimeDraft}} <span translate>Common.hours</span></td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.ReleaseTimeDraft > $ctrl.current.ReleaseTimeDraft,
           worst: $ctrl.myTrainCenter.ReleaseTimeDraft < $ctrl.current.ReleaseTimeDraft,
-        }">{{$ctrl.current.ReleaseTimeDraft}}</td>
+        }">{{$ctrl.current.ReleaseTimeDraft}} <span translate>Common.hours</span></td>
       </tr>
       <tr>
-        <td>Intervalo entre peneiras</td>
-        <td align="right">{{$ctrl.myTrainCenter.TimeToNewDraft}} dias</td>
+        <td translate>JuniorCenterReform.lblDraftInterval</td>
+        <td align="right">{{$ctrl.myTrainCenter.TimeToNewDraft}} <span translate>Common.days</span></td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.TimeToNewDraft < $ctrl.current.TimeToNewDraft,
           worst: $ctrl.myTrainCenter.TimeToNewDraft > $ctrl.current.TimeToNewDraft,
-        }">{{$ctrl.current.TimeToNewDraft}} dias</td>
+        }">{{$ctrl.current.TimeToNewDraft}} <span translate>Common.days</span></td>
       </tr>
       <tr>
-        <td>Custo por peneira</td>
+        <td translate>JuniorCenterReform.lblDraftCost</td>
         <td align="right">{{$ctrl.myTrainCenter.DraftCost | currency}}</td>
         <td align="right" ng-class="{
           better: $ctrl.myTrainCenter.DraftCost > $ctrl.current.DraftCost,

@@ -13,24 +13,18 @@ angular.module('app')
         });
     };
     // vm.juniorScouts();
+
+    if (vm.juniorDraft.SelectedScoutId) {
+      vm.currentScout = vm.juniorDraft.Scouts.find(function (scout) {
+        return scout.Id == vm.juniorDraft.SelectedScoutId;
+      })
+    }
     // vm.currentScout = vm.juniorDraft.Scouts[0];
 
     vm.makeADraft = function (idPosition) {
-      ConfirmPopup.open('Atenção', 'lblConfirmDraft')
+      ConfirmPopup.open('Error.errorTitle', 'DraftCenter.lblConfirmDraft')
         .then(function () {
           return StructureService.makeADraft(idPosition || '',  vm.currentScout && vm.currentScout.Id || '');
-        })
-        .then(function () {
-        })
-        .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message);
-        });
-    };
-
-    vm.instantDraft = function () {
-      ConfirmPopup.open('Atenção', 'lblConfirmDraftTimeSkip')
-        .then(function () {
-          return StructureService.instantDraft();
         })
         .then(function () {
           $rootScope.$emit('balanceUpdate');
@@ -44,21 +38,39 @@ angular.module('app')
         });
     };
 
+    vm.instantDraft = function () {
+      ConfirmPopup.open('Error.errorTitle', 'DraftCenter.lblConfirmDraftTimeSkip;n' + vm.juniorDraft.PriceToInstantDraft)
+        .then(function () {
+          return StructureService.instantDraft();
+        })
+        .then(function () {
+          $rootScope.$emit('balanceUpdate');
+          StructureService.juniorDraft()
+            .then(function (juniorDraft) {
+              vm.juniorDraft = juniorDraft;
+              delete vm.currentScout;
+            });
+        })
+        .catch(function (error) {
+          AlertPopup.open('Error.errorTitle', error.Message);
+        });
+    };
+
     vm.draftToJunior = function () {
-      ConfirmPopup.open('Atenção', 'lblConfirmPromote')
+      ConfirmPopup.open('Error.errorTitle', 'DraftCenter.lblConfirmPromote')
         .then(function () {
           return StructureService.draftToJunior(vm.currentPlayer.Id);
           // return StructureService.draftToJunior(3242845);
         })
         .then(function () {
-          AlertPopup.open('Atenção', 'lblPromoteSuccess');
+          AlertPopup.open('Error.errorTitle', 'DraftCenter.lblPromoteSuccess');
           StructureService.juniorDraft()
             .then(function (juniorDraft) {
               vm.juniorDraft = juniorDraft;
             });
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message);
+          AlertPopup.open('Error.errorTitle', error.Message);
         });
     };
 
