@@ -1,5 +1,5 @@
-<h2>Compre mais espaço...</h2>
-<p>Você possui {{$appCtrl.user.MaxProPlayers}} de 40 vagas disponíveis.</p>
+<h2 translate>PlayerView.lblSlotSaleTitle</h2>
+<p> {{'PlayerView.lblTotalSlots;n'+$appCtrl.user.MaxProPlayers|translate}}</p>
 
 <div class="spot-prices">
   <div ng-repeat="price in $ctrl.teamSpotPrices" class="spot-price"
@@ -7,7 +7,7 @@
       acquired: price.acquired,
       available: price.available
     }"
-    title="{{price.acquired ? 'acquired' : price.available ? 'available' : 'Bloqueado'}}"
+    title="{{price.acquired ? 'PlayerView.lblPurchased' : price.available ? 'PlayerView.lblAvailable' : 'PlayerView.lblLockedBySeries;s'+$ctrl.getSerie($index)|translate}}"
     ng-click="price.available && $ctrl.buyProSpot(price.Name)">
 
     <i class="icon-user"></i>
@@ -17,8 +17,10 @@
     </div>
     <div class="price" ng-if="!price.acquired">
       <i class="icon icon-credit-card"></i>
-      <p>De: {{price.CreditPrice}}</p>
-      <p>Por: {{price.DiscountPrice}}</p>
+      <p><span translate>ItemsScreen.lblOldPrice</span> {{price.CreditPrice}}</p>
+      <p><span translate>ItemsScreen.lblNewPrice</span> {{price.DiscountPrice}}</p>
     </div>
   </div>
 </div>
+
+

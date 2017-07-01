@@ -46,9 +46,11 @@
   }
 
   &.btn-icon {
-    font-size: 20px;
     line-height: 1;
     padding: 2px 5px;
+    &:not(.btn-sm) {
+    font-size: 20px;
+    }
   }
 }
 

@@ -6,17 +6,17 @@ angular.module('app')
     vm.scope = $scope;
 
     vm.moraleBoost = function (idItem) {
-      ConfirmPopup.open('Atenção', 'Deseja recuperar a moral de seus jogadores?')
+      ConfirmPopup.open('Error.errorTitle', 'PlayerView.MoraleBoostModal')
         .then(function () {
           TeamPlayerService.moraleBoost(idItem)
             .then(function () {
               vm.scope.closeThisDialog();
-              AlertPopup.open('Atenção', 'Moral recuperada.');
+              AlertPopup.open('Error.errorTitle', 'PlayerView.MoraleRecovered');
               $rootScope.$emit('balanceUpdate');
               $rootScope.$emit('teamPlayerUpdate');
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', error.Message);
             });
         });
     };
