@@ -1,15 +1,15 @@
 <div class="auction">
-  <div class="pull-right auction-menu">
-    <button class="btn btn-xs" ng-click="$ctrl.auctionSearch()"><i class="icon-player-bid"></i></button>
+  <div class="pull-right auction-menu submenu">
+    <button class="btn btn-icon btn-primary" ng-click="$ctrl.auctionSearch()"><i class="icon-player-bid"></i></button>
   </div>
-  <h2>AuctionScreen.lblTitle</h2>
+  <h2 translate>AuctionScreen.lblTitle</h2>
   <div class="row">
     <div class="col-xs-6">
-      <h4>AuctionScreen.lblPlayerForSalle</h4>
+      <h4 translate>AuctionScreen.lblPlayerForSalle</h4>
       <div class="text-center no-auction" ng-if="!$ctrl.myPlayersSold.length">
-        <h4>AuctionScreen.lblNoSaleTitle</h4>
+        <h4 translate>AuctionScreen.lblNoSaleTitle</h4>
         <i class="icon-player-sale"></i>
-        <p>AuctionScreen.lblNoSaleDesc</p>
+        <p translate>AuctionScreen.lblNoSaleDesc</p>
       </div>
       <div ng-if="$ctrl.myPlayersSold.length">
         <slick
@@ -30,13 +30,13 @@
       </div>
     </div>
     <div class="col-xs-6">
-      <h4>AuctionScreen.lblMyBids</h4>
+      <h4 translate>AuctionScreen.lblMyBids</h4>
       <div class="text-center no-auction" ng-if="!$ctrl.allBids.length">
-        <h4>AuctionScreen.lblNoPurchaseTitle</h4>
+        <h4 translate>AuctionScreen.lblNoPurchaseTitle</h4>
         <i class="icon-player-bid"></i>
-        <p>AuctionScreen.lblNoPurchaseDesc</p>
+        <p translate>AuctionScreen.lblNoPurchaseDesc</p>
       </div>
-      <auction-player player="player" type="bid" ng-repeat="player in $ctrl.allBids" />
+      <auction-player player="player" type="bid" ng-repeat="player in $ctrl.allBids" ng-click="$ctrl.playerAuction(player)" />
     </div>
   </div>
 </div>

@@ -7,24 +7,23 @@ angular.module('app')
       me: '=',
       type: '@'
     },
-    controller: function (moment, $interval, $element, AppService, PlayerAuction) {
+    controller: function (moment, $interval, $element, AppService/*, PlayerAuction*/) {
       var vm = this;
 
-      vm.playerAuction = function () {
-        PlayerAuction.open(vm.player);
-      };
+      // vm.playerAuction = function () {
+      //   PlayerAuction.open(vm.player);
+      // };
 
       vm.user = AppService.user;
       vm.userData = AppService.userData;
 
-
       vm.positions = [
         '',
-        /*'Common.TeamPlayerPosition_*/ 'Goleiro',
-        /*'Common.TeamPlayerPosition_*/ 'Zagueiro',
-        /*'Common.TeamPlayerPosition_*/ 'Lateral',
-        /*'Common.TeamPlayerPosition_*/ 'MeioCampo',
-        /*'Common.TeamPlayerPosition_*/ 'Atacante',
+        'Common.TeamPlayerPosition_Goleiro',
+        'Common.TeamPlayerPosition_Zagueiro',
+        'Common.TeamPlayerPosition_Lateral',
+        'Common.TeamPlayerPosition_MeioCampo',
+        'Common.TeamPlayerPosition_Atacante',
       ];
 
       vm.$onInit = function () {

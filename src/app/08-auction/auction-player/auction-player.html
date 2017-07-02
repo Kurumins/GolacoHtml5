@@ -1,4 +1,4 @@
-<div class="auction-player" ng-click="$ctrl.isBid && $ctrl.playerAuction()">
+<div class="auction-player">
   <div class="player-picture">
     <img ng-src="{{$ctrl.player.Picture}}" class="img-responsive-">
   </div>
@@ -15,21 +15,21 @@
       <i class="icon-ban"></i>
     </div>
   </div>
-  <div class="player-details">
+  <div class="player-details -position-{{$ctrl.player.IdPosition}}">
     <p ng-if="$ctrl.isBid"><i class="icon-clock"></i> {{$ctrl.getMoment($ctrl.player.LimitDate)}}</p>
     <p ng-if="!$ctrl.isBid"><i class="icon-forward"></i> {{$ctrl.player.LimitDate | date:'shortDate'}}</p>
     <p><i class="icon-user"></i> {{$ctrl.player.Name}}</p>
-    <p class="-position-{{$ctrl.player.IdPosition}}">
+    <p>
       <span><i class="icon-t-shirt"></i> {{$ctrl.player.ShirtNumber}}</span>
-      <span>{{$ctrl.positions[$ctrl.player.IdPosition]}}</span>
+      <span class="player-position">{{$ctrl.positions[$ctrl.player.IdPosition]|translate}}</span>
     </p>
     <p><i class="icon-money"></i> {{$ctrl.player.CurrentValue | currency}}</p>
   </div>
 </div>
 <span class="status">
-  <span ng-if="!$ctrl.isBid">Vendido</span>
+  <span ng-if="!$ctrl.isBid" translate>AuctionScreen.lblSold</span>
   <span ng-if="$ctrl.isBid">
-    <span ng-if="$ctrl.isCovered">Coberto</span>
-    <span ng-if="!$ctrl.isCovered">Ganhando</span>
+    <span ng-if="$ctrl.isCovered" translate>AuctionScreen.lblCovered</span>
+    <span ng-if="!$ctrl.isCovered" translate>AuctionScreen.lblWinning</span>
   </span>
 </span>

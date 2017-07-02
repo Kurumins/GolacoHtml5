@@ -1,25 +1,15 @@
-// @import 'bootstrap-sass/assets/stylesheets/bootstrap//_variables.scss';
-// @import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid.scss';
-// @import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss';
-// @import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss';
-
-// $grid-gutter-width: 10px;
-
 auction-player {
   display: block;
   position: relative;
   padding: 10px;
   border: 1px solid #999;
   overflow: hidden;
+  background: #fff;
 
   .auction-player {
     display: flex;
     justify-content: space-between;
   }
-
-  // .row {
-  //   // @include make-row();
-  // }
 
   .player-picture {
     flex: 1;
@@ -30,15 +20,11 @@ auction-player {
 
   .player-badges {
     flex: 1;
-    // @include make-xs-column(2);
     text-align: center;
-    // margin: -2px 0;
 
     display: flex;
     justify-content: center;
-    // height: 100px;
     flex-direction: column;
-
 
     .icon-ban {
       font-size: 30px;
@@ -49,18 +35,43 @@ auction-player {
     p:last-child {
       margin-bottom: 0px;
     }
+
+    img {
+      display: inline;
+    }
   }
 
   .player-details {
     flex: 3;
-    // @include make-xs-column(7);
 
     p {
       margin-bottom: 12px;
       line-height: 1;
+      font-weight: 500;
     }
     p:last-child {
       margin-bottom: 0px;
+    }
+
+    &.-position {
+      &-1 .player-position {
+        color: #ff9c00;
+      }
+      &-2 .player-position {
+        color: #00a7ff;
+      }
+      &-3 .player-position {
+        color: #7f7f7f;
+      }
+      &-4 .player-position {
+        color: #006600;
+      }
+      &-5 .player-position {
+        color: #db2d2d;
+      }
+    }
+    i {
+      margin-right: 5px;
     }
   }
 

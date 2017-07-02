@@ -7,7 +7,7 @@
 
   .manager-content.player-manager-general {
     padding: 20px;
-    width: 300px;
+    width: 290px;
   }
 
   .manager-menu {
@@ -113,15 +113,16 @@
 
       p {
         font-size: 12px;
-        line-height: 1.5;
+        line-height: 1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-bottom: 5px;
       }
 
       .team-name {
         color: #fff;
-        font-weight: bold;
+        font-weight: 400;
       }
       .manager-name {
         color: #aaa;
