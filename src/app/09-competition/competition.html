@@ -1,8 +1,8 @@
  <div class="competition">
   <div class="friendly-match">
-    <label>Joque um amistoso</label> <button ng-click="$ctrl.friendlyMatch()"><i class="icon-futbol-o"></i></button>
+    <label translate>CompetitionPreview.playFriendlyMatch</label> <button ng-click="$ctrl.friendlyMatch()"><i class="icon-futbol-o"></i></button>
   </div>
-  <h2>Competições</h2>
+  <h2 translate>CompetitionPreview.lblTitle</h2>
 
   <ul>
     <li ng-repeat="competition in $ctrl.competitions" class="{{competition.data.name}}"
@@ -13,26 +13,30 @@
       }"
       ng-click="
         competition.preview.IsStarted ? $ctrl[competition.name](competition) :
-        !competition.preview.IsRegistered ? $ctrl.competitionDetails(competition) : null">
-      <h3>{{competition.data.name}}</h3>
-      <div ng-if="competition.preview.IsStarted">
-      <p></p>
-        <p ng-if="competition.preview.Position">Posição: {{competition.preview.Position}}º</p>
-        <p>Rodada: {{competition.preview.Round}}</p>
-        <p>Ver Competição</p>
+        !competition.preview.IsRegistered ? $ctrl.competitionDetails(competition) : null"
+      title="{{
+        competition.preview.IsStarted ? 'CompetitionPreview.competitionDetail' :
+        !competition.preview.IsRegistered ? 'CompetitionPreview.isNotRegistered' : 'CompetitionPreview.waitForNextSeason'|translate}}">
+      <h3>{{'CompetitionPreview.'+competition.data.name|translate}}</h3>
+      <div ng-if="competition.preview.IsStarted" title="{{'CompetitionPreview.competitionDetail'|translate}}">
+        <p></p>
+        <p>
+          <span ng-if="competition.preview.Position"><span translate>CompetitionPreview.currentPosition</span>: {{'Ordinals.'+competition.preview.Position|translate}}</span>
+          <span translate>CompetitionPreview.currentRound</span>: {{competition.preview.Round}}
+        </p>
+        <!-- <p>Ver Competição</p> -->
       </div>
       <div ng-if="!competition.preview.IsStarted">
-        <p>{{competition.registrations}} / {{competition.data.teamsQty}} inscritos</p>
+        <p>{{'CompetitionPreview.lblRegisteredTeams;n'+competition.registrations+';n'+competition.data.teamsQty|translate}}</span></p>
         <div ng-if="competition.preview.IsRegistered">
-          <p>Instrito</p>
-          <p>Aguardando início da temporada.</p>
+          <p translate>CompetitionPreview.isRegistered</p>
+          <p translate>CompetitionPreview.waitForNextSeason</p>
         </div>
         <div ng-if="!competition.preview.IsRegistered">
-          <p>Increva-se agora</p>
+          <p translate>CompetitionPreview.btRegister</p>
           <p>{{competition.preview.RegisterPrice}} <i class="icon icon-credit-card"></i></p>
         </div>
       </div>
     </li>
   </ul>
-
  </div>
