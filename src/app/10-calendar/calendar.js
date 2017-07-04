@@ -14,16 +14,28 @@ function calendarController (matchCalendar, CalendarService, MatchResult, moment
   ];
   vm.currentPeriod = vm.periods[0];
 
+  // vm.traversal = {
+  //   1: 'league',
+  //   2: 'tournament',
+  //   3: 'cup',
+  //   4: 'mini tournament',
+  //   5: 'mini cup',
+  //   6: 'copa nordeste',
+  //   7: 'tournament beta',
+  //   100: 'friendly',
+  //   101: 'friendly',
+  // };
+
   vm.traversal = {
-    1: 'league',
-    2: 'tournament',
-    3: 'cup',
-    4: 'mini tournament',
-    5: 'mini cup',
-    6: 'copa nordeste',
-    7: 'tournament beta',
-    100: 'friendly',
-    101: 'friendly',
+    1: 'GameTypes.league',
+    2: 'GameTypes.tournament',
+    3: 'GameTypes.cup',
+    4: 'GameTypes.tournamentLight',
+    5: 'GameTypes.cupLight',
+    // 6: 'GameTypes.copaNordeste',
+    // 7: 'GameTypes.tournamentBeta',
+    100: 'home',
+    101: 'away',
   };
 
   vm.types = {

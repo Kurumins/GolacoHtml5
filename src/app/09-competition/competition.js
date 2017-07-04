@@ -142,6 +142,6 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
 
   // vm.CompetitionCupLight(competitions[4]);
 
-  vm.friendlyMatch();
+  // vm.friendlyMatch();
 
 }
