@@ -1,24 +1,24 @@
 <form name="bestsMonthly" class="pull-right form-inline" ng-submit="$ctrl.bestsMonthly(month, year)">
   <div class="form-group form-group-sm">
     <select ng-model="month" required class="form-control">
-      <option ng-value=""><!-- Common. -->month</option>
-      <option ng-value="1"><!-- Common. -->january</option>
-      <option ng-value="2"><!-- Common. -->february</option>
-      <option ng-value="3"><!-- Common. -->march</option>
-      <option ng-value="4"><!-- Common. -->april</option>
-      <option ng-value="5"><!-- Common. -->may</option>
-      <option ng-value="6"><!-- Common. -->june</option>
-      <option ng-value="7"><!-- Common. -->july</option>
-      <option ng-value="8"><!-- Common. -->august</option>
-      <option ng-value="9"><!-- Common. -->september</option>
-      <option ng-value="10"><!-- Common. -->october</option>
-      <option ng-value="11"><!-- Common. -->november</option>
-      <option ng-value="12"><!-- Common. -->december</option>
+      <option ng-value="" translate>Common.month</option>
+      <option ng-value="1" translate>Common.january</option>
+      <option ng-value="2" translate>Common.february</option>
+      <option ng-value="3" translate>Common.march</option>
+      <option ng-value="4" translate>Common.april</option>
+      <option ng-value="5" translate>Common.may</option>
+      <option ng-value="6" translate>Common.june</option>
+      <option ng-value="7" translate>Common.july</option>
+      <option ng-value="8" translate>Common.august</option>
+      <option ng-value="9" translate>Common.september</option>
+      <option ng-value="10" translate>Common.october</option>
+      <option ng-value="11" translate>Common.november</option>
+      <option ng-value="12" translate>Common.december</option>
     </select>
   </div>
   <div class="form-group form-group-sm">
     <select ng-model="year" required class="form-control">
-      <option ng-value=""><!-- Common. -->year</option>
+      <option ng-value="" translate>Common.year</option>
       <option ng-value="2017">2017</option>
       <option ng-value="2016">2016</option>
       <option ng-value="2015">2015</option>
@@ -34,19 +34,19 @@
 
 <div class="row">
   <div class="col-xs-6">
-    <h4>KingOfTheHill.lblGeneral</h4>
+    <h4 translate>KingOfTheHill.lblGeneral</h4>
     <table class="table table-striped table-condensed">
       <tr ng-repeat="team in $ctrl.topTeams.TopTeams">
         <td><strong>{{$index+1}}</strong></td>
         <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg"></td>
         <td><img ng-src="{{team.Badge}}"></td>
         <td>{{team.Name}}</td>
-        <td><strong>{{team.MaxVictories}}</strong></td>
+        <td class="text-center"><strong>{{team.MaxVictories}}</strong></td>
       </tr>
     </table>
   </div>
   <div class="col-xs-6">
-    <h4>KingOfTheHill.lblMonthly</h4>
+    <h4 translate>KingOfTheHill.lblMonthly</h4>
     <table class="table table-striped table-condensed">
       <tr ng-repeat="team in $ctrl.topTeamsMonthly">
         <td><strong>{{$index+1}}</strong></td>
@@ -59,14 +59,15 @@
   </div>
 </div>
 
-<h4>KingOfTheHill.lblMyInfo</h4>
-<table class="table table-striped">
+<h4 translate>KingOfTheHill.lblMyInfo</h4>
+<table class="table table-striped" ng-if="$ctrl.topTeams.MyTeam">
   <tr>
     <td width="1"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.topTeams.MyTeam.Flag}}.jpg"></td>
     <td width="1"><img ng-src="{{$ctrl.topTeams.MyTeam.Badge}}"></td>
     <td>{{$ctrl.topTeams.MyTeam.Name}}</td>
-    <td align="right"><strong><i class="icon-crown"></i> {{$ctrl.topTeams.MyTeam.MaxVictories}} Common.lblMatches</strong></td>
+    <td align="right"><strong><i class="icon-crown"></i> {{$ctrl.topTeams.MyTeam.MaxVictories}} <span translate>Common.lblMatches</span></strong></td>
   </tr>
 </table>
+<h4 ng-if="!$ctrl.topTeams.MyTeam" class="text-center" translate>KingOfTheHill.lblNoInfo</h4>
 
 <!-- <pre>{{$ctrl.topTeams.TopTeams[0] | json}}</pre> -->

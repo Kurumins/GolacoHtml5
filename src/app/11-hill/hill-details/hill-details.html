@@ -1,14 +1,14 @@
-<h2>KingOfTheHill.{{$ctrl.hill.NameHill}}</h2>
+<h2>{{'KingOfTheHill.'+$ctrl.hill.NameHill|translate}}</h2>
 
 <div ng-init-="current='my-last-matches'" class="hill-details-menu">
   <label>
-    <input type="radio" ng-model="current" ng-value=""> <!-- KingOfTheHill. -->lblTop5
+    <input type="radio" ng-model="current" ng-value=""> <span translate>KingOfTheHill.lblTop5</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'last-10'"> <!-- KingOfTheHill. -->lblLast10
+    <input type="radio" ng-model="current" ng-value="'last-10'"> <span translate>KingOfTheHill.lblLast10</span>
   </label>
   <label>
-    <input type="radio" ng-model="current" ng-value="'my-last-matches'"> <!-- KingOfTheHill. -->lblMyLast10
+    <input type="radio" ng-model="current" ng-value="'my-last-matches'"> <span translate>KingOfTheHill.lblMyLast10</span>
   </label>
 </div>
 

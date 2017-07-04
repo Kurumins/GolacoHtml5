@@ -1,17 +1,29 @@
 'use strict';
 angular.module('app')
-  .controller('HillDetailsController', function (hill, topTeams, lastMatchs, myLastMatchs, HillService, moment) {
+  .controller('HillDetailsController', function (hill, topTeams,/* lastMatchs, myLastMatchs,*/ HillService, moment) {
 
     var vm = this;
 
     vm.hill = hill;
     vm.topTeams = topTeams;
     vm.topTeamsMonthly = topTeams.TopTeamsMonthly;
-    vm.lastMatchs = lastMatchs.LastMatchs;
-    vm.myLastMatchs = myLastMatchs.LastMatchs;
 
     vm.firstYear = 2011;
     vm.currentYear = moment().year();
+
+    vm.getLastMatchs = function () {
+      return HillService.lastMatchs(hill.IdHill)
+        .then(function (lastMatchs) {
+          vm.lastMatchs = lastMatchs.LastMatchs;
+        });
+    };
+
+    vm.getMyLastMatchs = function () {
+      HillService.myLastMatchs(hill.IdHill)
+        .then(function (myLastMatchs) {
+          vm.myLastMatchs = myLastMatchs.LastMatchs;
+        });
+    },
 
     vm.bestsMonthly = function (month, year) {
       HillService.bestsMonthly(hill.IdHill, month, year)
@@ -37,12 +49,12 @@ angular.module('app')
           topTeams: function () {
             return HillService.topTeams(hill.IdHill);
           },
-          lastMatchs: function () {
-            return HillService.lastMatchs(hill.IdHill);
-          },
-          myLastMatchs: function () {
-            return HillService.myLastMatchs(hill.IdHill);
-          },
+          // lastMatchs: function () {
+          //   return HillService.lastMatchs(hill.IdHill);
+          // },
+          // myLastMatchs: function () {
+          //   return HillService.myLastMatchs(hill.IdHill);
+          // },
         },
       });
     };
