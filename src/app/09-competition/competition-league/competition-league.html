@@ -1,26 +1,26 @@
-<h2>Liga Golaço</h2>
-<span class="pull-right">Série {{teamPreview.Serie}}</span>
+<h2 translate>LeagueDetailView.lblTitle</h2>
+<span class="pull-right"><span translate>Common.Serie</span> <i class="icon-league-{{teamPreview.Serie|lowercase}}"></i></span>
 
-<div ng-init-="current='league-prize'" class="pull-left checkbox">
+<div ng-init="current='league-prize'" class="pull-left competition-submenu">
   <label>
-      <input type="radio" ng-model="current" ng-value=""> 
-      <span>Resumo</span>
+      <input type="radio" ng-model="current" ng-value="">
+      <span translate>LeagueDetailView.btOverview</span>
   </label>
   <label>
-      <input type="radio" ng-model="current" ng-value="'league-ranking'"> 
-      <span>Classificação</span>
+      <input type="radio" ng-model="current" ng-value="'league-ranking'">
+      <span translate>LeagueDetailView.btRanking</span>
   </label>
   <label>
-      <input type="radio" ng-model="current" ng-value="'league-match-table'"> 
-      <span>Jogos</span>
+      <input type="radio" ng-model="current" ng-value="'league-match-table'">
+      <span translate>LeagueDetailView.btGames</span>
   </label>
   <label>
-      <input type="radio" ng-model="current" ng-value="'league-calendar'"> 
-      <span>Rodadas</span>
+      <input type="radio" ng-model="current" ng-value="'league-calendar'">
+      <span translate>LeagueDetailView.btRounds</span>
   </label>
   <label>
-      <input type="radio" ng-model="current" ng-value="'league-prize'"> 
-      <span>Prêmios</span>
+      <input type="radio" ng-model="current" ng-value="'league-prize'">
+      <span translate>LeagueDetailView.btPrizes</span>
   </label>
 </div>
 

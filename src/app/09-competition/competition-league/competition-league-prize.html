@@ -1,22 +1,47 @@
 <span class="clearfix"></span>
-<h3>Prêmios</h3>
+<h3 translate>LeagueDetailView.btPrizes</h3>
 
 <div class="row">
-
   <div class="col-xs-6 league-prizes">
-    <div ng-repeat="prize in $ctrl.league.data.prizeList.prize | first: 4" class="league-prize">
-      <p>{{prize.position}}º Lugar</p>
-      <p><i class="icon icon-money"></i> {{prize['money'+teamPreview.Serie] | currency}}</p>
-      <p><i class="icon icon-credit-card"></i> {{prize['credits'+teamPreview.Serie]}}</p>
+    <div ng-repeat="prize in $ctrl.league.data.prizeList.prize | first: 4" class="league-prize clearfix">
+      <div  class="prize-thophy">
+        <img ng-src="https://www.golacogame.com.br/content/trophy/1-{{prize.position}}.png" height="80" ng-if="prize.position<=3">
+      </div>
+      <h4>{{prize.position}}º</h4>
+      <p>
+        <i class="icon icon-money"></i> {{prize['money'+teamPreview.Serie] | currency}}
+        <span class="pull-right"><i class="icon icon-credit-card"></i> {{prize['credits'+teamPreview.Serie]}}</span>
+      </p>
     </div>
   </div>
+  <!-- <div class="col-xs-6">
+  </div> -->
   <div class="col-xs-6">
-    <h1>{{teamPreview.Serie}}</h1>
-    <div ng-repeat="prize in $ctrl.league.data.prizeList.prize | after: 4"
-      ng-if="prize['money'+teamPreview.Serie] + prize['credits'+teamPreview.Serie] > 0" class="league-prize">
-      {{prize.position}}º Lugar
-      <i class="icon icon-money"></i> {{prize['money'+teamPreview.Serie] | currency}}
-      <i class="icon icon-credit-card"></i> {{prize['credits'+teamPreview.Serie]}}
+    <h1 class="icon-league-{{teamPreview.Serie|lowercase}}"></h1>
+    <h3 translate>LeaguePrizes.lblOtherPrizes</h3>
+    <div class="row">
+      <div class="col-xs-9">
+        <table class="table">
+          <tr ng-repeat="prize in $ctrl.league.data.prizeList.prize | after: 4"
+            ng-if="prize['money'+teamPreview.Serie] + prize['credits'+teamPreview.Serie] > 0">
+            <td class="text-center" width-="1">{{prize.position}}º</td>
+            <td class="text-center"><i class="icon icon-money"></i></td>
+            <td class="text-right" width="1">{{prize['money'+teamPreview.Serie] | currency}}</td>
+            <td class="text-center"><i class="icon icon-credit-card"></i></td>
+            <td class="text-center" width-="1">{{prize['credits'+teamPreview.Serie]}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-3">
+        <table class="table">
+          <tr ng-repeat="prize in $ctrl.league.data.prizeList.prize | after: 4" ng-if="prize.demoted==1">
+            <td class="text-center">{{prize.position}}º</td>
+            <td class="text-center"><i class="icon icon-money"></i></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- <pre>{{$ctrl.league.data|json}}</pre> -->

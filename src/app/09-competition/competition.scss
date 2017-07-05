@@ -190,3 +190,39 @@
     }
   }
 }
+
+.competition-submenu {
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  label {
+      // color:#9a9a9a;
+      // font-size: 12px;
+      // text-transform: uppercase;
+      // font-weight: 700;
+      padding-left: 0;
+      margin-right: 5px;
+      // margin-right: 10px;
+  }
+  input[type=radio] {
+    display: none;
+      // opacity: 0;
+      // margin-right: -12px;
+      // cursor: pointer;
+      // width: 12px;
+      // height: 12px;
+
+  }
+  input[type=radio] + span {
+    display: blockl;
+    padding: 10px;
+    font-weight: 400;
+    text-transform: Capitalize;
+    text-decoration: none;
+  }
+  input[type=radio]:checked + span {
+      color: #fff;
+      background: #2e6da4;
+  }
+
+}

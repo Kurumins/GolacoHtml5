@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionLeagueController', function ($timeout, league, leagueSummary, leagueRanking, leagueMatchTable, leagueCalendar/*, leaguePlayOff*/) {
+  .controller('CompetitionLeagueController', function ($timeout, league, leagueSummary, leagueRanking, leagueMatchTable, leagueCalendar/*, leaguePlayOff*/, MatchResult) {
 
     var vm = this;
 
@@ -27,6 +27,8 @@ angular.module('app')
       }
     };
 
+    vm.matchResult = MatchResult.open;
+
     // vm.leaguePlayOff = leaguePlayOff;
 
   })
@@ -34,7 +36,7 @@ angular.module('app')
   .factory('CompetitionLeague', function (CompetitionService, ngDialog) {
 
     this.open = function (league) {
-      ngDialog.open({
+      return ngDialog.openConfirm({
         template: 'competition-league.html',
         appendClassName: 'ngdialog-competition-league',
         controller: 'CompetitionLeagueController as $ctrl',

@@ -3,68 +3,26 @@
   .ngdialog-content {
     width: 750px;
     min-height: 550px;
-    padding: 10px 25px;
-    border:3px solid #0265b3;
-    span{
-      font-weight: 600;
-    }
+    // padding: 10px 25px;
+    border: 3px solid #0265b3;
+    // span{
+    //   font-weight: 600;
+    // }
   }
 
-  h2{
-    font-weight: 600;
-    color: #4e5667;
-  }
+  // h2 {
+  //   font-weight: 600;
+  //   color: #4e5667;
+  // }
 
-  h5,
-  h4 {
-    margin: 0;
-  }
+  // h5,
+  // h4 {
+  //   margin: 0;
+  // }
 
-  h3 {
-    margin-bottom: 0;
-  }
-
-  .checkbox{
-    margin:0;
-    label{
-        color:#9a9a9a;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 700;
-        padding-left:0;
-        margin-right: 10px;
-    }
-    input[type=radio] {
-        opacity: 0;
-        margin-right: -12px;
-        cursor: pointer;
-        width: 12px;
-        height: 12px;
-
-    }
-    input[type=radio]:checked + span:before {
-        // content: "\e82d";
-         content: '\2714';
-        color: #0265b3;
-    }
-    input[type=radio] + span:before {
-         content: '\2714';
-        color: transparent;
-        display: inline-block;
-        margin-right: 5px;
-        width: 15px;
-        height: 15px;
-        visibility: visible;
-        background: transparent;
-        border: 1px solid #0265b3;
-        border-radius: 2px;
-        line-height: 15px;
-        text-align: center;
-        font-weight: 700;
-        font-size: 14px;
-    }
-
-  }
+  // h3 {
+  //   margin-bottom: 0;
+  // }
 
   .button-bar {
     button {
@@ -77,49 +35,55 @@
     }
   }
 
+  i[class*="icon-league-"] {
+    font-size: 30px;
+    &:before {
+      line-height: 1.25;
+    }
+  }
+
 }
 
-.competition-league-ranking {
-  th {
-    background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
-    background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
-    background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-    background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
-    font-size: 12px;
-    color:#484848;
-    text-transform: uppercase;
-    border:solid 1px #CCC;
-    height:26px;
-    padding: 0 5px;
-    text-align: center;
+// .competition-league-ranking {
+//   th {
+//     background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
+//     background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
+//     background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
+//     background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
+//     background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
+//     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+//     background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
+//     font-size: 12px;
+//     color:#484848;
+//     text-transform: uppercase;
+//     border:solid 1px #CCC;
+//     height:26px;
+//     padding: 0 5px;
+//     text-align: center;
+//   }
+//   tr:nth-child(odd) {
+//     background-color:#F3F3F3;
+//   }
 
-  }
-  tr:nth-child(odd) {
-    background-color:#F3F3F3;
-  }
+//   tr:nth-child(even) {
+//     background-color:#FFF;
+//   }
 
-  tr:nth-child(even) {
-    background-color:#FFF;
-  }
-
-  tr, td {
-    height:26px;
-    padding-left:4px;
-    padding-right:2px;
-    // font-family:Verdana, Geneva, sans-serif;
-    font-size:12px;
-    white-space:nowrap;
-    border:solid 1px #E1E1E1;
-  }
-  tr:hover {
-    // background-color:#00D8CC;
-    // cursor:pointer;
-    // color:#FFF;
-  }
-}
+//   tr, td {
+//     height:26px;
+//     padding-left:4px;
+//     padding-right:2px;
+//     // font-family:Verdana, Geneva, sans-serif;
+//     font-size:12px;
+//     white-space:nowrap;
+//     border:solid 1px #E1E1E1;
+//   }
+//   tr:hover {
+//     // background-color:#00D8CC;
+//     // cursor:pointer;
+//     // color:#FFF;
+//   }
+// }
 
 .competition-league-match-table {
 
@@ -156,14 +120,35 @@
     .status {
       color: white;
       font-weight: bold;
+      border: 1px solid rgba(0,0,0,.1);
+      line-height: 21px;
+
       &.-D {
         background-color: red;
+        &:before {
+          content: "D";
+        }
       }
       &.-V {
         background-color: green;
+        &:before {
+          content: "V";
+        }
       }
       &.-E {
         background-color: orange;
+        &:before {
+          content: "E";
+        }
+      }
+
+      &:hover {
+        background: #66a7c1;
+        cursor: pointer;
+        font-size: 18px;
+        &:before {
+          content: "\25BA";
+        }
       }
     }
   }
@@ -176,55 +161,60 @@
     margin: 0 20px;
   }
 
-  .match-table {
-    outline: none;
+  // .match-table {
+  //   outline: none;
 
-    .table-title {
-      text-align: center;
-    }
-    td {
-      padding: 10px 0;
-    }
+  //   .table-title {
+  //     text-align: center;
+  //   }
+  //   td {
+  //     padding: 10px 0;
+  //   }
 
-    th {
-        background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
-        background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
-        background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-        background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
-        font-size: 12px;
-        color:#484848;
-        text-transform: uppercase;
-        border:solid 1px #CCC;
-        height:26px;
-        padding: 0 5px;
-        text-align: center;
+  //   th {
+  //       background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
+  //       background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
+  //       background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
+  //       background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
+  //       background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
+  //       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); for IE
+  //       background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
+  //       font-size: 12px;
+  //       color:#484848;
+  //       text-transform: uppercase;
+  //       border:solid 1px #CCC;
+  //       height:26px;
+  //       padding: 0 5px;
+  //       text-align: center;
 
-      }
-      tr:nth-child(odd) {
-        background-color:#F3F3F3;
-      }
+  //     }
+  //     tr:nth-child(odd) {
+  //       background-color:#F3F3F3;
+  //     }
 
-      tr:nth-child(even) {
-        background-color:#FFF;
-      }
+  //     tr:nth-child(even) {
+  //       background-color:#FFF;
+  //     }
 
-      tr, td {
-        height:26px;
-        padding-left:4px;
-        padding-right:2px;
-        font-size:12px;
-        white-space:nowrap;
-        border:solid 1px #E1E1E1;
-        font-weight: 600;
-      }
-      tr:hover {
-        // background-color:#00D8CC;
-        // cursor:pointer;
-        // color:#FFF;
-      }
+  //     tr, td {
+  //       height:26px;
+  //       padding-left:4px;
+  //       padding-right:2px;
+  //       font-size:12px;
+  //       white-space:nowrap;
+  //       border:solid 1px #E1E1E1;
+  //       font-weight: 600;
+  //     }
+  //     tr:hover {
+  //       // background-color:#00D8CC;
+  //       // cursor:pointer;
+  //       // color:#FFF;
+  //     }
+  // }
+
+  match-element {
+    margin-bottom: 15px;
+    background: #fff;
   }
 
   .slick-dots {
@@ -253,65 +243,30 @@
 .competition-league-prize {
   h1 {
     font-size: 110px;
-    line-height: 1;
+    line-height: .5;
     text-align: center;
-    margin: 0;
-  }
-  .league-prizes {
-    th {
-    background: -moz-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* FF3.6+ */
-    background: -webkit-gradient(linear, 360deg, color-stop(0, FFA600), color-stop(50%, ffd700));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* Opera 11.10+ */
-    background: -ms-linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-    background: linear-gradient(360deg, #FFA600 0, #ffd700 50%);/* W3C */
-    font-size: 12px;
-    color:#484848;
-    text-transform: uppercase;
-    border:solid 1px #CCC;
-    height:26px;
-    padding: 0 5px;
-    text-align: center;
-
-  }
-  tr:nth-child(odd) {
-    background-color:#F3F3F3;
-  }
-
-  tr:nth-child(even) {
-    background-color:#FFF;
-  }
-
-  tr, td {
-    height:26px;
-    padding-left:4px;
-    padding-right:2px;
-    // font-family:Verdana, Geneva, sans-serif;
-    font-size:12px;
-    white-space:nowrap;
-    border:solid 1px #E1E1E1;
-  }
-  tr:hover {
-    // background-color:#00D8CC;
-    // cursor:pointer;
-    // color:#FFF;
-  }
+    margin-top: -20px;
   }
   .league-prize {
-    padding: 5px 10px;
-    border: 1px solid;
-    margin: 5px;
+    padding: 0px 15px 5px 0;
+    // border: 1px solid;
+    margin-bottom: 15px;
+    background: white;
+    // padding-left: 20px;
+
+    h4 {
+      margin-top: 15px;
+    }
+
+    .prize-thophy {
+      float: left;
+      height: 80px;
+      width: 80px;
+      text-align: center;
+    }
+
     p {
       margin: 0;
-    }
-    .icon-credit-card{
-      &:before {
-        color: #DAA520;
-      }
-    }
-    .icon-money:before {
-      color: #00b100;
     }
   }
 }
