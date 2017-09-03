@@ -1,21 +1,19 @@
-<h2>TrainingCenterReformDetail.lblTitle</h2>
-<h3>{{$ctrl.selectedTrainingCenter.Name}}</h3>
+<h2 translate>TrainingCenterReformDetail.lblTitle</h2>
+<h3>{{'TrainingCenterNames.'+$ctrl.selectedTrainingCenter.Name|translate}}</h3>
 
 <div class="row">
   <div class="col-xs-5">
     <img ng-src="{{$ctrl.selectedTrainingCenter.BigPicture}}" class="img-responsive">
     <div class="training-center-recycle">
-      <h4><!-- TrainingCenterReformDetail. -->lblTrainingLevel</h4>
+      <h4 translate>TrainingCenterReformDetail.lblTrainingLevel</h4>
       <strong>{{$ctrl.selectedTrainingCenter.MinLevel+1}}</strong>
       <button class="btn btn-block btn-primary"
         ng-click="$ctrl.trainingCenterRecycle()"
-        ng-disabled="'C'.charCodeAt(0) > $ctrl.selectedTrainingCenter.IdLeague.charCodeAt(0)">
-          <!-- TrainingCenterReformDetail. -->txtReformCenter
-      </button>
+        ng-disabled="'C'.charCodeAt(0) > $ctrl.selectedTrainingCenter.IdLeague.charCodeAt(0)" translate>TrainingCenterReformDetail.txtReformCenter</button>
     </div>
   </div>
   <div class="col-xs-5">
-    <h4><!-- TrainingCenterReformDetail. -->lblEquipaments</h4>
+    <h4 translate>TrainingCenterReformDetail.lblEquipaments</h4>
     <div class="stadium-improvements">
       <div class="clearfix stadium-slots">
         <span ng-repeat="i in [1,2,3,4,5,6,7,8,9]" ng-switch="$ctrl.selectedTrainingCenter.MaxItemSlot < i">
@@ -33,7 +31,7 @@
       </div>
     </div>
     <dl>
-      <dt>Custo da obra</dt>
+      <dt translate>TrainingCenterReformDetail.lbCost</dt>
       <dd ng-if="$ctrl.selectedTrainingCenter.CreditPrice">{{$ctrl.selectedTrainingCenter.CreditPrice}} <i class="icon-credit-card"></i></dd>
       <dd ng-if="$ctrl.selectedTrainingCenter.MoneyPrice">{{$ctrl.selectedTrainingCenter.MoneyPrice | currency}} <i class="icon-money"></i></dd>
     </dl>

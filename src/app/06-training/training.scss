@@ -11,32 +11,32 @@
     margin: 5px 0;
   }
 
-  h2{
+  h2 {
     color: #4f5776;
     margin-bottom: 15px;
   }
 
-  button{
-    // padding: 5px 8px;
-    // border-radius: 3px;
-    // border:1px solid #4e5667;
-    // background: #4e5667;
-    // color: #ffffff;
-    // font-weight: 600;
-    // text-transform: uppercase;
-    // -webkit-transition: all .5s ease;
-    // -moz-transition: all .5s ease;
-    // -ms-transition: all .5s ease;
-    // -o-transition: all .5s ease;
-    // transition: all .5s ease;
-    // &:hover{
-    //   border:1px solid #4e5667;
-    //   background: #ffffff;
-    //   color: #4e5667;
-    //   cursor: pointer;
-    // }
-  }
-  .training-levels{
+  // button{
+  //   // padding: 5px 8px;
+  //   // border-radius: 3px;
+  //   // border:1px solid #4e5667;
+  //   // background: #4e5667;
+  //   // color: #ffffff;
+  //   // font-weight: 600;
+  //   // text-transform: uppercase;
+  //   // -webkit-transition: all .5s ease;
+  //   // -moz-transition: all .5s ease;
+  //   // -ms-transition: all .5s ease;
+  //   // -o-transition: all .5s ease;
+  //   // transition: all .5s ease;
+  //   // &:hover{
+  //   //   border:1px solid #4e5667;
+  //   //   background: #ffffff;
+  //   //   color: #4e5667;
+  //   //   cursor: pointer;
+  //   // }
+  // }
+  .training-levels {
     margin-bottom: 20px;
 
     th {
@@ -101,7 +101,15 @@
       text-align: center;
       // border-collapse:separate;
       border-spacing: 0 2px;
-     color: #4f5776;
+      // color: #4f5776;
+
+      tbody {
+        background: #eee;
+      }
+
+      th {
+        text-align: center;
+      }
 
       img {
         vertical-align: middle;
@@ -113,10 +121,12 @@
     }
 
     .player {
-      background-color: white;
+      // background-color: white;
     }
 
-    .player-country {
+    .player-shirt {
+      color: #fff;
+
       &.-s1 {
         background-color: #ff9c00;
       }
@@ -176,16 +186,17 @@
   }
 
   [training-limit] {
-    width: 30px;
+    width: 50px;
+    vertical-align: middle;
     div {
       border: 1px solid;
-      border-radius: 2px;
-      // height: 2px;
+      border-radius: 10px;
+      // height: 5px;
     }
     span {
       display: block;
-      background-color: blue;
-      height: 2px;
+      background-color: #0179e2;
+      height: 3px;
     }
   }
 

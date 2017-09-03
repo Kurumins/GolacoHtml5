@@ -1,19 +1,20 @@
 <span class="clearfix"></span>
-<h3>Classificação</h3>
-
-<table width="100%">
-  <tr>
-    <th colspan="4"></th>
-    <th>P</th>
-    <th>J</th>
-    <th>V</th>
-    <th>E</th>
-    <th>D</th>
-    <th>GM</th>
-    <th>GS</th>
-    <th>SG</th>
-    <th>%</th>
-  </tr>
+<h4 translate>LeagueDetailView.btRanking</h4>
+<table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+      <th class="text-center" title="{{'LeagueRanking.lblPoints'|translate}}" translate>LeagueRanking.lblPointsAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGames'|translate}}" translate>LeagueRanking.lblGamesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblVictories'|translate}}" translate>LeagueRanking.lblVictoriesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblTies'|translate}}" translate>LeagueRanking.lblTiesAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblDefeats'|translate}}" translate>LeagueRanking.lblDefeatsAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsScored'|translate}}" translate>LeagueRanking.lblGoalsScoredAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsSuffered'|translate}}" translate>LeagueRanking.lblGoalsSufferedAcronym</th>
+      <th class="text-center" title="{{'LeagueRanking.lblGoalsBalance'|translate}}" translate>LeagueRanking.lblGoalsBalanceAcronym</th>
+      <th class="text-center">%</th>
+    </tr>
+  </thead>
   <tr ng-repeat="team in $ctrl.leagueRanking.Ranking">
     <td>{{team.Position}}</td>
     <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" class="team-flag" ></td>

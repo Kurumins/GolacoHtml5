@@ -1,7 +1,9 @@
-<h2>TrainingCenterPreview.lblTitle</h2>
-<button class="pull-right btn btn-sm" ng-click="$ctrl.trainingCenterRecycle()">Reformar</button>
+<h2 translate>TrainingCenterPreview.lblTitle</h2>
+<div class="submenu pull-right">
+  <button class="btn btn-xs btn-primary" ng-click="$ctrl.trainingCenterRecycle()" title="{{'StadiumPreview.lblReform'|translate}}"><i class="icon-wrench"></i></button>
+</div>
 <div class="structure-training-center clearfix">
-  <h4>{{$ctrl.trainingCenter.Name}}</h4>
+  <h4>{{'TrainingCenterNames.'+$ctrl.trainingCenter.Name|translate}}</h4>
   <div class="clearfix">
     <img ng-src="{{$ctrl.trainingCenter.Picture}}" class="training-center-picture">
     <div class="training-center-itens">
@@ -14,11 +16,11 @@
     </div>
   </div>
 
-  <h3>TrainingCenterPreview.lblTrainingLevel</h3>
+  <h3 translate>TrainingCenterPreview.lblTrainingLevel</h3>
 
   <ul class="list-inline text-center skill-levels">
-    <li ng-repeat="skill in ['Cruzamento', 'Velocidade', 'Resistencia', 'Finalizacao', 'Drible', 'Passe', 'Tecnica', 'Marcacao', 'Desarme', 'Defesa', 'Reflexos', 'Cabeceio']">
-      <h5><!-- Common.TeamPlayerSkill_{{skill}}_Acr -->{{skill.substr(0,3)}}</h5>
+    <li ng-repeat="skill in ['Cruzamento','Velocidade','Resistencia','Finalizacao','Drible','Passe','Tecnica','Marcacao','Desarme','DefesaGol','Reflexos','Cabeceio']" title="{{'Common.TeamPlayerSkill_'+skill|translate}}">
+      <h5>{{'Common.TeamPlayerSkill_'+skill+'_Acr'|translate|uppercase}}</h5>
       <strong>{{$ctrl.trainingCenter['TeamPlayerSkill'+($index+1)+'Level']}}</strong>
     </li>
   </ul>

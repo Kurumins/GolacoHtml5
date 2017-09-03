@@ -11,12 +11,12 @@ angular.module('app')
       ItensService.itemPurchase(item, qty)
         .then(function () {
           vm.scope.confirm();
-          AlertPopup.open('Aviso', 'Item adquirido com sucesso.');
+          AlertPopup.open('Error.registrationErrorTitle', 'ItemsScreen.purchaseOk');
           $rootScope.$emit('inventoryUpdate');
           $rootScope.$emit('balanceUpdate');
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message);
+          AlertPopup.open('Error.registrationErrorTitle', 'Error.'+error.Message);
         });
     };
 

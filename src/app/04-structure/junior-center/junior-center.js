@@ -4,6 +4,7 @@ angular.module('app')
 
     var vm = this;
     vm.juniorPreview = juniorPreview;
+    vm.now = new Date();
 
     vm.juniorDraft = function () {
       JuniorDraft.open()
@@ -62,6 +63,7 @@ angular.module('app')
       return StructureService.juniorPreview()
         .then(function (juniorPreview) {
           vm.juniorPreview = juniorPreview;
+          delete vm.currentPlayer;
         });
     }
 

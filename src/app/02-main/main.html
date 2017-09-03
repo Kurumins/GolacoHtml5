@@ -59,8 +59,8 @@
 
     </div>
 
-    <div class="col-xs-6 body-item text-right">
-      <h4 translate>TeamPreview.lblMissions</h4>
+    <div class="col-xs-6 body-item">
+      <h4 class="text-right" translate>TeamPreview.lblMissions</h4>
 
       <ul class="main-missions">
         <li ng-repeat="mission in $ctrl.missionList.Missions">
@@ -76,7 +76,7 @@
         </li>
       </ul>
 
-      <h4 translate>TeamPreview.lblWarnings</h4>
+      <h4 class="text-right" translate>TeamPreview.lblWarnings</h4>
 
       <div class="main-warnings">
         <div ng-repeat="warning in $appCtrl.teamPreview.Warnings | pick:'deleted != true'" class="warning" >
@@ -94,7 +94,7 @@
         </label>
       </div>
 
-      <h4>
+      <h4 class="text-right">
         {{'TeamPreview.lblPressNote'|translate}}
         <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
       </h4>

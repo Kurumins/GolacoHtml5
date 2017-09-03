@@ -1,7 +1,7 @@
 <div class="hill">
   <div class="clearfix hill-header">
     <div class="pull-right hill-menu">
-      <button class="btn btn-xs btn-info" ng-click="$ctrl.refresh()"><i class="icon-refresh"></i></button>
+      <button class="btn btn-icon btn-sm btn-info" ng-click="$ctrl.refresh()" title="{{'Common.AuctionScreen.lblRefresh'|translate}}"><i class="icon-refresh"></i></button>
     </div>
     <h3 translate>KingOfTheHill.lblTitle</h3>
   </div>
@@ -19,22 +19,23 @@
     <div class="current-hill" ng-repeat="hill in $ctrl.preview.Hills">
       <div class="current-hill-header -style-{{hill.Image}}">
         <!-- <span class="hill-league-letter">{{['','A','B','C','D'][hill.IdTeamLeague]}}</span> -->
+        <span class="icon-league-{{['','A','B','C','D'][hill.IdTeamLeague]|lowercase}}"></span>
         <h4 class="hill-league">{{'KingOfTheHill.'+hill.NameHill | translate}}</h4>
       </div>
       <div class="team-details">
         <img ng-src="{{hill.Badge}}">
         <img ng-src="{{hill.Picture}}">
-        <button class="btn" ng-click="$ctrl.challenge(hill.IdHill, useItems)"><i class="icon-futbol-o"></i></button>
-        <button class="btn" ng-click="$ctrl.hillDetails(hill)"><i class="icon-search-plus"></i></button>
-        <button class="btn"><i class="icon-share"></i></button>
+        <button class="btn btn-icon" ng-click="$ctrl.challenge(hill.IdHill, useItems)" title="{{'Common.challenge'|translate}}"><i class="icon-futbol-o"></i></button>
+        <button class="btn btn-icon" ng-click="$ctrl.hillDetails(hill)"><i class="icon-search-plus" title="{{'Common.details'|translate}}"></i></button>
+        <button class="btn btn-icon"><i class="icon-share"></i></button>
       </div>
       <div class="hill-status">
         <p><i class="icon-crown"></i> {{hill.NameTeam}}</p>
-        <p><i>{{['','A','B','C','D'][hill.IdTeamLeague]}}</i> <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{hill.FlagTeam}}.jpg"> {{hill.NameUser}}</p>
-        <p><i class="icon-futbol-o"></i> {{hill.CurrentVictories}} Partidas</p>
+        <p><i class="icon-league-{{['','A','B','C','D'][hill.IdTeamLeague]|lowercase}}"></i> <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{hill.FlagTeam}}.jpg"> {{hill.NameUser}}</p>
+        <p><i class="icon-futbol-o"></i> {{hill.CurrentVictories}} <span translate>Common.lblMatches</span></p>
       </div>
       <div class="last-match">
-        <h4>Última partida</h4>
+        <h4 translate>Common.LastMatch</h4>
         <match-element match="hill.LastMatch" />
         <!-- <div class="match-detail">
           <img ng-src="{{hill.LastMatch.HomeTeam.Badge}}">

@@ -107,7 +107,7 @@ angular
     return function (translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy) {
       var strParts = translationId.split(';'),
         translationTable = $translate.getTranslationTable($uses);
-      return getLocalizedString(translationTable[strParts[0]], strParts, translationTable);
+      return translationTable && translationTable[strParts[0]] && getLocalizedString(translationTable[strParts[0]], strParts, translationTable);
     }
   })
 

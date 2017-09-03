@@ -47,8 +47,8 @@ angular.module('app')
       $translate.use(key);
       tmhDynamicLocale.set(key);
     };
-    // $scope.changeLanguage($window.navigator.language || $window.navigator.userLanguage);
-    $scope.changeLanguage('en-US');
+    $scope.changeLanguage($window.navigator.language || $window.navigator.userLanguage);
+    // $scope.changeLanguage('en-US');
 
     // var onMainUpdate = $rootScope.$on('mainUpdate', function () {
     //   mainUpdate();

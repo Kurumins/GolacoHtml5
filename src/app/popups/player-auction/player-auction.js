@@ -36,6 +36,7 @@ angular.module('app')
           statistics: function () {
             return TeamPlayerService.statistics(vm.player.Id)
               .then(function (result) {
+                result.CurrentTeamStatistics = result.GlobalStatistics;
                 return vm.player.statistics = result;
               });
           }
@@ -99,7 +100,7 @@ angular.module('app')
 
     this.open = function (player) {
 
-      return ngDialog.open({
+      return ngDialog.openConfirm({
         template: 'player-auction.html',
         appendClassName: 'ngdialog-player-manager ngdialog-player-auction',
         controller: 'PlayerAuctionController as $ctrl',

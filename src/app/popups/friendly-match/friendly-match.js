@@ -52,12 +52,12 @@ angular.module('app')
 
     function confirmPlay (matchId) {
       if ( AppService.user.FriendlyMatchesToday < 3 ) {
-        return ConfirmPopup.open('lblScheduleConfirmTitle', 'msgScheduleConfirmTitle')
+        return ConfirmPopup.open('FriendlyMatch.lblScheduleConfirmTitle', 'FriendlyMatch.msgScheduleConfirmTitle')
           .then(function () {
             return FriendlyMatchService.scheduleMatch(0, matchId, vm.useItens);
           });
       } else {
-        return ConfirmPopup.open('lblScheduleWithCreditConfirmTitle', 'msgScheduleWithCreditConfirmTitle')
+        return ConfirmPopup.open('FriendlyMatch.lblScheduleWithCreditConfirmTitle', 'FriendlyMatch.msgScheduleWithCreditConfirmTitle')
           .then(function () {
             return FriendlyMatchService.scheduleMatch(1, matchId, vm.useItens);
           });

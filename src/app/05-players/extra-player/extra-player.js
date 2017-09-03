@@ -26,15 +26,15 @@ angular.module('app')
     }
 
     vm.buyProSpot = function (spot) {
-      ConfirmPopup.open('Atenção', 'Deseja mesmo adquirir esta vaga?')
+      ConfirmPopup.open('Error.errorTitle', 'PlayerView.confirmSlotPurchase')
         .then(function () {
           TeamPlayerService.buyProSpot(spot)
             .then(function () {
-              AlertPopup.open('Atenção', 'Vaga adquirida com sucesso.');
+              AlertPopup.open('Error.errorTitle', 'PlayerView.lblSlotPurchaseOk');
               $rootScope.$emit('balanceUpdate');
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', error.Message);
             });
         });
     };

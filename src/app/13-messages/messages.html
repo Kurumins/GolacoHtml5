@@ -1,10 +1,10 @@
 <div class="messages">
-  <h2>MessageDetail.lblScreenTitle</h2>
+  <h2 translate>MessageDetail.lblScreenTitle</h2>
 
   <div class="text-right">
-    <button class="btn btn-sm" ng-click="$ctrl.deleteCheckedMessages()"><!-- MessageDetail. -->btnErase</button>
-    <button class="btn btn-sm" ng-click="$ctrl.setReadCheckedMessages()"><!-- MessageDetail. -->btnRead</button>
-    <button class="btn btn-sm" ng-click="$ctrl.setUnReadCheckedMessages()"><!-- MessageDetail. -->btnUnread</button>
+    <button class="btn btn-sm" ng-click="$ctrl.deleteCheckedMessages()" translate>MessageDetail.btnErase</button>
+    <button class="btn btn-sm" ng-click="$ctrl.setReadCheckedMessages()" translate>MessageDetail.btnRead</button>
+    <button class="btn btn-sm" ng-click="$ctrl.setUnReadCheckedMessages()" translate>MessageDetail.btnUnread</button>
   </div>
 
   <table class="table table-striped messages-table">
@@ -19,8 +19,8 @@
         ng-class="{'is-unread': !message.IsRead}"
         ng-click="$ctrl.readMessage(message)">
         <td><input type="checkbox" ng-model="message.checked" ng-click="$event.stopPropagation();"></td>
-        <td><!-- Messages. -->{{message.From}}</td>
-        <td><!-- Messages. -->{{message.Title}}</td>
+        <td>{{'Messages.'+message.From|translate}}</td>
+        <td>{{'Messages.'+message.Title|translate}}</td>
         <td align="right">{{message.SendDate | date:'short'}}</td>
       </tr>
     </tbody>

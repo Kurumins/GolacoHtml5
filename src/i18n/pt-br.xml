@@ -199,7 +199,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="LabelInvalidHillChallengeSameLeagueOnly">Essa mesa só aceita desafios de times da mesma Série.</key>
 		<key key="LabelInvalidHillChallengeDate">A data para desafiar essa mesa expirou. Não é possível desafiar.</key>
 		<key key="LabelError">Erro Inesperado</key>
-		<key key="LabelYouCantSellBeforeFifteenDays">Um jogador transferido deve permanacer no time por no mínimo 15 dias. Você deve esperar até @1 para poder negociar esse jogador.</key>
+		<key key="LabelYouCantSellBeforeNDays">Um jogador transferido deve permanacer no time por no mínimo 7 dias. Você deve esperar até @1 para poder negociar esse jogador.</key>
 		<key key="LabelAuctionInvalidIP">Seu lance não pode ser aceito neste leilão. Identificamos que os times envolvidos tem alguma relação próxima e o seu time não poderá dar lances para não inflacionar de propósito esse leilão.</key>
 		<key key="LabelInvalidStadiumName">O nome do estádio não pode ser vazio, deve conter apenas letras e números e no máximo 30 caracteres.</key>
 		<key key="NoMatchStatisticsTitle">Partida sem estatísticas.</key>
@@ -227,7 +227,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="LabelJuniorTrainCenterIsFull">Esse jogador não pode ser promovido a junior porque o seu Centro de Treinamento está cheio. Promova um junior antes de selecionar um novo da peneira.</key>
 		<key key="LabelStructureLevelTooLow">Você não pode reformar seu Centro de Juniores para um de nível inferior.</key>
 		<key key="LabelStructureLevelTooHigh">Você não pode construir esse Centro de Juniores. Observe o limite da sua série.</key>
-		<key key="LabelYouCantSellJuniorBeforeFifteenDays">Um jogador junior deve permanecer no time por no mínimo 15 dias antes de ser vendido.</key>
+		<key key="LabelYouCantSellJuniorBeforeNDays">Um jogador junior deve permanecer no time por no mínimo 7 dias antes de ser vendido.</key>
 		<key key="LabelYouCantSellRetiringPlayer">Não é permitido vender um jogador que vai se aposentar em menos de 1 mês.</key>
 		<key key="LabelNoResults">Sua busca não trouxe nenhum resultado; mude os parâmetros e tente novamente.</key>
 		<key key="LabelHillLeagueTooHigh">Você só pode desafiar Mesas de Série da sua série ou de uma série acima.</key>
@@ -248,6 +248,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="LabelCannotSetUseItemsLessThan5Minutes">Não é possível mudar a opção de usar itens faltando menos de 5 minutos para a partida.</key>
 		<key key="LabelTournamentBetaDisabled">O Torneio Beta não está mais ativo. Por favor aguarde o anúncio de uma nova versão do simulador de partidas para testes.</key>
 		<key key="LabelCantSellLineupStarter">Esse jogador está escalado na linha e não pode ser vendido. Para vendê-lo, tire ele de campo na Escalação do seu time.</key>
+		<key key="LabelHillInvalidIP">Você não pode desafiar esse time.</key>
 	</section>
 	<section id="Events">
 		<key key="LabelDeafultTitle">Parabéns!</key>
@@ -840,7 +841,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="lblFinBalance">BALANÇO SEMANAL</key>
 		<key key="lblFinDescription"><![CDATA[Segue o resumo financeiro do nosso time, com projeção para esta semana. Clique no botão de Finanças Detalhadas para mais detalhes.]]></key>
 		<key key="lblSpTitle">PATROCINADOR</key>
-		<key key="lblSpGoal">METAS</key>
+		<key key="lblSpGoal">BÔNUS</key>
 		<key key="lblSpContract">TEMPO DE CONTRATO</key>
 		<key key="lblSpContractDescription">Nosso contrato vence em:</key>
 		<key key="lblFinDetailBtn">ver finanças detalhadas</key>
@@ -915,7 +916,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="lblSpDuration">DURAÇÃO:</key>
 		<key key="lblSpIncome">Pagamento semanal:</key>
 		<key key="lblSpRequirement">REQUISITO</key>
-		<key key="lblSpGoals">METAS</key>
+		<key key="lblSpGoals">BÔNUS</key>
 		<key key="lblSpOfferHire">Contratar</key>
 		<key key="lblSpOfferHired">Contratado</key>
 		<key key="lblSpOfferUnhirable">Aguardando</key>
@@ -924,7 +925,7 @@ Se quiser, você pode comprar mais dinheiro virtual para poder dar seu lance!]]>
 		<key key="signContractSuccessMessage"><![CDATA[Contrato de Patrocínio assinado com: @1.
 Recebemos @2 relativos ao resto da semana, e o próximo pagamento vence na próxima segunda-feira.
 Lembre-se de acessar o jogo para receber seu próximo patrocínio.]]></key>
-		<key key="labelNoGoals">Esse patrocinador não trabalha com metas.</key>
+		<key key="labelNoGoals">Esse patrocinador não trabalha com bônus.</key>
 		<key key="lblSponsorBlocked">Patrocinador disponível na série %1</key>
 		<key key="lblSponsorLikeNeeded">Você deve curtir nossa empresa para patrocinarmos o seu time.</key>
 		<key key="lblSponsorLikeOkTitle">PARABÉNS</key>
@@ -988,18 +989,18 @@ Lembre-se de acessar o jogo para receber seu próximo patrocínio.]]></key>
 		<key key="Sponsor_A1_Requirements">nenhum</key>
 		<key key="Sponsor_A2_Requirements">Terminar uma Liga da Série A em 8º ou melhor.</key>
 		<key key="Sponsor_A3_Requirements">Obter 70 vitórias em campeonatos da Série A.</key>
-		<key key="SponsorGoals_D3_Obj1">R$ 500,00: Obter mais de 5 vitórias em casa em uma semana.</key>
-		<key key="SponsorGoals_C1_Obj1">+5 Moral: Inscrever-se em pelo menos uma competição oficial em uma semana.</key>
-		<key key="SponsorGoals_C3_Obj1">R$ 50.000,00: Cada vitória em casa.</key>
-		<key key="SponsorGoals_B1_Obj1">+8 Moral: Terminar a semana em 6º na Liga ou melhor.</key>
-		<key key="SponsorGoals_B3_Obj1">R$ 700.000,00: Obter 5 vitórias seguidas em campeonatos oficiais. (5 jogos seguidos.)</key>
-		<key key="SponsorGoals_A1_Obj1">R$ 200.000,00: Inscrever-se em 2 competições oficiais na mesma semana.</key>
-		<key key="SponsorGoals_A3_Obj1">R$ 500.000,00: Marcar mais de 40 gols em 1 semana.</key>
-		<key key="SponsorGoals_O2Games_Obj1">R$ 500.000,00: Marcar mais de 40 gols em 1 semana.</key>
-		<key key="SponsorGoals_500CVPerfect">R$ 500,00 por cada vitória sem sofrer gols.</key>
-		<key key="SponsorGoals_50000WinMainCompetition">R$ 50.000,00 por vencer a competição principal.</key>
-		<key key="SponsorGoals_5000CVPerfect">R$ 5.000,00 por cada vitória sem sofrer gols.</key>
-		<key key="SponsorGoals_500000WinMainCompetition">R$ 500.000,00 por vencer a competição principal.</key>
+		<key key="SponsorGoals_2k_per_match">2.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_5k_per_match">5.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_10k_per_match">10.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_15k_per_match">15.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_20k_per_match">20.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_25k_per_match">25.000,00 por partida em competições oficiais.</key>
+		<key key="SponsorGoals_2k_per_victory">2.000,00 por vitória em competições oficiais.</key>
+		<key key="SponsorGoals_5k_per_victory">5.000,00 por vitória em competições oficiais.</key>
+		<key key="SponsorGoals_10k_per_victory">10.000,00 por vitória em competições oficiais.</key>
+		<key key="SponsorGoals_15k_per_victory">15.000,00 por vitória em competições oficiais.</key>
+		<key key="SponsorGoals_20k_per_victory">20.000,00 por vitória em competições oficiais.</key>
+		<key key="SponsorGoals_25k_per_victory">25.000,00 por vitória em competições oficiais.</key>
 		<key key="Sponsor_1_Name">FIR Capital</key>
 		<key key="Sponsor_2_Name">TV Esporte Interativo</key>
 		<key key="Sponsor_5_Name">O2 Games</key>
@@ -1076,17 +1077,17 @@ Lembre-se de acessar o jogo para receber seu próximo patrocínio.]]></key>
 		<key key="Sponsor_10_Requirements">Estar na Série A.</key>
 		<key key="Sponsor_11_Requirements">Terminar uma Liga da Série A em 8º ou melhor.</key>
 		<key key="Sponsor_12_Requirements">Obter 70 vitórias em campeonatos da Série A.</key>
-		<key key="Sponsor_1_Goals">Este patrocinador não trabalha com metas.</key>
-		<key key="Sponsor_2_Goals">Este patrocinador não trabalha com metas.</key>
+		<key key="Sponsor_1_Goals">Este patrocinador não trabalha com bônus.</key>
+		<key key="Sponsor_2_Goals">Este patrocinador não trabalha com bônus.</key>
 		<key key="Sponsor_3_Goals">R$ 500,00: Obter mais de 5 vitórias em casa em uma semana.</key>
 		<key key="Sponsor_4_Goals">+5 Moral: Inscrever-se em pelo menos uma competição oficial em uma semana.</key>
-		<key key="Sponsor_5_Goals">Este patrocinador não trabalha com metas.</key>
+		<key key="Sponsor_5_Goals">Este patrocinador não trabalha com bônus.</key>
 		<key key="Sponsor_6_Goals">R$ 50.000,00: Cada vitória em casa.</key>
 		<key key="Sponsor_7_Goals">+8 Moral: Terminar a semana em 6º na Liga ou melhor.</key>
-		<key key="Sponsor_8_Goals">Este patrocinador não trabalha com metas.</key>
+		<key key="Sponsor_8_Goals">Este patrocinador não trabalha com bônus.</key>
 		<key key="Sponsor_9_Goals">R$ 700.000,00: Obter 5 vitórias seguidas em campeonatos oficiais. (5 jogos seguidos.)</key>
 		<key key="Sponsor_10_Goals">R$ 200.000,00: Inscrever-se em 2 competições oficiais na mesma semana.</key>
-		<key key="Sponsor_11_Goals">Este patrocinador não trabalha com metas.</key>
+		<key key="Sponsor_11_Goals">Este patrocinador não trabalha com bônus.</key>
 		<key key="Sponsor_12_Goals">R$ 500.000,00: Marcar mais de 40 gols em 1 semana.</key>
 	</section>
 	<section id="MessageDetail">
@@ -1790,50 +1791,48 @@ O Treino B continua sendo Treino Físico, e ele vai melhorar Velocidade e Resist
 O Treino C deixa de ser Treino Mental ou Treino de Visão de Jogo para ser apenas Treino de Visão de Jogo, e vai melhorar Técnica, Passe e Drible, perdendo um pouco de velocidade e resistência.
 Esse passo é para simplificar o entendimento do treino, assim sabendo o que o Treino A, B ou C faz para um jogador, você sabe o que ele faz para todos.
 E em seguida, faremos a opção de escolher a rotina de treino (por exemplo AABB, ABCA, ou AAAA) para mais de um jogador, ou seja, poder treinar todos os jogadores de uma só vez.]]></key>
-		<key key="LabelBirthday2014PromoTitle">Semana especial - Aniversário, recorde, melhorias e promoção</key>
+		<key key="LabelBirthday2014PromoTitle">Semana especial - Aniversário, Rei da Mesa e promoção</key>
 		<key key="LabelBirthday2014PromoMessage"><![CDATA[Essa é uma semana muito especial para todos nós que vivemos o Golaço diariamente e juntos formamos uma grande comunidade, que acaba de romper a impressionante marca de 600 mil likes.
-Sabemos que, sem você, isso não seria possível. No dia 18/10, o Golaço completa três anos e através desta mensagem viemos agradecê-lo pela parceria, renovando votos de muitas outras temporadas conosco.
-Para comemorar, já lançamos algumas melhorias no jogo:
-- mensagem de aposentadoria (o jogador irá notificar sua aposentadoria um dia antes disto de fato ocorrer);
-- aumento no valor de passe dos jogadores (a partir de segunda, haverá um acréscimo conforme o potencial do jogador);
-- aumento nas premiações de todas as competições da Série A.
-E aproveitando o embalo, estamos com uma super promoção até dia 21:
+Sabemos que, sem você, isso não seria possível. No dia 18/10, o Golaço completa 4 anos e através desta mensagem viemos agradecê-lo pela parceria, renovando votos de muitas outras temporadas conosco.
+Para comemorar, vamos distribuir 4000 créditos em disputas nas mesas especiais de aniversário, com uma atualização para as mesas normais:
+- a partir de agora, um time só pode desafiar a mesa da sua própria série.
+E aproveitando o embalo, estamos com uma super promoção até dia 24:
 - 50 % de desconto em créditos e dinheiro virtual;
 - itens de créditos com desconto para jogadores e treinos;
 - editar nome do jogador de 5 por apenas 3 créditos;
 - desconto para abrir mais vagas no plantel;
 - antecipar treinos de 10 por apenas 5 créditos;
-- desconto para estádios.
+- desconto para estádios, centros de treinamento e juniores.
 Acompanhe mais detalhes e siga todas as notícias sobre o Golaço em nossa fan page.
 Atenciosamente,
 Equipe Golaço.]]></key>
-		<key key="LabelBirthdayPromo2Title">Rei da Mesa: 3000 créditos em prêmios</key>
-		<key key="LabelBirthdayPromo2Message"><![CDATA[No dia 18 de Outubro, o Golaço completa 2 anos de vida!
+		<key key="LabelBirthdayPromo2Title">Rei da Mesa: 4000 créditos em prêmios</key>
+		<key key="LabelBirthdayPromo2Message"><![CDATA[No dia 18 de Outubro, o Golaço completa 4 anos de vida!
 Para comemorar, vamos criar mesas de Rei da Mesa especiais de aniversário, uma para cada série. 
 A disputa vale até o dia 24/10. Os 5 melhores do ranking de cada mesa ganharão prêmios em créditos e dinheiro virtual:
 Série D: 
-1°: 200 créditos, 2 milhões
-2°: 100 créditos, 1.5 milhão
-3°: 75 créditos, 1 milhão
-4°: 50 créditos, 750 mil
+1°: 300 créditos, 2 milhões
+2°: 200 créditos, 1.5 milhão
+3°: 100 créditos, 1 milhão
+4°: 75 créditos, 750 mil
 5°: 25 créditos, 500 mil
 Série C: 
-1°: 250 créditos, 4 milhões
-2°: 150 créditos, 2 milhões
-3°: 100 créditos, 1.5 milhão
-4°: 75 créditos, 1 milhão
+1°: 350 créditos, 4 milhões
+2°: 250 créditos, 2 milhões
+3°: 125 créditos, 1.5 milhão
+4°: 100 créditos, 1 milhão
 5°: 50 créditos, 750 mil
 Série B: 
-1°: 300 créditos, 8 milhões
-2°: 200 créditos, 4 milhões
-3°: 150 créditos, 2 milhões
-4°: 100 créditos, 1.5 milhão
+1°: 400 créditos, 8 milhões
+2°: 300 créditos, 4 milhões
+3°: 175 créditos, 2 milhões
+4°: 125 créditos, 1.5 milhão
 5°: 75 créditos, 1 milhão
 Série A: 
-1°: 400 créditos, 15 milhões
-2°: 250 créditos, 8 milhões
-3°: 200 créditos, 4 milhões
-4°: 150 créditos, 2 milhões
+1°: 500 créditos, 15 milhões
+2°: 350 créditos, 8 milhões
+3°: 225 créditos, 4 milhões
+4°: 175 créditos, 2 milhões
 5°: 100 créditos, 1.5 milhão
 Que comecem os jogos!]]></key>
 		<key key="LabelBirthdayPromo3Title">2 anos de Golaços: Mensagem do desenvolvedor</key>
@@ -1964,6 +1963,27 @@ Que fique claro, hoje o simulador do Golaço já prevê esse tipo de situação 
 Porém, mesmo assim, parece que não tem sido suficiente para evitar o tipo de problema que tem sido relatado. Portanto, decidimos que não será possível mais escalar jogadores em uma posição muito diferente da sua original.
 Todos os treinadores tem até o dia 31 de agosto (20 dias) para revelarem juniores, comprarem jogadores no leilão, treinarem, etc, para as posições que hoje estão ocupando com jogadores que serão proibidos.
 A partir da meia-noite de segunda para terça-feira, dia 1, essa mudança entrará em funcionamento.]]></key>
+		<key key="Label2015FormationUpdate2Title">Atualização importante na escalação</key>
+		<key key="Label2015FormationUpdate2Message"><![CDATA[A partir do dia 1 de Setembro de 2015, haverá algumas restrições de escalação em relação às posições dos jogadores:
+Goleiro não pode ser escalado na linha;
+Só Goleiro pode ser escalado no Gol;
+Zagueiro não pode ser escalado no Ataque;
+Atacante não pode ser escalado na Lateral nem na Zaga;
+Lateral não pode ser escalado no Ataque;]]></key>
+		<key key="Label2015JuniorsUpdateTitle">Atualização nos juniores e olheiros</key>
+		<key key="Label2015JuniorsUpdateMessage"><![CDATA[Atualizamos o sistema de juniores, para melhorar a chance de níveis melhores do Centro de Juniores atrairem jogadores melhores nas peneiras.
+Os olheiros continuam aumentando essa chance, sendo que um dos olheiros, o Professor Mateus agora se chama Professor Mateus (+1 P5). Como vocês podem imaginar, ele garante que terá 1 jogador P5 na peneira.
+Os juniores revelados com potencial 5 também agora terão habilidades naturalmente mais altas, porém ainda não é certeza que serão média acima de 90, porém será muito mais provável.
+E pra finalizar, cada Centro de Juniores está com um tempo em dias que garante que haverá pelo menos 1 P5 nas peneiras, a saber:
+Nivel 1: 40 dias;
+Nivel 2: 35 dias;
+Nivel 3: 33 dias;
+Nivel 4: 30 dias;
+Nivel 5: 25 dias;
+Nivel 6: 20 dias;
+Nivel 7: 15 dias;
+Nivel 8: 10 dias;
+Com essas mudanças, haverá mais jogadores de potencial alto dentro do jogo, e com maior probabilidade de terem uma média de habilidades mais alta.]]></key>
 	</section>
 	<section id="ExternalTeamPreview">
 		<key key="lblTitle">PERFIL EXTERNO</key>
@@ -2761,7 +2781,7 @@ A partir da meia-noite de segunda para terça-feira, dia 1, essa mudança entrar
 		<key key="other_body">Inclui compras de itens e taxas de inscrição.</key>
 
 		<key key="sponsor_title">Patrocinadores</key>
-		<key key="sponsor_body">Os patrocinadores são uma das fontes de renda de nosso time, oferecendo um pagamento fixo toda semana, no fechamento financeiro às segundas-feiras. Alguns patrocinadores trabalham com Metas que, se cumpridas durante a semana, geram um pagamento a mais no fechamento financeiro.  Lembre-se de acessar seu time o mais cedo possível cada semana, pois o pagamento do patrocínio só ocorre quando você entra no jogo.</key>
+		<key key="sponsor_body">Os patrocinadores são uma das fontes de renda de nosso time, oferecendo um pagamento fixo toda semana, no fechamento financeiro às segundas-feiras. Alguns patrocinadores trabalham com Bônus que, se cumpridas durante a semana, geram um pagamento a mais no fechamento financeiro.  Lembre-se de acessar seu time o mais cedo possível cada semana, pois o pagamento do patrocínio só ocorre quando você entra no jogo.</key>
 
 		<key key="playerTransactions_title">Transações</key>
 		<key key="playerTransactions_body">Um histórico de todas os times pelas quais o jogador passou.</key>
@@ -2987,6 +3007,10 @@ A partir da meia-noite de segunda para terça-feira, dia 1, essa mudança entrar
 		<key key="LabelTwoYearsHillB">2 anos Série B</key>
 		<key key="LabelTwoYearsHillC">2 anos Série C</key>
 		<key key="LabelTwoYearsHillD">2 anos Série D</key>
+		<key key="LabelFourYearsHillA">4 anos Série A</key>
+		<key key="LabelFourYearsHillB">4 anos Série B</key>
+		<key key="LabelFourYearsHillC">4 anos Série C</key>
+		<key key="LabelFourYearsHillD">4 anos Série D</key>
 	</section>
 	<section id="Notifications">
 		<key key="AuctionBidCovered">Um de seus lances em leilão foi coberto.</key>

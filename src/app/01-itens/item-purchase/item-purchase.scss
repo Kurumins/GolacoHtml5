@@ -2,7 +2,7 @@
 
   .ngdialog-content {
     // width: 750px;
-    padding: 10px 25px;
+    // padding: 10px 25px;
   }
 
   h5,
@@ -12,8 +12,8 @@
   }
 
   .item-details {
-    margin: 0 auto 30px;
-    width: 250px;
+    margin: 30px auto 30px;
+    width: 270px;
 
     .item-picture {
       float: left;
@@ -21,7 +21,8 @@
 
     .item-name {
       // margin: 0;
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
+      margin-top: 5px;
       text-align: center;
       font-size: 13px;
     }
@@ -58,6 +59,11 @@
         color: #fff;
       }
     }
+  }
+
+  .item-qty {
+    margin-left: 50px;
+    margin-bottom: 15px;
   }
 
 }

@@ -1,50 +1,39 @@
 <div class="training">
-  <h2>Treinamento</h2>
+  <h2 translate>PlayerTraining.lblTitle</h2>
 
   <table width="100%" class="training-levels">
     <tr>
       <th></th>
-      <th>CRU</th>
-      <th>VEL</th>
-      <th>RED</th>
-      <th>FIN</th>
-      <th>DRI</th>
-      <th>PAS</th>
-      <th>TEC</th>
-      <th>MAR</th>
-      <th>DES</th>
-      <th>DEF</th>
-      <th>REF</th>
-      <th>CAB</th>
+      <th align="center" ng-repeat="skill in [] | range:12:1">{{'Skills.skill_'+skill+'_acr'|translate}}</th>
     </tr>
     <tr>
-    <td width="200">Níveis de treinamento</td>
+      <td width="200" translate>PlayerTraining.lblTcLevel</td>
       <td align="center" ng-repeat="skill in [] | range:12:1">{{$ctrl.trainingCenter['TeamPlayerSkill' + skill + 'Level']}}</td>
     </tr>
   </table>
 
   <div class="players-table">
-    <table width="100%">
+    <table class="table table-condensed table-striped">
       <thead>
         <tr>
-          <th class="icon-t-shirt" title="número"></th>
+          <th class="icon-t-shirt" title="{{'PlayerView.lblNumber'|translate}}"></th>
           <th colspan="1"></th>
-          <th class="icon-male" title="idade"></th>
-          <th title="potencia/moral"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></th>
-          <th class="icon icon-plus" title="Lesões"></th>
-          <th title="hab 1" colspan="2">hab 1</th>
-          <th title="hab 2" colspan="2">hab 2</th>
-          <th title="tec">tec</th>
-          <th title="vel">vel</th>
-          <th title="res">res</th>
-          <th title="pas">pas</th>
-          <th title="dri">dri</th>
+          <th class="icon-male" title="{{'PlayerView.lblAge'|translate}}"></th>
+          <th class="" title="{{'PlayerView.lblPotential'|translate}}"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></th>
+          <th class="icon icon-plus" title="{{'PlayerView.lblInjury'|translate}}"></th>
+          <th colspan="2"><span translate>PlayerView.lblPrimarySkill</span> 1</th>
+          <th colspan="2"><span translate>PlayerView.lblPrimarySkill</span> 2</th>
+          <th title="{{'Common.TeamPlayerSkill_Tecnica'|translate}}" translate>Common.TeamPlayerSkill_Tecnica_Acr</th>
+          <th title="{{'Common.TeamPlayerSkill_Velocidade'|translate}}" translate>Common.TeamPlayerSkill_Velocidade_Acr</th>
+          <th title="{{'Common.TeamPlayerSkill_Resistencia'|translate}}" translate>Common.TeamPlayerSkill_Resistencia_Acr</th>
+          <th title="{{'Common.TeamPlayerSkill_Passe'|translate}}" translate>Common.TeamPlayerSkill_Passe_Acr</th>
+          <th title="{{'Common.TeamPlayerSkill_Drible'|translate}}" translate>Common.TeamPlayerSkill_Drible_Acr</th>
           <th></th>
           <th><input type="checkbox" ng-model="$ctrl.checkAll" ng-change="$ctrl.toggleAll($ctrl.checkAll)" ></th>
         </tr>
       </thead>
       <tr ng-repeat="player in $ctrl.teamPlayers | filter:{TeamPlayerType: $ctrl.teamPlayerType}" class="player">
-        <td class="player-shirt">{{player.ShirtNumber}}</td>
+        <td class="player-shirt -s{{player.IdPosition}}" width="1">{{player.ShirtNumber}}</td>
         <td align="left">{{player.Name}}</td>
         <td>{{player.Age}}</td>
         <td>
@@ -53,12 +42,14 @@
           </div>
         </td>
         <td class="icon icon-plus-square player-injury" ng-class="{'has-injury': player.HasInjury}"></td>
-        <td>
-          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span>
+        <td title="{{'Common.'+player.Attributes.PrimarySkill1.Name|translate}}">
+          <!-- <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span> -->
+          <span class="primary-skill -s{{player.IdPosition}}">{{'Common.'+player.Attributes.PrimarySkill1.Name+'_Acr'|translate}}</span>
         </td>
         <td skill-value="player.Attributes.PrimarySkill1"></td>
-        <td>
-          <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span>
+        <td title="{{'Common.'+player.Attributes.PrimarySkill2.Name|translate}}">
+          <!-- <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span> -->
+          <span class="primary-skill -s{{player.IdPosition}}">{{'Common.'+player.Attributes.PrimarySkill2.Name+'_Acr'|translate}}</span>
         </td>
         <td skill-value="player.Attributes.PrimarySkill2"></td>
         <td skill-value="player.Attributes.SecondSkill1"></td>
@@ -70,7 +61,7 @@
         <td ng-if="!player.HasTrainingPlan">
           <input type="checkbox" ng-model="player.checked" ng-change="$ctrl.updateplayersListAtt();">
         </td>
-        <td ng-if="player.HasTrainingPlan"><button ng-click="$ctrl.refreshTraining(player)" class="icon-fast-forward"></button></td>
+        <td ng-if="player.HasTrainingPlan"><button ng-click="$ctrl.refreshTraining(player)" class="icon-fast-forward" title="{{'PlayerTraining.lblRush'|translate}}"></button></td>
       </tr>
     </table>
   </div>
@@ -79,12 +70,12 @@
     ng-repeat="type in [] | range:4"
     ng-model="$ctrl['_btnType'+type]" ng-change="$ctrl.updateplayersListAtt();">
     <option ng-value="1"></option>
-    <option ng-value="2">Treino de Habilidade</option>
-    <option ng-value="3">Treino Físico</option>
-    <option ng-value="4">Treino Técnico</option>
+    <option ng-value="2" translate>PlayerTraining.TrainPlan_TreinoHabilidade</option>
+    <option ng-value="3" translate>PlayerTraining.TrainPlan_TreinoFisico</option>
+    <option ng-value="4" translate>PlayerTraining.TrainPlan_TreinoTecnico</option>
   </select>
 
-  <button ng-disabled="!$ctrl.canTrain" ng-click="$ctrl.train();" class="btn btn-success">treinar</button>
+  <button ng-disabled="!$ctrl.canTrain" ng-click="$ctrl.train();" class="btn btn-success" translate>PlayerTraining.lblTrain</button>
 
 </div>
 

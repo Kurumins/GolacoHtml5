@@ -67,24 +67,22 @@
       img {
         vertical-align: middle;
       }
-      button{
-        border:none;
-        border-radius: 3px;
-      }
-      .icon-widget{
-        background: #008dfb;
-        border: none;
-        border-radius: 3px;
-        // padding: 2px 6px;
-        &:before{
-          color: #ffffff;
-          vertical-align: middle;
-        }
-      }
-      .icon-traffic-cone{
-        &:before{
-          color: #6fe4fd;
-        }
+      // button {
+      //   border:none;
+      //   border-radius: 3px;
+      // }
+      // .icon-widget{
+      //   background: #008dfb;
+      //   border: none;
+      //   border-radius: 3px;
+      //   // padding: 2px 6px;
+      //   &:before{
+      //     color: #ffffff;
+      //     vertical-align: middle;
+      //   }
+      // }
+      .icon-traffic-cone {
+        color: #6fe4fd;
       }
 
     }
@@ -179,7 +177,7 @@
       }
     }
 
-    .player-manager-general{
+    .player-manager-general {
       border-radius: 5px;
     }
 
@@ -196,18 +194,18 @@
     }
   }
 
-  .ngdialog-close{
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      outline: none;
-      &:before{
-          color: #df0000;
-      }
-      &:hover{
-          border: none;
-      }
-    }
+  // .ngdialog-close {
+  //   border: none;
+  //   box-shadow: none;
+  //   padding: 0;
+  //   outline: none;
+  //   &:before{
+  //       color: #df0000;
+  //   }
+  //   &:hover{
+  //       border: none;
+  //   }
+  // }
 
   .blink {
     animation: blink-animation 1s infinite linear;

@@ -1,7 +1,7 @@
 .ngdialog.ngdialog-player-manager-history {
   	.ngdialog-content {
     	width: 600px;
-    	height: 500px;
+    	min-height: 350px;
     	border-radius: 10px;
     	border:3px solid #0078e0;
     	table {
@@ -42,7 +42,7 @@
 			}
 			tr:hover {
 				// background-color:#00D8CC;
-				// cursor:pointer; 
+				// cursor:pointer;
 				// color:#FFF;
 			}
 		}
@@ -50,20 +50,20 @@
 
   // font-size: 14px;
 
-	.ngdialog-close{
-    	border: none;
-    	box-shadow: none;
-    	padding: 0;
-     	outline: none;
-	    &:before{
-	     
-	      color: #df0000;
-	    }
-    	&:hover{
-      		border: none;
-    	}
-  	}
-   	h2{
-	    color: #4e5667;
-	}
+	// .ngdialog-close{
+ //    	border: none;
+ //    	box-shadow: none;
+ //    	padding: 0;
+ //     	outline: none;
+	//     &:before{
+
+	//       color: #df0000;
+	//     }
+ //    	&:hover{
+ //      		border: none;
+ //    	}
+ //  	}
+ //   	h2{
+	//     color: #4e5667;
+	// }
 }

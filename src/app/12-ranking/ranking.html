@@ -1,43 +1,43 @@
 <div class="ranking">
   <header class="clearfix">
-    <h2 class="pull-left">RankingsScr.Rankings</h2>
+    <h2 class="pull-left" translate>RankingsScr.lblTitle</h2>
     <div class="pull-right">
       <label ng-repeat="ranking in $ctrl.rankings">
-        <button class="btn btn-primary" title="RankingsScr.{{ranking.label}}"
+        <button class="btn btn-primary" title="{{'RankingsScr.'+ranking.label|translate}}"
           ng-click="$ctrl.setCurrentRanking(ranking)" ng-class="{'btn-warning': $ctrl.currentRanking == ranking}">{{$index+1}}</button>&nbsp;
       </label>
     </div>
   </header>
-  <h3>RankingsScr.lblSearchBy</h3>
+  <h3 translate>RankingsScr.lblSearchBy</h3>
   <form class="form-inline ranking-search" ng-submit="$ctrl.filter()">
     <div class="checkbox-inline">
       <label>
-        <input type="checkbox" ng-model="$ctrl.general" ng-true-value="" ng-false-value="true"> <!-- RankingsScr. -->lbl$ctrl.General
+        <input type="checkbox" ng-model="$ctrl.general" ng-true-value="" ng-false-value="true"><span translate>RankingsScr.lblGeneral</span>
       </label>
     </div>
     <hr>
     <div class="form-group form-group-sm">
-      <label for="month"><!-- Common. -->month</label>
+      <label for="month" class="text-uppercase" translate>Common.month</label>
       <select class="form-control" id="month" ng-model="$ctrl.currentFilter.month" ng-disabled="!$ctrl.general || $ctrl.currentRanking.exclusion.date">
-        <option ng-value=""><!-- Common. -->all</option>
-        <option ng-value="1"><!-- Common. -->january</option>
-        <option ng-value="2"><!-- Common. -->february</option>
-        <option ng-value="3"><!-- Common. -->march</option>
-        <option ng-value="4"><!-- Common. -->april</option>
-        <option ng-value="5"><!-- Common. -->may</option>
-        <option ng-value="6"><!-- Common. -->june</option>
-        <option ng-value="7"><!-- Common. -->july</option>
-        <option ng-value="8"><!-- Common. -->august</option>
-        <option ng-value="9"><!-- Common. -->september</option>
-        <option ng-value="10"><!-- Common. -->october</option>
-        <option ng-value="11"><!-- Common. -->november</option>
-        <option ng-value="12"><!-- Common. -->december</option>
+        <option ng-value="" translate>Common.all</option>
+        <option ng-value="1" translate>Common.january</option>
+        <option ng-value="2" translate>Common.february</option>
+        <option ng-value="3" translate>Common.march</option>
+        <option ng-value="4" translate>Common.april</option>
+        <option ng-value="5" translate>Common.may</option>
+        <option ng-value="6" translate>Common.june</option>
+        <option ng-value="7" translate>Common.july</option>
+        <option ng-value="8" translate>Common.august</option>
+        <option ng-value="9" translate>Common.september</option>
+        <option ng-value="10" translate>Common.october</option>
+        <option ng-value="11" translate>Common.november</option>
+        <option ng-value="12" translate>Common.december</option>
       </select>
     </div>
     <div class="form-group form-group-sm">
-      <label for="year"><!-- Common. -->year</label>
+      <label for="year" class="text-uppercase" translate>Common.year</label>
       <select class="form-control" id="year" ng-model="$ctrl.currentFilter.year" ng-disabled="!$ctrl.general || $ctrl.currentRanking.exclusion.date">
-        <option ng-value=""><!-- Common. -->all</option>
+        <option ng-value="" translate>Common.all</option>
         <option ng-value="2017">2017</option>
         <option ng-value="2016">2016</option>
         <option ng-value="2015">2015</option>
@@ -49,10 +49,10 @@
     </div>
     <hr>
     <div class="form-group form-group-sm">
-      <label for="leagues"><!-- Common. -->leagues</label>
+      <label for="leagues" class="text-uppercase" translate>Common.leagues</label>
       <select class="form-control" id="leagues"
          ng-model="$ctrl.currentFilter.idLeague" ng-init="$ctrl.currentFilter.idLeague=$appCtrl.teamPreview.Serie.charCodeAt(0) - 64" ng-disabled="!$ctrl.general || $ctrl.currentRanking.exclusion.leagues">
-        <option ng-value=""><!-- Common. -->allF</option>
+        <option ng-value="" translate>Common.allF</option>
         <option ng-value="1">A</option>
         <option ng-value="2">B</option>
         <option ng-value="3">C</option>
@@ -61,19 +61,18 @@
     </div>
     <hr>
     <div class="form-group form-group-sm">
-      <label for="country"><!-- Common. -->country</label>
+      <label for="country" class="text-uppercase" translate>Common.country</label>
       <select class="form-control" id="country"
         ng-model="$ctrl.currentFilter.idCountry" ng-init="$ctrl.currentFilter.idCountry=$appCtrl.teamPreview.IdCountry" ng-disabled="!$ctrl.general">
-        <option ng-value=""><!-- Common. -->all</option>
+        <option ng-value="" translate>Common.all</option>
         <option ng-repeat="country in $appCtrl.countryList" ng-value="{{country.id}}">{{country.name}}</option>
       </select>
     </div>
-    <hr>
-    <button type="submit" class="btn btn-primary"><i class="icon-search"></i></button>
+    <button type="submit" class="btn btn-primary" title="{{'Common.search'|translate}}"><i class="icon-search"></i></button>
   </form>
 
-  <h4 class="pull-right">RankingsScr.lblLastUpdate <span class="text-primary">{{$ctrl.lastUpdate | date:'short'}}</span></h4>
-  <h4>RankingsScr.{{$ctrl.currentRanking.label}}</h4>
+  <h4 class="pull-right"><span translate>RankingsScr.lblLastUpdate</span> <span class="text-primary">{{$ctrl.lastUpdate | date:'short'}}</span></h4>
+  <h4>{{'RankingsScr.'+$ctrl.currentRanking.label|translate}}</h4>
   <table class="table table-striped table-condensed ranking-table">
     <tr ng-repeat="team in $ctrl.ranking">
       <td width="1"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg"></td>

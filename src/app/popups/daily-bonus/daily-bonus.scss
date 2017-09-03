@@ -2,44 +2,29 @@
 
   .ngdialog-content {
     width: 650px;
-    padding: 30px 50px;
+    // padding: 30px 50px;
   }
 
   .bonus-message {
     margin-right: 20%;
   }
-  .ngdialog-close{
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    outline: none;
-    &:before{
-      color: #0b62a9;
-    }
-    &:hover{
-      border: none;
-    }
-  }
-   button{
-    border-radius: 3px;
-    border:1px solid #0b62a9;
-    background: #0b62a9;
-    color: #ffffff;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-    &:hover{
-      border:1px solid #0b62a9;
-      background: #ffffff;
-      color: #0b62a9;
-    }
-  }
+
+  // .ngdialog-close{
+  //   border: none;
+  //   box-shadow: none;
+  //   padding: 0;
+  //   outline: none;
+  //   &:before{
+  //     color: #0b62a9;
+  //   }
+  //   &:hover{
+  //     border: none;
+  //   }
+  // }
   p {
     font-size: 14px;
   }
-  h2{
+  h2 {
     color: rgb(78, 86, 103);
   }
   .bonus-list {
@@ -47,7 +32,7 @@
     display: flex;
     align-items: flex-end;
     // justify-content: space-between;
-    margin: 0 -2.5px;
+    margin: 50px -2.5px 0;
 
     > div {
       flex: 1;
@@ -64,8 +49,11 @@
 
     h5,
     h6 {
-      margin: 0;
-      line-height: 1;
+      margin: 5px 0;
+      // line-height: 1;
+    }
+    h6 {
+      font-size: 10px;
     }
 
     h3 {
@@ -95,6 +83,7 @@
 
     hr {
       width: 70%;
+      border-color: #ccc;
     }
 
     &.active {

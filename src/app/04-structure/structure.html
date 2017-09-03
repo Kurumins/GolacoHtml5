@@ -1,9 +1,9 @@
 <div class="structure">
-  <div class="structure-menu">
-    <button ui-sref="app.structure.stadium" ui-sref-active="active" >Estádio</button>
-    <button ui-sref="app.structure.training-center" ui-sref-active="active" >CT</button>
-    <button ui-sref="app.structure.medical-center" ui-sref-active="active" >CM</button>
-    <button ui-sref="app.structure.junior-center" ui-sref-active="active" >JC</button>
+  <div class="structure-menu submenu pull-right">
+    <button class="btn btn-xs btn-primary" ui-sref="app.structure.stadium" ui-sref-active="active" title="{{'StadiumReformDetail.lbStadium'|translate}}"><i class="icon-stadium"></i></button>
+    <button class="btn btn-xs btn-primary" ui-sref="app.structure.training-center" ui-sref-active="active" title="{{'StadiumPreview.trainingCenter'|translate}}"><i class="icon-traffic-cone"></i></button>
+    <button class="btn btn-xs btn-primary" ui-sref="app.structure.medical-center" ui-sref-active="active" title="{{'StadiumPreview.medicalCenter'|translate}}"><i class="icon-plus"></i></button>
+    <button class="btn btn-xs btn-primary" ui-sref="app.structure.junior-center" ui-sref-active="active" title="{{'StadiumPreview.juniorCenter'|translate}}"><i class="icon-junior"></i></button>
   </div>
   <div ui-view></div>
 </div>

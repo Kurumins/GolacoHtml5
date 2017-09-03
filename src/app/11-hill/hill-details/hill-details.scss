@@ -2,12 +2,12 @@
 
   .ngdialog-content {
     width: 750px;
-    // height: 550px;
-    padding: 25px;
+    min-height: 430px;
+    // padding: 25px;
 
-    > :first-child {
-      margin-top: 0;
-    }
+    // > :first-child {
+    //   margin-top: 0;
+    // }
   }
 
 
