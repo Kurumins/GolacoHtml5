@@ -11,10 +11,16 @@ angular.module('app')
   //   });
   // };
 
-  vm.getUserData = function () {
-    return PostToJs('userData')
+  vm.getUserData = function (accessToken) {
+    // return PostToJs('userData')
+    //   .then(function (result) {
+    //     return vm.userData = result;
+    //   });
+    return PostToJs('Account/GetDetails', {
+      AccessToken: accessToken
+    })
       .then(function (result) {
-        return vm.userData = result;
+        return vm.user = result;
       });
   };
 

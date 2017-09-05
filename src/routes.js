@@ -27,7 +27,7 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
             // })
             .then(function (response) {
               // console.log(response.authResponse.userID);
-              return AppService.getUserData();
+              return AppService.getUserData(response.authResponse.accessToken);
               // return {
               //   idSocialNetwork: response.authResponse.userID
               // };
