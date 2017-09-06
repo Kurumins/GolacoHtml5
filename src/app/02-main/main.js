@@ -103,4 +103,19 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
     MainService.deleteWarning(warning.Id).noLoading();
   };
 
+  vm.changeTeamName = function () {
+    console.log(this);
+    ngDialog.open({
+      template: 'main-config-chage-name.html',
+      // appendClassName: 'ngdialog-main-config',
+      controller: 'MainConfigController as $ctrl',
+      scope: $scope,
+      resolve: {
+        settings: function () {
+          return MainService.teamSettings();
+        }
+      },
+    });
+  };
+
 }

@@ -20,7 +20,10 @@
 
       <div class="detail-manager">
 
-        <h4>{{$appCtrl.user.TeamName}}</h4>
+        <h4>
+          <button class="btn-link icon-pencil-square" ng-click="$ctrl.changeTeamName();" title="{{'TeamPreview.editTeamDetailsTooltip'|translate}}"></button>
+          {{$appCtrl.user.TeamName}}
+        </h4>
 
         <div class="shield">
           <img ng-src="{{$appCtrl.teamPreview.Badge}}" class="pull-left">

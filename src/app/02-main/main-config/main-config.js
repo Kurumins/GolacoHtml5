@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('MainConfigController', function ($rootScope, settings, MainService, ConfirmPopup, AlertPopup, AppService) {
+  .controller('MainConfigController', function ($rootScope, $scope, settings, MainService, ConfirmPopup, AlertPopup, AppService) {
 
     var vm = this;
 
@@ -21,7 +21,7 @@ angular.module('app')
         });
     };
 
-    vm.changeTeamName = function (newName, newAcronym) {
+    vm.changeTeamName = function (newName, newAcronym, closeThisDialog) {
       ConfirmPopup.open('Error.errorTitle', 'ConfigScr.teamNameChangeConfirm;n' + settings.Price)
         .then(function () {
           MainService.changeTeamName(newName, newAcronym)
@@ -30,9 +30,13 @@ angular.module('app')
               $rootScope.$emit('balanceUpdate');
               AppService.user.TeamName = newName;
               AppService.user.Acronym = newAcronym;
+
+              if (closeThisDialog) {
+                $scope.closeThisDialog();
+              }
             })
             .catch(function (error) {
-              AlertPopup.open('Error.errorTitle', error.Message);
+              AlertPopup.open('Error.errorTitle', 'Error.'+error.Message);
             });
         });
     };
