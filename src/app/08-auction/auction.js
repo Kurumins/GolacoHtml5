@@ -19,7 +19,7 @@ function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSe
     PlayerAuction.open(player)
       .then(updateBid, updateBid);
   };
-  vm.playerAuction(allBids.Bids[0]);
+  // vm.playerAuction(allBids.Bids[0]);
 
   function updateBid() {
     AuctionService.getAllBids()
