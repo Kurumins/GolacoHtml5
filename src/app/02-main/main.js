@@ -91,10 +91,13 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
   };
   // vm.dailyBonus();
 
-  vm.updateHistory = function (history) {
+  vm.updateHistory = function (history, historyShare) {
     MainService.updateHistory(history)
       .then(function () {
         AlertPopup.open('Error.errorTitle', 'TeamPreview.pressReleaseOk');
+        if ( historyShare ) {
+          MainService.historyShare(history);
+        }
       });
   };
 

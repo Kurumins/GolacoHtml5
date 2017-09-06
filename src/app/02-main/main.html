@@ -91,15 +91,15 @@
       </div>
 
       <div class="pull-left checkbox">
-        <label>
-          <input type="checkbox" name="" checked>
+        <label ng-init="historyShare=true">
+          <input type="checkbox" ng-model="historyShare">
           <span translate>Match.lblShare</span>
         </label>
       </div>
 
       <h4 class="text-right">
         {{'TeamPreview.lblPressNote'|translate}}
-        <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
+        <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History, historyShare);"></button>
       </h4>
       <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
 

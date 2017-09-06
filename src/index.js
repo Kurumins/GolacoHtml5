@@ -146,23 +146,23 @@ angular
     };
 
     // postToJs(actionObj:Object, callbackAS:Function, data:Object = null, signed:Boolean = true, cacheId:Number = -1)
-    return function (action, data, signed, cacheId) {
+    return function (action, data, signed, cacheId, callback) {
 
       var deferred = $q.defer();
 
-      vm.callbacks[action] = function (result) {
+      vm.callbacks[callback || action] = function (result) {
 
-        if ( result.Success !== false && result.Sucess !== false ) {
+        if ( result && result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
         } else {
-          if (result.Message === 'LabelNotEnoughCredit' || result.Message === 'LabelNotEnoughMoney') {
+          if (result && (result.Message === 'LabelNotEnoughCredit' || result.Message === 'LabelNotEnoughMoney')) {
             AlertPopup.open('Atenção', 'Popup a ser criado: ' + result.Message);
           } else {
             deferred.reject(result);
           }
         }
 
-        delete vm.callbacks[action];
+        delete vm.callbacks[callback || action];
 
         if ( Object.size(vm.callbacks) === 0 ) {
           $loading.finish('PostToJs');
@@ -179,7 +179,7 @@ angular
         return deferred.promise;
       };
 
-      $window.doAction(action, action, data, signed || true, cacheId || +new Date() );
+      $window.doAction(action, callback || action, data, signed || true, cacheId || +new Date() );
 
       return deferred.promise;
 
