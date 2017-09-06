@@ -104,7 +104,6 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
   };
 
   vm.changeTeamName = function () {
-    console.log(this);
     ngDialog.open({
       template: 'main-config-chage-name.html',
       // appendClassName: 'ngdialog-main-config',

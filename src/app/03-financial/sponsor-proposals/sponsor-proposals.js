@@ -12,8 +12,11 @@ angular.module('app')
     vm.hire = function (sponsor) {
       FinancialService.sponsorChange(sponsor)
         .then(function (result) {
-          AlertPopup.open('SponsorDetail.signContractSuccessTitle', 'SponsorDetail.signContractSuccessMessage;' + sponsor.Name + ';' + result.Money);
+          AlertPopup.open('SponsorDetail.signContractSuccessTitle', 'SponsorDetail.signContractSuccessMessage;t' + sponsor.Name + ';$' + result.Money);
           vm.scope.confirm();
+        })
+        .catch(function (error) {
+          AlertPopup.open('Error.errorTitle', 'Error.' + error.Message);
         });
     };
 

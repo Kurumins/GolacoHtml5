@@ -19,16 +19,19 @@
     </div>
     <div class="col-xs-6">
       <h3 translate>FinancialView.lblSpTitle</h3>
-      <h4>{{$ctrl.sponsorSummary.SponsorName}}</h4>
-      <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorSummary.SponsorName}}/finance.png" class="img-thumbnail">
-      <p>{{'SponsorDetail.'+$ctrl.sponsorSummary.SponsorDescription|translate}}</p>
-      <h4 translate>FinancialView.lblSpGoal</h4>
-      <ul>
-        <li ng-repeat="goal in $ctrl.sponsorSummary.SponsorGoals">{{'SponsorDetail.'+goal.Description|translate}}</li>
-      </ul>
-      <h4 translate>FinancialView.lblSpContract</h4>
-      <p translate>FinancialView.lblSpContractDescription</p>
-      <strong class="text-primary">{{$ctrl.sponsorSummary.ValidDate | date:'shortDate'}}</strong>
+      <div ng-if="$ctrl.sponsorSummary.SponsorName">
+        <h4>{{$ctrl.sponsorSummary.SponsorName}}</h4>
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorSummary.SponsorName}}/finance.png" class="img-thumbnail">
+        <p>{{'SponsorDetail.'+$ctrl.sponsorSummary.SponsorDescription|translate}}</p>
+        <h4 translate>FinancialView.lblSpGoal</h4>
+        <ul>
+          <li ng-repeat="goal in $ctrl.sponsorSummary.SponsorGoals">{{'SponsorDetail.'+goal.Description|translate}}</li>
+        </ul>
+        <h4 translate>FinancialView.lblSpContract</h4>
+        <p translate>FinancialView.lblSpContractDescription</p>
+        <strong class="text-primary">{{$ctrl.sponsorSummary.ValidDate | date:'shortDate'}}</strong>
+      </div>
+      <p ng-if="!$ctrl.sponsorSummary.SponsorName" translate>SponsorDetail.LabelUndefinedSponsor</p>
     </div>
   </div>
 </div>
