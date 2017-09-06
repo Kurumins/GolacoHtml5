@@ -30,14 +30,14 @@
         <div class="manager">
           <img ng-src="{{$appCtrl.userData.picture}}" class="pull-left" style="margin-right: 5px;" height="30">
           <h5>{{$appCtrl.userData.userName}}</h5>
-          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
+          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10" title="{{$appCtrl.user.IdCountry!=0 && ('Countries.'+$appCtrl.user.IdCountry|translate)||''}}">
         </div>
 
       </div>
 
       <h4 translate>TeamPreview.lblTeamDetails</h4>
       <div class="detail-team">
-        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10" title="{{'Countries.'+$appCtrl.teamPreview.IdCountry|translate}}">
         <p>{{'TeamPreview.lblFoundation;d' + $appCtrl.teamPreview.FoundationDate|translate}}</p>
       </div>
 
