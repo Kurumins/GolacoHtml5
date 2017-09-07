@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-.service('AppService', function (PostToJs, $http) {
+.service('AppService', function (PostToJs, $http, $window) {
 
   var vm = this;
 
@@ -16,19 +16,30 @@ angular.module('app')
     //   .then(function (result) {
     //     return vm.userData = result;
     //   });
-    return PostToJs('Account/GetDetails', {
-      AccessToken: accessToken
-    })
+    // return PostToJs('Account/SignIn', {
+    //   email: '434@email.com',
+    //   password: '123',
+    //   rememberMe: false
+    // })
+    //   .then(function (result) {
+    //     return vm.user = result;
+    //   });
+    // return PostToJs('Account/GetFbDetails', {
+    return $http.post($window.baseUrl + 'Account/GetFbDetails', {
+        AccessToken: accessToken
+      })
       .then(function (result) {
-        return vm.user = result;
+        // debugger;
+        return vm.userData = result.data.UserData;
       });
   };
 
   vm.userVerify = function (userData) {
+    // debugger;
     return PostToJs('User/Verify', {
-      idCity: userData.idCity,
-      idCountry: userData.idCountry,
-      idState: userData.idState
+      idCity: userData.IdCity,
+      idCountry: userData.IdCountry,
+      idState: userData.IdState
     })
       .then(function (result) {
         return vm.user = result;
