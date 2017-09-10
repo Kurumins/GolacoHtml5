@@ -14,30 +14,6 @@
       <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
     </div>
   </div>
-  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="league-history">
-    <div class="content">
-      <span class="season" translate>Common.Season</span>
-      <span class="season-number text-primary">{{$ctrl.teamStats.LeaguesHistory.length - $index}}</span>
-      <span class="league">{{['','A','B','C','D'][league.IdLeague]}}</span>
-      <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
-    </div>
-  </div>
-  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="league-history">
-    <div class="content">
-      <span class="season" translate>Common.Season</span>
-      <span class="season-number text-primary">{{$ctrl.teamStats.LeaguesHistory.length - $index}}</span>
-      <span class="league">{{['','A','B','C','D'][league.IdLeague]}}</span>
-      <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
-    </div>
-  </div>
-  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="league-history">
-    <div class="content">
-      <span class="season" translate>Common.Season</span>
-      <span class="season-number text-primary">{{$ctrl.teamStats.LeaguesHistory.length - $index}}</span>
-      <span class="league">{{['','A','B','C','D'][league.IdLeague]}}</span>
-      <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
-    </div>
-  </div>
 </slick>
 
 <div class="slick-nav leagues-history-nav" ng-if-="$ctrl.teamStats.LeaguesHistory.length > 6">
