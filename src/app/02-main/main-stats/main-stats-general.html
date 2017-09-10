@@ -3,7 +3,7 @@
   <h5 translate>MyStatisticsDetail.lblLastPositions</h5>
 
   <div>
-    <i class="icon-trophy"></i>
+    <img src="/app/images/trofeus/league.png" height="43">
     <h5 translate>Common.lblLeague</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastLeague">
       <strong ng-switch-when="true">{{'Ordinals.'+$ctrl.teamStats.Overview.LastLeague.Position|translate}}</strong>
@@ -12,7 +12,7 @@
   </div>
 
   <div>
-    <i class="icon-trophy"></i>
+    <img src="/app/images/trofeus/tournament.png" height="43">
     <h5 translate>Common.lblChampionship</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastTournment">
       <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastTournment.Phase}}</strong></span>
@@ -21,7 +21,7 @@
   </div>
 
   <div>
-    <i class="icon-trophy"></i>
+    <img src="/app/images/trofeus/cup.png" height="43">
     <h5 translate>Common.lblCup</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastCup">
       <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastCup.Phase}}</strong></span>
@@ -30,7 +30,7 @@
   </div>
 
   <div>
-    <i class="icon-trophy"></i>
+    <img src="/app/images/trofeus/amigos.png" height="43">
     <h5 translate>Common.lblFriendlyLeague</h5>
     <ng-switch on="!!$ctrl.teamStats.Overview.LastFriendlyLeague">
       <span ng-switch-when="true"><span translate>Common.Round</span> <strong>{{$ctrl.teamStats.Overview.LastFriendlyLeague.Phase}}</strong></span>
