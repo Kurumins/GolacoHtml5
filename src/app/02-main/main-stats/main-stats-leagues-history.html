@@ -10,7 +10,7 @@
     <div class="content">
       <span class="season" translate>Common.Season</span>
       <span class="season-number text-primary">{{$ctrl.teamStats.LeaguesHistory.length - $index}}</span>
-      <span class="league">{{['','A','B','C','D'][league.IdLeague]}}</span>
+      <span class="league icon-league-{{['','a','b','c','d'][league.IdLeague]}}" ></span>
       <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
     </div>
   </div>
