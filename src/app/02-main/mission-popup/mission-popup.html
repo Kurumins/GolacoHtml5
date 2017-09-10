@@ -11,16 +11,18 @@
 
   <hr>
 
-  <footer>
+  <footer class="clearfix">
 
     <button type="button" class="ok-button" ng-click="closeThisDialog(0)">OK</button>
 
     <div ng-if="ngDialogData.Mission.Money" class="money">
+      <i class="icon-money"></i>
       <h5>Dinheiro Virtual</h5>
       <h3>{{ngDialogData.Mission.Money | currency}}</h3>
     </div>
 
     <div ng-if="ngDialogData.Mission.Credits" class="credits">
+      <i class="icon-credit-card"></i>
       <h5>Créditos</h5>
       <h3>{{ngDialogData.Mission.Credits}}</h3>
     </div>
