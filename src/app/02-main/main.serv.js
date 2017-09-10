@@ -43,7 +43,7 @@ angular.module('app')
 
     vm.historyShare = function (history) {
       var shareMsg = $filter('translate')('TeamPreview.pressReleaseShareMsg;t' + AppService.user.TeamName);
-      var picture = 'https://www.golacogame.com.br/content/share/ico_compartilhar.jpg';
+      var picture = 'https://www.golacogame.com.br/content/share/logo_90_90.jpg';
       var caption = history;
 
       return PostToJs('share', {
