@@ -19,7 +19,7 @@ function mainRoutesConfig ($stateProvider) {
     });
 }
 
-function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService, AlertPopup) {
+function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService, AlertPopup, BugReport) {
   var vm = this;
 
   AppService.missionList().noLoading()
@@ -88,6 +88,11 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       controller: 'DailyBonusController as $ctrl',
       scope: $scope
     });
+  };
+  // vm.dailyBonus();
+
+  vm.reportBug = function () {
+    BugReport.open();
   };
   // vm.dailyBonus();
 
