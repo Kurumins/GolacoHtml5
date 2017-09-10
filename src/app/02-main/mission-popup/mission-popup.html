@@ -1,9 +1,9 @@
 <div>
   <img ng-src="{{ngDialogData.Mission.urls.image_detail}}" class="mission_detail">
   <div class="mission-description">
-    <h3>{{ngDialogData.Mission.Name}}</h3>
-    <h2>{{ngDialogData.Mission.Message}}</h2>
-    <p>{{ngDialogData.Mission.Description}}</p>
+    <h3 translate>MissionView.lblMission</h3>
+    <h2 translate>{{'Missions.'+ngDialogData.Mission.Name}}</h2>
+    <p translate>{{'Missions.'+ngDialogData.Mission.Description}}</p>
   </div>
   <img ng-src="{{ngDialogData.Mission.urls.image_roadmap}}" class="mission_roadmap">
 
