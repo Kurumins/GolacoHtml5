@@ -9,9 +9,16 @@
     <div class="training-center-itens">
       <structure-item-list icon="icon-traffic-cone" >
         <structure-item ng-repeat="i in [1,2,3,4,5,6,7,8,9]"
-          item="$ctrl.trainingCenter.TrainingCenterItems | first:'Slot=='+i | first"
+          item="$ctrl.slots[i]"
           lock="$ctrl.trainingCenter.MaxItemSlot < i"
-          on-select="$ctrl.trainingCenterReform(i)" />
+          on-select="$ctrl.trainingCenterReform(i)"
+          title="
+{{'Items.'+$ctrl.slots[i].Name|translate}}
+{{'Skills.skill_'+$ctrl.slots[i].Effects[0].IdTeamPlayerSkill|translate}}: {{$ctrl.slots[i].Effects[0].Effect}} {{$ctrl.slots[i].Effects[1] && '\n'+
+ ('Skills.skill_'+$ctrl.slots[i].Effects[1].IdTeamPlayerSkill|translate) + ': ' + $ctrl.slots[i].Effects[1].Effect}}
+-------------------------
+{{'Common.ItemDurability'|translate}}: {{+$ctrl.slots[i].Durability}}
+          " />
       </structure-item-list>
     </div>
   </div>

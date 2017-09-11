@@ -12,7 +12,13 @@
         <structure-item ng-repeat="i in [0,1,2]"
           item="$ctrl.stadium[list+'Items'][i]"
           lock="$ctrl.stadium[list+'Slots'] <= i"
-          on-select="$ctrl.stadiumReform(list, $index+1)" />
+          on-select="$ctrl.stadiumReform(list, $index+1)"
+          title="
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Name|translate}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[0].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[0].Effect}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[1].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[1].Effect}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[2].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[2].Effect}}
+          " />
       </structure-item-list>
     </div>
   </div>
