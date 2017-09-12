@@ -137,7 +137,12 @@ angular
     $window.fbq = null;
 
     $window.baseUrl = '/golaco/';
+    // $window.baseUrl = 'http://golaco.azurewebsites.net/';
     // $window.baseUrl = '/data/';
+
+    $.ajaxSetup({
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    });
 
     // $translate.use($window.navigator.language || $window.navigator.userLanguage);
 
@@ -159,7 +164,6 @@ angular
       var deferred = $q.defer();
 
       vm.callbacks[action] = function (result) {
-
         if ( result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
         } else {

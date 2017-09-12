@@ -21,16 +21,40 @@ angular.module('app')
     //   password: '123',
     //   rememberMe: false
     // })
-    //   .then(function (result) {
-    //     return vm.user = result;
-    //   });
-    // return PostToJs('Account/GetFbDetails', {
     return $http.post($window.baseUrl + 'Account/GetFbDetails', {
         AccessToken: accessToken
+      }/*, {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }*/)
+      .then(function (result) {
+        // $window.firstLogin = result.firstLogin,
+        // $window.locale = result.locale,
+        // $window.teamEvents = result.teamEvents,
+        // $window.token = null;//result.token;
+
+        var userData = result.data.UserData
+
+        // $window.ConsecutiveDays = userData.ConsecutiveDays;
+        // $window.email = userData.Email;
+        // $window.gender = userData.Gender;
+        // $window.IdCity = userData.IdCity;
+        // $window.IdCountry = userData.IdCountry;
+        // $window.idSocialNetwork = userData.IdSocialNetwork;
+        // $window.IdState = userData.IdState;
+        // $window.picture = userData.Picture;
+        // $window.profile = userData.Profile;
+        // $window.refCode = userData.RefCode;
+        // $window.refUrl = userData.RefUrl;
+        // $window.socialNetwork = userData.SocialNetwork;
+        // $window.userName = userData.Name;
+
+        // debugger;
+        /*return */vm.userData = result.data.UserData;
+        return $http.post($window.baseUrl + 'Container/Auth');
       })
       .then(function (result) {
+        return vm.userData;
         // debugger;
-        return vm.userData = result.data.UserData;
       });
   };
 

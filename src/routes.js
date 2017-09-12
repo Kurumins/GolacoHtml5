@@ -32,6 +32,8 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
               //   idSocialNetwork: response.authResponse.userID
               // };
             })
+          // debugger;
+          // return AppService.getUserData('EAADzSuV8eLABAGlMh3oyiRrUMZCchEZB7byFU06ZAXmXl40ZBEt9Pbbonq0M1sW4jPlBoP8ZBtehWWwIMZApLHE4u4R9ZCTPUAQjloU3LIh1AJtuyZAErCJY8OKnNcezgcE3TzijIJ4BEoG80YCcPYKAPt1GZAu8LtxTiZBRlMjV5xcnVjHcLFtKC5QtNjEwkXV5EZD');
         },
         user: function (AppService, userData) {
           return AppService.userVerify(userData);
@@ -40,6 +42,7 @@ function routesConfig ($stateProvider, $urlRouterProvider/*, $locationProvider*/
           return AppService.getTeamPreview();
         },
         teamMatchesAlert: function (AppService, userData) {
+          return {Matches:[]}; //TODO remover esta linha
           return AppService.teamMatchesAlertView();
         },
         countryList: function (AppService, userData) {
