@@ -165,6 +165,7 @@ angular
 
       vm.callbacks[action] = function (result) {
         if ( result.Success !== false && result.Sucess !== false ) {
+          result = JSON.parse( JSON.stringify(result).split('http://golaco.azurewebsites.net/Container/Index').join('https://www.golacogame.com.br/') );
           deferred.resolve(result);
         } else {
           if (result.Message === 'LabelNotEnoughCredit' || result.Message === 'LabelNotEnoughMoney') {
