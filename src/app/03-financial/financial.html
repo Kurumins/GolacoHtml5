@@ -1,5 +1,5 @@
 <div class="financial">
-  <div class="pull-right financial-menu">
+  <div class="pull-right submenu financial-menu">
     <button class="btn btn-xs btn-primary" ng-click="$ctrl.financialDetails()" title="{{'FinancialView.lblFinDetailBtn'|translate}}"><i class="icon-usd"></i><i class="icon-plus"></i></button>
     <button class="btn btn-xs btn-primary" ng-click="$ctrl.sponsorProposals()" title="{{'FinancialView.lblSpDetailBtn'|translate}}"><i class="icon-comment"></i></button>
   </div>
@@ -8,27 +8,34 @@
     <div class="col-xs-6">
       <h3>{{'FinancialView.lblFinSummary'|translate|uppercase}}</h3>
 
-      <div ng-repeat="(key, value) in $ctrl.financeFields">
+      <div ng-repeat="(key, value) in $ctrl.financeFields" class="financial-value">
+        <img ng-src="/app/images/financial/{{value}}.png" class="financial-icon pull-left">
         <h4>{{'FinancialView.'+key|translate}}</h4>
-        <p><i ng-class="{'icon-arrow-up': $ctrl.financeSummary[value] > 0, 'icon-arrow-down': $ctrl.financeSummary[value] < 0}"></i>{{$ctrl.financeSummary[value] | currency}}</p>
+        <p><i class="icon-arrow" ng-class="{'icon-arrow-up': $ctrl.financeSummary[value] > 0, 'icon-arrow-down': $ctrl.financeSummary[value] < 0}"></i>{{$ctrl.financeSummary[value] | currency}}</p>
       </div>
 
-      <h2 translate>FinancialView.lblFinBalance</h2>
-      <p><i ng-class="{'icon-arrow-up': $ctrl.financeSummary.WeekBalance > 0, 'icon-arrow-down': $ctrl.financeSummary.WeekBalance < 0}"></i>{{$ctrl.financeSummary.WeekBalance | currency}}</p>
+      <div class="week-balance">
+        <img src="/app/images/financial/WeekBalance.png" class="financial-icon pull-left">
+        <h2 translate>FinancialView.lblFinBalance</h2>
+        <p><i ng-class="{'icon-arrow-up': $ctrl.financeSummary.WeekBalance > 0, 'icon-arrow-down': $ctrl.financeSummary.WeekBalance < 0}"></i>{{$ctrl.financeSummary.WeekBalance | currency}}</p>
+      </div>
 
     </div>
     <div class="col-xs-6">
       <h3 translate>FinancialView.lblSpTitle</h3>
-      <h4>{{$ctrl.sponsorSummary.SponsorName}}</h4>
-      <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorSummary.SponsorName}}/finance.png" class="img-thumbnail">
-      <p>{{'SponsorDetail.'+$ctrl.sponsorSummary.SponsorDescription|translate}}</p>
-      <h4 translate>FinancialView.lblSpGoal</h4>
-      <ul>
-        <li ng-repeat="goal in $ctrl.sponsorSummary.SponsorGoals">{{'SponsorDetail.'+goal.Description|translate}}</li>
-      </ul>
-      <h4 translate>FinancialView.lblSpContract</h4>
-      <p translate>FinancialView.lblSpContractDescription</p>
-      <strong class="text-primary">{{$ctrl.sponsorSummary.ValidDate | date:'shortDate'}}</strong>
+      <div ng-if="$ctrl.sponsorSummary.SponsorName">
+        <h4>{{$ctrl.sponsorSummary.SponsorName}}</h4>
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorSummary.SponsorName}}/finance.png" class="img-thumbnail">
+        <p>{{'SponsorDetail.'+$ctrl.sponsorSummary.SponsorDescription|translate}}</p>
+        <h4 translate>FinancialView.lblSpGoal</h4>
+        <ul>
+          <li ng-repeat="goal in $ctrl.sponsorSummary.SponsorGoals">{{'SponsorDetail.'+goal.Description|translate}}</li>
+        </ul>
+        <h4 translate>FinancialView.lblSpContract</h4>
+        <p translate>FinancialView.lblSpContractDescription</p>
+        <strong class="text-primary">{{$ctrl.sponsorSummary.ValidDate | date:'shortDate'}}</strong>
+      </div>
+      <p ng-if="!$ctrl.sponsorSummary.SponsorName" translate>SponsorDetail.LabelUndefinedSponsor</p>
     </div>
   </div>
 </div>

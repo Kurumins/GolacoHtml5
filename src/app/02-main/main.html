@@ -6,10 +6,7 @@
       <button class="btn btn-xs btn-primary" ng-click="$ctrl.teamTrophyRoom()" title="{{'ExternalTeamPreview.lblTrophiesRoom'|translate}}"><i class="icon-trophy"></i></button>
       <button class="btn btn-xs btn-primary" ng-click="$ctrl.stats()" title="{{'MyStatisticsDetail.lblTitle'|translate}}"><i class="icon-graph-bar"></i></button>
       <button class="btn btn-xs btn-primary" ng-click="$ctrl.dailyBonus()" title="{{'DailyBonusMessages.DailyBonus'|translate}}"><i class="icon-star-circled"></i></button>
-      <button
-        ng-dialog="bug-report.html"
-        ng-dialog-append-class="ngdialog-bug-report"
-        class="btn btn-xs btn-primary" title="{{'Common.ReportBug'|translate}}"><i class="icon-bug"></i></button>
+      <button class="btn btn-xs btn-primary" ng-click="$ctrl.reportBug()" title="{{'Common.ReportBug'|translate}}"><i class="icon-bug"></i></button>
     </div>
     <h2 translate>TeamPreview.lblTitle</h2>
   </div>
@@ -20,7 +17,10 @@
 
       <div class="detail-manager">
 
-        <h4>{{$appCtrl.user.TeamName}}</h4>
+        <h4>
+          <button class="btn-link icon-pencil-square" ng-click="$ctrl.changeTeamName();" title="{{'TeamPreview.editTeamDetailsTooltip'|translate}}"></button>
+          {{$appCtrl.user.TeamName}}
+        </h4>
 
         <div class="shield">
           <img ng-src="{{$appCtrl.teamPreview.Badge}}" class="pull-left">
@@ -30,14 +30,14 @@
         <div class="manager">
           <img ng-src="{{$appCtrl.userData.picture}}" class="pull-left" style="margin-right: 5px;" height="30">
           <h5>{{$appCtrl.userData.userName}}</h5>
-          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10">
+          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.user.IdCountry}}.jpg" height="10" title="{{$appCtrl.user.IdCountry!=0 && ('Countries.'+$appCtrl.user.IdCountry|translate)||''}}">
         </div>
 
       </div>
 
       <h4 translate>TeamPreview.lblTeamDetails</h4>
       <div class="detail-team">
-        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10">
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$appCtrl.teamPreview.IdCountry}}.jpg" height="10" title="{{'Countries.'+$appCtrl.teamPreview.IdCountry|translate}}">
         <p>{{'TeamPreview.lblFoundation;d' + $appCtrl.teamPreview.FoundationDate|translate}}</p>
       </div>
 
@@ -88,15 +88,15 @@
       </div>
 
       <div class="pull-left checkbox">
-        <label>
-          <input type="checkbox" name="" checked>
+        <label ng-init="historyShare=true">
+          <input type="checkbox" ng-model="historyShare">
           <span translate>Match.lblShare</span>
         </label>
       </div>
 
       <h4 class="text-right">
         {{'TeamPreview.lblPressNote'|translate}}
-        <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History);"></button>
+        <button class="btn-link icon-pencil-square" ng-click="$ctrl.updateHistory($appCtrl.teamPreview.History, historyShare);"></button>
       </h4>
       <textarea width="100%" class="main-note" ng-model="$appCtrl.teamPreview.History"></textarea>
 

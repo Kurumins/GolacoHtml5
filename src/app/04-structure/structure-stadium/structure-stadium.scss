@@ -34,6 +34,7 @@
       // width: 50%;
       float: left;
       clear: left;
+      margin-bottom: 10px;
 
       i {
         border-right: 1px solid;
@@ -48,7 +49,7 @@
 
     .stadium-levels {
       border-left: 1px solid;
-      margin: 8px 0;
+      margin: 12px 0;
     }
 
     .stadium-level {
@@ -62,7 +63,16 @@
       > span {
         display: block;
         height: 4px;
-        background: green;
+      }
+
+      &.stadium-level-1 > span {
+        background-color: #ff0000;
+      }
+      &.stadium-level-2 > span {
+        background-color: #ff9900;
+      }
+      &.stadium-level-3 > span {
+        background-color: #009900;
       }
     }
   }

@@ -1,6 +1,6 @@
 <h2 translate>SponsorDetail.lblTitle</h2>
 
-<div class="row sponsor-detail">
+<div class="row sponsor-detail" ng-if="$ctrl.sponsorTeam">
   <div class="col-xs-2">
     <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorTeam.Name}}/proposal.png" class="sponsor-img">
   </div>
@@ -16,6 +16,11 @@
     <div class="sponsor-status -hired"><span translate>SponsorDetail.lblSpOfferHired</span></div>
   </div>
 </div>
+<div ng-if="!$ctrl.sponsorTeam">
+  <h4 translate>SponsorDetail.lblNoSPTitle</h4>
+  <h5 translate>SponsorDetail.lblNoSPDescription</h5>
+</div>
+
 <div class="sponsor-list">
   <slick
       infinite="false"
@@ -25,8 +30,8 @@
       <div ng-repeat="sponsor in $ctrl.sponsors" class="sponsor-detail">
         <header class="clearfix">
           <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{sponsor.Name}}/proposal.png" class="sponsor-img pull-left">
-          <h4 class="sponsor-name pull-left">{{sponsor.Name}}</h4>
-          <div class="sponsor-status pull-left" ng-class="{
+          <h4 class="sponsor-name">{{sponsor.Name}}</h4>
+          <div class="sponsor-status" ng-class="{
             '-unhirable': $ctrl.sponsorTeam,
             '-hire': !$ctrl.sponsorTeam,
           }" ng-click="!$ctrl.sponsorTeam && $ctrl.hire(sponsor)">
@@ -34,8 +39,8 @@
             <span ng-if="!$ctrl.sponsorTeam" translate>SponsorDetail.lblSpOfferHire</span>
           </div>
         </header>
-        <p><i class="icon-money"></i> {{sponsor.Income | currency}} Common.weekly</p>
-        <p><i class="icon-credit-card"></i> {{sponsor.Credits}} Common.perLeagueVictory</p>
+        <p><i class="icon-money"></i> {{sponsor.Income | currency}} <span translate>Common.weekly</span></p>
+        <p><i class="icon-credit-card"></i> {{sponsor.Credits}} <span translate>Common.perLeagueVictory</span></p>
         <p><i class="icon-clock "></i> {{sponsor.Duration}} <span translate>Common.days</span></p>
         <h5 translate>SponsorDetail.lblSpGoals</h5>
         <p ng-repeat="goal in sponsor.Goals" class="sponsor-bonus">{{'SponsorDetail.'+goal.Description|translate}}</p>
