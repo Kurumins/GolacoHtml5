@@ -15,7 +15,8 @@ angular
     'pascalprecht.translate',
     'xml',
     'tmh.dynamicLocale',
-    'ezfb'
+    'ezfb',
+    'ngStorage'
   ])
   .config(function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);

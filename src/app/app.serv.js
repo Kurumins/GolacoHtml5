@@ -1,8 +1,10 @@
 'use strict';
 angular.module('app')
-.service('AppService', function (PostToJs, $http, $window) {
+.service('AppService', function (PostToJs, $http, $window, $sessionStorage) {
 
   var vm = this;
+
+  vm.userData = $sessionStorage.userData;
 
   // this.auth = function () {
   //   return $http.get('/data/Container/Auth', {
@@ -11,7 +13,7 @@ angular.module('app')
   //   });
   // };
 
-  vm.getUserData = function (accessToken) {
+  vm.getFbDetails = function (accessToken) {
     // return PostToJs('userData')
     //   .then(function (result) {
     //     return vm.userData = result;
@@ -32,7 +34,7 @@ angular.module('app')
         // $window.teamEvents = result.teamEvents,
         // $window.token = null;//result.token;
 
-        var userData = result.data.UserData
+        // var userData = result.data.UserData
 
         // $window.ConsecutiveDays = userData.ConsecutiveDays;
         // $window.email = userData.Email;
@@ -49,21 +51,31 @@ angular.module('app')
         // $window.userName = userData.Name;
 
         // debugger;
-        /*return */vm.userData = result.data.UserData;
-        return $http.post($window.baseUrl + 'Container/Auth');
+        return vm.userData = $sessionStorage.userData = result.data.UserData;
+        // return $http.post($window.baseUrl + 'Container/Auth');
       })
-      .then(function (result) {
+      /*.then(function (result) {
         return vm.userData;
         // debugger;
+      })*/;
+  };
+
+  vm.login = function (email, password) {
+    return $http.post($window.baseUrl + 'Account/SignIn', {
+        email: email,
+        password: password
+      })
+      .then(function (result) {
+        return vm.userData = $sessionStorage = result.data.Data;
       });
   };
 
-  vm.userVerify = function (userData) {
+  vm.userVerify = function () {
     // debugger;
     return PostToJs('User/Verify', {
-      idCity: userData.IdCity,
-      idCountry: userData.IdCountry,
-      idState: userData.IdState
+      idCity: vm.userData.IdCity,
+      idCountry: vm.userData.IdCountry,
+      idState: vm.userData.IdState
     })
       .then(function (result) {
         return vm.user = result;

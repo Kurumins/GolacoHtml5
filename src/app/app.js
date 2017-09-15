@@ -1,12 +1,12 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, userData, teamPreview, teamMatchesAlert, countryList, MatchAlert, $translate, tmhDynamicLocale) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, teamPreview, teamMatchesAlert, countryList, MatchAlert, $translate, tmhDynamicLocale, AppService) {
 
     var vm = this;
 
     // debugger;
 
-    vm.userData = userData;
+    vm.userData = AppService.userData;
     $rootScope.user = vm.user = user;
     $rootScope.teamPreview = vm.teamPreview = teamPreview;
     vm.countryList = countryList.data;

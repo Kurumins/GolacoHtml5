@@ -22,7 +22,8 @@
     "angular-xml": "^2.2.2",
     "angular-dynamic-locale": "^0.1.32",
     "angular-i18n": "^1.6.4",
-    "angular-easyfb": "^1.5.1"
+    "angular-easyfb": "^1.5.1",
+    "ngstorage": "^0.3.11"
   },
   "overrides": {
     "bootstrap": {
