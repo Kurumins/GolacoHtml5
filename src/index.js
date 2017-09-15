@@ -165,7 +165,7 @@ angular
       var deferred = $q.defer();
 
       vm.callbacks[callback || action] = function (result) {
-        result = JSON.parse( JSON.stringify(result).split('http://golaco.azurewebsites.net/Container/Index').join('https://www.golacogame.com.br/') );
+        result = JSON.parse( JSON.stringify(result).split('https://beta.golacogame.com.br/Container/Index').join('https://www.golacogame.com.br/') );
 
         if ( result && result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);

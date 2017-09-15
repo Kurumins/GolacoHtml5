@@ -61,7 +61,7 @@ angular.module('app')
   };
 
   vm.login = function (email, password) {
-    return $http.post($window.baseUrl + 'Account/SignIn', {
+    return $http.post($window.baseUrl + 'Account/Login', {
         email: email,
         password: password
       })
