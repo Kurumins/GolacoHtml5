@@ -30,7 +30,8 @@ function build() {
 
   return gulp.src(conf.path.tmp('/index.html'))
     .pipe(inject(partialsInjectFile, partialsInjectOptions))
-    .pipe(useref({}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
+    // .pipe(useref({}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
+    .pipe(useref())
     .pipe(jsFilter)
     .pipe(ngAnnotate())
     .pipe(uglify({preserveComments: uglifySaveLicense})).on('error', conf.errorHandler('Uglify'))
@@ -41,7 +42,7 @@ function build() {
     .pipe(rev())
     .pipe(cssFilter.restore)
     .pipe(revReplace())
-    .pipe(sourcemaps.write('maps'))
+    // .pipe(sourcemaps.write('maps'))
     .pipe(htmlFilter)
     .pipe(htmlmin())
     .pipe(htmlFilter.restore)
