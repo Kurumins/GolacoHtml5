@@ -137,8 +137,8 @@ angular
     $window._gaq = [];
     $window.fbq = null;
 
-    $window.baseUrl = '/golaco/';
-    // $window.baseUrl = 'http://golaco.azurewebsites.net/';
+    // $window.baseUrl = '/golaco/';
+    $window.baseUrl = 'http://beta2.golacogame.com.br/';
     // $window.baseUrl = '/data/';
 
     $.ajaxSetup({
