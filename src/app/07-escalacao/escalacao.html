@@ -1,9 +1,10 @@
-<div class="escalacao">
-  <h2>Escalação</h2>
+<div class="escalacao clearfix">
+  <h2 translate>FormationEditor.lblTitle</h2>
 
   <div class="stage">
 
     <div class="reservas">
+      <h5 translate>FormationEditor.lblBench</h5>
       <span class="slot -position-{{c}}" ng-repeat="c in [5, 4, 3, 2, 1]"
           x-lvl-drop-target="true" x-on-drop="$ctrl.dropped(dragEl, dropEl)" data-slot="{{c+29}}">
           <player-formation player="$ctrl.slots[c+29]" ng-if="$ctrl.slots[c+29]"></player-formation>
@@ -26,65 +27,66 @@
           <player-formation player="$ctrl.teamPlayers[r*10+c]" ng-if="$ctrl.teamPlayers[r*10+c].IdTactic==0" popover-placement="left|top"></player-formation>
         </span>
       </div>
+      <h6 class="text-center" translate>FormationEditor.lblInstructions</h6>
     </div>
 
   </div>
 
   <div class="tactics">
-    <h2>Táticas e definições</h2>
+    <h4 translate>FormationEditor.lblTactics</h4>
 
     <div class="tactics-field">
-      <label>Tipo de marcação</label>
+      <label translate>FormationEditor.lblMarkingType</label>
       <select ng-model="$ctrl.cbMarkingType">
-        <option ng-value="0">_normal</option>
-        <option ng-value="1">_heavy</option>
-        <option ng-value="2">_light</option>
+        <option ng-value="0" translate>Common.normal</option>
+        <option ng-value="1" translate>Common.heavy</option>
+        <option ng-value="2" translate>Common.light</option>
       </select>
     </div>
 
     <div class="tactics-field">
-      <label>Linha de impedimento</label>
+      <label translate>FormationEditor.lblOffsideLine</label>
       <select ng-model="$ctrl.cbOffsideLine">
-        <option ng-value="0">_no</option>
-        <option ng-value="1">_yes</option>
+        <option ng-value="0" translate>Common.no</option>
+        <option ng-value="1" translate>Common.yes</option>
       </select>
     </div>
 
     <div class="tactics-field">
-      <label>Tipo de passe</label>
+      <label translate>FormationEditor.lblPassingType</label>
       <select ng-model="$ctrl.cbPassingType">
-        <option ng-value="0">_mixed</option>
-        <option ng-value="1">_long</option>
-        <option ng-value="2">_short</option>
+        <option ng-value="0" translate>Common.mixed</option>
+        <option ng-value="1" translate>Common.long</option>
+        <option ng-value="2" translate>Common.short</option>
       </select>
     </div>
 
     <div class="tactics-field">
-      <label>Postura em campo</label>
+      <label translate>FormationEditor.lblFieldPosture</label>
       <select ng-model="$ctrl.cbFieldPosture">
-        <option ng-value="0">_normal</option>
-        <option ng-value="1">_defensive</option>
-        <option ng-value="2">_ofensive</option>
+        <option ng-value="0" translate>Common.normal</option>
+        <option ng-value="1" translate>Common.defensive</option>
+        <option ng-value="2" translate>Common.offensive</option>
       </select>
     </div>
 
     <div class="tactics-field">
-      <label>Jogar pelas laterais</label>
+      <label translate>FormationEditor.lblWingPlay</label>
       <select ng-model="$ctrl.cbWingPlay">
-        <option ng-value="0">_no</option>
-        <option ng-value="1">_yes</option>
+        <option ng-value="0" translate>Common.no</option>
+        <option ng-value="1" translate>Common.yes</option>
       </select>
     </div>
 
     <div class="tactics-field">
-      <label>Marcar por pressão</label>
+      <label translate>FormationEditor.lblPressure</label>
       <select ng-model="$ctrl.cbPressure">
-        <option ng-value="0">_no</option>
-        <option ng-value="1">_yes</option>
+        <option ng-value="0" translate>Common.no</option>
+        <option ng-value="1" translate>Common.yes</option>
       </select>
     </div>
 
-    <button ng-click="$ctrl.saveFormation()">Salvar escalação</button>
+    <button class="btn btn-primary btn-save" ng-click="$ctrl.saveFormation()" translate>FormationEditor.saveFormation</button>
 
   </div>
 

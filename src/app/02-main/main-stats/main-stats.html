@@ -1,27 +1,29 @@
-<h2>Estatísticas</h2>
+<h2 translate>MyStatisticsDetail.lblTitle</h2>
 
-<img ng-src="{{$windowUser.picture}}" height="56" style="float: left;">
-<div class="stats-badge">
-  <img ng-src="{{$ctrl.teamStats.Badge}}">
-  <span class="badge-serie">{{$appCtrl.user.Serie}}</span>
+<div class="clearfix">
+  <div class="stats-badge">
+    <img ng-src="{{$appCtrl.userData.picture}}" class-="pull-left" height="56">
+    <img ng-src="{{$ctrl.teamStats.Badge}}" class-="pull-left">
+    <h3 class="badge-serie">{{$appCtrl.user.Serie}}</h3>
+  </div>
+  <div class="team-info">
+    <h5>{{$appCtrl.userData.userName}}</h5>
+    <h3>{{$appCtrl.user.TeamName}}</h3>
+  </div>
 </div>
-<h5>{{$windowUser.userName}}</h5>
-<h3>{{$appCtrl.user.TeamName}}</h3>
-
-<div style="clear: both;"></div>
 
 <div class="stats-menu">
   <label>
     <input type="radio" ng-model="current" value="main-stats-general.html" ng-checked="true">
-    Geral
+    <span class="" translate>MyStatisticsDetail.OverviewScr</span>
   </label>
   <label>
     <input type="radio" ng-model="current" value="main-stats-stats.html">
-    Estatítsticas
+    <span class="" translate>MyStatisticsDetail.StatisticsScr</span>
   </label>
-  <label title="Histórico de Ligas">
+  <label>
     <input type="radio" ng-model="current" value="main-stats-leagues-history.html">
-    Histórico
+    <span class="" translate>MyStatisticsDetail.HistoryScr</span>
   </label>
 </div>
 

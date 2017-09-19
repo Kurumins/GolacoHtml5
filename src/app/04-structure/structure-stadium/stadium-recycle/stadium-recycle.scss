@@ -84,11 +84,15 @@
     width: 50%;
     float: left;
     clear: both;
+    font-size: 14px;
+    font-weight: 500;
   }
   dd {
     width: 50%;
     float: left;
     text-align: right;
+    font-size: 14px;
+    white-space: nowrap;
   }
   .doble-line {
     line-height: 1.42857143 * 2;

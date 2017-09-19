@@ -3,14 +3,14 @@
     <img ng-src="{{item.Picture}}">
   </div>
   <div ng-repeat="item in $ctrl.teamPlayers.Items" class="morale-item">
-    <p>{{item.Name}}</p>
+    <p>{{'Items.'+item.Name|translate}}</p>
   </div>
   <div ng-repeat="item in $ctrl.teamPlayers.Items" class="morale-item">
     <hr>
-    <p><i class="icon-up-thin"></i>+{{item.Effect}}</p>
+    <p><i class="icon-up-thin"></i> +{{item.Effect}}</p>
     <hr>
     <p><i class="icon-credit-card"></i> {{item.Cost}}</p>
     <hr>
-    <button class="icon-up-thin" ng-click="$moraleCtrl.moraleBoost(item.Id)"></button>
+    <button class="btn btn-icon btn-primary" ng-click="$moraleCtrl.moraleBoost(item.Id)"><i class="icon-up-thin"></i></button>
   </div>
 </div>

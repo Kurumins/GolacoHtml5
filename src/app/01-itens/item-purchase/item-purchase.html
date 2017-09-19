@@ -1,37 +1,40 @@
-<h2>Comprar item</h2>
-<h5>Escolha quantos itens deseja comprar:</h5>
+<h2 translate>ItemsScreen.mdlPurchaseTitle</h2>
+<h5 translate>ItemsScreen.mdlPurchaseDescription</h5>
 
-<div class="item-details">
+<div class="item-details clearfix">
   <img ng-src="{{$ctrl.item.Picture}}" class="item-picture">
-  <h4 class="item-name">{{$ctrl.item.Name.replace('Label_','')}}</h4>
+  <h4 class="item-name">
+    {{'Items.'+$ctrl.item.Name|translate}}
+    <span ng-if="$ctrl.item.Quantity">(x{{$ctrl.item.Quantity}})</span>
+  </h4>
   <div class="item-effects">
-    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect">
-      <label>{{effect.Description.replace('Effect_TeamPlayerSkill_','') | limitTo:3}}</label>
+    <div ng-repeat="effect in $ctrl.item.Effects" class="item-effect" title="{{'Skills.skill_'+effect.IdTeamPlayerSkill|translate}}">
+      <label>{{'Skills.skill_'+effect.IdTeamPlayerSkill+'_acr'|translate}}</label>
       +{{effect.Effect}}
     </div>
     <div class="item-effect">
       <label>--</label>
       --
     </div>
-    <div class="item-effect">
+    <div class="item-effect -duration" title="{{$ctrl.item.Duration || $ctrl.item.Durability}} {{'ItemsScreen.'+($ctrl.item.Durability?'trains':'games')|translate}}">
       <label><i class="icon icon-clock"></i></label>
-      {{$ctrl.item.Duration}}
+      {{$ctrl.item.Duration || $ctrl.item.Durability}}
     </div>
   </div>
 </div>
 
-<div>
+<div class="item-qty">
   <label ng-init="$ctrl.qty=1">
-    Quantidade
-    <input type="number" min="1" max="999" ng-model="$ctrl.qty" >
+    <span translate>ItemsScreen.lblQuantity</span>
+    <input type="number" min="1" max="999" ng-model="$ctrl.qty" class="text-right" >
   </label>
   <span ng-if="$ctrl.item.MoneyPrice"><i class="icon icon-money"></i> {{($ctrl.item.MoneyPrice)*$ctrl.qty | currency}}</span>
   <span ng-if="$ctrl.item.CreditPrice"><i class="icon icon-credit-card"></i> {{($ctrl.item.SalePrice || $ctrl.item.CreditPrice)*$ctrl.qty}}</span>
 </div>
-<br>
-<div class="ngdialog-buttons">
-  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="$ctrl.confirm($ctrl.qty)">Sim</button>
-  <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Não</button>
+
+<div class="ngdialog-buttons text-right">
+  <button type="button" class="btn btn-icon" ng-click="closeThisDialog()"><i class="icon-times"></i></button>
+  <button type="button" class="btn btn-icon btn-primary" ng-click="$ctrl.confirm($ctrl.qty)"><i class="icon-check"></i></button>
 </div>
 
 <!-- <item value="$ctrl.item"></item> -->

@@ -14,7 +14,8 @@ angular.module('app')
       scope: {
         player: '=trainingLimit'
       },
-      template: '<div title="Tempo restante: {{::time}}" ng-if="trainingStatus"><span style="width: {{::trainingStatus}}%"></span></div>',
+      replace: true,
+      template: '<td title="{{\'PlayerTraining.lblTrainTimeLeft\'|translate}}: {{::time}}"><div ng-if="trainingStatus"><span style="width: {{::trainingStatus}}%"></span></div></td>',
       link: function (scope/*, element, attrs*/) {
         var now = +new Date;
 
@@ -66,7 +67,7 @@ function trainingController ($scope, $rootScope, teamPlayerList, trainingCenter,
   };
 
   vm.train = function () {
-    ConfirmPopup.open('Treinamento', 'Deseja colocar o jogador para treinar? Esse plano de treino durará @1 horas e durante esse período o jogador não poderá treinar novamente.')
+    ConfirmPopup.open('PlayerTraining.lblTitle', 'PlayerTraining.confirmApplyMessage;n24')
       .then(function () {
 
         var playerIds = [];
@@ -118,7 +119,7 @@ function trainingController ($scope, $rootScope, teamPlayerList, trainingCenter,
   };
 
   vm.refreshTraining = function (player) {
-    ConfirmPopup.open('Adiantar treinamento', 'Por @1 créditos você poderá antecipar o treino de seu jogador, liberando-o para um novo treinamento imediatamente. Confirma?')
+    ConfirmPopup.open('PlayerTraining.lblRushTitle', 'PlayerTraining.lblConfirmTrainingRush;n'+vm.trainingCenter.RushPrice)
       .then(function () {
         TrainingService.refreshTraining(player)
           .then(function () {

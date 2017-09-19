@@ -1,4 +1,21 @@
-player-formation {
+.player-formation {
+  &.-position {
+    &-1 h5 {
+      background-color: #ff9c00;
+    }
+    &-2 h5 {
+      background-color: #00a7ff;
+    }
+    &-3 h5 {
+      background-color: #7f7f7f;
+    }
+    &-4 h5 {
+      background-color: #006600;
+    }
+    &-5 h5 {
+      background-color: #db2d2d;
+    }
+  }
 }
 
 .player-formation-popup-theme {
@@ -16,6 +33,12 @@ player-formation {
   }
   &.ns-popover-left-placement {
     margin-left: -5px;
+  }
+
+  h5 {
+    margin: -10px -10px 5px;
+    padding: 5px 10px;
+    color: #fff;
   }
 
   dt {

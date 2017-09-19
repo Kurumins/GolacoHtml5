@@ -1,21 +1,26 @@
-<h2>SponsorDetail.lblTitle</h2>
+<h2 translate>SponsorDetail.lblTitle</h2>
 
-<div class="row sponsor-detail">
+<div class="row sponsor-detail" ng-if="$ctrl.sponsorTeam">
   <div class="col-xs-2">
     <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.sponsorTeam.Name}}/proposal.png" class="sponsor-img">
   </div>
-  <div class="col-xs-5">
+  <div class="col-xs-6">
     <h4 class="sponsor-name">{{$ctrl.sponsorTeam.Name}}</h4>
-    <p><i class="icon-money"></i> {{$ctrl.sponsorTeam.Income | currency}} Common.weekly</p>
-    <p><i class="icon-credit-card"></i> {{$ctrl.sponsorTeam.Credits}} Common.perLeagueVictory</p>
-    <p><i class="icon-clock "></i> {{$ctrl.sponsorTeam.Duration}} Common.days</p>
-    <h5>Bônus</h5>
-    <p ng-repeat="goal in $ctrl.sponsorTeam.Goals" class="sponsor-bonus">SponsorDetail.{{goal.Description}}</p>
+    <p><i class="icon-money"></i> {{$ctrl.sponsorTeam.Income | currency}} {{'Common.weekly'|translate}}</p>
+    <p><i class="icon-credit-card"></i> {{$ctrl.sponsorTeam.Credits}} {{'Common.perLeagueVictory'|translate}}</p>
+    <p><i class="icon-clock "></i> {{$ctrl.sponsorTeam.Duration}} {{'Common.days'|translate}}</p>
+    <h5 translate>SponsorDetail.lblSpGoals</h5>
+    <p ng-repeat="goal in $ctrl.sponsorTeam.Goals" class="sponsor-bonus">{{'SponsorDetail.'+goal.Description|translate}}</p>
   </div>
   <div class="col-xs-4">
-    <div class="sponsor-status -hired"><span><!-- SponsorDetail. -->lblSpOfferHired</span></div>
+    <div class="sponsor-status -hired"><span translate>SponsorDetail.lblSpOfferHired</span></div>
   </div>
 </div>
+<div ng-if="!$ctrl.sponsorTeam">
+  <h4 translate>SponsorDetail.lblNoSPTitle</h4>
+  <h5 translate>SponsorDetail.lblNoSPDescription</h5>
+</div>
+
 <div class="sponsor-list">
   <slick
       infinite="false"
@@ -25,24 +30,24 @@
       <div ng-repeat="sponsor in $ctrl.sponsors" class="sponsor-detail">
         <header class="clearfix">
           <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{sponsor.Name}}/proposal.png" class="sponsor-img pull-left">
-          <h4 class="sponsor-name pull-left">{{sponsor.Name}}</h4>
-          <div class="sponsor-status pull-left" ng-class="{
+          <h4 class="sponsor-name">{{sponsor.Name}}</h4>
+          <div class="sponsor-status" ng-class="{
             '-unhirable': $ctrl.sponsorTeam,
             '-hire': !$ctrl.sponsorTeam,
           }" ng-click="!$ctrl.sponsorTeam && $ctrl.hire(sponsor)">
-            <span ng-if="$ctrl.sponsorTeam"><!-- SponsorDetail. -->lblSpOfferUnhirable</span>
-            <span ng-if="!$ctrl.sponsorTeam"><!-- SponsorDetail. -->lblSpOfferHire</span>
+            <span ng-if="$ctrl.sponsorTeam" translate>SponsorDetail.lblSpOfferUnhirable</span>
+            <span ng-if="!$ctrl.sponsorTeam" translate>SponsorDetail.lblSpOfferHire</span>
           </div>
         </header>
-        <p><i class="icon-money"></i> {{sponsor.Income | currency}} Common.weekly</p>
-        <p><i class="icon-credit-card"></i> {{sponsor.Credits}} Common.perLeagueVictory</p>
-        <p><i class="icon-clock "></i> {{sponsor.Duration}} Common.days</p>
-        <h5>Bônus</h5>
-        <p ng-repeat="goal in sponsor.Goals" class="sponsor-bonus">SponsorDetail.{{goal.Description}}</p>
+        <p><i class="icon-money"></i> {{sponsor.Income | currency}} <span translate>Common.weekly</span></p>
+        <p><i class="icon-credit-card"></i> {{sponsor.Credits}} <span translate>Common.perLeagueVictory</span></p>
+        <p><i class="icon-clock "></i> {{sponsor.Duration}} <span translate>Common.days</span></p>
+        <h5 translate>SponsorDetail.lblSpGoals</h5>
+        <p ng-repeat="goal in sponsor.Goals" class="sponsor-bonus">{{'SponsorDetail.'+goal.Description|translate}}</p>
         <div class="sponsor-blocked" ng-if="$ctrl.myLeague > sponsor.League">
           <span>
             <p class="sponsor-league">{{sponsor.League}}</p>
-            SponsorDetail.lblSponsorBlocked
+            <span>{{('SponsorDetail.lblSponsorBlocked'|translate).replace("%1", sponsor.League)}}</span>
           </span>
         </div>
       </div>

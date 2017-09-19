@@ -75,16 +75,17 @@
       i {
         float: left;
         margin-right: 5px;
-        &:before{
-          color: #ff7900;
+        &,
+        &:before {
+          line-height: 22px;
         }
       }
 
       p {
-        font-size: 12px;
+        font-size: 11px;
         margin: 0;
         line-height: 1;
-        font-weight: bold;
+        font-weight: 500;
       }
     }
 

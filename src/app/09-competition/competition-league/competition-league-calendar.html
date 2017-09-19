@@ -1,12 +1,12 @@
-<div class="pull-left slick-nav">
+<span class="clearfix"></span>
+
+<!-- <div class="pull-right slick-nav">
   <button type="button" class="slick-prev">«</button>
   {{$ctrl.currentSlide}} / {{$ctrl.leagueCalendar.Calendar.length}}
   <button type="button" class="slick-next">»</button>
-</div>
+</div> -->
 
-<span class="clearfix"></span>
-
-<h3>Rodadas</h3>
+<h4 translate>LeagueDetailView.btRounds</h4>
 
 <slick
   infinite=false
@@ -16,13 +16,14 @@
   next-arrow=".slick-next"
   settings="$ctrl.calendarSlider">
   <div ng-repeat="matches in $ctrl.leagueCalendar.Calendar" class="match-table">
-    <div class="table-title">
-      <h5>Rodada {{$index+1}}</h5>
+    <div class="table-title text-center">
+      <h5><span translate>Common.Round</span> {{$index+1}}</h5>
       <p>{{matches.MatchDate | date:'short'}}</p>
     </div>
     <div class="row">
       <div class="col-xs-6" ng-repeat="matchesChunk in matches.Matches | chunkBy: 4">
-        <table width="100%" >
+        <match-element match="matche" ng-repeat="matche in matchesChunk" />
+        <!-- <table width="100%" >
           <tr ng-repeat="matche in matchesChunk">
             <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{matche.HomeTeam.Flag}}.jpg" class="team-flag"></td>
             <td align="center"><img ng-src="{{matche.HomeTeam.Badge}}" class="team-badge" width="24" height="24"></td>
@@ -34,7 +35,7 @@
             <td align="center"><img ng-src="{{matche.VisitorTeam.Badge}}" class="team-badge" width="24" height="24"></td>
             <td align="center"><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{matche.VisitorTeam.Flag}}.jpg" class="team-flag"></td>
           </tr>
-        </table>
+        </table> -->
       </div>
     </div>
   </div>

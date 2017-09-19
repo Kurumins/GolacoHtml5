@@ -1,21 +1,21 @@
 <div class="itens">
   <div class="itens-header">
     <div class="pull-right submenu">
-      <button class="btn btn-xs btn-primary" ui-sref="app.itens.itens({inventario: null})" ui-sref-active="active" ><i class="icon-star-circled"></i></button>
-      <button class="btn btn-xs btn-primary" ui-sref="app.itens.itens({inventario: 'inventario'})" ui-sref-active="active" ><i class="icon-clipboard-pencil"></i></button>
+      <button class="btn btn-xs btn-primary" ui-sref="app.itens.itens({inventario: null})" ui-sref-active="active" title="{{'ItemsScreen.lblTitle'|translate}}"><i class="icon-star-circled"></i></button>
+      <button class="btn btn-xs btn-primary" ui-sref="app.itens.itens({inventario: 'inventario'})" ui-sref-active="active" title="{{'ItemsScreen.btnStore'|translate}}"><i class="icon-clipboard-pencil"></i></button>
     </div>
-    <h2>ITENS</h2>
+    <h2 translate>ItemsScreen.lblTitle</h2>
   </div>
 
   <div class="itens-menu">
-    <a class="btn btn-link" ui-sref="app.itens.destaques" ui-sref-active="active" >Destaques</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 13, centro: null})" ui-sref-active="active" >Camisas</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 14, centro: null})" ui-sref-active="active" >Bermudas</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 15, centro: null})" ui-sref-active="active" >Chuteiras</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'D', centro: 'centro'})" ui-sref-active="active" >Centro D</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'C', centro: 'centro'})" ui-sref-active="active" >Centro C</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'B', centro: 'centro'})" ui-sref-active="active" >Centro B</a>
-    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'A', centro: 'centro'})" ui-sref-active="active" >Centro A</a>
+    <a class="btn btn-link" ui-sref="app.itens.destaques" ui-sref-active="active" translate>ItemsScreen.btnHighlights</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 13, centro: null})" ui-sref-active="active" translate>ItemsScreen.btnShirt</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 14, centro: null})" ui-sref-active="active" translate>ItemsScreen.btnShorts</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 15, centro: null})" ui-sref-active="active" translate>ItemsScreen.btnCleats</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'D', centro: 'centro'})" ui-sref-active="active" title="{{'ItemsScreen.btnTCItems'|translate}} - {{'Common.Series_D'|translate}}">D</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'C', centro: 'centro'})" ui-sref-active="active" title="{{'ItemsScreen.btnTCItems'|translate}} - {{'Common.Series_C'|translate}}">C</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'B', centro: 'centro'})" ui-sref-active="active" title="{{'ItemsScreen.btnTCItems'|translate}} - {{'Common.Series_B'|translate}}">B</a>
+    <a class="btn btn-link" ui-sref="app.itens.itens({category: 'A', centro: 'centro'})" ui-sref-active="active" title="{{'ItemsScreen.btnTCItems'|translate}} - {{'Common.Series_A'|translate}}">A</a>
   </div>
   <div ui-view class="clearfix"></div>
 </div>

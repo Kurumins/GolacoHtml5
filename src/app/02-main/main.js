@@ -19,7 +19,7 @@ function mainRoutesConfig ($stateProvider) {
     });
 }
 
-function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService, AlertPopup) {
+function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppService, AlertPopup, BugReport) {
   var vm = this;
 
   AppService.missionList().noLoading()
@@ -61,6 +61,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
+  // vm.teamTrophyRoom();
 
   vm.stats = function () {
     ngDialog.open({
@@ -78,6 +79,7 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       },
     });
   };
+  // vm.stats();
 
   vm.dailyBonus = function () {
     ngDialog.open({
@@ -87,17 +89,40 @@ function mainController ($scope, /*missionList,*/ ngDialog, MainService, AppServ
       scope: $scope
     });
   };
+  // vm.dailyBonus();
 
-  vm.updateHistory = function (history) {
+  vm.reportBug = function () {
+    BugReport.open();
+  };
+  // vm.dailyBonus();
+
+  vm.updateHistory = function (history, historyShare) {
     MainService.updateHistory(history)
       .then(function () {
-        AlertPopup.open('Atenção', 'Nota à imprensa atualizada com sucesso.');
+        AlertPopup.open('Error.errorTitle', 'TeamPreview.pressReleaseOk');
+        if ( historyShare ) {
+          MainService.historyShare(history);
+        }
       });
   };
 
   vm.deleteWarning = function (warning) {
     warning.deleted = true;
     MainService.deleteWarning(warning.Id).noLoading();
+  };
+
+  vm.changeTeamName = function () {
+    ngDialog.open({
+      template: 'main-config-chage-name.html',
+      // appendClassName: 'ngdialog-main-config',
+      controller: 'MainConfigController as $ctrl',
+      scope: $scope,
+      resolve: {
+        settings: function () {
+          return MainService.teamSettings();
+        }
+      },
+    });
   };
 
 }

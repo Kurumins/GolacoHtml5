@@ -1,16 +1,23 @@
-<slick infinite=false slides-to-show=2 slides-to-scroll=2 rows="3" arrows="false"
-  settings="$ctrl.slickConfig">
-  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="trophy">
+<h4 translate>MyStatisticsDetail.HistoryScr</h4>
+<slick
+  infinite="false"
+  dots="true"
+  slides-to-show="2" slides-to-scroll="2" rows="3"
+  prev-arrow=".leagues-history-nav .slick-prev"
+  next-arrow=".leagues-history-nav .slick-next"
+  settings="{appendDots:'.leagues-history-nav .dots', dotsClass: 'list-inline'}" class="leagues-history" >
+  <div ng-repeat="league in $ctrl.teamStats.LeaguesHistory" class="league-history">
     <div class="content">
-      Temporada {{$ctrl.teamStats.LeaguesHistory.length - $index}}
-      <button>{{['','A','B','C','D'][league.IdLeague]}}</button>
-      {{league.Position}}º lugar
+      <span class="season" translate>Common.Season</span>
+      <span class="season-number text-primary">{{$ctrl.teamStats.LeaguesHistory.length - $index}}</span>
+      <span class="league icon-league-{{['','a','b','c','d'][league.IdLeague]}}" ></span>
+      <span class="place"><span class="text-primary">{{'Ordinals.'+league.Position|translate}}</span> {{'Common.Place'|translate|lowercase}}</span>
     </div>
   </div>
 </slick>
 
-<div class="slide-control">
-  <button ng-click="$ctrl.slickConfig.method.slickPrev()">«</button>
-  {{$ctrl.currentSlide}} / {{($ctrl.slideCount+.99)/2 | number:0}}
-  <button ng-click="$ctrl.slickConfig.method.slickNext()">»</button>
+<div class="slick-nav leagues-history-nav" ng-if-="$ctrl.teamStats.LeaguesHistory.length > 6">
+  <button type="button" class="btn btn-link slick-prev">«</button>
+  <span class="dots"></span>
+  <button type="button" class="btn btn-link slick-next">»</button>
 </div>

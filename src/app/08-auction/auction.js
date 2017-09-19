@@ -2,7 +2,7 @@
 angular.module('app')
   .config(auctionRoutesConfig);
 
-function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSearch) {
+function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSearch, AuctionService, PlayerAuction) {
 
   var vm = this;
 
@@ -10,9 +10,23 @@ function auctionController ($scope, allBids, myPlayersSold, $interval, AuctionSe
   vm.allBids = allBids.Bids;
 
   vm.auctionSearch = function () {
-    AuctionSearch.open($scope);
+    AuctionSearch.open($scope)
+      .then(updateBid, updateBid);
   };
   // vm.auctionSearch();
+
+  vm.playerAuction = function (player) {
+    PlayerAuction.open(player)
+      .then(updateBid, updateBid);
+  };
+  // vm.playerAuction(allBids.Bids[0]);
+
+  function updateBid() {
+    AuctionService.getAllBids()
+      .then(function (allBids) {
+        vm.allBids = allBids.Bids;
+      });
+  }
 
 }
 

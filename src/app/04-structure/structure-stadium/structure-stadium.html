@@ -1,5 +1,8 @@
-<h2>Estádio</h2>
-<button class="pull-right btn btn-sm" ng-click="$ctrl.stadiumRecycle()">Reformar</button>
+<h2 translate>StadiumPreview.lblTitle</h2>
+<!-- <button class="pull-right btn btn-sm" ng-click="$ctrl.stadiumRecycle()" translate>StadiumPreview.lblReform</button> -->
+<div class="submenu pull-right">
+  <button class="btn btn-xs btn-primary" ng-click="$ctrl.stadiumRecycle()" title="{{'StadiumPreview.lblReform'|translate}}"><i class="icon-wrench"></i></button>
+</div>
 <div class="structure-stadium clearfix">
   <h4><button class="btn-link icon-pencil-square" ng-click="$ctrl.editName()"></button>{{$ctrl.stadium.Name}}</h4>
   <div class="clearfix">
@@ -9,7 +12,13 @@
         <structure-item ng-repeat="i in [0,1,2]"
           item="$ctrl.stadium[list+'Items'][i]"
           lock="$ctrl.stadium[list+'Slots'] <= i"
-          on-select="$ctrl.stadiumReform(list, $index+1)" />
+          on-select="$ctrl.stadiumReform(list, $index+1)"
+          title="
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Name|translate}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[0].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[0].Effect}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[1].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[1].Effect}}
+{{'StadiumItems.'+$ctrl.stadium[list+'Items'][i].Effects[2].Description|translate}}: {{$ctrl.stadium[list+'Items'][i].Effects[2].Effect}}
+          " />
       </structure-item-list>
     </div>
   </div>
@@ -18,22 +27,22 @@
 
   <div class="row structure-stadium-details">
     <dl class="col-xs-6">
-      <dt><!-- StadiumPreview. -->lblConstructionDate</dt>
+      <dt translate>StadiumPreview.lblConstructionDate</dt>
       <dd>{{$ctrl.stadium.ConstructionDate | date:'shortDate'}}</dd>
-      <dt><!-- StadiumPreview. -->lblGames</dt>
+      <dt translate>StadiumPreview.lblGames</dt>
       <dd>{{$ctrl.stadium.TotalMatches}}</dd>
-      <dt><!-- StadiumPreview. -->lblPublicRecord</dt>
-      <dd>{{$ctrl.stadium.AttendanceRecord}}</dd>
-      <dt><!-- StadiumPreview. -->lblProfitRecord</dt>
+      <dt translate>StadiumPreview.lblPublicRecord</dt>
+      <dd>{{$ctrl.stadium.AttendanceRecord | number}}</dd>
+      <dt translate>StadiumPreview.lblProfitRecord</dt>
       <dd>{{$ctrl.stadium.RentabilityRecord | currency}}</dd>
     </dl>
     <dl class="col-xs-6 stadium-levels">
-    <dt><i class="icon-user"></i> <!-- StadiumPreview. -->lblCapacity</dt>
-    <dd>{{$ctrl.stadium.Capacity}}</dd>
-    <dt><i class="icon-star"></i> <!-- StadiumPreview. -->lblAtractiveness</dt>
-    <dd class="stadium-level"><span style="width: {{$ctrl.stadium.Atractivity}}%"></span></dd>
-    <dt><i class="icon-usd"></i> <!-- StadiumPreview. -->lblProfitability</dt>
-    <dd class="stadium-level"><span style="width: {{$ctrl.stadium.Rentability}}%"></span></dd>
+    <dt><i class="icon-user"></i> <span translate>StadiumPreview.lblCapacity</span></dt>
+    <dd>{{$ctrl.stadium.Capacity | number}}</dd>
+    <dt><i class="icon-star"></i> <span translate>StadiumPreview.lblAtractiveness</span></dt>
+    <dd class="stadium-level stadium-level-{{5-100/$ctrl.stadium.Atractivity-.5|number:0}}"><span style="width: {{$ctrl.stadium.Atractivity}}%"></span></dd>
+    <dt><i class="icon-usd"></i> <span translate>StadiumPreview.lblProfitability</span></dt>
+    <dd class="stadium-level stadium-level-{{5-100/$ctrl.stadium.Rentability-.5|number:0}}"><span style="width: {{$ctrl.stadium.Rentability}}%"></span></dd>
     </dl>
   </div>
 </div>

@@ -1,15 +1,15 @@
-<h2>Transações</h2>
+<h2 translate>PlayerDetail.lblTTitle</h2>
 
 <table width="100%">
   <tr>
-    <th align="left">Time</th>
-    <th align="left">Motivo</th>
-    <th>Passe</th>
-    <th>Data</th>
+    <th translate>PlayerDetail.lblTTeam</th>
+    <th translate>PlayerDetail.lblTMotive</th>
+    <th class="text-center" translate>PlayerDetail.lblTValue</th>
+    <th class="text-center" translate>PlayerDetail.lblTDate</th>
   </tr>
-  <tr ng-repeat="history in $ctrl.currentPlayer.history | orderBy:'-'">
+  <tr ng-repeat="history in $ctrl.currentPlayer.history">
     <td>{{history.TeamName}}</td>
-    <td>{{history.Motive.replace('TeamPlayerHistoryMotive_','')}}</td>
+    <td>{{'PlayerHistoryMotive.'+history.Motive|translate}}</td>
     <td align="right">{{history.TransactionMoney | currency}}</td>
     <td align="center">{{history.Date | date:'short'}}</td>
   </tr>

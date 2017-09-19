@@ -125,30 +125,34 @@ angular.module('app')
     };
 
     vm.sellPlayer = function () {
-      ngDialog.openConfirm({
-        template: 'player-manager-sell-player.html',
-        appendClassName: 'ngdialog-player-manager-sell-player',
-        resolve: {
-          currentValue: function () {
-            var currentPlayer = vm.currentPlayer;
-            return TeamPlayerService.takeCurrentValue(vm.currentPlayer.Id)
-              .then(function (result) {
-                return currentPlayer.CurrentValue = result.CurrentValue;
-              });
-          }
-        },
-        scope: $scope
-      })
+      // ngDialog.openConfirm({
+      //   template: 'player-manager-sell-player.html',
+      //   appendClassName: 'ngdialog-player-manager-sell-player',
+      //   resolve: {
+      //     currentValue: function () {
+      //       var currentPlayer = vm.currentPlayer;
+      //       return TeamPlayerService.takeCurrentValue(vm.currentPlayer.Id)
+      //         .then(function (result) {
+      //           return currentPlayer.CurrentValue = result.CurrentValue;
+      //         });
+      //     }
+      //   },
+      //   scope: $scope
+      // })
+      TeamPlayerService.takeCurrentValue(vm.currentPlayer.Id)
+        .then(function (result) {
+          return ConfirmPopup.open('Error.errorTitle', 'AuctionScreen.msgPlayerInAcutionConfirm;$'+result.CurrentValue);
+        })
         .then(function () {
           TeamPlayerService.startAuction(vm.currentPlayer.Id)
             .then(function () {
               vm.scope.closeThisDialog();
-              AlertPopup.open('Atenção', 'msgPlayerInAcutionSuccess');
+              AlertPopup.open('Error.errorTitle', 'AuctionScreen.msgPlayerInAcutionSuccess');
               $rootScope.$emit('teamPlayerUpdate');
               $rootScope.$emit('balanceUpdate');
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', error.Message);
             });
         }, function () {
         });
@@ -160,9 +164,9 @@ angular.module('app')
       var confirmPopup;
 
       if ( newSalary < vm.currentPlayer.Salary ) {
-        confirmPopup = ConfirmPopup.open('salaryChangeDownConfirmTitle', 'salaryChangeDownConfirmMessage');
+        confirmPopup = ConfirmPopup.open('PlayerDetail.salaryChangeDownConfirmTitle', 'PlayerDetail.salaryChangeDownConfirmMessage');
       } else if ( newSalary > vm.currentPlayer.Salary ) {
-        confirmPopup = ConfirmPopup.open('salaryChangeUpConfirmTitle', 'salaryChangeUpConfirmMessage');
+        confirmPopup = ConfirmPopup.open('PlayerDetail.salaryChangeUpConfirmTitle', 'PlayerDetail.salaryChangeUpConfirmMessage');
       } else {
         return;
       }

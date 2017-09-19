@@ -1,16 +1,46 @@
-<h2>Sala de troféus</h2>
+<h2 translate>ExternalTeamPreview.lblTrophiesRoom</h2>
 
-<slick infinite=true slides-to-show=2 slides-to-scroll=2 rows="2" arrows="false" settings="$ctrl.slickConfig">
-  <div ng-repeat="trophy in $ctrl.teamTrophys" class="trophy">
-    <div>
+<slick
+  infinite="false"
+  dots="true"
+  slides-to-show="2" slides-to-scroll="2" rows="2"
+  prev-arrow=".main-trophy-nav .slick-prev"
+  next-arrow=".main-trophy-nav .slick-next"
+  settings="{appendDots:'.main-trophy-nav .dots', dotsClass: 'list-inline'}"
+  class-="my-players">
+  <div ng-repeat="teamTrophy in $ctrl.teamTrophys" class="trophy">
+    <div ng-if="teamTrophy.trophies.length" class="row {{teamTrophy.competitionLabel}}">
+      <div class="col-xs-6">
+        <slick infinite=false swipe=false dots="true"
+          ng-init="teamTrophy.settings = {appendDots:'.' + teamTrophy.competitionLabel + ' .dots', dotsClass: 'list-inline', event: {beforeChange: $ctrl.beforeChange}, teamTrophy: $index}"
+          prev-arrow=".{{teamTrophy.competitionLabel}} .slick-prev"
+          next-arrow=".{{teamTrophy.competitionLabel}} .slick-next"
+          settings="teamTrophy.settings">
+          <div ng-repeat="trophy in teamTrophy.trophies">
+            <img ng-src="{{trophy.Image}}">
+          </div>
+        </slick>
+      </div>
+      <div class="col-xs-6">
+        <h4>{{'Common.'+teamTrophy.competitionLabel|translate}}</h4>
+        <h5>{{'Ordinals.'+teamTrophy.currentTrophie.Position|translate}} {{'Common.Place'|translate|uppercase}}</h5>
+        <h5>{{teamTrophy.currentTrophie.Date|date:'shortDate'}}</h5>
+        <div class="trophy-nav">
+          <button type="button" class="btn btn-link slick-prev">«</button>
+          <span class="dots"></span> <span ng-if="teamTrophy.trophies.length==1">1</span> / {{teamTrophy.trophies.length}}
+          <button type="button" class="btn btn-link slick-next">»</button>
+        </div>
+      </div>
+    </div>
+    <div ng-if="!teamTrophy.trophies.length" class="no-trophies">
       <i class="icon-trophy"></i>
-      <br>Sem troféus
+      <p translate>TrophyRoom.lblNoTrophies</p>
     </div>
   </div>
 </slick>
-
-<div class="slide-control">
-  <button ng-click="$ctrl.slickConfig.method.slickPrev()">«</button>
-  {{$ctrl.currentSlide}} / {{($ctrl.teamTrophys.length+2)/4 | number:0}}
-  <button ng-click="$ctrl.slickConfig.method.slickNext()">»</button>
+<div class="slick-nav main-trophy-nav">
+  <button type="button" class="btn btn-link slick-prev">«</button>
+  <span class="dots"></span>
+  <button type="button" class="btn btn-link slick-next">»</button>
 </div>
+<!-- <pre>{{$ctrl.teamTrophys|json}}</pre> -->

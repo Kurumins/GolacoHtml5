@@ -34,6 +34,7 @@ item {
     border-radius: 3px;
     background-color: #ccc;
     line-height: 30px;
+    font-weight: 500;
 
     &:not(:last-child) {
       margin-right: 5px;
@@ -46,6 +47,9 @@ item {
       line-height: 15px;
       color: #fff;
       margin: 0;
+    }
+    &.-duration label {
+      background-color: #666;
     }
   }
 
@@ -61,11 +65,14 @@ item {
       text-align: center;
       font-size: 18px;
     }
-
     p {
       font-size: 11px;
       margin: 0;
       font-weight: bold;
+    }
+
+    .-was {
+      font-weight: normal;
     }
   }
 

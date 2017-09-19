@@ -1,50 +1,58 @@
-<h2>Configurações</h2>
+<h2 translate>ConfigScr.lblTitle</h2>
 
-<div class="change-name">
-  <h4>{{$appCtrl.user.TeamName}}</h4>
+<h4 class="team-name">{{$appCtrl.user.TeamName}}</h4>
+<div class="row">
+  <div class="col-xs-7 change-name">
 
-  <label class="team-name">
-    Alterar o nome do time
-    <input type="text" ng-model="team.newName">
-  </label>
+    <div class="form-group">
+      <label translate class="text-uppercase">ConfigScr.lblChangeTeamName</label>
+      <input type="text" ng-model="team.newName" class="form-control">
+    </div>
 
-  <label class="team-acronym">
-    Sigla
-    <input type="text" ng-model="team.newAcronym">
-  </label>
+    <div class="form-inline text-right">
+      <div class="form-group team-acronym">
+        <label for="newAcronym" translate class="text-uppercase">Registration.lblAcronym</label>
+        <input type="text" class="form-control" id="newAcronym" ng-model="team.newAcronym">
+      </div>
+      <div class="form-group">
+        <label for="newAcronym"><i class="icon icon-credit-card"></i> <strong class="price">{{$ctrl.settings.Price}}</strong></label>
+        <!-- <input type="text" class="form-control" id="newAcronym" ng-model="team.newAcronym"> -->
+        <button type="button" class="btn btn-primary" ng-click="$ctrl.changeTeamName(team.newName, team.newAcronym)">OK</button>
+      </div>
+    </div>
+  </div>
 
-  <label class="price">
-    <i class="icon icon-credit-card"></i>
-    {{$ctrl.settings.Price}}
-    <button type="button" class="" ng-click="$ctrl.changeTeamName(team.newName, team.newAcronym)">OK</button>
-  </label>
-</div>
-
-<div class="change-country">
-  <label class="team-country">
-    Alterar país
-    <select ng-model="$ctrl.settings.TeamIdCountry">
-      <option>Paises</option>
-      <option ng-repeat="country in $appCtrl.countryList" ng-value="{{country.id}}">{{country.name}}</option>
-    </select>
-  </label>
-  <label class="price">
-    <i class="icon icon-credit-card"></i>
-    {{$ctrl.settings.ChangeCountryPrice}}
-    <button class="" ng-click="$ctrl.changeCountry($ctrl.settings.TeamIdCountry)">OK</button>
-  </label>
+  <div class="col-xs-5 change-country">
+    <!-- <div class="form-group">
+      <label translate class="text-uppercase">ConfigScr.lblChangeTeamName</label>
+      <input type="text" ng-model="team.newName" class="form-control">
+    </div> -->
+    <div class="form-group">
+      <label translate class="text-uppercase">ConfigScr.lblChangeTeamCountry</label>
+      <select ng-model="$ctrl.settings.TeamIdCountry" class="form-control">
+        <!-- <option>Paises</option> -->
+        <option ng-repeat="country in $appCtrl.countryList" ng-value="{{country.id}}">{{country.name}}</option>
+      </select>
+    </div>
+    <div class="text-right">
+      <label><i class="icon icon-credit-card"></i> <strong class="price">{{$ctrl.settings.ChangeCountryPrice}}</strong></label>
+      <button class="btn btn-primary" ng-click="$ctrl.changeCountry($ctrl.settings.TeamIdCountry)">OK</button>
+    </div>
+  </div>
 </div>
 
 <hr>
 
 <div class="mail-options">
-  <h3>Opções de email</h3>
+  <h3 translate>ConfigScr.lblMailOptions</h3>
   <div class="setting-list">
     <label ng-repeat="setting in $ctrl.settings.Settings">
       <input type="checkbox" ng-model="setting.Subscribe" ng-true-value="1" ng-false-calue="0">
-      <span>{{setting.Name}}</span>
+      <span>{{'EmailTypes.'+setting.Name|translate}}</span>
     </label>
   </div>
-  <hr>
-  <button type="button" class="closeDialog" ng-click="$ctrl.changeOptionMail($ctrl.settings.Settings | map:'Subscribe')">OK</button>
 </div>
+<hr>
+<footer class="text-right">
+  <button type="button" class="btn btn-primary" ng-click="$ctrl.changeOptionMail($ctrl.settings.Settings | map:'Subscribe')">OK</button>
+</footer>

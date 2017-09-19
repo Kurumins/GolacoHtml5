@@ -7,14 +7,15 @@ player-attributes {
     width: 20px;
     line-height: 1;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 0 0;
 
     .att-title {
-      font-size: 12px;
+      font-size: 10px;
     }
 
     hr {
       margin: 5px 0;
+      border-color: #ccc;
     }
 
     .att-bar {

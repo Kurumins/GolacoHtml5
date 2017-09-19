@@ -8,25 +8,43 @@
   }
 
   .financial-menu {
-    .btn {
-      width: 35px;
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    i {
-      font-size: 20px;
-    }
     .icon-plus {
       font-size: 12px;
       margin-left: -5px;
     }
   }
 
-  .icon-arrow-up {
-    color: green;
+
+  .financial-value {
+    margin: 15px 0;
+    h4 {
+      margin: 0;
+    }
+    .financial-icon {
+      margin-right: 10px;
+    }
+    .icon-arrow {
+      width: 15px;
+      display: inline-block;
+    }
+    .icon-arrow-up {
+      color: green;
+    }
+    .icon-arrow-down {
+      color: red;
+    }
   }
-  .icon-arrow-down {
-    color: red;
+
+  .week-balance {
+    margin: 20px 0;
+    border-top: 1px dotted;
+    padding-top: 20px;
+
+    h2 {
+      margin: 0;
+    }
+    .financial-icon {
+      margin-right: 5px;
+    }
   }
 }

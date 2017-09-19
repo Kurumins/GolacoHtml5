@@ -1,108 +1,107 @@
-<h2>Detalhes do Jogador</h2>
+<h2 translate>AuctionScreen.lblPlayerDetails</h2>
 
 <h3>{{$ctrl.player.TeamName}}</h3>
 
-<div class="pull-left left-content">
-
-  <div class="player-picture">
-    <img ng-src="{{$ctrl.player.Picture}}">
-    <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.player.Flag}}.jpg" class="player-flag">
-    <span class="player-shirt-number">{{$ctrl.player.ShirtNumber}}</span>
-  </div>
-  <p class="text-center">{{$ctrl.player.Name}}</p>
-
-  <div class="manager-menu">
-    <label ng-click="$ctrl.statistics($ctrl.player.Id)">
-      <span>Estatítsticas</span>
-    </label>
-    <label ng-click="$ctrl.healthHistory($ctrl.player.Id)">
-      <span>Histórico de Lesões</span>
-    </label>
-    <label ng-click="$ctrl.history($ctrl.player.Id)">
-      <span>Transações</span>
-    </label>
-  </div>
-
-</div>
-
-<div class="pull-left manager-content player-manager-general" >
-  <dl class="clearfix player-datails">
-    <dt>Posição</dt>
-    <dd>{{$ctrl.player.Position.replace('TeamPlayerPosition_', '')}}</dd>
-
-    <dt>Potencial</dt>
-    <dd>
-      <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.player.Potential<star?'-o':''}}"></span>
-    </dd>
-
-    <dt>Idade</dt>
-    <dd>{{$ctrl.player.Age}}</dd>
-
-    <dt>Saúde</dt>
-    <!-- <dd>{{$ctrl.player.hasSeriousInjury ? 'Player_Health_SeriouslyInjured' : $ctrl.player.hasInjury ? 'Player_Health_Injured' : 'Player_Health_Healthy'}}</dd> -->
-    <dd>{{$ctrl.player.hasSeriousInjury ? 'SeriouslyInjured' : $ctrl.player.hasInjury ? 'Injured' : 'Healthy'}}</dd>
-
-    <dt>Moral</dt>
-    <dd class="player-moral">
-      <span ng-class="{
-        low: $ctrl.player.Moral <= 33,
-        medium: $ctrl.player.Moral > 33 && $ctrl.player.Moral <= 66,
-        hight: $ctrl.player.Moral > 66
-      }" ng-style="{width: $ctrl.player.Moral+'%'}"></span>
-    </dd>
-
-    <dt>Salário</dt>
-    <dd>{{$ctrl.player.SalaryOptions[1] | currency}}</dd>
-  </dl>
-
-  <h4>Atributos</h4>
-  <div class="player-attributes">
-    <div ng-repeat="attribute in $ctrl.player.Attributes" class="player-attribute">
-      <span class="att-title">{{attribute.Name.replace('TeamPlayerSkill_','') || '--' | limitTo:3}}</span>
-      <hr>
-      <div class="att-bar">
-        <div class="att-value" style="height: {{attribute.Value}}%"></div>
-      </div>
-      <hr>
-      {{attribute.Value}}
+<div class="clearfix">
+  <div class="pull-left left-content">
+    <div class="player-picture">
+      <img ng-src="{{$ctrl.player.Picture}}">
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.player.Flag}}.jpg" class="player-flag">
+      <span class="player-shirt-number">{{$ctrl.player.ShirtNumber}}</span>
     </div>
-  </div>
-</div>
+    <p class="text-center">{{$ctrl.player.Name}}</p>
 
-<div class="pull-left player-auction">
-  <div class="total-bids">
-    <h4>Seu limite</h4>
-    <p><i class="icon-money"></i> {{$ctrl.playerAuction.TotalBids | currency}}</p>
-  </div>
-  <div class="time-left"><span>{{$ctrl.getMoment()}}</span></div>
-  <div class="current-value">
-    <button class="pull-right btn btn-xs btn-warning btn-refresh" ng-click="$ctrl.refresh();"><i class="icon-refresh"></i></button>
-    <h4>Valor Atual</h4>
-    <p><i class="icon-money"></i> {{($ctrl.playerAuction.FinancialHist[0].Money || $ctrl.playerAuction.InitialValue) | currency}}</p>
-  </div>
-  <div class="new-bid" ng-init="$ctrl.bid = 1">
-    <div class="bid-values">
-      <label ng-repeat="bid in $ctrl.bids" class="bid-value">
-        <input type="radio" name="bid" ng-model="$ctrl.bid" ng-value="$index+1">
-        <span>{{bid}}<small>%</small></span>
+    <div class="manager-menu">
+      <label ng-click="$ctrl.statistics($ctrl.player.Id)">
+        <span translate>PlayerDetail.btStats</span>
+      </label>
+      <label ng-click="$ctrl.healthHistory($ctrl.player.Id)">
+        <span translate>PlayerDetail.btHealthHistory</span>
+      </label>
+      <label ng-click="$ctrl.history($ctrl.player.Id)">
+        <span translate>PlayerDetail.btPlayerHistory</span>
       </label>
     </div>
-    <button class="btn btn-block btn-sm btn-warning" ng-click="$ctrl.bidAuction()">dar lance!</button>
   </div>
-</div>
 
-<div class="pull-left player-auction player-bids">
-  <div class="no-bids" ng-if="!$ctrl.playerAuction.FinancialHist.length">
-    Nenhum lance realizado
+  <div class="pull-left manager-content player-manager-general" >
+    <dl class="clearfix player-datails">
+      <dt translate>PlayerDetail.lblPosition</dt>
+      <dd>{{'Common.'+$ctrl.player.Position|translate}}</dd>
+
+      <dt translate>PlayerDetail.lblPotential</dt>
+      <dd>
+        <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.player.Potential<star?'-o':''}}"></span>
+      </dd>
+
+      <dt translate>PlayerDetail.lblAge</dt>
+      <dd>{{$ctrl.player.Age}}</dd>
+
+      <dt translate>PlayerDetail.lblHealth</dt>
+      <dd>{{$ctrl.currentPlayer.hasSeriousInjury ? 'Common.Player_Health_SeriouslyInjured' : $ctrl.currentPlayer.hasInjury ? 'Common.Player_Health_Injured' : 'Common.Player_Health_Healthy'|translate}}</dd>
+
+      <dt translate>PlayerDetail.lblMoral</dt>
+      <dd class="player-moral">
+        <span ng-class="{
+          low: $ctrl.player.Moral <= 33,
+          medium: $ctrl.player.Moral > 33 && $ctrl.player.Moral <= 66,
+          hight: $ctrl.player.Moral > 66
+        }" ng-style="{width: $ctrl.player.Moral+'%'}"></span>
+      </dd>
+
+      <dt translate>PlayerDetail.lblSalary</dt>
+      <dd>{{$ctrl.player.SalaryBase | currency}}</dd>
+    </dl>
+
+    <h4 translate>PlayerDetail.lblAttributes</h4>
+    <div class="player-attributes">
+      <div ng-repeat="attribute in $ctrl.player.Attributes" class="player-attribute">
+        <span class="att-title">{{attribute.Name && ('Common.'+attribute.Name+'_Acr'|translate) || '--'}}</span>
+        <hr>
+        <div class="att-bar">
+          <div class="att-value" style="height: {{attribute.Value}}%"></div>
+        </div>
+        <hr>
+        {{attribute.Value}}
+      </div>
+    </div>
   </div>
-  <div ng-if="$ctrl.playerAuction.FinancialHist.length">
-    <h4>Últimos lances</h4>
-    <div class="player-bid" ng-class="{won: $ctrl.closed && $index==0}" ng-repeat="bid in $ctrl.playerAuction.FinancialHist">
-      <i class="icon-star" ng-if="$index==0"></i>
-      <img ng-src="{{bid.Badge}}">
-      <p class="team-name">{{bid.TeamName}}</p>
-      <p class="manager-name">{{bid.ManagerName}}</p>
-      <p class="money">{{bid.Money | currency}}</p>
+
+  <div class="pull-left player-auction">
+    <div class="total-bids">
+      <h5 translate>AuctionScreen.lblMaxCash</h5>
+      <p><i class="icon-money"></i> {{$ctrl.playerAuction.TotalBids | currency}}</p>
+    </div>
+    <div class="time-left"><span>{{$ctrl.getMoment()}}</span></div>
+    <div class="current-value">
+      <button class="pull-right btn btn-xs btn-warning btn-refresh" ng-click="$ctrl.refresh();"><i class="icon-refresh"></i></button>
+      <h4 translate>AuctionScreen.lblCurrentValue</h4>
+      <p><i class="icon-money"></i> {{($ctrl.playerAuction.FinancialHist[0].Money || $ctrl.playerAuction.InitialValue) | currency}}</p>
+    </div>
+    <div class="new-bid" ng-init="$ctrl.bid = 1">
+      <div class="bid-values">
+        <label ng-repeat="bid in $ctrl.bids" class="bid-value">
+          <input type="radio" name="bid" ng-model="$ctrl.bid" ng-value="$index+1">
+          <span>{{bid}}<small>%</small></span>
+        </label>
+      </div>
+      <button class="btn btn-block btn-sm btn-warning" ng-click="$ctrl.bidAuction()" translate>AuctionScreen.doABid</button>
+    </div>
+  </div>
+
+  <div class="pull-left player-auction player-bids">
+    <div class="no-bids" ng-if="!$ctrl.playerAuction.FinancialHist.length">
+      <span translate>AuctionScreen.lblNoBids</span>
+    </div>
+    <div ng-if="$ctrl.playerAuction.FinancialHist.length">
+      <h4 translate>AuctionScreen.lblLastBids</h4>
+      <div class="player-bid" ng-class="{won: $ctrl.closed && $index==0}" ng-repeat="bid in $ctrl.playerAuction.FinancialHist">
+        <i class="icon-star" ng-if="$index==0"></i>
+        <img ng-src="{{bid.Badge}}">
+        <p class="team-name">{{bid.TeamName}}</p>
+        <p class="manager-name">{{bid.ManagerName}}</p>
+        <p class="money">{{bid.Money | currency}}</p>
+      </div>
     </div>
   </div>
 </div>

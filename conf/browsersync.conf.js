@@ -4,7 +4,8 @@ const proxyMiddleware = require('proxy-middleware');
 
 module.exports = function () {
 
-  var proxyOptions = url.parse('https://www.golacogame.com.br');
+  // var proxyOptions = url.parse('https://www.golacogame.com.br');
+  var proxyOptions = url.parse('http://golaco.azurewebsites.net');
   proxyOptions.route = '/golaco';
 
   var proxyOptions2 = url.parse('https://o2games-golaco.s3.amazonaws.com/matches');

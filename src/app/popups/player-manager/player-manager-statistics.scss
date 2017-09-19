@@ -2,28 +2,28 @@
 
   .ngdialog-content {
     width: 800px;
-    height: 400px;
+    // height: 400px;
     border-radius: 10px;
     border:3px solid #0078e0;
   }
 
-  .ngdialog-close{
-    border: none;
-    box-shadow: none;
-    padding: 0;
-     outline: none;
-    &:before{
+  // .ngdialog-close{
+  //   border: none;
+  //   box-shadow: none;
+  //   padding: 0;
+  //    outline: none;
+  //   &:before{
 
-      color: #df0000;
-    }
-    &:hover{
-      border: none;
-    }
-  }
+  //     color: #df0000;
+  //   }
+  //   &:hover{
+  //     border: none;
+  //   }
+  // }
 
-  h2 {
-    color: #4e5667;
-  }
+  // h2 {
+  //   color: #4e5667;
+  // }
 
   h4 {
     border-radius: 4px 4px 0 0;
@@ -33,11 +33,11 @@
     color: #2c2c2a;
   }
 
-  .half {
-    width: 50%;
-    float: left;
-    padding: 0 10px;
-  }
+  // .half {
+  //   width: 50%;
+  //   float: left;
+  //   padding: 0 10px;
+  // }
 
   dl {
     // float:left;
@@ -53,7 +53,7 @@
       float: left;
       clear: both;
     }
-    dd{
+    dd {
       background: linear-gradient(#ddd, #d0d0d0);
       margin: 0;
       text-align: right;

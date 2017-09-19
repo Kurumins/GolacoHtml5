@@ -24,33 +24,42 @@
 
   dl {
     margin: 0;
-    line-height: 1.5;
   }
   dt {
     float: left;
     width: 50%;
+    line-height: 2;
   }
   dd {
     float: right;
     width: 50%;
     text-align: right;
     margin: 0;
+    line-height: 2;
+  }
+
+  .center-details {
+    margin-top: 20px;
   }
 
   .center-info {
-    float: left;
-    width: 45%;
-    margin: 15px 5% 15px 0;
+    // float: left;
+    // width: 45%;
+    // margin: 15px 5% 15px 0;
   }
 
   .player-info {
-    float: left;
-    width: 50%;
-    margin: 15px 0;
+    // float: left;
+    // width: 50%;
+    // margin: 15px 0;
 
     footer {
       // clear: both;
-      margin-top: 110px;
+      margin-top: 20px;
+
+      .checkbox {
+        margin-top: 0;
+      }
     }
   }
 

@@ -2,7 +2,7 @@
 angular.module('app')
   .config(financialRoutesConfig);
 
-function financialController (summary, FinancialDetails, SponsorProposals) {
+function financialController (summary, FinancialDetails, SponsorProposals, FinancialService) {
 
   var vm = this;
 
@@ -18,7 +18,17 @@ function financialController (summary, FinancialDetails, SponsorProposals) {
   };
 
   vm.financialDetails = FinancialDetails.open;
-  vm.sponsorProposals = SponsorProposals.open;
+  vm.sponsorProposals = function () {
+    SponsorProposals.open()
+      .then(function () {
+        console.log(this);
+        return FinancialService.summary();
+      })
+      .then(function (summary) {
+        vm.financeSummary = summary.Finance;
+        vm.sponsorSummary = summary.Sponsor;
+      })
+  };
 }
 
 function financialRoutesConfig ($stateProvider) {

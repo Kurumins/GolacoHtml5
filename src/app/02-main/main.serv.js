@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .service('MainService', function (PostToJs, $window) {
+  .service('MainService', function (PostToJs, $window, AppService, $filter) {
 
     var vm = this;
 
@@ -39,6 +39,19 @@ angular.module('app')
       return PostToJs('Team/UpdateHistory', {
         History: history
       });
+    };
+
+    vm.historyShare = function (history) {
+      var shareMsg = $filter('translate')('TeamPreview.pressReleaseShareMsg;t' + AppService.user.TeamName);
+      var picture = 'https://www.golacogame.com.br/content/share/logo_90_90.jpg';
+      var caption = history;
+
+      return PostToJs('share', {
+        name: shareMsg,
+        picture: picture,
+        caption: caption,
+        link: 'https://www.golacogame.com.br/?ref_code=sharePressRelease'
+      }, null, null, 'share_callback');
     };
 
     vm.deleteWarning = function (warningId) {

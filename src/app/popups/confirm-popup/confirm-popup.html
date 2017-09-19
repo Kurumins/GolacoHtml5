@@ -1,6 +1,6 @@
-<h2>{{ngDialogData.title}}</h2>
-<p>{{ngDialogData.content}}</p>
+<h2>{{ngDialogData.title|translate}}</h2>
+<p>{{ngDialogData.content|translate}}</p>
 <div class="ngdialog-buttons">
-  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()">Sim</button>
-  <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()">Não</button>
+  <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm()" translate>Common.yes</button>
+  <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog()" translate>Common.no</button>
 </div>

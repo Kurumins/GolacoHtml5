@@ -2,13 +2,7 @@
 
   .ngdialog-content {
     width: 750px;
-    padding: 25px;
-
-    > :first-child {
-      margin-top: 0;
-    }
   }
-
 
   .item-list {
     position: relative;
@@ -42,7 +36,7 @@
         dt, dd {
           width: 50%;
           float: left;
-          font-size: 14px;
+          font-size: 13px;
         }
         dt {
           font-weight: normal;
@@ -63,14 +57,17 @@
       }
 
       .item-cost {
+        font-size: 12px;
         dt {
           // float: left;
           // clear: right;
           color: #ccc;
+          font-weight: 500;
         }
         dd {
           // float: right;
           text-align: right;
+          margin-bottom: 5px;
         }
         .icon-money:before{
             color:#00b100;
@@ -79,6 +76,10 @@
             color:#DAA520;
         }
       }
+    }
+
+    hr {
+      border-color: #666;
     }
 
     .slick-arrow {

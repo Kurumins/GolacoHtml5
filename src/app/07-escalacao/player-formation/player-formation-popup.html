@@ -1,16 +1,18 @@
 <i class="triangle"></i>
+<div class="player-formation -position-{{$ctrl.player.IdPosition}}">
+  <h5>{{$ctrl.player.Name}}</h5>
 
-  <dl class="player-datails">
+  <dl class="player-details">
 
-    <dt>Posição</dt>
-    <dd>{{$ctrl.player.Position.replace('TeamPlayerPosition_','')}}</dd>
+    <dt translate>PlayerData.position</dt>
+    <dd>{{'Common.'+$ctrl.player.Position|translate}}</dd>
 
-    <dt>Potencial</dt>
+    <dt translate>PlayerData.potential</dt>
     <dd>
       <span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{$ctrl.player.Potential<star?'-o':''}}"></span>
     </dd>
 
-    <dt>Moral</dt>
+    <dt translate>PlayerData.moral</dt>
     <dd class="player-moral">
       <span ng-class="{
         low: $ctrl.player.Moral <= 33,
@@ -19,7 +21,7 @@
       }" ng-style="{width: $ctrl.player.Moral+'%'}"></span>
     </dd>
 
-    <dt>Idade</dt>
+    <dt translate>PlayerData.age</dt>
     <dd>{{$ctrl.player.Age}}</dd>
 
   </dl>

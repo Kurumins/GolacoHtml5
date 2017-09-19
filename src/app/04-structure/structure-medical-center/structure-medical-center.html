@@ -1,7 +1,9 @@
-<h2>MedicalCenterPreview.lblTitle</h2>
-<button class="pull-right btn btn-sm" ng-click="$ctrl.medicCenterManageRecycle()">Reformar</button>
+<h2 translate>MedicalCenterPreview.lblTitle</h2>
+<div class="submenu pull-right">
+  <button class="btn btn-xs btn-primary" ng-click="$ctrl.medicCenterManageRecycle()" title="{{'StadiumPreview.lblReform'|translate}}"><i class="icon-wrench"></i></button>
+</div>
 <div class="structure-medical-center clearfix">
-  <h4>{{$ctrl.medicCenterManage.Name}}</h4>
+  <h4>{{'MedicalCenterNames.'+$ctrl.medicCenterManage.Name|translate}}</h4>
   <div class="clearfix">
     <img ng-src="{{$ctrl.medicCenterManage.Picture}}" class="training-center-picture">
     <div class="training-center-itens">
@@ -24,14 +26,14 @@
 
   <div class="row">
     <div class="col-xs-6 text-center skill-level">
-      <h5><!-- MedicalCenterPreview. -->lblMCCapacity</h5>
+      <h5 translate>MedicalCenterPreview.lblMCCapacity</h5>
       <strong>{{$ctrl.medicCenterManage.MaxTeamPlayer}}</strong>
     </div>
     <div class="col-xs-6 text-center skill-level">
-      <h5><!-- MedicalCenterPreview. -->lblMCLevel</h5>
+      <h5 translate>MedicalCenterPreview.lblMCLevel</h5>
       <strong>{{$ctrl.medicCenterManage.Level}}</strong>
     </div>
   </div>
 </div>
 
-<pre>{{$ctrl.medicCenterManage|json}}</pre>
+<!-- <pre>{{$ctrl.medicCenterManage|json}}</pre> -->

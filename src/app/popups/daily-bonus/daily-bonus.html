@@ -1,7 +1,7 @@
-<h2>Bônus Diário</h2>
+<h2 translate>DailyBonusMessages.DailyBonus</h2>
 <div class="bonus-message">
-  <h5>Cuide do seu time todo dia e ganhe dinheiro e créditos para investir no seu time.</h5>
-  <p>message{{$window.ConsecutiveDays}}</p>
+  <h5 translate>DailyBonusMessages.description</h5>
+  <p>{{'DailyBonusMessages.message'+$window.ConsecutiveDays|translate}}</p>
 </div>
 
 <div class="bonus-list">
@@ -10,13 +10,15 @@
     <div>
       <i class="icon icon-money"></i>
       <h5>{{bonus.cash | currency}}</h5>
-      <h6>Dinheiro virtual</h6>
+      <h6 translate>Common.money</h6>
     </div>
     <div ng-if="bonus.credits">
       <hr>
       <i class="icon icon-credit-card"></i>
       <h5>{{bonus.credits}}</h5>
-      <h6>Créditos</h6>
+      <h6 translate>Common.credits</h6>
     </div>
   </div>
 </div>
+
+

@@ -4,6 +4,12 @@ angular.module('app')
 
     var vm = this;
     vm.trainingCenter = trainingCenterManage.TrainingCenter;
+    var slots = [];
+    for (var i = 0; i < vm.trainingCenter.TrainingCenterItems.length; i++) {
+      var item = vm.trainingCenter.TrainingCenterItems[i];
+      slots[item.Slot] = item;
+    }
+    vm.slots = slots;
 
     vm.trainingCenterRecycle = function () {
       TrainingCenterRecycle.open(vm.trainingCenter)

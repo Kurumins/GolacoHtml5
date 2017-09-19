@@ -1,11 +1,11 @@
 <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.match.HomeTeam.Flag}}.jpg" ng-if="$ctrl.match.HomeTeam.Flag">
-<img ng-src="{{$ctrl.match.HomeTeam.Badge}}">
-<span class="team-acronym">{{$ctrl.match.HomeTeam.Acronym}}</span>
+<img ng-src="{{$ctrl.match.HomeTeam.Badge}}" title="{{$ctrl.match.HomeTeam.Name}}">
+<span class="team-acronym" title="{{$ctrl.match.HomeTeam.Name}}">{{$ctrl.match.HomeTeam.Acronym}}</span>
 <span class="match-result">
-  <span class="team-goals">{{$ctrl.match.HomeTeam.Goals}}</span>
+  <span class="team-goals">{{$ctrl.match.Status ? $ctrl.match.HomeTeam.Goals : ''}}</span>
   x
-  <span class="team-goals">{{$ctrl.match.VisitorTeam.Goals}}</span>
+  <span class="team-goals">{{$ctrl.match.Status ? $ctrl.match.VisitorTeam.Goals : ''}}</span>
 </span>
-<span class="team-acronym text-right">{{$ctrl.match.VisitorTeam.Acronym}}</span>
-<img ng-src="{{$ctrl.match.VisitorTeam.Badge}}">
+<span class="team-acronym text-right" title="{{$ctrl.match.VisitorTeam.Name}}">{{$ctrl.match.VisitorTeam.Acronym}}</span>
+<img ng-src="{{$ctrl.match.VisitorTeam.Badge}}" title="{{$ctrl.match.VisitorTeam.Name}}">
 <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.match.VisitorTeam.Flag}}.jpg" ng-if="$ctrl.match.VisitorTeam.Flag">

@@ -1,46 +1,55 @@
 'use strict';
 angular.module('app')
-  .controller('MainConfigController', function (settings, MainService, ConfirmPopup, AlertPopup) {
+  .controller('MainConfigController', function ($rootScope, $scope, settings, MainService, ConfirmPopup, AlertPopup, AppService) {
 
     var vm = this;
 
     vm.settings = settings;
 
     vm.changeCountry = function (idCountry) {
-      ConfirmPopup.open('Atenção', 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o nome de seu time?')
+      ConfirmPopup.open('Error.errorTitle', 'ConfigScr.teamCountryChangeConfirm;n' + settings.ChangeCountryPrice)
         .then(function () {
           MainService.teamChangeCountry(idCountry)
             .then(function () {
-              AlertPopup.open('Atenção', 'País do time alterado com sucesso!');
+              AlertPopup.open('Error.errorTitle', 'ConfigScr.teamCountryChangeSuccess');
+              $rootScope.$emit('balanceUpdate');
+              AppService.teamPreview.IdCountry = idCountry;
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', error.Message);
             });
         });
     };
 
-    vm.changeTeamName = function (newName, newAcronym) {
-      ConfirmPopup.open('Atenção', 'Essa operação custa @1 créditos e não pode ser desfeita. Deseja mesmo alterar o país de seu time?')
+    vm.changeTeamName = function (newName, newAcronym, closeThisDialog) {
+      ConfirmPopup.open('Error.errorTitle', 'ConfigScr.teamNameChangeConfirm;n' + settings.Price)
         .then(function () {
           MainService.changeTeamName(newName, newAcronym)
             .then(function () {
-              AlertPopup.open('Atenção', 'Nome do time alterado com sucesso!');
+              AlertPopup.open('Error.errorTitle', 'ConfigScr.teamNameChangeSuccess');
+              $rootScope.$emit('balanceUpdate');
+              AppService.user.TeamName = newName;
+              AppService.user.Acronym = newAcronym;
+
+              if (closeThisDialog) {
+                $scope.closeThisDialog();
+              }
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', 'Error.'+error.Message);
             });
         });
     };
 
     vm.changeOptionMail = function (mailOptions) {
-      ConfirmPopup.open('Atenção', 'Confirmar alteração')
+      ConfirmPopup.open('Error.errorTitle', 'ConfigScr.emailOptionsChangeConfirm')
         .then(function () {
           MainService.changeOptionMail(mailOptions.join(';'))
             .then(function () {
-              AlertPopup.open('Atenção', 'Opções de email alteradas com sucesso!');
+              AlertPopup.open('Error.errorTitle', 'ConfigScr.emailoptionsChangeSuccess');
             })
             .catch(function (error) {
-              AlertPopup.open('Atenção', error.Message);
+              AlertPopup.open('Error.errorTitle', error.Message);
             });
         });
     };

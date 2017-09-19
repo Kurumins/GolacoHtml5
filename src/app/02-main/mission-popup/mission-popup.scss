@@ -46,11 +46,19 @@
   }
 
   footer {
-    overflow: auto;
+    // overflow: auto;
     .credits, .money{
-      h3{
-        color: #ff6a02;
+      h3 {
+        color: #0b62a9;
       }
+    }
+
+    .icon-credit-card,
+    .icon-money {
+      float: left;
+      font-size: 32px;
+      margin-right: 15px;
+      margin-top: 5px;
     }
   }
 

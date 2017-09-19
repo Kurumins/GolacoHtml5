@@ -1,41 +1,50 @@
-<h2>Amistoso</h2>
+<h2 translate>FriendlyMatch.lblTitle</h2>
 
-<h3>Pesquisar</h3>
+<h3 translate>Common.search</h3>
+<form class="team-filter form-horizontal" ng-submit="$ctrl.findFriendlyMatches($ctrl.filter)">
+  <div class="row">
+    <label class="col-xs-2" translate>Common.team</label>
+    <div class="form-group-sm col-xs-4">
+      <input type="type" class="form-control" ng-model="$ctrl.filter.TeamName">
+    </div>
 
-<div class="team-filter">
-  <label>
-    Time
-    <input type="type" name="" ng-model="$ctrl.filter.TeamName">
-  </label>
-  <label>
-    Treinador
-    <input type="type" name="" ng-model="$ctrl.filter.Couch">
-  </label>
-  <label>
-    Série
-    <label>
-      <input type="checkbox" ng-model="$ctrl.filter.League.D">D
-    </label>
-    <label>
-      <input type="checkbox" ng-model="$ctrl.filter.League.C">C
-    </label>
-    <label>
-      <input type="checkbox" ng-model="$ctrl.filter.League.B">B
-    </label>
-    <label>
-      <input type="checkbox" ng-model="$ctrl.filter.League.A">A
-    </label>
-  </label>
-  <label ng-init-="$ctrl.filter.Country=$appCtrl.countryList[0].id">
-    País
-    <!-- <select ng-options="item.id as item.name for item in $appCtrl.countryList track by item.id" ng-model="$ctrl.filter.Country"></select> -->
-    <select ng-model="$ctrl.filter.Country">
-      <option ng-value="0" selected="selected">Todos</option>
-      <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
-    </select>
-  </label>
-  <button ng-click="$ctrl.findFriendlyMatches($ctrl.filter)" ng-disabled="!($ctrl.filter.League.D || $ctrl.filter.League.C || $ctrl.filter.League.B || $ctrl.filter.League.A)">Pesquisar</button>
-</div>
+    <label class="col-xs-2" translate>Common.coach</label>
+    <div class="form-group-sm col-xs-4">
+      <input type="type" class="form-control" ng-model="$ctrl.filter.Couch">
+    </div>
+  </div>
+
+  <div class="row">
+    <label class="col-xs-2" translate>Common.league</label>
+    <div class="form-group-sm col-xs-2">
+      <label>
+        <input type="checkbox" class="league-filter" ng-model="$ctrl.filter.League.D"><span class="icon-league-d"></span>
+      </label>
+      <label>
+        <input type="checkbox" class="league-filter" ng-model="$ctrl.filter.League.C"><span class="icon-league-c"></span>
+      </label>
+      <label>
+        <input type="checkbox" class="league-filter" ng-model="$ctrl.filter.League.B"><span class="icon-league-b"></span>
+      </label>
+      <label>
+        <input type="checkbox" class="league-filter" ng-model="$ctrl.filter.League.A"><span class="icon-league-a"></span>
+      </label>
+    </div>
+
+    <label class="col-xs-2" translate>Common.country</label>
+    <div ng-init-="$ctrl.filter.Country=$appCtrl.countryList[0].id" class="form-group-sm col-xs-4">
+      <!-- <select ng-options="item.id as item.name for item in $appCtrl.countryList track by item.id" ng-model="$ctrl.filter.Country"></select> -->
+      <select ng-model="$ctrl.filter.Country" class="form-control">
+        <option ng-value="0" selected="selected" translate>Common.all</option>
+        <option ng-repeat="country in $appCtrl.countryList" ng-value="country.id">{{country.name}}</option>
+      </select>
+    </div>
+
+    <div class="col-xs-2">
+      <button ng-disabled="!($ctrl.filter.League.D || $ctrl.filter.League.C || $ctrl.filter.League.B || $ctrl.filter.League.A)" class="btn btn-block btn-sm btn-primary" translate>Common.search</button>
+    </div>
+  </div>
+</form>
 
 <div class="checkbox">
   <label><input type="checkbox" ng-model="$ctrl.useItens" ng-false-value="true" ng-true-value="false"> Não usar itens ao desafiar</label>
@@ -43,11 +52,11 @@
 
 <div class="row">
   <div class="col-xs-6">
-    <h4>Equipes selecionadas</h4>
-    <table width="100%" class="friendly-teams">
+    <h4 translate>FriendlyMatch.lblTeams</h4>
+    <table class="table table-condensed table-striped friendly-teams">
       <tr ng-repeat="team in $ctrl.friendlyMatches" ng-click="$ctrl.currentMatch = team" ng-class="{active: $ctrl.currentMatch == team}">
-        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg" height="14"></td>
-        <td class="league">{{team.League}}</td>
+        <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{team.Flag}}.jpg"></td>
+        <td class="team-league icon-league-{{team.League|lowercase}}"></td>
         <td>{{team.Name}}</td>
         <td align="right" class="small">{{team.UserName}}</td>
       </tr>
@@ -55,19 +64,19 @@
   </div>
 
   <div class="col-xs-6">
-    <h4>Partida Selecionada</h4>
+    <h4 translate>FriendlyMatch.lblMatch</h4>
     <div class="current-match">
       <div>
         <img ng-src="{{$ctrl.me.BadgePicture}}" height="129" width="129">
-        <h4 class="initials">{{$ctrl.me.Acronym}}</h4>
+        <h4 class="team-acronym">{{$ctrl.me.Acronym}}</h4>
       </div>
       X
       <div>
         <img ng-src="{{$ctrl.currentMatch.BadgePicture}}" height="129" width="129">
-        <h4 class="initials">{{$ctrl.currentMatch.Acronym}}</h4>
+        <h4 class="team-acronym">{{$ctrl.currentMatch.Acronym}}</h4>
       </div>
       <!-- <button ng-click="$ctrl.play(ngDialogId)">Jogar</button> -->
     </div>
-    <button ng-click="$ctrl.play($ctrl.currentMatch)">Jogar</button>
+    <button ng-click="$ctrl.play($ctrl.currentMatch)" class="btn btn-primary" translate>Common.play</button>
   </div>
 </div>

@@ -1,27 +1,29 @@
 <div class="calendar">
-  <h2>Calendário</h2>
+  <h2 translate>CalendarDetail.lblTitle</h2>
 
   <div class="clearfix calendar-filter">
-    <h4>Busca</h4>
+    <h4 translate>CalendarDetail.lblSearch</h4>
     <table width="100%" class="filter-table">
       <tr>
-        <th colspan="7"></th>
-        <th colspan="2" class="text-center">GameTypes.friendly</th>
+        <th colspan="5"></th>
+        <th colspan="2" class="text-center" translate>GameTypes.friendly</th>
         <th width="20"></th>
-        <th width="1"><label class="radio-inline"><input type="radio" ng-model="filterType" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"><!-- Common. -->lblFixedRadio</label></th>
-        <th width="1"><label class="radio-inline"><input type="radio" ng-model="filterType" ng-value="1" ><!-- Common. -->lblCustomizedRadio</label></th>
+        <th width="1"><label class="radio-inline"><input type="radio" name="filterType" ng-model="filterType" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"><span translate>Common.lblFixedRadio</span></label></th>
+        <th width="1"><label class="radio-inline"><input type="radio" name="filterType" ng-model="filterType" ng-value="1"><span translate>Common.lblCustomizedRadio</span></label></th>
       </tr>
       <tr>
         <td ng-repeat="(id, type) in $ctrl.traversal" class="text-center traversal" title="{{type}}">
           <label class="checkbox">
             <input type="checkbox" ng-model="$ctrl.types[id]">
-            <i class="icon-trophy"></i>
+            <!-- <i class="icon-trophy"></i> -->
+            <img ng-src="https://www.golacogame.com.br/content/trophy/{{id}}-1.png" height="41" ng-if="id < 100">
+            <i class="icon-futbol-o" ng-if="id >= 100"></i>
           </label>
         </td>
         <td></td>
         <td colspan="2" rowspan="2" ng-if="!filterType">
           <select
-            ng-options="period as period.label for period in $ctrl.periods"
+            ng-options="period as ('FinancialDetail.'+period.label|translate) for period in $ctrl.periods"
             ng-model="$ctrl.currentPeriod" ng-change="$ctrl.setPeriod($ctrl.currentPeriod)"
             class="form-control input-sm"></select>
           <!-- <select class="form-control input-sm">
@@ -30,50 +32,46 @@
         </td>
         <td colspan="2" rowspan="2" width="1" class="form-inline text-right" ng-if="filterType">
           <div class="form-group">
-            <label>De</label>
+            <label translate>Common.from</label>
             <input type="date" class="form-control input-sm" ng-model="$ctrl.startDate">
           </div>
           <div class="form-group">
-            <label>Até</label>
+            <label translate>Common.to</label>
             <input type="date" class="form-control input-sm" ng-model="$ctrl.endDate">
           </div>
         </td>
       </tr>
       <tr>
-        <td ng-repeat="(id, type) in $ctrl.traversal" valign="top" class="text-center">{{type}}</td>
+        <td ng-repeat="(id, type) in $ctrl.traversal" valign="top" class="text-center">{{type|translate}}</td>
       </tr>
     </table>
-    <button class="btn btn-primary pull-right" ng-click="$ctrl.searchGames()">CalendarDetail.research</button>
+    <button class="btn btn-primary btn-sm pull-right" ng-click="$ctrl.searchGames()" translate>CalendarDetail.research</button>
   </div>
 
-  <table class="match-table" width="100%">
-    <tr>
-      <th>Tipo</th>
-      <th>Data</th>
-      <th colspan="4"></th>
-      <th class="text-center">Partida</th>
-      <th colspan="4" class="text-right">Itens</th>
-    </tr>
+  <table class="table match-table table-condensed table-striped" width="100%">
+    <thead>
+      <tr>
+        <th class="text-center text-uppercase" width="1" translate>Common.type</th>
+        <th class="text-center text-uppercase" translate>Common.date</th>
+        <th colspan="1"></th>
+        <th class="text-center text-uppercase" translate>Common.lblMatch</th>
+        <th colspan="1" class="text-center text-uppercase" width="1" translate>CalendarDetail.lblItems</th>
+      </tr>
+    </thead>
     <tr ng-repeat="match in $ctrl.matches">
-      <td>{{$ctrl.traversal[match.Type]}}</td>
+      <!-- <td>{{$ctrl.traversal[match.Type]}}</td> -->
+      <td class="text-center">
+        <img ng-src="https://www.golacogame.com.br/content/trophy/{{match.Type}}-1.png" height="36" ng-if="match.Type < 100">
+        <i class="icon-futbol-o" ng-if="match.Type >= 100"></i>
+      </td>
       <td>{{match.Date | date:'short'}}</td>
-      <td width="1" class="match-replay" title="CalendarDetail.lblReplay">
+      <td width="1" class="match-replay" title="{{'CalendarDetail.lblReplay'|translate}}">
         <button class="btn btn-link icon-screen" ng-if="match.Status" ng-click="$ctrl.matchResult(match.Id)"></button>
       </td>
-      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.HomeTeam.Flag}}.jpg"></td>
-      <td><img ng-src="{{match.HomeTeam.Badge}}"></td>
-      <td>{{match.HomeTeam.Acronym}}</td>
-      <td align="center">
-        {{match.Status ? match.HomeTeam.Goals : ''}}
-        X
-        {{match.Status ? match.VisitorTeam.Goals : ''}}
-      </td>
-      <td>{{match.VisitorTeam.Acronym}}</td>
-      <td><img ng-src="{{match.VisitorTeam.Badge}}"></td>
-      <td><img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{match.VisitorTeam.Flag}}.jpg"></td>
-      <td width="1"><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
+      <td><match-element match="match" /></td>
+      <td class="text-center" title="{{'CalendarDetail.lblItemsTooltip'|translate}}"><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
     </tr>
   </table>
 </div>
 
-<!-- <pre>{{$ctrl.matches|json}}</pre> -->
+<!-- <pre>{{$ctrl.matches[0]|json}}</pre> -->

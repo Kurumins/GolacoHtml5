@@ -22,6 +22,7 @@ body {
 [class^="icon-"],
 [class*=" icon-"] {
   vertical-align: middle;
+  line-height: 1;
   &:before {
     vertical-align: text-top;
   }
