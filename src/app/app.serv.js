@@ -23,8 +23,9 @@ angular.module('app')
     //   password: '123',
     //   rememberMe: false
     // })
+    // return PostToJs('Account/GetFbDetails', {
     return $http.post($window.baseUrl + 'Account/GetFbDetails', {
-        AccessToken: accessToken
+        data: accessToken
       }/*, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }*/)
