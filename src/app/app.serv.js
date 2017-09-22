@@ -99,7 +99,7 @@ angular.module('app')
   };
 
   vm.countryList = function () {
-    return $http.get('/data/countryList');
+    return $http.get('/data/countryList.json');
   };
 
   vm.getCurrentUploadBadge = function (idTeam) {
