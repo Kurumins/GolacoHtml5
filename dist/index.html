@@ -307,7 +307,7 @@
           notify && notify(data);
         }
     }
-    Pusher.channel_auth_endpoint = '/golaco/Container/Auth';
+    Pusher.channel_auth_endpoint = '/game/Container/Auth';
     var pusher = new Pusher('07d95ce697597316f0d9');
     var channel_public = pusher.subscribe('golaco');
     var channel_private = pusher.subscribe('private-1602447546449533');
