@@ -23,10 +23,11 @@ angular.module('app')
     //   password: '123',
     //   rememberMe: false
     // })
-    // return PostToJs('Account/GetFbDetails', {
+    // return PostToJs('Account/GetFbDetails', {accessToken: accessToken}
     return $http.post($window.baseUrl + 'Account/GetFbDetails', {
-        data: accessToken
-      }/*, {
+        accessToken: accessToken
+      }
+      /*, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }*/)
       .then(function (result) {
@@ -99,7 +100,7 @@ angular.module('app')
   };
 
   vm.countryList = function () {
-    return $http.get('/data/countryList');
+    return $http.get('/data/countryList.json');
   };
 
   vm.getCurrentUploadBadge = function (idTeam) {

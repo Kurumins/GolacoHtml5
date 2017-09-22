@@ -2,7 +2,7 @@
 angular.module('app')
   .config(hillRoutesConfig);
 
-function hillController (preview, HillService, ConfirmPopup, HillDetails, $timeout) {
+function hillController (preview, HillService, ConfirmPopup, HillDetails, $timeout, MatchResult) {
   var vm = this;
 
   vm.preview = preview;
@@ -29,6 +29,12 @@ function hillController (preview, HillService, ConfirmPopup, HillDetails, $timeo
 
     ConfirmPopup.open('Error.errorTitle', message)
       .then(function () {
+        window.notify = function (data) {
+          if ( data.Msg == 'HillGame') {
+            MatchResult.open(data.Param3);
+            delete window.notify;
+          }
+        }
         HillService.challenge(idHill, useItems);
         // console.log(idHill, useItems);
       });
