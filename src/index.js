@@ -137,8 +137,8 @@ angular
     $window._gaq = [];
     $window.fbq = null;
 
-    $window.baseUrl = '/golaco/';
-    // $window.baseUrl = 'http://golaco.azurewebsites.net/';
+    $window.baseUrl = '/game/';
+    // $window.baseUrl = 'http://beta.golacogame.com.br/game/';
     // $window.baseUrl = '/data/';
 
     $.ajaxSetup({
@@ -165,7 +165,7 @@ angular
       var deferred = $q.defer();
 
       vm.callbacks[callback || action] = function (result) {
-        result = JSON.parse( JSON.stringify(result).split('http://beta2.golacogame.com.br/Container/Index').join('https://www.golacogame.com.br/') );
+        result = JSON.parse( JSON.stringify(result).split('http://beta.golacogame.com.br/game/Container/Index').join('https://www.golacogame.com.br/') );
 
         if ( result && result.Success !== false && result.Sucess !== false ) {
           deferred.resolve(result);
