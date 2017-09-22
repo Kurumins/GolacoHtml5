@@ -23,9 +23,11 @@ angular.module('app')
     //   password: '123',
     //   rememberMe: false
     // })
+    // return PostToJs('Account/GetFbDetails', {accessToken: accessToken}
     return $http.post($window.baseUrl + 'Account/GetFbDetails', {
-        AccessToken: accessToken
-      }/*, {
+        accessToken: accessToken
+      }
+      /*, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }*/)
       .then(function (result) {
@@ -66,7 +68,7 @@ angular.module('app')
         password: password
       })
       .then(function (result) {
-        return vm.userData = $sessionStorage = result.data.Data;
+        return vm.userData = $sessionStorage.userData = result.data.Data;
       });
   };
 
@@ -98,7 +100,7 @@ angular.module('app')
   };
 
   vm.countryList = function () {
-    return $http.get('/data/countryList');
+    return $http.get('/data/countryList.json');
   };
 
   vm.getCurrentUploadBadge = function (idTeam) {

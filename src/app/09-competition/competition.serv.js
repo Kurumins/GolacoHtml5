@@ -9,7 +9,7 @@ angular.module('app')
     };
 
     vm.competitionData = function () {
-      return $http.get('/data/Competition/CompetitionData');
+      return $http.get('/data/Competition/CompetitionData.json');
     };
 
     vm.competitionRegister = function (competitionType) {

@@ -1,3 +1,4 @@
+/* eslint-disable */
 window.doAction = function (action, callback, data, signed, cacheId) {
 
     //console.log("doAction: " + action + "," + callback + "," + data);
