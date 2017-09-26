@@ -68,7 +68,7 @@ angular.module('app')
         password: password
       })
       .then(function (result) {
-        return vm.userData = $sessionStorage.userData = result.data.Data;
+        return vm.userData = $sessionStorage.userData = result.data.UserData;
       });
   };
 
