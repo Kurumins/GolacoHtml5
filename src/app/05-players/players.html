@@ -66,7 +66,7 @@
         <td>{{player.Attributes.SecondSkill4.Value}}</td>
         <td>{{player.Attributes.SecondSkill5.Value || '--'}}</td>
         <td width="1">
-          <button class="btn btn-icon btn-sm" ng-class="{blink: !player.HasTrainingPlan}" title="{{player.HasTrainingPlan?'PlayerView.lblTraining':'PlayerView.NotTraining'|translate}}"><i class="icon-traffic-cone"></i></button>
+          <a ui-sref="^.training" class="btn btn-icon btn-sm" ng-class="{blink: !player.HasTrainingPlan}" title="{{player.HasTrainingPlan?'PlayerView.lblTraining':'PlayerView.NotTraining'|translate}}"><i class="icon-traffic-cone"></i></a>
         </td>
         <td width="1">
           <button class="btn btn-icon btn-sm btn-primary" ng-click="$ctrl.playerManager(player.Id)" ng-disabled="player.TeamPlayerType==2" title="{{'PlayerView.lblManage'|translate}}"><i class="icon-widget"></i></button>
