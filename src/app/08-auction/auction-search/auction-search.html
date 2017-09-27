@@ -90,7 +90,7 @@
           <img ng-src="{{player.Badge}}"> {{player.Acronym}}
         </dd>
         <dt translate>AuctionScreen.lblPosAge</dt>
-        <dd>{{'Common.'+player.Position|translate}} / {{player.Age}}</dd>
+        <dd>{{('Common.'+player.Position|translate).replace('Meio Campo','Meia')}} / {{player.Age}}</dd>
         <dt translate>Common.PlayerPotential</dt>
         <dd><span ng-repeat="star in [1,2,3,4,5]" class="icon-star{{player.Potential<star?'-o':''}}"></span></dd>
         <dt translate>Common.value</dt>
