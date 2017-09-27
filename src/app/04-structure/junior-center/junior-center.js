@@ -55,7 +55,7 @@ angular.module('app')
           updateJuniorPreview();
         })
         .catch(function (error) {
-          AlertPopup.open('Atenção', error.Message);
+          AlertPopup.open('Atenção', 'Error.' + error.Message);
         });
     };
 
