@@ -24,6 +24,7 @@
 
   dl {
     margin: 0;
+    line-height: 2;
   }
   dt {
     float: left;
@@ -60,6 +61,17 @@
       .checkbox {
         margin-top: 0;
       }
+    }
+  }
+
+  tooltip {
+    position: absolute;
+    // line-height: 2;
+    left: 0px;
+
+    .icon-question {
+      color: #1580d8;
+      font-size: 12px;
     }
   }
 

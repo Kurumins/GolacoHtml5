@@ -30,7 +30,14 @@
     </dl>
     <div class="col-xs-6 player-info" ng-if="$ctrl.currentPlayer">
       <dl class="clearfix">
-        <dt translate>JuniorCenterPreview.lblJunior</dt>
+        <tooltip tooltip-title="{{'FastHelp.juniorPlayerInfo_title'|translate}}" class="pull-left">
+          <tooltip-content translate>FastHelp.juniorPlayerInfo_body</tooltip-content>
+          <i class="icon-question"></i>
+        </tooltip>
+
+        <dt translate>
+          JuniorCenterPreview.lblJunior
+        </dt>
         <dd>{{$ctrl.currentPlayer.Name}}</dd>
         <dt translate>JuniorCenterPreview.lblLiberationTime</dt>
         <dd>{{$ctrl.currentPlayer.ReleaseDate | date:'short'}}</dd>
@@ -41,7 +48,11 @@
         </dd>
       </dl>
       <footer class="clearfix">
-        <label class="pull-left checkbox">
+        <tooltip tooltip-title="{{'FastHelp.forwardingAgent_title'|translate}}" class="pull-left">
+          <tooltip-content translate>FastHelp.forwardingAgent_body</tooltip-content>
+          <i class="icon-question"></i>
+        </tooltip>
+        <label class="pull-left checkbox-inline">
           <input type="checkbox" ng-model="$ctrl.useAgent"> <span translate>JuniorCenterPreview.lblForwardingAgent</span>
           <br><i class="icon-credit-card"></i> {{$ctrl.juniorPreview.AgentCost}}
         </label>
