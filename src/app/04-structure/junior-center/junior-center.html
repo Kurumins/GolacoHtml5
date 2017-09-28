@@ -12,7 +12,7 @@
   <div class="center-structure">
     <img ng-src="{{$ctrl.juniorPreview.Picture}}" class="center-picture">
     <div class="junior-players">
-      <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" small=true></junior-table>
+      <junior-table players="$ctrl.juniorPreview.Players" current-player="$ctrl.currentPlayer" small-=true></junior-table>
       <span class="no-players" ng-if="!$ctrl.juniorPreview.Players.length" translate>DraftCenter.lblEmptyList</span>
     </div>
   </div>
