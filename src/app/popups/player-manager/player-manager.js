@@ -10,6 +10,8 @@ angular.module('app')
     });
 
     // vm.teamPlayerManage = teamPlayerManage;
+    vm.changeNamePrice = teamPlayerManage.ChangeNamePrice;
+
     for (var i = 0; i < players.length; i++) {
 
       var player = players[i];
@@ -199,5 +201,36 @@ angular.module('app')
         });
     };
 
+    vm.changePlayerName = function (slot) {
+      ngDialog.openConfirm({
+        template: 'player-manager-change-name.html',
+        appendClassName: 'ngdialog-change-player-name',
+        // controller: 'MainConfigController as $ctrl',
+        scope: $scope,
+        // resolve: {
+        //   settings: function () {
+        //     return MainService.teamSettings();
+        //   }
+        // },
+      })
+        .then(vm.savePlayerName);
+    };
+
+    vm.savePlayerName = function (newName) {
+      ConfirmPopup.open('Error.errorTitle', 'PlayerDetail.confirmNameChange;n' + vm.changeNamePrice)
+        .then(function () {
+          return TeamPlayerService.changeName(vm.currentPlayer.Id, newName);
+        })
+        .then(function (result) {
+          vm.currentPlayer.Name = result.NewName;
+          AlertPopup.open('Error.errorTitle', 'PlayerDetail.nameChanged');
+          // $scope.closeThisDialog();
+          $rootScope.$emit('teamPlayerUpdate');
+          $rootScope.$emit('balanceUpdate');
+        })
+        .catch(function function_name(error) {
+          AlertPopup.open('Error.errorTitle', 'Error.' + error.Message);
+        });
+    };
 
   });

@@ -73,4 +73,11 @@ angular.module('app')
       });
     };
 
+    vm.changeName = function (idTeamPlayer, newName) {
+      return PostToJs('TeamPlayer/ChangeName', {
+        IdTeamPlayer: idTeamPlayer,
+        NewName: newName
+      });
+    };
+
   });

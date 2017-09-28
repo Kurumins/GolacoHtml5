@@ -1,6 +1,9 @@
 <h2 translate>PlayerDetail.lblTitle</h2>
 
-<h3>{{$ctrl.currentPlayer.Name}}</h3>
+<h3>
+  <button class="btn-link icon-pencil-square" ng-click="$ctrl.changePlayerName();" title="{{'TeamPreview.editTeamDetailsTooltip'|translate}}"></button><!--
+   -->{{$ctrl.currentPlayer.Name}}
+</h3>
 
 <div class="clearfix">
   <div class="left-content">

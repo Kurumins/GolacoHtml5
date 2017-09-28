@@ -1,0 +1,13 @@
+<div class="change-player-name row">
+  <div class="player-picture col-sm-3">
+    <img ng-src="{{$ctrl.currentPlayer.Picture}}" class="img-responsive">
+    <p><i class="icon icon-credit-card"></i> <strong class="price">{{$ctrl.changeNamePrice}}</strong></p>
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group">
+      <label translate class="text-uppercase">PlayerDetail.lblPlayerName</label>
+      <input type="text" ng-model="player.newName" class="form-control" ng-value="$ctrl.currentPlayer.Name">
+    </div>
+    <button type="button" class="btn btn-primary pull-right" ng-click="confirm(player.newName)" translate>Common.save</button>
+  </div>
+</div>
