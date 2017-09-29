@@ -10,7 +10,7 @@
     <div class="player-picture">
       <img ng-src="{{$ctrl.currentPlayer.Picture}}">
       <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.currentPlayer.Flag}}.jpg" class="player-flag">
-      <span class="player-shirt-number">{{$ctrl.currentPlayer.ShirtNumber}}</span>
+      <span class="player-shirt-number" ng-click="$ctrl.updateShirtNumber()">{{$ctrl.currentPlayer.ShirtNumber}}</span>
       <button ng-click="$ctrl.prevPlayer()" class="prev-player" >«</button>
       <button ng-click="$ctrl.nextPlayer()" class="next-player" >»</button>
     </div>

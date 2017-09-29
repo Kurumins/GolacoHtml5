@@ -1,0 +1,12 @@
+<div class="change-player-name row">
+  <div class="player-picture col-sm-3">
+    <img ng-src="{{$ctrl.currentPlayer.Picture}}" class="img-responsive">
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group">
+      <label translate class="text-uppercase">Common.lblPlayerNumber</label>
+      <input type="text" ng-model="player.shirtNumber" class="form-control" ng-value="$ctrl.currentPlayer.ShirtNumber">
+    </div>
+    <button type="button" class="btn btn-primary pull-right" ng-click="confirm(player.shirtNumber)" translate>Common.save</button>
+  </div>
+</div>

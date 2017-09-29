@@ -80,4 +80,11 @@ angular.module('app')
       });
     };
 
+    vm.updateShirtNumber = function (idTeamPlayer, shirtNumber) {
+      return PostToJs('TeamPlayer/UpdateShirtNumber', {
+        idTeamPlayer: idTeamPlayer,
+        shirtNumber: shirtNumber
+      });
+    };
+
   });
