@@ -87,4 +87,11 @@ angular.module('app')
       });
     };
 
+    vm.unsetTeamPlayerItem = function (teamPlayerId, slot) {
+      return PostToJs('TeamPlayer/UnsetTeamPlayerItem', {
+        TeamPlayerId: teamPlayerId,
+        Slot: slot
+      });
+    };
+
   });

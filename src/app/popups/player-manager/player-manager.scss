@@ -86,20 +86,53 @@
   .manager-itens {
     margin: 10px 0 30px;
 
-    button {
+    // button {
+    //   border: 0;
+    //   background: none;
+    // }
+
+    .slot {
+      position: relative;
+      line-height: 40px;
+      display: inline-block;
+      margin: 0 2px;
+    }
+
+    .item {
       width: 40px;
       font-size: 20px;
-      line-height: 40px;
+      // height: 40px;
       border: 2px solid #929497;
       padding: 0;
       vertical-align: middle;
+      // display: inline-block;
+      // margin: 0 2px;
 
       img {
+        // position: absolute;
+        // left: 0;
         width: 100%;
-        height: 36px;
+        height: 40px;
+        // width: 40px;
         object-fit: cover;
       }
     }
+
+    .unset-item {
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 16px;
+      background: red;
+      height: 16px;
+      line-height: 20px;
+      padding: 0;
+      left: 11px;
+      font-size: 10px;
+      color: white;
+      border: 0;
+    }
+
   }
 
   .manager-menu {

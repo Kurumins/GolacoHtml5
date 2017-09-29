@@ -18,16 +18,21 @@
     <div class="manager-itens">
       <h6 translate>PlayerDetail.lblEquipItems</h6>
 
-      <button
-        ng-if="!$ctrl.currentPlayer.ShirtItem"
-        ng-click="$ctrl.playerItemEquip(1)"
-        class="icon-t-shirt"
-      ></button>
-      <button ng-if="$ctrl.currentPlayer.ShirtItem">
-        <img ng-src="{{$ctrl.currentPlayer.ShirtItem.Picture}}">
-      </button>
+      <span ng-repeat="type in ['ShirtItem', 'ShortItem', 'CleatsItem']" class="slot">
+        <button
+          ng-if="!$ctrl.currentPlayer[type]"
+          ng-click="$ctrl.playerItemEquip($index+1)"
+          class="item"
+        ><i class="icon-{{['t-shirt', 'shorts', 'shoes-snickers-streamline'][$index]}}"></i></button>
+        <span ng-if="$ctrl.currentPlayer[type]">
+          <button class="item" ng-click="$ctrl.playerItemEquip($index+1)">
+            <img ng-src="{{$ctrl.currentPlayer[type].Picture}}">
+          </button>
+          <button ng-click="$ctrl.unsetTeamPlayerItem($index+1)" class="unset-item"><i class="icon-times"></i></button>
+        </span>
+      </span>
 
-      <button
+      <!-- <button
         ng-if="!$ctrl.currentPlayer.ShortItem"
         ng-click="$ctrl.playerItemEquip(2)"
         class="icon-shorts"
@@ -43,7 +48,7 @@
       ></button>
       <button ng-if="$ctrl.currentPlayer.CleatsItem">
         <img ng-src="{{$ctrl.currentPlayer.CleatsItem.Picture}}">
-      </button>
+      </button> -->
 
     </div>
 

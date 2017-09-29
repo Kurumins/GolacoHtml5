@@ -29,7 +29,7 @@ angular.module('app')
 
       player.effects = []
         .concat(player.CleatsItem && player.CleatsItem.Effects || [])
-        .concat(player.ShirtItem && player.ShirtItem.Effects || [])
+        .concat(player.ShortItem && player.ShortItem.Effects || [])
         .concat(player.ShirtItem && player.ShirtItem.Effects || []);
 
       vm.currentPlayer = player;
@@ -196,7 +196,17 @@ angular.module('app')
         .then(function (item) {
           TeamPlayerService.setTeamPlayerItem(vm.currentPlayer.Id, slot, item.Id)
             .then(function () {
+              $rootScope.$emit('teamPlayerUpdate');
+
               vm.currentPlayer[slots[slot]] = item;
+
+              vm.currentPlayer.effects = []
+                .concat(vm.currentPlayer.CleatsItem && vm.currentPlayer.CleatsItem.Effects || [])
+                .concat(vm.currentPlayer.ShortItem && vm.currentPlayer.ShortItem.Effects || [])
+                .concat(vm.currentPlayer.ShirtItem && vm.currentPlayer.ShirtItem.Effects || []);
+
+              // $timeout(function () {
+              // });
             });
         });
     };
@@ -244,6 +254,27 @@ angular.module('app')
               AlertPopup.open('Error.errorTitle', 'Error.' + error.Message);
             });
         })
+    };
+
+    vm.unsetTeamPlayerItem = function (slot) {
+      ConfirmPopup.open('Error.errorTitle', 'PlayerDetail.confirmRemove;n' + vm.changeNamePrice)
+        .then(function () {
+          return TeamPlayerService.unsetTeamPlayerItem(vm.currentPlayer.Id, slot);
+        })
+        .then(function (result) {
+          vm.currentPlayer[slots[slot]] = null;
+
+          vm.currentPlayer.effects = []
+            .concat(vm.currentPlayer.CleatsItem && vm.currentPlayer.CleatsItem.Effects || [])
+            .concat(vm.currentPlayer.ShortItem && vm.currentPlayer.ShortItem.Effects || [])
+            .concat(vm.currentPlayer.ShirtItem && vm.currentPlayer.ShirtItem.Effects || []);
+
+          AlertPopup.open('Error.errorTitle', 'TrainingCenterPreview.unequipMsg');
+          $rootScope.$emit('teamPlayerUpdate');
+        })
+        .catch(function function_name(error) {
+          AlertPopup.open('Error.errorTitle', 'Error.' + error.Message);
+        });
     };
 
   });
