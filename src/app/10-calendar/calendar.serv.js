@@ -12,4 +12,11 @@ angular.module('app')
       });
     };
 
+    vm.useItemInMatch = function (idMatch, useItems) {
+      return PostToJs('Match/CalendarUseItemInMatch', {
+        IdMatch: idMatch,
+        UseItems: useItems
+      });
+    };
+
   });

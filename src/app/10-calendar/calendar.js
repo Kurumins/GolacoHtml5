@@ -80,6 +80,14 @@ function calendarController (matchCalendar, CalendarService, MatchResult, moment
 
   vm.matchResult = MatchResult.open;
 
+  vm.useItemInMatch = function (idMatch, useItems) {
+    CalendarService.useItemInMatch(idMatch, useItems)
+      /*.then(function (matchCalendar) {
+        vm.matchCalendar = matchCalendar;
+        vm.matches = matchCalendar.Matches;
+      })*/;
+  }
+
 }
 
 function calendarRoutesConfig ($stateProvider, moment) {

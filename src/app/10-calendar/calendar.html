@@ -69,7 +69,9 @@
         <button class="btn btn-link icon-screen" ng-if="match.Status" ng-click="$ctrl.matchResult(match.Id)"></button>
       </td>
       <td><match-element match="match" /></td>
-      <td class="text-center" title="{{'CalendarDetail.lblItemsTooltip'|translate}}"><input type="checkbox" checked="match.UseItems" ng-if="!match.Status"></td>
+      <td class="text-center" title="{{'CalendarDetail.lblItemsTooltip'|translate}}">
+        <input type="checkbox" ng-model="match.UseItems" ng-disabled="match.Status" ng-change="$ctrl.useItemInMatch(match.Id, match.UseItems)">
+      </td>
     </tr>
   </table>
 </div>
