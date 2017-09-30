@@ -55,7 +55,7 @@
     // overflow-y: auto;
     // overflow-x: hidden;
 
-    .checkbox{
+    .checkbox {
       margin:0;
         label{
             color:#9a9a9a;
@@ -109,6 +109,29 @@
 
       th {
         text-align: center;
+      }
+
+      [skill-value].max {
+
+        .add-value {
+          display: none;
+        }
+        .current-value {
+          position: relative;
+          color: #0078e0;
+
+          &:before {
+            content: "";
+            // background: #0078e0;
+            width: 100%;
+            // height: 2px;
+            position: absolute;
+            // line-height: 0;
+            border: 1px solid;
+            // left: 15px;
+            // right: 15px;
+          }
+        }
       }
 
       img {

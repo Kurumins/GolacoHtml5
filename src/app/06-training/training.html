@@ -46,17 +46,17 @@
           <!-- <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill1.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span> -->
           <span class="primary-skill -s{{player.IdPosition}}">{{'Common.'+player.Attributes.PrimarySkill1.Name+'_Acr'|translate}}</span>
         </td>
-        <td skill-value="player.Attributes.PrimarySkill1"></td>
+        <td skill-value="player.Attributes.PrimarySkill1" ng-class="{max: player.Attributes.PrimarySkill2.Max}"></td>
         <td title="{{'Common.'+player.Attributes.PrimarySkill2.Name|translate}}">
           <!-- <span class="primary-skill -s{{player.IdPosition}}">{{player.Attributes.PrimarySkill2.Name.replace('TeamPlayerSkill_','') | limitTo:3}}</span> -->
           <span class="primary-skill -s{{player.IdPosition}}">{{'Common.'+player.Attributes.PrimarySkill2.Name+'_Acr'|translate}}</span>
         </td>
-        <td skill-value="player.Attributes.PrimarySkill2"></td>
-        <td skill-value="player.Attributes.SecondSkill1"></td>
-        <td skill-value="player.Attributes.SecondSkill2"></td>
-        <td skill-value="player.Attributes.SecondSkill3"></td>
-        <td skill-value="player.Attributes.SecondSkill4"></td>
-        <td skill-value="player.Attributes.SecondSkill5"></td>
+        <td skill-value="player.Attributes.PrimarySkill2" ng-class="{max: player.Attributes.PrimarySkill2.Max}"></td>
+        <td skill-value="player.Attributes.SecondSkill1" ng-class="{max: player.Attributes.SecondSkill1.Max}"></td>
+        <td skill-value="player.Attributes.SecondSkill2" ng-class="{max: player.Attributes.SecondSkill2.Max}"></td>
+        <td skill-value="player.Attributes.SecondSkill3" ng-class="{max: player.Attributes.SecondSkill3.Max}"></td>
+        <td skill-value="player.Attributes.SecondSkill4" ng-class="{max: player.Attributes.SecondSkill4.Max}"></td>
+        <td skill-value="player.Attributes.SecondSkill5" ng-class="{max: player.Attributes.SecondSkill5.Max}"></td>
         <td training-limit="player"></td>
         <td ng-if="!player.HasTrainingPlan">
           <input type="checkbox" ng-model="player.checked" ng-change="$ctrl.updateplayersListAtt();">

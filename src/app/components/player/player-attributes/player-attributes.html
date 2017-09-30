@@ -1,7 +1,7 @@
 <div ng-repeat="attribute in $ctrl.player.Attributes" class="player-attribute">
   <span class="att-title">{{attribute.Name && ('Common.'+attribute.Name+'_Acr'|translate) || '--'}}</span>
   <hr>
-  <div class="att-bar">
+  <div class="att-bar" ng-class="{max: attribute.Max}">
     <div class="att-value" style="height: {{attribute.Value}}%"></div>
     <div class="att-modifier" style="height: {{$ctrl.getEffectModifier(attribute.Id)}}%"></div>
   </div>

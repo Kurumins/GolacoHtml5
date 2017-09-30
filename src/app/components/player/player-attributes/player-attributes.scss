@@ -36,6 +36,24 @@ player-attributes {
       .att-modifier {
         background-color: #0c0;
       }
+
+      &.max .att-modifier {
+        position: relative;
+
+        &:before {
+          content: 'max';
+          position: absolute;
+          font-size: 10px;
+          line-height: 10px;
+          background: red;
+          color: #fff;
+          left: -2px;
+          right: -2px;
+          bottom: 100%;
+          // width: 100%;
+          // margin: 0 -5px;
+        }
+      }
     }
   }
 }

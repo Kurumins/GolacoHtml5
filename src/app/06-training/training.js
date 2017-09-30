@@ -6,7 +6,12 @@ angular.module('app')
       scope: {
         skillValue: '='
       },
-      template: '{{skillValue.Value || \'--\'}} <span ng-if="skillValue.addValue!==0" class="-{{skillValue.addValue > 0 ? \'add\' : \'dec\'}}">{{skillValue.addValue}}</span>'
+      template: '\
+        <span class="current-value">{{skillValue.Value || \'--\'}}</span>\
+        <span ng-if="skillValue.addValue!==0" class="add-value -{{skillValue.addValue > 0 ? \'add\' : \'dec\'}}">\
+          {{skillValue.addValue}}\
+        </span>\
+      '
     };
   })
   .directive('trainingLimit', function () {
