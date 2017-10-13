@@ -201,6 +201,13 @@ angular
     };
   });
 
+angular
+  .module('exceptionOverride', []).factory('$exceptionHandler', function () {
+    return function (exception, cause) {
+      Bugsnag.notifyException(exception, {diagnostics:{cause: cause}});
+    };
+  });
+
 Object.size = function (obj) {
   var size = 0, key;
   for (key in obj) {
