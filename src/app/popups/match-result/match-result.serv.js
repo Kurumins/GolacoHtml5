@@ -29,7 +29,10 @@ angular.module('app')
 
           // var tmpStr:String = loader.data.toString();
           var begin = tmpStr.indexOf('&jsondata='),
-            matchResponse = {};
+            matchResponse = {
+              Success: true,
+              matchVars: getQueryParams(tmpStr)
+            };
 
           if (begin >= 0) {
             matchResponse.data = angular.fromJson(tmpStr.substr(begin + 10));
@@ -62,6 +65,20 @@ angular.module('app')
         //   // $loading.finish('match');
         // });
     };
+
+    function getQueryParams(qs) {
+      qs = qs.split('+').join(' ');
+
+      var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+      while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+      }
+
+      return params;
+    }
 
     // https://www.golacogame.com.br/Team/MatchWatched
     vm.setMatchWatched = function (IdMatch) {
