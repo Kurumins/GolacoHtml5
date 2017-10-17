@@ -5,6 +5,7 @@ angular.module('app')
     var vm = this;
 
     vm.findFriendlyMatches = function (filter) {
+      // filter.SocialId = 100003981710211;
       return PostToJs('Match/FindFriendlyMatches', filter);
     };
 

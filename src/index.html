@@ -316,7 +316,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script src="https://d3dy5gmtp8yhk7.cloudfront.net/1.12/pusher.min.js" type="text/javascript"></script>
+<!-- <script src="https://d3dy5gmtp8yhk7.cloudfront.net/1.12/pusher.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     function pusher_notify(data) {
           // console.log(data);
@@ -327,7 +327,7 @@
                     break;
             }
         } else {
-          notify && notify(data);
+          window.notify && window.notify(data);
         }
     }
     Pusher.channel_auth_endpoint = '/game/Container/Auth';
@@ -336,8 +336,7 @@
     var channel_private = pusher.subscribe('private-1602447546449533');
     channel_public.bind('notify', pusher_notify);
     channel_private.bind('notify', pusher_notify);
-
-</script>
+</script> -->
 
 
 </html>

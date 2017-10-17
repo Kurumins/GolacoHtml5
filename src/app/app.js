@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, teamPreview, teamMatchesAlert, countryList, MatchAlert, $translate, tmhDynamicLocale, AppService) {
+  .controller('AppController', function ($rootScope, $scope, $window, ngDialog, user, teamPreview, teamMatchesAlert, countryList, MatchAlert, $translate, tmhDynamicLocale, AppService, ExternalPerfil) {
 
     var vm = this;
 
@@ -61,5 +61,10 @@ angular.module('app')
     //       vm.HeaderData = result.HeaderData;
     //     });
     // }
+
+    // ExternalPerfil.open(1602447546449533); // Eric Tonussi
+    // ExternalPerfil.open(100003981710211);
+
+    // $rootScope.openExternalPerfil = ExternalPerfil.open;
 
   });

@@ -1,13 +1,25 @@
 .ngdialog.ngdialog-competition-details {
 
   .ngdialog-content {
-    width: 650px;
+    width: 720px;
     padding: 30px 30px;
     > :first-child {
       margin-top: 0;
     }
   }
 
+  .reward {
+    .icon-arrow-up {
+      color: #00b200;
+    }
+    .icon-arrow-down {
+      color: #db2c2c;
+    }
+  }
+
+  .morale {
+    color: #0064b3;
+  }
 
   .register {
     margin-top: 20px;

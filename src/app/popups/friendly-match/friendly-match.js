@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-  .controller('FriendlyMatchController', function ($rootScope, FriendlyMatchService, AppService, MatchResult, ngDialog, ConfirmPopup, $timeout, $loading) {
+  .controller('FriendlyMatchController', function ($rootScope, FriendlyMatchService, AppService, MatchResult, ngDialog, ConfirmPopup, $timeout, $loading, filter) {
 
     var vm = this;
 
@@ -36,7 +36,7 @@ angular.module('app')
     };
     vm.filter.League[AppService.teamPreview.Serie] = true;
 
-    vm.findFriendlyMatches(vm.filter);
+    vm.findFriendlyMatches(filter || vm.filter);
 
     vm.play = function (match) {
 
@@ -82,5 +82,26 @@ angular.module('app')
 
     //   }, 1000);
     // }
+
+  })
+
+  .factory('FriendlyMatch', function (ngDialog) {
+    var vm = this;
+
+    vm.open = function (filter) {
+      return ngDialog.open({
+        template: 'friendly-match.html',
+        appendClassName: 'ngdialog-friendly-match',
+        controller: 'FriendlyMatchController as $ctrl',
+        // scope: $scope,
+        resolve: {
+          filter: function () {
+            return filter;
+          }
+        }
+      });
+    };
+
+    return vm;
 
   });

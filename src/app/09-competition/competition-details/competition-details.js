@@ -1,10 +1,12 @@
 'use strict';
 angular.module('app')
-  .controller('CompetitionDetailsController', function ($scope, competition, CompetitionService, ConfirmPopup, AlertPopup) {
+  .controller('CompetitionDetailsController', function ($scope, competition, CompetitionService, ConfirmPopup, AlertPopup, AppService) {
 
     var vm = this;
     vm.competition = competition;
+    vm.prizeList = competition.data.prizeList.prize;
     vm.scope = $scope;
+    vm.teamPreview = AppService.teamPreview;
 
     vm.matchTypes = [
       '',

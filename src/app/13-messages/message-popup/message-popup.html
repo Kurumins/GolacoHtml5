@@ -1,7 +1,15 @@
 <h2>{{'Messages.'+ngDialogData.Title|translate}}</h2>
-<p><b>{{'Messages.'+ngDialogData.From|translate}}</b></p>
+<!-- <p><b>{{'Messages.'+ngDialogData.From|translate}}</b></p> -->
+<p ng-switch="ngDialogData.IdMessageType">
+  <b ng-switch-when="3">{{ngDialogData.Title}}</b>
+  <b ng-switch-default>{{'Messages.'+ngDialogData.Title|translate}}</b>
+</p>
 <p>{{ngDialogData.SendDate | date:'short'}}</p>
-<p>{{'Messages.'+ngDialogData.Message|translate}}</p>
+<!-- <p>{{'Messages.'+ngDialogData.Message|translate}}</p> -->
+<p ng-switch="ngDialogData.IdMessageType">
+  <span ng-switch-when="3">{{ngDialogData.Message}}</span>
+  <span ng-switch-default>{{'Messages.'+ngDialogData.Message|translate}}</span>
+</p>
 <div class="ngdialog-buttons">
   <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Ok</button>
 </div>

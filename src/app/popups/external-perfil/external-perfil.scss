@@ -1,0 +1,90 @@
+.ngdialog.ngdialog-external-perfil {
+
+  .ngdialog-content {
+    background-color: #cbdaef;
+    width: 730px;
+    // height: 500px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+  h5 {
+    margin-bottom: 0;
+  }
+  h6 {
+    margin-top: 0;
+    color: #337ab7;
+  }
+
+  .shield {
+    position: relative;
+    margin-right: 10px;
+
+    .league-icon {
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      font-size: 20px;
+      margin-top: -10px;
+    }
+  }
+
+  .flag-icon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .manager {
+    position: relative;
+  }
+
+  .main-uniformes {
+    // padding: 0 10px;
+    width: 280px;
+    margin: auto;
+  }
+
+  .main-uniforme {
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    line-height: 150px;
+    width: 120px;
+    float: left;
+    text-align: center;
+    margin: 0 10px 30px;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+
+  .sponsor {
+    text-align: center;
+  }
+
+  .jogos,
+  .trofeus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // width: 326px;
+    // float: right;
+    > img {
+      margin-bottom: 10px;
+    }
+  }
+  .jogos {
+    .is-playing {
+      cursor: pointer;
+    }
+    img:not(.is-playing) {
+      // opacity: 0.5;
+      filter: grayscale(100%) opacity(.3);
+    }
+  }
+
+}
+
+.ngdialog.ngdialog-external-perfil-send-message {
+  padding-top: 260px;
+}

@@ -1,0 +1,83 @@
+<div class="clearfix main-header">
+  <div class="pull-right submenu">
+    <button class="btn btn-xs btn-primary" ng-click="$ctrl.sendMessage()" title="{{'ExternalTeamPreview.lblSendMessage'|translate}}"><i class="icon-envelope"></i></button>
+    <button class="btn btn-xs btn-primary" ng-click="$ctrl.challenge()" title="{{'ExternalTeamPreview.lblChallenge'|translate}}"><i class="icon-futbol-o"></i></button>
+  </div>
+  <h2 translate>ExternalTeamPreview.lblTitle</h2>
+</div>
+
+<div class="row main-body">
+
+  <div class="col-xs-6 body-item">
+
+    <div class="detail-manager clearfix">
+
+      <h4>{{$ctrl.teamProfile.Name}}</h4>
+
+      <div class="shield pull-left">
+        <img ng-src="{{$ctrl.teamProfile.BadgePicture}}">
+        <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.teamProfile.IdTeamCountry}}.jpg" height="10" title="{{'Countries.'+$ctrl.teamProfile.IdTeamCountry|translate}}" class="flag-icon">
+        <span class="league-icon icon-league-{{$ctrl.teamProfile.League|lowercase}}"></span>
+      </div>
+
+      <div class="pull-left">
+        <div class="manager">
+          <img ng-src="{{$ctrl.teamProfile.CoachAvatar}}" height="60">
+          <img ng-src="https://o2games-golaco.s3.amazonaws.com/flags/{{$ctrl.teamProfile.IdUserCountry}}.jpg" height="10" title="{{$ctrl.teamProfile.IdUserCountry!=0 && ('Countries.'+$ctrl.teamProfile.IdUserCountry|translate)||''}}" class="flag-icon">
+        </div>
+
+        <h5 translate>ExternalTeamPreview.lblCoach</h5>
+        <h6>{{$ctrl.teamProfile.Coach}}</h6>
+        <h5 translate>ExternalTeamPreview.lblTeamSupporters</h5>
+        <h6>{{$ctrl.teamProfile.Supporters|number}}</h6>
+      </div>
+
+    </div>
+
+    <div class="detail-uniform">
+      <h4 translate>TeamPreview.lblUniform</h4>
+
+      <div class="clearfix main-uniformes">
+        <div class="main-uniforme">uniforme</div>
+        <div class="main-uniforme">uniforme</div>
+      </div>
+    </div>
+
+    <div class="sponsor">
+      <img ng-src="https://o2games-golaco.s3.amazonaws.com/img/sponsor/{{$ctrl.teamProfile.SponsorName}}/preview.png" class="main-sponsor" ng-if="$ctrl.teamProfile.SponsorName">
+    </div>
+
+  </div>
+
+  <div class="col-xs-6 body-item">
+    <div class="jogos">
+      <img src="app/images/external-perfil/liga_maior.png" title="{{'Common.lblLeague'|translate}}"
+        ng-class="{'is-playing': $ctrl.teamProfile.CurrentCompetitionsIds.IdLeague}"
+        ng-click="$ctrl.CompetitionLeague({
+          preview: {IdCompetition: $ctrl.teamProfile.CurrentCompetitionsIds.IdLeague,
+          socialId: $ctrl.socialId
+        }})">
+      <img src="app/images/external-perfil/ico_torneio.png" title="{{'Common.lblChampionship'|translate}}" ng-class="{'is-playing': $ctrl.teamProfile.CurrentCompetitionsIds.IdTournament}">
+      <img src="app/images/external-perfil/ico_copa.png" title="{{'Common.lblCup'|translate}}" ng-class="{'is-playing': $ctrl.teamProfile.CurrentCompetitionsIds.IdCup}">
+      <img src="app/images/external-perfil/ico_super_liga.png" title="{{'Common.lblSuperLeague'|translate}}" ng-class="{'is-playing': false}">
+      <img src="app/images/external-perfil/ico_mini_1.png" title="{{'Common.lblMiniChampionship'|translate}}" ng-class="{'is-playing': $ctrl.teamProfile.CurrentCompetitionsIds.IdTournamentLight}">
+      <img src="app/images/external-perfil/ico_mini_2.png" title="{{'Common.lblMiniCup'|translate}}" ng-class="{'is-playing': $ctrl.teamProfile.CurrentCompetitionsIds.IdCupLight}">
+    </div>
+
+    <h4 class="text-right" translate>ExternalTeamPreview.lblStructures</h4>
+
+    <div class="trofeus">
+      <img src="app/images/external-perfil/ico_estadio.png" title="{{'Common.lblStadium'|translate}}">
+      <img src="app/images/external-perfil/ico_ct.png" title="{{'StadiumPreview.trainingCenter'|translate}}">
+      <img src="app/images/external-perfil/ico_cr.png" title="{{'StadiumPreview.medicalCenter'|translate}}">
+      <img src="app/images/external-perfil/ico_jr.png" title="{{'StadiumPreview.juniorCenter'|translate}}">
+      <img src="app/images/external-perfil/ico_trofeu.png" title="{{'ExternalTeamPreview.lblTrophiesRoom'|translate}}">
+    </div>
+
+    <h4 class="text-right" translate>ExternalTeamPreview.lblPressNote</h4>
+    <p>{{$ctrl.teamProfile.History}}</p>
+
+  </div>
+
+</div>
+<!-- <pre>{{$ctrl.teamProfile | json}}</pre> -->

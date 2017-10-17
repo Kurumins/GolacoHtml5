@@ -101,7 +101,7 @@ function competitionRoutesConfig ($stateProvider) {
     });
 }
 
-function competitionController ($scope, competitions, ngDialog, CompetitionTournament, CompetitionLeague, CompetitionCup, CompetitionTournamentLight, CompetitionCupLight) {
+function competitionController ($scope, competitions, ngDialog, CompetitionTournament, CompetitionLeague, CompetitionCup, CompetitionTournamentLight, CompetitionCupLight, FriendlyMatch) {
 
   var vm = this;
 
@@ -122,12 +122,7 @@ function competitionController ($scope, competitions, ngDialog, CompetitionTourn
   };
 
   vm.friendlyMatch = function () {
-    ngDialog.open({
-      template: 'friendly-match.html',
-      appendClassName: 'ngdialog-friendly-match',
-      controller: 'FriendlyMatchController as $ctrl',
-      scope: $scope
-    });
+    FriendlyMatch.open();
   };
 
   // CompetitionTournament.open(competitions[1]);

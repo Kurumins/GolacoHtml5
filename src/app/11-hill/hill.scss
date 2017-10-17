@@ -24,7 +24,7 @@
     margin: 5px 15px 0;
     background: white;
 
-    .current-hill-header {
+    > .current-hill-header {
       border-bottom: 1px solid #ccc;
 
       // &:before {
@@ -69,7 +69,7 @@
       }
     }
 
-    .team-details {
+    > .team-details {
       padding: 20px;
       border-bottom: 1px solid #ccc;
 
@@ -114,8 +114,8 @@
         margin-top: 0;
       }
 
-      match-element {
-       background: #ddd;
+      match-element:not(.is-me) {
+        background: #ddd;
       }
 
       // .match-detail {

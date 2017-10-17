@@ -19,8 +19,15 @@
         ng-class="{'is-unread': !message.IsRead}"
         ng-click="$ctrl.readMessage(message)">
         <td><input type="checkbox" ng-model="message.checked" ng-click="$event.stopPropagation();"></td>
-        <td>{{'Messages.'+message.From|translate}}</td>
-        <td>{{'Messages.'+message.Title|translate}}</td>
+        <td ng-switch="message.IdMessageType">
+          <span ng-switch-when="3">{{message.From}}</span>
+          <span ng-switch-default>{{'Messages.'+message.From|translate}}</span>
+        </td>
+        <td ng-switch="message.IdMessageType">
+          <span ng-switch-when="3">{{message.Title}}</span>
+          <span ng-switch-default>{{'Messages.'+message.Title|translate}}</span>
+        </td>
+        <!-- <td>{{'Messages.'+message.Title|translate}}</td> -->
         <td align="right">{{message.SendDate | date:'short'}}</td>
       </tr>
     </tbody>

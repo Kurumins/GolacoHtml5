@@ -46,16 +46,16 @@ angular.module('app')
             return league;
           },
           leagueSummary: function () {
-            return CompetitionService.getLeagueSummary(league.preview.IdCompetition);
+            return CompetitionService.getLeagueSummary(league.preview.IdCompetition, league.preview.socialId);
           },
           leagueRanking: function () {
-            return CompetitionService.getLeagueRanking(league.preview.IdCompetition);
+            return CompetitionService.getLeagueRanking(league.preview.IdCompetition, league.preview.socialId);
           },
           leagueMatchTable: function () {
-            return CompetitionService.getLeagueMatchTable(league.preview.IdCompetition);
+            return CompetitionService.getLeagueMatchTable(league.preview.IdCompetition, league.preview.socialId);
           },
           leagueCalendar: function () {
-            return CompetitionService.getLeagueCalendar(league.preview.IdCompetition);
+            return CompetitionService.getLeagueCalendar(league.preview.IdCompetition, league.preview.socialId);
           },
           // leaguePlayOff: function () {
           //   return CompetitionService.getLeaguePlayOff();
